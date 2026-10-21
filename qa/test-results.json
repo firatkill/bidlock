@@ -819,6 +819,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
+          "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
         }
       ],
       "regression_of": null,
@@ -1062,6 +1067,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
+          "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
         }
       ],
       "regression_of": null,
@@ -1230,6 +1240,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
+          "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
         }
       ],
       "regression_of": null,
@@ -1249,6 +1264,49 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
+          "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-024",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 `bidlock_app` can execute `place_bid`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
+          "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-034",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 = start accepted, `bid_no = 1`, `version` +1, leader set",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
+          "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
         }
       ],
       "regression_of": null,
