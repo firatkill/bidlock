@@ -18,7 +18,6 @@ import {
   databaseUrl,
   DEFAULT_ADMIN_URL,
 } from "../../scripts/db/common";
-import { resetDatabase } from "../../scripts/db/reset";
 import {
   applyEnvironment,
   assertEnvironmentHost,
@@ -60,7 +59,10 @@ beforeAll(async () => {
   created = true;
 });
 beforeEach(async () => {
-  await resetDatabase({ url: scratchUrl, environment: "test" });
+  // Runner fixtures must start empty regardless of application migrations.
+  await scratch`drop schema if exists bidlock cascade`;
+  await scratch`drop schema if exists bidlock_test cascade`;
+  await scratch`drop table if exists public.bidlock_migrations`;
   directory = await mkdtemp(resolve(".git", "migration-tests-"));
   await writeFile(resolve(directory, "0001_probe.sql"), first);
 });
@@ -143,16 +145,25 @@ test("TC-011: default and --db targets; unsafe reset rejected before connecting"
     stderr: expect.stringContaining("Refusing non-local") as unknown,
   });
 });
-test("TC-011: reset CLI clears only the named scratch schema and skips absent foundation", async () => {
+test("TC-011: reset CLI replaces scratch fixtures with application migrations", async () => {
   await run("migrate.ts", ["--dir", directory]);
   expect(
     await run("reset.ts", ["--db", "bidlock_migrate_test", "--no-pgtap"]),
   ).toContain("Reset bidlock_migrate_test");
-  expect(
-    counts.parse(
-      await scratch`select count(*)::integer as n from public.bidlock_migrations`,
-    )[0]?.n,
-  ).toBe(0);
+  const rows = z
+    .array(
+      z
+        .object({
+          probe: z.string().nullable(),
+          settings: z.string().nullable(),
+        })
+        .strict(),
+    )
+    .parse(
+      await scratch`select to_regclass('bidlock.probe')::text as probe, to_regclass('bidlock.settings')::text as settings`,
+    );
+  expect(rows).toEqual([{ probe: null, settings: "bidlock.settings" }]);
+  expect(await run("migrate.ts")).toContain("No pending migrations");
 });
 test("TC-012: environment host restrictions and missing substitutions", async () => {
   expect(() => {
@@ -210,4 +221,60 @@ test("TC-013: a failing migration rolls back both DDL and ledger entry", async (
       await scratch`select count(*)::integer as n from public.bidlock_migrations`,
     )[0]?.n,
   ).toBe(0);
+});
+
+test("TC-126: staged environment setup defers only absent rate limits", async () => {
+  await run("reset.ts", ["--db", "bidlock_migrate_test", "--no-pgtap"]);
+  await applyEnvironment({ url: scratchUrl, name: "test", noPgtap: true });
+  await applyEnvironment({ url: scratchUrl, name: "load", noPgtap: true });
+  const state = z
+    .array(z.object({ env: z.string(), login: z.boolean() }).strict())
+    .parse(
+      await scratch`select s.env, r.rolcanlogin as login from bidlock.settings s cross join pg_roles r where r.rolname = 'bidlock_app'`,
+    );
+  expect(state).toEqual([{ env: "test", login: true }]);
+  // A transaction-local fixture keeps this test independent of later migrations.
+  await scratch.begin(async (tx) => {
+    await tx`drop table if exists bidlock.rate_limits cascade`;
+    await tx`create table bidlock.rate_limits (name text primary key, max_hits integer)`;
+    await tx`insert into bidlock.rate_limits values ('bid_ip_60s', 200), ('bidder_create_ip_3600s', 20), ('sandbox_ip_3600s', 5), ('bidder_1s', 3)`;
+    const { readFile } = await import("node:fs/promises");
+    const limits = z.array(
+      z.object({ name: z.string(), max_hits: z.number().int() }).strict(),
+    );
+    await tx.unsafe(
+      prepareEnvironmentSql(
+        await readFile("db/env/test.sql", "utf8"),
+        {},
+        true,
+      ),
+    );
+    expect(
+      limits.parse(
+        await tx`select name, max_hits from bidlock.rate_limits order by name collate "C"`,
+      ),
+    ).toEqual([
+      { name: "bid_ip_60s", max_hits: 10000 },
+      { name: "bidder_1s", max_hits: 3 },
+      { name: "bidder_create_ip_3600s", max_hits: 10000 },
+      { name: "sandbox_ip_3600s", max_hits: 10000 },
+    ]);
+    await tx.unsafe(
+      prepareEnvironmentSql(
+        await readFile("db/env/load.sql", "utf8"),
+        {},
+        true,
+      ),
+    );
+    expect(
+      limits.parse(
+        await tx`select name, max_hits from bidlock.rate_limits order by name collate "C"`,
+      ),
+    ).toEqual([
+      { name: "bid_ip_60s", max_hits: 1000000 },
+      { name: "bidder_1s", max_hits: 3 },
+      { name: "bidder_create_ip_3600s", max_hits: 1000000 },
+      { name: "sandbox_ip_3600s", max_hits: 10000 },
+    ]);
+  });
 });

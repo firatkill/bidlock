@@ -51,3 +51,48 @@ jobs:
         run: pnpm test:concurrency
       - if: always()
         run: pnpm db:down
+
+  db:
+    name: pgTAP
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: bidlock_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -h 127.0.0.1 -U postgres"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:5432/bidlock_test
+      DATABASE_URL: postgres://bidlock_app:bidlock_app@localhost:5432/bidlock_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # The stock postgres:17 image has no pgTAP. Service containers cannot be built from a Dockerfile,
+      # so install the PGDG package into the running container (it runs as root and ships the PGDG
+      # apt source; A-07). The package only adds extension files, so no restart is needed.
+      # If A-07 fails: drop the service, `docker build -t bidlock-postgres:17 docker/postgres` and
+      # `docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=bidlock_test bidlock-postgres:17`,
+      # then wait with `until pg_isready -h 127.0.0.1 -U postgres; do sleep 1; done`.
+      # Healthchecks use -h 127.0.0.1: during first-start init the entrypoint's temporary server listens
+      # on the Unix socket only, so a socket check can report "ready" before the real server is up.
+      - name: Install pgTAP extension into the service container
+        run: |
+          docker exec ${{ job.services.postgres.id }} bash -c \
+            "apt-get update -qq && apt-get install -y -qq --no-install-recommends postgresql-17-pgtap"
+          docker exec ${{ job.services.postgres.id }} test -f /usr/share/postgresql/17/extension/pgtap.control
+      - name: Install pg_prove and psql on the runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libtap-parser-sourcehandler-pgtap-perl postgresql-client
+      - run: pnpm db:reset
+      - run: pnpm test:db

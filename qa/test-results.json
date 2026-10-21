@@ -2,7 +2,7 @@
   "project": "Bidlock",
   "cases": [
     {
-      "tc_reference": "—",
+      "tc_reference": "\u2014",
       "ac_reference": "AGENTS.md Repository setup and Authorship",
       "milestone": null,
       "title": "Repository setup identity and commit hook",
@@ -31,7 +31,7 @@
     {
       "tc_reference": "TC-001",
       "ac_reference": "NFR-40, NFR-43; T-01 acceptance",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Strict toolchain and server-only test alias",
       "status": "resolved",
       "environment": "macOS arm64, Node 24.10.0, pnpm 10.34.7",
@@ -68,7 +68,7 @@
     {
       "tc_reference": "TC-002",
       "ac_reference": "FR-96; T-01 acceptance",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Static CI",
       "status": "resolved",
       "description": "Verify the specified static job on the task PR.",
@@ -105,7 +105,7 @@
     {
       "tc_reference": "TC-003",
       "ac_reference": "FR-88; T-02 acceptance",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Required environment and secret validation",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -129,7 +129,7 @@
     {
       "tc_reference": "TC-004",
       "ac_reference": "FR-52, FR-88",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Production test-variable refusal",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -153,7 +153,7 @@
     {
       "tc_reference": "TC-005",
       "ac_reference": "FR-85",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Origin allowlist and cache",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -182,7 +182,7 @@
     {
       "tc_reference": "TC-006",
       "ac_reference": "FR-80",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Structured redacted logs",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -211,7 +211,7 @@
     {
       "tc_reference": "TC-007",
       "ac_reference": "FR-51; UT-09",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Error status mapping",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -235,7 +235,7 @@
     {
       "tc_reference": "TC-008",
       "ac_reference": "FR-90; T-03 acceptance",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Postgres and pgTAP availability",
       "description": "Verify the isolated local database container and test tooling.",
       "steps_to_reproduce": [
@@ -275,14 +275,14 @@
     {
       "tc_reference": "TC-009",
       "ac_reference": "PRD D-05; T-04 acceptance",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Repeatable migration with checksum protection",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -305,24 +305,39 @@
           "result": "pass",
           "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 foundation exposed fixture collision: scratch test assumed application migrations were empty. Six tests failed; two host-safety checks passed.",
+          "note": "Correct fixture isolation against T-04 requirement for a throwaway migrations directory; retain all assertions about migration safety."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed after scratch fixture isolation.",
+          "note": "Focused retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Eight migration tests pass in full T-05 run.",
+          "note": "TC-126 tracked separately."
         }
       ],
       "regression_of": null,
-      "root_cause_group": "integration-test-lint",
+      "root_cause_group": "m1-migration-fixture-isolation",
       "clickup_task": null,
       "retraction_reason": null
     },
     {
       "tc_reference": "TC-010",
       "ac_reference": "PRD D-05; T-04 acceptance",
-      "milestone": "M0 — Setup",
+      "milestone": "M0 \u2014 Setup",
       "title": "Status and dry-run",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -340,6 +355,215 @@
           "result": "pass",
           "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 foundation exposed fixture collision: scratch test assumed application migrations were empty. Six tests failed; two host-safety checks passed.",
+          "note": "Correct fixture isolation against T-04 requirement for a throwaway migrations directory; retain all assertions about migration safety."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed after scratch fixture isolation.",
+          "note": "Focused retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Eight migration tests pass in full T-05 run.",
+          "note": "TC-126 tracked separately."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "m1-migration-fixture-isolation",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-011",
+      "ac_reference": "PRD D-34; T-04 acceptance",
+      "milestone": "M0 \u2014 Setup",
+      "title": "Reset host and database safety",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
+          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 foundation exposed fixture collision: scratch test assumed application migrations were empty. Six tests failed; two host-safety checks passed.",
+          "note": "Correct fixture isolation against T-04 requirement for a throwaway migrations directory; retain all assertions about migration safety."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed after scratch fixture isolation.",
+          "note": "Focused retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Eight migration tests pass in full T-05 run.",
+          "note": "TC-126 tracked separately."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "m1-migration-fixture-isolation",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-012",
+      "ac_reference": "PRD D-22; T-04 acceptance",
+      "milestone": "M0 \u2014 Setup",
+      "title": "Environment SQL safety and substitutions",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
+          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 foundation exposed fixture collision: scratch test assumed application migrations were empty. Six tests failed; two host-safety checks passed.",
+          "note": "Correct fixture isolation against T-04 requirement for a throwaway migrations directory; retain all assertions about migration safety."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed after scratch fixture isolation.",
+          "note": "Focused retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Eight migration tests pass in full T-05 run.",
+          "note": "TC-126 tracked separately."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "m1-migration-fixture-isolation",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-013",
+      "ac_reference": "PRD D-05; T-04 acceptance",
+      "milestone": "M0 \u2014 Setup",
+      "title": "Migration transaction rollback",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 foundation exposed fixture collision: scratch test assumed application migrations were empty. Six tests failed; two host-safety checks passed.",
+          "note": "Correct fixture isolation against T-04 requirement for a throwaway migrations directory; retain all assertions about migration safety."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed after scratch fixture isolation.",
+          "note": "Focused retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Eight migration tests pass in full T-05 run.",
+          "note": "TC-126 tracked separately."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "m1-migration-fixture-isolation",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-014",
+      "ac_reference": "FR-06; D-06; D-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-01 clock assertion 1",
+      "status": "resolved",
+      "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Runner could not read helper file: stale Docker bind mount. No assertions executed.",
+          "note": "Recreated project database container without deleting its volume."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All five DB-01 assertions passed.",
+          "note": "Retested after container recreation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-05 run: all five pgTAP assertions pass.",
+          "note": "Lint, typecheck, 17 unit tests and nine integration tests also pass. A ledger formatting check was corrected with Prettier before the final run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
         }
       ],
       "regression_of": null,
@@ -348,113 +572,163 @@
       "retraction_reason": null
     },
     {
-      "tc_reference": "TC-011",
-      "ac_reference": "PRD D-34; T-04 acceptance",
-      "milestone": "M0 — Setup",
-      "title": "Reset host and database safety",
-      "description": "Specification-derived migration safety checks in an isolated disposable database.",
-      "steps_to_reproduce": [
-        "Start the project database.",
-        "Run pnpm test:concurrency."
-      ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "tc_reference": "TC-015",
+      "ac_reference": "FR-06; D-06; D-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-01 clock assertion 2",
       "status": "resolved",
-      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
       "attempts": [
         {
           "result": "fail",
-          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
-          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+          "actual_result": "Runner could not read helper file: stale Docker bind mount. No assertions executed.",
+          "note": "Recreated project database container without deleting its volume."
         },
         {
           "result": "pass",
-          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
-          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+          "actual_result": "All five DB-01 assertions passed.",
+          "note": "Retested after container recreation."
         },
         {
           "result": "pass",
-          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
-          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+          "actual_result": "Final T-05 run: all five pgTAP assertions pass.",
+          "note": "Lint, typecheck, 17 unit tests and nine integration tests also pass. A ledger formatting check was corrected with Prettier before the final run."
         },
         {
           "result": "pass",
-          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
-          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+          "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
         }
       ],
       "regression_of": null,
-      "root_cause_group": "integration-test-lint",
+      "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
     },
     {
-      "tc_reference": "TC-012",
-      "ac_reference": "PRD D-22; T-04 acceptance",
-      "milestone": "M0 — Setup",
-      "title": "Environment SQL safety and substitutions",
-      "description": "Specification-derived migration safety checks in an isolated disposable database.",
-      "steps_to_reproduce": [
-        "Start the project database.",
-        "Run pnpm test:concurrency."
-      ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "tc_reference": "TC-016",
+      "ac_reference": "FR-06; D-06; D-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-01 clock assertion 3",
       "status": "resolved",
-      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
       "attempts": [
         {
           "result": "fail",
-          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
-          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+          "actual_result": "Runner could not read helper file: stale Docker bind mount. No assertions executed.",
+          "note": "Recreated project database container without deleting its volume."
         },
         {
           "result": "pass",
-          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
-          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+          "actual_result": "All five DB-01 assertions passed.",
+          "note": "Retested after container recreation."
         },
         {
           "result": "pass",
-          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
-          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+          "actual_result": "Final T-05 run: all five pgTAP assertions pass.",
+          "note": "Lint, typecheck, 17 unit tests and nine integration tests also pass. A ledger formatting check was corrected with Prettier before the final run."
         },
         {
           "result": "pass",
-          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
-          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+          "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
         }
       ],
       "regression_of": null,
-      "root_cause_group": "integration-test-lint",
+      "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
     },
     {
-      "tc_reference": "TC-013",
-      "ac_reference": "PRD D-05; T-04 acceptance",
-      "milestone": "M0 — Setup",
-      "title": "Migration transaction rollback",
-      "description": "Specification-derived migration safety checks in an isolated disposable database.",
-      "steps_to_reproduce": [
-        "Start the project database.",
-        "Run pnpm test:concurrency."
-      ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "tc_reference": "TC-017",
+      "ac_reference": "FR-06; D-06; D-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-01 clock assertion 4",
       "status": "resolved",
-      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
       "attempts": [
         {
-          "result": "pass",
-          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
-          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+          "result": "fail",
+          "actual_result": "Runner could not read helper file: stale Docker bind mount. No assertions executed.",
+          "note": "Recreated project database container without deleting its volume."
         },
         {
           "result": "pass",
-          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
-          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+          "actual_result": "All five DB-01 assertions passed.",
+          "note": "Retested after container recreation."
         },
         {
           "result": "pass",
-          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
-          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+          "actual_result": "Final T-05 run: all five pgTAP assertions pass.",
+          "note": "Lint, typecheck, 17 unit tests and nine integration tests also pass. A ledger formatting check was corrected with Prettier before the final run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-018",
+      "ac_reference": "FR-06; D-06; D-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-01 clock assertion 5",
+      "status": "resolved",
+      "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Runner could not read helper file: stale Docker bind mount. No assertions executed.",
+          "note": "Recreated project database container without deleting its volume."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All five DB-01 assertions passed.",
+          "note": "Retested after container recreation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-05 run: all five pgTAP assertions pass.",
+          "note": "Lint, typecheck, 17 unit tests and nine integration tests also pass. A ledger formatting check was corrected with Prettier before the final run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-126",
+      "ac_reference": "D-46; T-05 acceptance",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "Staged environment rate-limit overrides",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "All override values matched, but locale collation differed from fixture ordering.",
+          "note": "Use explicit C collation in this fixture query; ordering is not a product requirement."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused regression test passed; full suite subsequently passed all nine integration tests.",
+          "note": "Explicit fixture collation; override values unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
         }
       ],
       "regression_of": null,

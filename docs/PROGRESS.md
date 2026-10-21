@@ -10,7 +10,7 @@ Updated: 2026-10-21.
 - Commits use Git directly with explicit messages and no attribution trailers; existing Claude/Aider attribution settings retained.
 - GitHub creation, remote configuration and pushes approved (D-44); CI will be verified per task.
 - All five project documents read before setup. Owner decisions override conflicting deployment-region and load-run instructions (PRD D-42/D-43).
-- M0 (T-01–T-04) is complete. All four task PRs passed CI before merge. Stopped at the milestone boundary; T-05 has not started.
+- M0 (T-01–T-04) is complete. All four task PRs passed CI before merge. Owner approved continuing into M1. T-05 specification review found an environment SQL dependency conflict; owner approved the correction (D-46).
 
 ## Tasks
 
@@ -22,7 +22,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-02 | Env module, logger, server-only boundaries         | done   | cd4606f          |
 | T-03 | Postgres image and compose database                | done   | 03ee16b          |
 | T-04 | Migration runner, reset and env SQL                | done   | b2b1c27          |
-| T-05 | Foundation migration and pgTAP harness             | todo   | —                |
+| T-05 | Foundation migration and pgTAP harness             | done   | cd1bd5d          |
 | T-06 | Core tables, constraints, indexes                  | todo   | —                |
 | T-07 | Increment ladder                                   | todo   | —                |
 | T-08 | Lifecycle internals                                | todo   | —                |
@@ -69,7 +69,9 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. GitHub creation and the isolated local Docker database lifecycle approved on 2026-10-21 (D-44/D-45).
+None. T-05 environment dependency correction approved (D-46).
+
+- GitHub creation and the isolated local Docker database lifecycle remain approved (D-44/D-45).
 
 ## Verification limits
 
@@ -84,3 +86,9 @@ None. GitHub creation and the isolated local Docker database lifecycle approved 
 - Task PRs: [T-01](https://github.com/firatkill/bidlock/pull/1), [T-02](https://github.com/firatkill/bidlock/pull/2), [T-03](https://github.com/firatkill/bidlock/pull/3), [T-04](https://github.com/firatkill/bidlock/pull/4).
 - Final task CI: https://github.com/firatkill/bidlock/actions/runs/39565265815.
 - No unresolved M0 questions. Auction schema, business tests, browser QA and production deployment remain in M1–M7.
+
+## M1 progress
+
+- T-05 complete: foundation migration, five DB-01 assertions, pgTAP CI job, and approved staged environment setup (D-46).
+- Local verification: lint, typecheck, 17 unit tests, five pgTAP assertions and nine migration integration tests pass.
+- [T-05 PR](https://github.com/firatkill/bidlock/pull/5) passed all three [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39567084402).
