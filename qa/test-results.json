@@ -2535,6 +2535,177 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-066",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 lazy close via `auction_state`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-098",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-10 \u2014 `auction_state` of the finished lot returns `next_public_auction_id`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-092",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 `create_bidder` 21st within an hour \u2192 `RATE_LIMITED`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-100",
+      "ac_reference": "FR-08; FR-20; FR-25; FR-70",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-11 \u2014 `auction_state` key set equals the documented list",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-101",
+      "ac_reference": "FR-08; FR-20; FR-25; FR-70",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-11 \u2014 `null` for stranger on sandbox",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-102",
+      "ac_reference": "FR-08; FR-20; FR-25; FR-70",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-11 \u2014 `list_bids` newest page, `cursor`, `after`, `next_cursor` null at the end",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-103",
+      "ac_reference": "FR-08; FR-20; FR-25; FR-70",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-11 \u2014 `get_me` returns active sandbox and only non-expired open offers",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-104",
+      "ac_reference": "FR-08; FR-20; FR-25; FR-70",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-11 \u2014 `get_me` of a bot \u2192 null",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-105",
+      "ac_reference": "FR-08; FR-20; FR-25; FR-70",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-11 \u2014 `stats()` counts",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
+          "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

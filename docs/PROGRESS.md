@@ -32,7 +32,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-12 | Scheduler path and closing tests                   | done   | 4c28431          |
 | T-13 | Settlement                                         | done   | c413084          |
 | T-14 | Rate limiter                                       | done   | 6f06b1c          |
-| T-15 | Read and identity functions                        | todo   | —                |
+| T-15 | Read and identity functions                        | done   | 0e0e221          |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | todo   | —                |
 | T-17 | Concurrency integration tests                      | todo   | —                |
 | T-18 | DB client and repo layer                           | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. D-49 approved: TC-066 and TC-098 remain explicitly deferred to T-15 and required before M1 completion.
+None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -114,3 +114,5 @@ None. D-49 approved: TC-066 and TC-098 remain explicitly deferred to T-15 and re
 - T-13 complete: [PR #13](https://github.com/firatkill/bidlock/pull/13), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39570875624), task commit `c413084`.
 
 - T-14 complete: [PR #14](https://github.com/firatkill/bidlock/pull/14), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39571473276), task commit `6f06b1c`.
+
+- T-15 complete: [PR #15](https://github.com/firatkill/bidlock/pull/15), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39571994600), task commit `0e0e221`.

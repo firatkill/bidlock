@@ -38,5 +38,8 @@ select is((select count(*) from ip_hits where retry=0),200::bigint,'TC-089 two h
 select ok((select retry from ip_hits where n=201)>0,'TC-089 201st IP hit limited');
 select is((select retry from ip_hits where n=201),750,'TC-090 exact milliseconds to window end');
 select throws_ok($$select bidlock.rate_hit('missing','fixture',bidlock.bidlock_now())$$,'BLK20','unknown rate limit missing','TC-091 unknown limit rejected');
+create temporary table guests as select n,bidlock.create_bidder('guest-fixture') as r from generate_series(1,21) n;
+select is((select count(*) from guests where r->>'outcome'='accepted'),20::bigint,'TC-092 first twenty guests accepted');
+select is((select r->>'error_code' from guests where n=21),'RATE_LIMITED','TC-092 guest twenty-one limited');
 select * from finish();
 rollback;
