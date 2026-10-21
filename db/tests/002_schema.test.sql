@@ -1,5 +1,6 @@
 begin;
 select no_plan();
+select bidlock_test.clean();
 select bidlock_test.set_now('2026-01-01 12:00:00+00');
 select has_table('bidlock', 'bidders', 'TC-019 DB-02 bidders exists');
 select col_type_is('bidlock', 'bidders', 'id', 'uuid', 'TC-019 DB-02 bidders.id');

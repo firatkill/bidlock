@@ -34,7 +34,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-14 | Rate limiter                                       | done   | 6f06b1c          |
 | T-15 | Read and identity functions                        | done   | 0e0e221          |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | done   | ae025e2          |
-| T-17 | Concurrency integration tests                      | todo   | —                |
+| T-17 | Concurrency integration tests                      | doing  | —                |
 | T-18 | DB client and repo layer                           | todo   | —                |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | todo   | —                |
 | T-20 | Session cookie, names, /api/me                     | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
+T-17: INT-01 remains green when only the `place_bid` lock is removed because `advance_auction_locked` re-locks the same row. Original SQL restored. Approval requested to correct the mutation acceptance check to remove both locks. Normal INT-01 and all eight INT-02 scenarios pass. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 

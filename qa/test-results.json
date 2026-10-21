@@ -320,6 +320,11 @@
           "result": "pass",
           "actual_result": "Eight migration tests pass in full T-05 run.",
           "note": "TC-126 tracked separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -370,6 +375,11 @@
           "result": "pass",
           "actual_result": "Eight migration tests pass in full T-05 run.",
           "note": "TC-126 tracked separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -425,6 +435,11 @@
           "result": "pass",
           "actual_result": "Eight migration tests pass in full T-05 run.",
           "note": "TC-126 tracked separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -480,6 +495,11 @@
           "result": "pass",
           "actual_result": "Eight migration tests pass in full T-05 run.",
           "note": "TC-126 tracked separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -530,6 +550,11 @@
           "result": "pass",
           "actual_result": "Eight migration tests pass in full T-05 run.",
           "note": "TC-126 tracked separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -579,6 +604,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -628,6 +658,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -677,6 +712,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -726,6 +766,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -775,6 +820,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -829,6 +879,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -869,6 +924,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -898,6 +958,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -927,6 +992,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -956,10 +1026,30 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "fail",
+          "actual_result": "DB-02 aborted while preparing its public-auction uniqueness fixture because INT-02 had left an open public auction.",
+          "note": "Previously passed on a reset database; add the required transactional clean helper so this global constraint test is independent of prior integration runs."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused DB-02 produced 109 passing assertions but pg_prove read a transient truncated statement at the end of the just-written bind-mounted file.",
+          "note": "Host and container now both show the complete finish()/rollback tail; retry the same unchanged file after mount synchronization."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused DB-02 passed all 109 assertions with pre-existing integration data.",
+          "note": "Transactional clean() isolates the uniqueness fixture; unchanged file passed after the Docker bind mount synchronized."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
-      "regression_of": null,
-      "root_cause_group": null,
+      "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
+      "root_cause_group": "shared-public-auction-fixture",
       "clickup_task": null,
       "retraction_reason": null
     },
@@ -985,6 +1075,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1029,6 +1124,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1058,6 +1158,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1092,6 +1197,11 @@
           "result": "pass",
           "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
           "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,
@@ -1116,6 +1226,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1140,6 +1255,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1164,6 +1284,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1188,6 +1313,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1212,6 +1342,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1236,6 +1371,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1265,6 +1405,11 @@
           "result": "pass",
           "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
           "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 37 unit tests passed; lint and typecheck passed.",
+          "note": "Final T-17 regression verification."
         }
       ],
       "regression_of": null,
@@ -1294,6 +1439,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1313,6 +1463,11 @@
           "result": "pass",
           "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
           "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1337,6 +1492,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1356,6 +1516,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1375,6 +1540,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1394,6 +1564,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1413,6 +1588,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1432,6 +1612,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1451,6 +1636,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1470,6 +1660,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1489,6 +1684,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1508,6 +1708,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1527,6 +1732,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1546,6 +1756,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1565,6 +1780,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1584,6 +1804,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1603,6 +1828,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1622,6 +1852,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1641,6 +1876,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1660,6 +1900,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1679,6 +1924,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1698,6 +1948,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1717,6 +1972,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1736,6 +1996,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1755,6 +2020,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1774,6 +2044,11 @@
           "result": "pass",
           "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
           "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1793,6 +2068,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1812,6 +2092,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1831,6 +2116,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1850,6 +2140,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1869,6 +2164,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1888,6 +2188,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1907,6 +2212,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1926,6 +2236,11 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1945,6 +2260,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1964,6 +2284,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -1983,6 +2308,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2002,6 +2332,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2021,6 +2356,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2040,6 +2380,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2059,6 +2404,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2078,6 +2428,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2097,6 +2452,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2116,6 +2476,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2135,6 +2500,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2154,6 +2524,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2173,6 +2548,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2192,6 +2572,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2211,6 +2596,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2230,6 +2620,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2249,6 +2644,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2268,6 +2668,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2287,6 +2692,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2306,6 +2716,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2325,6 +2740,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2344,6 +2764,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2363,6 +2788,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2387,6 +2817,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2406,6 +2841,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2425,6 +2865,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2444,6 +2889,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2463,6 +2913,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2482,6 +2937,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2501,6 +2961,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2520,6 +2985,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2539,6 +3009,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2558,6 +3033,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2577,6 +3057,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2596,6 +3081,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2615,6 +3105,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2634,6 +3129,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2653,6 +3153,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2672,6 +3177,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2691,6 +3201,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2710,6 +3225,11 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2729,6 +3249,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2748,6 +3273,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2767,6 +3297,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2786,6 +3321,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2805,6 +3345,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2824,6 +3369,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2843,6 +3393,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2862,6 +3417,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2881,6 +3441,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2900,6 +3465,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2919,6 +3489,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2938,6 +3513,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2957,6 +3537,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2976,6 +3561,11 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
         }
       ],
       "regression_of": null,
@@ -2995,6 +3585,69 @@
           "result": "pass",
           "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
+          "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-122",
+      "ac_reference": "FR-91; INV-01\u2013INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "INT-01 \u2014 500 parallel bids from 200 bidders preserve all eight assertions in TRD \u00a715.3, including at least 20 accepted bids",
+      "status": "pending_decision",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "500 fresh calls completed, but only 3 accepted bids versus the required minimum of 20.",
+          "note": "All 500 state reads queued ahead of bidding; inspecting connection scheduling without weakening the assertion."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused INT-01 passed all assertions, including at least 20 accepted bids, in 18.69 seconds.",
+          "note": "Reserve one of the specified 50 app connections before reading state so the 500 concurrent calls do not enqueue every read ahead of every bid; all assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Single-lock mutation unexpectedly passed INT-01 in 5.46 seconds; the lifecycle function retains its second auction lock. Original place_bid restored automatically.",
+          "note": "Normal correctness test passes, but T-17 mutation acceptance remains pending owner approval to remove both locks; see docs/PROGRESS.md."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner (repository override: owner decision, no ClickUp)",
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-123",
+      "ac_reference": "FR-91; FR-04; FR-08; FR-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "INT-02 \u2014 Each of the eight locking, idempotency, payment, public-room and sandbox races in TRD \u00a715.3 returns its specified result",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight INT-02 race scenarios passed.",
+          "note": "Initial T-17 integration run; INT-01 workload failure tracked separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
+          "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
         }
       ],
       "regression_of": null,

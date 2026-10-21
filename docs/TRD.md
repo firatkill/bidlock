@@ -2921,10 +2921,10 @@ union all
 select 'INV-12', 'bid_count equals accepted bids', count(*)::int from a where a.bid_count <> (select count(*) from b)
 union all
 select 'INV-13', 'valid status / payment_state pair', count(*)::int
-  from a where not ((a.status in ('scheduled','live') and a.payment_state is null)
+  from a where ((a.status in ('scheduled','live') and a.payment_state is null)
                  or (a.status = 'closed' and a.payment_state in ('awaiting_payment','offered_to_runner_up'))
                  or (a.status = 'settled' and a.payment_state = 'paid')
-                 or (a.status = 'unsold' and (a.payment_state is null or a.payment_state = 'expired')))
+                 or (a.status = 'unsold' and (a.payment_state is null or a.payment_state = 'expired'))) is not true
 order by 1;
 ```
 
