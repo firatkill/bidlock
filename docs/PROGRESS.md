@@ -30,7 +30,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-10 | pgTAP: bid rules and idempotency                   | done   | 80c7c44          |
 | T-11 | pgTAP: soft close                                  | done   | ea6438c          |
 | T-12 | Scheduler path and closing tests                   | done   | 4c28431          |
-| T-13 | Settlement                                         | todo   | —                |
+| T-13 | Settlement                                         | doing  | —                |
 | T-14 | Rate limiter                                       | todo   | —                |
 | T-15 | Read and identity functions                        | todo   | —                |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | todo   | —                |
