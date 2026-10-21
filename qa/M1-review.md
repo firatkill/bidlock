@@ -1,6 +1,6 @@
 # M1 — QA milestone review
 
-Date: 2026-10-21. Reviewed after [M1-report.md](M1-report.md). Closure is pending the T-17 mutation decision and PR CI.
+Date: 2026-10-21. Reviewed after [M1-report.md](M1-report.md). Closure is pending the T-17 mutation decision ; PR CI passed.
 
 | Check                | Verdict                  | Evidence                                                                                                                                                    |
 | -------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -27,4 +27,4 @@ All local SQL correctness checks pass. The mutation assumption in T-17 does not 
 
 ## Closure
 
-Not ready to close: owner mutation decision and T-17 PR CI remain. T-18 has not started.
+Not ready to close: the owner mutation decision remains. All four T-17 [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39574190011) passed on `b290db9`. T-18 has not started.

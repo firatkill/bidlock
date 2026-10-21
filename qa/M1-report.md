@@ -1,6 +1,6 @@
 # M1 — Schema, functions and pgTAP QA report
 
-Date: 2026-10-21. Scope: T-05–T-17. T-05–T-16 passed PR CI and merged. T-17 closure remains pending the owner’s correction of its lock-removal acceptance check and final CI.
+Date: 2026-10-21. Scope: T-05–T-17. T-05–T-16 passed PR CI and merged. T-17 closure remains pending the owner’s correction of its lock-removal acceptance check with CI passing.
 
 ## Resolved cases
 
@@ -157,4 +157,4 @@ The API and auction UI are not implemented. No Playwright/browser QA, production
 
 ## Final verification
 
-Final local checks passed: lint, typecheck, 37 unit tests, 363 pgTAP assertions, and all 19 integration tests in 10.79 seconds after reset. The ledger checker passes with append-only history intact. T-17 PR CI is pending. Earlier task PR and CI links are recorded in [progress](../docs/PROGRESS.md).
+Final local checks passed: lint, typecheck, 37 unit tests, 363 pgTAP assertions, and all 19 integration tests in 10.79 seconds after reset. The ledger checker passes with append-only history intact. [T-17 PR #17](https://github.com/firatkill/bidlock/pull/17) passed all four [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39574190011) on `b290db9`; only the mutation acceptance decision remains. Earlier task PR and CI links are recorded in [progress](../docs/PROGRESS.md).
