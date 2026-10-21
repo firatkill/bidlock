@@ -684,3 +684,4 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-54 | Define shared feed event types in `src/domain/feed.ts` during T-27; change events carry `receivedAt`, and T-28 re-exports these types from the feed interface. Runtime feeds remain T-28. | owner approved 2026-10-21 | Resolves task ordering and keeps extension receipt timing pure. |
 
 | D-55 | Cap history pagination at the newest 100 rows; remove Show earlier bids at that cap or when history is exhausted. | owner approved 2026-10-21 | Keeps visible pagination consistent with the reconciler retention limit. |
+| D-56 | Supply non-secret CI-only server environment placeholders during production and E2E builds; E2E uses its local test database, production build uses an unused localhost URL. | owner approved 2026-10-21 | Next route collection initializes validated server configuration; TRD §16.1 omitted required variables. No GitHub secrets or external services. |

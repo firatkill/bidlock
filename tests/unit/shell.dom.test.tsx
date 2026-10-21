@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, expect, test, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Shell } from "@/components/shell/Shell";
@@ -18,6 +18,11 @@ const me = Me.parse({
   active_sandbox: null,
   open_offers: [],
   server_now: "2026-01-01T00:00:00Z",
+});
+// Module transformation belongs to unit setup, not the dialog's UI wait.
+// E2E TC-171 exercises the actual cold, deferred browser import.
+beforeAll(async () => {
+  await import("@/components/shell/NameDialog");
 });
 beforeEach(() => {
   vi.mocked(useMe).mockReturnValue(me);
@@ -64,7 +69,9 @@ test("TC-171: name dialog validates exact errors and saves with pending/success 
     </Shell>,
   );
   await user.click(screen.getByRole("button", { name: copy.edit }));
-  expect(screen.getByRole("dialog", { name: copy.name.title })).toBeTruthy();
+  expect(
+    await screen.findByRole("dialog", { name: copy.name.title }),
+  ).toBeTruthy();
   expect(screen.getByText(copy.name.help)).toBeTruthy();
   const field = screen.getByRole("textbox", { name: copy.name.label });
   for (const [value, error] of [
@@ -113,11 +120,14 @@ test("TC-171: failed save keeps dialog and exact error, Cancel returns focus", a
   );
   const edit = screen.getByRole("button", { name: copy.edit });
   await user.click(edit);
+  await screen.findByRole("dialog", { name: copy.name.title });
   await user.click(screen.getByRole("button", { name: copy.name.save }));
   expect(screen.getByRole("alert").textContent).toBe(copy.name.failure);
   await user.click(screen.getByRole("button", { name: copy.name.cancel }));
   expect(screen.queryByRole("dialog")).toBeNull();
-  expect(document.activeElement).toBe(edit);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: copy.edit }),
+  );
 });
 test("TC-172: theme cycles system to light to dark and persists", async () => {
   const user = userEvent.setup();

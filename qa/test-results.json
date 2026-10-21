@@ -55,6 +55,11 @@
           "result": "pass",
           "actual_result": "After separating Vitest project include patterns, exactly one smoke test runs; coverage, lint and typecheck pass.",
           "note": "Frozen install also passed; build was already verified and no application code changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -119,6 +124,11 @@
           "result": "pass",
           "actual_result": "Unit checks, strict lint, typecheck and build passed.",
           "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -143,6 +153,11 @@
           "result": "pass",
           "actual_result": "Unit checks, strict lint, typecheck and build passed.",
           "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -172,6 +187,11 @@
           "result": "pass",
           "actual_result": "Unit checks, strict lint, typecheck and build passed.",
           "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -201,6 +221,11 @@
           "result": "pass",
           "actual_result": "Unit checks, strict lint, typecheck and build passed.",
           "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -225,6 +250,11 @@
           "result": "pass",
           "actual_result": "Unit checks, strict lint, typecheck and build passed.",
           "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -1800,6 +1830,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 54 unit tests pass.",
           "note": "Existing increment coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5545,6 +5580,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5579,6 +5619,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5613,6 +5658,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5647,6 +5697,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5681,6 +5736,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5715,6 +5775,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5744,6 +5809,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5773,6 +5843,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5802,6 +5877,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5831,6 +5911,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5860,6 +5945,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5889,6 +5979,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5918,6 +6013,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5947,6 +6047,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -5976,6 +6081,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6116,6 +6226,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6140,6 +6255,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6164,6 +6284,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6188,6 +6313,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6604,6 +6734,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6633,6 +6768,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6667,6 +6807,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6696,6 +6841,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6754,6 +6904,21 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell retest passed navigation and readonly/not-found checks.",
+          "note": "Other shell failures retained separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell retest: all five tests passed in 2.05s with unchanged timeouts and assertions.",
+          "note": "Preloaded dialog module in unit setup; real cold import remains covered by E2E. Prior host-loaded failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6793,6 +6958,56 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Deferred dialog exposed synchronous DOM-test assumptions: tests queried before the module loaded and retained the replaced trigger node. Await the dialog and assert focus on the visible Edit control; preserve all validation and save assertions.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused rebuilt production tests pass: deferred name dialog opens/saves/restores Edit focus, initial script transfer stays below 180 KiB; all five shell DOM tests pass.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full local unit run: async dialog wait missed while build ran concurrently (142/143 passed). No timeout changes; rerun focused after build completes.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell DOM retest passed all five cases after build completed.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full suite again missed dialog discovery while first importing/transforming the lazy module; focused and production browser tests pass. Preload module in unit setup so assertions measure dialog behavior, while E2E retains real first-load coverage.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused shell retest: name validation exceeded 5s; subsequent failed-save alert and theme-cycle assertions failed.",
+          "note": "After unit import preload; host load average 29.50. Investigating run interference without changing timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell retest: all five tests passed in 2.05s with unchanged timeouts and assertions.",
+          "note": "Preloaded dialog module in unit setup; real cold import remains covered by E2E. Prior host-loaded failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6832,6 +7047,21 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused shell retest: name validation exceeded 5s; subsequent failed-save alert and theme-cycle assertions failed.",
+          "note": "After unit import preload; host load average 29.50. Investigating run interference without changing timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell retest: all five tests passed in 2.05s with unchanged timeouts and assertions.",
+          "note": "Preloaded dialog module in unit setup; real cold import remains covered by E2E. Prior host-loaded failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6861,6 +7091,11 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6895,6 +7130,11 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6919,6 +7159,21 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell retest passed navigation and readonly/not-found checks.",
+          "note": "Other shell failures retained separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell retest: all five tests passed in 2.05s with unchanged timeouts and assertions.",
+          "note": "Preloaded dialog module in unit setup; real cold import remains covered by E2E. Prior host-loaded failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -6977,6 +7232,11 @@
           "result": "pass",
           "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
           "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7006,6 +7266,11 @@
           "result": "pass",
           "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
           "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7035,6 +7300,11 @@
           "result": "pass",
           "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
           "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7064,6 +7334,11 @@
           "result": "pass",
           "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
           "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7103,6 +7378,11 @@
           "result": "pass",
           "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
           "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7127,6 +7407,11 @@
           "result": "pass",
           "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
           "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7166,6 +7451,11 @@
           "result": "pass",
           "actual_result": "T-28 final checks pass: lint, typecheck and 104 unit tests.",
           "note": "Polling acceptance covered with fake timers and mocked HTTP; no server/SQL changes. Browser flows follow in T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7195,6 +7485,11 @@
           "result": "pass",
           "actual_result": "T-28 final checks pass: lint, typecheck and 104 unit tests.",
           "note": "Polling acceptance covered with fake timers and mocked HTTP; no server/SQL changes. Browser flows follow in T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7224,6 +7519,11 @@
           "result": "pass",
           "actual_result": "T-28 final checks pass: lint, typecheck and 104 unit tests.",
           "note": "Polling acceptance covered with fake timers and mocked HTTP; no server/SQL changes. Browser flows follow in T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7248,6 +7548,11 @@
           "result": "pass",
           "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
           "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7272,6 +7577,11 @@
           "result": "pass",
           "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
           "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7296,6 +7606,11 @@
           "result": "pass",
           "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
           "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7330,6 +7645,11 @@
           "result": "pass",
           "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
           "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7389,6 +7709,11 @@
           "result": "pass",
           "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
           "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7433,6 +7758,11 @@
           "result": "pass",
           "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
           "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7477,6 +7807,11 @@
           "result": "pass",
           "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
           "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7526,6 +7861,11 @@
           "result": "pass",
           "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
           "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7580,6 +7920,11 @@
           "result": "pass",
           "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
           "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7604,6 +7949,11 @@
           "result": "pass",
           "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
           "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7638,6 +7988,11 @@
           "result": "pass",
           "actual_result": "Final T-31 checks pass: lint, typecheck and 138 unit tests.",
           "note": "Real hosted Supabase delivery not exercised; mocked contract/fallback and lazy-import behavior verified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7672,6 +8027,11 @@
           "result": "pass",
           "actual_result": "Final T-31 checks pass: lint, typecheck and 138 unit tests.",
           "note": "Real hosted Supabase delivery not exercised; mocked contract/fallback and lazy-import behavior verified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7701,6 +8061,11 @@
           "result": "pass",
           "actual_result": "Final T-31 checks pass: lint, typecheck and 138 unit tests.",
           "note": "Real hosted Supabase delivery not exercised; mocked contract/fallback and lazy-import behavior verified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7745,6 +8110,11 @@
           "result": "pass",
           "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7784,6 +8154,11 @@
           "result": "pass",
           "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7828,6 +8203,11 @@
           "result": "pass",
           "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
         }
       ],
       "regression_of": null,
@@ -7871,6 +8251,293 @@
         {
           "result": "pass",
           "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 25 files and 143 tests passed.",
+          "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-203",
+      "ac_reference": "NFR-20; NFR-22",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Automated accessibility and keyboard",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Typecheck found axe bound to transitive playwright-core 1.57 while test runner uses 1.64.1; aligning its supported peer with runner.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Peer alignment install was blocked by write permissions in the shared pnpm store; typecheck/build still report the same peer mismatch. Retry using a repository-local store.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Harness TypeScript and focused ESLint pass with axe peer aligned to playwright-core 1.64.1.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Initial parallel E2E checks passed: room axe light/dark, keyboard bid, mobile reduced motion/no sockets, missing/scheduled states. Isolated lobby and rate checks did not run because parallel dependency failed; still pending full-suite verification.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-207",
+      "ac_reference": "FR-92",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "E2E project isolation and CI",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "ESLint treats Playwright fixture callback named use as a React hook; rename fixture callback.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Playwright fixture callback renamed; focused ESLint passes.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Harness TypeScript and focused ESLint pass with axe peer aligned to playwright-core 1.64.1.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI run 39626318945: production and polling E2E builds fail during route collection because TRD workflow omits required build-time server env. Local checks pass. Owner approval requested for CI-only placeholder configuration; see docs/PROGRESS.md.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Documentation-only CI rerun 39627248839 reproduced the previously reported missing build environment before D-56 approval. Owner then explicitly approved correction and continuing T-33.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Initial D-56 local edit placed E2E placeholders under service env; YAML lint and E2E build failed. Corrected placement to job env. Production build already passed with its placeholders.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR #33 CI run 39630388760 passed all six jobs: production build, polling E2E, lint/typecheck/unit/guards, pgTAP, concurrency integration and database tooling.",
+          "note": "D-56 verified on effabbb; milestone CI gate satisfied. https://github.com/firatkill/bidlock/actions/runs/39630388760"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-201",
+      "ac_reference": "FR-20; FR-51; FR-52; FR-85",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "HTTP browser-context contract",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial E2E run used idempotency key in a header and expected 200 for first acceptance. TRD 10.6 requires body idempotency_key and first acceptance 201; fix test to spec.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected HTTP tests pass, including 201 acceptance, 200 replay, 422 mismatch and signed cross-auction token rejection.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-206",
+      "ac_reference": "NFR-15",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Production initial script budget",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "E2E-09 measured 191426 initial script bytes, exceeding the 184320-byte budget. Investigating deferred dialog loading.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused run inadvertently included dependency project tests against the unchanged pre-optimization build: same 191426 bytes. Use --no-deps for focused isolated runs and rebuild before budget retest.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused rebuilt production tests pass: deferred name dialog opens/saves/restores Edit focus, initial script transfer stays below 180 KiB; all five shell DOM tests pass.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-202",
+      "ac_reference": "US-02; US-04; FR-63",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Two bidders stay synchronized",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "E2E-02 two independent bidders passed: quick/keyboard/stale bids, price and leader updates, outbid alert and correct You history rows.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-204",
+      "ac_reference": "NFR-23; FR-46",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Mobile overflow reduced motion and polling transport",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial parallel E2E checks passed: room axe light/dark, keyboard bid, mobile reduced motion/no sockets, missing/scheduled states. Isolated lobby and rate checks did not run because parallel dependency failed; still pending full-suite verification.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-205",
+      "ac_reference": "FR-37; FR-67",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Rate-limited and scheduled browser states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial parallel E2E checks passed: room axe light/dark, keyboard bid, mobile reduced motion/no sockets, missing/scheduled states. Isolated lobby and rate checks did not run because parallel dependency failed; still pending full-suite verification.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-208",
+      "ac_reference": "FR-40; FR-45; NFR-20",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Live two-browser countdown and mobile review",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Live CUA review: independent Chrome/Brave guests showed $10 then $11, matching leader/outbid/history state. Chrome 360x740 screenshot showed readable price, buttons, custom field and outbid copy. Separate 45-second auction observed at 0:35, 0:11 and 0:05, then server closure removed countdown/bid controls. Chrome error/warn log empty. Test clock restored to zero; QA tabs closed and viewport reset. Transient Closing frame was not captured visually; deterministic unit coverage remains. Hosted Broadcast not exercised.",
           "note": ""
         }
       ],

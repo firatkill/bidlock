@@ -125,3 +125,86 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm db:reset --no-pgtap
       - run: pnpm test:concurrency
+
+  e2e:
+    name: e2e (polling feed)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: bidlock_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -h 127.0.0.1 -U postgres"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      # D-56: non-secret build configuration; E2E runtime uses playwright.config.ts.
+      APP_ENV: test
+      DEMO_MODE: "on"
+      TEST_API_SECRET: e2e-test-secret
+      DB_POOL_MAX: "10"
+      SESSION_SECRET: ci-session-placeholder-0123456789abcdef
+      BOT_TOKEN_SECRET: ci-bot-placeholder-0123456789abcdef0123
+      IP_HASH_SALT: ci-salt-placeholder
+      APP_ORIGIN: http://localhost:3100
+      TRUST_PROXY: none
+      DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:5432/bidlock_test
+      DATABASE_URL: postgres://bidlock_app:bidlock_app@localhost:5432/bidlock_test
+      NEXT_PUBLIC_FEED: polling
+      NEXT_PUBLIC_POLL_INTERVAL_MS: "1000"
+      NEXT_PUBLIC_REPO_URL: https://github.com/firatkill/bidlock
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:reset --no-pgtap
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 7
+
+  build:
+    name: production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      APP_ENV: production
+      # D-56: build-only placeholders, never deployed or used for external access.
+      DATABASE_URL: postgres://unused:unused@localhost:5432/bidlock_build_unused
+      DEMO_MODE: "off"
+      DB_POOL_MAX: "10"
+      SESSION_SECRET: ci-session-placeholder-0123456789abcdef
+      BOT_TOKEN_SECRET: ci-bot-placeholder-0123456789abcdef0123
+      IP_HASH_SALT: ci-salt-placeholder
+      APP_ORIGIN: http://localhost:3100
+      TRUST_PROXY: none
+      NEXT_PUBLIC_FEED: broadcast
+      NEXT_PUBLIC_POLL_INTERVAL_MS: "2000"
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-placeholder
+      NEXT_PUBLIC_REPO_URL: https://github.com/firatkill/bidlock
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: First-load JS budget for /a/[id] (NFR-15)
+        run: node scripts/check-bundle.mjs --route "/a/[id]" --max-kb 180
