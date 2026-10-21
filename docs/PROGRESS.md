@@ -33,7 +33,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-13 | Settlement                                         | done   | c413084          |
 | T-14 | Rate limiter                                       | done   | 6f06b1c          |
 | T-15 | Read and identity functions                        | done   | 0e0e221          |
-| T-16 | Sandboxes, cleanup, test support, realtime trigger | todo   | —                |
+| T-16 | Sandboxes, cleanup, test support, realtime trigger | doing  | —                |
 | T-17 | Concurrency integration tests                      | todo   | —                |
 | T-18 | DB client and repo layer                           | todo   | —                |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | todo   | —                |

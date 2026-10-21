@@ -1024,6 +1024,11 @@
           "result": "pass",
           "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
           "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
         }
       ],
       "regression_of": null,
@@ -2377,6 +2382,11 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
         }
       ],
       "regression_of": null,
@@ -2700,6 +2710,291 @@
           "result": "pass",
           "actual_result": "T-15: 318 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests pass.",
           "note": "Both D-49 deferred assertions completed. Exact AuctionState key set verified with results_eq; profile reads do not mutate expired offers."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-106",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 create \u2192 accepted, live auction of 2 min at 2000, 3 bots with personas",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-107",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 second create \u2192 `SANDBOX_EXISTS` with same ids",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-108",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 after the sandbox auction becomes `settled`, a new create succeeds",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-109",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 `max_active_sandboxes = 2` \u2192 third owner gets `SANDBOX_CAPACITY`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-110",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 IP limit (reset to 5) \u2192 6th \u2192 `RATE_LIMITED`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-111",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 `sandbox_bots` null for non-owner and after expiry",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-112",
+      "ac_reference": "FR-40\u2013FR-49",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-12 \u2014 `cleanup_expired()` deletes sandboxes that expired before UTC midnight (with all rows), keeps today's, deletes public auctions older than 7 days, deletes idle bidders older than 30 days only when unreferenced",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-113",
+      "ac_reference": "FR-20; D-19",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-13 \u2014 create stub `realtime.send` (schema `realtime`, logs calls into a temp table)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-114",
+      "ac_reference": "FR-20; D-19",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-13 \u2014 `realtime_mode='broadcast'`: one call per accepted bid with topic `auction:<id>`, event `auction_changed`, payload `version` and `bid.bid_no`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-115",
+      "ac_reference": "FR-20; D-19",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-13 \u2014 one call per lifecycle transition",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-116",
+      "ac_reference": "FR-20; D-19",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-13 \u2014 no call on a rejected bid without transition",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-117",
+      "ac_reference": "FR-20; D-19",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-13 \u2014 stub that raises \u2192 bid still accepted",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-118",
+      "ac_reference": "FR-20; D-19",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-13 \u2014 `realtime_mode='none'` \u2192 no calls",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-120",
+      "ac_reference": "FR-52",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-15 \u2014 `create_test_auction` and `set_test_clock` work when env=test",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-121",
+      "ac_reference": "FR-52",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-15 \u2014 with env=prod both throw `BLK30`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16: all 15 pgTAP files pass (363 assertions), plus lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Realtime uses a local stub, including an intentional failing publisher. Production guards tested in rolled-back SQL transactions; live Supabase delivery remains unverified."
         }
       ],
       "regression_of": null,

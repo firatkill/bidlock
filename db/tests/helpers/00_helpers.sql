@@ -42,3 +42,9 @@ begin
   end if;
 end $$;
 revoke execute on all functions in schema bidlock_test from public;
+
+create or replace function bidlock_test.sandbox(owner uuid)
+returns bidlock.sandbox_result language sql security definer set search_path=bidlock,pg_temp as $$
+  select * from bidlock.create_sandbox(owner,replace(gen_random_uuid()::text,'-',''),42);
+$$;
+revoke execute on all functions in schema bidlock_test from public;
