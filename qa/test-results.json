@@ -6165,6 +6165,150 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-154",
+      "ac_reference": "FR-04; FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Accepted bid and replay HTTP mapping",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused API write tests pass.",
+          "note": "Covers accepted/replayed bids, rejection details and replay, mismatched keys, rate limits, settlement and authentication. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
+          "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-155",
+      "ac_reference": "FR-50; FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Bid rejection details",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused API write tests pass.",
+          "note": "Covers accepted/replayed bids, rejection details and replay, mismatched keys, rate limits, settlement and authentication. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
+          "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-156",
+      "ac_reference": "FR-04",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Idempotency mismatch HTTP mapping",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused API write tests pass.",
+          "note": "Covers accepted/replayed bids, rejection details and replay, mismatched keys, rate limits, settlement and authentication. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
+          "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-157",
+      "ac_reference": "FR-37",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Bid rate-limit HTTP mapping",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused API write tests pass.",
+          "note": "Covers accepted/replayed bids, rejection details and replay, mismatched keys, rate limits, settlement and authentication. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
+          "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-158",
+      "ac_reference": "FR-11",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Payment success and rejection",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused API write tests pass.",
+          "note": "Covers accepted/replayed bids, rejection details and replay, mismatched keys, rate limits, settlement and authentication. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
+          "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-159",
+      "ac_reference": "FR-20; FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Mutation authentication",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused API write tests pass.",
+          "note": "Covers accepted/replayed bids, rejection details and replay, mismatched keys, rate limits, settlement and authentication. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
+          "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
