@@ -2363,7 +2363,7 @@ Rules:
 2. `change` with `version <= auction.version`: ignore.
 3. `change` with `version === auction.version + 1`: merge the change fields into `auction`, increment version. If `change.bid` and `change.bid.bid_no === lastBidNo + 1`: prepend it. If `change.bid` with a larger gap: `pendingBidsAfter = lastBidNo`. If `status` or `payment_state` differs from the held value: `pendingRefetch = true` (offers are not in the payload).
 4. `change` with `version > auction.version + 1`: merge the fields (they are the newest) and set `pendingRefetch = true` and `pendingBidsAfter = lastBidNo`.
-5. `bids`: insert each bid not already present by `bid_no`; sort newest first; trim to 100; update `lastBidNo`.
+5. `bids`: insert each bid not already present by `bid_no`; sort newest first; trim to 100; update `lastBidNo`. History pagination stops at the newest 100 visible rows (D-55).
 6. Extension detection: when `extension_count` increases, set `lastExtension = { n, durationMs: new ends_at − bid.placed_at (or last_extension.at), at: event.receivedAt }`. Receipt time is supplied by the feed boundary (D-54), never read by the reducer.
 7. Derived values (`min_next_bid`, `max_bid`, `increment`) are recomputed with `src/domain/increments.ts` after a `change` and replaced by the server's values at the next snapshot.
 

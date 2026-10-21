@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-Pending: approve capping history pagination at the newest 100 rows, matching the reducer retention limit; bid-panel work continues independently. D-54 is approved.
+None. D-55 approves the newest-100 history pagination cap.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -186,3 +186,5 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 - T-29 complete: [PR #29](https://github.com/firatkill/bidlock/pull/29), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39607568756), task commit `0a7de99`.
 
 - T-30 independent bid-panel work passes lint/typecheck/build, 129 unit tests, 363 pgTAP assertions and 44 integration tests (9.21 s). Local production two-browser flow verifies quick/keyboard/custom bids, accepted/outbid notices and validation; mobile prefix spacing fixed. History pagination TC-193 remains pending owner approval of the newest-100 cap; T-30 is not complete.
+
+- T-30 D-55 implemented: history paging stops at the newest 100 rows or exhaustion. Final checks: 132 unit tests, lint/typecheck/build and local production two-bidder/history acceptance pass. Final PR CI pending.

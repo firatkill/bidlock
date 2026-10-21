@@ -5,6 +5,7 @@ import { useLiveAnnouncer } from "@/client/hooks/useLiveAnnouncer";
 import type { placeBid } from "@/client/api";
 import { formatCents } from "@/domain/money";
 import { fillCopy } from "@/domain/copy";
+import { BidHistory } from "./BidHistory";
 import { BidPanel } from "./BidPanel";
 import { useAuctionRoom } from "@/client/hooks/useAuctionRoom";
 import { roomCopy as copy } from "@/domain/copy";
@@ -103,6 +104,15 @@ export function AuctionRoom({
             max={auction.max_extensions}
           />
         </div>
+        <BidHistory
+          auctionId={auction.id}
+          bids={room.bids}
+          viewerId={room.me?.id ?? null}
+          extendBySeconds={auction.extend_by_s}
+          onBids={(bids) => {
+            room.apply({ kind: "bids", bids });
+          }}
+        />
       </div>
     </main>
   );

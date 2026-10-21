@@ -7384,6 +7384,11 @@
           "result": "pass",
           "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
           "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
+          "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
         }
       ],
       "regression_of": null,
@@ -7423,6 +7428,11 @@
           "result": "pass",
           "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
           "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
+          "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
         }
       ],
       "regression_of": null,
@@ -7462,6 +7472,11 @@
           "result": "pass",
           "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
           "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
+          "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
         }
       ],
       "regression_of": null,
@@ -7506,6 +7521,11 @@
           "result": "pass",
           "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
           "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
+          "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
         }
       ],
       "regression_of": null,
@@ -7555,6 +7575,35 @@
           "result": "pass",
           "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
           "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
+          "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-193",
+      "ac_reference": "FR-47",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Bid history paging and labels",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Three history tests pass: exact labels/local time/badges, twenty-row pagination, exhaustion and approved newest-100 cap.",
+          "note": "D-55 recorded before implementation; no test skipped or weakened."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-30 checks pass: 132 unit tests, lint/typecheck/build; production two-bidder flow also verifies three history rows and viewer badges.",
+          "note": "D-55 approved cap implemented; prior 363 pgTAP and 44 integration tests remain valid with no further SQL/server changes."
         }
       ],
       "regression_of": null,

@@ -72,6 +72,14 @@ try {
   await expect(
     first.getByText("Bid placed: $13.00. You are the highest bidder."),
   ).toBeVisible({ timeout: 3000 });
+  await expect(
+    first.getByRole("region", { name: "Bid history" }).getByRole("listitem"),
+  ).toHaveCount(3, { timeout: 3000 });
+  await expect(
+    first
+      .getByRole("region", { name: "Bid history" })
+      .getByText("You", { exact: true }),
+  ).toHaveCount(2, { timeout: 3000 });
   assert.deepEqual(errors, []);
   await mkdir("qa/screenshots/T-30", { recursive: true });
   for (const [page, name] of [
