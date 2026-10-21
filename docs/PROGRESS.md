@@ -33,7 +33,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-13 | Settlement                                         | done   | c413084          |
 | T-14 | Rate limiter                                       | done   | 6f06b1c          |
 | T-15 | Read and identity functions                        | done   | 0e0e221          |
-| T-16 | Sandboxes, cleanup, test support, realtime trigger | todo   | —                |
+| T-16 | Sandboxes, cleanup, test support, realtime trigger | done   | ae025e2          |
 | T-17 | Concurrency integration tests                      | todo   | —                |
 | T-18 | DB client and repo layer                           | todo   | —                |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | todo   | —                |
@@ -116,3 +116,5 @@ None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
 - T-14 complete: [PR #14](https://github.com/firatkill/bidlock/pull/14), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39571473276), task commit `6f06b1c`.
 
 - T-15 complete: [PR #15](https://github.com/firatkill/bidlock/pull/15), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39571994600), task commit `0e0e221`.
+
+- T-16 complete: [PR #16](https://github.com/firatkill/bidlock/pull/16), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39572606913), task commit `ae025e2`.

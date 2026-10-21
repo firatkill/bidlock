@@ -112,6 +112,7 @@ select throws_ok('select bidlock.close_due_auctions()', '42501', null, 'TC-025 a
 select throws_ok('select bidlock.advance_auction_locked(null::bidlock.auctions, clock_timestamp())', '42501', null, 'TC-025 app cannot call bidlock.advance_auction_locked');
 select throws_ok('select bidlock.ensure_public_auction()', '42501', null, 'TC-025 app cannot call bidlock.ensure_public_auction');
 select throws_ok($$select bidlock.rate_hit('bid_ip_60s','fixture',clock_timestamp())$$, '42501', null, 'TC-025 app cannot call rate_hit');
+select throws_ok('select bidlock.cleanup_expired()', '42501', null, 'TC-025 app cannot call cleanup_expired');
 reset role;
 create role bidlock_probe nologin;
 select is((select count(*) from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'bidlock' and has_function_privilege('bidlock_probe', p.oid, 'execute')), 0::bigint, 'TC-026 DB-02 no PUBLIC function execute');

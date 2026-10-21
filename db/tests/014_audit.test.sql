@@ -1,8 +1,7 @@
 begin;
 select no_plan();
 select bidlock_test.set_now('2026-01-01 12:00:00+00');
-select bidlock_test.auction(starts_offset_s => 10) as aid, bidlock_test.bidder() as a, bidlock_test.bidder() as b \gset
-select bidlock._event(:'aid','auction_created',null,'{}',bidlock.bidlock_now());
+select bidlock.create_test_auction(p_duration_s => 300, p_starts_in_s => 10) as aid, bidlock_test.bidder() as a, bidlock_test.bidder() as b \gset
 select bidlock_test.set_now('2026-01-01 12:00:10+00');
 select bidlock_test.bid(:'aid',:'a',1000);
 select bidlock_test.set_now('2026-01-01 12:00:20+00');
