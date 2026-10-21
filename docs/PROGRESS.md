@@ -40,7 +40,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-20 | Session cookie, names, /api/me                     | done   | a744db1          |
 | T-21 | IP hashing and rate-limit integration              | done   | 7a46266          |
 | T-22 | Read endpoints                                     | done   | 75c82d1          |
-| T-23 | Mutating endpoints: bids and pay                   | todo   | —                |
+| T-23 | Mutating endpoints: bids and pay                   | doing  | —                |
 | T-24 | Test-only endpoints and health                     | todo   | —                |
 | T-25 | Security headers and CSP                           | todo   | —                |
 | T-26 | Design tokens, shell and name dialog               | todo   | —                |
