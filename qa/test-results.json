@@ -5705,6 +5705,294 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-135",
+      "ac_reference": "FR-20",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Signed session round trip",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-136",
+      "ac_reference": "FR-20",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Session rejects tampering and malformed fields",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-137",
+      "ac_reference": "FR-20; D-35",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Session time bounds",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-138",
+      "ac_reference": "FR-20",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Session rotation and sliding renewal",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-139",
+      "ac_reference": "FR-22",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Name normalization",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-140",
+      "ac_reference": "FR-22",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Name length and character validation",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-141",
+      "ac_reference": "FR-22",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Human names cannot impersonate bots",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-142",
+      "ac_reference": "FR-22",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Profanity normalization",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight dedicated session/name unit cases pass.",
+          "note": "Includes code-point boundaries, tampering, age/skew limits, previous secret and renewal."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-143",
+      "ac_reference": "FR-20; FR-21",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Guest creation and cookie attributes",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Guest creation/reuse/renewal, deleted-bidder recovery and strict Unicode rename integration pass.",
+          "note": "Real route handlers against local PostgreSQL."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-144",
+      "ac_reference": "FR-24",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Deleted guest recovery",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Guest creation/reuse/renewal, deleted-bidder recovery and strict Unicode rename integration pass.",
+          "note": "Real route handlers against local PostgreSQL."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-145",
+      "ac_reference": "FR-22; FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Rename authenticated guest",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Guest creation/reuse/renewal, deleted-bidder recovery and strict Unicode rename integration pass.",
+          "note": "Real route handlers against local PostgreSQL."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-146",
+      "ac_reference": "FR-25",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Guest creation limit maps to HTTP",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Rate-limit fixture selected nonexistent limit_name/subject columns.",
+          "note": "Use the documented bucket key and parse saved rows strictly; restore own counter in finally."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
+          "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

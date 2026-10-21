@@ -4,5 +4,6 @@ const config: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   typedRoutes: true,
+  agentRules: false,
 };
 export default config;
