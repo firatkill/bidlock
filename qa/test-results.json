@@ -1,0 +1,32 @@
+{
+  "project": "Bidlock",
+  "cases": [
+    {
+      "tc_reference": "—",
+      "ac_reference": "AGENTS.md Repository setup and Authorship",
+      "milestone": null,
+      "title": "Repository setup identity and commit hook",
+      "description": "Verify the required identity and attribution controls before implementation.",
+      "steps_to_reproduce": [
+        "Check Git author and committer identity and core.hooksPath.",
+        "Check hook syntax and executable permission.",
+        "Run the hook on a temporary message containing attribution and with incorrect author/committer identities.",
+        "Inspect the initial commit metadata."
+      ],
+      "expected_result": "Required owner identity; attribution removed; incorrect identities rejected; initial commit contains only the requested message.",
+      "status": "resolved",
+      "environment": "Local macOS, Git CLI; Codex CLI 0.163.0",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All setup checks passed; initial commit 9ec3283 has required author and committer with no attribution.",
+          "note": "Temporary hook fixtures were confined to .git and removed. No application tests exist yet."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    }
+  ]
+}
