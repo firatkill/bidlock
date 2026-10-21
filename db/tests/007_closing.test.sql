@@ -49,5 +49,12 @@ select bidlock_test.set_now('2026-01-01 12:05:00+00');
 select is(bidlock.close_due_auctions(), 1, 'TC-073 batch continues after one failure');
 select is((select status from bidlock.auctions where id=:'good_id'), 'unsold', 'TC-073 healthy auction advanced');
 select is((select status from bidlock.auctions where id=(select id from failing_auction)), 'live', 'TC-073 failed auction rolled back');
+drop trigger test_fail_one on bidlock.auctions;
+select bidlock_test.set_now('2026-01-01 12:00:00+00');
+select bidlock_test.auction(snipe => 0) as read_id, bidlock_test.bidder() as reader \gset
+select bidlock_test.bid(:'read_id',:'reader',1000);
+select bidlock_test.set_now('2026-01-01 12:05:01+00');
+select is(bidlock.auction_state(:'read_id',:'reader')->>'status','closed','TC-066 state read closes due auction');
+select is((select rank from bidlock.offers where auction_id=:'read_id'),1::smallint,'TC-066 state read creates winner offer');
 select * from finish();
 rollback;

@@ -32,7 +32,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-12 | Scheduler path and closing tests                   | done   | 4c28431          |
 | T-13 | Settlement                                         | done   | c413084          |
 | T-14 | Rate limiter                                       | done   | 6f06b1c          |
-| T-15 | Read and identity functions                        | todo   | —                |
+| T-15 | Read and identity functions                        | doing  | —                |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | todo   | —                |
 | T-17 | Concurrency integration tests                      | todo   | —                |
 | T-18 | DB client and repo layer                           | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. D-49 approved: TC-066 and TC-098 remain explicitly deferred to T-15 and required before M1 completion.
+None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 

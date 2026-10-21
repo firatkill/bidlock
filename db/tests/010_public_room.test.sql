@@ -18,5 +18,6 @@ select is((select starts_at from bidlock.auctions where id=:'next_id'), '2026-01
 select bidlock_test.set_now('2026-01-01 12:05:15+00');
 select is(bidlock.ensure_public_auction(), :'next_id'::uuid, 'TC-097 same lot starts lazily');
 select is((select status from bidlock.auctions where id=:'next_id'), 'live', 'TC-097 next lot now live');
+select is(bidlock.auction_state(:'aid',null)->>'next_public_auction_id',:'next_id','TC-098 finished public state links next lot');
 select * from finish();
 rollback;
