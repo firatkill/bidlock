@@ -47,7 +47,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-27 | Client domain utilities                            | done   | 5cbd6cc          |
 | T-28 | AuctionFeed interface and PollingFeed              | done   | 91a11bf          |
 | T-29 | Auction room: read-only parts                      | done   | 0a7de99          |
-| T-30 | Bid panel and bid history                          | todo   | —                |
+| T-30 | Bid panel and bid history                          | done   | 04e78fe          |
 | T-31 | SupabaseBroadcastFeed                              | todo   | —                |
 | T-32 | Lobby                                              | todo   | —                |
 | T-33 | Playwright harness, two-bidder e2e, CI e2e job     | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. D-54 approves shared domain feed types and change-event receipt timestamps.
+None. D-55 approves the newest-100 history pagination cap.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -184,3 +184,9 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 - T-29 local checks pass: lint/typecheck, build, 110 unit tests, 363 pgTAP assertions and 44 integration tests (11.40 s). Production Chromium room checks cover 360/1280 light/dark, missing auctions, no overflow/runtime errors and zero serious/critical axe findings. PR CI pending.
 
 - T-29 complete: [PR #29](https://github.com/firatkill/bidlock/pull/29), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39607568756), task commit `0a7de99`.
+
+- T-30 independent bid-panel work passes lint/typecheck/build, 129 unit tests, 363 pgTAP assertions and 44 integration tests (9.21 s). Local production two-browser flow verifies quick/keyboard/custom bids, accepted/outbid notices and validation; mobile prefix spacing fixed. History pagination TC-193 remains pending owner approval of the newest-100 cap; T-30 is not complete.
+
+- T-30 D-55 implemented: history paging stops at the newest 100 rows or exhaustion. Final checks: 132 unit tests, lint/typecheck/build and local production two-bidder/history acceptance pass. Final PR CI pending.
+
+- T-30 complete: [PR #30](https://github.com/firatkill/bidlock/pull/30), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39621203639), task commit `04e78fe`.

@@ -521,7 +521,7 @@ Bid history (right column, heading "Bid history"):
 |---|---|
 | Row | "#{bid_no}" (mono), "{name}" with badges "You" / "BOT", "{amount}" (mono, right aligned), "{HH:mm:ss}"; rows that extended the close carry tag "+0:30" with `title` "This bid extended the close" |
 | Empty | "No bids yet." |
-| Pagination | Button "Show earlier bids" (loads 20 older rows); when exhausted the button is removed |
+| Pagination | Button "Show earlier bids" (loads 20 older rows); when exhausted or the newest 100 rows are shown the button is removed (D-55) |
 | Loading older | "Loading…" |
 | New rows | Prepended at the top, max 100 rows kept in memory; new row background fades from accent-tint to none in 600 ms (disabled under reduced motion) |
 
@@ -682,3 +682,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-53 | Add `POST /api/client-errors` accepting only a generated UUID, with the existing Origin/body/demo-mode guards; log the occurrence without browser message, stack, cookie or personal data. Error pages show the existing logged-ID sentence only after confirmation. | owner approved 2026-10-21 | T-26 error copy needs a truthful server-log reference for browser-only rendering failures. |
 
 | D-54 | Define shared feed event types in `src/domain/feed.ts` during T-27; change events carry `receivedAt`, and T-28 re-exports these types from the feed interface. Runtime feeds remain T-28. | owner approved 2026-10-21 | Resolves task ordering and keeps extension receipt timing pure. |
+
+| D-55 | Cap history pagination at the newest 100 rows; remove Show earlier bids at that cap or when history is exhausted. | owner approved 2026-10-21 | Keeps visible pagination consistent with the reconciler retention limit. |

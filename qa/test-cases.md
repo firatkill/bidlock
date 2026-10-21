@@ -2288,7 +2288,7 @@ Cases designed from PRD §9, TRD §11/§15 and T-26–T-33 before implementation
 - Automatable: yes
 - Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
 - Steps: Render empty and bid rows with You/BOT/extension; load earlier page to exhaustion.
-- Expected result: Exact row labels, local time, extension tooltip, 20-row page request, button removed when exhausted, max100 rows.
+- Expected result: Exact row labels, local time, extension tooltip, 20-row page request, button removed when exhausted or 100 rows are visible (approved D-55), max100 rows.
 
 ## TC-194: Broadcast subscription and validation
 

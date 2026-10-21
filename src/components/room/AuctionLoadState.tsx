@@ -19,9 +19,11 @@ export function AuctionNotFound() {
 export function AuctionLoadState({
   auctionId,
   initialError = false,
+  readonly = false,
 }: {
   auctionId: string;
   initialError?: boolean;
+  readonly?: boolean;
 }) {
   const [error, setError] = useState(initialError);
   const [missing, setMissing] = useState(false);
@@ -74,7 +76,13 @@ export function AuctionLoadState({
   }, [auctionId, initialError]);
   if (missing) return <AuctionNotFound />;
   if (data)
-    return <AuctionRoom initial={data.auction} initialBids={data.bids} />;
+    return (
+      <AuctionRoom
+        initial={data.auction}
+        initialBids={data.bids}
+        readonly={readonly}
+      />
+    );
   return (
     <main>
       <p role="status" className={error ? "text-ink-2" : "sr-only"}>
