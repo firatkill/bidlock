@@ -31,7 +31,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-11 | pgTAP: soft close                                  | done   | ea6438c          |
 | T-12 | Scheduler path and closing tests                   | done   | 4c28431          |
 | T-13 | Settlement                                         | done   | c413084          |
-| T-14 | Rate limiter                                       | todo   | —                |
+| T-14 | Rate limiter                                       | done   | 6f06b1c          |
 | T-15 | Read and identity functions                        | todo   | —                |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | todo   | —                |
 | T-17 | Concurrency integration tests                      | todo   | —                |
@@ -112,3 +112,5 @@ None. D-49 approved: TC-066 and TC-098 remain explicitly deferred to T-15 and re
 - T-12 complete: [PR #12](https://github.com/firatkill/bidlock/pull/12), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39570492066), task commit `4c28431`.
 
 - T-13 complete: [PR #13](https://github.com/firatkill/bidlock/pull/13), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39570875624), task commit `c413084`.
+
+- T-14 complete: [PR #14](https://github.com/firatkill/bidlock/pull/14), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39571473276), task commit `6f06b1c`.

@@ -225,6 +225,8 @@ test("TC-013: a failing migration rolls back both DDL and ledger entry", async (
 
 test("TC-126: staged environment setup defers only absent rate limits", async () => {
   await run("reset.ts", ["--db", "bidlock_migrate_test", "--no-pgtap"]);
+  // Keep the absent-table stage covered even after migration 0008 exists.
+  await scratch`drop table if exists bidlock.rate_limits cascade`;
   await applyEnvironment({ url: scratchUrl, name: "test", noPgtap: true });
   await applyEnvironment({ url: scratchUrl, name: "load", noPgtap: true });
   const state = z
