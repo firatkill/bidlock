@@ -24,7 +24,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-04 | Migration runner, reset and env SQL                | done   | b2b1c27          |
 | T-05 | Foundation migration and pgTAP harness             | done   | cd1bd5d          |
 | T-06 | Core tables, constraints, indexes                  | done   | 8cb98cc          |
-| T-07 | Increment ladder                                   | todo   | —                |
+| T-07 | Increment ladder                                   | done   | 1426320          |
 | T-08 | Lifecycle internals                                | todo   | —                |
 | T-09 | place_bid                                          | todo   | —                |
 | T-10 | pgTAP: bid rules and idempotency                   | todo   | —                |
@@ -96,3 +96,5 @@ None. T-06 constraint correction approved (D-47).
 - [T-05 PR](https://github.com/firatkill/bidlock/pull/5) passed all three [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39567084402).
 
 - T-06 complete: [PR #6](https://github.com/firatkill/bidlock/pull/6), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39567684105), task commit `8cb98cc`.
+
+- T-07 complete: [PR #7](https://github.com/firatkill/bidlock/pull/7), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39568377523), task commit `1426320`.
