@@ -7133,6 +7133,103 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-181",
+      "ac_reference": "FR-46; FR-47",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Polling snapshots and ETags",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "ETag, gap pagination, retry and strict response cases pass.",
+          "note": "Focused T-28 run."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused lint rejects unused createFeed auction id parameter.",
+          "note": "Retain specified interface argument explicitly for T-31 transport selection."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All seven polling tests and focused lint pass.",
+          "note": "Fresh-response fixture corrected without changing timing expectations; late responses after unsubscribe suppressed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full lint rejects meaningless void used for the factory auction-id argument.",
+          "note": "Validate the factory id with the existing strict UUID schema instead."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-28 final checks pass: lint, typecheck and 104 unit tests.",
+          "note": "Polling acceptance covered with fake timers and mocked HTTP; no server/SQL changes. Browser flows follow in T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-182",
+      "ac_reference": "FR-48",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Polling failure and recovery",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "ETag, gap pagination, retry and strict response cases pass.",
+          "note": "Focused T-28 run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All seven polling tests and focused lint pass.",
+          "note": "Fresh-response fixture corrected without changing timing expectations; late responses after unsubscribe suppressed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-28 final checks pass: lint, typecheck and 104 unit tests.",
+          "note": "Polling acceptance covered with fake timers and mocked HTTP; no server/SQL changes. Browser flows follow in T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-183",
+      "ac_reference": "FR-46; FR-48",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Polling visibility and terminal behavior",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Private terminal test received four requests instead of ten.",
+          "note": "Mock reused a consumed Response body, causing artificial network backoff; return a fresh Response for each request."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All seven polling tests and focused lint pass.",
+          "note": "Fresh-response fixture corrected without changing timing expectations; late responses after unsubscribe suppressed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-28 final checks pass: lint, typecheck and 104 unit tests.",
+          "note": "Polling acceptance covered with fake timers and mocked HTTP; no server/SQL changes. Browser flows follow in T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

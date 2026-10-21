@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ErrorBody, Me } from "@/domain/schemas";
+import { AuctionState, BidsPage, ErrorBody, Me } from "@/domain/schemas";
 export class ApiError extends Error {
   constructor(
     public readonly status: number,
@@ -45,3 +45,41 @@ export const renameMe = (display_name: string) =>
     method: "PATCH",
     body: JSON.stringify({ display_name }),
   });
+
+/** Epoch time with a monotonic source, including after system clock changes. */
+export const localNow = () => performance.timeOrigin + performance.now();
+export async function fetchSnapshot(
+  auctionId: string,
+  etag: string | null = null,
+  signal?: AbortSignal,
+) {
+  const t0 = localNow();
+  const headers = new Headers();
+  if (etag) headers.set("If-None-Match", etag);
+  const response = await fetch(`/api/auctions/${auctionId}/state`, {
+    credentials: "same-origin",
+    cache: "no-store",
+    headers,
+    ...(signal ? { signal } : {}),
+  });
+  const receivedAt = localNow();
+  if (response.status === 304) return null;
+  const body: unknown = await response.json();
+  if (!response.ok) throw new ApiError(response.status, ErrorBody.parse(body));
+  return {
+    state: AuctionState.parse(body),
+    etag: response.headers.get("etag"),
+    receivedAt,
+    rttMs: receivedAt - t0,
+  };
+}
+export const fetchBidsAfter = (
+  auctionId: string,
+  after: number,
+  signal?: AbortSignal,
+) =>
+  request(
+    `/api/auctions/${auctionId}/bids?after=${String(after)}&limit=50`,
+    BidsPage,
+    signal ? { signal } : undefined,
+  );

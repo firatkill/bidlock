@@ -45,7 +45,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-25 | Security headers and CSP                           | done   | 6bd67c0          |
 | T-26 | Design tokens, shell and name dialog               | done   | 404178a          |
 | T-27 | Client domain utilities                            | done   | 5cbd6cc          |
-| T-28 | AuctionFeed interface and PollingFeed              | todo   | —                |
+| T-28 | AuctionFeed interface and PollingFeed              | doing  | —                |
 | T-29 | Auction room: read-only parts                      | todo   | —                |
 | T-30 | Bid panel and bid history                          | todo   | —                |
 | T-31 | SupabaseBroadcastFeed                              | todo   | —                |
@@ -176,3 +176,5 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 - T-27 final local checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21%. D-54 recorded, shared feed types and pure reconciler complete. PR CI pending.
 
 - T-27 complete: [PR #27](https://github.com/firatkill/bidlock/pull/27), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39605740702), task commit `5cbd6cc`.
+
+- T-28 local checks pass: lint, typecheck and 104 unit tests. Polling handles ETags, history gaps, reconnect backoff, visibility and terminal states; room/clock hooks are ready. PR CI pending.
