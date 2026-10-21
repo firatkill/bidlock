@@ -14,6 +14,7 @@ import { fillCopy, lobbyCopy as copy, sandboxCopy } from "@/domain/copy";
 import { auction } from "../fixtures/auction";
 import { request } from "@/client/api";
 import type { FeedHandlers } from "@/client/feed/AuctionFeed";
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 const mocks = vi.hoisted(() => ({
   handlers: new Map<string, FeedHandlers>(),
   stops: new Map<string, ReturnType<typeof vi.fn>>(),
@@ -112,7 +113,7 @@ test("TC-197: lobby intro, teaser and all public-card copy states", () => {
   );
   expect(screen.getByRole("status").textContent).toBe(copy.error);
 });
-test("TC-198: sandbox states have exact copy and creation remains disabled until T-36", () => {
+test("TC-198: sandbox states have exact copy and presentation without a start action remains disabled", () => {
   const view = render(<SandboxCard now={now} />);
   expect(screen.getByText(sandboxCopy.body)).toBeTruthy();
   expect(

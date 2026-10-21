@@ -70,6 +70,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -149,6 +154,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -188,6 +198,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -232,6 +247,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -276,6 +296,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -315,6 +340,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -2030,6 +2060,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6260,6 +6295,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6309,6 +6349,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6358,6 +6403,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6407,6 +6457,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6456,6 +6511,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6505,6 +6565,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6549,6 +6614,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6593,6 +6663,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6637,6 +6712,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6681,6 +6761,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6725,6 +6810,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6769,6 +6859,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6813,6 +6908,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6857,6 +6957,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -6901,6 +7006,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7076,6 +7186,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7115,6 +7230,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7154,6 +7274,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7193,6 +7318,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7689,6 +7819,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7733,6 +7868,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7782,6 +7922,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7826,6 +7971,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -7909,6 +8059,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8018,6 +8173,16 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8082,6 +8247,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8131,6 +8301,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8180,6 +8355,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8229,6 +8409,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8302,6 +8487,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8346,6 +8536,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8390,6 +8585,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8434,6 +8634,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8488,6 +8693,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8527,6 +8737,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8581,6 +8796,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8625,6 +8845,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8669,6 +8894,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8708,6 +8938,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8747,6 +8982,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8786,6 +9026,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8835,6 +9080,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8909,6 +9159,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -8968,6 +9223,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9027,6 +9287,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9091,6 +9356,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9160,6 +9430,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9199,6 +9474,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9248,6 +9528,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9297,6 +9582,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9341,6 +9631,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9400,6 +9695,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9454,6 +9754,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9513,6 +9818,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9572,6 +9882,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9626,6 +9941,11 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9729,6 +10049,11 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9778,6 +10103,11 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9817,6 +10147,11 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9856,6 +10191,11 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9895,6 +10235,11 @@
           "result": "pass",
           "actual_result": "Production polling build and all 14 browser regressions passed.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9948,6 +10293,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -9982,6 +10332,11 @@
           "result": "pass",
           "actual_result": "157 unit tests passed, including exact persona probability and interval boundaries.",
           "note": "T-35 final local verification; no SQL or server changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10191,6 +10546,11 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10230,6 +10590,11 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10269,6 +10634,11 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10308,6 +10678,11 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10347,6 +10722,11 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10396,6 +10776,11 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
         }
       ],
       "regression_of": null,
@@ -10445,6 +10830,123 @@
           "result": "pass",
           "actual_result": "PR #35 CI run 39635559095 passed all six jobs.",
           "note": "T-35 complete: https://github.com/firatkill/bidlock/actions/runs/39635559095"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-225",
+      "ac_reference": "FR-32; US-09",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Sandbox entry and status copy",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Nine focused sandbox/lobby component tests passed.",
+          "note": "Creation/pending/existing navigation, capacity 30s cooldown, rate/error/readonly copy, TTL header and bot statuses."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejects awaiting synchronous act callbacks in the new component tests.",
+          "note": "Use asynchronous act callbacks that flush the request promise before assertions."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused component retest and strict lint pass after asynchronous act correction.",
+          "note": "Assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 161 unit tests pass.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI run 39638410035 attempt 1: E2E job failed during next build before browser tests started; Turbopack Google font import processing reported next/font/google queries have exactly one entry.",
+          "note": "Infrastructure/build gate failure, not a failing browser assertion. Independent production-build job and local build passed on the same commit; rerunning only the failed CI job without code or assertion changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI run 39638410035 attempt 2: E2E build and full browser suite pass unchanged; all six CI jobs green.",
+          "note": "Initial Turbopack font-processing build failure was transient. No code, test assertions or timeouts changed for this rerun. Native manual evidence remains recorded separately in TC-227."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-226",
+      "ac_reference": "FR-33; FR-34; US-09",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Seeded sandbox bidding flow",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "First seeded sandbox browser flow passed: creation, 14:5x TTL header, three bots, bot counterbid, human leader and repeated-bot timestamps >=2000ms.",
+          "note": "Isolated project required because the flow visits the shared public lobby; unchanged 3s expect/90s test settings."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second consecutive seeded sandbox browser run passed.",
+          "note": "Repeated-bot timestamp spacing asserted; isolated project under AGENTS override."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Third consecutive seeded sandbox browser run passed.",
+          "note": "T-36 flake check satisfied with unique owner/sandbox data in each run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
+          "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI run 39638410035 attempt 1: E2E job failed during next build before browser tests started; Turbopack Google font import processing reported next/font/google queries have exactly one entry.",
+          "note": "Infrastructure/build gate failure, not a failing browser assertion. Independent production-build job and local build passed on the same commit; rerunning only the failed CI job without code or assertion changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI run 39638410035 attempt 2: E2E build and full browser suite pass unchanged; all six CI jobs green.",
+          "note": "Initial Turbopack font-processing build failure was transient. No code, test assertions or timeouts changed for this rerun. Native manual evidence remains recorded separately in TC-227."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-227",
+      "ac_reference": "FR-38; NFR-20",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Sandbox visual and background states",
+      "status": "resolved",
+      "environment": "Local production polling build; Chrome and native Brave; PostgreSQL 17.11 on localhost:54329",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Live Chrome and native Brave checks passed: sandbox creation, three chips/TTL/note, bot bids, human $120 acceptance, active-room return link, readable 360px header/chips/controls/history with no horizontal overflow, and actual hidden-tab pause/resume.",
+          "note": "Brave sandbox held at five bids while hidden; after foregrounding it resumed to seven, then accepted the human bid. With the tab hidden, the native DOM inspector showed the exact background-paused paragraph. Controlled Chrome kept reporting visible, so it was not used as pause evidence. Chrome console clear; Brave favicon.ico 404 recorded as a non-M4 asset limitation. Viewport, DevTools dock and own tabs restored/closed; own server stopped. Screenshot: qa/evidence/M4-mobile.jpg."
         }
       ],
       "regression_of": null,
