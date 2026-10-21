@@ -28,7 +28,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-08 | Lifecycle internals                                | done   | 6fe5866          |
 | T-09 | place_bid                                          | done   | 12f3921          |
 | T-10 | pgTAP: bid rules and idempotency                   | done   | 80c7c44          |
-| T-11 | pgTAP: soft close                                  | todo   | —                |
+| T-11 | pgTAP: soft close                                  | done   | ea6438c          |
 | T-12 | Scheduler path and closing tests                   | todo   | —                |
 | T-13 | Settlement                                         | todo   | —                |
 | T-14 | Rate limiter                                       | todo   | —                |
@@ -104,3 +104,5 @@ None. Constraint correction (D-47) and single-invocation SQL calls (D-48) approv
 - T-09 complete: [PR #9](https://github.com/firatkill/bidlock/pull/9), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39569232276), task commit `12f3921`.
 
 - T-10 complete: [PR #10](https://github.com/firatkill/bidlock/pull/10), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39569625770), task commit `80c7c44`.
+
+- T-11 complete: [PR #11](https://github.com/firatkill/bidlock/pull/11), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39570014492), task commit `ea6438c`.
