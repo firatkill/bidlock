@@ -7938,7 +7938,7 @@
       "ac_reference": "FR-92",
       "milestone": "M3 \u2014 UI and real-time",
       "title": "E2E project isolation and CI",
-      "status": "resolved",
+      "status": "pending_decision",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
         {
@@ -7960,11 +7960,16 @@
           "result": "pass",
           "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
           "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI run 39626318945: production and polling E2E builds fail during route collection because TRD workflow omits required build-time server env. Local checks pass. Owner approval requested for CI-only placeholder configuration; see docs/PROGRESS.md.",
+          "note": ""
         }
       ],
       "regression_of": null,
       "root_cause_group": null,
-      "clickup_task": null,
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner (owner checkpoint; no ClickUp per AGENTS.md)",
       "retraction_reason": null
     },
     {
@@ -8094,6 +8099,25 @@
         {
           "result": "pass",
           "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-208",
+      "ac_reference": "FR-40; FR-45; NFR-20",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Live two-browser countdown and mobile review",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Live CUA review: independent Chrome/Brave guests showed $10 then $11, matching leader/outbid/history state. Chrome 360x740 screenshot showed readable price, buttons, custom field and outbid copy. Separate 45-second auction observed at 0:35, 0:11 and 0:05, then server closure removed countdown/bid controls. Chrome error/warn log empty. Test clock restored to zero; QA tabs closed and viewport reset. Transient Closing frame was not captured visually; deterministic unit coverage remains. Hosted Broadcast not exercised.",
           "note": ""
         }
       ],
