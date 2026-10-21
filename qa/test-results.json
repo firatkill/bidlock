@@ -7230,6 +7230,112 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-184",
+      "ac_reference": "FR-61; FR-62",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Lot and price states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six room component tests pass.",
+          "note": "Exact copy, server-clock countdown, extension/recovery lifetimes and retry states."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
+          "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-185",
+      "ac_reference": "FR-40; FR-64",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Countdown conditions",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six room component tests pass.",
+          "note": "Exact copy, server-clock countdown, extension/recovery lifetimes and retry states."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
+          "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-186",
+      "ac_reference": "FR-65",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Extension banner lifecycle",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six room component tests pass.",
+          "note": "Exact copy, server-clock countdown, extension/recovery lifetimes and retry states."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
+          "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-187",
+      "ac_reference": "FR-67",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Connection and load states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six room component tests pass.",
+          "note": "Exact copy, server-clock countdown, extension/recovery lifetimes and retry states."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused lint rejects JSX returned inside a server data-fetch try block.",
+          "note": "Move rendering after the data-fetch try/catch; rendering failures remain handled by the existing error boundary."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused room lint passes after moving JSX outside the data-fetch try block.",
+          "note": "Component test expectations remain unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-29 checks pass: 110 unit tests, 363 pgTAP assertions, 44 integration tests (11.40 s), build, lint/typecheck. Local Chromium 360/1280 light/dark has no overflow or runtime errors and zero serious/critical axe findings.",
+          "note": "Production missing-auction view verified; screenshots in qa/screenshots/T-29. Full feed/bid E2E remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
