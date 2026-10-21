@@ -42,7 +42,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-22 | Read endpoints                                     | done   | 75c82d1          |
 | T-23 | Mutating endpoints: bids and pay                   | done   | 7320006          |
 | T-24 | Test-only endpoints and health                     | done   | 497f330          |
-| T-25 | Security headers and CSP                           | todo   | —                |
+| T-25 | Security headers and CSP                           | doing  | —                |
 | T-26 | Design tokens, shell and name dialog               | todo   | —                |
 | T-27 | Client domain utilities                            | todo   | —                |
 | T-28 | AuctionFeed interface and PollingFeed              | todo   | —                |
