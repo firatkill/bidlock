@@ -131,6 +131,8 @@ Conventions for every task:
 
 ### T-12 Scheduler path and closing tests
 
+- D-49: TC-066 (DB-07 lazy state-read close) and TC-098 (DB-10 next-public-ID response) run in T-15, where `auction_state` is introduced.
+
 - Goal: `close_due_auctions`, `expire_due_offers`, `_advance_one`, `generate_lot_title`, `ensure_public_auction`, `tick`; DB-07 and DB-10 with the cases listed in TRD §15.2, including the D-28 case (one failing auction does not stop the batch).
 - Files: `db/migrations/0007_scheduler.sql`, `db/tests/007_closing.test.sql`, `db/tests/010_public_room.test.sql`, extend DB-02 (app role cannot execute `tick`, `close_due_auctions`, `advance_auction_locked`).
 - Acceptance: `pnpm test:db` (DB-07, DB-10).
@@ -152,6 +154,8 @@ Conventions for every task:
 - Depends on: T-09. Covers: FR-37, D-10, D-11.
 
 ### T-15 Read and identity functions
+
+- D-49: complete deferred TC-066 in DB-07 and TC-098 in DB-10; both are required for M1 completion.
 
 - Goal: `create_bidder`, `rename_bidder`, `auction_state`, `list_bids`, `list_auctions`, `get_me`, `stats`; DB-11 and the `create_bidder` cases of DB-09.
 - Files: `db/migrations/0009_reads.sql`, `db/tests/011_reads.test.sql`, extend `009_rate_limits.test.sql`.

@@ -29,7 +29,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-09 | place_bid                                          | done   | 12f3921          |
 | T-10 | pgTAP: bid rules and idempotency                   | done   | 80c7c44          |
 | T-11 | pgTAP: soft close                                  | done   | ea6438c          |
-| T-12 | Scheduler path and closing tests                   | todo   | —                |
+| T-12 | Scheduler path and closing tests                   | doing  | —                |
 | T-13 | Settlement                                         | todo   | —                |
 | T-14 | Rate limiter                                       | todo   | —                |
 | T-15 | Read and identity functions                        | todo   | —                |
@@ -69,7 +69,9 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
+None. D-49 approved: TC-066 and TC-098 remain explicitly deferred to T-15 and required before M1 completion.
+
+- Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
 - T-05 environment dependency correction is approved and complete (D-46).
 
