@@ -46,7 +46,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-26 | Design tokens, shell and name dialog               | done   | 404178a          |
 | T-27 | Client domain utilities                            | done   | 5cbd6cc          |
 | T-28 | AuctionFeed interface and PollingFeed              | done   | 91a11bf          |
-| T-29 | Auction room: read-only parts                      | todo   | —                |
+| T-29 | Auction room: read-only parts                      | done   | 0a7de99          |
 | T-30 | Bid panel and bid history                          | todo   | —                |
 | T-31 | SupabaseBroadcastFeed                              | todo   | —                |
 | T-32 | Lobby                                              | todo   | —                |
@@ -180,3 +180,7 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 - T-28 local checks pass: lint, typecheck and 104 unit tests. Polling handles ETags, history gaps, reconnect backoff, visibility and terminal states; room/clock hooks are ready. PR CI pending.
 
 - T-28 complete: [PR #28](https://github.com/firatkill/bidlock/pull/28), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39606582000), task commit `91a11bf`.
+
+- T-29 local checks pass: lint/typecheck, build, 110 unit tests, 363 pgTAP assertions and 44 integration tests (11.40 s). Production Chromium room checks cover 360/1280 light/dark, missing auctions, no overflow/runtime errors and zero serious/critical axe findings. PR CI pending.
+
+- T-29 complete: [PR #29](https://github.com/firatkill/bidlock/pull/29), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39607568756), task commit `0a7de99`.
