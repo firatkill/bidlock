@@ -38,7 +38,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-18 | DB client and repo layer                           | done   | fff4b79          |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | done   | cc8d215          |
 | T-20 | Session cookie, names, /api/me                     | done   | a744db1          |
-| T-21 | IP hashing and rate-limit integration              | todo   | —                |
+| T-21 | IP hashing and rate-limit integration              | done   | 7a46266          |
 | T-22 | Read endpoints                                     | todo   | —                |
 | T-23 | Mutating endpoints: bids and pay                   | todo   | —                |
 | T-24 | Test-only endpoints and health                     | todo   | —                |
@@ -144,3 +144,5 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD a
 - T-20 local acceptance passes: session/name unit coverage, real identity route integration, rate response and live Next cookie check (port 3100; 3000 occupied). Final checks: 63 unit tests, 363 pgTAP assertions, 25 integration tests, lint/typecheck. D-51 IP helper implemented; dedicated IP acceptance remains T-21. D-52 preserves owner agent rules during Next dev. PR CI pending.
 
 - T-20 complete: [PR #20](https://github.com/firatkill/bidlock/pull/20), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39584701848), task commit `a744db1`.
+
+- T-21 complete: [PR #21](https://github.com/firatkill/bidlock/pull/21), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39585150915), task commit `7a46266`.

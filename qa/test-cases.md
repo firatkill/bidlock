@@ -1943,3 +1943,15 @@ All cases use local test data; HTTP integration calls precede the Playwright har
 - Preconditions: Valid signed fixture cookie, mocked existing/deleted bidder lookup.
 - Steps: Call required and optional session routes with valid, tampered, missing and deleted identities; call bot path before T-34.
 - Expected result: Existing verified identity attaches to context; required missing/invalid/deleted identity returns 401 NO_SESSION; optional invalid identity remains anonymous; bot path returns 401 BOT_TOKEN_INVALID until T-34.
+
+## TC-169: Rate-limited HTTP responses round Retry-After up to seconds
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-21
+- PRD / acceptance reference: FR-37; FR-51
+- TRD test ID / section: §10.6; T-21 acceptance
+- Priority: High
+- Automatable: yes
+- Preconditions: Wrapped handler raises RATE_LIMITED with known retry_after_ms.
+- Steps: Return retry delays of 1, 1000 and 1001 milliseconds.
+- Expected result: Status 429, Retry-After 1, 1 and 2 seconds respectively; exact retry_after_ms retained in details.

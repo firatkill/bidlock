@@ -5993,6 +5993,82 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-147",
+      "ac_reference": "FR-37",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Proxy trust and XFF selection",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
+          "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-148",
+      "ac_reference": "FR-37",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "IPv6 privacy prefix",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
+          "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-149",
+      "ac_reference": "FR-37; NFR-30",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Salted IP hash shape",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
+          "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-169",
+      "ac_reference": "FR-37; FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Rate-limited HTTP responses round Retry-After up to seconds",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
+          "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
