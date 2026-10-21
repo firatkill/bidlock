@@ -49,7 +49,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-29 | Auction room: read-only parts                      | done   | 0a7de99          |
 | T-30 | Bid panel and bid history                          | done   | 04e78fe          |
 | T-31 | SupabaseBroadcastFeed                              | done   | c95b3b9          |
-| T-32 | Lobby                                              | todo   | —                |
+| T-32 | Lobby                                              | doing  | —                |
 | T-33 | Playwright harness, two-bidder e2e, CI e2e job     | todo   | —                |
 | T-34 | Sandbox and bot-token endpoints                    | todo   | —                |
 | T-35 | Bot scheduler and runner                           | todo   | —                |
@@ -194,3 +194,5 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 - T-31 local checks pass: lint/typecheck and 138 unit tests. Strict Broadcast payloads, reconnect/safety/visibility refresh, permanent 2 s polling fallback and lazy import verified with mocks. Hosted Supabase delivery remains unverified until deployment. PR CI pending.
 
 - T-31 complete: [PR #31](https://github.com/firatkill/bidlock/pull/31), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39622322473), task commit `c95b3b9`.
+
+T-32: lobby cards, offer notices, strict benchmark union and empty state implemented. Local checks: 143 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/build; mobile/light and desktop/dark browser acceptance and axe pass. PR CI pending; full E2E harness follows in T-33.
