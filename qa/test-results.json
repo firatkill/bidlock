@@ -1009,6 +1009,11 @@
           "result": "pass",
           "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
           "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
         }
       ],
       "regression_of": null,
@@ -1269,6 +1274,11 @@
           "result": "pass",
           "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
           "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
         }
       ],
       "regression_of": null,
@@ -1901,6 +1911,234 @@
           "result": "pass",
           "actual_result": "T-11: all DB-06 cases pass; 225 total pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Clock moves are transaction-local; no sleeps or production traffic."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-065",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 lazy close via `place_bid` (status `closed`, offer rank 1, `closed_at = ends_at`, not the processing time)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-068",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 `close_due_auctions()` closes 3 due auctions and returns 3, second call returns 0",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-069",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 not-yet-due auction untouched",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-070",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 scheduled due \u2192 `live`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-071",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 scheduled with passed `ends_at` \u2192 `unsold` in one call",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-072",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 `tick()` returns counts and a public auction id",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-073",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 D-28: with a test-only `before update` trigger on `bidlock.auctions` (created inside the test transaction) that raises for one chosen auction id, `close_due_auctions()` still closes the other due auctions and the chosen one stays `live`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-094",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-10 \u2014 `ensure_public_auction()` creates one live public auction when none",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-095",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-10 \u2014 second call returns the same id",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-096",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-10 \u2014 inserting a second open public auction throws 23505",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-097",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-10 \u2014 after the public lot closes, the next has `starts_at = closed_at + 15 s` (`scheduled`) and becomes `live` lazily",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-099",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-10 \u2014 public lot defaults (start 1000, 5 minutes, no sandbox)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
+          "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
         }
       ],
       "regression_of": null,

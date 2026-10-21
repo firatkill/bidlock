@@ -29,3 +29,16 @@ returns bidlock.bid_result language sql security definer set search_path = bidlo
   select * from bidlock.place_bid(auction, bidder, amount, key);
 $$;
 revoke execute on all functions in schema bidlock_test from public;
+
+create or replace function bidlock_test.clean()
+returns void language plpgsql security definer set search_path=bidlock,pg_temp as $$
+begin
+  delete from bidlock.sandboxes;
+  delete from bidlock.auctions;
+  delete from bidlock.bidders;
+  -- Counters arrive in T-14; until then there are none to clean.
+  if to_regclass('bidlock.rate_counters') is not null then
+    delete from bidlock.rate_counters;
+  end if;
+end $$;
+revoke execute on all functions in schema bidlock_test from public;
