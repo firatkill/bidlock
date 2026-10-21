@@ -21,6 +21,10 @@ const origin = z
   .transform((value) => new URL(value).origin);
 const schema = z
   .object({
+    NEXT_PUBLIC_SUPABASE_URL: z.preprocess(
+      (value) => (value === "" ? undefined : value),
+      z.url().optional(),
+    ),
     APP_ENV: z.enum(["development", "test", "production"]),
     DATABASE_URL: z
       .url()

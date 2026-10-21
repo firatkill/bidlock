@@ -5467,6 +5467,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5501,6 +5506,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5530,6 +5540,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5559,6 +5574,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5588,6 +5608,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5617,6 +5642,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5646,6 +5676,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5675,6 +5710,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5699,6 +5739,11 @@
           "result": "pass",
           "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
           "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5723,6 +5768,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5747,6 +5797,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5771,6 +5826,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5795,6 +5855,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5819,6 +5884,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5843,6 +5913,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5867,6 +5942,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5891,6 +5971,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5915,6 +6000,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5939,6 +6029,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5963,6 +6058,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -5987,6 +6087,11 @@
           "result": "pass",
           "actual_result": "T-20 final checks pass: 63 unit tests, 363 pgTAP assertions and 25 integration tests (10.84 seconds), lint and typecheck.",
           "note": "Rate fixture corrected and focused retest passed. Local Next dev on port 3100 returned 200 Me and signed HttpOnly/SameSite=Lax cookie; port 3000 was occupied. API browser flows remain T-33; route handlers tested directly."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6006,6 +6111,11 @@
           "result": "pass",
           "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
           "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6025,6 +6135,11 @@
           "result": "pass",
           "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
           "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6044,6 +6159,11 @@
           "result": "pass",
           "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
           "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6063,6 +6183,11 @@
           "result": "pass",
           "actual_result": "All six focused IP/rate-header tests and 69 total unit tests pass; lint and typecheck pass.",
           "note": "D-51 helper implementation already passed server/SQL integration in T-20; this task adds dedicated UT-10 and Retry-After acceptance without server changes. Fixtures use documentation-only IP ranges."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6087,6 +6212,11 @@
           "result": "pass",
           "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
           "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6111,6 +6241,11 @@
           "result": "pass",
           "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
           "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6135,6 +6270,11 @@
           "result": "pass",
           "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
           "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6159,6 +6299,11 @@
           "result": "pass",
           "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
           "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6183,6 +6328,11 @@
           "result": "pass",
           "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
           "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6207,6 +6357,11 @@
           "result": "pass",
           "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
           "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6231,6 +6386,11 @@
           "result": "pass",
           "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
           "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6255,6 +6415,11 @@
           "result": "pass",
           "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
           "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6279,6 +6444,11 @@
           "result": "pass",
           "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
           "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6303,6 +6473,11 @@
           "result": "pass",
           "actual_result": "T-23 full regression passes: 69 unit tests, 363 SQL assertions and 35 integration tests in 16.71 seconds; lint and typecheck pass.",
           "note": "No SQL business rules changed; endpoints validate, authenticate, rate-check and map SQL results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6332,6 +6507,11 @@
           "result": "pass",
           "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
           "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6356,6 +6536,16 @@
           "result": "pass",
           "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
           "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full integration run found a 1 ms host/container clock skew in the fixture assertion.",
+          "note": "Compare the changed time with database clock readings, the specified source of time, rather than assuming synchronized host and container clocks. No production behavior or timeout change."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6380,6 +6570,11 @@
           "result": "pass",
           "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
           "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,
@@ -6404,6 +6599,127 @@
           "result": "pass",
           "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
           "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-164",
+      "ac_reference": "FR-86; FR-87",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Nonce CSP construction",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused nonce construction and request forwarding unit tests pass.",
+          "note": "TRD UT-14."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All four UT-14 tests pass after using the installed Next matcher helper; typecheck passes.",
+          "note": "Nonce, directives, request forwarding, rewrite and matcher exclusions verified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-165",
+      "ac_reference": "FR-86",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "CSP forwarded on request and response",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused nonce construction and request forwarding unit tests pass.",
+          "note": "TRD UT-14."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All four UT-14 tests pass after using the installed Next matcher helper; typecheck passes.",
+          "note": "Nonce, directives, request forwarding, rewrite and matcher exclusions verified."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Strict lint requires a block body around Headers.set in the forwarding callback.",
+          "note": "Formatting-only callback correction; retain forwarding assertions."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-166",
+      "ac_reference": "FR-36",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Off mode page rewrite",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Installed Next package exports unstable_doesMiddlewareMatch, not the doesProxyMatch name shown in its bundled docs.",
+          "note": "Use the installed helper API; preserve matcher and rewrite assertions."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All four UT-14 tests pass after using the installed Next matcher helper; typecheck passes.",
+          "note": "Nonce, directives, request forwarding, rewrite and matcher exclusions verified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-167",
+      "ac_reference": "FR-86; FR-87",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Production build nonce application",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Production build and local Chromium acceptance pass: matching script nonces, distinct nonce per request, no CSP or runtime errors.",
+          "note": "pnpm start serves standalone output with a warning. app-build-manifest.json absent: use E2E-09 per A-10/D-33 at T-33. Local port 3100 only."
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
+          "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
         }
       ],
       "regression_of": null,

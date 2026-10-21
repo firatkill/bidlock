@@ -42,7 +42,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-22 | Read endpoints                                     | done   | 75c82d1          |
 | T-23 | Mutating endpoints: bids and pay                   | done   | 7320006          |
 | T-24 | Test-only endpoints and health                     | done   | 497f330          |
-| T-25 | Security headers and CSP                           | todo   | —                |
+| T-25 | Security headers and CSP                           | done   | 6bd67c0          |
 | T-26 | Design tokens, shell and name dialog               | todo   | —                |
 | T-27 | Client domain utilities                            | todo   | —                |
 | T-28 | AuctionFeed interface and PollingFeed              | todo   | —                |
@@ -133,7 +133,7 @@ None. D-51 approves implementing prerequisite session/IP helpers when first need
 
 ## M2 progress
 
-Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD and TRD before implementation. T-18 is in progress.
+Owner approved continuing after M1. M2 cases TC-127–TC-167 were designed before implementation; prerequisite cases TC-168–TC-169 were added before their code. T-18–T-25 are complete.
 
 - T-18 complete: [PR #18](https://github.com/firatkill/bidlock/pull/18), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39580737981), task commit `fff4b79`.
 
@@ -152,3 +152,15 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD a
 - T-23 complete: [PR #23](https://github.com/firatkill/bidlock/pull/23), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39587637178), task commit `7320006`.
 
 - T-24 complete: [PR #24](https://github.com/firatkill/bidlock/pull/24), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39588746380), task commit `497f330`.
+
+- T-25 complete: [PR #25](https://github.com/firatkill/bidlock/pull/25), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39589572593), task commit `6bd67c0`.
+
+## M2 completion
+
+- T-18–T-25 are complete; every task PR passed all four CI jobs before merge.
+- [QA report](../qa/M2-report.md) and [milestone review](../qa/M2-review.md) cover all 43 M2 cases with automation links and retained failures/retests.
+- Final checks: lint, typecheck, 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 seconds), static test-route guard and production build pass. Local Chromium verifies matching script nonces and no CSP/runtime errors.
+- T-25 task commit `6bd67c0`; [passing CI](https://github.com/firatkill/bidlock/actions/runs/39589572593).
+- No unresolved owner questions. Full browser auction flows, real Supabase Broadcast, production deployment, accessibility/mobile review and CI-only load benchmarks remain later work. Bot HTTP authorization remains T-34; browser E2E harness remains T-33.
+- Next's app-build manifest is absent; T-33 follows the existing A-10/D-33 E2E-09 fallback. Local production server stopped after verification.
+- Stopped at the M2 checkpoint. T-26 has not started.

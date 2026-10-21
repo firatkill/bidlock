@@ -7,6 +7,7 @@ import {
 import { POST as auction } from "@/app/api/test/auctions/route";
 import { POST as unknownRoute } from "@/app/api/[...path]/route";
 import { GET as health } from "@/app/api/health/route";
+import { serverNow } from "@/server/repo/testSupport";
 import * as healthDb from "@/server/health";
 import { resetEnvCacheForTests } from "@/server/env";
 import { sql } from "@/server/db";
@@ -67,7 +68,7 @@ test("TC-161: authorized test support creates auctions and validates clock/body 
     .strict()
     .parse(await created.json());
   try {
-    const before = Date.now();
+    const before = Date.parse(await serverNow());
     const changed = await clock(request("test/clock", { offset_ms: 60_000 }));
     expect(changed.status).toBe(200);
     const now = z
@@ -75,7 +76,9 @@ test("TC-161: authorized test support creates auctions and validates clock/body 
       .strict()
       .parse(await changed.json());
     expect(Date.parse(now.server_now)).toBeGreaterThanOrEqual(before + 60_000);
-    expect(Date.parse(now.server_now)).toBeLessThanOrEqual(Date.now() + 60_000);
+    expect(Date.parse(now.server_now)).toBeLessThanOrEqual(
+      Date.parse(await serverNow()),
+    );
     for (const body of [
       { offset_ms: 86_400_001 },
       { offset_ms: -86_400_001 },
