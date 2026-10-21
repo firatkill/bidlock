@@ -34,7 +34,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-14 | Rate limiter                                       | done   | 6f06b1c          |
 | T-15 | Read and identity functions                        | done   | 0e0e221          |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | done   | ae025e2          |
-| T-17 | Concurrency integration tests                      | todo   | —                |
+| T-17 | Concurrency integration tests                      | done   | 81e558f          |
 | T-18 | DB client and repo layer                           | todo   | —                |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | todo   | —                |
 | T-20 | Session cookie, names, /api/me                     | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
+None. D-50 approved the double-lock mutation check; INT-01 detected unsafe writes via the unique bid-number constraint. Both original functions are restored. D-49 assertions TC-066 and TC-098 pass.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -79,7 +79,7 @@ None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
 
 ## Verification limits
 
-- M0 has a placeholder application, strict tooling, environment/logger tests, PostgreSQL/pgTAP infrastructure and migration integration tests. Auction rules and browser flows are not implemented yet.
+- M0 has a placeholder application, strict tooling, environment/logger tests, PostgreSQL/pgTAP infrastructure and migration integration tests. M1 now implements and verifies the SQL auction rules; browser flows remain future work.
 - Local k6 execution is excluded by OWNER-DECISIONS; M6 acceptance must use CI runs (D-43).
 - Stop for an owner summary at the end of every milestone.
 
@@ -118,3 +118,15 @@ None. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
 - T-15 complete: [PR #15](https://github.com/firatkill/bidlock/pull/15), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39571994600), task commit `0e0e221`.
 
 - T-16 complete: [PR #16](https://github.com/firatkill/bidlock/pull/16), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39572606913), task commit `ae025e2`.
+
+- T-17 implementation and functional tests committed as `b290db9`: [PR #17](https://github.com/firatkill/bidlock/pull/17), all four [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/39574190011). D-50 resolves mutation acceptance; restored-suite verification and final PR CI pass.
+
+- T-17 complete: [PR #17](https://github.com/firatkill/bidlock/pull/17), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39578517062), task commit `81e558f`.
+
+## M1 completion
+
+- T-05–T-17 are complete; all task PRs passed CI before merge.
+- [QA report](../qa/M1-report.md) and [milestone review](../qa/M1-review.md) cover all 113 M1 cases and retained failure history.
+- Final checks: lint, typecheck, 37 unit tests, 363 pgTAP assertions and 19 integration tests (9.70 seconds) pass. Approved double-lock mutation is detected; original functions are restored.
+- No unresolved owner questions. API/browser, real Supabase Broadcast, production cron/deployment and CI-only load benchmarks remain for later milestones.
+- Stopped at the M1 checkpoint. T-18 has not started.

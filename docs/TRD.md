@@ -1173,7 +1173,7 @@ Call from TypeScript: `select * from bidlock.place_bid(${auctionId}, ${bidderId}
 
 `version` is not the concurrency control (an optimistic-only design would make most concurrent bids fail with a conflict and retry). It is used for:
 
-1. Second guard: the auction `UPDATE … WHERE version = <read version>` must affect exactly one row; otherwise `BLK10` aborts the transaction. With the lock this can never fire; it turns any future refactor that drops the lock into a loud failure (INT-01 would fail).
+1. Second guard: the auction `UPDATE … WHERE version = <read version>` must affect exactly one row; otherwise `BLK10` aborts the transaction. With the lock this can never fire; it is a secondary concurrency guard. With both auction row locks removed (in `place_bid` and `advance_auction_locked`), the `bid_no_unique` constraint can reject the insert with `23505` before this UPDATE executes; INT-01 detects the thrown SQL errors (mutation verification, D-50).
 2. Ordering key for the client: a feed event with `version <= local version` is stale and ignored (§11.7).
 3. HTTP `ETag` for the state endpoint.
 
@@ -2921,10 +2921,10 @@ union all
 select 'INV-12', 'bid_count equals accepted bids', count(*)::int from a where a.bid_count <> (select count(*) from b)
 union all
 select 'INV-13', 'valid status / payment_state pair', count(*)::int
-  from a where not ((a.status in ('scheduled','live') and a.payment_state is null)
+  from a where ((a.status in ('scheduled','live') and a.payment_state is null)
                  or (a.status = 'closed' and a.payment_state in ('awaiting_payment','offered_to_runner_up'))
                  or (a.status = 'settled' and a.payment_state = 'paid')
-                 or (a.status = 'unsold' and (a.payment_state is null or a.payment_state = 'expired')))
+                 or (a.status = 'unsold' and (a.payment_state is null or a.payment_state = 'expired'))) is not true
 order by 1;
 ```
 
