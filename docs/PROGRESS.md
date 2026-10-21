@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-Pending: approve defining shared feed event types in T-27 and adding receivedAt to change events so the reconciler stays pure. Money, clock and announcer work continues independently. D-53 is approved.
+None. D-54 approves shared domain feed types and change-event receipt timestamps.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -171,4 +171,6 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 
 - T-26 complete: [PR #26](https://github.com/firatkill/bidlock/pull/26), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39594121634), task commit `404178a`.
 
-- T-27 independent work: money/clock/live-announcer helpers pass focused tests, full lint/typecheck and 92 unit tests. Domain line coverage is 95.19%, with the 90% threshold enforced. Reconciler work waits for the shared-types/receipt-timestamp approval; T-27 is not complete.
+- T-27 independent work: money/clock/live-announcer helpers pass focused tests, full lint/typecheck and 92 unit tests. Domain line coverage is 95.19%, with the 90% threshold enforced. D-54 is approved; reconciler implementation is underway; T-27 is not complete.
+
+- T-27 final local checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21%. D-54 recorded, shared feed types and pure reconciler complete. PR CI pending.
