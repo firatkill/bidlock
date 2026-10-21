@@ -43,7 +43,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-23 | Mutating endpoints: bids and pay                   | done   | 7320006          |
 | T-24 | Test-only endpoints and health                     | done   | 497f330          |
 | T-25 | Security headers and CSP                           | done   | 6bd67c0          |
-| T-26 | Design tokens, shell and name dialog               | todo   | —                |
+| T-26 | Design tokens, shell and name dialog               | doing  | —                |
 | T-27 | Client domain utilities                            | todo   | —                |
 | T-28 | AuctionFeed interface and PollingFeed              | todo   | —                |
 | T-29 | Auction room: read-only parts                      | todo   | —                |
@@ -164,3 +164,7 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 were designed befor
 - No unresolved owner questions. Full browser auction flows, real Supabase Broadcast, production deployment, accessibility/mobile review and CI-only load benchmarks remain later work. Bot HTTP authorization remains T-34; browser E2E harness remains T-33.
 - Next's app-build manifest is absent; T-33 follows the existing A-10/D-33 E2E-09 fallback. Local production server stopped after verification.
 - Stopped at the M2 checkpoint. T-26 has not started.
+
+## M3 progress
+
+Owner approved continuing after M2. TC-170–TC-208 designed before implementation; TC-209/TC-210 add approved error-reporting and client-session boundary coverage. T-26 is in progress. D-53 approves the ID-only error-reporting endpoint.

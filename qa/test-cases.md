@@ -1955,3 +1955,541 @@ All cases use local test data; HTTP integration calls precede the Playwright har
 - Preconditions: Wrapped handler raises RATE_LIMITED with known retry_after_ms.
 - Steps: Return retry delays of 1, 1000 and 1001 milliseconds.
 - Expected result: Status 429, Retry-After 1, 1 and 2 seconds respectively; exact retry_after_ms retained in details.
+
+# M3 — UI and real-time
+
+Cases designed from PRD §9, TRD §11/§15 and T-26–T-33 before implementation.
+
+| Case   | Task | Reference                  | Title                                                | Priority | Automatable |
+| ------ | ---- | -------------------------- | ---------------------------------------------------- | -------- | ----------- |
+| TC-170 | T-26 | FR-68; FR-72; FR-73        | Shell identity and navigation                        | High     | yes         |
+| TC-171 | T-26 | FR-68; FR-22               | Name dialog validation and save                      | High     | yes         |
+| TC-172 | T-26 | FR-72; FR-86               | Theme persistence and nonce                          | High     | yes         |
+| TC-173 | T-26 | FR-36; FR-73               | Shell read-only and error states                     | High     | yes         |
+| TC-174 | T-26 | NFR-20; NFR-22             | Shell visual and keyboard review                     | High     | no          |
+| TC-175 | T-27 | NFR-41                     | Integer money formatting                             | High     | yes         |
+| TC-176 | T-27 | NFR-41; FR-63              | Dollar input acceptance and rejection                | High     | yes         |
+| TC-177 | T-27 | FR-40; FR-41               | Clock samples and countdown                          | High     | yes         |
+| TC-178 | T-27 | FR-47                      | Snapshot and change ordering                         | High     | yes         |
+| TC-179 | T-27 | FR-47; FR-07               | Bid reconciliation and extensions                    | High     | yes         |
+| TC-180 | T-27 | NFR-21                     | Live announcement throttling                         | High     | yes         |
+| TC-181 | T-28 | FR-46; FR-47               | Polling snapshots and ETags                          | High     | yes         |
+| TC-182 | T-28 | FR-48                      | Polling failure and recovery                         | High     | yes         |
+| TC-183 | T-28 | FR-46; FR-48               | Polling visibility and terminal behavior             | High     | yes         |
+| TC-184 | T-29 | FR-61; FR-62               | Lot and price states                                 | High     | yes         |
+| TC-185 | T-29 | FR-40; FR-64               | Countdown conditions                                 | High     | yes         |
+| TC-186 | T-29 | FR-65                      | Extension banner lifecycle                           | High     | yes         |
+| TC-187 | T-29 | FR-67                      | Connection and load states                           | High     | yes         |
+| TC-188 | T-30 | FR-63; NFR-41              | Quick and custom bidding                             | High     | yes         |
+| TC-189 | T-30 | FR-71                      | Bid keyboard shortcuts                               | High     | yes         |
+| TC-190 | T-30 | FR-63; US-05               | Bid failure copy and retry identity                  | High     | yes         |
+| TC-191 | T-30 | FR-63; FR-37               | Stale minimum and rate countdown                     | High     | yes         |
+| TC-192 | T-30 | FR-64; FR-67               | Bid panel state gates                                | High     | yes         |
+| TC-193 | T-30 | FR-47                      | Bid history paging and labels                        | High     | yes         |
+| TC-194 | T-31 | FR-45; FR-48               | Broadcast subscription and validation                | High     | yes         |
+| TC-195 | T-31 | FR-48                      | Broadcast fallback and safety refresh                | High     | yes         |
+| TC-196 | T-31 | FR-46; D-19                | Lazy broadcast module loading                        | High     | yes         |
+| TC-197 | T-32 | FR-60; US-01               | Public room lobby states                             | High     | yes         |
+| TC-198 | T-32 | FR-60; US-03               | Sandbox card states                                  | High     | yes         |
+| TC-199 | T-32 | FR-60; FR-11               | Offer notices and benchmark content                  | High     | yes         |
+| TC-200 | T-32 | FR-60; D-30                | Lobby feed handoff                                   | High     | yes         |
+| TC-201 | T-33 | FR-20; FR-51; FR-52; FR-85 | HTTP browser-context contract                        | High     | yes         |
+| TC-202 | T-33 | US-02; US-04; FR-63        | Two bidders stay synchronized                        | High     | yes         |
+| TC-203 | T-33 | NFR-20; NFR-22             | Automated accessibility and keyboard                 | High     | yes         |
+| TC-204 | T-33 | NFR-23; FR-46              | Mobile overflow reduced motion and polling transport | High     | yes         |
+| TC-205 | T-33 | FR-37; FR-67               | Rate-limited and scheduled browser states            | High     | yes         |
+| TC-206 | T-33 | NFR-15                     | Production initial script budget                     | High     | yes         |
+| TC-207 | T-33 | FR-92                      | E2E project isolation and CI                         | High     | yes         |
+| TC-208 | T-33 | FR-40; FR-45; NFR-20       | Live two-browser countdown and mobile review         | High     | no          |
+
+## TC-170: Shell identity and navigation
+
+- Milestone: M3 — UI and real-time
+- Task: T-26
+- PRD / acceptance reference: FR-68; FR-72; FR-73
+- TRD test ID / section: §9.1; §11.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render loading profile then named profile with zero, one and two strikes.
+- Expected result: Exact nav, footer, loading label and pluralized missed-payment copy; edit opens the labeled dialog.
+
+## TC-171: Name dialog validation and save
+
+- Milestone: M3 — UI and real-time
+- Task: T-26
+- PRD / acceptance reference: FR-68; FR-22
+- TRD test ID / section: §9.1; §13.9
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Submit each invalid-name category; submit a valid name; inject server failure.
+- Expected result: Exact length/characters/profanity/bot errors; pending state; success closes and announces for 3 s; server error remains visible.
+
+## TC-172: Theme persistence and nonce
+
+- Milestone: M3 — UI and real-time
+- Task: T-26
+- PRD / acceptance reference: FR-72; FR-86
+- TRD test ID / section: §11.2; UT-14
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Cycle system/light/dark; reload with saved preference; inspect theme script.
+- Expected result: Correct aria label, persisted bl_theme, before-paint data-theme, CSP nonce present.
+
+## TC-173: Shell read-only and error states
+
+- Milestone: M3 — UI and real-time
+- Task: T-26
+- PRD / acceptance reference: FR-36; FR-73
+- TRD test ID / section: §9.1
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render readonly, not-found and unhandled-error views.
+- Expected result: Exact banners/headings/actions; error view includes logged request id.
+
+## TC-174: Shell visual and keyboard review
+
+- Milestone: M3 — UI and real-time
+- Task: T-26
+- PRD / acceptance reference: NFR-20; NFR-22
+- TRD test ID / section: T-26 acceptance; §11.2
+- Priority: High
+- Automatable: no
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Inspect 360 px and 1280 px screenshots in light/dark; keyboard open/save/cancel dialog.
+- Expected result: Specified fonts/tokens, no horizontal overflow, visible focus, accessible labels and focus return.
+
+## TC-175: Integer money formatting
+
+- Milestone: M3 — UI and real-time
+- Task: T-27
+- PRD / acceptance reference: NFR-41
+- TRD test ID / section: UT-01; §11.8
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Format the four UT-01 amounts.
+- Expected result: Exact en-US dollar output with two decimals.
+
+## TC-176: Dollar input acceptance and rejection
+
+- Milestone: M3 — UI and real-time
+- Task: T-27
+- PRD / acceptance reference: NFR-41; FR-63
+- TRD test ID / section: UT-01; §11.8
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Parse integers, one/two decimals, grouping and dollar prefix; try negatives, exponent, empty, excess decimals and over-limit values.
+- Expected result: Accepted inputs produce integer cents; invalid syntax and decimals produce their specified errors.
+
+## TC-177: Clock samples and countdown
+
+- Milestone: M3 — UI and real-time
+- Task: T-27
+- PRD / acceptance reference: FR-40; FR-41
+- TRD test ID / section: UT-03; §11.6
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Apply symmetric RTT samples, outliers and nine samples; format boundary durations.
+- Expected result: Lowest RTT of last eight wins; invalid RTT ignored; ceil formatting never negative.
+
+## TC-178: Snapshot and change ordering
+
+- Milestone: M3 — UI and real-time
+- Task: T-27
+- PRD / acceptance reference: FR-47
+- TRD test ID / section: UT-04; §11.7
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Apply old/equal/new snapshots and stale/consecutive/gapped changes.
+- Expected result: Specified version policy, derived values, gap and lifecycle refetch flags.
+
+## TC-179: Bid reconciliation and extensions
+
+- Milestone: M3 — UI and real-time
+- Task: T-27
+- PRD / acceptance reference: FR-47; FR-07
+- TRD test ID / section: UT-04; §11.7
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Apply duplicate and gapped bid events and more than 100 bids; increase extension count.
+- Expected result: Unique newest-first rows capped at 100; correct lastBidNo and pending gaps; 30000 ms extension duration.
+
+## TC-180: Live announcement throttling
+
+- Milestone: M3 — UI and real-time
+- Task: T-27
+- PRD / acceptance reference: NFR-21
+- TRD test ID / section: UT-11; §11.8
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Send price updates within 3 s and duplicate assertive event ids.
+- Expected result: Latest polite value at most once per 3 s; assertive event announced once.
+
+## TC-181: Polling snapshots and ETags
+
+- Milestone: M3 — UI and real-time
+- Task: T-28
+- PRD / acceptance reference: FR-46; FR-47
+- TRD test ID / section: §11.4
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Return 200 with ETag, then 304; return bid_count gap with full bid pages.
+- Expected result: ETag reused; 304 emits nothing; missing bids fetched until page smaller than 50.
+
+## TC-182: Polling failure and recovery
+
+- Milestone: M3 — UI and real-time
+- Task: T-28
+- PRD / acceptance reference: FR-48
+- TRD test ID / section: §11.4
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Fail twice then succeed using fake timers.
+- Expected result: Reconnecting after two failures, exponential backoff capped at 10 s, live after success.
+
+## TC-183: Polling visibility and terminal behavior
+
+- Milestone: M3 — UI and real-time
+- Task: T-28
+- PRD / acceptance reference: FR-46; FR-48
+- TRD test ID / section: §11.4
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Hide/show document; emit terminal private/public states; unsubscribe.
+- Expected result: Hidden polling stops, visible fetch immediate; terminal grace 10 s; public polls 5 s until next id; unsubscribe cleans up.
+
+## TC-184: Lot and price states
+
+- Milestone: M3 — UI and real-time
+- Task: T-29
+- PRD / acceptance reference: FR-61; FR-62
+- TRD test ID / section: §9.3; T-29 acceptance
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render no bids, other leader, bot leader and viewer leader.
+- Expected result: Exact lot, price, meta and leader strings with accessible decorative placeholder.
+
+## TC-185: Countdown conditions
+
+- Milestone: M3 — UI and real-time
+- Task: T-29
+- PRD / acceptance reference: FR-40; FR-64
+- TRD test ID / section: §9.3; §11.6
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render scheduled, live, warning, soft-close, capped and zero-time states.
+- Expected result: Correct copy and warning styling; zero displays Closing and waits for server.
+
+## TC-186: Extension banner lifecycle
+
+- Milestone: M3 — UI and real-time
+- Task: T-29
+- PRD / acceptance reference: FR-65
+- TRD test ID / section: §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Emit an extension then another before five seconds.
+- Expected result: Newest banner replaces old, exact duration and extension count, hides after five seconds.
+
+## TC-187: Connection and load states
+
+- Milestone: M3 — UI and real-time
+- Task: T-29
+- PRD / acceptance reference: FR-67
+- TRD test ID / section: §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render initial loading, reconnecting/recovered, not-found and load-error.
+- Expected result: Exact copy; Back online lasts two seconds; load error retry three seconds.
+
+## TC-188: Quick and custom bidding
+
+- Milestone: M3 — UI and real-time
+- Task: T-30
+- PRD / acceptance reference: FR-63; NFR-41
+- TRD test ID / section: §11.8; §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Click quick amounts and submit valid/invalid dollar input.
+- Expected result: Correct integer amounts, specified quick labels, validation copy, pending controls disabled.
+
+## TC-189: Bid keyboard shortcuts
+
+- Milestone: M3 — UI and real-time
+- Task: T-30
+- PRD / acceptance reference: FR-71
+- TRD test ID / section: §11.8
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Press 1/2/3, modified keys, keys within inputs/contenteditable and while dialog open; Enter custom field.
+- Expected result: Only permitted shortcuts submit; Enter submits custom bid.
+
+## TC-190: Bid failure copy and retry identity
+
+- Milestone: M3 — UI and real-time
+- Task: T-30
+- PRD / acceptance reference: FR-63; US-05
+- TRD test ID / section: §9.3; §11.8
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Return each documented bid error, network failure and 5xx; click Retry.
+- Expected result: Exact error copy; retry keeps key and amount; definitive responses clear pending bid; mismatch next action gets new key.
+
+## TC-191: Stale minimum and rate countdown
+
+- Milestone: M3 — UI and real-time
+- Task: T-30
+- PRD / acceptance reference: FR-63; FR-37
+- TRD test ID / section: §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Return BID_TOO_LOW details and RATE_LIMITED retry time.
+- Expected result: Quick amounts update to minimum; controls disabled through retry window with countdown copy.
+
+## TC-192: Bid panel state gates
+
+- Milestone: M3 — UI and real-time
+- Task: T-30
+- PRD / acceptance reference: FR-64; FR-67
+- TRD test ID / section: §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render leading, scheduled, readonly and terminal states; transition viewer to outbid.
+- Expected result: Specified disabling and notes; outbid assertive message; terminal bid controls absent.
+
+## TC-193: Bid history paging and labels
+
+- Milestone: M3 — UI and real-time
+- Task: T-30
+- PRD / acceptance reference: FR-47
+- TRD test ID / section: §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render empty and bid rows with You/BOT/extension; load earlier page to exhaustion.
+- Expected result: Exact row labels, local time, extension tooltip, 20-row page request, button removed when exhausted, max100 rows.
+
+## TC-194: Broadcast subscription and validation
+
+- Milestone: M3 — UI and real-time
+- Task: T-31
+- PRD / acceptance reference: FR-45; FR-48
+- TRD test ID / section: §11.5
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Mock subscribe, payload and reconnect callbacks.
+- Expected result: Public auction channel; strict payload validation; subscribed/reconnect refresh; invalid payload refresh.
+
+## TC-195: Broadcast fallback and safety refresh
+
+- Milestone: M3 — UI and real-time
+- Task: T-31
+- PRD / acceptance reference: FR-48
+- TRD test ID / section: §11.5
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Send three errors or wait10s without subscription/recovery; advance15s while live and show hidden tab.
+- Expected result: Permanent polling fallback at2000ms; safety and visibility refresh; cleanup unsubscribes.
+
+## TC-196: Lazy broadcast module loading
+
+- Milestone: M3 — UI and real-time
+- Task: T-31
+- PRD / acceptance reference: FR-46; D-19
+- TRD test ID / section: T-31 acceptance
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Create polling feed with module import mocked; create broadcast feed with configured env.
+- Expected result: Polling does not import Supabase module; configured broadcast loads dynamically.
+
+## TC-197: Public room lobby states
+
+- Milestone: M3 — UI and real-time
+- Task: T-32
+- PRD / acceptance reference: FR-60; US-01
+- TRD test ID / section: §9.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render loading/live/no-bids/with-bids/closing/scheduled/error fixtures.
+- Expected result: Exact headline, labels, leader copy, countdown and entry link; error retry3s.
+
+## TC-198: Sandbox card states
+
+- Milestone: M3 — UI and real-time
+- Task: T-32
+- PRD / acceptance reference: FR-60; US-03
+- TRD test ID / section: §9.2; T-32 acceptance
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render default/creating/active/capacity/rate/readonly/error fixtures.
+- Expected result: Exact state copy; start disabled until T-36; active return link works.
+
+## TC-199: Offer notices and benchmark content
+
+- Milestone: M3 — UI and real-time
+- Task: T-32
+- PRD / acceptance reference: FR-60; FR-11
+- TRD test ID / section: §9.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Render winner/runner-up notices and empty/nonempty benchmark fixtures.
+- Expected result: Exact notice, countdown/link and benchmark strings; empty data is honest.
+
+## TC-200: Lobby feed handoff
+
+- Milestone: M3 — UI and real-time
+- Task: T-32
+- PRD / acceptance reference: FR-60; D-30
+- TRD test ID / section: §11.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Emit terminal public state or next_public_auction_id.
+- Expected result: Refetch list and resubscribe new id; sandbox card uses its own feed.
+
+## TC-201: HTTP browser-context contract
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: FR-20; FR-51; FR-52; FR-85
+- TRD test ID / section: E2E-01
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Create unique bidder/auction; inspect cookie; Origin/body errors; replay/mismatch; invalid bot token; disabled test route; state ETag.
+- Expected result: Specified statuses, cookie flags, error schemas, replay header and304.
+
+## TC-202: Two bidders stay synchronized
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: US-02; US-04; FR-63
+- TRD test ID / section: E2E-02
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Two contexts place quick and keyboard bids then stale custom bid.
+- Expected result: Within3s both see price/leader; outbid alert; updated minimum; stale rejection; correct You history rows.
+
+## TC-203: Automated accessibility and keyboard
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: NFR-20; NFR-22
+- TRD test ID / section: E2E-07
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Run axe light/dark on lobby and owned test room; Tab to bid and Enter.
+- Expected result: Zero serious/critical axe findings; keyboard bid succeeds.
+
+## TC-204: Mobile overflow reduced motion and polling transport
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: NFR-23; FR-46
+- TRD test ID / section: E2E-07
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Use360x740 viewport and reducedMotion reduce; visit lobby/room and observe sockets/animations.
+- Expected result: No horizontal overflow; no active price animation; no WebSocket in polling build.
+
+## TC-205: Rate-limited and scheduled browser states
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: FR-37; FR-67
+- TRD test ID / section: E2E-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Exhaust own bidder minute quota with65 rejected bids; click bid; visit missing/scheduled auctions.
+- Expected result: Rate countdown disables controls; exact not-found and scheduled copies.
+
+## TC-206: Production initial script budget
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: NFR-15
+- TRD test ID / section: E2E-09; D-33
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Load own auction in fresh context and sum encoded script resource sizes.
+- Expected result: Initial Next scripts total at most180KiB gzip.
+
+## TC-207: E2E project isolation and CI
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: FR-92
+- TRD test ID / section: §15.5; A-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Run parallel then isolated projects with specified timeouts; inspect CI build/e2e.
+- Expected result: Four-worker parallel and one-worker isolated supported;90s test/3s expect; CI green.
+
+## TC-208: Live two-browser countdown and mobile review
+
+- Milestone: M3 — UI and real-time
+- Task: T-33
+- PRD / acceptance reference: FR-40; FR-45; NFR-20
+- TRD test ID / section: AGENTS QA workflow
+- Priority: High
+- Automatable: no
+- Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
+- Steps: Observe own local auction in two browser contexts, countdown through close and360px layout.
+- Expected result: Prices update, countdown follows server and awaits result; layout readable with no overlap. Real Supabase delivery remains production verification.
+
+## TC-209: Browser error reporting contains only a confirmed ID
+
+- Milestone: M3 — UI and real-time
+- Task: T-26 (D-53)
+- PRD / acceptance reference: FR-73; FR-80; FR-85; D-53
+- TRD test ID / section: §10.14; §9.1 error copy
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test env; mocked transport for component tests; captured structured logs for route tests.
+- Steps: Report a UUID with same-origin JSON; submit unknown fields and missing Origin; mount error view with successful and failed report responses.
+- Expected result: Strict ID-only response and log; invalid body rejected; Origin enforced; logged-ID sentence appears only after confirmation; Reload works even when reporting fails.
+
+## TC-210: Client transport validates responses and renews missing sessions once
+
+- Milestone: M3 — UI and real-time
+- Task: T-26
+- PRD / acceptance reference: FR-24; FR-51
+- TRD test ID / section: §10.12 NO_SESSION; §11 client boundary
+- Priority: High
+- Automatable: yes
+- Preconditions: Mock fetch with strict Me/error responses and unique request IDs.
+- Steps: Send a request with Headers input; return NO_SESSION then a refreshed Me and success; return a second NO_SESSION; return an unknown response field.
+- Expected result: JSON and supplied headers preserved; GET /api/me then exactly one retry; repeated failure surfaces; strict response schemas reject unknown fields.

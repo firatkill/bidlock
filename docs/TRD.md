@@ -2197,6 +2197,12 @@ Available only when `APP_ENV=test` and header `x-test-secret` equals `TEST_API_S
 
 ---
 
+### 10.14 POST /api/client-errors (D-53)
+
+Auth: none; mutating route with the existing Origin, JSON size/type and demo-mode gates. Strict body `{ error_id: UUID }`; strict 200 response `{ request_id: UUID }`, echoing the reported ID. Log an error occurrence with that ID and no browser message, stack or other payload. Error boundaries generate one ID per mounted failure, report it once, and show PRD §9.1's logged-ID sentence only after a successful response. The heading and Reload action remain available if reporting fails. No new external service.
+
+---
+
 ## 11. Client
 
 ### 11.1 Rendering model

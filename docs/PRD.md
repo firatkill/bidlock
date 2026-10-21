@@ -678,3 +678,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-51 | Implement session and IP-hashing prerequisite helpers when first needed in M2; retain their dedicated T-20/T-21 tests and acceptance checks | Owner approval, 2026-10-21 | Resolves T-19 authentication depending on T-20 and T-20 guest creation depending on T-21 without changing specified behavior. |
 
 | D-52 | Disable Next.js automatic agent-rule file generation with `agentRules: false` | Implementation decision, 2026-10-21 | Installed Next.js 16.4.2 otherwise appends generated rules to the owner-maintained AGENTS.md during local dev; no product behavior changes. |
+
+| D-53 | Add `POST /api/client-errors` accepting only a generated UUID, with the existing Origin/body/demo-mode guards; log the occurrence without browser message, stack, cookie or personal data. Error pages show the existing logged-ID sentence only after confirmation. | owner approved 2026-10-21 | T-26 error copy needs a truthful server-log reference for browser-only rendering failures. |
