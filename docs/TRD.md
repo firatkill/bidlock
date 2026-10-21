@@ -375,7 +375,7 @@ Why `prepare: false`: Supabase's pooler (Supavisor) in transaction mode assigns 
 
 postgres.js returns `timestamptz` columns as JS `Date` objects and `jsonb` as parsed JSON (timestamps inside jsonb stay ISO strings). Repo modules convert `Date` values to ISO strings (`toISOString()`) before Zod parsing, so API responses always carry ISO strings.
 
-Every business call is one statement (`select (bidlock.place_bid($1,$2,$3,$4)).*`), which postgres.js runs in its own implicit transaction. Do not wrap calls in `sql.begin` unless a task says so.
+Every business call is one statement (`select * from bidlock.place_bid($1,$2,$3,$4)`), which postgres.js runs in its own implicit transaction. Do not wrap calls in `sql.begin` unless a task says so.
 
 ### 6.3 Roles, schema and privileges
 
@@ -1157,7 +1157,7 @@ begin
 end $$;
 ```
 
-Call from TypeScript: `select (bidlock.place_bid(${auctionId}, ${bidderId}, ${amount}, ${key})).*` and parse the single row with `BidResultRow` (Zod).
+Call from TypeScript: `select * from bidlock.place_bid(${auctionId}, ${bidderId}, ${amount}, ${key})` and parse the single row with `BidResultRow` (Zod).
 
 #### 7.2.1 Why Read Committed plus a row lock is sufficient
 
@@ -2623,7 +2623,7 @@ test("500 parallel bids from 200 bidders keep every invariant", async () => {
     const min = minNextBid(s.starting_price, s.current_price);          // TS mirror
     const amount = min + incrementFor(s.current_price ?? s.starting_price) * Math.floor(Math.random() * 3);
     const call: Call = { bidder, key: crypto.randomUUID(), amount, kind: "fresh" };
-    const [row] = await app`select (bidlock.place_bid(${auctionId}, ${bidder}, ${amount}, ${call.key})).*`;
+    const [row] = await app`select * from bidlock.place_bid(${auctionId}, ${bidder}, ${amount}, ${call.key})`;
     results.push({ call, row: BidResultRow.parse(row) });
   }
 

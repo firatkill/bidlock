@@ -25,7 +25,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-05 | Foundation migration and pgTAP harness             | done   | cd1bd5d          |
 | T-06 | Core tables, constraints, indexes                  | done   | 8cb98cc          |
 | T-07 | Increment ladder                                   | done   | 1426320          |
-| T-08 | Lifecycle internals                                | todo   | —                |
+| T-08 | Lifecycle internals                                | doing  | —                |
 | T-09 | place_bid                                          | todo   | —                |
 | T-10 | pgTAP: bid rules and idempotency                   | todo   | —                |
 | T-11 | pgTAP: soft close                                  | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. T-06 constraint correction approved (D-47).
+None. Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
 - T-05 environment dependency correction is approved and complete (D-46).
 
