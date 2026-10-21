@@ -35,7 +35,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-15 | Read and identity functions                        | done   | 0e0e221          |
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | done   | ae025e2          |
 | T-17 | Concurrency integration tests                      | done   | 81e558f          |
-| T-18 | DB client and repo layer                           | todo   | —                |
+| T-18 | DB client and repo layer                           | doing  | —                |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | todo   | —                |
 | T-20 | Session cookie, names, /api/me                     | todo   | —                |
 | T-21 | IP hashing and rate-limit integration              | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. D-50 approved the double-lock mutation check; INT-01 detected unsafe writes via the unique bid-number constraint. Both original functions are restored. D-49 assertions TC-066 and TC-098 pass.
+M2 task-order checkpoint: T-19 needs session verification from T-20; T-20 needs IP hashing from T-21. Approval requested to implement prerequisite helpers when first needed and retain dedicated acceptance checks in their named tasks. T-18 can finish independently.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -130,3 +130,7 @@ None. D-50 approved the double-lock mutation check; INT-01 detected unsafe write
 - Final checks: lint, typecheck, 37 unit tests, 363 pgTAP assertions and 19 integration tests (9.70 seconds) pass. Approved double-lock mutation is detected; original functions are restored.
 - No unresolved owner questions. API/browser, real Supabase Broadcast, production cron/deployment and CI-only load benchmarks remain for later milestones.
 - Stopped at the M1 checkpoint. T-18 has not started.
+
+## M2 progress
+
+Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD and TRD before implementation. T-18 is in progress.

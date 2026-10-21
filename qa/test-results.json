@@ -330,6 +330,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -390,6 +395,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -455,6 +465,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -520,6 +535,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -580,6 +600,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -639,6 +664,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -698,6 +728,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -757,6 +792,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -816,6 +856,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -875,6 +920,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -939,6 +989,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -989,6 +1044,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1028,6 +1088,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1067,6 +1132,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1121,6 +1191,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
@@ -1160,6 +1235,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1214,6 +1294,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1253,6 +1338,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1297,6 +1387,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -1331,6 +1426,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1365,6 +1465,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1399,6 +1504,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1433,6 +1543,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1467,6 +1582,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1501,6 +1621,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1540,6 +1665,11 @@
           "result": "pass",
           "actual_result": "All 37 unit tests, lint and typecheck passed.",
           "note": "Final M1 regression."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 unit regression: all 37 tests pass.",
+          "note": "Lint and typecheck also pass."
         }
       ],
       "regression_of": null,
@@ -1579,6 +1709,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1608,6 +1743,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1642,6 +1782,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1671,6 +1816,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1700,6 +1850,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1729,6 +1884,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1758,6 +1918,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1787,6 +1952,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1816,6 +1986,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1845,6 +2020,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1874,6 +2054,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1903,6 +2088,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1932,6 +2122,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1961,6 +2156,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1990,6 +2190,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2019,6 +2224,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2048,6 +2258,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2077,6 +2292,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2106,6 +2326,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2135,6 +2360,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2164,6 +2394,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2193,6 +2428,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2222,6 +2462,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2251,6 +2496,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2280,6 +2530,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2309,6 +2564,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2338,6 +2598,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2367,6 +2632,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2396,6 +2666,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2425,6 +2700,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2454,6 +2734,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2483,6 +2768,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2512,6 +2802,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2541,6 +2836,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2570,6 +2870,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2599,6 +2904,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2628,6 +2938,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2657,6 +2972,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2686,6 +3006,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2715,6 +3040,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2744,6 +3074,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2773,6 +3108,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2802,6 +3142,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2831,6 +3176,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2860,6 +3210,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2889,6 +3244,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2918,6 +3278,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2947,6 +3312,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2976,6 +3346,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3005,6 +3380,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3034,6 +3414,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3063,6 +3448,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3092,6 +3482,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3121,6 +3516,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3150,6 +3550,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3179,6 +3584,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3208,6 +3618,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3242,6 +3657,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3271,6 +3691,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3300,6 +3725,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3329,6 +3759,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3358,6 +3793,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3387,6 +3827,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3416,6 +3861,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3445,6 +3895,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3474,6 +3929,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3503,6 +3963,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3532,6 +3997,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3561,6 +4031,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3590,6 +4065,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3619,6 +4099,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3648,6 +4133,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3677,6 +4167,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3706,6 +4201,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3735,6 +4235,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3764,6 +4269,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3793,6 +4303,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3822,6 +4337,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3851,6 +4371,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3880,6 +4405,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3909,6 +4439,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3938,6 +4473,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3967,6 +4507,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3996,6 +4541,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4025,6 +4575,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4054,6 +4609,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4083,6 +4643,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4112,6 +4677,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4141,6 +4711,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4170,6 +4745,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
           "note": "Final M1 regression after D-50 mutation restoration."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4224,6 +4804,11 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,
@@ -4253,6 +4838,69 @@
           "result": "pass",
           "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
           "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-127",
+      "ac_reference": "NFR-41; NFR-42",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Database function wrappers parse all app-callable results",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Typecheck rejected generic result property access in the Zod SQL wrapper.",
+          "note": "Parse the strict single-row envelope with an unknown payload, then validate that payload with the concrete schema; no cast or weakened validation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Both repository integration tests pass; lint and typecheck pass.",
+          "note": "Strict row envelope plus concrete payload parsing resolves the generic typing error. Identity, reads, bids/pay, rate, sandbox, stats and test support exercised against local PostgreSQL."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-128",
+      "ac_reference": "NFR-41; FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "SQL integer and response boundaries reject unsafe or unexpected values",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Typecheck rejected generic result property access in the Zod SQL wrapper.",
+          "note": "Parse the strict single-row envelope with an unknown payload, then validate that payload with the concrete schema; no cast or weakened validation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Both repository integration tests pass; lint and typecheck pass.",
+          "note": "Strict row envelope plus concrete payload parsing resolves the generic typing error. Identity, reads, bids/pay, rate, sandbox, stats and test support exercised against local PostgreSQL."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
+          "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
         }
       ],
       "regression_of": null,

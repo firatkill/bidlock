@@ -1391,3 +1391,543 @@ Designed from TRD §15.2–15.4 before M1 implementation. Each case uses an isol
 - Preconditions: Disposable local scratch database with foundation only.
 - Steps: Apply test and load environments without a rate-limit table; create a fixture rate-limit table and apply each environment again.
 - Expected result: Setup succeeds without the table; test mode and app login are configured; with the table present, test overrides become 10000 and load overrides become 1000000 for the specified limits only.
+
+# M2 — API, identity and rate limits
+
+All cases use local test data; HTTP integration calls precede the Playwright harness scheduled for T-33.
+
+| TC     | Task | Requirement    | Behavior                                                               | Priority | Automatable |
+| ------ | ---- | -------------- | ---------------------------------------------------------------------- | -------- | ----------- |
+| TC-127 | T-18 | NFR-41; NFR-42 | Database function wrappers parse all app-callable results              | High     | yes         |
+| TC-128 | T-18 | NFR-41; FR-51  | SQL integer and response boundaries reject unsafe or unexpected values | High     | yes         |
+| TC-129 | T-19 | FR-36; FR-51   | Demo gates precede Origin and parsing                                  | High     | yes         |
+| TC-130 | T-19 | FR-85          | Mutating Origin validation                                             | High     | yes         |
+| TC-131 | T-19 | FR-51          | JSON media type and body limit                                         | High     | yes         |
+| TC-132 | T-19 | FR-51          | Params and query boundaries                                            | High     | yes         |
+| TC-133 | T-19 | FR-81          | Request ids and structured request log                                 | High     | yes         |
+| TC-134 | T-19 | FR-51          | Errors map to documented envelope                                      | High     | yes         |
+| TC-135 | T-20 | FR-20          | Signed session round trip                                              | High     | yes         |
+| TC-136 | T-20 | FR-20          | Session rejects tampering and malformed fields                         | High     | yes         |
+| TC-137 | T-20 | FR-20; D-35    | Session time bounds                                                    | High     | yes         |
+| TC-138 | T-20 | FR-20          | Session rotation and sliding renewal                                   | High     | yes         |
+| TC-139 | T-20 | FR-22          | Name normalization                                                     | High     | yes         |
+| TC-140 | T-20 | FR-22          | Name length and character validation                                   | High     | yes         |
+| TC-141 | T-20 | FR-22          | Human names cannot impersonate bots                                    | High     | yes         |
+| TC-142 | T-20 | FR-22          | Profanity normalization                                                | High     | yes         |
+| TC-143 | T-20 | FR-20; FR-21   | Guest creation and cookie attributes                                   | High     | yes         |
+| TC-144 | T-20 | FR-24          | Deleted guest recovery                                                 | High     | yes         |
+| TC-145 | T-20 | FR-22; FR-50   | Rename authenticated guest                                             | High     | yes         |
+| TC-146 | T-20 | FR-25          | Guest creation limit maps to HTTP                                      | High     | yes         |
+| TC-147 | T-21 | FR-37          | Proxy trust and XFF selection                                          | High     | yes         |
+| TC-148 | T-21 | FR-37          | IPv6 privacy prefix                                                    | High     | yes         |
+| TC-149 | T-21 | FR-37; NFR-30  | Salted IP hash shape                                                   | High     | yes         |
+| TC-150 | T-22 | FR-46; FR-50   | State response and conditional ETag                                    | High     | yes         |
+| TC-151 | T-22 | FR-50          | State not-found and sandbox visibility                                 | High     | yes         |
+| TC-152 | T-22 | FR-50          | Bid pagination                                                         | High     | yes         |
+| TC-153 | T-22 | FR-50          | Lobby response                                                         | High     | yes         |
+| TC-154 | T-23 | FR-04; FR-50   | Accepted bid and replay HTTP mapping                                   | High     | yes         |
+| TC-155 | T-23 | FR-50; FR-51   | Bid rejection details                                                  | High     | yes         |
+| TC-156 | T-23 | FR-04          | Idempotency mismatch HTTP mapping                                      | High     | yes         |
+| TC-157 | T-23 | FR-37          | Bid rate-limit HTTP mapping                                            | High     | yes         |
+| TC-158 | T-23 | FR-11          | Payment success and rejection                                          | High     | yes         |
+| TC-159 | T-23 | FR-20; FR-50   | Mutation authentication                                                | High     | yes         |
+| TC-160 | T-24 | FR-52; D-40    | Disabled test routes are indistinguishable from unknown paths          | High     | yes         |
+| TC-161 | T-24 | FR-52          | Authorized test support                                                | High     | yes         |
+| TC-162 | T-24 | FR-82          | Health success and failure                                             | High     | yes         |
+| TC-163 | T-24 | FR-52          | Static test-route guard                                                | High     | yes         |
+| TC-164 | T-25 | FR-86; FR-87   | Nonce CSP construction                                                 | High     | yes         |
+| TC-165 | T-25 | FR-86          | CSP forwarded on request and response                                  | High     | yes         |
+| TC-166 | T-25 | FR-36          | Off mode page rewrite                                                  | High     | yes         |
+| TC-167 | T-25 | FR-86; FR-87   | Production build nonce application                                     | High     | yes         |
+
+## TC-127: Database function wrappers parse all app-callable results
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-18
+- PRD / acceptance reference: NFR-41; NFR-42
+- TRD test ID / section: Repo integration §6.2/§10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call identity, reads, bid, pay, rate, sandbox, stats and test-support functions using own fixtures.
+- Expected result: Each result satisfies its strict schema; SQL Dates become ISO strings and nullable results stay null.
+
+## TC-128: SQL integer and response boundaries reject unsafe or unexpected values
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-18
+- PRD / acceptance reference: NFR-41; FR-51
+- TRD test ID / section: Repo integration §6.2/§10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Parse safe and unsafe int8 values and malformed nested response fixtures.
+- Expected result: Safe integers survive; unsafe money, extra keys and malformed timestamps fail validation.
+
+## TC-129: Demo gates precede Origin and parsing
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19
+- PRD / acceptance reference: FR-36; FR-51
+- TRD test ID / section: UT-13
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call mutating route with off/readonly modes and invalid Origin/body.
+- Expected result: 503 DEMO_OFF or DEMO_READONLY wins; health is exempt from off.
+
+## TC-130: Mutating Origin validation
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19
+- PRD / acceptance reference: FR-85
+- TRD test ID / section: UT-13
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call with allowed, missing, null and foreign Origin.
+- Expected result: Allowed normalized origin proceeds; all other cases return 403.
+
+## TC-131: JSON media type and body limit
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19
+- PRD / acceptance reference: FR-51
+- TRD test ID / section: UT-13
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Send wrong media type, declared or actual body over 4096 bytes, malformed JSON and extra fields.
+- Expected result: 415, 413, 413, 400 and 400 respectively; valid strict JSON proceeds.
+
+## TC-132: Params and query boundaries
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19
+- PRD / acceptance reference: FR-51
+- TRD test ID / section: UT-13
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Send invalid UUID and unknown query fields to schema-configured routes.
+- Expected result: 400 VALIDATION with issue paths; handler never runs.
+
+## TC-133: Request ids and structured request log
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19
+- PRD / acceptance reference: FR-81
+- TRD test ID / section: UT-13
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call success and error paths with valid/invalid x-request-id.
+- Expected result: Valid UUID reused; otherwise generated; standard API headers and one request log contain specified fields.
+
+## TC-134: Errors map to documented envelope
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19
+- PRD / acceptance reference: FR-51
+- TRD test ID / section: UT-13; UT-09
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Throw AppError and unexpected SQL error from wrapped handlers.
+- Expected result: Specified status or 500 INTERNAL; no stack or secret in response; SQLSTATE logged server-side.
+
+## TC-135: Signed session round trip
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-20
+- TRD test ID / section: UT-05
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Sign and verify a bidder UUID at fixed time.
+- Expected result: Verified identity and issue time match; cookie attributes match §13.1.
+
+## TC-136: Session rejects tampering and malformed fields
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-20
+- TRD test ID / section: UT-05
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Alter UUID, timestamp, signature, prefix and part count.
+- Expected result: Every altered or malformed cookie yields no session.
+
+## TC-137: Session time bounds
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-20; D-35
+- TRD test ID / section: UT-05
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Verify future timestamps beyond 300 seconds and ages beyond 400 days, plus boundaries.
+- Expected result: Outside bounds rejected; boundaries accepted.
+
+## TC-138: Session rotation and sliding renewal
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-20
+- TRD test ID / section: UT-05
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Verify previous-secret cookie and cookie older than 30 days.
+- Expected result: Valid identities retained and marked for reissue; fresh current-secret cookie not renewed.
+
+## TC-139: Name normalization
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-22
+- TRD test ID / section: UT-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Normalize decomposed Unicode and surrounding/repeated whitespace.
+- Expected result: NFC, trimmed, single spaces.
+
+## TC-140: Name length and character validation
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-22
+- TRD test ID / section: UT-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Test code-point lengths 1,2,24,25 and allowed Unicode versus forbidden characters.
+- Expected result: 2–24 allowed code points accepted; correct first failing reason returned.
+
+## TC-141: Human names cannot impersonate bots
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-22
+- TRD test ID / section: UT-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Validate Robot and Botanist after normalization.
+- Expected result: Robot rejected as bot_suffix; Botanist accepted.
+
+## TC-142: Profanity normalization
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-22
+- TRD test ID / section: UT-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Validate profane word, leet sh1t and separator-obfuscated forms.
+- Expected result: Rejected as profanity after documented lowercasing, de-leeting and separator removal.
+
+## TC-143: Guest creation and cookie attributes
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-20; FR-21
+- TRD test ID / section: T-20 acceptance; §10.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: GET /api/me with no cookie; repeat with returned cookie.
+- Expected result: 200 Me, default Bidder NNNN and specified Set-Cookie; second call reuses identity.
+
+## TC-144: Deleted guest recovery
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-24
+- TRD test ID / section: §10.2; T-20 acceptance
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Create then delete own unreferenced bidder and call GET /api/me with its valid cookie.
+- Expected result: New bidder and replacement cookie, 200 Me.
+
+## TC-145: Rename authenticated guest
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-22; FR-50
+- TRD test ID / section: §10.3; UT-08
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: PATCH normalized valid name, then invalid name and unknown body field.
+- Expected result: 200 updated Me; 422 NAME_INVALID with reason; 400 for shape error.
+
+## TC-146: Guest creation limit maps to HTTP
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-20
+- PRD / acceptance reference: FR-25
+- TRD test ID / section: §10.2; DB-09
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Exhaust own test IP guest counter then request new identity.
+- Expected result: 429 RATE_LIMITED and Retry-After; no new identity.
+
+## TC-147: Proxy trust and XFF selection
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-21
+- PRD / acceptance reference: FR-37
+- TRD test ID / section: UT-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Use none/vercel modes with comma-separated XFF and spaces.
+- Expected result: None returns local; vercel takes first trimmed address.
+
+## TC-148: IPv6 privacy prefix
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-21
+- PRD / acceptance reference: FR-37
+- TRD test ID / section: UT-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Hash addresses sharing /64 and different prefixes, plus IPv4.
+- Expected result: Same /64 has same hash; different prefixes differ; IPv4 kept whole before hashing.
+
+## TC-149: Salted IP hash shape
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-21
+- PRD / acceptance reference: FR-37; NFR-30
+- TRD test ID / section: UT-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Hash same synthetic input repeatedly with configured salt.
+- Expected result: Stable 32 lowercase hex characters; raw address is not persisted or logged.
+
+## TC-150: State response and conditional ETag
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-22
+- PRD / acceptance reference: FR-46; FR-50
+- TRD test ID / section: API read integration; §10.4
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Read own test auction then repeat with returned ETag.
+- Expected result: 200 strict AuctionState followed by bodyless 304; ETag includes version and next-public prefix.
+
+## TC-151: State not-found and sandbox visibility
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-22
+- PRD / acceptance reference: FR-50
+- TRD test ID / section: API read integration; §10.4
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Read missing auction and another owner sandbox.
+- Expected result: 404 NOT_FOUND for both; owner can read sandbox.
+
+## TC-152: Bid pagination
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-22
+- PRD / acceptance reference: FR-50
+- TRD test ID / section: API read integration; §10.5
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Seed own bids and read newest, cursor and after pages; submit both cursor and after.
+- Expected result: Strict ordered BidsPage with correct next_cursor; exclusive query violation returns 400.
+
+## TC-153: Lobby response
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-22
+- PRD / acceptance reference: FR-50
+- TRD test ID / section: API read integration; §10.10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: GET auctions anonymously and as sandbox owner.
+- Expected result: Public state always present; only owner receives active sandbox; response parses strictly.
+
+## TC-154: Accepted bid and replay HTTP mapping
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-23
+- PRD / acceptance reference: FR-04; FR-50
+- TRD test ID / section: API write integration; §10.6
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Submit valid bid twice with same key and amount.
+- Expected result: 201 then 200; second has Idempotent-Replayed true; same bid and replayed result.
+
+## TC-155: Bid rejection details
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-23
+- PRD / acceptance reference: FR-50; FR-51
+- TRD test ID / section: API write integration; §10.6
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Submit stale low amount then amount above SQL max.
+- Expected result: 409 BID_TOO_LOW with min_next_bid; 422 BID_TOO_HIGH; strict documented details.
+
+## TC-156: Idempotency mismatch HTTP mapping
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-23
+- PRD / acceptance reference: FR-04
+- TRD test ID / section: API write integration; §10.6
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Reuse accepted key with changed amount.
+- Expected result: 422 IDEMPOTENCY_MISMATCH; no extra bid.
+
+## TC-157: Bid rate-limit HTTP mapping
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-23
+- PRD / acceptance reference: FR-37
+- TRD test ID / section: API write integration; §10.6
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Exhaust own bidder rate counter and submit next bid.
+- Expected result: 429 RATE_LIMITED with retry_after_ms and rounded-up Retry-After seconds.
+
+## TC-158: Payment success and rejection
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-23
+- PRD / acceptance reference: FR-11
+- TRD test ID / section: API write integration; §10.7
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Close own auction, pay as winner and repeat; attempt non-payable payment.
+- Expected result: 200 settled response including replay flag; non-payable returns 409.
+
+## TC-159: Mutation authentication
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-23
+- PRD / acceptance reference: FR-20; FR-50
+- TRD test ID / section: §10.1; T-23
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Submit without session and with bot token before T-34 implementation.
+- Expected result: 401 NO_SESSION or BOT_TOKEN_INVALID; no bid created.
+
+## TC-160: Disabled test routes are indistinguishable from unknown paths
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-24
+- PRD / acceptance reference: FR-52; D-40
+- TRD test ID / section: API test routes integration
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call test clock and catch-all in development or wrong secret under on/readonly/off.
+- Expected result: Same 404 envelope ignoring request_id and same content-type; gate runs before demo mode.
+
+## TC-161: Authorized test support
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-24
+- PRD / acceptance reference: FR-52
+- TRD test ID / section: API test routes integration; §10.13
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Use correct secret in test env to create auction, set clock and reset clock in finally.
+- Expected result: 201 auction id; strict server_now responses; no Origin required; ranges validated.
+
+## TC-162: Health success and failure
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-24
+- PRD / acceptance reference: FR-82
+- TRD test ID / section: API test routes integration; §10.11
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call health with reachable DB and injected DB failure, including off mode.
+- Expected result: 200 ok or 503 degraded with no-store; health bypasses demo gates.
+
+## TC-163: Static test-route guard
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-24
+- PRD / acceptance reference: FR-52
+- TRD test ID / section: T-24 acceptance; §13.8
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Run guards and exercise detection of an unguarded test handler fixture.
+- Expected result: Every exported test handler requires testOnly true; unguarded fixture is rejected.
+
+## TC-164: Nonce CSP construction
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-25
+- PRD / acceptance reference: FR-86; FR-87
+- TRD test ID / section: UT-14
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Generate headers in production/development with and without Supabase URL.
+- Expected result: Nonce and required directives; unsafe-eval only development; optional HTTPS/WSS host; security headers match §13.4.
+
+## TC-165: CSP forwarded on request and response
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-25
+- PRD / acceptance reference: FR-86
+- TRD test ID / section: UT-14
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Call proxy and inspect forwarded and response CSP headers.
+- Expected result: Same nonce-bearing CSP forwarded to Next and returned; x-nonce available for rendering.
+
+## TC-166: Off mode page rewrite
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-25
+- PRD / acceptance reference: FR-36
+- TRD test ID / section: UT-14
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Request page in off mode.
+- Expected result: Rewrites to /offline; API paths excluded from proxy matcher.
+
+## TC-167: Production build nonce application
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-25
+- PRD / acceptance reference: FR-86; FR-87
+- TRD test ID / section: T-25 acceptance; A-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
+- Steps: Build, start locally and request HTML and headers.
+- Expected result: CSP contains nonce and frame-ancestors none; at least one Next script contains matching nonce.
