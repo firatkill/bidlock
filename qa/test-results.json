@@ -574,6 +574,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -618,6 +623,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -662,6 +672,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -706,6 +721,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -750,6 +770,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -789,6 +814,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -824,6 +854,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -848,6 +883,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -872,6 +912,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -896,6 +941,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -920,6 +970,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -944,6 +999,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -968,6 +1028,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -992,6 +1057,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1011,6 +1081,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1030,6 +1105,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1049,6 +1129,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1068,6 +1153,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1087,6 +1177,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1106,6 +1201,11 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
@@ -1125,6 +1225,30 @@
           "result": "pass",
           "actual_result": "T-07 full run: lint, typecheck, 37 unit tests, 130 pgTAP assertions and ten integration tests passed.",
           "note": "Includes runtime-role SQL/display ladder parity; later function privilege tests remain scheduled."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-067",
+      "ac_reference": "FR-08; FR-10; INV-06; INV-09",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-07 \u2014 no bids \u2192 `unsold`, `payment_state` null",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-08 full run: lint, typecheck, 37 unit tests, 133 pgTAP assertions and ten integration tests passed.",
+          "note": "Lifecycle smoke verifies unsold/no payment/logical close time. Full lifecycle cases follow in their planned tasks; D-48 single-invocation SQL approved."
         }
       ],
       "regression_of": null,
