@@ -50,12 +50,20 @@
           "result": "pass",
           "actual_result": "Lint, typecheck, Vitest smoke with coverage, guard skeleton and production build passed.",
           "note": "No API/UI behavior exists yet; full e2e is introduced at T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "After separating Vitest project include patterns, exactly one smoke test runs; coverage, lint and typecheck pass.",
+          "note": "Frozen install also passed; build was already verified and no application code changed."
         }
       ],
       "regression_of": null,
       "root_cause_group": null,
       "clickup_task": null,
-      "retraction_reason": null
+      "retraction_reason": null,
+      "description": "T-01 acceptance checks for strict tooling and the test-only server-only alias.",
+      "steps_to_reproduce": ["Run T-01 acceptance commands."],
+      "expected_result": "All commands exit zero and one smoke test passes."
     }
   ]
 }
