@@ -50,7 +50,7 @@ Node: 24 (minimum 22). Next 16 uses `src/proxy.ts` rather than `middleware.ts` (
 
 ## Development
 
-`pnpm install --frozen-lockfile`, then `pnpm dev`. Database setup arrives in T-03/T-04.
+`pnpm install --frozen-lockfile`, then `pnpm dev`. Run `pnpm db:up` and `pnpm db:reset --db bidlock` first; copy `.env.example` to `.env.local` for the dev server.
 
 ## Verification
 
@@ -64,6 +64,12 @@ MIT — Fırat Kıl.
 
 ## Local PostgreSQL
 
-`pnpm db:up` starts the project database on port 54329. `pnpm db:down` stops it without deleting its volume. The image is pinned to `postgres:17.11`, the current 17.x minor on 2026-10-21 ([PostgreSQL versioning](https://www.postgresql.org/support/versioning/)). It creates `bidlock`, `bidlock_test`, and `bidlock_load`; schema setup arrives in T-04.
+`pnpm db:up` starts the project database on port 54329. `pnpm db:down` stops it without deleting its volume. The image is pinned to `postgres:17.11`, the current 17.x minor on 2026-10-21 ([PostgreSQL versioning](https://www.postgresql.org/support/versioning/)). It creates `bidlock`, `bidlock_test`, and `bidlock_load`; migration and reset tooling is available. Auction schema migrations begin in M1.
 
 A-07 verified locally on 2026-10-21: the official image installs `postgresql-17-pgtap` (1.3.4) and provides `/usr/bin/pg_prove`. The database-tooling CI job repeats the availability checks.
+
+## Database scripts
+
+Scripts read `process.env` only, never `.env.local`. `DATABASE_URL_ADMIN` defaults to the local `bidlock_test` database. Use `pnpm db:migrate --status` or `--dry-run` to inspect migration state. `pnpm db:reset` resets test data; `pnpm db:reset --db bidlock` targets the dev database. Reset refuses non-local hosts. `pnpm test:concurrency` currently runs the eight migration-tooling cases against a disposable `bidlock_migrate_test`; auction concurrency tests arrive in M1.
+
+At M0 there are no auction migrations: reset warns and skips environment SQL until `bidlock.settings` exists. The committed production environment and cron SQL are not executed locally. The ticker needs the later `bidlock.tick()` function. pgTAP rule tests, e2e and load scripts remain unavailable until their owning tasks.

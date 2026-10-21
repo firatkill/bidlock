@@ -18,14 +18,14 @@
     "db:up": "docker compose -f docker/compose.yml up -d db --wait",
     "db:down": "docker compose -f docker/compose.yml down",
     "db:psql": "docker compose -f docker/compose.yml exec db psql -U postgres bidlock",
-    "db:migrate": "node scripts/not-implemented.mjs",
-    "db:reset": "node scripts/not-implemented.mjs",
-    "db:env": "node scripts/not-implemented.mjs",
-    "db:cron": "node scripts/not-implemented.mjs",
-    "db:tick": "node scripts/not-implemented.mjs",
-    "db:ticker": "node scripts/not-implemented.mjs",
+    "db:migrate": "tsx scripts/db/migrate.ts",
+    "db:reset": "tsx scripts/db/reset.ts --env test",
+    "db:env": "tsx scripts/db/apply-env.ts",
+    "db:cron": "tsx scripts/db/apply-env.ts supabase-cron",
+    "db:tick": "tsx scripts/db/ticker.ts --once",
+    "db:ticker": "tsx scripts/db/ticker.ts",
     "test:db": "node scripts/not-implemented.mjs",
-    "test:concurrency": "node scripts/not-implemented.mjs",
+    "test:concurrency": "vitest run --config vitest.integration.config.ts",
     "e2e": "node scripts/not-implemented.mjs",
     "test:all": "node scripts/not-implemented.mjs",
     "load:local": "node scripts/not-implemented.mjs",
@@ -70,5 +70,6 @@
     "typescript": "5.9.3",
     "typescript-eslint": "8.72.0",
     "vitest": "4.1.12"
-  }
+  },
+  "type": "module"
 }

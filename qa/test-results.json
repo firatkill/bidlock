@@ -90,6 +90,11 @@
           "result": "pass",
           "actual_result": "T-02 PR head cd4606f passed static CI.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39563504840"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
         }
       ],
       "regression_of": null,
@@ -255,6 +260,201 @@
           "result": "pass",
           "actual_result": "T-03 static and database-tooling CI jobs passed on 03ee16b.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39564300047"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-009",
+      "ac_reference": "PRD D-05; T-04 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Repeatable migration with checksum protection",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
+          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "integration-test-lint",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-010",
+      "ac_reference": "PRD D-05; T-04 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Status and dry-run",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-011",
+      "ac_reference": "PRD D-34; T-04 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Reset host and database safety",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
+          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "integration-test-lint",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-012",
+      "ac_reference": "PRD D-22; T-04 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Environment SQL safety and substitutions",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected Vitest asymmetric matcher assignments and shorthand void callbacks in the integration tests.",
+          "note": "Narrowed matcher values to unknown and used block callbacks; assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "integration-test-lint",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-013",
+      "ac_reference": "PRD D-05; T-04 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Migration transaction rollback",
+      "description": "Specification-derived migration safety checks in an isolated disposable database.",
+      "steps_to_reproduce": [
+        "Start the project database.",
+        "Run pnpm test:concurrency."
+      ],
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All eight migration integration tests passed against bidlock_migrate_test; scratch database removed afterward.",
+          "note": "Includes concurrent runners, unchanged rerun, edited checksum, dry-run/status, host refusal, target selection, SQL substitution and rollback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M0 run passed: 17 unit tests, eight integration tests, lint, typecheck, guards, production build, status/dry-run, test and dev resets.",
+          "note": "Foundation schema is intentionally absent until T-05; reset warns and skips environment SQL as required by T-04."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-04 PR head b2b1c27 passed static and database-tooling CI, including migration integration tests.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39565265815"
         }
       ],
       "regression_of": null,

@@ -47,5 +47,7 @@ jobs:
           test "$($C exec -T db psql -U postgres -tAc "select count(*) from pg_database where datname in ('bidlock','bidlock_test','bidlock_load')")" = 3
           $C exec -T db which pg_prove
           test "$($C exec -T db psql -U postgres -tAc "select count(*) from pg_available_extensions where name = 'pgtap'")" = 1
+      - name: Migration runner integration (TC-009–TC-013)
+        run: pnpm test:concurrency
       - if: always()
         run: pnpm db:down

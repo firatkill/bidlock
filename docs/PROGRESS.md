@@ -10,7 +10,7 @@ Updated: 2026-10-21.
 - Commits use Git directly with explicit messages and no attribution trailers; existing Claude/Aider attribution settings retained.
 - GitHub creation, remote configuration and pushes approved (D-44); CI will be verified per task.
 - All five project documents read before setup. Owner decisions override conflicting deployment-region and load-run instructions (PRD D-42/D-43).
-- No implementation task or milestone is complete. M0 test cases will be designed from the specs before T-01 code.
+- M0 (T-01–T-04) is complete. All four task PRs passed CI before merge. Stopped at the milestone boundary; T-05 has not started.
 
 ## Tasks
 
@@ -21,7 +21,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-01 | Repository, tooling and CI skeleton                | done   | b90ffd4          |
 | T-02 | Env module, logger, server-only boundaries         | done   | cd4606f          |
 | T-03 | Postgres image and compose database                | done   | 03ee16b          |
-| T-04 | Migration runner, reset and env SQL                | todo   | —                |
+| T-04 | Migration runner, reset and env SQL                | done   | b2b1c27          |
 | T-05 | Foundation migration and pgTAP harness             | todo   | —                |
 | T-06 | Core tables, constraints, indexes                  | todo   | —                |
 | T-07 | Increment ladder                                   | todo   | —                |
@@ -73,6 +73,14 @@ None. GitHub creation and the isolated local Docker database lifecycle approved 
 
 ## Verification limits
 
-- Setup checks only; there is no application, package manifest, test suite or CI workflow yet.
+- M0 has a placeholder application, strict tooling, environment/logger tests, PostgreSQL/pgTAP infrastructure and migration integration tests. Auction rules and browser flows are not implemented yet.
 - Local k6 execution is excluded by OWNER-DECISIONS; M6 acceptance must use CI runs (D-43).
 - Stop for an owner summary at the end of every milestone.
+
+## M0 completion
+
+- [QA report](../qa/M0-report.md) and [milestone review](../qa/M0-review.md).
+- Local checks: 17 unit tests, eight migration integration tests, lint, typecheck, guards, production build and database-tooling acceptance pass.
+- Task PRs: [T-01](https://github.com/firatkill/bidlock/pull/1), [T-02](https://github.com/firatkill/bidlock/pull/2), [T-03](https://github.com/firatkill/bidlock/pull/3), [T-04](https://github.com/firatkill/bidlock/pull/4).
+- Final task CI: https://github.com/firatkill/bidlock/actions/runs/39565265815.
+- No unresolved M0 questions. Auction schema, business tests, browser QA and production deployment remain in M1–M7.
