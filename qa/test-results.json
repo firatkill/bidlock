@@ -6309,6 +6309,107 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-160",
+      "ac_reference": "FR-52; D-40",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Disabled test routes are indistinguishable from unknown paths",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused T-24 checks passed: eight API integration tests and static guard unit case.",
+          "note": "PRD FR-52/FR-82; TRD 10.11/10.13/13.8. Clock reset in finally."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Typecheck caught an overly narrow literal type for the wrong-secret test fixture parameter.",
+          "note": "Runtime assertions passed; annotate the fixture secret as string, preserving assertions."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
+          "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-161",
+      "ac_reference": "FR-52",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Authorized test support",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused T-24 checks passed: eight API integration tests and static guard unit case.",
+          "note": "PRD FR-52/FR-82; TRD 10.11/10.13/13.8. Clock reset in finally."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
+          "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-162",
+      "ac_reference": "FR-82",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Health success and failure",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused T-24 checks passed: eight API integration tests and static guard unit case.",
+          "note": "PRD FR-52/FR-82; TRD 10.11/10.13/13.8. Clock reset in finally."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
+          "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-163",
+      "ac_reference": "FR-52",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Static test-route guard",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused T-24 checks passed: eight API integration tests and static guard unit case.",
+          "note": "PRD FR-52/FR-82; TRD 10.11/10.13/13.8. Clock reset in finally."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 final checks pass: lint, typecheck, 70 unit tests, 363 pgTAP assertions, 43 integration tests and static guards.",
+          "note": "Fixture type corrected; focused API retest passed before full suite. Browser E2E harness remains T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

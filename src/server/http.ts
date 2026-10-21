@@ -6,6 +6,7 @@ import { env } from "./env";
 import { log } from "./log";
 import { readSession } from "./session";
 import { getMe } from "./repo/me";
+import { assertTestEnv } from "./testGuard";
 
 type Auth = "none" | "optional-session" | "session" | "session-or-bot";
 interface RouteOptions<P, Q, B> {
@@ -153,17 +154,19 @@ export function route<P = undefined, Q = undefined, B = undefined>(
     let errorCode: string | undefined;
     const fields: Ctx<P, Q, B>["fields"] = {};
     try {
-      // Test-only routes remain closed until their environment/secret gate is introduced in T-24.
       if (opts.testOnly) {
-        status = 404;
-        errorCode = "NOT_FOUND";
-        return notFoundResponse(id);
+        const hidden = assertTestEnv(req, id);
+        if (hidden) {
+          status = 404;
+          errorCode = "NOT_FOUND";
+          return hidden;
+        }
       }
       if (opts.name !== "health" && env().DEMO_MODE === "off")
         throw new AppError("DEMO_OFF");
       if (opts.mutating && env().DEMO_MODE === "readonly")
         throw new AppError("DEMO_READONLY");
-      if (opts.mutating) {
+      if (opts.mutating && !opts.testOnly) {
         const origin = req.headers.get("origin");
         if (origin === null || !env().APP_ORIGIN.includes(origin))
           throw new AppError("FORBIDDEN_ORIGIN");
