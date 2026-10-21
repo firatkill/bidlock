@@ -824,6 +824,11 @@
           "result": "pass",
           "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
           "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
         }
       ],
       "regression_of": null,
@@ -1014,6 +1019,11 @@
           "result": "pass",
           "actual_result": "T-12: 254 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests passed.",
           "note": "D-49 defers TC-066 and TC-098 to T-15. D-28 deliberate failing-auction warning expected; remaining auctions advance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
         }
       ],
       "regression_of": null,
@@ -2367,6 +2377,158 @@
           "result": "pass",
           "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
           "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-085",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 (reset limits to defaults in-transaction) human: hits 1\u20133 in one second \u2192 0, 4th \u2192 retry in (0, 1000]",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-086",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 next second \u2192 0",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-087",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 61st in a minute \u2192 > 0",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-088",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 bot: 2nd within 2 s \u2192 > 0, after 2 s \u2192 0",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-089",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 IP: 201st \u2192 > 0",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-090",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 `retry_after_ms` = ms to window end (with fixed `now`)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-091",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 unknown limit \u2192 `BLK20`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-093",
+      "ac_reference": "FR-37; D-10; D-11",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-09 \u2014 counters keyed by subject (other bidder unaffected)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final checks pass: 296 pgTAP assertions, lint, typecheck, 37 unit tests and ten integration tests.",
+          "note": "Rate limits reset to production defaults within the test transaction; TC-126 still covers both absent and present rate-limit tables. Guest creation case TC-092 follows in T-15."
         }
       ],
       "regression_of": null,
