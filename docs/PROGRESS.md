@@ -19,7 +19,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | Task | Goal                                               | Status | Finishing commit |
 | ---- | -------------------------------------------------- | ------ | ---------------- |
 | T-01 | Repository, tooling and CI skeleton                | done   | b90ffd4          |
-| T-02 | Env module, logger, server-only boundaries         | todo   | —                |
+| T-02 | Env module, logger, server-only boundaries         | doing  | —                |
 | T-03 | Postgres image and compose database                | todo   | —                |
 | T-04 | Migration runner, reset and env SQL                | todo   | —                |
 | T-05 | Foundation migration and pgTAP harness             | todo   | —                |

@@ -91,6 +91,136 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-003",
+      "ac_reference": "FR-88; T-02 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Required environment and secret validation",
+      "description": "Specification-derived M0 configuration and observability checks.",
+      "steps_to_reproduce": [
+        "Run pnpm test:unit, pnpm lint, pnpm typecheck and pnpm build."
+      ],
+      "expected_result": "Behavior matches the corresponding TC in qa/test-cases.md.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Unit checks, strict lint, typecheck and build passed.",
+          "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-004",
+      "ac_reference": "FR-52, FR-88",
+      "milestone": "M0 — Setup",
+      "title": "Production test-variable refusal",
+      "description": "Specification-derived M0 configuration and observability checks.",
+      "steps_to_reproduce": [
+        "Run pnpm test:unit, pnpm lint, pnpm typecheck and pnpm build."
+      ],
+      "expected_result": "Behavior matches the corresponding TC in qa/test-cases.md.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Unit checks, strict lint, typecheck and build passed.",
+          "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-005",
+      "ac_reference": "FR-85",
+      "milestone": "M0 — Setup",
+      "title": "Origin allowlist and cache",
+      "description": "Specification-derived M0 configuration and observability checks.",
+      "steps_to_reproduce": [
+        "Run pnpm test:unit, pnpm lint, pnpm typecheck and pnpm build."
+      ],
+      "expected_result": "Behavior matches the corresponding TC in qa/test-cases.md.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected shorthand void callbacks. Unit assertions passed.",
+          "note": "Changed callbacks to block bodies; no behavior or assertion weakened."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unit checks, strict lint, typecheck and build passed.",
+          "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-006",
+      "ac_reference": "FR-80",
+      "milestone": "M0 — Setup",
+      "title": "Structured redacted logs",
+      "description": "Specification-derived M0 configuration and observability checks.",
+      "steps_to_reproduce": [
+        "Run pnpm test:unit, pnpm lint, pnpm typecheck and pnpm build."
+      ],
+      "expected_result": "Behavior matches the corresponding TC in qa/test-cases.md.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint rejected shorthand void callbacks. Unit assertions passed.",
+          "note": "Changed callbacks to block bodies; no behavior or assertion weakened."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unit checks, strict lint, typecheck and build passed.",
+          "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-007",
+      "ac_reference": "FR-51; UT-09",
+      "milestone": "M0 — Setup",
+      "title": "Error status mapping",
+      "description": "Specification-derived M0 configuration and observability checks.",
+      "steps_to_reproduce": [
+        "Run pnpm test:unit, pnpm lint, pnpm typecheck and pnpm build."
+      ],
+      "expected_result": "Behavior matches the corresponding TC in qa/test-cases.md.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node 24.10.0; pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Unit checks, strict lint, typecheck and build passed.",
+          "note": "T-02 runs without database I/O; pgTAP/concurrency harnesses arrive in T-04/T-05. DB result mapping is added with the repository/HTTP tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
