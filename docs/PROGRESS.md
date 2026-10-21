@@ -24,7 +24,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-04 | Migration runner, reset and env SQL                | done   | b2b1c27          |
 | T-05 | Foundation migration and pgTAP harness             | done   | cd1bd5d          |
 | T-06 | Core tables, constraints, indexes                  | done   | 8cb98cc          |
-| T-07 | Increment ladder                                   | todo   | —                |
+| T-07 | Increment ladder                                   | doing  | —                |
 | T-08 | Lifecycle internals                                | todo   | —                |
 | T-09 | place_bid                                          | todo   | —                |
 | T-10 | pgTAP: bid rules and idempotency                   | todo   | —                |
