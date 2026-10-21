@@ -39,7 +39,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | done   | cc8d215          |
 | T-20 | Session cookie, names, /api/me                     | done   | a744db1          |
 | T-21 | IP hashing and rate-limit integration              | done   | 7a46266          |
-| T-22 | Read endpoints                                     | todo   | —                |
+| T-22 | Read endpoints                                     | doing  | —                |
 | T-23 | Mutating endpoints: bids and pay                   | todo   | —                |
 | T-24 | Test-only endpoints and health                     | todo   | —                |
 | T-25 | Security headers and CSP                           | todo   | —                |

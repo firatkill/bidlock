@@ -6069,6 +6069,102 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-150",
+      "ac_reference": "FR-46; FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "State response and conditional ETag",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All four read-endpoint integration cases pass, including ETag lazy close, privacy, pagination and lobby.",
+          "note": "No test failures; local lint was slow under host contention but passed. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
+          "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-151",
+      "ac_reference": "FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "State not-found and sandbox visibility",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All four read-endpoint integration cases pass, including ETag lazy close, privacy, pagination and lobby.",
+          "note": "No test failures; local lint was slow under host contention but passed. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
+          "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-152",
+      "ac_reference": "FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Bid pagination",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All four read-endpoint integration cases pass, including ETag lazy close, privacy, pagination and lobby.",
+          "note": "No test failures; local lint was slow under host contention but passed. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
+          "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-153",
+      "ac_reference": "FR-50",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Lobby response",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All four read-endpoint integration cases pass, including ETag lazy close, privacy, pagination and lobby.",
+          "note": "No test failures; local lint was slow under host contention but passed. Full regression follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 full validation passes: 69 unit tests, 363 pgTAP assertions and 29 integration tests.",
+          "note": "Integration suite took 70.76 seconds on the busy host; all individual tests passed without changing timeouts. Lint/typecheck passed. E2E browser coverage remains T-33 as specified in T-22."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
