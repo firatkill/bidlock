@@ -1931,3 +1931,15 @@ All cases use local test data; HTTP integration calls precede the Playwright har
 - Preconditions: Local test database; unique owned fixtures; controlled environment restored after test.
 - Steps: Build, start locally and request HTML and headers.
 - Expected result: CSP contains nonce and frame-ancestors none; at least one Next script contains matching nonce.
+
+## TC-168: Session route authentication checks signatures and existing bidder identity
+
+- Milestone: M2 — API, identity and rate limits
+- Task: T-19 (D-51 prerequisite)
+- PRD / acceptance reference: FR-20; FR-51
+- TRD test ID / section: §10.1 step 6; UT-05 integration with wrapper
+- Priority: Critical
+- Automatable: yes
+- Preconditions: Valid signed fixture cookie, mocked existing/deleted bidder lookup.
+- Steps: Call required and optional session routes with valid, tampered, missing and deleted identities; call bot path before T-34.
+- Expected result: Existing verified identity attaches to context; required missing/invalid/deleted identity returns 401 NO_SESSION; optional invalid identity remains anonymous; bot path returns 401 BOT_TOKEN_INVALID until T-34.
