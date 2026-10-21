@@ -1,0 +1,20 @@
+begin;
+select no_plan();
+select bidlock_test.set_now('2026-01-01 12:00:00+00');
+select bidlock_test.auction(starts_offset_s => 10) as aid, bidlock_test.bidder() as a, bidlock_test.bidder() as b \gset
+select bidlock._event(:'aid','auction_created',null,'{}',bidlock.bidlock_now());
+select bidlock_test.set_now('2026-01-01 12:00:10+00');
+select bidlock_test.bid(:'aid',:'a',1000);
+select bidlock_test.set_now('2026-01-01 12:00:20+00');
+select bidlock_test.bid(:'aid',:'b',1100);
+select bidlock_test.set_now('2026-01-01 12:05:00+00');
+select bidlock_test.bid(:'aid',:'a',1200);
+select bidlock_test.set_now('2026-01-01 12:05:30+00');
+select bidlock.advance_auction_locked(a,bidlock.bidlock_now()) from bidlock.auctions a where id=:'aid';
+select bidlock_test.set_now('2026-01-01 12:08:30+00');
+select * from bidlock.pay_offer(:'aid',:'a');
+select * from bidlock.pay_offer(:'aid',:'b');
+select is((select array_agg(type order by id) from bidlock.auction_events where auction_id=:'aid'), array['auction_created','auction_started','bid_accepted','bid_accepted','bid_accepted','auction_extended','auction_closed','offer_opened','offer_expired','strike_recorded','offer_opened','offer_paid']::text[], 'TC-119 full event order');
+select is((select array_agg(bidder_id order by id) from bidlock.auction_events where auction_id=:'aid'), array[null,null,:'a',:'b',:'a',:'a',:'a',:'a',:'a',:'a',:'b',:'b']::uuid[], 'TC-119 event bidder identities');
+select * from finish();
+rollback;

@@ -2145,6 +2145,234 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-074",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 offer deadline = processing time + `payment_window_s`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-075",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 winner pays before deadline \u2192 `settled`/`paid`, `settled_at`, event",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-076",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 second pay \u2192 `replayed = true`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-077",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 non-winner pays \u2192 `NOT_PAYABLE`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-078",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 winner pays after deadline \u2192 `OFFER_EXPIRED`, runner-up offer rank 2 at runner-up's highest bid, strike count 1 and strike row",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-079",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 runner-up selection with three bidders (A 10, B 11, C 12, B 13, C 14 \u2192 winner C, runner-up B at 13)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-080",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 runner-up pays \u2192 `settled` rank 2",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-081",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 runner-up expires \u2192 `unsold`/`expired`, winner strike still 1, runner-up strike 0",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-082",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 single-bidder auction expiry \u2192 `unsold`/`expired`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-083",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 `expire_due_offers()` idempotent",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-084",
+      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-08 \u2014 late processing: window opens at processing time",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-119",
+      "ac_reference": "INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-14 \u2014 event sequence for a full lifecycle (created, started, bid_accepted \u00d7n, auction_extended, auction_closed, offer_opened, offer_expired, strike_recorded, offer_opened, offer_paid) in order with correct bidder ids",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-13: 280 pgTAP assertions, lint, typecheck, 37 unit and ten integration tests pass.",
+          "note": "Settlement uses migration 0006 as specified. Audit fixture creates its initial event explicitly; lifecycle functions produce subsequent events."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
