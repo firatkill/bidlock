@@ -8,7 +8,7 @@ Updated: 2026-10-21.
 - Commit hook enabled at `.githooks`; executable and syntax checked. Attribution removal and author/committer rejection checks passed.
 - Initial specifications committed as `9ec3283` (`docs: add specs and agent rules`).
 - Commits use Git directly with explicit messages and no attribution trailers; existing Claude/Aider attribution settings retained.
-- GitHub creation, remote configuration, pushes and CI await owner approval.
+- GitHub creation, remote configuration and pushes approved (D-44); CI will be verified per task.
 - All five project documents read before setup. Owner decisions override conflicting deployment-region and load-run instructions (PRD D-42/D-43).
 - No implementation task or milestone is complete. M0 test cases will be designed from the specs before T-01 code.
 
@@ -69,8 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-1. Approve creation of public `firatkill/bidlock`, adding it as `origin`, and pushing the setup commits? Description: "A live auction engine that stays correct under load." Subsequent task branches, PRs, CI checks and pushes follow the implementation plan.
-2. Approve the isolated local Docker database lifecycle required by T-03/T-04 and later tests: create `bidlock`, `bidlock_test`, `bidlock_load`, and scratch `bidlock_migrate_test`; reset/drop only these project test resources as specified? No production database is included.
+None. GitHub creation and the isolated local Docker database lifecycle approved on 2026-10-21 (D-44/D-45).
 
 ## Verification limits
 
