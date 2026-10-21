@@ -20,7 +20,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | ---- | -------------------------------------------------- | ------ | ---------------- |
 | T-01 | Repository, tooling and CI skeleton                | done   | b90ffd4          |
 | T-02 | Env module, logger, server-only boundaries         | done   | cd4606f          |
-| T-03 | Postgres image and compose database                | todo   | —                |
+| T-03 | Postgres image and compose database                | doing  | —                |
 | T-04 | Migration runner, reset and env SQL                | todo   | —                |
 | T-05 | Foundation migration and pgTAP harness             | todo   | —                |
 | T-06 | Core tables, constraints, indexes                  | todo   | —                |

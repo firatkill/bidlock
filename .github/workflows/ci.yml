@@ -28,3 +28,24 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test:unit --coverage
       - run: pnpm check:guards
+  database-tooling:
+    name: local database tooling
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:up
+      - name: Verify PostgreSQL and pgTAP (TC-008)
+        run: |
+          C="docker compose -f docker/compose.yml"
+          test "$($C exec -T db psql -U postgres -tAc "select count(*) from pg_database where datname in ('bidlock','bidlock_test','bidlock_load')")" = 3
+          $C exec -T db which pg_prove
+          test "$($C exec -T db psql -U postgres -tAc "select count(*) from pg_available_extensions where name = 'pgtap'")" = 1
+      - if: always()
+        run: pnpm db:down

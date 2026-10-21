@@ -61,3 +61,9 @@ Node: 24 (minimum 22). Next 16 uses `src/proxy.ts` rather than `middleware.ts` (
 Frankfurt deployment; no analytics; load tests execute in CI only. See [owner decisions](docs/OWNER-DECISIONS.md), [plan](docs/IMPLEMENTATION_PLAN.md) and [progress](docs/PROGRESS.md).
 
 MIT — Fırat Kıl.
+
+## Local PostgreSQL
+
+`pnpm db:up` starts the project database on port 54329. `pnpm db:down` stops it without deleting its volume. The image is pinned to `postgres:17.11`, the current 17.x minor on 2026-10-21 ([PostgreSQL versioning](https://www.postgresql.org/support/versioning/)). It creates `bidlock`, `bidlock_test`, and `bidlock_load`; schema setup arrives in T-04.
+
+A-07 verified locally on 2026-10-21: the official image installs `postgresql-17-pgtap` (1.3.4) and provides `/usr/bin/pg_prove`. The database-tooling CI job repeats the availability checks.

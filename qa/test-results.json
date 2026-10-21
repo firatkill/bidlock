@@ -226,6 +226,36 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-008",
+      "ac_reference": "FR-90; T-03 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Postgres and pgTAP availability",
+      "description": "Verify the isolated local database container and test tooling.",
+      "steps_to_reproduce": [
+        "Run pnpm db:up.",
+        "Run T-03 database-count, pg_prove and available-extension checks."
+      ],
+      "expected_result": "PostgreSQL 17, all three databases, pg_prove and pgTAP available.",
+      "status": "resolved",
+      "environment": "Docker Desktop on macOS arm64; PostgreSQL 17.11",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Public-image lookup stalled in docker-credential-desktop.",
+          "note": "Stopped only the task-owned lookup processes and retried with an empty .git/docker-config against the same Docker engine."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Container healthy; database count 3; /usr/bin/pg_prove; pgTAP 1.3.4; PostgreSQL 17.11. Lint, typecheck and 17 unit tests pass.",
+          "note": "A-07 verified without fallback; database-tooling CI job repeats the acceptance checks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
