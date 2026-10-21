@@ -7336,6 +7336,231 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-188",
+      "ac_reference": "FR-63; NFR-41",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Quick and custom bidding",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Quick-button accessible names concatenate the amount and step label without a space, blocking 17 assertions.",
+          "note": "Add explicit accessible whitespace between labels; preserve expected PRD wording."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests pass after separating the accessible button labels.",
+          "note": "Exact errors, keyboard, retries, stale minimum, rate countdown and state gates covered."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused test lint flags an any-typed matcher and async act callbacks without awaits.",
+          "note": "Use explicit key-type assertions and await the microtask flush inside act."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests, focused lint and typecheck pass.",
+          "note": "Client accepted-response reconciliation is wired; history approval remains pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Production browser quick bid and keyboard bid accepted with exact confirmation copy.",
+          "note": "Two isolated browser contexts against a unique local test auction."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Two-browser production flow passes: quick, keyboard and custom bids, immediate acceptance, outbid notice and validation.",
+          "note": "Scoped product alerts to the main landmark; original three-second timeout retained."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Visual inspection of the mobile screenshot shows the dollar prefix overlapping the custom amount.",
+          "note": "Global field padding overrides the utility class; add a dedicated money-field padding rule."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
+          "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-190",
+      "ac_reference": "FR-63; US-05",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Bid failure copy and retry identity",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Quick-button accessible names concatenate the amount and step label without a space, blocking 17 assertions.",
+          "note": "Add explicit accessible whitespace between labels; preserve expected PRD wording."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests pass after separating the accessible button labels.",
+          "note": "Exact errors, keyboard, retries, stale minimum, rate countdown and state gates covered."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused test lint flags an any-typed matcher and async act callbacks without awaits.",
+          "note": "Use explicit key-type assertions and await the microtask flush inside act."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests, focused lint and typecheck pass.",
+          "note": "Client accepted-response reconciliation is wired; history approval remains pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
+          "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-191",
+      "ac_reference": "FR-63; FR-37",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Stale minimum and rate countdown",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Quick-button accessible names concatenate the amount and step label without a space, blocking 17 assertions.",
+          "note": "Add explicit accessible whitespace between labels; preserve expected PRD wording."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests pass after separating the accessible button labels.",
+          "note": "Exact errors, keyboard, retries, stale minimum, rate countdown and state gates covered."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused test lint flags an any-typed matcher and async act callbacks without awaits.",
+          "note": "Use explicit key-type assertions and await the microtask flush inside act."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests, focused lint and typecheck pass.",
+          "note": "Client accepted-response reconciliation is wired; history approval remains pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
+          "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-192",
+      "ac_reference": "FR-64; FR-67",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Bid panel state gates",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Quick-button accessible names concatenate the amount and step label without a space, blocking 17 assertions.",
+          "note": "Add explicit accessible whitespace between labels; preserve expected PRD wording."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests pass after separating the accessible button labels.",
+          "note": "Exact errors, keyboard, retries, stale minimum, rate countdown and state gates covered."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests, focused lint and typecheck pass.",
+          "note": "Client accepted-response reconciliation is wired; history approval remains pending."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Browser outbid assertion matched both the product alert and Next route-announcer alert.",
+          "note": "Scope product alert assertions to the main landmark; keep exact copy and three-second timeout."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Two-browser production flow passes: quick, keyboard and custom bids, immediate acceptance, outbid notice and validation.",
+          "note": "Scoped product alerts to the main landmark; original three-second timeout retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
+          "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-189",
+      "ac_reference": "FR-71",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Bid keyboard shortcuts",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Custom Enter submission and guarded keyboard shortcuts pass.",
+          "note": "Focused T-30 run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests pass after separating the accessible button labels.",
+          "note": "Exact errors, keyboard, retries, stale minimum, rate countdown and state gates covered."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused test lint flags an any-typed matcher and async act callbacks without awaits.",
+          "note": "Use explicit key-type assertions and await the microtask flush inside act."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 19 bid-panel tests, focused lint and typecheck pass.",
+          "note": "Client accepted-response reconciliation is wired; history approval remains pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Production browser quick bid and keyboard bid accepted with exact confirmation copy.",
+          "note": "Two isolated browser contexts against a unique local test auction."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Two-browser production flow passes: quick, keyboard and custom bids, immediate acceptance, outbid notice and validation.",
+          "note": "Scoped product alerts to the main landmark; original three-second timeout retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-30 work verified: 129 unit tests, lint/typecheck/build, 363 pgTAP assertions, 44 integration tests (9.21 s), two-browser quick/keyboard/custom bidding and outbid flow. Mobile dollar-prefix spacing corrected and visually rechecked.",
+          "note": "No overflow/runtime errors; room axe checks have zero serious/critical findings. History TC-193 waits for the owner decision."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

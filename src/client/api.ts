@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { AuctionState, BidsPage, ErrorBody, Me } from "@/domain/schemas";
+import {
+  AuctionState,
+  BidAccepted,
+  BidsPage,
+  ErrorBody,
+  Me,
+} from "@/domain/schemas";
 export class ApiError extends Error {
   constructor(
     public readonly status: number,
@@ -82,4 +88,18 @@ export const fetchBidsAfter = (
     `/api/auctions/${auctionId}/bids?after=${String(after)}&limit=50`,
     BidsPage,
     signal ? { signal } : undefined,
+  );
+
+export const placeBid = (pending: import("./idempotency").PendingBid) =>
+  request(`/api/auctions/${pending.auctionId}/bids`, BidAccepted, {
+    method: "POST",
+    body: JSON.stringify({
+      amount: pending.amount,
+      idempotency_key: pending.key,
+    }),
+  });
+export const fetchOlderBids = (auctionId: string, cursor: number) =>
+  request(
+    `/api/auctions/${auctionId}/bids?cursor=${String(cursor)}&limit=20`,
+    BidsPage,
   );
