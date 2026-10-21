@@ -6726,6 +6726,234 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-170",
+      "ac_reference": "FR-68; FR-72; FR-73",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Shell identity and navigation",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Five shell component tests pass: profile/loading/strikes, name validation and pending/save/error states, focus return and theme persistence.",
+          "note": "T-26 PRD 9.1; browser visual and full error-page coverage still pending."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Strict lint found HeadersInit spreading, deprecated React FormEvent and an unnecessary type assertion.",
+          "note": "Use Headers, SubmitEvent and inferred literal typing; preserve behavior. Browser shell acceptance already passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell/error/transport tests and strict targeted lint pass after typing corrections.",
+          "note": "D-53 ID-only endpoint integration passed; preserved negative cases and failure history."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-171",
+      "ac_reference": "FR-68; FR-22",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Name dialog validation and save",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Five shell component tests pass: profile/loading/strikes, name validation and pending/save/error states, focus return and theme persistence.",
+          "note": "T-26 PRD 9.1; browser visual and full error-page coverage still pending."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Strict lint found HeadersInit spreading, deprecated React FormEvent and an unnecessary type assertion.",
+          "note": "Use Headers, SubmitEvent and inferred literal typing; preserve behavior. Browser shell acceptance already passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell/error/transport tests and strict targeted lint pass after typing corrections.",
+          "note": "D-53 ID-only endpoint integration passed; preserved negative cases and failure history."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final browser run encountered a local PostgreSQL backend exit during rename; PostgreSQL recovered automatically and the UI showed the save error.",
+          "note": "Docker logs confirm restart/recovery within the running container, not a UI assertion mismatch. No OOM flag or container restart. Retry the affected browser acceptance after health is restored."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-172",
+      "ac_reference": "FR-72; FR-86",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Theme persistence and nonce",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Five shell component tests pass: profile/loading/strikes, name validation and pending/save/error states, focus return and theme persistence.",
+          "note": "T-26 PRD 9.1; browser visual and full error-page coverage still pending."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Strict lint found HeadersInit spreading, deprecated React FormEvent and an unnecessary type assertion.",
+          "note": "Use Headers, SubmitEvent and inferred literal typing; preserve behavior. Browser shell acceptance already passed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Strict lint found widened theme snapshot typing and untyped/stringified request mock data.",
+          "note": "Use explicit hook generic and typed fetch mocks; narrow body to string. Functional component tests remained green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell/error/transport tests and strict targeted lint pass after typing corrections.",
+          "note": "D-53 ID-only endpoint integration passed; preserved negative cases and failure history."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-209",
+      "ac_reference": "FR-73; FR-80; FR-85; D-53",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Browser error reporting contains only a confirmed ID",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint found widened theme snapshot typing and untyped/stringified request mock data.",
+          "note": "Use explicit hook generic and typed fetch mocks; narrow body to string. Functional component tests remained green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell/error/transport tests and strict targeted lint pass after typing corrections.",
+          "note": "D-53 ID-only endpoint integration passed; preserved negative cases and failure history."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-210",
+      "ac_reference": "FR-24; FR-51",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Client transport validates responses and renews missing sessions once",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint found widened theme snapshot typing and untyped/stringified request mock data.",
+          "note": "Use explicit hook generic and typed fetch mocks; narrow body to string. Functional component tests remained green."
+        },
+        {
+          "result": "fail",
+          "actual_result": "The fetch mock stayed untyped because the initial edit did not match its formatted multiline declaration.",
+          "note": "Apply the explicit fetch type to the actual mock declaration; no assertion changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused shell/error/transport tests and strict targeted lint pass after typing corrections.",
+          "note": "D-53 ID-only endpoint integration passed; preserved negative cases and failure history."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-173",
+      "ac_reference": "FR-36; FR-73",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Shell read-only and error states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused shell/error/transport tests and strict targeted lint pass after typing corrections.",
+          "note": "D-53 ID-only endpoint integration passed; preserved negative cases and failure history."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-174",
+      "ac_reference": "NFR-20; NFR-22",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Shell visual and keyboard review",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Live Chrome review at360/1280px in light/dark: readable layout, name validation/save, focus return, no console warnings/errors. Four automated screenshot/a11y combinations also pass.",
+          "note": "Browser-exploration pass; screenshots in qa/screenshots/T-26. Remaining M3 room/realtime/mobile cases not claimed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final browser run encountered a local PostgreSQL backend exit during rename; PostgreSQL recovered automatically and the UI showed the save error.",
+          "note": "Docker logs confirm restart/recovery within the running container, not a UI assertion mismatch. No OOM flag or container restart. Retry the affected browser acceptance after health is restored."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
+          "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

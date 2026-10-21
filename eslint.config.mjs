@@ -22,6 +22,18 @@ export default defineConfig([
   },
   { files: ["src/**/*.{ts,tsx}"], rules: { "no-console": "error" } },
   {
+    files: ["src/components/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "Literal[value=/#[0-9a-fA-F]{6}/]",
+          message: "Use design tokens from globals.css instead of hex colors.",
+        },
+      ],
+    },
+  },
+  {
     files: ["src/server/**/*.ts"],
     rules: {
       "@typescript-eslint/no-non-null-assertion": "error",
