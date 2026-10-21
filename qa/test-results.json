@@ -27,6 +27,70 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-001",
+      "ac_reference": "NFR-40, NFR-43; T-01 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Strict toolchain and server-only test alias",
+      "status": "resolved",
+      "environment": "macOS arm64, Node 24.10.0, pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial dependency lookup/install could not use root-owned shared npm/pnpm caches.",
+          "note": "Retried using repository-local caches under .git; no global permissions changed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "ESLint reported anonymous default exports in postcss.config.mjs and prettier.config.mjs.",
+          "note": "Replaced with named config constants before default export."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Lint, typecheck, Vitest smoke with coverage, guard skeleton and production build passed.",
+          "note": "No API/UI behavior exists yet; full e2e is introduced at T-33."
+        },
+        {
+          "result": "pass",
+          "actual_result": "After separating Vitest project include patterns, exactly one smoke test runs; coverage, lint and typecheck pass.",
+          "note": "Frozen install also passed; build was already verified and no application code changed."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "description": "T-01 acceptance checks for strict tooling and the test-only server-only alias.",
+      "steps_to_reproduce": ["Run T-01 acceptance commands."],
+      "expected_result": "All commands exit zero and one smoke test passes."
+    },
+    {
+      "tc_reference": "TC-002",
+      "ac_reference": "FR-96; T-01 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Static CI",
+      "status": "resolved",
+      "description": "Verify the specified static job on the task PR.",
+      "steps_to_reproduce": ["Open PR #1 and inspect its static job."],
+      "expected_result": "Lint, typecheck, unit coverage and guard steps pass.",
+      "environment": "GitHub Actions ubuntu-latest, Node 24",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Static workflow passed on 330286a.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39562694574; final task head is checked again before merging."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-01 PR head b90ffd4 passed static CI.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/39563075688"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
