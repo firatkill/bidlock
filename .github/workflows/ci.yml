@@ -141,6 +141,16 @@ jobs:
           --health-cmd "pg_isready -h 127.0.0.1 -U postgres"
           --health-interval 5s --health-timeout 5s --health-retries 20
     env:
+      # D-56: non-secret build configuration; E2E runtime uses playwright.config.ts.
+      APP_ENV: test
+      DEMO_MODE: "on"
+      TEST_API_SECRET: e2e-test-secret
+      DB_POOL_MAX: "10"
+      SESSION_SECRET: ci-session-placeholder-0123456789abcdef
+      BOT_TOKEN_SECRET: ci-bot-placeholder-0123456789abcdef0123
+      IP_HASH_SALT: ci-salt-placeholder
+      APP_ORIGIN: http://localhost:3100
+      TRUST_PROXY: none
       DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:5432/bidlock_test
       DATABASE_URL: postgres://bidlock_app:bidlock_app@localhost:5432/bidlock_test
       NEXT_PUBLIC_FEED: polling
@@ -173,6 +183,15 @@ jobs:
     timeout-minutes: 15
     env:
       APP_ENV: production
+      # D-56: build-only placeholders, never deployed or used for external access.
+      DATABASE_URL: postgres://unused:unused@localhost:5432/bidlock_build_unused
+      DEMO_MODE: "off"
+      DB_POOL_MAX: "10"
+      SESSION_SECRET: ci-session-placeholder-0123456789abcdef
+      BOT_TOKEN_SECRET: ci-bot-placeholder-0123456789abcdef0123
+      IP_HASH_SALT: ci-salt-placeholder
+      APP_ORIGIN: http://localhost:3100
+      TRUST_PROXY: none
       NEXT_PUBLIC_FEED: broadcast
       NEXT_PUBLIC_POLL_INTERVAL_MS: "2000"
       NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co

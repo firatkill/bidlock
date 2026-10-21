@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, expect, test, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, expect, test, vi } from "vitest";
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Shell } from "@/components/shell/Shell";
@@ -18,6 +18,11 @@ const me = Me.parse({
   active_sandbox: null,
   open_offers: [],
   server_now: "2026-01-01T00:00:00Z",
+});
+// Module transformation belongs to unit setup, not the dialog's UI wait.
+// E2E TC-171 exercises the actual cold, deferred browser import.
+beforeAll(async () => {
+  await import("@/components/shell/NameDialog");
 });
 beforeEach(() => {
   vi.mocked(useMe).mockReturnValue(me);

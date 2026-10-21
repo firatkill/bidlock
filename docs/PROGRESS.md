@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-T-33 / TC-207: approve CI-only placeholder build environment configuration missing from TRD §16.1. Requested in conversation; local tests and live review pass, CI build/E2E cannot pass until corrected. No secrets or external services will be created. D-55 remains approved.
+None. D-56 CI-only build configuration correction approved; verification in progress.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 

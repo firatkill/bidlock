@@ -1,6 +1,6 @@
 # M3 QA report — UI and real-time
 
-Status: **not ready to close**. T-26–T-32 are merged. T-33 is implemented and passes locally, but its CI build configuration requires owner approval under AGENTS.md checkpoint 2. Do not start T-34.
+Status: **not ready to close**. T-26–T-32 are merged. T-33 is implemented and passes locally, but the approved D-56 CI correction still awaits a green PR run. Do not start T-34.
 
 ## Evidence
 
@@ -58,9 +58,9 @@ Status: **not ready to close**. T-26–T-32 are merged. T-33 is implemented and 
 | TC-205 | Rate-limited and scheduled browser states                             | Passed; evidence in ledger |
 | TC-208 | Live two-browser countdown and mobile review                          | Passed; evidence in ledger |
 
-## Pending decision
+## Pending verification
 
-- **TC-207** — Owner approval needed for CI-only placeholder build configuration. [Owner checkpoint](../docs/PROGRESS.md#open-questions-for-the-owner). No ClickUp or Slack per repository rules.
+- **TC-207** — D-56 approved and verified locally; green PR CI still required. [Owner checkpoint](../docs/PROGRESS.md#open-questions-for-the-owner). No ClickUp or Slack per repository rules.
 
 ## Manual test required
 
@@ -68,7 +68,7 @@ No outstanding local manual cases. TC-174 shell and TC-208 two-browser/countdown
 
 ## Regressions and audit trail
 
-No unresolved product regressions or retracted cases. Deferred name-dialog loading required DOM tests to await module arrival and assert focus on the visible Edit control; all validation and save assertions remain.
+No unresolved product regressions or retracted cases. Deferred name-dialog loading required DOM tests to preload module transformation during setup and await module arrival and assert focus on the visible Edit control; all validation and save assertions remain.
 
 ## Root causes and advisory review
 
@@ -76,7 +76,7 @@ No unresolved product regressions or retracted cases. Deferred name-dialog loadi
 - T-32 test syntax/formatting, future typed links and recursive callback lint findings were fixed and retested.
 - T-33 harness peer mismatch resolved with explicit development-only playwright-core at the runner version; fixture callback naming and HTTP request format were corrected against the specs.
 - Initial bundle budget failure was a product payload issue, resolved without relaxing the limit. A dependency-triggered run remeasured the old build once; focused isolated runs now use --no-deps.
-- Remaining TC-207 failure is the documented CI environment gap, awaiting owner approval.
+- D-56 corrects the documented CI environment gap; both build configurations and all 14 browser tests pass locally. PR CI verification remains.
 
 ## Acceptance coverage
 
