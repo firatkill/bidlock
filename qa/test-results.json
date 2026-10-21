@@ -6954,6 +6954,102 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-175",
+      "ac_reference": "NFR-41",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Integer money formatting",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-176",
+      "ac_reference": "NFR-41; FR-63",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Dollar input acceptance and rejection",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-177",
+      "ac_reference": "FR-40; FR-41",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Clock samples and countdown",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-180",
+      "ac_reference": "NFR-21",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Live announcement throttling",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

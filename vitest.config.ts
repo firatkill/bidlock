@@ -35,6 +35,10 @@ export default defineConfig({
         },
       },
     ],
-    coverage: { provider: "v8", include: ["src/domain/**", "src/server/**"] },
+    coverage: {
+      provider: "v8",
+      include: ["src/domain/**", "src/server/**"],
+      thresholds: { "src/domain/**": { lines: 90 } },
+    },
   },
 });
