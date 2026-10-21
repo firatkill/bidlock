@@ -1,0 +1,14 @@
+pnpm-lock.yaml
+.next
+node_modules
+coverage
+bench/out
+playwright-report
+test-results
+# Preserve the approved source specifications verbatim.
+AGENTS.md
+CLAUDE.md
+docs/PRD.md
+docs/TRD.md
+docs/IMPLEMENTATION_PLAN.md
+docs/OWNER-DECISIONS.md

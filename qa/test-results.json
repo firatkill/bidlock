@@ -27,6 +27,35 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-001",
+      "ac_reference": "NFR-40, NFR-43; T-01 acceptance",
+      "milestone": "M0 — Setup",
+      "title": "Strict toolchain and server-only test alias",
+      "status": "resolved",
+      "environment": "macOS arm64, Node 24.10.0, pnpm 10.34.7",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial dependency lookup/install could not use root-owned shared npm/pnpm caches.",
+          "note": "Retried using repository-local caches under .git; no global permissions changed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "ESLint reported anonymous default exports in postcss.config.mjs and prettier.config.mjs.",
+          "note": "Replaced with named config constants before default export."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Lint, typecheck, Vitest smoke with coverage, guard skeleton and production build passed.",
+          "note": "No API/UI behavior exists yet; full e2e is introduced at T-33."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
