@@ -48,7 +48,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-28 | AuctionFeed interface and PollingFeed              | done   | 91a11bf          |
 | T-29 | Auction room: read-only parts                      | done   | 0a7de99          |
 | T-30 | Bid panel and bid history                          | done   | 04e78fe          |
-| T-31 | SupabaseBroadcastFeed                              | todo   | —                |
+| T-31 | SupabaseBroadcastFeed                              | doing  | —                |
 | T-32 | Lobby                                              | todo   | —                |
 | T-33 | Playwright harness, two-bidder e2e, CI e2e job     | todo   | —                |
 | T-34 | Sandbox and bot-token endpoints                    | todo   | —                |
@@ -190,3 +190,5 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 - T-30 D-55 implemented: history paging stops at the newest 100 rows or exhaustion. Final checks: 132 unit tests, lint/typecheck/build and local production two-bidder/history acceptance pass. Final PR CI pending.
 
 - T-30 complete: [PR #30](https://github.com/firatkill/bidlock/pull/30), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39621203639), task commit `04e78fe`.
+
+- T-31 local checks pass: lint/typecheck and 138 unit tests. Strict Broadcast payloads, reconnect/safety/visibility refresh, permanent 2 s polling fallback and lazy import verified with mocks. Hosted Supabase delivery remains unverified until deployment. PR CI pending.
