@@ -1,3 +1,8 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { ApiError, request } from "@/client/api";
+import { SandboxCreated } from "@/domain/schemas";
 import Link from "next/link";
 import { fillCopy, sandboxCopy as copy, lobbyCopy } from "@/domain/copy";
 import { formatCountdown, remainingMs } from "@/domain/clock";
@@ -9,11 +14,15 @@ export function SandboxCard({
   now,
   state = "default",
   retryMinutes = 1,
+  onStart,
+  disabled = false,
 }: {
   auction?: AuctionState | null;
   now: number;
   state?: SandboxCardState;
   retryMinutes?: number;
+  onStart?: () => void;
+  disabled?: boolean;
 }) {
   const left = auction ? remainingMs(auction.ends_at, now) : 0;
   const status =
@@ -39,7 +48,13 @@ export function SandboxCard({
           {copy.return}
         </Link>
       ) : (
-        <button className="button mt-auto self-start" disabled>
+        <button
+          className="button mt-auto self-start"
+          onClick={onStart}
+          disabled={
+            disabled || !onStart || state === "creating" || state === "readonly"
+          }
+        >
           {state === "creating" ? copy.starting : copy.start}
         </button>
       )}
@@ -62,5 +77,80 @@ export function SandboxCard({
         </p>
       )}
     </section>
+  );
+}
+
+/** Creation stays separate from the read-only active card and its feed. */
+export function SandboxStart({
+  now,
+  readonly = false,
+}: {
+  now: number;
+  readonly?: boolean;
+}) {
+  const router = useRouter();
+  const [state, setState] = useState<SandboxCardState>("default");
+  const [retryMinutes, setRetryMinutes] = useState(1);
+  const [cooldown, setCooldown] = useState(false);
+  const inFlight = useRef(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (timer.current !== null) clearTimeout(timer.current);
+    },
+    [],
+  );
+  const start = async () => {
+    if (inFlight.current || readonly || cooldown) return;
+    inFlight.current = true;
+    setState("creating");
+    try {
+      const created = await request("/api/sandboxes", SandboxCreated, {
+        method: "POST",
+        body: "{}",
+      });
+      router.push(`/a/${created.auction_id}`);
+    } catch (failure: unknown) {
+      if (failure instanceof ApiError) {
+        const { code, details } = failure.envelope.error;
+        if (code === "SANDBOX_EXISTS") {
+          const existing = SandboxCreated.safeParse(details);
+          if (existing.success) {
+            router.push(`/a/${existing.data.auction_id}`);
+            return;
+          }
+        }
+        if (code === "SANDBOX_CAPACITY") {
+          setState("capacity");
+          setCooldown(true);
+          timer.current = setTimeout(() => {
+            setCooldown(false);
+          }, 30000);
+          return;
+        }
+        if (
+          code === "RATE_LIMITED" &&
+          typeof details?.retry_after_ms === "number"
+        ) {
+          setState("rate");
+          setRetryMinutes(Math.ceil(details.retry_after_ms / 60000));
+          return;
+        }
+      }
+      setState("error");
+    } finally {
+      inFlight.current = false;
+    }
+  };
+  return (
+    <SandboxCard
+      now={now}
+      state={readonly ? "readonly" : state}
+      retryMinutes={retryMinutes}
+      disabled={cooldown}
+      onStart={() => {
+        void start();
+      }}
+    />
   );
 }

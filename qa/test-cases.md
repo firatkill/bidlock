@@ -2672,7 +2672,7 @@ Cases designed from PRD §9, TRD §11/§15 and T-26–T-33 before implementation
 - Automatable: yes
 - Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
 - Steps: Start sandbox from lobby; test existing, capacity and rate errors.
-- Expected result: Navigate to own room or existing room; exact header, three bot chips, notes and error copy.
+- Expected result: Navigate to own room or existing room; exact header, three bot chips, notes and error copy; capacity disables Start for 30 seconds.
 
 ## TC-226: Seeded sandbox bidding flow
 

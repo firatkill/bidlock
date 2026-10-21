@@ -1,6 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { BotStrip, SandboxHeader } from "./BotStrip";
+const BotRunner = lazy(() =>
+  import("@/client/bots/BotRunner").then((module) => ({
+    default: module.BotRunner,
+  })),
+);
 import { useLiveAnnouncer } from "@/client/hooks/useLiveAnnouncer";
 import type { placeBid } from "@/client/api";
 import { formatCents } from "@/domain/money";
@@ -83,6 +89,34 @@ export function AuctionRoom({
           : copy.publicBreadcrumb}
       </Link>
       <ConnectionBanner status={room.status} />
+      {auction.sandbox && room.me?.id === auction.sandbox.owner_id && (
+        <>
+          <SandboxHeader
+            expiresAt={auction.sandbox.expires_at}
+            serverNow={auction.server_now}
+            clock={room.clock}
+          />
+          {readonly ? (
+            <BotStrip paused view={{ bots: [], hidden: false, error: false }} />
+          ) : (
+            <Suspense
+              fallback={
+                <BotStrip view={{ bots: [], hidden: false, error: false }} />
+              }
+            >
+              <BotRunner
+                auction={auction}
+                clock={room.clock}
+                onSnapshot={(snapshot) => {
+                  room.apply({ kind: "snapshot", ...snapshot });
+                }}
+              >
+                {(view) => <BotStrip view={view} />}
+              </BotRunner>
+            </Suspense>
+          )}
+        </>
+      )}
       <p className="sr-only" aria-live="polite">
         {polite}
       </p>

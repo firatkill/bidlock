@@ -53,7 +53,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-33 | Playwright harness, two-bidder e2e, CI e2e job     | done   | effabbb          |
 | T-34 | Sandbox and bot-token endpoints                    | done   | bdcaa75          |
 | T-35 | Bot scheduler and runner                           | done   | c8794b1          |
-| T-36 | Sandbox UI and e2e                                 | todo   | —                |
+| T-36 | Sandbox UI and e2e                                 | doing  | —                |
 | T-37 | Result panel, payment and runner-up UI             | todo   | —                |
 | T-38 | Extension banner and public room e2e               | todo   | —                |
 | T-39 | App image and full compose                         | todo   | —                |
@@ -214,3 +214,5 @@ T-34: sandbox and bot-token endpoints, signed scoped tokens and session-or-bot a
 T-35: deterministic persona scheduler and browser runner implemented. Local lint/typecheck/guards, 157 unit tests, production polling build and 14 browser regressions pass. All six PR CI jobs pass. Runner UI mounting follows in T-36.
 
 - T-35 complete: [PR #35](https://github.com/firatkill/bidlock/pull/35), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39635559095), task commit `c8794b1`.
+
+T-36: sandbox creation UI, owner expiry header and lazy bot strip/runner mounted. Local lint/typecheck/guards, 161 unit tests, production build and 15 browser tests pass. Seeded sandbox flow passed three consecutive runs in the isolated project (shared-lobby AGENTS override). Live Chrome/mobile and native Brave pause/resume pass; missing favicon noted in QA report. PR CI pending.

@@ -8,7 +8,7 @@ import { AuctionList, type AuctionState } from "@/domain/schemas";
 import type { z } from "zod";
 import type { ClockSync } from "@/domain/clock";
 import { PublicRoomCard } from "./PublicRoomCard";
-import { SandboxCard } from "./SandboxCard";
+import { SandboxCard, SandboxStart } from "./SandboxCard";
 import { OfferNotices } from "./OfferNotices";
 function LiveCard({
   initial,
@@ -150,7 +150,7 @@ export function Lobby({
             refresh={refresh}
           />
         ) : (
-          <SandboxCard now={now} state={readonly ? "readonly" : "default"} />
+          <SandboxStart now={now} readonly={readonly} />
         )}
       </div>
     </div>
