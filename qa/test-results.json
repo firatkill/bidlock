@@ -7610,6 +7610,103 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-194",
+      "ac_reference": "FR-45; FR-48",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Broadcast subscription and validation",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six Broadcast and lazy-loading tests pass.",
+          "note": "Mocked channel covers payload validation, reconnect, safety/visibility refresh, both ten-second timeouts and permanent fallback."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused lint flags async mutable-state narrowing and string comparisons against SDK enum values.",
+          "note": "Read cancellation through a predicate across awaits and accept the callback status as a string; preserve runtime checks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six focused tests and lint pass after async-state/SDK typing corrections.",
+          "note": "Runtime cancellation and fallback guards retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-31 checks pass: lint, typecheck and 138 unit tests.",
+          "note": "Real hosted Supabase delivery not exercised; mocked contract/fallback and lazy-import behavior verified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-195",
+      "ac_reference": "FR-48",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Broadcast fallback and safety refresh",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six Broadcast and lazy-loading tests pass.",
+          "note": "Mocked channel covers payload validation, reconnect, safety/visibility refresh, both ten-second timeouts and permanent fallback."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused lint flags async mutable-state narrowing and string comparisons against SDK enum values.",
+          "note": "Read cancellation through a predicate across awaits and accept the callback status as a string; preserve runtime checks."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six focused tests and lint pass after async-state/SDK typing corrections.",
+          "note": "Runtime cancellation and fallback guards retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-31 checks pass: lint, typecheck and 138 unit tests.",
+          "note": "Real hosted Supabase delivery not exercised; mocked contract/fallback and lazy-import behavior verified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-196",
+      "ac_reference": "FR-46; D-19",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Lazy broadcast module loading",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All six Broadcast and lazy-loading tests pass.",
+          "note": "Mocked channel covers payload validation, reconnect, safety/visibility refresh, both ten-second timeouts and permanent fallback."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six focused tests and lint pass after async-state/SDK typing corrections.",
+          "note": "Runtime cancellation and fallback guards retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-31 checks pass: lint, typecheck and 138 unit tests.",
+          "note": "Real hosted Supabase delivery not exercised; mocked contract/fallback and lazy-import behavior verified."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
