@@ -4,6 +4,8 @@ import { AppError } from "@/domain/errors";
 import { ErrorBody } from "@/domain/schemas";
 import { env } from "./env";
 import { log } from "./log";
+import { readSession } from "./session";
+import { getMe } from "./repo/me";
 
 type Auth = "none" | "optional-session" | "session" | "session-or-bot";
 interface RouteOptions<P, Q, B> {
@@ -175,21 +177,34 @@ export function route<P = undefined, Q = undefined, B = undefined>(
       const body = opts.body
         ? parseInput(opts.body, await readJson(req))
         : undefined;
-      // Session parsing is the pending T-20 prerequisite; fail closed until connected.
+      // Bot token verification remains scheduled for T-34.
       if (
         opts.auth === "session-or-bot" &&
         req.headers.get("authorization")?.startsWith("Bot ")
       )
         throw new AppError("BOT_TOKEN_INVALID");
-      if (opts.auth === "session" || opts.auth === "session-or-bot")
-        throw new AppError("NO_SESSION");
+      let bidderId: string | null = null;
+      if (opts.auth !== "none") {
+        const session = readSession(req);
+        if (session && (await getMe(session.bidderId)))
+          bidderId = session.bidderId;
+        if (
+          bidderId === null &&
+          (opts.auth === "session" || opts.auth === "session-or-bot")
+        )
+          throw new AppError("NO_SESSION");
+      }
+      if (bidderId !== null) {
+        fields.bidder_id = bidderId;
+        fields.is_bot = false;
+      }
       const response = await handler({
         req,
         requestId: id,
         params,
         query,
         body,
-        bidderId: null,
+        bidderId,
         isBot: false,
         fields,
         db: async <T>(call: () => Promise<T>) => {

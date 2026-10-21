@@ -190,7 +190,7 @@ Conventions for every task:
 
 ### T-19 HTTP wrapper, Origin check, demo mode gate
 
-- Goal: `route()` from TRD §10.1.
+- Goal: `route()` from TRD §10.1. D-51 permits implementing the prerequisite session helper here; dedicated session tests and identity endpoint acceptance remain in T-20.
 - Files: `src/server/http.ts`, `tests/unit/http.test.ts` (UT-13).
 - Acceptance: `pnpm test:unit` (UT-13: processing order, 403/413/415/503 cases, request id reuse, log line fields).
 - Depends on: T-02, T-18. Covers: FR-36, FR-51, FR-81, FR-85.
@@ -199,7 +199,7 @@ Conventions for every task:
 
 - Goal: guest identity end to end.
 - Files: `src/server/session.ts`, `src/domain/names.ts`, `src/domain/profanity.ts`, `src/app/api/me/route.ts`, `tests/unit/session.test.ts` (UT-05), `tests/unit/names.test.ts` (UT-08).
-- Steps: TRD §13.1, §13.9, §10.2, §10.3; sliding renewal; deleted-bidder recovery (FR-24).
+- Steps: TRD §13.1, §13.9, §10.2, §10.3; sliding renewal; deleted-bidder recovery (FR-24). D-51 permits implementing the prerequisite IP helper here; dedicated IP tests remain in T-21.
 - Acceptance: `pnpm test:unit` (UT-05, UT-08); manual: `pnpm dev`, `curl -i localhost:3000/api/me` shows `Set-Cookie: bl_sid=s1.` with `HttpOnly; SameSite=Lax`.
 - Depends on: T-19. Covers: FR-20..FR-25, D-21.
 

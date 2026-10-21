@@ -5525,6 +5525,11 @@
           "result": "pass",
           "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
           "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
         }
       ],
       "regression_of": null,
@@ -5549,6 +5554,11 @@
           "result": "pass",
           "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
           "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
         }
       ],
       "regression_of": null,
@@ -5573,6 +5583,11 @@
           "result": "pass",
           "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
           "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
         }
       ],
       "regression_of": null,
@@ -5597,6 +5612,11 @@
           "result": "pass",
           "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
           "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
         }
       ],
       "regression_of": null,
@@ -5621,6 +5641,11 @@
           "result": "pass",
           "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
           "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
         }
       ],
       "regression_of": null,
@@ -5645,6 +5670,35 @@
           "result": "pass",
           "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
           "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-168",
+      "ac_reference": "FR-20; FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Session route authentication checks signatures and existing bidder identity",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint requires explicit string conversion for the signed timestamp.",
+          "note": "Use String() after integer validation; cookie format unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 HTTP tests and 55 total unit tests pass; session auth now verifies existing identity.",
+          "note": "D-51 prerequisite approved. Full regression: 363 SQL assertions and 21 integration tests pass (11.02 seconds); lint/typecheck pass."
         }
       ],
       "regression_of": null,

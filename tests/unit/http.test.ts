@@ -5,6 +5,10 @@ import { AppError } from "@/domain/errors";
 import { ErrorBody, IdParams } from "@/domain/schemas";
 import { resetEnvCacheForTests } from "@/server/env";
 import { testEnv } from "../fixtures/env";
+vi.mock("@/server/repo/me", () => ({ getMe: vi.fn() }));
+import { getMe } from "@/server/repo/me";
+import { signSession } from "@/server/session";
+
 const Ok = z.object({ ok: z.literal(true) }).strict();
 const handler = vi.fn(() => Promise.resolve(json(Ok, { ok: true })));
 const body = z.object({ text: z.string() }).strict();
@@ -221,4 +225,53 @@ test("TC-134 UT-13: output schema failures are internal errors", async () => {
   )(request());
   expect(response.status).toBe(500);
   expect(await errorCode(response)).toBe("INTERNAL");
+});
+
+test("TC-168: session auth requires valid signature and existing guest", async () => {
+  const id = crypto.randomUUID();
+  const me = {
+    id,
+    display_name: "Fixture",
+    payment_strikes: 0,
+    active_sandbox: null,
+    open_offers: [],
+    server_now: new Date().toISOString(),
+  };
+  vi.mocked(getMe).mockResolvedValue(me);
+  const seen = z.object({ bidder: z.uuid().nullable() }).strict();
+  const secured = route(
+    { name: "auth", auth: "session", mutating: false },
+    (ctx) => Promise.resolve(json(seen, { bidder: ctx.bidderId })),
+  );
+  const req = (cookie?: string) =>
+    new Request("http://localhost:3000/api/auth", {
+      headers: cookie ? { cookie } : {},
+    });
+  expect((await secured(req())).status).toBe(401);
+  expect((await secured(req(`bl_sid=${signSession(id)}x`))).status).toBe(401);
+  expect(
+    await (await secured(req(`bl_sid=${signSession(id)}`))).json(),
+  ).toEqual({ bidder: id });
+  vi.mocked(getMe).mockResolvedValue(null);
+  expect((await secured(req(`bl_sid=${signSession(id)}`))).status).toBe(401);
+  const optional = route(
+    { name: "auth", auth: "optional-session", mutating: false },
+    (ctx) => Promise.resolve(json(seen, { bidder: ctx.bidderId })),
+  );
+  expect(await (await optional(req("bl_sid=bad"))).json()).toEqual({
+    bidder: null,
+  });
+  const bot = route(
+    { name: "auth", auth: "session-or-bot", mutating: false },
+    handler,
+  );
+  expect(
+    await errorCode(
+      await bot(
+        new Request("http://localhost:3000/api/auth", {
+          headers: { authorization: "Bot invalid" },
+        }),
+      ),
+    ),
+  ).toBe("BOT_TOKEN_INVALID");
 });

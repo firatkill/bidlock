@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-M2 task-order checkpoint: T-19 needs session verification from T-20; T-20 needs IP hashing from T-21. Approval requested to implement prerequisite helpers when first needed and retain dedicated acceptance checks in their named tasks. T-18 is complete. T-19 validation, gates, envelopes and logs pass; session wiring is pending this decision.
+None. D-51 approves implementing prerequisite session/IP helpers when first needed; dedicated T-20/T-21 acceptance remains required.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -137,4 +137,4 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD a
 
 - T-18 complete: [PR #18](https://github.com/firatkill/bidlock/pull/18), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39580737981), task commit `fff4b79`.
 
-- T-19 HTTP core: 17 focused tests pass; full checks pass (54 unit, 363 pgTAP assertions, 21 integration tests, lint/typecheck). Authentication remains fail-closed until the prerequisite-order decision; T-19 is not complete and its PR must remain draft.
+- T-19 HTTP core: 17 focused tests pass; full checks pass (54 unit, 363 pgTAP assertions, 21 integration tests, lint/typecheck). D-51 is approved; session authentication is implemented and all 18 HTTP tests now pass. Final T-19 CI pending.
