@@ -1307,6 +1307,448 @@
           "result": "pass",
           "actual_result": "T-09 full run: lint, typecheck, 37 unit tests, 139 pgTAP assertions and ten integration tests passed.",
           "note": "First bid returns replayed=false, bid_no=1 and version=2; runtime role can call place_bid. INT-01/INT-02 added in T-17."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-033",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 first bid < start \u2192 `BID_TOO_LOW` with `min_next_bid = start`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-035",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 second bid by same bidder \u2192 `ALREADY_LEADING`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-036",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 other bidder at price+inc\u22121 \u2192 `BID_TOO_LOW`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-037",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 at price+inc \u2192 accepted",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-038",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 band crossing (price 990 \u2192 min 1040",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-039",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 price 1000 \u2192 min 1100)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-040",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 `BID_TOO_HIGH` at max+1, accepted at max",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-041",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 amount 0 \u2192 `VALIDATION`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-042",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 scheduled \u2192 `AUCTION_NOT_LIVE`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-043",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 scheduled whose `starts_at` passed \u2192 accepted (lazy start)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-044",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 at `ends_at` \u2192 `AUCTION_CLOSED` and status now `closed`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-045",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 unknown auction / bidder \u2192 `NOT_FOUND`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-046",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 sandbox: stranger `NOT_FOUND`, owner accepted, own bot accepted, other sandbox's bot `NOT_FOUND`, bot on test auction `NOT_FOUND`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-047",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 `bidding_paused` \u2192 `BIDDING_PAUSED` and no request row",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-048",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 bids row fields (`prev_amount`, `min_required`, `ends_at_before/after`)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-049",
+      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-04 \u2014 `bid_requests` row stored for rule rejections and not for `NOT_FOUND`/`VALIDATION`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-050",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 replay accepted \u2192 same `bid_id`, `replayed = true`, `bid_count` unchanged, no new event",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-051",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 replay after being outbid \u2192 still original accepted result",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-052",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 replay of rejection \u2192 same code, `replayed = true`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-053",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 same key + different amount \u2192 `IDEMPOTENCY_MISMATCH`, request count unchanged",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-054",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 same key + other auction \u2192 `IDEMPOTENCY_MISMATCH`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-055",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 two bidders using the same key \u2192 both processed independently",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-056",
+      "ac_reference": "FR-04; INV-07",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-05 \u2014 replay after auction closed \u2192 original result",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 DB-04 and DB-05 pass all required bid-rule and idempotency cases; 185 total pgTAP assertions.",
+          "note": "Lint, typecheck, 37 unit tests and ten integration tests also pass."
         }
       ],
       "regression_of": null,

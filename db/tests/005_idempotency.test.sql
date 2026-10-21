@@ -1,0 +1,33 @@
+begin;
+select no_plan();
+select bidlock_test.set_now('2026-01-01 12:00:00+00');
+select bidlock_test.auction(snipe => 0) as aid, bidlock_test.auction() as aid2, bidlock_test.bidder() as b1, bidlock_test.bidder() as b2, gen_random_uuid() as key, gen_random_uuid() as reject_key \gset
+create temporary table original as select * from bidlock_test.bid( :'aid', :'b1', 1000, :'key');
+create temporary table replay as select * from bidlock_test.bid( :'aid', :'b1', 1000, :'key');
+select is((select to_jsonb(r)-'replayed' from replay r), (select to_jsonb(o)-'replayed' from original o), 'TC-050 same original result');
+select is((select replayed from replay), true, 'TC-050 replay replayed');
+select is((select bid_count from bidlock.auctions where id=:'aid'), 1, 'TC-050 replay adds no bid');
+select is((select count(*) from bidlock.auction_events where auction_id=:'aid'), 1::bigint, 'TC-050 replay adds no event');
+create temporary table outbid as select * from bidlock_test.bid( :'aid', :'b2', 1100);
+create temporary table replay_outbid as select * from bidlock_test.bid( :'aid', :'b1', 1000, :'key');
+select is((select to_jsonb(r)-'replayed' from replay_outbid r), (select to_jsonb(o)-'replayed' from original o), 'TC-051 replay retains accepted result after outbid');
+create temporary table rejection as select * from bidlock_test.bid( :'aid', :'b1', 1, :'reject_key');
+create temporary table reject_replay as select * from bidlock_test.bid( :'aid', :'b1', 1, :'reject_key');
+select is((select error_code from reject_replay), 'BID_TOO_LOW', 'TC-052 reject_replay error_code');
+select is((select replayed from reject_replay), true, 'TC-052 reject_replay replayed');
+select count(*) as before_mismatch from bidlock.bid_requests where bidder_id=:'b1' \gset
+create temporary table mismatch_amount as select * from bidlock_test.bid( :'aid', :'b1', 1001, :'key');
+select is((select error_code from mismatch_amount), 'IDEMPOTENCY_MISMATCH', 'TC-053 mismatch_amount error_code');
+create temporary table mismatch_auction as select * from bidlock_test.bid(:'aid2', :'b1', 1000, :'key');
+select is((select error_code from mismatch_auction), 'IDEMPOTENCY_MISMATCH', 'TC-054 mismatch_auction error_code');
+select is((select count(*) from bidlock.bid_requests where bidder_id=:'b1'), :'before_mismatch'::bigint, 'TC-053 mismatch adds no request');
+create temporary table other_bidder_key as select * from bidlock_test.bid(:'aid2', :'b2', 1000, :'key');
+select is((select outcome from other_bidder_key), 'accepted', 'TC-055 other_bidder_key outcome');
+select is((select replayed from other_bidder_key), false, 'TC-055 other_bidder_key replayed');
+select bidlock_test.set_now('2026-01-01 12:05:00+00');
+select bidlock.advance_auction_locked(a,bidlock.bidlock_now()) from bidlock.auctions a where id=:'aid';
+create temporary table replay_closed as select * from bidlock_test.bid( :'aid', :'b1', 1000, :'key');
+select is((select replayed from replay_closed), true, 'TC-056 replay_closed replayed');
+select is((select to_jsonb(r)-'replayed' from replay_closed r), (select to_jsonb(o)-'replayed' from original o), 'TC-056 replay retains pre-close result');
+select * from finish();
+rollback;
