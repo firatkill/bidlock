@@ -173,7 +173,7 @@ Conventions for every task:
 
 - Goal: INT-01 and INT-02 green locally and in CI; verification SQL shared with the load test.
 - Files: `tests/integration/concurrency.int.test.ts`, `tests/integration/races.int.test.ts`, `tests/fixtures/db.ts` (`createSql`, `makeBidders`, `makeAuction`, `withNow`), `db/verify/invariants.sql` (TRD §15.6.3), CI `integration` job.
-- Acceptance: `pnpm db:reset && pnpm test:concurrency` runs INT-01..INT-03 in under 60 s; CI `integration` job green. Temporarily removing `for update` from `place_bid` on a local branch makes INT-01 fail (verify once, do not commit; with the lock removed the version guard raises `BLK10`, so INT-01 fails on assertion 1 "no thrown errors").
+- Acceptance: `pnpm db:reset && pnpm test:concurrency` runs INT-01..INT-03 in under 60 s; CI `integration` job green. Temporarily removing both auction-row `for update` locks from `place_bid` and `advance_auction_locked` in the local test database (D-50) makes INT-01 fail (verify once, do not commit; without both locks the `bid_no_unique` constraint can raise `23505` before the version guard (`BLK10`); INT-01 must fail assertion 1 "no thrown errors").
 - Depends on: T-16. Covers: FR-91, NFR-01 (INV-01..INV-12), G-1.
 
 ---

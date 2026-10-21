@@ -325,6 +325,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -380,6 +385,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -440,6 +450,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -500,6 +515,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -555,6 +575,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -609,6 +634,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -663,6 +693,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -717,6 +752,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -771,6 +811,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -825,6 +870,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -884,6 +934,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -929,6 +984,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -963,6 +1023,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -997,6 +1062,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1046,6 +1116,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
@@ -1080,6 +1155,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1129,6 +1209,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1163,6 +1248,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1202,6 +1292,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -1231,6 +1326,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1260,6 +1360,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1289,6 +1394,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1318,6 +1428,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1347,6 +1462,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1376,6 +1496,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1410,6 +1535,11 @@
           "result": "pass",
           "actual_result": "All 37 unit tests passed; lint and typecheck passed.",
           "note": "Final T-17 regression verification."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 37 unit tests, lint and typecheck passed.",
+          "note": "Final M1 regression."
         }
       ],
       "regression_of": null,
@@ -1444,6 +1574,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1468,6 +1603,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1497,6 +1637,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1521,6 +1666,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1545,6 +1695,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1569,6 +1724,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1593,6 +1753,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1617,6 +1782,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1641,6 +1811,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1665,6 +1840,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1689,6 +1869,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1713,6 +1898,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1737,6 +1927,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1761,6 +1956,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1785,6 +1985,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1809,6 +2014,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1833,6 +2043,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1857,6 +2072,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1881,6 +2101,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1905,6 +2130,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1929,6 +2159,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1953,6 +2188,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -1977,6 +2217,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2001,6 +2246,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2025,6 +2275,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2049,6 +2304,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2073,6 +2333,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2097,6 +2362,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2121,6 +2391,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2145,6 +2420,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2169,6 +2449,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2193,6 +2478,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2217,6 +2507,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2241,6 +2536,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2265,6 +2565,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2289,6 +2594,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2313,6 +2623,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2337,6 +2652,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2361,6 +2681,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2385,6 +2710,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2409,6 +2739,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2433,6 +2768,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2457,6 +2797,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2481,6 +2826,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2505,6 +2855,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2529,6 +2884,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2553,6 +2913,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2577,6 +2942,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2601,6 +2971,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2625,6 +3000,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2649,6 +3029,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2673,6 +3058,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2697,6 +3087,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2721,6 +3116,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2745,6 +3145,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2769,6 +3174,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2793,6 +3203,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2822,6 +3237,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2846,6 +3266,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2870,6 +3295,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2894,6 +3324,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2918,6 +3353,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2942,6 +3382,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2966,6 +3411,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -2990,6 +3440,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3014,6 +3469,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3038,6 +3498,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3062,6 +3527,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3086,6 +3556,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3110,6 +3585,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3134,6 +3614,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3158,6 +3643,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3182,6 +3672,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3206,6 +3701,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3230,6 +3730,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3254,6 +3759,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3278,6 +3788,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3302,6 +3817,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3326,6 +3846,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3350,6 +3875,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3374,6 +3904,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3398,6 +3933,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3422,6 +3962,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3446,6 +3991,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3470,6 +4020,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3494,6 +4049,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3518,6 +4078,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3542,6 +4107,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3566,6 +4136,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3590,6 +4165,11 @@
           "result": "pass",
           "actual_result": "Final T-17 regression: all 15 pgTAP files passed, 363 assertions.",
           "note": "Full suite after the schema fixture isolation fix; prior failures retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 363 pgTAP assertions across 15 files.",
+          "note": "Final M1 regression after D-50 mutation restoration."
         }
       ],
       "regression_of": null,
@@ -3602,7 +4182,7 @@
       "ac_reference": "FR-91; INV-01\u2013INV-13",
       "milestone": "M1 \u2014 Schema, functions, pgTAP",
       "title": "INT-01 \u2014 500 parallel bids from 200 bidders preserve all eight assertions in TRD \u00a715.3, including at least 20 accepted bids",
-      "status": "pending_decision",
+      "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
         {
@@ -3624,6 +4204,26 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Mutation harness initially rejected lifecycle migration reapplication because bid_result already exists; neither mutation was applied. The unmodified INT-01 run passed and is not mutation evidence.",
+          "note": "D-50 approved; corrected harness to replace only advance_auction_locked and place_bid, without editing applied migrations."
+        },
+        {
+          "result": "fail",
+          "actual_result": "First valid double-lock mutation hit the unchanged 60-second timeout while the test closed its pool with concurrent reservations outstanding.",
+          "note": "Original functions restored. Test now drains all fresh attempts with allSettled before asserting no errors; no assertion or timeout weakened."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Approved double-lock mutation was detected: INT-01 failed its no-errors assertion with PostgreSQL 23505 bid_no_unique in 5.28 seconds; both original functions restored successfully.",
+          "note": "Expected negative-control failure: uniqueness catches unsafe writes before the BLK10 version guard. This passes the mutation check, not normal functional verification; restored-suite retest follows."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,
@@ -3648,6 +4248,11 @@
           "result": "pass",
           "actual_result": "Final reset plus integration suite passed all 19 tests in 10.79 seconds.",
           "note": "INT-01, all eight INT-02 races, INT-03 and migration/environment coverage pass. T-17 lock-removal acceptance remains a separate pending owner decision."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Restored implementation passed all 19 integration tests in 9.70 seconds after reset.",
+          "note": "D-50 negative control detected unsafe writes; this separate normal run confirms original functions are restored. No remaining owner decision."
         }
       ],
       "regression_of": null,

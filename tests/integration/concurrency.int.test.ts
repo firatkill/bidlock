@@ -37,7 +37,7 @@ test("TC-122 INT-01: 500 parallel bids from 200 bidders keep every invariant", a
     type Call = { bidder: string; key: string; amount: number };
     const results: Array<{ call: Call; row: z.infer<typeof BidResultRow> }> =
       [];
-    await Promise.all(
+    const fresh = await Promise.allSettled(
       Array.from({ length: 500 }, async (_, i) => {
         const connection = await app.reserve();
         try {
@@ -65,6 +65,8 @@ test("TC-122 INT-01: 500 parallel bids from 200 bidders keep every invariant", a
         }
       }),
     );
+    // Drain every reserved connection before checking errors or closing pools.
+    expect(fresh.filter((result) => result.status === "rejected")).toEqual([]);
     expect(results).toHaveLength(500);
     for (const { row } of results)
       expect(row.outcome === "accepted" ? "accepted" : row.error_code).toMatch(

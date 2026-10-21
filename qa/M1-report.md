@@ -1,10 +1,10 @@
 # M1 — Schema, functions and pgTAP QA report
 
-Date: 2026-10-21. Scope: T-05–T-17. T-05–T-16 passed PR CI and merged. T-17 closure remains pending the owner’s correction of its lock-removal acceptance check with CI passing.
+Date: 2026-10-21. Scope: T-05–T-17. All SQL milestone cases and the owner-approved mutation check pass; final restored-suite verification passes; updated PR CI is pending.
 
 ## Resolved cases
 
-All 113 designed M1 cases have passing functional results; 112 are resolved and TC-122 retains pending-decision status for mutation acceptance. T-17 mutation acceptance is tracked separately below. History is retained in [test-results.json](test-results.json); requirements and expected outcomes are in [test-cases.md](test-cases.md).
+All 113 designed M1 cases have passing functional results. The owner approved D-50 and the double-lock mutation was detected. History is retained in [test-results.json](test-results.json); requirements and expected outcomes are in [test-cases.md](test-cases.md).
 
 | Case   | Behavior                                                                                                                                                                                                                                                                                                                                                                                     | Automation                                                                          |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -124,7 +124,7 @@ All 113 designed M1 cases have passing functional results; 112 are resolved and 
 
 ## Pending decision
 
-T-17 requires INT-01 to fail when only the `place_bid` row lock is removed. The mutation instead passed: `advance_auction_locked` takes the same lock again and refreshes the row. The original SQL function was automatically restored. Owner approval is pending to test removal of both locks. No applied migration was edited. See [progress](../docs/PROGRESS.md).
+None. D-50 approves removing both auction row locks for local mutation verification. INT-01 then failed its no-errors assertion with `23505` from `bid_no_unique` before the version guard could run. Both functions were restored; no applied migration was edited. The initial harness setup error and error-path timeout are retained in the ledger. The test now drains every concurrent attempt before asserting errors and closing its pools.
 
 ## Manual test required
 
@@ -151,10 +151,12 @@ TC-022 exposed an existing schema-test isolation gap when INT-02 left an open pu
 
 D-46 permits staged environment setup before the rate-limit table exists. D-47 rejects UNKNOWN status/payment constraints. D-48 invokes composite-returning functions once per statement. D-49 deferred only TC-066 and TC-098 to T-15; both now pass.
 
+D-50 corrects the mutation check to remove both locks; the observed SQL constraint error is documented rather than claiming BLK10 fired.
+
 ## Verification limits
 
 The API and auction UI are not implemented. No Playwright/browser QA, production resources, production traffic, load execution or benchmark numbers are claimed. Load execution remains CI-only under D-43. Node 22 release verification remains T-48; local testing uses Node 24 and PostgreSQL 17.11.
 
 ## Final verification
 
-Final local checks passed: lint, typecheck, 37 unit tests, 363 pgTAP assertions, and all 19 integration tests in 10.79 seconds after reset. The ledger checker passes with append-only history intact. [T-17 PR #17](https://github.com/firatkill/bidlock/pull/17) passed all four [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39574190011) on `b290db9`; only the mutation acceptance decision remains. Earlier task PR and CI links are recorded in [progress](../docs/PROGRESS.md).
+Final local checks passed: lint, typecheck, 37 unit tests, 363 pgTAP assertions, and all 19 integration tests in 9.70 seconds after reset. The ledger checker passes with append-only history intact. [T-17 PR #17](https://github.com/firatkill/bidlock/pull/17) passed all four [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39574190011) on `b290db9`; D-50 mutation verification and the restored suite now pass; updated PR CI is pending. Earlier task PR and CI links are recorded in [progress](../docs/PROGRESS.md).

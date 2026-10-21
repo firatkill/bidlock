@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-T-17: INT-01 remains green when only the `place_bid` lock is removed because `advance_auction_locked` re-locks the same row. Original SQL restored. Approval requested to correct the mutation acceptance check to remove both locks. Normal INT-01 and all eight INT-02 scenarios pass. Both D-49 assertions (TC-066 and TC-098) now pass in T-15.
+None. D-50 approved the double-lock mutation check; INT-01 detected unsafe writes via the unique bid-number constraint. Both original functions are restored. D-49 assertions TC-066 and TC-098 pass.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -119,4 +119,4 @@ T-17: INT-01 remains green when only the `place_bid` lock is removed because `ad
 
 - T-16 complete: [PR #16](https://github.com/firatkill/bidlock/pull/16), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39572606913), task commit `ae025e2`.
 
-- T-17 implementation and functional tests committed as `b290db9`: [PR #17](https://github.com/firatkill/bidlock/pull/17), all four [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/39574190011). Task remains doing pending the owner decision on mutation acceptance; M1 report/review prepared.
+- T-17 implementation and functional tests committed as `b290db9`: [PR #17](https://github.com/firatkill/bidlock/pull/17), all four [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/39574190011). D-50 now resolves mutation acceptance; final restored-suite verification and updated PR CI are in progress.
