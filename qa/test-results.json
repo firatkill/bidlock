@@ -7707,6 +7707,177 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-197",
+      "ac_reference": "FR-60; US-01",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Public room lobby states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Lobby test module fails to parse because a nested generic has an extra closing bracket.",
+          "note": "Correct the test-only type syntax; assertions have not run yet."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 focused lobby suite: all five tests passed.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "React lint rejects self-reference in the retry callback initializer.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby tests (5), TypeScript and focused ESLint pass after named retry callback and standard anchor fixes.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full lint found formatting in the lobby test file; functional tests remain green.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-198",
+      "ac_reference": "FR-60; US-03",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Sandbox card states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Lobby test module fails to parse because a nested generic has an extra closing bracket.",
+          "note": "Correct the test-only type syntax; assertions have not run yet."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 focused lobby suite: all five tests passed.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby tests (5), TypeScript and focused ESLint pass after named retry callback and standard anchor fixes.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full lint found formatting in the lobby test file; functional tests remain green.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-199",
+      "ac_reference": "FR-60; FR-11",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Offer notices and benchmark content",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Lobby test module fails to parse because a nested generic has an extra closing bracket.",
+          "note": "Correct the test-only type syntax; assertions have not run yet."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 focused lobby suite: all five tests passed.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Typecheck rejects typed links to the how-it-works route planned for T-44.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby tests (5), TypeScript and focused ESLint pass after named retry callback and standard anchor fixes.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full lint found formatting in the lobby test file; functional tests remain green.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-200",
+      "ac_reference": "FR-60; D-30",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Lobby feed handoff",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Lobby test module fails to parse because a nested generic has an extra closing bracket.",
+          "note": "Correct the test-only type syntax; assertions have not run yet."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 focused lobby suite: all five tests passed.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "React lint rejects self-reference in the retry callback initializer.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby tests (5), TypeScript and focused ESLint pass after named retry callback and standard anchor fixes.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full lint found formatting in the lobby test file; functional tests remain green.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

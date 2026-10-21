@@ -367,3 +367,85 @@ export const TestAuctionBody = z
 export const TestClockBody = z
   .object({ offset_ms: z.number().int().min(-86400000).max(86400000) })
   .strict();
+
+const Count = z.number().int().nonnegative();
+const Measurement = z.number().nonnegative();
+export const BenchResult = z.union([
+  z.object({ schema: z.literal(1), empty: z.literal(true) }).strict(),
+  z
+    .object({
+      schema: z.literal(1),
+      date: z.iso.date(),
+      commit: z.string().min(1),
+      runner: z
+        .object({
+          os: z.string(),
+          cpus: Count,
+          cpu_model: z.string(),
+          memory_gb: Measurement,
+        })
+        .strict(),
+      config: z
+        .object({
+          vus: Count,
+          duration_s: Count,
+          db_pool_max: Count,
+          postgres: z.string(),
+          auction: z
+            .object({
+              duration_s: Count,
+              snipe_window_s: Count,
+              extend_by_s: Count,
+              max_extensions: Count,
+            })
+            .strict(),
+        })
+        .strict(),
+      requests: z
+        .object({ bids: Count, replays: Count, rps: Measurement })
+        .strict(),
+      outcomes: z
+        .object({
+          accepted: Count,
+          BID_TOO_LOW: Count,
+          ALREADY_LEADING: Count,
+          AUCTION_CLOSED: Count,
+          RATE_LIMITED: Count,
+          OTHER: Count,
+        })
+        .strict(),
+      unexpected_error_rate: Measurement,
+      latency_ms: z
+        .object({
+          p50: Measurement,
+          p90: Measurement,
+          p95: Measurement,
+          p99: Measurement,
+          max: Measurement,
+        })
+        .strict(),
+      auction: z
+        .object({
+          final_price: Cents.nullable(),
+          bid_count: Count,
+          extension_count: Count,
+          status: Status,
+        })
+        .strict(),
+      invariants: z.array(
+        z
+          .object({ id: z.string(), check: z.string(), violations: Count })
+          .strict(),
+      ),
+      thresholds: z
+        .object({
+          p95_ms: Measurement,
+          p99_ms: Measurement,
+          unexpected_error_rate: Measurement,
+          passed: z.boolean(),
+        })
+        .strict(),
+    })
+    .strict(),
+]);
+export type BenchResult = z.infer<typeof BenchResult>;
