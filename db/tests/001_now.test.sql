@@ -1,0 +1,15 @@
+begin;
+select plan(5);
+select set_config('bidlock.now_override', '', true);
+update bidlock.settings set env = 'test', test_clock_offset_ms = 0;
+select ok(abs(extract(epoch from (bidlock.bidlock_now() - clock_timestamp()))) < 1, 'TC-014 DB-01 real time within one second');
+select bidlock_test.set_now('2026-01-01 12:00:00+00');
+select is(bidlock.bidlock_now(), '2026-01-01 12:00:00+00'::timestamptz, 'TC-015 DB-01 test override');
+update bidlock.settings set env = 'prod';
+select throws_ok('select bidlock.bidlock_now()', 'BLK01', 'bidlock.now_override is set but settings.env is not test', 'TC-016 DB-01 production rejects override');
+select set_config('bidlock.now_override', '', true);
+update bidlock.settings set env = 'test', test_clock_offset_ms = 60000;
+select ok(abs(extract(epoch from (bidlock.bidlock_now() - clock_timestamp())) - 60) < 1, 'TC-017 DB-01 test offset');
+select throws_ok($$update bidlock.settings set env = 'prod', test_clock_offset_ms = 5$$, '23514', null, 'TC-018 DB-01 production rejects offset');
+select * from finish();
+rollback;

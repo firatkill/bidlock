@@ -24,7 +24,7 @@
     "db:cron": "tsx scripts/db/apply-env.ts supabase-cron",
     "db:tick": "tsx scripts/db/ticker.ts --once",
     "db:ticker": "tsx scripts/db/ticker.ts",
-    "test:db": "node scripts/not-implemented.mjs",
+    "test:db": "bash scripts/db/test-db.sh",
     "test:concurrency": "vitest run --config vitest.integration.config.ts",
     "e2e": "node scripts/not-implemented.mjs",
     "test:all": "node scripts/not-implemented.mjs",
