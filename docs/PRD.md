@@ -676,3 +676,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-50 | T-17 mutation verification removes both auction row locks in `place_bid` and `advance_auction_locked`, temporarily in the local test database only | Owner approval, 2026-10-21 | Removing only the first lock leaves the lifecycle lock active; verify INT-01 detects unsafe concurrency, then restore both original functions. |
 
 | D-51 | Implement session and IP-hashing prerequisite helpers when first needed in M2; retain their dedicated T-20/T-21 tests and acceptance checks | Owner approval, 2026-10-21 | Resolves T-19 authentication depending on T-20 and T-20 guest creation depending on T-21 without changing specified behavior. |
+
+| D-52 | Disable Next.js automatic agent-rule file generation with `agentRules: false` | Implementation decision, 2026-10-21 | Installed Next.js 16.4.2 otherwise appends generated rules to the owner-maintained AGENTS.md during local dev; no product behavior changes. |

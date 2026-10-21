@@ -60,7 +60,19 @@ function errorResponse(error: AppError, id: string): Response {
       },
       request_id: id,
     },
-    { status: error.status },
+    {
+      status: error.status,
+      ...(error.code === "RATE_LIMITED" &&
+      typeof error.details?.retry_after_ms === "number"
+        ? {
+            headers: {
+              "retry-after": String(
+                Math.ceil(error.details.retry_after_ms / 1000),
+              ),
+            },
+          }
+        : {}),
+    },
   );
 }
 function headersFor(response: Response, id: string): Response {

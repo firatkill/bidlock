@@ -37,7 +37,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-17 | Concurrency integration tests                      | done   | 81e558f          |
 | T-18 | DB client and repo layer                           | done   | fff4b79          |
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | done   | cc8d215          |
-| T-20 | Session cookie, names, /api/me                     | todo   | —                |
+| T-20 | Session cookie, names, /api/me                     | doing  | —                |
 | T-21 | IP hashing and rate-limit integration              | todo   | —                |
 | T-22 | Read endpoints                                     | todo   | —                |
 | T-23 | Mutating endpoints: bids and pay                   | todo   | —                |
@@ -140,3 +140,5 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD a
 - T-19 HTTP core: 17 focused tests pass; full checks pass (54 unit, 363 pgTAP assertions, 21 integration tests, lint/typecheck). D-51 is approved; session authentication is implemented and all 18 HTTP tests now pass. Final T-19 CI pending.
 
 - T-19 complete: [PR #19](https://github.com/firatkill/bidlock/pull/19), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39583760198), task commit `cc8d215`.
+
+- T-20 local acceptance passes: session/name unit coverage, real identity route integration, rate response and live Next cookie check (port 3100; 3000 occupied). Final checks: 63 unit tests, 363 pgTAP assertions, 25 integration tests, lint/typecheck. D-51 IP helper implemented; dedicated IP acceptance remains T-21. D-52 preserves owner agent rules during Next dev. PR CI pending.
