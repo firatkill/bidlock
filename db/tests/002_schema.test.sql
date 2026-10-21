@@ -106,6 +106,7 @@ select throws_ok(format('update bidlock.auctions set kind = %L where id = %L', '
 set local role bidlock_app;
 select throws_ok('insert into bidlock.auctions default values', '42501', null, 'TC-023 DB-02 app cannot insert');
 select throws_ok($$select bidlock._event(null, 'auction_created', null, '{}', null)$$, '42501', null, 'TC-025 DB-02 app cannot call _event');
+select lives_ok($$select * from bidlock.place_bid(gen_random_uuid(), gen_random_uuid(), 1000, gen_random_uuid())$$, 'TC-024 DB-02 app can call place_bid');
 reset role;
 create role bidlock_probe nologin;
 select is((select count(*) from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'bidlock' and has_function_privilege('bidlock_probe', p.oid, 'execute')), 0::bigint, 'TC-026 DB-02 no PUBLIC function execute');

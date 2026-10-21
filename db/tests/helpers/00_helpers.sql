@@ -23,3 +23,9 @@ create or replace function bidlock_test.auction(
     snipe, extend, cap, pay_window) returning id;
 $$;
 revoke execute on all functions in schema bidlock_test from public;
+
+create or replace function bidlock_test.bid(auction uuid, bidder uuid, amount bigint, key uuid default gen_random_uuid())
+returns bidlock.bid_result language sql security definer set search_path = bidlock, pg_temp as $$
+  select * from bidlock.place_bid(auction, bidder, amount, key);
+$$;
+revoke execute on all functions in schema bidlock_test from public;
