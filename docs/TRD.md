@@ -2238,18 +2238,19 @@ Motion: price change flash (background `--accent-tint` → transparent, 600 ms),
 ### 11.3 AuctionFeed interface
 
 ```ts
-// src/client/feed/AuctionFeed.ts
+// Shared types: src/domain/feed.ts (T-27, D-54); re-exported from
+// src/client/feed/AuctionFeed.ts (T-28).
 import type { AuctionState, BidItem } from "@/domain/schemas";
 
 export type FeedStatus = "connecting" | "live" | "reconnecting";
 
 export type FeedEvent =
   | { kind: "snapshot"; state: AuctionState; receivedAt: number; rttMs: number | null }   // from GET /state
-  | { kind: "change"; change: AuctionChange }                                              // from Broadcast
+  | { kind: "change"; change: AuctionChange; receivedAt: number }                                              // from Broadcast
   | { kind: "bids"; bids: BidItem[] };                                                     // from GET /bids?after=
 
 export interface AuctionChange {                 // Broadcast payload v1 (§8.1), parsed with Zod
-  auction_id: string; version: number; status: AuctionState["status"]; payment_state: AuctionState["payment_state"];
+  v: 1; auction_id: string; version: number; status: AuctionState["status"]; payment_state: AuctionState["payment_state"];
   current_price: number | null; leader: AuctionState["leader"]; bid_count: number; ends_at: string;
   extension_count: number; bid: BidItem | null; sent_at: string;
 }
@@ -2288,7 +2289,7 @@ const channel = supabase.channel(`auction:${auctionId}`, { config: { broadcast: 
 channel
   .on("broadcast", { event: "auction_changed" }, ({ payload }) => {
     const parsed = AuctionChangeSchema.safeParse(payload);
-    if (parsed.success) handlers.onEvent({ kind: "change", change: parsed.data });
+    if (parsed.success) handlers.onEvent({ kind: "change", change: parsed.data, receivedAt: performance.timeOrigin + performance.now() });
     else feed.refresh();                                   // unknown payload version: be safe
   })
   .subscribe((status) => {
@@ -2363,7 +2364,7 @@ Rules:
 3. `change` with `version === auction.version + 1`: merge the change fields into `auction`, increment version. If `change.bid` and `change.bid.bid_no === lastBidNo + 1`: prepend it. If `change.bid` with a larger gap: `pendingBidsAfter = lastBidNo`. If `status` or `payment_state` differs from the held value: `pendingRefetch = true` (offers are not in the payload).
 4. `change` with `version > auction.version + 1`: merge the fields (they are the newest) and set `pendingRefetch = true` and `pendingBidsAfter = lastBidNo`.
 5. `bids`: insert each bid not already present by `bid_no`; sort newest first; trim to 100; update `lastBidNo`.
-6. Extension detection: when `extension_count` increases, set `lastExtension = { n, durationMs: new ends_at − bid.placed_at (or last_extension.at), at: now }`.
+6. Extension detection: when `extension_count` increases, set `lastExtension = { n, durationMs: new ends_at − bid.placed_at (or last_extension.at), at: event.receivedAt }`. Receipt time is supplied by the feed boundary (D-54), never read by the reducer.
 7. Derived values (`min_next_bid`, `max_bid`, `increment`) are recomputed with `src/domain/increments.ts` after a `change` and replaced by the server's values at the next snapshot.
 
 The UI layer (`useAuctionRoom`) runs effects for `pendingRefetch` and `pendingBidsAfter` through `feed.refresh()` and `fetchBidsAfter()`, and derives "you" flags by comparing ids with `me.id`.

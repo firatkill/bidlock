@@ -44,7 +44,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-24 | Test-only endpoints and health                     | done   | 497f330          |
 | T-25 | Security headers and CSP                           | done   | 6bd67c0          |
 | T-26 | Design tokens, shell and name dialog               | done   | 404178a          |
-| T-27 | Client domain utilities                            | todo   | —                |
+| T-27 | Client domain utilities                            | done   | 5cbd6cc          |
 | T-28 | AuctionFeed interface and PollingFeed              | todo   | —                |
 | T-29 | Auction room: read-only parts                      | todo   | —                |
 | T-30 | Bid panel and bid history                          | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. D-51 approves implementing prerequisite session/IP helpers when first needed; dedicated T-20/T-21 acceptance remains required.
+None. D-54 approves shared domain feed types and change-event receipt timestamps.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -170,3 +170,9 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 were designed befor
 Owner approved continuing after M2. TC-170–TC-208 designed before implementation; TC-209/TC-210 add approved error-reporting and client-session boundary coverage. T-26 is in progress. D-53 approves the ID-only error-reporting endpoint.
 
 - T-26 complete: [PR #26](https://github.com/firatkill/bidlock/pull/26), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39594121634), task commit `404178a`.
+
+- T-27 independent work: money/clock/live-announcer helpers pass focused tests, full lint/typecheck and 92 unit tests. Domain line coverage is 95.19%, with the 90% threshold enforced. D-54 is approved; reconciler implementation is underway; T-27 is not complete.
+
+- T-27 final local checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21%. D-54 recorded, shared feed types and pure reconciler complete. PR CI pending.
+
+- T-27 complete: [PR #27](https://github.com/firatkill/bidlock/pull/27), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39605740702), task commit `5cbd6cc`.

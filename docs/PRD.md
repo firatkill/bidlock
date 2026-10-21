@@ -680,3 +680,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-52 | Disable Next.js automatic agent-rule file generation with `agentRules: false` | Implementation decision, 2026-10-21 | Installed Next.js 16.4.2 otherwise appends generated rules to the owner-maintained AGENTS.md during local dev; no product behavior changes. |
 
 | D-53 | Add `POST /api/client-errors` accepting only a generated UUID, with the existing Origin/body/demo-mode guards; log the occurrence without browser message, stack, cookie or personal data. Error pages show the existing logged-ID sentence only after confirmation. | owner approved 2026-10-21 | T-26 error copy needs a truthful server-log reference for browser-only rendering failures. |
+
+| D-54 | Define shared feed event types in `src/domain/feed.ts` during T-27; change events carry `receivedAt`, and T-28 re-exports these types from the feed interface. Runtime feeds remain T-28. | owner approved 2026-10-21 | Resolves task ordering and keeps extension receipt timing pure. |

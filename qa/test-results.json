@@ -6954,6 +6954,185 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-175",
+      "ac_reference": "NFR-41",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Integer money formatting",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
+          "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-176",
+      "ac_reference": "NFR-41; FR-63",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Dollar input acceptance and rejection",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
+          "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-177",
+      "ac_reference": "FR-40; FR-41",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Clock samples and countdown",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
+          "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-180",
+      "ac_reference": "NFR-21",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Live announcement throttling",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight focused money/clock/announcer tests pass; targeted strict lint and typecheck pass.",
+          "note": "Reconciler waits for owner approval of shared feed types and receipt timestamps."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-27 independent portion: lint/typecheck and 92 unit tests pass; domain line coverage95.19% with the90% threshold now enforced.",
+          "note": "Money, clock and live-announcer helpers complete. Reconciler waits for explicit owner decision; T-27 remains doing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
+          "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-178",
+      "ac_reference": "FR-47",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Snapshot and change ordering",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All five UT-04 reconciliation tests pass.",
+          "note": "Spec-derived ordering, gaps, dedupe, trimming, extension timing and strict payload validation."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused lint rejects three unused destructured payload fields.",
+          "note": "Replace rest destructuring with explicit auction field merge; runtime tests passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lint and all five reconciliation tests pass after explicit field merge.",
+          "note": "No behavior or assertion weakened."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full lint detected QA ledger formatting after appending the focused retest.",
+          "note": "Application lint passed; format the append-only ledger and rerun lint."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
+          "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-179",
+      "ac_reference": "FR-47; FR-07",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Bid reconciliation and extensions",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All five UT-04 reconciliation tests pass.",
+          "note": "Spec-derived ordering, gaps, dedupe, trimming, extension timing and strict payload validation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-27 checks pass: lint, typecheck, 97 unit tests; domain line coverage 96.21% (90% gate).",
+          "note": "UT-01/03/04/11 complete; no SQL/server changes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

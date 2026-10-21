@@ -255,7 +255,7 @@ Conventions for every task:
 ### T-27 Client domain utilities
 
 - Goal: money, countdown, clock sync, reconciler, live announcer.
-- Files: `src/domain/money.ts`, `src/domain/clock.ts`, `src/domain/reconcile.ts`, `src/client/hooks/useLiveAnnouncer.ts`, `tests/unit/money.test.ts` (UT-01), `tests/unit/clock.test.ts` (UT-03), `tests/unit/reconcile.test.ts` (UT-04), `tests/unit/liveAnnouncer.dom.test.ts` (UT-11).
+- Files: `src/domain/money.ts`, `src/domain/clock.ts`, `src/domain/reconcile.ts`, `src/domain/feed.ts` (shared types, D-54), `src/client/hooks/useLiveAnnouncer.ts`, `tests/unit/money.test.ts` (UT-01), `tests/unit/clock.test.ts` (UT-03), `tests/unit/reconcile.test.ts` (UT-04), `tests/unit/liveAnnouncer.dom.test.ts` (UT-11).
 - Acceptance: `pnpm test:unit --coverage` with `src/domain/**` ≥ 90% lines.
 - Depends on: T-01. (Can run in parallel with M2.) Covers: FR-40, FR-41, FR-47, NFR-21, NFR-41.
 
