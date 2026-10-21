@@ -36,7 +36,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-16 | Sandboxes, cleanup, test support, realtime trigger | done   | ae025e2          |
 | T-17 | Concurrency integration tests                      | done   | 81e558f          |
 | T-18 | DB client and repo layer                           | done   | fff4b79          |
-| T-19 | HTTP wrapper, Origin check, demo mode gate         | todo   | —                |
+| T-19 | HTTP wrapper, Origin check, demo mode gate         | doing  | —                |
 | T-20 | Session cookie, names, /api/me                     | todo   | —                |
 | T-21 | IP hashing and rate-limit integration              | todo   | —                |
 | T-22 | Read endpoints                                     | todo   | —                |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-M2 task-order checkpoint: T-19 needs session verification from T-20; T-20 needs IP hashing from T-21. Approval requested to implement prerequisite helpers when first needed and retain dedicated acceptance checks in their named tasks. T-18 can finish independently.
+M2 task-order checkpoint: T-19 needs session verification from T-20; T-20 needs IP hashing from T-21. Approval requested to implement prerequisite helpers when first needed and retain dedicated acceptance checks in their named tasks. T-18 is complete. T-19 validation, gates, envelopes and logs pass; session wiring is pending this decision.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -136,3 +136,5 @@ M2 task-order checkpoint: T-19 needs session verification from T-20; T-20 needs 
 Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD and TRD before implementation. T-18 is in progress.
 
 - T-18 complete: [PR #18](https://github.com/firatkill/bidlock/pull/18), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39580737981), task commit `fff4b79`.
+
+- T-19 HTTP core: 17 focused tests pass; full checks pass (54 unit, 363 pgTAP assertions, 21 integration tests, lint/typecheck). Authentication remains fail-closed until the prerequisite-order decision; T-19 is not complete and its PR must remain draft.

@@ -335,6 +335,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -400,6 +405,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -470,6 +480,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -540,6 +555,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -605,6 +625,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -668,6 +693,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -733,6 +763,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -796,6 +831,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -861,6 +901,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -924,6 +969,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -994,6 +1044,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -1049,6 +1104,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1093,6 +1153,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1136,6 +1201,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1196,6 +1266,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
@@ -1239,6 +1314,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1299,6 +1379,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1342,6 +1427,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1392,6 +1482,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -1430,6 +1525,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1470,6 +1570,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1508,6 +1613,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1548,6 +1658,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1587,6 +1702,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1625,6 +1745,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1670,6 +1795,11 @@
           "result": "pass",
           "actual_result": "T-18 unit regression: all 37 tests pass.",
           "note": "Lint and typecheck also pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 54 unit tests pass.",
+          "note": "Existing increment coverage remains green."
         }
       ],
       "regression_of": null,
@@ -1714,6 +1844,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1747,6 +1882,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1787,6 +1927,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1820,6 +1965,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1855,6 +2005,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1888,6 +2043,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1923,6 +2083,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -1956,6 +2121,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -1991,6 +2161,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2024,6 +2199,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2059,6 +2239,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2092,6 +2277,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2127,6 +2317,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2160,6 +2355,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2195,6 +2395,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2228,6 +2433,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2263,6 +2473,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2296,6 +2511,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2331,6 +2551,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2364,6 +2589,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2399,6 +2629,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2432,6 +2667,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2467,6 +2707,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2500,6 +2745,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2535,6 +2785,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2568,6 +2823,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2603,6 +2863,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2636,6 +2901,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2671,6 +2941,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2704,6 +2979,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2739,6 +3019,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2772,6 +3057,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2807,6 +3097,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2840,6 +3135,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2875,6 +3175,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2908,6 +3213,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -2943,6 +3253,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -2976,6 +3291,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3011,6 +3331,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3044,6 +3369,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3079,6 +3409,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3112,6 +3447,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3147,6 +3487,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3180,6 +3525,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3215,6 +3565,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3248,6 +3603,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3283,6 +3643,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3316,6 +3681,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3351,6 +3721,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3384,6 +3759,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3419,6 +3799,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3452,6 +3837,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3487,6 +3877,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3520,6 +3915,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3555,6 +3955,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3589,6 +3994,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3622,6 +4032,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3662,6 +4077,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3695,6 +4115,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3730,6 +4155,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3763,6 +4193,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3798,6 +4233,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3831,6 +4271,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3866,6 +4311,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3899,6 +4349,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -3934,6 +4389,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -3967,6 +4427,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4002,6 +4467,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4035,6 +4505,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4070,6 +4545,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4103,6 +4583,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4138,6 +4623,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4171,6 +4661,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4206,6 +4701,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4239,6 +4739,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4274,6 +4779,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4307,6 +4817,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4342,6 +4857,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4375,6 +4895,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4410,6 +4935,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4443,6 +4973,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4478,6 +5013,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4511,6 +5051,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4546,6 +5091,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4579,6 +5129,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4614,6 +5169,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4647,6 +5207,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4682,6 +5247,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4716,6 +5286,11 @@
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
         }
       ],
       "regression_of": null,
@@ -4749,6 +5324,11 @@
         {
           "result": "pass",
           "actual_result": "T-18 full regression: 363 pgTAP assertions pass.",
+          "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
         }
       ],
@@ -4809,6 +5389,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -4843,6 +5428,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -4872,6 +5462,11 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
         }
       ],
       "regression_of": null,
@@ -4901,6 +5496,155 @@
           "result": "pass",
           "actual_result": "T-18 full integration suite: 21 tests pass in 21.19 seconds.",
           "note": "Includes repository schema/serialization checks, INT-01/02/03 and migration acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
+          "note": "Existing repository and concurrency coverage remains green."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-129",
+      "ac_reference": "FR-36; FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Demo gates precede Origin and parsing",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint blocked the first run: constant loop condition, unnecessary async callbacks and deprecated permissive log schemas.",
+          "note": "Use an unconditional for loop, promise-returning callbacks and strict/record log validation; no behavioral assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
+          "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-130",
+      "ac_reference": "FR-85",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Mutating Origin validation",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint blocked the first run: constant loop condition, unnecessary async callbacks and deprecated permissive log schemas.",
+          "note": "Use an unconditional for loop, promise-returning callbacks and strict/record log validation; no behavioral assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
+          "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-131",
+      "ac_reference": "FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "JSON media type and body limit",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint blocked the first run: constant loop condition, unnecessary async callbacks and deprecated permissive log schemas.",
+          "note": "Use an unconditional for loop, promise-returning callbacks and strict/record log validation; no behavioral assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
+          "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-132",
+      "ac_reference": "FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Params and query boundaries",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint blocked the first run: constant loop condition, unnecessary async callbacks and deprecated permissive log schemas.",
+          "note": "Use an unconditional for loop, promise-returning callbacks and strict/record log validation; no behavioral assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
+          "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-133",
+      "ac_reference": "FR-81",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Request ids and structured request log",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint blocked the first run: constant loop condition, unnecessary async callbacks and deprecated permissive log schemas.",
+          "note": "Use an unconditional for loop, promise-returning callbacks and strict/record log validation; no behavioral assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
+          "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-134",
+      "ac_reference": "FR-51",
+      "milestone": "M2 \u2014 API, identity and rate limits",
+      "title": "Errors map to documented envelope",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Strict lint blocked the first run: constant loop condition, unnecessary async callbacks and deprecated permissive log schemas.",
+          "note": "Use an unconditional for loop, promise-returning callbacks and strict/record log validation; no behavioral assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "17 focused HTTP tests and all 54 unit tests pass; lint and typecheck pass.",
+          "note": "Covers demo/Origin ordering, 400/403/413/415/503, request ids, headers, logs and error mapping. Session wiring is pending owner task-order approval; no complete-T-19 claim."
         }
       ],
       "regression_of": null,
