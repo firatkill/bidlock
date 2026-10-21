@@ -2493,3 +2493,207 @@ Cases designed from PRD §9, TRD §11/§15 and T-26–T-33 before implementation
 - Preconditions: Mock fetch with strict Me/error responses and unique request IDs.
 - Steps: Send a request with Headers input; return NO_SESSION then a refreshed Me and success; return a second NO_SESSION; return an unknown response field.
 - Expected result: JSON and supplied headers preserved; GET /api/me then exactly one retry; repeated failure surfaces; strict response schemas reject unknown fields.
+
+## TC-211: Bot token signing and lifetime
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-33
+- TRD test ID / section: UT-06; §13.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Sign claims, verify round trip and test expiry at boundary.
+- Expected result: Strict signed claims round trip; expiry is exclusive; mint lifetime is capped by sandbox expiry.
+
+## TC-212: Bot token scope and integrity
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-33; FR-23
+- TRD test ID / section: UT-06; §13.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Verify with another auction, another owner, altered payload/signature and malformed claims.
+- Expected result: All invalid tokens fail closed without throwing.
+
+## TC-213: Sandbox creation and existing room
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-32; US-09
+- TRD test ID / section: §10.8; T-34 integration
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Create with an authenticated owner then repeat; send unknown body fields and no session.
+- Expected result: 201 strict sandbox details with test seed; repeat 409 with same details; validation 400 and missing session 401.
+
+## TC-214: Sandbox capacity and IP limit
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-35
+- TRD test ID / section: §10.8; T-34 integration
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Reach configured active capacity and IP bucket limit using isolated fixtures.
+- Expected result: 503 SANDBOX_CAPACITY or 429 RATE_LIMITED with Retry-After; no extra sandbox created.
+
+## TC-215: Bot token issuer ownership
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-33
+- TRD test ID / section: §10.9; T-34 integration
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Request tokens as owner and as unrelated bidder; use missing/expired sandbox.
+- Expected result: Owner receives exactly three scoped tokens and seed; inaccessible sandbox returns 404.
+
+## TC-216: Bot bidding and owner-cookie binding
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-23; FR-33
+- TRD test ID / section: §13.2; T-34 integration
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Bid with issued token and owner cookie; change auction, omit cookie, change owner, tamper token.
+- Expected result: Valid bot bid accepted as bot; each invalid request returns 401 BOT_TOKEN_INVALID without bids.
+
+## TC-217: Bot payment authorization
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-34
+- PRD / acceptance reference: FR-33; D-16
+- TRD test ID / section: §13.2; §10.7
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Close sandbox won by bot; pay using issued token and owner cookie.
+- Expected result: Payment settles bot winner through same API; invalid owner binding rejected.
+
+## TC-218: Deterministic random sequence and budgets
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: FR-34
+- TRD test ID / section: UT-07; §12.1–12.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Replay seed and room sequence; inspect persona budgets.
+- Expected result: Equal seeds produce equal decisions; budgets follow specified multiplier ranges and integer increment rounding.
+
+## TC-219: Bot pacing and leader protection
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: FR-34
+- TRD test ID / section: UT-07; §12
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Exercise first-bid delay, leading state and last-bid timestamps.
+- Expected result: No bid while leading; at least 2000ms between bids; waits bounded 1000–6000ms.
+
+## TC-220: Persona phases and budget dropout
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: FR-34
+- TRD test ID / section: UT-07; §12.1
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Exercise normal and last-15s phases, sniper opening eligibility, extensions and minimum above budget.
+- Expected result: Persona probabilities/amounts obey table; sniper silent except approved opening; over-budget bot drops without bidding.
+
+## TC-221: Bot payment choices and delay
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: D-16
+- TRD test ID / section: UT-07; §12
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Run 10000 payment draws per persona and repeat ticks for one offer.
+- Expected result: 100/90/60 percent within 2%; draw once per offer; pay after 3–8s only for own open offer.
+
+## TC-222: Runner token startup and shared API
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: FR-33
+- TRD test ID / section: §12.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Mount owner runner with mocked token API and timers; observe bid requests.
+- Expected result: One token fetch; three seeded loops; bot Authorization and new idempotency key per bid; token error copy on failure.
+
+## TC-223: Runner pause and terminal cleanup
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: FR-38; FR-33
+- TRD test ID / section: §12.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Hide tab, show it, expire token, settle room and unmount.
+- Expected result: Loops pause hidden, refresh before resuming and stop on expiry/terminal/unmount.
+
+## TC-224: Runner rejection scheduling
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-35
+- PRD / acceptance reference: FR-34
+- TRD test ID / section: §12.1
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Return BID_TOO_LOW, RATE_LIMITED and AUCTION_CLOSED.
+- Expected result: No immediate low-bid retry; rate retry_after_ms honored; closed switches to payment phase.
+
+## TC-225: Sandbox entry and status copy
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-36
+- PRD / acceptance reference: FR-32; US-09
+- TRD test ID / section: E2E-03; PRD §9.2–9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Start sandbox from lobby; test existing, capacity and rate errors.
+- Expected result: Navigate to own room or existing room; exact header, three bot chips, notes and error copy.
+
+## TC-226: Seeded sandbox bidding flow
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-36
+- PRD / acceptance reference: FR-33; FR-34; US-09
+- TRD test ID / section: E2E-03
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Start sandbox, wait at most 15s for BOT row, bid as visitor and inspect timestamps.
+- Expected result: Bot bid appears, human leader updates, each bot has at least 2s between accepted bids; pass three repeated local runs.
+
+## TC-227: Sandbox visual and background states
+
+- Milestone: M4 — Sandbox and bots
+- Task: T-36
+- PRD / acceptance reference: FR-38; NFR-20
+- TRD test ID / section: AGENTS QA workflow; PRD §9.3
+- Priority: High
+- Automatable: no
+- Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
+- Steps: Inspect own sandbox at desktop/mobile widths and hide/restore tab.
+- Expected result: Readable header and chips; paused note matches tab state; controls do not overlap.

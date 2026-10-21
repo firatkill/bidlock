@@ -60,6 +60,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -129,6 +134,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -158,6 +168,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -192,6 +207,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -226,6 +246,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -255,6 +280,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -370,6 +400,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -440,6 +475,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -515,6 +555,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -590,6 +635,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -660,6 +710,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -729,6 +784,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -798,6 +858,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -867,6 +932,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -936,6 +1006,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1005,6 +1080,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1079,6 +1159,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1139,6 +1224,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1188,6 +1278,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1237,6 +1332,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1301,6 +1401,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
@@ -1350,6 +1455,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1414,6 +1524,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1463,6 +1578,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1517,6 +1637,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1561,6 +1686,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1605,6 +1735,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1649,6 +1784,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1693,6 +1833,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1737,6 +1882,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1781,6 +1931,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1835,6 +1990,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1884,6 +2044,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1923,6 +2088,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -1967,6 +2137,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2006,6 +2181,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2045,6 +2225,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2084,6 +2269,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2123,6 +2313,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2162,6 +2357,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2201,6 +2401,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2240,6 +2445,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2279,6 +2489,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2318,6 +2533,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2357,6 +2577,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2396,6 +2621,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2435,6 +2665,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2474,6 +2709,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2513,6 +2753,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2552,6 +2797,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2591,6 +2841,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2630,6 +2885,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2669,6 +2929,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2708,6 +2973,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2747,6 +3017,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2786,6 +3061,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2825,6 +3105,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2864,6 +3149,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2903,6 +3193,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2942,6 +3237,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -2981,6 +3281,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3020,6 +3325,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3059,6 +3369,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3098,6 +3413,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3137,6 +3457,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3176,6 +3501,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3215,6 +3545,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3254,6 +3589,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3293,6 +3633,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3332,6 +3677,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3371,6 +3721,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3410,6 +3765,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3449,6 +3809,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3488,6 +3853,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3527,6 +3897,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3566,6 +3941,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3605,6 +3985,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3644,6 +4029,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3683,6 +4073,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3722,6 +4117,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3761,6 +4161,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3800,6 +4205,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3839,6 +4249,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3878,6 +4293,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3917,6 +4337,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3956,6 +4381,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -3995,6 +4425,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4034,6 +4469,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4073,6 +4513,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4117,6 +4562,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4156,6 +4606,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4195,6 +4650,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4234,6 +4694,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4273,6 +4738,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4312,6 +4782,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4351,6 +4826,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4390,6 +4870,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4429,6 +4914,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4468,6 +4958,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4507,6 +5002,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4546,6 +5046,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4585,6 +5090,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4624,6 +5134,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4663,6 +5178,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4702,6 +5222,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4741,6 +5266,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4780,6 +5310,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4819,6 +5354,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4858,6 +5398,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4897,6 +5442,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4936,6 +5486,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -4975,6 +5530,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5014,6 +5574,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5053,6 +5618,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5092,6 +5662,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5131,6 +5706,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5170,6 +5750,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5209,6 +5794,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5248,6 +5838,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5287,6 +5882,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5326,6 +5926,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5365,6 +5970,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: 363 pgTAP assertions pass.",
           "note": "No SQL rules changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "363 pgTAP assertions passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5429,6 +6039,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5468,6 +6083,11 @@
           "result": "pass",
           "actual_result": "T-19 HTTP core regression: all 21 integration tests pass in 11.91 seconds.",
           "note": "Existing repository and concurrency coverage remains green."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5507,6 +6127,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5546,6 +6171,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5585,6 +6215,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5624,6 +6259,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5663,6 +6303,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5702,6 +6347,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5741,6 +6391,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5780,6 +6435,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5814,6 +6474,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5848,6 +6513,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5882,6 +6552,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5916,6 +6591,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5950,6 +6630,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -5984,6 +6669,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6018,6 +6708,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6052,6 +6747,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6086,6 +6786,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6115,6 +6820,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6144,6 +6854,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6173,6 +6888,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6202,6 +6922,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6231,6 +6956,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6260,6 +6990,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6289,6 +7024,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6318,6 +7058,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6347,6 +7092,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6376,6 +7126,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6405,6 +7160,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6434,6 +7194,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6463,6 +7228,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6492,6 +7262,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6521,6 +7296,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6550,6 +7330,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6579,6 +7364,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6608,6 +7398,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6642,6 +7437,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6676,6 +7476,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6705,6 +7510,11 @@
           "result": "pass",
           "actual_result": "M2 final checks pass: 74 unit tests, 363 pgTAP assertions, 43 integration tests (9.83 s), lint, typecheck, guards; production build and Chromium nonce acceptance pass.",
           "note": "Focused clock/CSP retests precede the final full suite. TC-167 is the separate local production acceptance script; no browser auction E2E or load claim."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6739,6 +7549,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6773,6 +7588,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6812,6 +7632,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6846,6 +7671,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -6919,6 +7749,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7008,6 +7843,16 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -7062,6 +7907,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7096,6 +7946,16 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7135,6 +7995,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7174,6 +8039,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7237,6 +8107,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7271,6 +8146,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7305,6 +8185,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7339,6 +8224,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7383,6 +8273,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7412,6 +8307,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7456,6 +8356,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7490,6 +8395,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7524,6 +8434,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7553,6 +8468,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7582,6 +8502,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7611,6 +8536,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7650,6 +8580,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7714,6 +8649,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7763,6 +8703,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7812,6 +8757,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7866,6 +8816,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7925,6 +8880,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7954,6 +8914,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -7993,6 +8958,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8032,6 +9002,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8066,6 +9041,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8115,6 +9095,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8159,6 +9144,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8208,6 +9198,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8257,6 +9252,11 @@
           "result": "pass",
           "actual_result": "Full unit suite: 25 files and 143 tests passed.",
           "note": "Final D-56/T-33 regression run; unchanged assertions and timeouts."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,
@@ -8301,6 +9301,11 @@
           "result": "pass",
           "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -8394,6 +9399,11 @@
           "result": "pass",
           "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -8433,6 +9443,11 @@
           "result": "pass",
           "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -8462,6 +9477,11 @@
           "result": "pass",
           "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -8491,6 +9511,11 @@
           "result": "pass",
           "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -8520,6 +9545,11 @@
           "result": "pass",
           "actual_result": "D-56 corrected job config: production build and polling build pass; all 14 E2E tests pass using workflow configuration (local DB port substituted). Unit focused retest follows; CI pending.",
           "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 14 browser regressions passed against the production polling build.",
+          "note": "T-34 local API behavior gate; local database reset before run."
         }
       ],
       "regression_of": null,
@@ -8539,6 +9569,199 @@
           "result": "pass",
           "actual_result": "Live CUA review: independent Chrome/Brave guests showed $10 then $11, matching leader/outbid/history state. Chrome 360x740 screenshot showed readable price, buttons, custom field and outbid copy. Separate 45-second auction observed at 0:35, 0:11 and 0:05, then server closure removed countdown/bid controls. Chrome error/warn log empty. Test clock restored to zero; QA tabs closed and viewport reset. Transient Closing frame was not captured visually; deterministic unit coverage remains. Hosted Broadcast not exercised.",
           "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-211",
+      "ac_reference": "FR-33",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Bot token signing and lifetime",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "20 focused token and HTTP-wrapper unit tests passed.",
+          "note": "UT-06 signed round trip, expiry boundaries, owner/auction scope and malformed/tampered tokens."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-212",
+      "ac_reference": "FR-33; FR-23",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Bot token scope and integrity",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "20 focused token and HTTP-wrapper unit tests passed.",
+          "note": "UT-06 signed round trip, expiry boundaries, owner/auction scope and malformed/tampered tokens."
+        },
+        {
+          "result": "pass",
+          "actual_result": "145 unit tests passed.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-213",
+      "ac_reference": "FR-32; US-09",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Sandbox creation and existing room",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused API-write integration checks passed sandbox create/existing, capacity/rate limits and owner-bound bot payment.",
+          "note": "Real local PostgreSQL; settings and test clock restored."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-214",
+      "ac_reference": "FR-35",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Sandbox capacity and IP limit",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused API-write integration checks passed sandbox create/existing, capacity/rate limits and owner-bound bot payment.",
+          "note": "Real local PostgreSQL; settings and test clock restored."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Lint rejected unvalidated SQL settings value in fixture restoration.",
+          "note": "Validate the admin fixture result before passing capacity back to SQL."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused capacity/rate integration and eslint pass after validating fixture settings.",
+          "note": "No production rule changes."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Typecheck requires a present saved capacity before SQL cleanup; optional array access remained number | undefined.",
+          "note": "Use an exact one-row tuple schema for the settings fixture."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-217",
+      "ac_reference": "FR-33; D-16",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Bot payment authorization",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused API-write integration checks passed sandbox create/existing, capacity/rate limits and owner-bound bot payment.",
+          "note": "Real local PostgreSQL; settings and test clock restored."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-215",
+      "ac_reference": "FR-33",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Bot token issuer ownership",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Fixture compared equal ISO instants as differently formatted strings (SQL JSON microseconds versus date serialization).",
+          "note": "Correct test to compare instants; contract permits ISO formatting."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Both corrected integration cases passed against real PostgreSQL.",
+          "note": "ISO comparison and leader.id assertion now follow the documented response schema."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-216",
+      "ac_reference": "FR-23; FR-33",
+      "milestone": "M4 \u2014 Sandbox and bots",
+      "title": "Bot bidding and owner-cookie binding",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Test referenced leader_bidder_id on AuctionState, but the documented contract exposes leader.id; typecheck caught the same mismatch.",
+          "note": "Correct fixture assertion against TRD state contract; no product change."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Both corrected integration cases passed against real PostgreSQL.",
+          "note": "ISO comparison and leader.id assertion now follow the documented response schema."
+        },
+        {
+          "result": "pass",
+          "actual_result": "49 concurrency/integration tests passed, including INT-01/INT-02.",
+          "note": "T-34 full local regression; unchanged SQL rules."
         }
       ],
       "regression_of": null,

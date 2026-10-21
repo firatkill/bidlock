@@ -51,7 +51,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-31 | SupabaseBroadcastFeed                              | done   | c95b3b9          |
 | T-32 | Lobby                                              | done   | ca01aa3          |
 | T-33 | Playwright harness, two-bidder e2e, CI e2e job     | done   | effabbb          |
-| T-34 | Sandbox and bot-token endpoints                    | todo   | —                |
+| T-34 | Sandbox and bot-token endpoints                    | doing  | —                |
 | T-35 | Bot scheduler and runner                           | todo   | —                |
 | T-36 | Sandbox UI and e2e                                 | todo   | —                |
 | T-37 | Result panel, payment and runner-up UI             | todo   | —                |
@@ -202,3 +202,9 @@ T-32: lobby cards, offer notices, strict benchmark union and empty state impleme
 T-33: Playwright harness and 14 tests implemented. Local full run passes with four parallel workers followed by one isolated worker. Lobby visitors (including two-bidder fixtures) and shared rate checks are isolated per AGENTS.md. Lint/typecheck, 143 unit tests with coverage gate, guards, build and E2E-09 budget pass. Name dialog code now loads on Edit to meet the unchanged budget; save/focus regression checks pass. Explicit development-only playwright-core aligns axe with the runner (the diagram tool's older optional peer still warns; diagram generation belongs to T-44). PR CI and live M3 review pass. M3 completed with 41 resolved cases; hosted Broadcast remains unverified and the transient Closing frame was not visually captured. See qa/M3-report.md and qa/M3-review.md.
 
 - T-33 complete: [PR #33](https://github.com/firatkill/bidlock/pull/33), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39630388760), task commit `effabbb`.
+
+## M4 start
+
+Owner approved continuing after M3. TC-211–TC-227 designed from PRD/TRD before implementation. T-34 in progress.
+
+T-34: sandbox and bot-token endpoints, signed scoped tokens and session-or-bot authentication implemented. Local lint/typecheck, 145 unit tests, 363 pgTAP assertions and 49 integration/concurrency tests pass. Production polling build and all 14 browser regressions pass. PR CI pending.

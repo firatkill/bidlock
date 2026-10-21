@@ -7,6 +7,7 @@ import { log } from "./log";
 import { readSession } from "./session";
 import { getMe } from "./repo/me";
 import { assertTestEnv } from "./testGuard";
+import { verifyBotToken } from "./botTokens";
 
 type Auth = "none" | "optional-session" | "session" | "session-or-bot";
 interface RouteOptions<P, Q, B> {
@@ -192,17 +193,26 @@ export function route<P = undefined, Q = undefined, B = undefined>(
       const body = opts.body
         ? parseInput(opts.body, await readJson(req))
         : undefined;
-      // Bot token verification remains scheduled for T-34.
-      if (
-        opts.auth === "session-or-bot" &&
-        req.headers.get("authorization")?.startsWith("Bot ")
-      )
-        throw new AppError("BOT_TOKEN_INVALID");
+      const authorization = req.headers.get("authorization");
+      const botToken =
+        opts.auth === "session-or-bot" && authorization?.startsWith("Bot ")
+          ? authorization.slice(4)
+          : null;
       let bidderId: string | null = null;
+      let isBot = false;
       if (opts.auth !== "none") {
         const session = readSession(req);
         if (session && (await getMe(session.bidderId)))
           bidderId = session.bidderId;
+        if (botToken !== null) {
+          const scoped = z.object({ id: z.uuid() }).strict().safeParse(params);
+          const claims = scoped.success
+            ? verifyBotToken(botToken, scoped.data.id, bidderId)
+            : null;
+          if (!claims) throw new AppError("BOT_TOKEN_INVALID");
+          bidderId = claims.sub;
+          isBot = true;
+        }
         if (
           bidderId === null &&
           (opts.auth === "session" || opts.auth === "session-or-bot")
@@ -211,7 +221,7 @@ export function route<P = undefined, Q = undefined, B = undefined>(
       }
       if (bidderId !== null) {
         fields.bidder_id = bidderId;
-        fields.is_bot = false;
+        fields.is_bot = isBot;
       }
       const response = await handler({
         req,
@@ -220,7 +230,7 @@ export function route<P = undefined, Q = undefined, B = undefined>(
         query,
         body,
         bidderId,
-        isBot: false,
+        isBot,
         fields,
         db: async <T>(call: () => Promise<T>) => {
           const at = performance.now();
