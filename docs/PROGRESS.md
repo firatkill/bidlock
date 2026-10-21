@@ -23,7 +23,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-03 | Postgres image and compose database                | done   | 03ee16b          |
 | T-04 | Migration runner, reset and env SQL                | done   | b2b1c27          |
 | T-05 | Foundation migration and pgTAP harness             | done   | cd1bd5d          |
-| T-06 | Core tables, constraints, indexes                  | todo   | —                |
+| T-06 | Core tables, constraints, indexes                  | done   | 8cb98cc          |
 | T-07 | Increment ladder                                   | todo   | —                |
 | T-08 | Lifecycle internals                                | todo   | —                |
 | T-09 | place_bid                                          | todo   | —                |
@@ -69,7 +69,9 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. T-05 environment dependency correction approved (D-46).
+None. T-06 constraint correction approved (D-47).
+
+- T-05 environment dependency correction is approved and complete (D-46).
 
 - GitHub creation and the isolated local Docker database lifecycle remain approved (D-44/D-45).
 
@@ -92,3 +94,5 @@ None. T-05 environment dependency correction approved (D-46).
 - T-05 complete: foundation migration, five DB-01 assertions, pgTAP CI job, and approved staged environment setup (D-46).
 - Local verification: lint, typecheck, 17 unit tests, five pgTAP assertions and nine migration integration tests pass.
 - [T-05 PR](https://github.com/firatkill/bidlock/pull/5) passed all three [CI jobs](https://github.com/firatkill/bidlock/actions/runs/39567084402).
+
+- T-06 complete: [PR #6](https://github.com/firatkill/bidlock/pull/6), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39567684105), task commit `8cb98cc`.

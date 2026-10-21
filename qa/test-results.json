@@ -564,6 +564,11 @@
           "result": "pass",
           "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
         }
       ],
       "regression_of": null,
@@ -598,6 +603,11 @@
           "result": "pass",
           "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
         }
       ],
       "regression_of": null,
@@ -632,6 +642,11 @@
           "result": "pass",
           "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
         }
       ],
       "regression_of": null,
@@ -666,6 +681,11 @@
           "result": "pass",
           "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
         }
       ],
       "regression_of": null,
@@ -700,6 +720,11 @@
           "result": "pass",
           "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
         }
       ],
       "regression_of": null,
@@ -729,6 +754,155 @@
           "result": "pass",
           "actual_result": "T-05 CI static, database tooling and pgTAP jobs all passed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/39567084402"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-020",
+      "ac_reference": "FR-01; INV-09; INV-13; DB-02",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "Specified payment-state constraint permits invalid NULL states",
+      "description": "The exact TRD constraint produces SQL UNKNOWN for two combinations DB-02 requires it to reject.",
+      "steps_to_reproduce": [
+        "Create a temporary table with the exact status_payment_pair CHECK from TRD \u00a76.4 inside a transaction.",
+        "Insert (settled, NULL) and (closed, NULL). Inspect rows, then roll back."
+      ],
+      "expected_result": "Both invalid combinations are rejected with check violation 23514.",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11, rolled-back temporary-table probe; no application table migration applied",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "INSERT 0 2: both invalid NULL combinations were accepted.",
+          "note": "Proposed IS TRUE around the complete CHECK expression. Owner approval requested under AGENTS.md checkpoint 2; see docs/PROGRESS.md."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "sql-check-null-semantics",
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner (repository override: owner decision, no ClickUp)",
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-019",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 tables and key columns exist with types",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-021",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 `price_leader_count` rejects inconsistent rows",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-022",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 unique `auctions_one_open_public`",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-023",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 `set role bidlock_app` then direct `insert into bidlock.auctions` throws 42501",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-025",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 cannot execute `tick`, `advance_auction_locked`, `rate_hit`, `close_due_auctions`, `cleanup_expired`, `_event`, `ensure_public_auction` (`throws_ok(\u2026, '42501')` after `set local role bidlock_app`)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-026",
+      "ac_reference": "FR-01; INV-09; INV-13",
+      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "title": "DB-02 \u2014 no function in schema `bidlock` is executable through `PUBLIC`: inside the test transaction `create role bidlock_probe nologin`, then `select count(*) from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'bidlock' and has_function_privilege('bidlock_probe', p.oid, 'execute')` must be 0 (catches a migration that forgot the \u00a76.3 revoke)",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-06: 107 pgTAP assertions, lint, typecheck, 17 unit and nine integration tests passed.",
+          "note": "D-47 approved constraint correction. TC-025 verifies _event now; later function permissions remain scheduled for their tasks."
         }
       ],
       "regression_of": null,

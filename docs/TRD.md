@@ -529,12 +529,12 @@ create table bidlock.auctions (
     or (bid_count > 0 and current_price is not null and leader_bidder_id is not null and last_bid_id is not null)
   ),
   constraint price_at_least_start  check (current_price is null or current_price >= starting_price),
-  constraint status_payment_pair   check (
+  constraint status_payment_pair   check ((
     (status in ('scheduled', 'live') and payment_state is null)
     or (status = 'closed'  and payment_state in ('awaiting_payment', 'offered_to_runner_up'))
     or (status = 'settled' and payment_state = 'paid')
     or (status = 'unsold'  and (payment_state is null or payment_state = 'expired'))
-  ),
+  ) is true),
   constraint closed_has_time       check ((status in ('scheduled', 'live')) = (closed_at is null)),
   constraint settled_has_time      check ((status = 'settled') = (settled_at is not null))
 );
