@@ -52,7 +52,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-32 | Lobby                                              | done   | ca01aa3          |
 | T-33 | Playwright harness, two-bidder e2e, CI e2e job     | done   | effabbb          |
 | T-34 | Sandbox and bot-token endpoints                    | done   | bdcaa75          |
-| T-35 | Bot scheduler and runner                           | todo   | —                |
+| T-35 | Bot scheduler and runner                           | done   | c8794b1          |
 | T-36 | Sandbox UI and e2e                                 | todo   | —                |
 | T-37 | Result panel, payment and runner-up UI             | todo   | —                |
 | T-38 | Extension banner and public room e2e               | todo   | —                |
@@ -210,3 +210,7 @@ Owner approved continuing after M3. TC-211–TC-227 designed from PRD/TRD before
 T-34: sandbox and bot-token endpoints, signed scoped tokens and session-or-bot authentication implemented. Local lint/typecheck, 145 unit tests, 363 pgTAP assertions and 49 integration/concurrency tests pass. Production polling build and all 14 browser regressions pass. All six PR CI jobs pass.
 
 - T-34 complete: [PR #34](https://github.com/firatkill/bidlock/pull/34), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39633743105), task commit `bdcaa75`.
+
+T-35: deterministic persona scheduler and browser runner implemented. Local lint/typecheck/guards, 157 unit tests, production polling build and 14 browser regressions pass. All six PR CI jobs pass. Runner UI mounting follows in T-36.
+
+- T-35 complete: [PR #35](https://github.com/firatkill/bidlock/pull/35), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39635559095), task commit `c8794b1`.
