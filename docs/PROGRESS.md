@@ -28,7 +28,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-08 | Lifecycle internals                                | done   | 6fe5866          |
 | T-09 | place_bid                                          | done   | 12f3921          |
 | T-10 | pgTAP: bid rules and idempotency                   | done   | 80c7c44          |
-| T-11 | pgTAP: soft close                                  | todo   | —                |
+| T-11 | pgTAP: soft close                                  | doing  | —                |
 | T-12 | Scheduler path and closing tests                   | todo   | —                |
 | T-13 | Settlement                                         | todo   | —                |
 | T-14 | Rate limiter                                       | todo   | —                |
