@@ -39,7 +39,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-19 | HTTP wrapper, Origin check, demo mode gate         | done   | cc8d215          |
 | T-20 | Session cookie, names, /api/me                     | done   | a744db1          |
 | T-21 | IP hashing and rate-limit integration              | done   | 7a46266          |
-| T-22 | Read endpoints                                     | todo   | —                |
+| T-22 | Read endpoints                                     | done   | 75c82d1          |
 | T-23 | Mutating endpoints: bids and pay                   | todo   | —                |
 | T-24 | Test-only endpoints and health                     | todo   | —                |
 | T-25 | Security headers and CSP                           | todo   | —                |
@@ -146,3 +146,5 @@ Owner approved continuing after M1. M2 cases TC-127–TC-167 designed from PRD a
 - T-20 complete: [PR #20](https://github.com/firatkill/bidlock/pull/20), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39584701848), task commit `a744db1`.
 
 - T-21 complete: [PR #21](https://github.com/firatkill/bidlock/pull/21), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39585150915), task commit `7a46266`.
+
+- T-22 complete: [PR #22](https://github.com/firatkill/bidlock/pull/22), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39586578172), task commit `75c82d1`.
