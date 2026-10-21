@@ -8,11 +8,13 @@ import { ApiError } from "@/client/api";
 export function NameDialog({
   name,
   saved,
+  initialOpen = false,
 }: {
   name: string;
   saved: () => void;
+  initialOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(false),
+  const [open, setOpen] = useState(initialOpen),
     [value, setValue] = useState(name),
     [pending, setPending] = useState(false),
     [error, setError] = useState<string | null>(null);

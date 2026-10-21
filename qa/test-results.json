@@ -6793,6 +6793,21 @@
           "result": "pass",
           "actual_result": "T-26 complete local acceptance: 84 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/guards/build; responsive Chrome/Chromium checks and screenshots pass.",
           "note": "After the documented PostgreSQL recovery, browser acceptance and both database suites passed again. No assertions weakened; local servers stopped. D-53 approved and recorded."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Deferred dialog exposed synchronous DOM-test assumptions: tests queried before the module loaded and retained the replaced trigger node. Await the dialog and assert focus on the visible Edit control; preserve all validation and save assertions.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused rebuilt production tests pass: deferred name dialog opens/saves/restores Edit focus, initial script transfer stays below 180 KiB; all five shell DOM tests pass.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
         }
       ],
       "regression_of": null,
@@ -7871,6 +7886,214 @@
         {
           "result": "pass",
           "actual_result": "T-32 complete local checks: lint, typecheck, 143 unit tests, 363 pgTAP assertions, 44 integration tests, production build; Chromium lobby 360/light and 1280/dark has no overflow, runtime errors or serious/critical axe violations. Feed handoff covered by DOM test.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-203",
+      "ac_reference": "NFR-20; NFR-22",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Automated accessibility and keyboard",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Typecheck found axe bound to transitive playwright-core 1.57 while test runner uses 1.64.1; aligning its supported peer with runner.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Peer alignment install was blocked by write permissions in the shared pnpm store; typecheck/build still report the same peer mismatch. Retry using a repository-local store.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Harness TypeScript and focused ESLint pass with axe peer aligned to playwright-core 1.64.1.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Initial parallel E2E checks passed: room axe light/dark, keyboard bid, mobile reduced motion/no sockets, missing/scheduled states. Isolated lobby and rate checks did not run because parallel dependency failed; still pending full-suite verification.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-207",
+      "ac_reference": "FR-92",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "E2E project isolation and CI",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "ESLint treats Playwright fixture callback named use as a React hook; rename fixture callback.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Playwright fixture callback renamed; focused ESLint passes.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Harness TypeScript and focused ESLint pass with axe peer aligned to playwright-core 1.64.1.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-201",
+      "ac_reference": "FR-20; FR-51; FR-52; FR-85",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "HTTP browser-context contract",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial E2E run used idempotency key in a header and expected 200 for first acceptance. TRD 10.6 requires body idempotency_key and first acceptance 201; fix test to spec.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected HTTP tests pass, including 201 acceptance, 200 replay, 422 mismatch and signed cross-auction token rejection.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-206",
+      "ac_reference": "NFR-15",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Production initial script budget",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "E2E-09 measured 191426 initial script bytes, exceeding the 184320-byte budget. Investigating deferred dialog loading.",
+          "note": ""
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused run inadvertently included dependency project tests against the unchanged pre-optimization build: same 191426 bytes. Use --no-deps for focused isolated runs and rebuild before budget retest.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused rebuilt production tests pass: deferred name dialog opens/saves/restores Edit focus, initial script transfer stays below 180 KiB; all five shell DOM tests pass.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-202",
+      "ac_reference": "US-02; US-04; FR-63",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Two bidders stay synchronized",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "E2E-02 two independent bidders passed: quick/keyboard/stale bids, price and leader updates, outbid alert and correct You history rows.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-204",
+      "ac_reference": "NFR-23; FR-46",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Mobile overflow reduced motion and polling transport",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial parallel E2E checks passed: room axe light/dark, keyboard bid, mobile reduced motion/no sockets, missing/scheduled states. Isolated lobby and rate checks did not run because parallel dependency failed; still pending full-suite verification.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
+          "note": ""
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-205",
+      "ac_reference": "FR-37; FR-67",
+      "milestone": "M3 \u2014 UI and real-time",
+      "title": "Rate-limited and scheduled browser states",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial parallel E2E checks passed: room axe light/dark, keyboard bid, mobile reduced motion/no sockets, missing/scheduled states. Isolated lobby and rate checks did not run because parallel dependency failed; still pending full-suite verification.",
+          "note": ""
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-33 local final: all 14 E2E tests pass (4-worker parallel then 1-worker isolated), lint/typecheck, 143 unit tests with coverage gate, guards and production build pass. A-08 supported; A-10 next start serves standalone build with warning; missing manifest uses approved E2E-09 budget fallback. CI pending.",
           "note": ""
         }
       ],

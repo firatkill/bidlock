@@ -50,7 +50,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-30 | Bid panel and bid history                          | done   | 04e78fe          |
 | T-31 | SupabaseBroadcastFeed                              | done   | c95b3b9          |
 | T-32 | Lobby                                              | done   | ca01aa3          |
-| T-33 | Playwright harness, two-bidder e2e, CI e2e job     | todo   | —                |
+| T-33 | Playwright harness, two-bidder e2e, CI e2e job     | doing  | —                |
 | T-34 | Sandbox and bot-token endpoints                    | todo   | —                |
 | T-35 | Bot scheduler and runner                           | todo   | —                |
 | T-36 | Sandbox UI and e2e                                 | todo   | —                |
@@ -198,3 +198,5 @@ Owner approved continuing after M2. TC-170–TC-208 designed before implementati
 T-32: lobby cards, offer notices, strict benchmark union and empty state implemented. Local checks: 143 unit tests, 363 pgTAP assertions, 44 integration tests, lint/typecheck/build; mobile/light and desktop/dark browser acceptance and axe pass. PR CI pending; full E2E harness follows in T-33.
 
 - T-32 complete: [PR #32](https://github.com/firatkill/bidlock/pull/32), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39624426166), task commit `ca01aa3`.
+
+T-33: Playwright harness and 14 tests implemented. Local full run passes with four parallel workers followed by one isolated worker. Lobby visitors (including two-bidder fixtures) and shared rate checks are isolated per AGENTS.md. Lint/typecheck, 143 unit tests with coverage gate, guards, build and E2E-09 budget pass. Name dialog code now loads on Edit to meet the unchanged budget; save/focus regression checks pass. Explicit development-only playwright-core aligns axe with the runner (the diagram tool's older optional peer still warns; diagram generation belongs to T-44). PR CI and live M3 review pending.

@@ -64,7 +64,9 @@ test("TC-171: name dialog validates exact errors and saves with pending/success 
     </Shell>,
   );
   await user.click(screen.getByRole("button", { name: copy.edit }));
-  expect(screen.getByRole("dialog", { name: copy.name.title })).toBeTruthy();
+  expect(
+    await screen.findByRole("dialog", { name: copy.name.title }),
+  ).toBeTruthy();
   expect(screen.getByText(copy.name.help)).toBeTruthy();
   const field = screen.getByRole("textbox", { name: copy.name.label });
   for (const [value, error] of [
@@ -113,11 +115,14 @@ test("TC-171: failed save keeps dialog and exact error, Cancel returns focus", a
   );
   const edit = screen.getByRole("button", { name: copy.edit });
   await user.click(edit);
+  await screen.findByRole("dialog", { name: copy.name.title });
   await user.click(screen.getByRole("button", { name: copy.name.save }));
   expect(screen.getByRole("alert").textContent).toBe(copy.name.failure);
   await user.click(screen.getByRole("button", { name: copy.name.cancel }));
   expect(screen.queryByRole("dialog")).toBeNull();
-  expect(document.activeElement).toBe(edit);
+  expect(document.activeElement).toBe(
+    screen.getByRole("button", { name: copy.edit }),
+  );
 });
 test("TC-172: theme cycles system to light to dark and persists", async () => {
   const user = userEvent.setup();

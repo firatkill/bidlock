@@ -1,11 +1,14 @@
 "use client";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { useMe } from "@/client/hooks/useMe";
 import { shellCopy as copy } from "@/domain/copy";
-import { NameDialog } from "./NameDialog";
+const NameDialog = lazy(() =>
+  import("./NameDialog").then((module) => ({ default: module.NameDialog })),
+);
 export function NameChip() {
   const me = useMe();
   const [notice, setNotice] = useState(false);
+  const [editing, setEditing] = useState(false);
   useEffect(() => {
     if (!notice) return;
     const timer = setTimeout(() => {
@@ -25,12 +28,32 @@ export function NameChip() {
     <div className="text-sm">
       <div className="flex flex-wrap items-center gap-3">
         <span>{copy.profile(me.display_name)}</span>
-        <NameDialog
-          name={me.display_name}
-          saved={() => {
-            setNotice(true);
-          }}
-        />
+        {editing ? (
+          <Suspense
+            fallback={
+              <button className="text-accent underline" disabled>
+                {copy.edit}
+              </button>
+            }
+          >
+            <NameDialog
+              name={me.display_name}
+              initialOpen
+              saved={() => {
+                setNotice(true);
+              }}
+            />
+          </Suspense>
+        ) : (
+          <button
+            className="text-accent underline"
+            onClick={() => {
+              setEditing(true);
+            }}
+          >
+            {copy.edit}
+          </button>
+        )}
       </div>
       {me.payment_strikes > 0 && (
         <p className="text-ink-3">{copy.strikes(me.payment_strikes)}</p>
