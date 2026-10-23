@@ -2697,3 +2697,127 @@ Cases designed from PRD §9, TRD §11/§15 and T-26–T-33 before implementation
 - Preconditions: Local test database or isolated mocks; unique owners/auctions; restore global settings and clock in finally.
 - Steps: Inspect own sandbox at desktop/mobile widths and hide/restore tab.
 - Expected result: Readable header and chips; paused note matches tab state; controls do not overlap.
+
+# M5 — Settlement
+
+Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. Clock-changing browser tests are isolated and restore the clock in finally.
+
+| TC     | Reference                  | Behavior                                    | Priority | Automatable | Expected                                                                                                                                                                                                                  |
+| ------ | -------------------------- | ------------------------------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TC-228 | FR-11; FR-15; FR-66; US-07 | Winner payment flow                         | High     | yes         | Winner sees exact won/payment copy and simulated payment settles at the offered amount.                                                                                                                                   |
+| TC-229 | FR-12; FR-13; FR-66; US-08 | Runner-up offer and winner strike           | High     | yes         | B receives offer at own highest bid and rank-2 paid copy; A sees expired-window copy and one missed payment.                                                                                                              |
+| TC-230 | FR-66; FR-09; FR-14        | Every closed-state viewer copy              | High     | yes         | Exact PRD copy for every viewer/state; only current offer recipient gets Pay.                                                                                                                                             |
+| TC-231 | FR-11; FR-66               | Payment pending, errors and retry           | High     | yes         | Empty strict POST body, pending Paying label and no duplicate request; exact rejection copy; read-only disables payment. D-57 transport failures expose Retry; rate limits disable payment for the supplied retry period. |
+| TC-232 | FR-12; FR-66; US-07; US-08 | Offer notices and profile refresh           | High     | yes         | Exact per-offer notices and links; expired offers disappear; strike singular/plural copy reflects refreshed profile.                                                                                                      |
+| TC-233 | FR-31; FR-66; NFR-21       | Settlement announcement and next public lot | High     | yes         | Assertive won/offer announcement once per event; next-lot countdown uses logical close plus 15s and link appears when ID known.                                                                                           |
+| TC-234 | FR-07; FR-65; US-06        | Late bid extension flow                     | High     | yes         | Banner says Late bid! Closing moved to 0:30; Extension 1 of 20; countdown 0:29 or 0:30; history +0:30 tag.                                                                                                                |
+| TC-235 | FR-30; FR-31               | Public room and benchmark entry             | High     | yes         | Live or next-lot label; room navigation; bid accepted or valid rejection; exact benchmark data/empty copy.                                                                                                                |
+| TC-236 | FR-66; NFR-20; NFR-21      | Settlement layout and closing moment        | High     | no          | Readable amounts, deadlines and payment controls without overlap; closing and result states visually confirmed.                                                                                                           |
+
+## TC-228: Winner payment flow
+
+- Milestone: M5 — Settlement
+- Task: T-37
+- PRD / acceptance reference: FR-11; FR-15; FR-66; US-07
+- TRD test ID / section: E2E-04
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Create a 20s auction; A bids; advance clock +21s; await won panel; pay.
+- Expected result: Winner sees exact won/payment copy and simulated payment settles at the offered amount.
+
+## TC-229: Runner-up offer and winner strike
+
+- Milestone: M5 — Settlement
+- Task: T-37
+- PRD / acceptance reference: FR-12; FR-13; FR-66; US-08
+- TRD test ID / section: E2E-04
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: B bids, A outbids; clock +21s; wait for A won panel before +202s; inspect both viewers and pay as B.
+- Expected result: B receives offer at own highest bid and rank-2 paid copy; A sees expired-window copy and one missed payment.
+
+## TC-230: Every closed-state viewer copy
+
+- Milestone: M5 — Settlement
+- Task: T-37
+- PRD / acceptance reference: FR-66; FR-09; FR-14
+- TRD test ID / section: E2E-04; PRD §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Render no-bid unsold, winner/observer awaiting, runner/former winner/observer offered, payer/observer settled ranks 1/2, and expired with/without runner.
+- Expected result: Exact PRD copy for every viewer/state; only current offer recipient gets Pay.
+
+## TC-231: Payment pending, errors and retry
+
+- Milestone: M5 — Settlement
+- Task: T-37
+- PRD / acceptance reference: FR-11; FR-66
+- TRD test ID / section: E2E-04; TRD §10.7, §10.12
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Submit payment with deferred response, expired and not-payable rejections; verify read-only and pending controls.
+- Expected result: Empty strict POST body, pending Paying label and no duplicate request; exact rejection copy; read-only disables payment. D-57 transport failures expose Retry; rate limits disable payment for the supplied retry period.
+
+## TC-232: Offer notices and profile refresh
+
+- Milestone: M5 — Settlement
+- Task: T-37
+- PRD / acceptance reference: FR-12; FR-66; US-07; US-08
+- TRD test ID / section: E2E-04; TRD §10.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Open lobby with winner/runner offers; inspect links, countdown and profile after lifecycle changes.
+- Expected result: Exact per-offer notices and links; expired offers disappear; strike singular/plural copy reflects refreshed profile.
+
+## TC-233: Settlement announcement and next public lot
+
+- Milestone: M5 — Settlement
+- Task: T-37
+- PRD / acceptance reference: FR-31; FR-66; NFR-21
+- TRD test ID / section: E2E-04; E2E-06; PRD §9.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Render incoming owned winner and runner offers, repeat snapshots; inspect finished public lot.
+- Expected result: Assertive won/offer announcement once per event; next-lot countdown uses logical close plus 15s and link appears when ID known.
+
+## TC-234: Late bid extension flow
+
+- Milestone: M5 — Settlement
+- Task: T-38
+- PRD / acceptance reference: FR-07; FR-65; US-06
+- TRD test ID / section: E2E-05
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Create 120s auction; clock +112s; A bids.
+- Expected result: Banner says Late bid! Closing moved to 0:30; Extension 1 of 20; countdown 0:29 or 0:30; history +0:30 tag.
+
+## TC-235: Public room and benchmark entry
+
+- Milestone: M5 — Settlement
+- Task: T-38
+- PRD / acceptance reference: FR-30; FR-31
+- TRD test ID / section: E2E-06
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Open lobby, inspect public card/countdown, enter and bid; inspect benchmark headline against committed data.
+- Expected result: Live or next-lot label; room navigation; bid accepted or valid rejection; exact benchmark data/empty copy.
+
+## TC-236: Settlement layout and closing moment
+
+- Milestone: M5 — Settlement
+- Task: T-38
+- PRD / acceptance reference: FR-66; NFR-20; NFR-21
+- TRD test ID / section: AGENTS QA workflow; PRD §9.3
+- Priority: High
+- Automatable: no
+- Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
+- Steps: Inspect local winner and runner panels at desktop and mobile; observe countdown crossing close.
+- Expected result: Readable amounts, deadlines and payment controls without overlap; closing and result states visually confirmed.

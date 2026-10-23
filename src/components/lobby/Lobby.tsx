@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { localNow, request } from "@/client/api";
 import { createFeed } from "@/client/feed/createFeed";
-import { useMe } from "@/client/hooks/useMe";
+import { refreshMe, useMe } from "@/client/hooks/useMe";
 import { useServerClock } from "@/client/hooks/useServerClock";
 import { AuctionList, type AuctionState } from "@/domain/schemas";
 import type { z } from "zod";
@@ -107,6 +107,7 @@ export function Lobby({
   );
   useEffect(() => {
     alive.current = true;
+    void refreshMe().catch(() => {});
     if (!initial) retry.current = setTimeout(refresh, 3000);
     const timer = setInterval(() => {
       setNow(clock.serverNow(localNow()));

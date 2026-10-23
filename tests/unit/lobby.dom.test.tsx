@@ -31,7 +31,10 @@ vi.mock("@/client/feed/createFeed", () => ({
     refresh: mocks.refresh,
   }),
 }));
-vi.mock("@/client/hooks/useMe", () => ({ useMe: () => null }));
+vi.mock("@/client/hooks/useMe", () => ({
+  useMe: () => null,
+  refreshMe: vi.fn().mockResolvedValue(null),
+}));
 vi.mock("@/client/api", async (original) => ({
   ...(await original<typeof import("@/client/api")>()),
   request: vi.fn(),
@@ -290,4 +293,20 @@ test("TC-197: list failures retry every three seconds", async () => {
   });
   expect(request).toHaveBeenCalledTimes(2);
   expect(screen.getByText(copy.live)).toBeTruthy();
+});
+
+test("TC-232: an expired lobby offer no longer exposes a payment notice", () => {
+  const offer = {
+    auction_id: auction.id,
+    lot_no: 1,
+    title: auction.title,
+    rank: 1 as const,
+    amount: 1000,
+    deadline: auction.ends_at,
+  };
+  const view = render(<OfferNotices now={now + 29999} offers={[offer]} />);
+  expect(screen.getByRole("link", { name: copy.auctionLink })).toBeTruthy();
+  view.rerender(<OfferNotices now={now + 30000} offers={[offer]} />);
+  expect(screen.queryByRole("link")).toBeNull();
+  expect(view.container.textContent).toBe("");
 });
