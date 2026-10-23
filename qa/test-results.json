@@ -8183,6 +8183,26 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full T-37 unit run: 163 pass, 3 fail in existing shell and history tests under heavy host load; name-dialog test timed out at 5000ms, its following test saw leftover validation state.",
+          "note": "No test timeout or assertion changes. Retest only affected files with bounded Vitest workers after other checks settle."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Affected-file rerun before Docker restart: history and name-dialog tests still time out at unchanged 5000ms; a later dialog assertion sees validation state left by the timed-out test.",
+          "note": "Second consecutive failed run in this T-37 session. Host load averages exceeded 60. Awaiting environment recovery before next retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Fresh affected-file run after environment recovery: all 8 tests pass with unchanged assertions and timeouts.",
+          "note": "Earlier host-load failures retained; Vitest used one worker for the affected files only."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 full unit suite passes all 167 tests after environment recovery; full browser suite also passes all 17 tests.",
+          "note": "Earlier failures remain in history."
         }
       ],
       "regression_of": null,
@@ -8252,6 +8272,21 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Affected-file rerun: theme assertion expected light but received system after other UI tests timed out.",
+          "note": "No theme code changed. Recheck in a fresh process after environment recovery."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Fresh affected-file run after environment recovery: all 8 tests pass with unchanged assertions and timeouts.",
+          "note": "Earlier host-load failures retained; Vitest used one worker for the affected files only."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 full unit suite passes all 167 tests after environment recovery; full browser suite also passes all 17 tests.",
+          "note": "Earlier failures remain in history."
         }
       ],
       "regression_of": null,
@@ -9479,6 +9514,26 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full T-37 unit run: 163 pass, 3 fail in existing shell and history tests under heavy host load; name-dialog test timed out at 5000ms, its following test saw leftover validation state.",
+          "note": "No test timeout or assertion changes. Retest only affected files with bounded Vitest workers after other checks settle."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Affected-file rerun before Docker restart: history and name-dialog tests still time out at unchanged 5000ms; a later dialog assertion sees validation state left by the timed-out test.",
+          "note": "Second consecutive failed run in this T-37 session. Host load averages exceeded 60. Awaiting environment recovery before next retest."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Fresh affected-file run after environment recovery: all 8 tests pass with unchanged assertions and timeouts.",
+          "note": "Earlier host-load failures retained; Vitest used one worker for the affected files only."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 full unit suite passes all 167 tests after environment recovery; full browser suite also passes all 17 tests.",
+          "note": "Earlier failures remain in history."
         }
       ],
       "regression_of": null,
@@ -9700,6 +9755,16 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-37 focused lobby run: two lifecycle tests fail because the existing useMe mock does not export refreshMe, newly used by lobby entry.",
+          "note": "Test fixture needs the documented profile-refresh function; UI assertions are unchanged. TC-197 static-copy test passed in the same run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby retest: all 5 tests pass after adding refreshMe to the existing profile mock.",
+          "note": "No assertions weakened. Targeted lint and typecheck also pass."
         }
       ],
       "regression_of": null,
@@ -9759,6 +9824,16 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 focused lobby run: sandbox presentation and offer/benchmark copy tests pass.",
+          "note": "Lifecycle test fixture failures logged separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby retest: all 5 tests pass after adding refreshMe to the existing profile mock.",
+          "note": "No assertions weakened. Targeted lint and typecheck also pass."
         }
       ],
       "regression_of": null,
@@ -9823,6 +9898,16 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 focused lobby run: sandbox presentation and offer/benchmark copy tests pass.",
+          "note": "Lifecycle test fixture failures logged separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby retest: all 5 tests pass after adding refreshMe to the existing profile mock.",
+          "note": "No assertions weakened. Targeted lint and typecheck also pass."
         }
       ],
       "regression_of": null,
@@ -9887,6 +9972,16 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-37 focused lobby run: two lifecycle tests fail because the existing useMe mock does not export refreshMe, newly used by lobby entry.",
+          "note": "Test fixture needs the documented profile-refresh function; UI assertions are unchanged. TC-197 static-copy test passed in the same run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused lobby retest: all 5 tests pass after adding refreshMe to the existing profile mock.",
+          "note": "No assertions weakened. Targeted lint and typecheck also pass."
         }
       ],
       "regression_of": null,
@@ -10947,6 +11042,210 @@
           "result": "pass",
           "actual_result": "Live Chrome and native Brave checks passed: sandbox creation, three chips/TTL/note, bot bids, human $120 acceptance, active-room return link, readable 360px header/chips/controls/history with no horizontal overflow, and actual hidden-tab pause/resume.",
           "note": "Brave sandbox held at five bids while hidden; after foregrounding it resumed to seven, then accepted the human bid. With the tab hidden, the native DOM inspector showed the exact background-paused paragraph. Controlled Chrome kept reporting visible, so it was not used as pause evidence. Chrome console clear; Brave favicon.ico 404 recorded as a non-M4 asset limitation. Viewport, DevTools dock and own tabs restored/closed; own server stopped. Screenshot: qa/evidence/M4-mobile.jpg."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-230",
+      "ac_reference": "FR-66; FR-09; FR-14",
+      "milestone": "M5 \u2014 Settlement",
+      "title": "Every closed-state viewer copy",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused settlement DOM run: 2 tests pass; all specified closed-state viewer strings, pay eligibility, owned-offer announcements and next-public-lot link/countdown verified.",
+          "note": "T-37 in progress. Payment request handling, lifecycle E2E and final full-suite gate remain outstanding; transport/rate error copy awaits owner approval."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Draft lint: six strict-style errors: numeric offer rank interpolated without String(), and five non-null assertions in new settlement fixtures.",
+          "note": "Runtime DOM assertions passed; correct typing without relaxing lint."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Settlement DOM retest: 2/2 pass. Targeted ESLint and typecheck pass after fixture and interpolation fixes.",
+          "note": "All prior attempts retained; full task gates pending payment implementation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused settlement/payment DOM run: 5/5 tests pass, including pending deduplication, identity-first POST, exact errors, retry, read-only and 2-second rate countdown.",
+          "note": "D-57 approval recorded before adding the new copy."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit run: all settlement and payment tests pass; 163/166 total tests pass.",
+          "note": "Unrelated shell/history failures logged under their original cases."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
+          "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-233",
+      "ac_reference": "FR-31; FR-66; NFR-21",
+      "milestone": "M5 \u2014 Settlement",
+      "title": "Settlement announcement and next public lot",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused settlement DOM run: 2 tests pass; all specified closed-state viewer strings, pay eligibility, owned-offer announcements and next-public-lot link/countdown verified.",
+          "note": "T-37 in progress. Payment request handling, lifecycle E2E and final full-suite gate remain outstanding; transport/rate error copy awaits owner approval."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Draft lint: six strict-style errors: numeric offer rank interpolated without String(), and five non-null assertions in new settlement fixtures.",
+          "note": "Runtime DOM assertions passed; correct typing without relaxing lint."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Settlement DOM retest: 2/2 pass. Targeted ESLint and typecheck pass after fixture and interpolation fixes.",
+          "note": "All prior attempts retained; full task gates pending payment implementation."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused settlement/payment DOM run: 5/5 tests pass, including pending deduplication, identity-first POST, exact errors, retry, read-only and 2-second rate countdown.",
+          "note": "D-57 approval recorded before adding the new copy."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit run: all settlement and payment tests pass; 163/166 total tests pass.",
+          "note": "Unrelated shell/history failures logged under their original cases."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
+          "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-231",
+      "ac_reference": "FR-11; FR-66",
+      "milestone": "M5 \u2014 Settlement",
+      "title": "Payment pending, errors and retry",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused settlement/payment DOM run: 5/5 tests pass, including pending deduplication, identity-first POST, exact errors, retry, read-only and 2-second rate countdown.",
+          "note": "D-57 approval recorded before adding the new copy."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit run: all settlement and payment tests pass; 163/166 total tests pass.",
+          "note": "Unrelated shell/history failures logged under their original cases."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Lint found two require-await errors in asynchronous React act callbacks in the payment DOM test.",
+          "note": "Add explicit microtask waits; retain payment assertions."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused payment/lobby retest: 9 tests pass after the act callback lint correction; expired notices disappear at the deadline.",
+          "note": "Production settlement E2E now running against the restored local database."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
+          "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-232",
+      "ac_reference": "FR-12; FR-66; US-07; US-08",
+      "milestone": "M5 \u2014 Settlement",
+      "title": "Offer notices and profile refresh",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused payment/lobby retest: 9 tests pass after the act callback lint correction; expired notices disappear at the deadline.",
+          "note": "Production settlement E2E now running against the restored local database."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E-04: both settlement scenarios pass on the production polling build; winner pays, runner-up pays own highest bid, former winner sees one strike, and lobby offer navigation works.",
+          "note": "Global clock restored in finally; no timeout increases."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
+          "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-228",
+      "ac_reference": "FR-11; FR-15; FR-66; US-07",
+      "milestone": "M5 \u2014 Settlement",
+      "title": "Winner payment flow",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E-04: both settlement scenarios pass on the production polling build; winner pays, runner-up pays own highest bid, former winner sees one strike, and lobby offer navigation works.",
+          "note": "Global clock restored in finally; no timeout increases."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
+          "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-229",
+      "ac_reference": "FR-12; FR-13; FR-66; US-08",
+      "milestone": "M5 \u2014 Settlement",
+      "title": "Runner-up offer and winner strike",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E-04: both settlement scenarios pass on the production polling build; winner pays, runner-up pays own highest bid, former winner sees one strike, and lobby offer navigation works.",
+          "note": "Global clock restored in finally; no timeout increases."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
+          "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
         }
       ],
       "regression_of": null,

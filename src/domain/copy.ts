@@ -188,6 +188,9 @@ export const resultCopy = {
     "Pay within {time} to complete the purchase. No real money is involved.",
   pay: "Pay now (simulated)",
   paying: "Paying…",
+  network: "Couldn't confirm your payment. Please try again.",
+  retry: "Retry",
+  rateLimited: "Slow down. You can pay again in {n} s.",
   pending:
     "Sold to {name} for {amount}, pending payment. Payment window ends in {time}.",
   secondChance: "Second-chance offer.",

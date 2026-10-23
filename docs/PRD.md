@@ -513,6 +513,8 @@ Result panel (replaces the bid panel when status is not live/scheduled):
 | Unsold, expired | anyone | "Unsold. Neither the winner nor the runner-up paid in time." (no runner-up: "Unsold. The winner didn't pay in time.") |
 | Pay error OFFER_EXPIRED | you | "Your payment window has closed." |
 | Pay error NOT_PAYABLE | you | "There is nothing for you to pay on this lot." |
+| Pay network/5xx error (D-57) | you | "Couldn't confirm your payment. Please try again." Button "Retry" (existing idempotent pay endpoint) |
+| Pay rate limit (D-57) | you | "Slow down. You can pay again in {n} s." Payment disabled until retry period ends |
 | Public lot finished | anyone | Extra line: "Next lot starts in {m:ss}." Link "Go to the next lot" when the next lot id is known |
 
 Bid history (right column, heading "Bid history"):
@@ -685,3 +687,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 
 | D-55 | Cap history pagination at the newest 100 rows; remove Show earlier bids at that cap or when history is exhausted. | owner approved 2026-10-21 | Keeps visible pagination consistent with the reconciler retention limit. |
 | D-56 | Supply non-secret CI-only server environment placeholders during production and E2E builds; E2E uses its local test database, production build uses an unused localhost URL. | owner approved 2026-10-21 | Next route collection initializes validated server configuration; TRD §16.1 omitted required variables. No GitHub secrets or external services. |
+
+| D-57 | Payment network/5xx failures show "Couldn't confirm your payment. Please try again." and Retry; rate limits show "Slow down. You can pay again in {n} s." and disable payment during the retry period. | owner approved 2026-10-23 | Completes T-37 transport/error copy using the existing idempotent pay endpoint. |

@@ -11,6 +11,9 @@ import { useLiveAnnouncer } from "@/client/hooks/useLiveAnnouncer";
 import type { placeBid } from "@/client/api";
 import { formatCents } from "@/domain/money";
 import { fillCopy } from "@/domain/copy";
+import { PayButton } from "./PayButton";
+import { ResultPanel } from "./ResultPanel";
+import { refreshMe } from "@/client/hooks/useMe";
 import { BidHistory } from "./BidHistory";
 import { BidPanel } from "./BidPanel";
 import { useAuctionRoom } from "@/client/hooks/useAuctionRoom";
@@ -32,6 +35,10 @@ export function AuctionRoom({
 }) {
   const room = useAuctionRoom(initial.id, initial, initialBids);
   const auction = room.auction ?? initial;
+  useEffect(() => {
+    if (auction.status !== "live" && auction.status !== "scheduled")
+      void refreshMe().catch(() => {});
+  }, [auction.id, auction.status, auction.payment_state]);
   const { polite, announcePrice } = useLiveAnnouncer();
   useEffect(() => {
     if (auction.leader && auction.current_price !== null)
@@ -132,6 +139,19 @@ export function AuctionRoom({
             ready={room.me !== null}
             clock={room.clock}
             onAccepted={accepted}
+          />
+          <ResultPanel
+            auction={auction}
+            viewerId={room.me?.id ?? null}
+            clock={room.clock}
+            payment={
+              <PayButton
+                key={`${auction.id}:${String(auction.offer?.rank)}`}
+                auctionId={auction.id}
+                readonly={readonly}
+                onRefresh={room.refresh}
+              />
+            }
           />
           <ExtensionBanner
             extension={room.lastExtension}

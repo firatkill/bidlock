@@ -54,7 +54,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-34 | Sandbox and bot-token endpoints                    | done   | bdcaa75                                  |
 | T-35 | Bot scheduler and runner                           | done   | c8794b1                                  |
 | T-36 | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
-| T-37 | Result panel, payment and runner-up UI             | todo   | —                                        |
+| T-37 | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
 | T-38 | Extension banner and public room e2e               | todo   | —                                        |
 | T-39 | App image and full compose                         | todo   | —                                        |
 | T-40 | k6 bid-storm script                                | todo   | —                                        |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. M4 complete; stopped before T-37 for the milestone review.
+None. Docker recovered after the owner restart; local database reset and focused settlement E2E pass. M5 verification in progress.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -218,3 +218,15 @@ T-35: deterministic persona scheduler and browser runner implemented. Local lint
 T-36: sandbox creation UI, owner expiry header and lazy bot strip/runner mounted. Local lint/typecheck/guards, 161 unit tests, production build and 15 browser tests pass. Seeded sandbox flow passed three consecutive runs in the isolated project (shared-lobby AGENTS override). Live Chrome/mobile and native Brave pause/resume pass; missing favicon noted in QA report. All six PR CI jobs pass. The E2E job initially failed during Turbopack font processing before tests started; its unchanged rerun passed. M4 completed with 17 resolved cases; see qa/M4-report.md and qa/M4-review.md.
 
 - T-36 complete: [PR #36](https://github.com/firatkill/bidlock/pull/36), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39638410035), task commit `266eab9a53ecde586b98506d1618843783ad5bfa`.
+
+## M5 start
+
+Owner approved continuing after M4. TC-228–TC-236 designed before code. T-37 in progress.
+
+T-37 draft: result panel covers all specified closed-state viewer copy, next-public-lot link/countdown and owned-offer announcements. Profile refresh on settlement/lobby entry and expired notice filtering added. Seven focused DOM tests, targeted lint and typecheck pass. Settlement E2E scenarios written but not yet run; payment controls await pending transport/rate-copy approval. No task commit or push yet; T-38 not started.
+
+T-37 update (2026-10-23): D-57 approved and recorded; PayButton implements identity-first strict empty POST, pending deduplication, idempotent retry, exact rejection copy, read-only and rate-limit countdown. Five focused settlement/payment tests, typecheck and production polling build pass. Full unit run: 163/166 pass; existing TC-171/193 failures under heavy host load. Affected-file rerun still fails (TC-171/172/193); failures retained in ledger, no timeouts or assertions changed. Full lint did not finish promptly. Local PostgreSQL/Docker time out even after owner restart; E2E not run. T-37 remains doing, no commit/push, T-38 not started. Next: verify Docker readiness; rerun affected unit cases (third consecutive failure for TC-171/193 requires QA check-in), finish lint, full unit suite, reset local test DB, settlement E2E then full E2E and CI.
+
+T-37 verification recovered: local production build, typecheck, guards, 167 unit tests and all 17 E2E tests pass. Winner, runner-up, strike and lobby offer flows verified; PR CI pending. Initial host-load failures retained in the QA ledger.
+
+- T-37 complete: [PR #37](https://github.com/firatkill/bidlock/pull/37), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39929845587), task commit `ac05c7026d8e166368a0cc5778328cd50ffccb9a`.
