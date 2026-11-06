@@ -3249,7 +3249,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Priority: High
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
-- Steps: Inspect workflow and dispatch approved run; inspect inputs, concurrency, dependencies, logs/artifact and cleanup.
+- Steps: Run the static workflow contract tests and rule 5 guard; dispatch load.yml on main with default inputs; inspect run steps, uploaded artifact and cleanup.
 - Expected result: Monday04:00UTC and dispatch;500/60 defaults; no cancellation of active load; build/migrate/health/k6/verify/report order; artifact retained30days and cleanup always runs in ephemeral CI.
 
 ## TC-271: Result PR and failed-threshold reporting
@@ -3261,7 +3261,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Priority: High
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
-- Steps: Inspect successful dispatch result PR; exercise failing k6 threshold and failed verifier outcomes.
+- Steps: Statically assert continue-on-error for k6, verify-success PR gating and final threshold failure gate; inspect the real successful dispatch result PR file list; parse the full BenchResult and check thresholds and every invariant before merging.
 - Expected result: PR changes only bench/results/*.json and bench/SUMMARY.md when verifier passes; failed thresholds remain workflow failure; failed verification creates no result PR.
 
 ## TC-272: How-it-works rules and lifecycle content

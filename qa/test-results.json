@@ -17828,6 +17828,44 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-270",
+      "ac_reference": "FR-95; FR-96; NFR-31",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Scheduled/manual load workflow and artifacts",
+      "status": "open",
+      "environment": "macOS / Node 24 / Vitest / t-43-load-workflow, 2026-11-07",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Static workflow contract and publication/failure gates pass; lint, typecheck, all 214 unit tests and guards pass.",
+          "note": "Real dispatched CI run and artifact/result PR evidence pending; static verification only."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-271",
+      "ac_reference": "FR-95; FR-96",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Result PR and failed-threshold reporting",
+      "status": "open",
+      "environment": "macOS / Node 24 / Vitest / t-43-load-workflow, 2026-11-07",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Static workflow contract and publication/failure gates pass; lint, typecheck, all 214 unit tests and guards pass.",
+          "note": "Real dispatched CI run and artifact/result PR evidence pending; static verification only."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
