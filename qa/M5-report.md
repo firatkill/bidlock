@@ -1,6 +1,6 @@
 # M5 QA report — Settlement
 
-Status: T-37 merged with green CI; T-38 local automated verification passed; final PR CI pending. One visual subcheck remains unverified. T-39 has not started.
+Status: T-37 merged with green CI; T-38 local automated verification passed; all six PR CI jobs passed. One visual subcheck remains unverified. T-39 has not started.
 
 ## Resolved
 
@@ -15,7 +15,7 @@ Status: T-37 merged with green CI; T-38 local automated verification passed; fin
 | TC-234 | Late bid extension                               | E2E-05 focused pass                    |
 | TC-235 | Public room, benchmark and successor navigation  | E2E-06 focused pass                    |
 
-T-37 passed 167 unit tests, 17 browser tests, production polling build, lint, typecheck, guards and [all six CI jobs](https://github.com/firatkill/bidlock/actions/runs/39929845587). T-38's focused tests, 167 unit tests, lint, typecheck and ledger integrity pass. Its first full browser run passed 18/19; the sandbox profile-load timing failure passed unchanged on focused retest. The second full run failed the overly narrow scheduled countdown expectation; 8 parallel tests passed and 10 isolated tests did not run. After owner approval D-58, both focused commands passed (10 and 11 tests including dependencies), lint/typecheck and 167 unit tests passed, and the final full E2E run passed all 19 tests across both projects. PR CI pending.
+T-37 passed 167 unit tests, 17 browser tests, production polling build, lint, typecheck, guards and [all six CI jobs](https://github.com/firatkill/bidlock/actions/runs/39929845587). T-38's focused tests, 167 unit tests, lint, typecheck and ledger integrity pass. Its first full browser run passed 18/19; the sandbox profile-load timing failure passed unchanged on focused retest. The second full run failed the overly narrow scheduled countdown expectation; 8 parallel tests passed and 10 isolated tests did not run. After owner approval D-58, both focused commands passed (10 and 11 tests including dependencies), lint/typecheck and 167 unit tests passed, and the final full E2E run passed all 19 tests across both projects. All six PR CI jobs passed.
 
 ## Pending decision
 
@@ -52,3 +52,5 @@ Synthetic server-clock jumps retain older lowest-RTT samples by the documented c
 Local polling only. Hosted Broadcast, production deployment and load benchmarks remain later work. No production traffic or fabricated benchmark values. Global test clock, viewport and QA tabs/server were restored after live review. The project-wide PDF remains an end-of-project deliverable.
 
 Final CI review: initial run passed five functional/build jobs; static checks found two final document-formatting differences. Corrected both and passed ESLint plus tracked-file Prettier verification. Unfiltered local Prettier also finds unrelated ignored owner `.codex-prompts` artifacts, retained unchanged. Failure/retest evidence is recorded in the ledger. Final CI is tracked on [PR #38](https://github.com/firatkill/bidlock/pull/38).
+
+CI completion: [run 42213862171](https://github.com/firatkill/bidlock/actions/runs/42213862171) passed all six jobs. E2E passed after an unchanged retry of a transient Next Google Font build-resolution failure; no browser assertion failed in that attempt because tests had not started. TC-236 remains the sole manual follow-up.

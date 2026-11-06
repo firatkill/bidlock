@@ -1,6 +1,6 @@
 # M5 QA review
 
-Verdict: local automated task verification passes after owner-approved D-58; PR CI pending. Manual sign-off needs the uncaptured transient Closing frame. Stop before T-39 at the milestone boundary.
+Verdict: local automated task verification passes after owner-approved D-58; All six PR CI jobs passed. Manual sign-off needs the uncaptured transient Closing frame. Stop before T-39 at the milestone boundary.
 
 | Check      | Verdict                                                                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,3 +22,5 @@ Verdict: local automated task verification passes after owner-approved D-58; PR 
 - Capture transient visual states with a suitable live observation setup. A passing DOM assertion is not evidence that a screenshot was seen.
 
 No QA skill files were changed. Manual follow-up remains visible rather than marking the entire milestone's visual coverage passed.
+
+CI completion: [run 42213862171](https://github.com/firatkill/bidlock/actions/runs/42213862171) passed all six jobs. E2E passed after an unchanged retry of a transient Next Google Font build-resolution failure; no browser assertion failed in that attempt because tests had not started. TC-236 remains the sole manual follow-up.

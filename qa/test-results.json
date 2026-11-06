@@ -11745,7 +11745,7 @@
       "tc_reference": "—",
       "ac_reference": "AGENTS.md Definition of done 2",
       "milestone": "M5 — Settlement",
-      "title": "Final QA document formatting",
+      "title": "T-38 final CI verification",
       "status": "resolved",
       "environment": "GitHub Actions Ubuntu / Node 24",
       "description": "Final documentation edits after local lint introduced table formatting differences.",
@@ -11767,6 +11767,16 @@
           "result": "pass",
           "actual_result": "ESLint and Prettier check over all tracked files passed after formatting the two documents.",
           "note": "Ignored owner .codex-prompts artifacts excluded from tracked-file verification, matching clean CI checkout."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI 42213862171 attempt 1: E2E build failed resolving next/font/google assets before browser tests started.",
+          "note": "All other jobs passed; unchanged failed-job retry requested."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI 42213862171 attempt 2: all six jobs passed, including E2E after unchanged build retry.",
+          "note": "2026-11-06; no code, assertion or timeout changes for the font build failure."
         }
       ],
       "regression_of": null,
