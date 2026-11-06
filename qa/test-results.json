@@ -11740,6 +11740,39 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "—",
+      "ac_reference": "AGENTS.md Definition of done 2",
+      "milestone": "M5 — Settlement",
+      "title": "Final QA document formatting",
+      "status": "resolved",
+      "environment": "GitHub Actions Ubuntu / Node 24",
+      "description": "Final documentation edits after local lint introduced table formatting differences.",
+      "steps_to_reproduce": "Run pnpm lint on e377b36.",
+      "expected_result": "Prettier accepts all files.",
+      "actual_result": "Prettier rejected docs/PROGRESS.md and qa/M5-review.md.",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "CI 42213543584 static job failed on formatting in docs/PROGRESS.md and qa/M5-review.md.",
+          "note": "Documentation edits followed the earlier passing lint run; no product/test failure."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local pnpm lint passed ESLint but Prettier found 11 unrelated ignored .codex-prompts files.",
+          "note": "Owner files left unchanged; verify tracked files matching clean CI checkout."
+        },
+        {
+          "result": "pass",
+          "actual_result": "ESLint and Prettier check over all tracked files passed after formatting the two documents.",
+          "note": "Ignored owner .codex-prompts artifacts excluded from tracked-file verification, matching clean CI checkout."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

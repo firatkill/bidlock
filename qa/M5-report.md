@@ -50,3 +50,5 @@ Synthetic server-clock jumps retain older lowest-RTT samples by the documented c
 ## Limits
 
 Local polling only. Hosted Broadcast, production deployment and load benchmarks remain later work. No production traffic or fabricated benchmark values. Global test clock, viewport and QA tabs/server were restored after live review. The project-wide PDF remains an end-of-project deliverable.
+
+Final CI review: initial run passed five functional/build jobs; static checks found two final document-formatting differences. Corrected both and passed ESLint plus tracked-file Prettier verification. Unfiltered local Prettier also finds unrelated ignored owner `.codex-prompts` artifacts, retained unchanged. Failure/retest evidence is recorded in the ledger. Final CI is tracked on [PR #38](https://github.com/firatkill/bidlock/pull/38).

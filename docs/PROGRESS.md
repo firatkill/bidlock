@@ -55,7 +55,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-35 | Bot scheduler and runner                           | done   | c8794b1                                  |
 | T-36 | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
 | T-37 | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
-| T-38 | Extension banner and public room e2e               | done   | 5a6b82a (CI pending)             |
+| T-38 | Extension banner and public room e2e               | done   | 5a6b82a                                  |
 | T-39 | App image and full compose                         | todo   | —                                        |
 | T-40 | k6 bid-storm script                                | todo   | —                                        |
 | T-41 | Invariant verification                             | todo   | —                                        |
@@ -238,3 +238,5 @@ T-38 current gate: focused E2E-05/E2E-06 and 167 unit tests pass; typecheck pass
 T-38 static/QA checks: lint, typecheck, 167 unit tests and ledger integrity pass. Only the full E2E gate remains blocked on the pending TC-205 specification decision; no task commit or push yet.
 
 T-38 final local verification (2026-11-06): owner-approved D-58 implemented; TC-205 and new lifecycle specs pass, lint/typecheck and 167 unit tests pass, full E2E passes all 19 tests across parallel and isolated projects. QA ledger and M5 report updated. PR CI pending. TC-236 transient Closing frame remains a manual follow-up; T-39 not started.
+
+T-38 delivery: [PR #38](https://github.com/firatkill/bidlock/pull/38). Initial CI passed browser, production build, pgTAP, concurrency and database-tooling jobs; final document formatting was corrected for the static job. Merge requires all final PR checks green. Local ESLint and tracked-file formatting pass; ignored owner `.codex-prompts` artifacts prevent an unfiltered workspace Prettier pass and are not changed.
