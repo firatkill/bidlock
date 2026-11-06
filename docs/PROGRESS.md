@@ -57,7 +57,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-37  | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
 | T-38  | Extension banner and public room e2e               | done   | 5a6b82a                                  |
 | T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
-| T-39  | App image and full compose                         | doing  | —                                        |
+| T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
 | T-40  | k6 bid-storm script                                | todo   | —                                        |
 | T-41  | Invariant verification                             | todo   | —                                        |
 | T-42  | Bench report and headline data                     | todo   | —                                        |
@@ -259,3 +259,5 @@ T-39 interim verification: exact Node/k6 tags verified and k6 image pulled; tool
 T-39 build correction approved as D-75 (2026-11-07): command-scoped non-secret test/on placeholders, matching Compose runtime and CI E2E. Retest includes runner filesystem/config checks for placeholder leakage.
 
 T-39 local acceptance complete: D-75 test/on build-only placeholders unblock standalone build; runner grep/config checks contain none of the placeholder secrets. Healthy non-root app (uid1001); dev/test schemas preserved. Small launcher smoke passed through health and failed only at missing T-40 script, as expected. App removed, Rehearse restored, pgdata retained. Final regression checks and PR CI gates recorded in qa/T-39-report.md.
+
+T-39 complete: [PR #40](https://github.com/firatkill/bidlock/pull/40), implementation `fbecd83`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42298376606), including 33 E2E tests, after setup interruptions and an unchanged retry. Final evidence commit must also pass CI before merge. D-73–D-75 and TC-255–TC-259 recorded; no open T-39 questions. T-40 has not started.

@@ -17330,6 +17330,41 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "—",
+      "ac_reference": "AGENTS.md Definition of done §6; T-39 delivery",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "T-39 CI E2E setup interruptions",
+      "description": "E2E setup interrupted before browser tests ran on the unchanged implementation revision. Other five CI jobs passed.",
+      "steps_to_reproduce": [
+        "Run PR #40 CI on fbecd83.",
+        "Retry the E2E job unchanged."
+      ],
+      "expected_result": "Build and browser installation complete, then both Playwright projects run.",
+      "status": "resolved",
+      "environment": "GitHub Actions Ubuntu / PR #40 / fbecd83",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Attempt 1 cancelled after Chromium dependency installation made no progress for over eight minutes; no E2E tests ran.",
+          "note": "Run 42298376606 attempt 1; infrastructure interruption, not a test assertion failure."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Attempt 2 failed at Turbopack Google-font import resolution: next/font/google queries have exactly one entry; browser installation and tests did not run.",
+          "note": "Run 42298376606 attempt 2; same revision built in initial E2E and production jobs; unchanged retry started."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unchanged attempt 3 passed build, browser installation and all 33 E2E tests; all six CI jobs green.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42298376606; no code or test changes between attempts."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
