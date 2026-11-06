@@ -60,7 +60,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
 | T-40  | k6 bid-storm script                                | done   | `8f30c43`                                |
 | T-41  | Invariant verification                             | done   | `25c2751`                                |
-| T-42  | Bench report and headline data                     | todo   | —                                        |
+| T-42  | Bench report and headline data                     | done   | `46fafea` (PR #43)                       |
 | T-43  | Load workflow                                      | todo   | —                                        |
 | T-44  | How it works page                                  | todo   | —                                        |
 | T-45  | Supabase production setup                          | todo   | —                                        |
@@ -289,3 +289,11 @@ Bidlock app and Rehearse remain stopped; port 3000 is free for later M6 local lo
 Resumed QA ledger: structure/status checks pass; known duplicate exploratory `—` append-only lookup collision persists. Independent ordered comparison confirms all 269 entries and their prior attempts preserved.
 
 T-41 complete: [PR #42](https://github.com/firatkill/bidlock/pull/42), implementation `21871fa`, acceptance evidence `65665fb`, merge commit `25c2751`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42306710169) on the final PR commit `4e3d128` before merge. D-77/D-78 and TC-265/TC-266 recorded. All local acceptance checks pass; no T-41 questions remain. Rehearse remains stopped for owner restoration after M6 local load runs; port 3000 stays free. T-42 has not started.
+
+## T-42 resumed — owner decision recorded
+
+The owner approved extending k6 instrumentation and summary configuration on 2026-11-07 (D-79). The report-input checkpoint is resolved; no open owner question remains. Implementing T-42 on `t-42-report`; T-43 has not started. D-80 records the authorized full-size local acceptance run, which is not a published benchmark. Rehearse stays stopped and untouched.
+
+T-42 local acceptance passed: 212 unit/DOM tests; 49 integration tests including INT-01/INT-02; 363 pgTAP assertions; lint/typecheck/guards/build; targeted TC-235 with full measured result and with restored empty sentinel; full E2E 33/33 once. One full-size local load run at defaults exited 0: 45,186 bid requests, 2,204 replays, 305 accepted HTTP outcomes (287 unique accepted bids), p95 57.23392675 ms, p99 462.3527715 ms, unexpected error rate 0, all 16 invariant checks zero, thresholds.passed=true. Strict result and local SUMMARY exist only in ignored bench/out. Report date is UTC (2026-11-06), local acceptance date 2026-11-07. bench/results is unchanged.
+
+D-79/D-80 and TC-267–269 updated. Interactive browser discovery returned no browsers; automated full/empty headline checks passed, owner visual review remains required. QA ledger structural/status checks pass; the known duplicate exploratory `—` append-only lookup collision remains. Independent ordered comparison confirms all 269 original entries and their prior attempts preserved, plus three new cases. Bidlock app is stopped, Rehearse untouched, named volumes preserved. All six CI jobs passed on implementation commit `46fafea`: [run 42308943337](https://github.com/firatkill/bidlock/actions/runs/42308943337). [PR #43](https://github.com/firatkill/bidlock/pull/43) stays open for owner browser review; do not merge or start T-43. The final evidence-only revision must also retain green CI.

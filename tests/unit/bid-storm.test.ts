@@ -117,10 +117,10 @@ test("TC-261: fresh cookie jar per bidder before creating auction; summary retai
     "http://app:3000/api/test/auctions",
     JSON.stringify({
       duration_s: 8,
-      starting_price: 1000,
       snipe_window_s: 10,
       extend_by_s: 12,
       max_extensions: 20,
+      starting_price: 1000,
     }),
     {
       headers: {

@@ -269,15 +269,23 @@ bidlock/
 set -euo pipefail
 C="docker compose -f docker/compose.yml"
 mkdir -p bench/out && chmod 777 bench/out          # the grafana/k6 image runs as a non-root user
+# Never report stale inputs if this run fails before producing artifacts.
+rm -f bench/out/k6-summary.json bench/out/verify.json bench/out/result.json bench/out/SUMMARY.md
 $C build db migrate app
 $C up -d db --wait                                  # db only: --wait is unreliable with one-shot services
 $C run --rm migrate                                 # reset bidlock_load: drop schema, migrate, db/env/load.sql
 $C up -d --no-deps app
 for i in $(seq 1 60); do curl -fsS http://localhost:3000/api/health >/dev/null && break; sleep 2; done
 curl -fsS http://localhost:3000/api/health >/dev/null
-$C --profile load run --rm --no-deps k6             # service command runs load/bid-storm.js; VUS, DURATION, AUCTION_S pass through
-DATABASE_URL_ADMIN=postgres://postgres:postgres@localhost:54329/bidlock_load pnpm bench:verify
-pnpm bench:report --no-commit
+k6_status=0
+$C --profile load run --rm --no-deps k6 || k6_status=$?
+k6_outcome=failure
+if [ "$k6_status" -eq 0 ]; then k6_outcome=success; fi
+verify_status=0
+DATABASE_URL_ADMIN=postgres://postgres:postgres@localhost:54329/bidlock_load pnpm bench:verify || verify_status=$?
+DATABASE_URL_ADMIN=postgres://postgres:postgres@localhost:54329/bidlock_load pnpm bench:report --no-commit --k6-outcome "$k6_outcome"
+if [ "$k6_status" -ne 0 ]; then exit "$k6_status"; fi
+exit "$verify_status"
 ```
 
 `app` declares `depends_on: migrate (service_completed_successfully)` for plain `docker compose up`; the script uses `--no-deps` so `migrate` (a full reset of `bidlock_load`) runs exactly once per run.
@@ -2766,25 +2774,48 @@ const SECRET = __ENV.TEST_API_SECRET;
 const VUS = Number(__ENV.VUS || 500);
 const DURATION = __ENV.DURATION || "60s";
 const AUCTION_S = Number(__ENV.AUCTION_S || 45);
+const AUCTION = {
+  duration_s: AUCTION_S,
+  snipe_window_s: 10,
+  extend_by_s: 12,
+  max_extensions: 20,
+};
 const ORIGIN = __ENV.APP_ORIGIN || BASE;
-const EXPECTED = new Set(["BID_TOO_LOW", "ALREADY_LEADING", "AUCTION_CLOSED", "RATE_LIMITED"]);
+const EXPECTED = new Set([
+  "BID_TOO_LOW",
+  "ALREADY_LEADING",
+  "AUCTION_CLOSED",
+  "RATE_LIMITED",
+]);
 
 const bidLatency = new Trend("bid_latency", true);
 const unexpected = new Rate("unexpected_errors");
+const bidRequests = new Counter("bid_requests");
+const replayRequests = new Counter("replay_requests");
 const replayMismatch = new Counter("replay_mismatch");
 const outcomes = {
-  accepted: new Counter("outcome_accepted"), BID_TOO_LOW: new Counter("outcome_bid_too_low"),
-  ALREADY_LEADING: new Counter("outcome_already_leading"), AUCTION_CLOSED: new Counter("outcome_auction_closed"),
-  RATE_LIMITED: new Counter("outcome_rate_limited"), OTHER: new Counter("outcome_other"),
+  accepted: new Counter("outcome_accepted"),
+  BID_TOO_LOW: new Counter("outcome_bid_too_low"),
+  ALREADY_LEADING: new Counter("outcome_already_leading"),
+  AUCTION_CLOSED: new Counter("outcome_auction_closed"),
+  RATE_LIMITED: new Counter("outcome_rate_limited"),
+  OTHER: new Counter("outcome_other"),
 };
 
 export const options = {
   setupTimeout: "180s",
-  scenarios: { storm: { executor: "constant-vus", vus: VUS, duration: DURATION, gracefulStop: "10s" } },
+  scenarios: {
+    storm: {
+      executor: "constant-vus",
+      vus: VUS,
+      duration: DURATION,
+      gracefulStop: "10s",
+    },
+  },
   thresholds: {
-    "bid_latency": ["p(95)<250", "p(99)<600"],
-    "unexpected_errors": ["rate<0.01"],
-    "replay_mismatch": ["count==0"],
+    bid_latency: ["p(95)<250", "p(99)<600"],
+    unexpected_errors: ["rate<0.01"],
+    replay_mismatch: ["count==0"],
   },
   summaryTrendStats: ["avg", "min", "med", "p(90)", "p(95)", "p(99)", "max"],
 };
@@ -2793,31 +2824,53 @@ export function setup() {
   // Bidders first: creating 500 guests takes seconds, and the auction clock must not run meanwhile.
   const cookies = [];
   for (let i = 0; i < VUS; i++) {
-    const r = http.get(`${BASE}/api/me`, { jar: new http.CookieJar() });   // fresh jar => new bidder each time
+    const r = http.get(`${BASE}/api/me`, { jar: new http.CookieJar() }); // fresh jar => new bidder each time
     const c = r.cookies.bl_sid && r.cookies.bl_sid[0];
     if (!c) throw new Error(`no cookie for bidder ${i}: ${r.status}`);
     cookies.push(`bl_sid=${c.value}`);
   }
-  const a = http.post(`${BASE}/api/test/auctions`, JSON.stringify({
-    duration_s: AUCTION_S, starting_price: 1000, snipe_window_s: 10, extend_by_s: 12, max_extensions: 20,
-  }), { headers: { "content-type": "application/json", "x-test-secret": SECRET } });
-  if (a.status !== 201) throw new Error(`test auction not created: ${a.status} ${a.body}`);
+  const a = http.post(
+    `${BASE}/api/test/auctions`,
+    JSON.stringify({
+      ...AUCTION,
+      starting_price: 1000,
+    }),
+    {
+      headers: { "content-type": "application/json", "x-test-secret": SECRET },
+    },
+  );
+  if (a.status !== 201)
+    throw new Error(`test auction not created: ${a.status} ${a.body}`);
   const auctionId = a.json("auction_id");
   return { auctionId, cookies, startedAt: Date.now() };
 }
 
-let state = { min: 1000, inc: 100, last: null, closed: false };   // per VU
+let state = { min: 1000, inc: 100, last: null, closed: false }; // per VU
 
 export default function (data) {
-  if (state.closed) { sleep(1); return; }
-  const headers = { "content-type": "application/json", origin: ORIGIN, cookie: data.cookies[__VU - 1] };
-  const replay = state.last && Math.random() < 0.05;
-  const body = replay ? state.last.body : {
-    amount: state.min + state.inc * Math.floor(Math.random() * 3),
-    idempotency_key: uuidv4(),
+  if (state.closed) {
+    sleep(1);
+    return;
+  }
+  const headers = {
+    "content-type": "application/json",
+    origin: ORIGIN,
+    cookie: data.cookies[__VU - 1],
   };
-  const res = http.post(`${BASE}/api/auctions/${data.auctionId}/bids`, JSON.stringify(body),
-                        { headers, tags: { name: "bid" } });
+  const replay = state.last && Math.random() < 0.05;
+  const body = replay
+    ? state.last.body
+    : {
+        amount: state.min + state.inc * Math.floor(Math.random() * 3),
+        idempotency_key: uuidv4(),
+      };
+  const res = http.post(
+    `${BASE}/api/auctions/${data.auctionId}/bids`,
+    JSON.stringify(body),
+    { headers, tags: { name: "bid" } },
+  );
+  bidRequests.add(1);
+  replayRequests.add(replay ? 1 : 0); // Every reused-key request, regardless of response.
   bidLatency.add(res.timings.duration);
 
   let code = null;
@@ -2837,10 +2890,13 @@ export default function (data) {
 
   // Only stored outcomes are replayable (D-09): accepted and rule rejections. RATE_LIMITED, network
   // errors (status 0) and 5xx are never stored, so they are neither recorded as "last" nor compared.
-  const stored = res.status !== 0 && res.status < 500 && code !== "RATE_LIMITED";
+  const stored =
+    res.status !== 0 && res.status < 500 && code !== "RATE_LIMITED";
   if (replay) {
     if (stored) {
-      const sameOutcome = (res.status < 300) === (state.last.status < 300) && code === state.last.code;
+      const sameOutcome =
+        res.status < 300 === state.last.status < 300 &&
+        code === state.last.code;
       if (!sameOutcome) replayMismatch.add(1);
     }
   } else if (stored) {
@@ -2848,21 +2904,67 @@ export default function (data) {
   }
   // increment for the next attempt: ask the server's ladder via the response when available
   state.inc = incrementFor(state.min);
-  sleep(0.35 + Math.random() * 0.6);                    // ~1.5 req/s per VU, under the 3/s burst limit
+  sleep(0.35 + Math.random() * 0.6); // ~1.5 req/s per VU, under the 3/s burst limit
 }
 
 function safeJson(res) {
-  try { return res.json(); } catch (_) { return null; }   // network errors have no body
+  try {
+    return res.json();
+  } catch (_) {
+    return null;
+  } // network errors have no body
 }
 
-function incrementFor(p) {                               // copy of the ladder for amount generation only
-  const bands = [[500000, 25000], [250000, 10000], [100000, 5000], [50000, 2500], [25000, 1000], [10000, 500], [5000, 200], [1000, 100], [0, 50]];
+function incrementFor(p) {
+  // copy of the ladder for amount generation only
+  const bands = [
+    [500000, 25000],
+    [250000, 10000],
+    [100000, 5000],
+    [50000, 2500],
+    [25000, 1000],
+    [10000, 500],
+    [5000, 200],
+    [1000, 100],
+    [0, 50],
+  ];
   for (const [lb, inc] of bands) if (p >= lb) return inc;
   return 50;
 }
 
+// k6 duration syntax; retain configured time, not elapsed time including graceful stop.
+function durationSeconds(value) {
+  const units = {
+    ns: 1e-9,
+    us: 1e-6,
+    µs: 1e-6,
+    ms: 0.001,
+    s: 1,
+    m: 60,
+    h: 3600,
+  };
+  const parts = [...value.matchAll(/(\d+(?:\.\d+)?)(ns|us|µs|ms|s|m|h)/g)];
+  if (!parts.length || parts.map(([part]) => part).join("") !== value)
+    throw new Error("Invalid benchmark duration");
+  return parts.reduce(
+    (seconds, [, amount, unit]) => seconds + Number(amount) * units[unit],
+    0,
+  );
+}
+
 export function handleSummary(data) {
-  return { "/out/k6-summary.json": JSON.stringify(data, null, 2), stdout: textSummary(data) };
+  const summary = {
+    ...data,
+    bench_config: {
+      vus: VUS,
+      duration_s: durationSeconds(DURATION),
+      auction: AUCTION,
+    },
+  };
+  return {
+    "/out/k6-summary.json": JSON.stringify(summary, null, 2),
+    stdout: textSummary(data),
+  };
 }
 ```
 
@@ -2941,6 +3043,12 @@ order by 1;
 #### 15.6.4 Report (`scripts/bench/report.ts`)
 
 Inputs: `bench/out/k6-summary.json`, `bench/out/verify.json`, env `GITHUB_SHA`, `RUNNER_OS`, `/proc/cpuinfo` model name and `os.cpus().length`, `os.totalmem()`. Output `bench/results/<YYYY-MM-DD>.json` (suffix `-2`, `-3` when the date exists), copy to `bench/results/latest.json`, regenerate `bench/SUMMARY.md` from all result files (newest first). `--no-commit` (local runs) writes `bench/out/result.json` and `bench/out/SUMMARY.md` instead and leaves `bench/results/` untouched. `--k6-outcome <success|failure>` records the k6 step outcome; `thresholds.passed` is true only when it is `success` and every threshold in the k6 summary passed. `--init` writes the empty-state `bench/results/latest.json` (below) if the file is missing.
+
+D-79: `handleSummary` adds `bench_config: { vus, duration_s, auction: { duration_s, snipe_window_s, extend_by_s, max_extensions } }`, using the actual scenario env/default values and the same auction timing object sent during setup. `duration_s` is configured duration converted from k6 units, not elapsed time including graceful stop. `bid_requests` counts every sent bid request, `replay_requests` counts every sent request that reuses a key regardless of result; `replay_mismatch` and its zero threshold remain unchanged. Report `requests.bids` and `requests.rps` use `bid_requests` count/rate, and `requests.replays` uses `replay_requests` count. Outcome counters count HTTP outcomes, including replays; they are not unique database bid counts. k6 omits unsampled outcome counters, which represent zero. Required request counters must exist.
+
+`report.ts` validates summary/config/consumed metrics, verifier output, Compose JSON and existing result files with Zod. The k6-owned outer envelope and Compose-owned unrelated fields remain extensible; owned objects are strict. It checks matching auction IDs. Pool size is the validated explicit `DB_POOL_MAX` env value when provided (must match the app), otherwise the resolved `docker compose -f docker/compose.yml config --format json` app environment. PostgreSQL version is queried with `show server_version` through `DATABASE_URL_ADMIN` on the local/CI database. No pool/version estimate or hard-coded fallback. Local metadata falls back from `GITHUB_SHA`/`RUNNER_OS` to Git HEAD/`os.platform()`; CPU model falls back from `/proc/cpuinfo` to `os.cpus()` on non-Linux hosts.
+
+The report requires `--k6-outcome` except in `--init` mode; absent required thresholds cannot pass. All summary thresholds, including additional ones, must pass. `--init` is exclusive of report flags. Same-date summaries order numeric suffixes descending. `--no-commit` generates a one-run local SUMMARY and never creates or changes published files. The local launcher clears previous output artifacts before starting, captures the k6 exit status, runs verification and report even on k6 failure, passes `--k6-outcome success|failure`, and propagates failures. A report error also fails the launcher.
 
 Result schema (version 1), validated with Zod `BenchResult` in `src/domain/schemas.ts` (also used by the lobby headline and `/how-it-works`):
 

@@ -11233,6 +11233,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -13778,6 +13783,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 full unit regression: 212 tests passed; lint, typecheck and guards passed.",
+          "note": "T-42 local verification; no fabricated published results."
         }
       ],
       "regression_of": null,
@@ -14011,6 +14021,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -14164,6 +14179,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -14253,6 +14273,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -14322,6 +14347,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -14411,6 +14441,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -14510,6 +14545,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -15539,6 +15579,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -15613,6 +15658,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -15913,6 +15963,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -15962,6 +16017,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16011,6 +16071,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16095,6 +16160,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16159,6 +16229,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16251,6 +16326,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16300,6 +16380,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16379,6 +16464,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16453,6 +16543,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16522,6 +16617,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16591,6 +16691,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16650,6 +16755,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16729,6 +16839,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16939,6 +17054,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -16998,6 +17118,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -17077,6 +17202,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -17185,6 +17315,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -17219,6 +17354,11 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -17383,6 +17523,16 @@
           "result": "pass",
           "actual_result": "50 VUs / 15s / 8s honored. Rule 5 positive and negative command tests pass for both load files; workload adapter verifies default 500 VUs/60s. No production traffic.",
           "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 full unit regression: 212 tests passed; lint, typecheck and guards passed.",
+          "note": "T-42 local verification; no fabricated published results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Rule 5 guard unchanged and passes; production-domain rejection unit tests pass.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -17407,6 +17557,21 @@
           "result": "pass",
           "actual_result": "Pinned k6 1.8.2 loaded k6-utils 1.4.0 and k6-summary 0.1.0 remotely. Summary has setup_data.auctionId and 50 distinct cookies; fresh jar identity and auction-after-bidders ordering pass. No vendoring needed.",
           "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Existing assertion expected starting_price earlier in serialized JSON; shared auction configuration changed key order only.",
+          "note": "Updated test serialization order; expected properties and values unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 11 workload tests pass, then all 212 unit tests pass.",
+          "note": "Setup still uses independent bidder cookie jars; metadata instrumentation covered separately by TC-267."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final regression: all 212 unit tests, 49 integration tests and 363 pgTAP assertions pass.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
         }
       ],
       "regression_of": null,
@@ -17502,6 +17667,11 @@
           "result": "pass",
           "actual_result": "Fresh small load and standalone verify exit 0: closed, final_price 19000, bid_count 67, extension_count 7; all 16 checks zero violations.",
           "note": "Owner recovered disk/Docker. Lint/typecheck/202 unit tests/guards and 49 concurrency tests pass. Rehearse restoration is independently blocked by missing .env, recorded in docs/PROGRESS.md; no volume removed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 full unit regression: 212 tests passed; lint, typecheck and guards passed.",
+          "note": "T-42 local verification; no fabricated published results."
         }
       ],
       "regression_of": null,
@@ -17540,10 +17710,122 @@
           "result": "pass",
           "actual_result": "bidlock_load-only bid_count +1 yields exit 1 and INV-12=1; finally restored with -1, then verify exits 0. Unit failure decisions and 120-second fake-clock coverage pass.",
           "note": "Owner recovered disk/Docker. Lint/typecheck/202 unit tests/guards and 49 concurrency tests pass. Rehearse restoration is independently blocked by missing .env, recorded in docs/PROGRESS.md; no volume removed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-42 full unit regression: 212 tests passed; lint, typecheck and guards passed.",
+          "note": "T-42 local verification; no fabricated published results."
         }
       ],
       "regression_of": null,
       "root_cause_group": "t41-docker-storage",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-267",
+      "ac_reference": "FR-95; NFR-10–NFR-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Benchmark schema and factual report",
+      "status": "resolved",
+      "environment": "macOS / Node 24 / Vitest / t-42-report, 2026-11-07",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Strict schema/input checks, real-source metadata mapping, outcome/threshold logic and replay instrumentation pass. Full unit suite: 212 tests passed. Full-size local acceptance pending.",
+          "note": "T-42 local verification; no fabricated published results."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full-size pnpm load:local exited 0 at defaults (500 VUs, 60 s): 45186 bids, 2204 replays, 305 accepted responses (287 unique database bids), p95 57.23392675 ms, p99 462.3527715 ms, unexpected error rate 0, all 16 invariant checks zero, thresholds.passed=true. FullBenchResult parses result.json. Pool=20 from Compose; PostgreSQL 17.11 from server_version; Apple M4/10 CPUs/24 GiB from OS.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-268",
+      "ac_reference": "FR-95",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Report filenames and local no-commit mode",
+      "status": "resolved",
+      "environment": "macOS / Node 24 / Vitest / t-42-report, 2026-11-07",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "SUMMARY sorted unsuffixed filename before later same-day runs.",
+          "note": "Initial UT-12 assertion found lexicographic filename ordering bug."
+        },
+        {
+          "result": "fail",
+          "actual_result": "SUMMARY still sorted unsuffixed filename before -2.",
+          "note": "Numeric suffix extraction incorrectly matched the day component; constrain extraction to the portion after YYYY-MM-DD."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Cross-date ordering assertion failed while same-day -2/-3 ordering passed.",
+          "note": "Comparator used payload date instead of dated filename; test supplied equal payload dates. Three-attempt advisory retained; deterministic cause identified."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six UT-12 report tests pass: strict schemas, thresholds, -2/-3 and -10 ordering, sentinel exclusion, exclusive CLI init, no-commit output and byte-preserved published files.",
+          "note": "Sort filename date and numeric suffix independently. No assertions weakened; full 212-test unit run passes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Local launcher produced bench/out/result.json and SUMMARY.md. git status --porcelain bench/results is empty before and after temporary headline preview. Header-only bench/SUMMARY.md unchanged. All UT-12 tests pass.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "description": "Verify report filenames, publication isolation and empty-state initialization.",
+      "steps_to_reproduce": [
+        "Run pnpm exec vitest run tests/unit/benchReport.test.ts."
+      ],
+      "expected_result": "Newer dated files and numeric suffixes precede older files; no-commit never changes published files."
+    },
+    {
+      "tc_reference": "TC-269",
+      "ac_reference": "FR-95",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Lobby reads measured benchmark data",
+      "status": "resolved",
+      "environment": "macOS / Node 24 / Vitest / t-42-report, 2026-11-07",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "DOM tests verify full benchmark number formatting, exact PRD sentence, measured date/results link, and empty-band absence. TC-199 and missing-file regression also pass in full 212-test run.",
+          "note": "Live browser connection returned no browsers after discovery; owner visual review remains required. E2E pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "212 unit/DOM tests passed; targeted TC-235 E2E passed with the actual local full result, then again with restored empty sentinel. Full E2E passed 33/33. No browser was connected for interactive visual inspection; owner browser review remains required.",
+          "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
     }

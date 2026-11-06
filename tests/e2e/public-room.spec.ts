@@ -7,6 +7,7 @@ import {
   BidAccepted,
   ErrorBody,
 } from "../../src/domain/schemas";
+const number = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 const benchmarkPath = new URL(
   "../../bench/results/latest.json",
   import.meta.url,
@@ -38,7 +39,7 @@ test("TC-235 E2E-06 public entry, benchmark and successor @isolated", async ({
     else
       await expect(
         a.page.getByText(
-          `Last benchmark: ${String(bench.outcomes.accepted)} accepted bids from ${String(bench.config.vus)} concurrent bidders in ${String(bench.config.duration_s)} s. 1 winner. ${String(bench.invariants.reduce((sum, row) => sum + row.violations, 0))} invalid bids. p95 ${String(bench.latency_ms.p95)} ms.`,
+          `Last benchmark: ${number.format(bench.outcomes.accepted)} accepted bids from ${number.format(bench.config.vus)} concurrent bidders in ${number.format(bench.config.duration_s)} s. 1 winner. ${number.format(bench.invariants.reduce((sum, row) => sum + row.violations, 0))} invalid bids. p95 ${number.format(bench.latency_ms.p95)} ms.`,
           { exact: true },
         ),
       ).toBeVisible();

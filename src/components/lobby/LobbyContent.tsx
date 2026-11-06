@@ -8,20 +8,22 @@ export function LobbyIntro() {
     </header>
   );
 }
+const benchmarkNumber = new Intl.NumberFormat("en-US", {
+  maximumFractionDigits: 2,
+});
 export function BenchmarkHeadline({ result }: { result: BenchResult }) {
   if ("empty" in result) return null;
   return (
     <section className="space-y-2 border-y border-rule py-6">
       <p>
         {fillCopy(copy.benchmark, {
-          accepted: result.outcomes.accepted,
-          vus: result.config.vus,
-          duration_s: result.config.duration_s,
-          violations: result.invariants.reduce(
-            (sum, value) => sum + value.violations,
-            0,
+          accepted: benchmarkNumber.format(result.outcomes.accepted),
+          vus: benchmarkNumber.format(result.config.vus),
+          duration_s: benchmarkNumber.format(result.config.duration_s),
+          violations: benchmarkNumber.format(
+            result.invariants.reduce((sum, value) => sum + value.violations, 0),
           ),
-          p95_ms: result.latency_ms.p95,
+          p95_ms: benchmarkNumber.format(result.latency_ms.p95),
         })}
       </p>
       <p className="text-sm text-ink-3">
