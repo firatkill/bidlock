@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "commit": "99ab16e45beca2bf3604e9f25763667f3de54586",
+  "runner": {
+    "os": "Linux",
+    "cpus": 4,
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "memory_gb": 15.612476348876953
+  },
+  "config": {
+    "vus": 500,
+    "duration_s": 60,
+    "db_pool_max": 20,
+    "postgres": "17.11 (Debian 17.11-1.pgdg13+2)",
+    "auction": {
+      "duration_s": 45,
+      "snipe_window_s": 10,
+      "extend_by_s": 12,
+      "max_extensions": 20
+    }
+  },
+  "requests": {
+    "bids": 33874,
+    "replays": 1687,
+    "rps": 543.8579096345122
+  },
+  "outcomes": {
+    "accepted": 246,
+    "BID_TOO_LOW": 32315,
+    "ALREADY_LEADING": 0,
+    "AUCTION_CLOSED": 0,
+    "RATE_LIMITED": 1313,
+    "OTHER": 0
+  },
+  "unexpected_error_rate": 0,
+  "latency_ms": {
+    "p50": 213.3439495,
+    "p90": 351.9966529,
+    "p95": 406.8271048999999,
+    "p99": 1029.5332955099943,
+    "max": 1462.755735
+  },
+  "auction": {
+    "final_price": 2425000,
+    "bid_count": 235,
+    "extension_count": 12,
+    "status": "closed"
+  },
+  "invariants": [
+    {
+      "id": "INV-01",
+      "check": "leader is the bidder of the highest bid",
+      "violations": 0
+    },
+    {
+      "id": "INV-02",
+      "check": "current_price equals max accepted amount",
+      "violations": 0
+    },
+    {
+      "id": "INV-03a",
+      "check": "bid_no is 1..n without gaps",
+      "violations": 0
+    },
+    {
+      "id": "INV-03b",
+      "check": "each bid meets start or previous + increment",
+      "violations": 0
+    },
+    {
+      "id": "INV-04",
+      "check": "no consecutive bids by the same bidder",
+      "violations": 0
+    },
+    {
+      "id": "INV-05",
+      "check": "every bid placed before ends_at at that moment",
+      "violations": 0
+    },
+    {
+      "id": "INV-06",
+      "check": "no bid at or after the logical close",
+      "violations": 0
+    },
+    {
+      "id": "INV-07a",
+      "check": "one request row per (bidder, key)",
+      "violations": 0
+    },
+    {
+      "id": "INV-07b",
+      "check": "every bid has exactly one accepted request",
+      "violations": 0
+    },
+    {
+      "id": "INV-07c",
+      "check": "every accepted request has a bid",
+      "violations": 0
+    },
+    {
+      "id": "INV-08a",
+      "check": "extension_count within cap and equal to extension rows",
+      "violations": 0
+    },
+    {
+      "id": "INV-08b",
+      "check": "extensions move ends_at forward",
+      "violations": 0
+    },
+    {
+      "id": "INV-10",
+      "check": "at most one open and one paid offer; settled iff one paid offer",
+      "violations": 0
+    },
+    {
+      "id": "INV-11",
+      "check": "runner-up offer goes to another bidder at their own highest bid",
+      "violations": 0
+    },
+    {
+      "id": "INV-12",
+      "check": "bid_count equals accepted bids",
+      "violations": 0
+    },
+    {
+      "id": "INV-13",
+      "check": "valid status / payment_state pair",
+      "violations": 0
+    }
+  ],
+  "thresholds": {
+    "p95_ms": 250,
+    "p99_ms": 600,
+    "unexpected_error_rate": 0.01,
+    "passed": false
+  }
+}
