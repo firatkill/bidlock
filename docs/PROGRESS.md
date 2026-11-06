@@ -70,7 +70,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- T-43: first default CI benchmark failed latency thresholds and did not exercise the extension cap/post-close responses. Authorize a diagnosis/fix task or one unchanged retry? Recommend diagnosis first; see the T-43 benchmark checkpoint below.
+- T-43: diagnosis authorized (D-82). TRD §15.6.2 timing assumption is false: the earliest twentieth extension is at auction age 73 s and earliest close is 85 s. Approve changing load-only extend_by_s from 12 to 10 (recommended), or revise TC-264 to use separate lifecycle coverage? See qa/T-43-diagnosis.md. Latency attribution needs instrumentation before choosing a pool or application fix.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -315,3 +315,7 @@ Artifact `bench-42310825613` uploaded (37,140 bytes) and downloaded for inspecti
 Owner options: authorize diagnosis and a proposed fix before another benchmark (recommended), or authorize one unchanged retry. No thresholds or workload assumptions will be changed without approval. Evidence pushed on `t-43-load-workflow`.
 
 QA ledger structural/status checks pass; external checker retains its documented duplicate exploratory `—` lookup collision. Independent ordered comparison verifies every prior attempt remains unchanged.
+
+## T-43 diagnosis — timing specification checkpoint
+
+D-82 records owner authorization to diagnose without a blind retry. [Diagnosis and proposed options](../qa/T-43-diagnosis.md) establish the soft-close timing contradiction and quantify the available HTTP latency breakdown. App/SQL/pool/CPU attribution is unavailable in the original artifact, not inferred as measured fact. No runtime change, local load, new CI dispatch, fix PR merge or change to bot PR #45. Existing failure evidence preserved; T-43 blocked, T-44 untouched.
