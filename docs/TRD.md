@@ -2757,7 +2757,7 @@ Component tests use Testing Library (`@testing-library/react`, `@testing-library
 #### 15.6.1 Setup
 
 - Run parameters (env, passed into the k6 container by compose, §17.2): `VUS` (default 500), `DURATION` (default `60s`), `AUCTION_S` (auction `duration_s`, default 45). Small local runs use e.g. `VUS=50 DURATION=15s AUCTION_S=8`.
-- Environment: `docker/compose.yml` (§17.2) with `db` (postgres:17, `max_connections=200`), `migrate` (applies migrations + `db/env/load.sql`), `app` (production standalone build, `APP_ENV=test`, `DB_POOL_MAX=20`, `NEXT_PUBLIC_FEED=polling`), `k6` (profile `load`).
+- Environment: `docker/compose.yml` (§17.2) with `db` (postgres:17, `max_connections=200`), `migrate` (applies migrations + `db/env/load.sql`), `app` (production standalone build, `APP_ENV=test`, `DB_POOL_MAX=4`, `NEXT_PUBLIC_FEED=polling`), `k6` (profile `load`).
 - The live site is never a target: `BASE_URL` defaults to `http://app:3000` and `check:guards` rejects `firatkil.com` in load files.
 
 #### 15.6.2 `load/bid-storm.js`
@@ -3060,7 +3060,7 @@ Result schema (version 1), validated with Zod `BenchResult` in `src/domain/schem
   "date": "2026-10-18",
   "commit": "abc1234",
   "runner": { "os": "Linux", "cpus": 4, "cpu_model": "AMD EPYC 7763 64-Core Processor", "memory_gb": 16 },
-  "config": { "vus": 500, "duration_s": 60, "db_pool_max": 20, "postgres": "17.x",
+  "config": { "vus": 500, "duration_s": 60, "db_pool_max": 4, "postgres": "17.x",
               "auction": { "duration_s": 45, "snipe_window_s": 10, "extend_by_s": 10, "max_extensions": 20 } },
   "requests": { "bids": 41230, "replays": 2010, "rps": 680.5 },
   "outcomes": { "accepted": 3120, "BID_TOO_LOW": 31002, "ALREADY_LEADING": 2400, "AUCTION_CLOSED": 4700, "RATE_LIMITED": 8, "OTHER": 0 },
@@ -3515,7 +3515,7 @@ services:
       APP_ENV: test
       DEMO_MODE: "on"
       DATABASE_URL: postgres://bidlock_app:bidlock_app@db:5432/bidlock_load
-      DB_POOL_MAX: "20"
+      DB_POOL_MAX: "4"
       APP_ORIGIN: http://app:3000
       TRUST_PROXY: none
       SESSION_SECRET: load-session-secret-0123456789abcdef0123
@@ -3681,7 +3681,7 @@ Load on production is limited by design: no k6 against production (NFR-31), rate
 
 - Throughput per auction is bounded by lock hold time. `place_bid` holds the lock for one function execution (several index lookups and 3–5 inserts/updates, typically well under 2 ms on the CI runner), so one auction can serialize several hundred bids per second. Different auctions never contend.
 - The per-IP rate counter is a second hot row during the load test (all VUs share one IP). It is held only for the `check_bid_rate` statement.
-- The app pool (`DB_POOL_MAX=20` in compose) bounds concurrent transactions; excess requests queue in postgres.js, which is visible as latency rather than errors.
+- The app pool (`DB_POOL_MAX=4` in compose) bounds concurrent transactions; excess requests queue in postgres.js, which is visible as latency rather than errors.
 - In production, `realtime.send` runs inside the bid transaction (while the lock is held). The benchmark runs with `realtime_mode = 'none'`, so it does not measure Broadcast fan-out; `/how-it-works` states this.
 - Read paths never take the auction lock unless a transition is due, and then with `SKIP LOCKED`.
 

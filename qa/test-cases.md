@@ -3329,3 +3329,15 @@ The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies modu
 - Preconditions: Diagnostic overlay enabled only in isolated load CI; normal app defaults unchanged.
 - Steps: Test default-off and non-test rejection, phase timing after failures and output allowlist. Inspect diagnostic run artifact for per-request phases, event-loop aggregates, database waits/blockers and CPU/throttling. Inspect parameter suppression and run-specific PR branch.
 - Expected result: Only test-mode opt-in emits numeric diagnostic measurements; no SQL values, request data or secrets. Pending phase counts are not claimed as native queue length. Samplers are bounded; previous bot PRs unchanged; diagnostic result never merged.
+
+## TC-277: Measured load pool tuning preserves correctness and thresholds
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: NFR-10; NFR-11; NFR-12; D-85
+- TRD test reference: §15.6; LOAD-01
+- Priority: High
+- Automatable: yes
+- Preconditions: D-84 diagnostic complete; only one final fix dispatch permitted.
+- Steps: Resolve Compose app pool=4; pass regression CI; dispatch default workflow once. Parse full result and compare phase/lock measurements with diagnostic run; inspect result PR scope before publication.
+- Expected result: Actual config pool=4; unchanged 500 VUs, 60 s and runner; all thresholds pass, every invariant zero, cap20 and post-close responses present. Publish only if all gates pass; otherwise stop for owner.
