@@ -58,7 +58,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-38  | Extension banner and public room e2e               | done   | 5a6b82a                                  |
 | T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
 | T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
-| T-40  | k6 bid-storm script                                | doing  | —                                        |
+| T-40  | k6 bid-storm script                                | done   | `8f30c43`                                |
 | T-41  | Invariant verification                             | todo   | —                                        |
 | T-42  | Bench report and headline data                     | todo   | —                                        |
 | T-43  | Load workflow                                      | todo   | —                                        |
@@ -269,3 +269,5 @@ Implementation follows TRD §15.6.2 with formatting only; pinned remote imports 
 Local acceptance passed k6: 1,135 bids, 67 accepted responses, p95 21.3056ms, p99 207.8352ms, zero unexpected errors/replay mismatches. Real summary contains setup_data.auctionId and 50 distinct sessions. Launcher exit1 at the T-41 verifier placeholder is expected; report is not reached. App stopped/removed without volume deletion; Rehearse restarted and Docker health is healthy. Lint, typecheck, 196 unit tests and guards pass. TC-263 full-size CI performance and TC-264 live cap/post-deadline coverage remain planned for T-43; neither is claimed by the short acceptance run. T-41 has not started.
 
 QA ledger structure/status checks pass. The external checker repeats the pre-existing duplicate exploratory `—` lookup collision noted in T-39; independent ordered comparison confirms all 262 previous entries are byte-equivalent as JSON values, with five new entries appended. No history was removed.
+
+T-40 complete: [PR #41](https://github.com/firatkill/bidlock/pull/41), implementation `4ab96b1`, merge commit `8f30c43`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42301679975) before the merge. D-76 and TC-260–TC-264 recorded. Only the full-size M6 performance/closing checks remain scheduled for T-43; no owner checkpoint is open. T-41 has not started.
