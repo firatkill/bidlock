@@ -9,6 +9,12 @@ const SECRET = __ENV.TEST_API_SECRET;
 const VUS = Number(__ENV.VUS || 500);
 const DURATION = __ENV.DURATION || "60s";
 const AUCTION_S = Number(__ENV.AUCTION_S || 45);
+const AUCTION = {
+  duration_s: AUCTION_S,
+  snipe_window_s: 10,
+  extend_by_s: 12,
+  max_extensions: 20,
+};
 const ORIGIN = __ENV.APP_ORIGIN || BASE;
 const EXPECTED = new Set([
   "BID_TOO_LOW",
@@ -19,6 +25,8 @@ const EXPECTED = new Set([
 
 const bidLatency = new Trend("bid_latency", true);
 const unexpected = new Rate("unexpected_errors");
+const bidRequests = new Counter("bid_requests");
+const replayRequests = new Counter("replay_requests");
 const replayMismatch = new Counter("replay_mismatch");
 const outcomes = {
   accepted: new Counter("outcome_accepted"),
@@ -59,11 +67,8 @@ export function setup() {
   const a = http.post(
     `${BASE}/api/test/auctions`,
     JSON.stringify({
-      duration_s: AUCTION_S,
+      ...AUCTION,
       starting_price: 1000,
-      snipe_window_s: 10,
-      extend_by_s: 12,
-      max_extensions: 20,
     }),
     {
       headers: { "content-type": "application/json", "x-test-secret": SECRET },
@@ -99,6 +104,8 @@ export default function (data) {
     JSON.stringify(body),
     { headers, tags: { name: "bid" } },
   );
+  bidRequests.add(1);
+  replayRequests.add(replay ? 1 : 0); // Every reused-key request, regardless of response.
   bidLatency.add(res.timings.duration);
 
   let code = null;
@@ -160,9 +167,37 @@ function incrementFor(p) {
   return 50;
 }
 
+// k6 duration syntax; retain configured time, not elapsed time including graceful stop.
+function durationSeconds(value) {
+  const units = {
+    ns: 1e-9,
+    us: 1e-6,
+    µs: 1e-6,
+    ms: 0.001,
+    s: 1,
+    m: 60,
+    h: 3600,
+  };
+  const parts = [...value.matchAll(/(\d+(?:\.\d+)?)(ns|us|µs|ms|s|m|h)/g)];
+  if (!parts.length || parts.map(([part]) => part).join("") !== value)
+    throw new Error("Invalid benchmark duration");
+  return parts.reduce(
+    (seconds, [, amount, unit]) => seconds + Number(amount) * units[unit],
+    0,
+  );
+}
+
 export function handleSummary(data) {
+  const summary = {
+    ...data,
+    bench_config: {
+      vus: VUS,
+      duration_s: durationSeconds(DURATION),
+      auction: AUCTION,
+    },
+  };
   return {
-    "/out/k6-summary.json": JSON.stringify(data, null, 2),
+    "/out/k6-summary.json": JSON.stringify(summary, null, 2),
     stdout: textSummary(data),
   };
 }

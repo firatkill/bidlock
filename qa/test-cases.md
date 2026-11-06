@@ -3214,7 +3214,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Generate report from actual summary and verification; parse strict BenchResult and inspect runner/config/outcomes/latency/invariants.
-- Expected result: Actual run metrics and hardware metadata preserved; no invented numbers; thresholds passed only if k6 success and every threshold passed.
+- Expected result: Actual run metrics and hardware metadata preserved; no invented numbers; thresholds passed only if k6 success and every required/additional threshold passed. D-79: every sent replay counted regardless of response; mismatches still checked; env/default VUs, configured duration and auction timing preserved. Pool comes from Compose/env and PostgreSQL version from the running server. Missing counters, invalid inputs and mismatched auction IDs fail validation. Rule 5 guard and INT tests remain green.
 
 ## TC-268: Report filenames and local no-commit mode
 
@@ -3226,7 +3226,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Generate two reports same date; run --no-commit and --init with missing/existing result file.
-- Expected result: Dated collision suffixes -2/-3, latest copy and newest-first summary; no-commit writes only bench/out; init creates empty sentinel only when absent.
+- Expected result: Dated collision suffixes -2/-3 (numeric newest-first ordering including -10), latest copy and newest-first summary; no-commit writes only bench/out and leaves published results/SUMMARY byte-identical; init creates empty sentinel only when absent and cannot combine with no-commit. Empty sentinel never becomes a dated result.
 
 ## TC-269: Lobby reads measured benchmark data
 
@@ -3238,7 +3238,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Render lobby with full result, empty sentinel and missing file.
-- Expected result: Full result renders actual metrics/date/link; empty or missing benchmark hides band under D-61.
+- Expected result: Full result renders actual metrics/date/link with en-US number formatting (up to two decimal places for latency); exact PRD copy is unchanged. Empty or missing benchmark hides band under D-61. Test fixtures stay outside bench/results; D-80 local acceptance results are not published.
 
 ## TC-270: Scheduled/manual load workflow and artifacts
 
