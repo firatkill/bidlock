@@ -2711,7 +2711,7 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 | TC-232 | FR-12; FR-66; US-07; US-08 | Offer notices and profile refresh           | High     | yes         | Exact per-offer notices and links; expired offers disappear; strike singular/plural copy reflects refreshed profile.                                                                                                      |
 | TC-233 | FR-31; FR-66; NFR-21       | Settlement announcement and next public lot | High     | yes         | Assertive won/offer announcement once per event; next-lot countdown uses logical close plus 15s and link appears when ID known.                                                                                           |
 | TC-234 | FR-07; FR-65; US-06        | Late bid extension flow                     | High     | yes         | Banner says Late bid! Closing moved to 0:30; Extension 1 of 20; countdown 0:29 or 0:30; history +0:30 tag.                                                                                                                |
-| TC-235 | FR-30; FR-31               | Public room and benchmark entry             | High     | yes         | Live or next-lot label; room navigation; bid accepted or valid rejection; exact benchmark data/empty copy.                                                                                                                |
+| TC-235 | FR-30; FR-31               | Public room and benchmark entry             | High     | yes         | Live or next-lot label; room navigation; bid accepted or valid rejection; exact benchmark data copy or absent band without data (D-61).                                                                                   |
 | TC-236 | FR-66; NFR-20; NFR-21      | Settlement layout and closing moment        | High     | no          | Readable amounts, deadlines and payment controls without overlap; closing and result states visually confirmed.                                                                                                           |
 
 ## TC-228: Winner payment flow
@@ -2808,7 +2808,7 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 - Automatable: yes
 - Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
 - Steps: Open lobby, inspect public card/countdown, enter and bid; inspect benchmark headline against committed data.
-- Expected result: Live or next-lot label; room navigation; bid accepted or valid rejection; exact benchmark data/empty copy.
+- Expected result: Live or next-lot label; room navigation; bid accepted or valid rejection; exact benchmark data copy or absent band without data (D-61).
 
 ## TC-236: Settlement layout and closing moment
 
@@ -2821,3 +2821,213 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 - Preconditions: Local test database or isolated component fixtures; unique bidders and auctions.
 - Steps: Inspect local winner and runner panels at desktop and mobile; observe countdown crossing close.
 - Expected result: Readable amounts, deadlines and payment controls without overlap; closing and result states visually confirmed.
+
+## TC-237: Desktop first viewport
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-59
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: At 1280×800, open own live auction.
+- Expected result: Price, countdown and three quick bids are fully inside viewport.
+
+## TC-238: Mobile sticky bidding
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-63
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: At 390px, scroll own room and open custom amount.
+- Expected result: Three ≥44px quick buttons stay at bottom; custom input opens/focuses; no overlap or horizontal overflow.
+
+## TC-239: Race two bids
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-65
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Create own sandbox; click Race before leading.
+- Expected result: Concurrent distinct keys; one accepted and other BID_TOO_LOW or ALREADY_LEADING; leading disables Race with exact note.
+
+## TC-240: Replay a request
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-65
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Create own sandbox; click Replay.
+- Expected result: Sequential identical key/amount; both accepted IDs equal; one bid row.
+
+## TC-241: Bid after deadline
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-65
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Create own sandbox, shorten only this fixture using local test DB, suppress background bot/feed traffic; wait for real deadline; click Send late.
+- Expected result: Disabled before zero; enabled while live/closing; real API returns AUCTION_CLOSED; no clock skew or test endpoint in feature.
+
+## TC-242: Own rejected row
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-66
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Submit too-low custom bid on own auction; inspect ledger, reload.
+- Expected result: Struck-through own amount, rejected label and explanation; no server bid row; gone on reload.
+
+## TC-243: Millisecond ledger
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-66
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Accept own bid and inspect time.
+- Expected result: HH:mm:ss.SSS matches returned placed_at in local zone.
+
+## TC-244: Receipt and lifecycle
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-64
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Render winner, runner, paid and unsold fixtures.
+- Expected result: Only known receipt fields shown; one aria-current step matches status/payment state.
+
+## TC-245: Fuse and singular copy
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-60; D-62
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Render zero/one/many bids and 61/60/0s, extension and reduced motion.
+- Expected result: Singular/plural accurate; fuse ratio clamped and correct color; no reduced-motion transition.
+
+## TC-246: Catalogue accessibility
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: PRD §9.5; NFR-20
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Check room/sandbox/result in light and dark at desktop and 390px.
+- Expected result: Zero serious/critical axe findings, normal text contrast ≥4.5:1, mobile controls ≥44px.
+
+## TC-247: Lobby data and bot personalities
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-61; D-67
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Render missing/empty/full benchmark and sandbox card.
+- Expected result: No empty lobby benchmark; real data copy retained; all three truthful persona lines visible.
+
+## TC-248: Catalogue visual review
+
+- Milestone: M5a — Catalogue & Ledger
+- Task: T-38a
+- PRD / acceptance reference: D-59–D-68
+- TRD test ID / section: §11.2; §15.5 / E2E-10
+- Priority: High
+- Automatable: no
+- Preconditions: Local test environment; own unique data; parallel tests never alter global clock/public room.
+- Steps: Inspect lobby, live/outbid/extension/sandbox and result in light/dark desktop/mobile.
+- Expected result: Layout follows references with documented API/copy exclusions; no overlap, clipped controls or fake statistics.
+
+## TC-249: Mobile countdown clears the compact bid dock
+
+- Milestone: M5a — Catalogue & Ledger
+- PRD acceptance reference: §9.3, D-70–D-72; owner browser review F1
+- TRD test reference: E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction; no shared clock changes.
+- Steps: Load own room at 375×812; inspect price/countdown and collapsed dock before scrolling, then place a bid.
+- Expected result: Price and countdown do not intersect the dock; collapsed dock ≤140px; feedback stays outside it.
+
+## TC-250: Rejected rows retain chronology and experiment origin
+
+- Milestone: M5a — Catalogue & Ledger
+- PRD acceptance reference: §9.3, D-70–D-72; owner browser review F2
+- TRD test reference: E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction; no shared clock changes.
+- Steps: Race two requests, then receive newer accepted bids. Inspect ledger order.
+- Expected result: Rejected request stays above the bid known at arrival, below later bids; race origin and actual paired bid reference are shown.
+
+## TC-251: Experiment output preserves run snapshot and short IDs
+
+- Milestone: M5a — Catalogue & Ledger
+- PRD acceptance reference: §9.3, D-70–D-72; owner browser review F3–F5
+- TRD test reference: E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction; no shared clock changes.
+- Steps: Run a race/replay, advance price, then run again after being outbid.
+- Expected result: Output begins with the original run time/amount; ID is eight characters with full title; new run replaces old; race explanation names actual winner/loser in both A/B orders and retains code when exactly one acceptance and one 4xx are returned.
+
+## TC-252: Experiments disable after close
+
+- Milestone: M5a — Catalogue & Ledger
+- PRD acceptance reference: §9.3, D-70–D-72; owner browser review F6
+- TRD test reference: E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction; no shared clock changes.
+- Steps: Observe live sandbox become closed, settled or unsold.
+- Expected result: Race and Replay disabled and closed note present; Send late only enabled at zero while live.
+
+## TC-253: Price and ledger flash only after new activity
+
+- Milestone: M5a — Catalogue & Ledger
+- PRD acceptance reference: §9.3, D-70–D-72; owner browser review F7
+- TRD test reference: E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction; no shared clock changes.
+- Steps: Load and reload a room with existing bids, then place a new bid and update unrelated state.
+- Expected result: No running flash on price or ledger after reload; changed price and only the new ledger row flash; rows at/below mount bid_no never flash, including older pagination; reduced motion disables animation.
+
+## TC-254: Mobile header disclosure is accessible
+
+- Milestone: M5a — Catalogue & Ledger
+- PRD acceptance reference: §9.3, D-70–D-72; owner browser review D3
+- TRD test reference: E2E-10
+- Priority: High
+- Automatable: yes
+- Preconditions: Local test environment; own unique auction; no shared clock changes.
+- Steps: At 375px use keyboard to open Menu and reach links/theme; close with Escape.
+- Expected result: One header row, ≥44px toggle with expanded state; navigation reachable; focus returns on Escape; axe zero serious/critical.

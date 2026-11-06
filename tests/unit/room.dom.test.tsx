@@ -51,7 +51,7 @@ test("TC-184: lot and price copy covers empty, other, bot and viewer leaders", (
   );
   expect(screen.getByText(copy.noPhoto)).toBeTruthy();
   expect(lot.container.querySelector('[aria-hidden="true"]')?.textContent).toBe(
-    "1",
+    "0001",
   );
   expect(screen.getByText("Starting price $10.00")).toBeTruthy();
   lot.unmount();
@@ -61,7 +61,11 @@ test("TC-184: lot and price copy covers empty, other, bot and viewer leaders", (
   expect(screen.getByText(copy.firstBid)).toBeTruthy();
   expect(
     screen.getByText(
-      fillCopy(copy.meta, { count: 0, minimum: "$10.00", increment: "$1.00" }),
+      fillCopy(copy.meta, {
+        bids: "0 bids",
+        minimum: "$10.00",
+        increment: "$1.00",
+      }),
     ),
   ).toBeTruthy();
   const led = {
@@ -94,11 +98,19 @@ test("TC-185: countdown uses server time, warning, soft-close, cap and Closing s
   const view = render(
     <Countdown auction={{ ...auction, ends_at: end(61) }} clock={sync} />,
   );
-  expect(screen.getByText("Closes in 1:01").className).not.toContain(
-    "text-warn",
-  );
+  expect(
+    screen.getByText(
+      (_, element) =>
+        element?.tagName === "P" && element.textContent === "Closes in 1:01",
+    ).className,
+  ).not.toContain("text-warn");
   await advance(1000);
-  expect(screen.getByText("Closes in 1:00").className).toContain("text-warn");
+  expect(
+    screen.getByText(
+      (_, element) =>
+        element?.tagName === "P" && element.textContent === "Closes in 1:00",
+    ).className,
+  ).toContain("text-warn");
   view.rerender(
     <Countdown auction={{ ...auction, ends_at: end(11) }} clock={sync} />,
   );
@@ -120,7 +132,12 @@ test("TC-185: countdown uses server time, warning, soft-close, cap and Closing s
       clock={sync}
     />,
   );
-  expect(screen.getByText("Opens in 1:00")).toBeTruthy();
+  expect(
+    screen.getByText(
+      (_, element) =>
+        element?.tagName === "P" && element.textContent === "Opens in 1:00",
+    ),
+  ).toBeTruthy();
   view.rerender(
     <Countdown auction={{ ...auction, status: "settled" }} clock={sync} />,
   );

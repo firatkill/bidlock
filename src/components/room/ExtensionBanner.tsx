@@ -25,18 +25,29 @@ export function ExtensionBanner({
     };
   }, [extension]);
   return (
-    <div aria-live="polite">
+    <div
+      aria-live="polite"
+      className={!extension || hidden === extension.n ? "sr-only" : undefined}
+    >
       {extension && hidden !== extension.n && (
         <div
           key={extension.n}
-          className="extension-enter rounded-md border border-rule bg-accent-tint p-4"
+          className="extension-enter flex flex-wrap items-center justify-between gap-3 rounded bg-strip-ground px-5 py-3 text-strip-ink"
         >
-          <p>
+          <span
+            aria-hidden="true"
+            className="rounded bg-stamp-ground px-2 py-1 font-mono text-stamp-ink"
+          >
+            {fillCopy(copy.extensionTag, {
+              time: formatCountdown(extension.durationMs),
+            })}
+          </span>
+          <p className="flex-1 font-medium">
             {fillCopy(copy.extension, {
               time: formatCountdown(extension.durationMs),
             })}
           </p>
-          <p className="mt-1 text-sm text-ink-2">
+          <p className="font-mono text-xs text-strip-muted">
             {fillCopy(copy.extensionCount, { n: extension.n, max })}
           </p>
         </div>

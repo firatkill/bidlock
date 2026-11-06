@@ -40,7 +40,7 @@ export function BotStrip({
 }) {
   return (
     <section className="space-y-3">
-      <ul className="flex flex-wrap gap-2">
+      <ul className="grid gap-2 sm:grid-cols-3">
         {(["cautious", "steady", "sniper"] as const).map((persona, index) => {
           const bot = view.bots.find((item) => item.persona === persona);
           const status =
@@ -58,10 +58,15 @@ export function BotStrip({
           return (
             <li
               key={persona}
-              className="rounded-md border border-rule px-3 py-2 text-sm"
+              className="flex flex-wrap items-center justify-between gap-2 rounded border border-rule bg-surface px-4 py-3 text-sm"
             >
-              <span>{copy.bots[index]}</span>
-              <span className="ml-2 text-ink-3">{status}</span>
+              <div>
+                <p>{copy.bots[index]}</p>
+                <p className="mt-1 text-xs text-ink-2">
+                  {copy.personalities[index]}
+                </p>
+              </div>
+              <span className="font-mono text-xs text-ink-3">{status}</span>
             </li>
           );
         })}

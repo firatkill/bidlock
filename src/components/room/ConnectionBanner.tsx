@@ -19,7 +19,12 @@ export function ConnectionBanner({ status }: { status: FeedStatus }) {
     };
   }, [recovered]);
   return (
-    <div role="status">
+    <div
+      role="status"
+      className={
+        status !== "reconnecting" && !recovered ? "sr-only" : undefined
+      }
+    >
       {status === "reconnecting" ? (
         <p className="rounded border border-rule p-4 text-warn">
           {copy.reconnecting}

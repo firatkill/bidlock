@@ -20,14 +20,35 @@ export function BidPanel({
   ready = true,
   clock,
   onAccepted,
+  onRejected,
 }: {
   auction: AuctionState;
   isLeader: boolean;
   readonly?: boolean;
   ready?: boolean;
   clock: ClockSync;
+  onRejected?: (attempt: PendingBid, error: ApiError) => void;
   onAccepted: (result: Accepted, t0: number, t1: number) => void;
 }) {
+  const [customOpen, setCustomOpen] = useState(false);
+  const dockRef = useRef<HTMLDivElement>(null);
+  const customRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const dock = dockRef.current;
+    const main = dock?.closest("main");
+    if (!dock || !main || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => {
+      main.style.setProperty(
+        "--bid-dock-height",
+        `${String(dock.getBoundingClientRect().height)}px`,
+      );
+    });
+    observer.observe(dock);
+    return () => {
+      observer.disconnect();
+      main.style.removeProperty("--bid-dock-height");
+    };
+  }, []);
   const [custom, setCustom] = useState("");
   const [pending, setPending] = useState<string | null>(null);
   const [retry, setRetry] = useState<PendingBid | null>(null);
@@ -107,6 +128,7 @@ export function BidPanel({
         return;
       }
       if (reason.status < 500) setRetry(null);
+      if (reason.status < 500) onRejected?.(attempt, reason);
       const code = reason.envelope.error.code;
       const details = BidRejectionDetails.safeParse(
         reason.envelope.error.details,
@@ -199,87 +221,118 @@ export function BidPanel({
   });
   if (auction.status !== "live" && auction.status !== "scheduled") return null;
   return (
-    <section className="space-y-4">
-      <div className="grid grid-cols-3 gap-2">
-        {amounts.map((amount, index) => (
-          <button
-            key={amount}
-            type="button"
-            className="button button-primary flex-col px-2"
-            disabled={disabled}
-            aria-keyshortcuts={String(index + 1)}
-            onClick={() => {
-              void send(newBid(auction.id, amount), String(index));
-            }}
-          >
-            <span>
-              {pending === String(index)
-                ? copy.pending
-                : fillCopy(copy.bid, { amount: formatCents(amount) })}
-            </span>{" "}
-            <span className="text-xs">{copy.steps[index]}</span>
-          </button>
-        ))}
-      </div>
-      <form onSubmit={submit} className="space-y-2">
-        <label htmlFor="custom-bid" className="block text-sm font-medium">
-          {copy.custom}
-        </label>
-        <div className="flex gap-2">
-          <div className="relative min-w-0 flex-1">
-            <span aria-hidden="true" className="absolute left-3 top-2">
-              $
-            </span>
-            <input
-              id="custom-bid"
-              className="field money-field font-mono"
-              inputMode="decimal"
-              value={custom}
-              onChange={(event) => {
-                setCustom(event.target.value);
-              }}
-              placeholder={formatCents(minimum).slice(1)}
+    <section aria-label={copy.place}>
+      <div ref={dockRef} className="bid-dock flex flex-col gap-2">
+        <div className="grid grid-cols-3 gap-2">
+          {amounts.map((amount, index) => (
+            <button
+              key={amount}
+              type="button"
+              className={`button quick-bid flex-col px-2 ${index === 2 ? "button-outline" : "button-primary"}`}
               disabled={disabled}
-              aria-describedby="bid-help"
-            />
-          </div>
-          <button className="button" type="submit" disabled={disabled}>
-            {pending === "custom" ? copy.pending : copy.place}
-          </button>
+              aria-keyshortcuts={String(index + 1)}
+              onClick={() => {
+                void send(newBid(auction.id, amount), String(index));
+              }}
+            >
+              <span>
+                {pending === String(index)
+                  ? copy.pending
+                  : fillCopy(copy.bid, { amount: formatCents(amount) })}
+              </span>{" "}
+              <span className="flex items-center gap-2 text-xs">
+                {copy.steps[index]}{" "}
+                <kbd
+                  aria-hidden="true"
+                  className="hidden rounded border border-current px-1 font-mono md:inline"
+                >
+                  {index + 1}
+                </kbd>
+              </span>
+            </button>
+          ))}
         </div>
-        <p id="bid-help" className="text-sm text-ink-3">
-          {fillCopy(copy.minimum, { amount: formatCents(minimum) })}
-        </p>
-      </form>
-      {readonly ? (
-        <p className="text-sm text-ink-2">{copy.readonly}</p>
-      ) : auction.status === "scheduled" ? (
-        <p className="text-sm text-ink-2">
-          {fillCopy(copy.scheduled, { time: opens })}
-        </p>
-      ) : isLeader ? (
-        <p className="text-sm text-accent">{copy.leadingNote}</p>
-      ) : null}
-      <div role="status" className="text-accent">
-        {accepted}
-      </div>
-      <div role="alert" className="text-warn">
-        {rateSeconds > 0
-          ? fillCopy(copy.errors.RATE_LIMITED, { n: rateSeconds })
-          : error || outbid}
-      </div>
-      {retry && (
         <button
           type="button"
-          className="button"
+          className="button mobile-custom-toggle w-full"
           disabled={disabled}
+          aria-expanded={customOpen}
+          aria-controls="custom-bid-form"
           onClick={() => {
-            void send(retry, "retry");
+            setCustomOpen(!customOpen);
+            if (!customOpen)
+              requestAnimationFrame(() => customRef.current?.focus());
           }}
         >
-          {pending === "retry" ? copy.pending : copy.errors.retry}
+          {copy.customToggle}
         </button>
-      )}
+        <form
+          id="custom-bid-form"
+          onSubmit={submit}
+          className={`${customOpen ? "block" : "hidden"} space-y-2 md:block`}
+        >
+          <label htmlFor="custom-bid" className="block text-sm font-medium">
+            {copy.custom}
+          </label>
+          <div className="flex gap-2">
+            <div className="relative min-w-0 flex-1">
+              <span aria-hidden="true" className="absolute left-3 top-2">
+                $
+              </span>
+              <input
+                id="custom-bid"
+                ref={customRef}
+                className="field money-field font-mono"
+                inputMode="decimal"
+                value={custom}
+                onChange={(event) => {
+                  setCustom(event.target.value);
+                }}
+                placeholder={formatCents(minimum).slice(1)}
+                disabled={disabled}
+                aria-describedby="bid-help"
+              />
+            </div>
+            <button className="button" type="submit" disabled={disabled}>
+              {pending === "custom" ? copy.pending : copy.place}
+            </button>
+          </div>
+          <p id="bid-help" className="text-sm text-ink-3">
+            {fillCopy(copy.minimum, { amount: formatCents(minimum) })}
+          </p>
+        </form>
+      </div>
+      <div className="space-y-3 pt-3">
+        {readonly ? (
+          <p className="text-sm text-ink-2">{copy.readonly}</p>
+        ) : auction.status === "scheduled" ? (
+          <p className="text-sm text-ink-2">
+            {fillCopy(copy.scheduled, { time: opens })}
+          </p>
+        ) : isLeader ? (
+          <p className="text-sm text-accent">{copy.leadingNote}</p>
+        ) : null}
+        <div role="status" className="text-accent">
+          {accepted}
+        </div>
+        <div role="alert" className="text-warn">
+          {rateSeconds > 0
+            ? fillCopy(copy.errors.RATE_LIMITED, { n: rateSeconds })
+            : error || outbid}
+        </div>
+        {retry && (
+          <button
+            type="button"
+            className="button"
+            disabled={disabled}
+            onClick={() => {
+              void send(retry, "retry");
+            }}
+          >
+            {pending === "retry" ? copy.pending : copy.errors.retry}
+          </button>
+        )}
+      </div>
     </section>
   );
 }

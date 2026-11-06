@@ -121,7 +121,7 @@ export function Lobby({
   return (
     <div className="space-y-6">
       <OfferNotices offers={me?.open_offers ?? []} now={now} />
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid items-start gap-6 md:grid-cols-2">
         {data && !error ? (
           <LiveCard
             key={data.public.id}

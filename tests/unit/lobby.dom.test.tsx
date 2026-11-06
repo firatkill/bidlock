@@ -85,11 +85,11 @@ test("TC-197: lobby intro, teaser and all public-card copy states", () => {
   };
   view.rerender(<PublicRoomCard auction={led} now={now} viewerId={null} />);
   expect(screen.getByText(copy.current)).toBeTruthy();
-  expect(screen.getByText("1 bids · Leader: Leader")).toBeTruthy();
+  expect(screen.getByText("1 bid · Leader: Leader")).toBeTruthy();
   view.rerender(
     <PublicRoomCard auction={led} now={now} viewerId={auction.id} />,
   );
-  expect(screen.getByText("1 bids · You are leading")).toBeTruthy();
+  expect(screen.getByText("1 bid · You are leading")).toBeTruthy();
   view.rerender(
     <PublicRoomCard
       auction={publicAuction}
@@ -224,7 +224,7 @@ test("TC-199: both offer notices and strict benchmark empty/full copy", () => {
       result={BenchResult.parse({ schema: 1, empty: true })}
     />,
   );
-  expect(screen.getByText(copy.emptyBenchmark)).toBeTruthy();
+  expect(screen.queryByText(copy.emptyBenchmark)).toBeNull();
   view.rerender(<BenchmarkHeadline result={BenchResult.parse(result)} />);
   expect(
     screen.getByText(

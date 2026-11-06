@@ -37,10 +37,15 @@ test("TC-202 E2E-02 two bidders synchronize and stale bids are rejected @isolate
       [b, "$12.00"],
     ] as const) {
       const history = bidder.page.getByRole("region", { name: "Bid history" });
-      await expect(history.getByRole("listitem")).toHaveCount(2);
+      const acceptedRows = history
+        .getByRole("listitem")
+        .filter({ has: bidder.page.locator("time") });
+      await expect(acceptedRows).toHaveCount(2);
+      await expect(history.getByText("rejected", { exact: true })).toHaveCount(
+        bidder === a ? 1 : 0,
+      );
       await expect(
-        history
-          .getByRole("listitem")
+        acceptedRows
           .filter({ hasText: amount })
           .getByText("You", { exact: true }),
       ).toBeVisible();

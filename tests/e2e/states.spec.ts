@@ -50,7 +50,8 @@ test("TC-205 E2E-08 missing auction and scheduled controls", async ({
       (Date.parse(state.starts_at) - Date.parse(state.server_now)) / 1000,
     ),
   );
-  const text = await countdown.innerText();
+  // Desktop layout puts the unchanged label and time on separate visual lines (D-72).
+  const text = (await countdown.innerText()).replace(/\s+/g, " ").trim();
   expect(text).toMatch(/^Opens in \d+:[0-5]\d$/);
   const [minutes, seconds] = text
     .replace("Opens in ", "")
