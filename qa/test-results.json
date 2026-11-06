@@ -2,7 +2,7 @@
   "project": "Bidlock",
   "cases": [
     {
-      "tc_reference": "\u2014",
+      "tc_reference": "—",
       "ac_reference": "AGENTS.md Repository setup and Authorship",
       "milestone": null,
       "title": "Repository setup identity and commit hook",
@@ -31,7 +31,7 @@
     {
       "tc_reference": "TC-001",
       "ac_reference": "NFR-40, NFR-43; T-01 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Strict toolchain and server-only test alias",
       "status": "resolved",
       "environment": "macOS arm64, Node 24.10.0, pnpm 10.34.7",
@@ -75,6 +75,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -88,7 +93,7 @@
     {
       "tc_reference": "TC-002",
       "ac_reference": "FR-96; T-01 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Static CI",
       "status": "resolved",
       "description": "Verify the specified static job on the task PR.",
@@ -125,7 +130,7 @@
     {
       "tc_reference": "TC-003",
       "ac_reference": "FR-88; T-02 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Required environment and secret validation",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -159,6 +164,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -169,7 +179,7 @@
     {
       "tc_reference": "TC-004",
       "ac_reference": "FR-52, FR-88",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Production test-variable refusal",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -203,6 +213,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -213,7 +228,7 @@
     {
       "tc_reference": "TC-005",
       "ac_reference": "FR-85",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Origin allowlist and cache",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -252,6 +267,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -262,7 +282,7 @@
     {
       "tc_reference": "TC-006",
       "ac_reference": "FR-80",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Structured redacted logs",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -301,6 +321,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -311,7 +336,7 @@
     {
       "tc_reference": "TC-007",
       "ac_reference": "FR-51; UT-09",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Error status mapping",
       "description": "Specification-derived M0 configuration and observability checks.",
       "steps_to_reproduce": [
@@ -345,6 +370,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -355,7 +385,7 @@
     {
       "tc_reference": "TC-008",
       "ac_reference": "FR-90; T-03 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Postgres and pgTAP availability",
       "description": "Verify the isolated local database container and test tooling.",
       "steps_to_reproduce": [
@@ -395,14 +425,14 @@
     {
       "tc_reference": "TC-009",
       "ac_reference": "PRD D-05; T-04 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Repeatable migration with checksum protection",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -475,14 +505,14 @@
     {
       "tc_reference": "TC-010",
       "ac_reference": "PRD D-05; T-04 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Status and dry-run",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -550,14 +580,14 @@
     {
       "tc_reference": "TC-011",
       "ac_reference": "PRD D-34; T-04 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Reset host and database safety",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -630,14 +660,14 @@
     {
       "tc_reference": "TC-012",
       "ac_reference": "PRD D-22; T-04 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Environment SQL safety and substitutions",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -710,14 +740,14 @@
     {
       "tc_reference": "TC-013",
       "ac_reference": "PRD D-05; T-04 acceptance",
-      "milestone": "M0 \u2014 Setup",
+      "milestone": "M0 — Setup",
       "title": "Migration transaction rollback",
       "description": "Specification-derived migration safety checks in an isolated disposable database.",
       "steps_to_reproduce": [
         "Start the project database.",
         "Run pnpm test:concurrency."
       ],
-      "expected_result": "Matches the named TC in qa/test-cases.md and TRD \u00a76.1.",
+      "expected_result": "Matches the named TC in qa/test-cases.md and TRD §6.1.",
       "status": "resolved",
       "environment": "macOS arm64; Node 24.10.0; PostgreSQL 17.11 on local Docker",
       "attempts": [
@@ -785,7 +815,7 @@
     {
       "tc_reference": "TC-014",
       "ac_reference": "FR-06; D-06; D-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "DB-01 clock assertion 1",
       "status": "resolved",
       "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
@@ -859,7 +889,7 @@
     {
       "tc_reference": "TC-015",
       "ac_reference": "FR-06; D-06; D-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "DB-01 clock assertion 2",
       "status": "resolved",
       "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
@@ -933,7 +963,7 @@
     {
       "tc_reference": "TC-016",
       "ac_reference": "FR-06; D-06; D-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "DB-01 clock assertion 3",
       "status": "resolved",
       "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
@@ -1007,7 +1037,7 @@
     {
       "tc_reference": "TC-017",
       "ac_reference": "FR-06; D-06; D-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "DB-01 clock assertion 4",
       "status": "resolved",
       "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
@@ -1081,7 +1111,7 @@
     {
       "tc_reference": "TC-018",
       "ac_reference": "FR-06; D-06; D-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "DB-01 clock assertion 5",
       "status": "resolved",
       "environment": "Local Docker PostgreSQL 17.11 / pgTAP",
@@ -1155,7 +1185,7 @@
     {
       "tc_reference": "TC-126",
       "ac_reference": "D-46; T-05 acceptance",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "Staged environment rate-limit overrides",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11",
@@ -1234,11 +1264,11 @@
     {
       "tc_reference": "TC-020",
       "ac_reference": "FR-01; INV-09; INV-13; DB-02",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
+      "milestone": "M1 — Schema, functions, pgTAP",
       "title": "Specified payment-state constraint permits invalid NULL states",
       "description": "The exact TRD constraint produces SQL UNKNOWN for two combinations DB-02 requires it to reject.",
       "steps_to_reproduce": [
-        "Create a temporary table with the exact status_payment_pair CHECK from TRD \u00a76.4 inside a transaction.",
+        "Create a temporary table with the exact status_payment_pair CHECK from TRD §6.4 inside a transaction.",
         "Insert (settled, NULL) and (closed, NULL). Inspect rows, then roll back."
       ],
       "expected_result": "Both invalid combinations are rejected with check violation 23514.",
@@ -1299,8 +1329,8 @@
     {
       "tc_reference": "TC-019",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 tables and key columns exist with types",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — tables and key columns exist with types",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1353,8 +1383,8 @@
     {
       "tc_reference": "TC-021",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 `price_leader_count` rejects inconsistent rows",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — `price_leader_count` rejects inconsistent rows",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1407,8 +1437,8 @@
     {
       "tc_reference": "TC-022",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 unique `auctions_one_open_public`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — unique `auctions_one_open_public`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1476,8 +1506,8 @@
     {
       "tc_reference": "TC-023",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 `set role bidlock_app` then direct `insert into bidlock.auctions` throws 42501",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — `set role bidlock_app` then direct `insert into bidlock.auctions` throws 42501",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1530,8 +1560,8 @@
     {
       "tc_reference": "TC-025",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 cannot execute `tick`, `advance_auction_locked`, `rate_hit`, `close_due_auctions`, `cleanup_expired`, `_event`, `ensure_public_auction` (`throws_ok(\u2026, '42501')` after `set local role bidlock_app`)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — cannot execute `tick`, `advance_auction_locked`, `rate_hit`, `close_due_auctions`, `cleanup_expired`, `_event`, `ensure_public_auction` (`throws_ok(…, '42501')` after `set local role bidlock_app`)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1599,8 +1629,8 @@
     {
       "tc_reference": "TC-026",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 no function in schema `bidlock` is executable through `PUBLIC`: inside the test transaction `create role bidlock_probe nologin`, then `select count(*) from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'bidlock' and has_function_privilege('bidlock_probe', p.oid, 'execute')` must be 0 (catches a migration that forgot the \u00a76.3 revoke)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — no function in schema `bidlock` is executable through `PUBLIC`: inside the test transaction `create role bidlock_probe nologin`, then `select count(*) from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'bidlock' and has_function_privilege('bidlock_probe', p.oid, 'execute')` must be 0 (catches a migration that forgot the §6.3 revoke)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1653,8 +1683,8 @@
     {
       "tc_reference": "TC-124",
       "ac_reference": "FR-03",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "INT-03 \u2014 SQL increment bands deep-equal INCREMENT_BANDS",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "INT-03 — SQL increment bands deep-equal INCREMENT_BANDS",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1712,8 +1742,8 @@
     {
       "tc_reference": "TC-027",
       "ac_reference": "FR-02; FR-03; D-12",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-03 \u2014 `increment_for` at 0, 999, 1000, 4999, 5000, 9999, 10000, 24999, 25000, 49999, 50000, 99999, 100000, 249999, 250000, 499999, 500000, 100000000",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-03 — `increment_for` at 0, 999, 1000, 4999, 5000, 9999, 10000, 24999, 25000, 49999, 50000, 99999, 100000, 249999, 250000, 499999, 500000, 100000000",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1761,8 +1791,8 @@
     {
       "tc_reference": "TC-028",
       "ac_reference": "FR-02; FR-03; D-12",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-03 \u2014 `min_next_bid(1000, null) = 1000`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-03 — `min_next_bid(1000, null) = 1000`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1810,8 +1840,8 @@
     {
       "tc_reference": "TC-029",
       "ac_reference": "FR-02; FR-03; D-12",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-03 \u2014 `min_next_bid(1000, 999) = 1049`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-03 — `min_next_bid(1000, 999) = 1049`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1859,8 +1889,8 @@
     {
       "tc_reference": "TC-030",
       "ac_reference": "FR-02; FR-03; D-12",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-03 \u2014 `min_next_bid(1000, 4950) = 5050`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-03 — `min_next_bid(1000, 4950) = 5050`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1908,8 +1938,8 @@
     {
       "tc_reference": "TC-031",
       "ac_reference": "FR-02; FR-03; D-12",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-03 \u2014 `max_bid(1000, null) = 1000 + 100*100 = 11000`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-03 — `max_bid(1000, null) = 1000 + 100*100 = 11000`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -1957,8 +1987,8 @@
     {
       "tc_reference": "TC-032",
       "ac_reference": "FR-02; FR-03; D-12",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-03 \u2014 cap at 100000000",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-03 — cap at 100000000",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2006,8 +2036,8 @@
     {
       "tc_reference": "TC-125",
       "ac_reference": "FR-03",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "UT-02 \u2014 Band boundaries, minimum next bid and clamped deduplicated quick amounts match TRD \u00a715.4",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "UT-02 — Band boundaries, minimum next bid and clamped deduplicated quick amounts match TRD §15.4",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2065,6 +2095,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2075,8 +2110,8 @@
     {
       "tc_reference": "TC-067",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 no bids \u2192 `unsold`, `payment_state` null",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — no bids → `unsold`, `payment_state` null",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2129,8 +2164,8 @@
     {
       "tc_reference": "TC-024",
       "ac_reference": "FR-01; INV-09; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-02 \u2014 `bidlock_app` can execute `place_bid`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-02 — `bidlock_app` can execute `place_bid`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2172,9 +2207,9 @@
     },
     {
       "tc_reference": "TC-034",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 = start accepted, `bid_no = 1`, `version` +1, leader set",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — = start accepted, `bid_no = 1`, `version` +1, leader set",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2221,9 +2256,9 @@
     },
     {
       "tc_reference": "TC-033",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 first bid < start \u2192 `BID_TOO_LOW` with `min_next_bid = start`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — first bid < start → `BID_TOO_LOW` with `min_next_bid = start`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2265,9 +2300,9 @@
     },
     {
       "tc_reference": "TC-035",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 second bid by same bidder \u2192 `ALREADY_LEADING`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — second bid by same bidder → `ALREADY_LEADING`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2309,9 +2344,9 @@
     },
     {
       "tc_reference": "TC-036",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 other bidder at price+inc\u22121 \u2192 `BID_TOO_LOW`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — other bidder at price+inc−1 → `BID_TOO_LOW`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2353,9 +2388,9 @@
     },
     {
       "tc_reference": "TC-037",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 at price+inc \u2192 accepted",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — at price+inc → accepted",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2397,9 +2432,9 @@
     },
     {
       "tc_reference": "TC-038",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 band crossing (price 990 \u2192 min 1040",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — band crossing (price 990 → min 1040",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2441,9 +2476,9 @@
     },
     {
       "tc_reference": "TC-039",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 price 1000 \u2192 min 1100)",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — price 1000 → min 1100)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2485,9 +2520,9 @@
     },
     {
       "tc_reference": "TC-040",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 `BID_TOO_HIGH` at max+1, accepted at max",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — `BID_TOO_HIGH` at max+1, accepted at max",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2529,9 +2564,9 @@
     },
     {
       "tc_reference": "TC-041",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 amount 0 \u2192 `VALIDATION`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — amount 0 → `VALIDATION`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2573,9 +2608,9 @@
     },
     {
       "tc_reference": "TC-042",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 scheduled \u2192 `AUCTION_NOT_LIVE`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — scheduled → `AUCTION_NOT_LIVE`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2617,9 +2652,9 @@
     },
     {
       "tc_reference": "TC-043",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 scheduled whose `starts_at` passed \u2192 accepted (lazy start)",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — scheduled whose `starts_at` passed → accepted (lazy start)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2661,9 +2696,9 @@
     },
     {
       "tc_reference": "TC-044",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 at `ends_at` \u2192 `AUCTION_CLOSED` and status now `closed`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — at `ends_at` → `AUCTION_CLOSED` and status now `closed`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2705,9 +2740,9 @@
     },
     {
       "tc_reference": "TC-045",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 unknown auction / bidder \u2192 `NOT_FOUND`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — unknown auction / bidder → `NOT_FOUND`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2749,9 +2784,9 @@
     },
     {
       "tc_reference": "TC-046",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 sandbox: stranger `NOT_FOUND`, owner accepted, own bot accepted, other sandbox's bot `NOT_FOUND`, bot on test auction `NOT_FOUND`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — sandbox: stranger `NOT_FOUND`, owner accepted, own bot accepted, other sandbox's bot `NOT_FOUND`, bot on test auction `NOT_FOUND`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2793,9 +2828,9 @@
     },
     {
       "tc_reference": "TC-047",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 `bidding_paused` \u2192 `BIDDING_PAUSED` and no request row",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — `bidding_paused` → `BIDDING_PAUSED` and no request row",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2837,9 +2872,9 @@
     },
     {
       "tc_reference": "TC-048",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 bids row fields (`prev_amount`, `min_required`, `ends_at_before/after`)",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — bids row fields (`prev_amount`, `min_required`, `ends_at_before/after`)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2881,9 +2916,9 @@
     },
     {
       "tc_reference": "TC-049",
-      "ac_reference": "FR-02; FR-04; INV-01\u2013INV-05; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-04 \u2014 `bid_requests` row stored for rule rejections and not for `NOT_FOUND`/`VALIDATION`",
+      "ac_reference": "FR-02; FR-04; INV-01–INV-05; INV-07",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-04 — `bid_requests` row stored for rule rejections and not for `NOT_FOUND`/`VALIDATION`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2926,8 +2961,8 @@
     {
       "tc_reference": "TC-050",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 replay accepted \u2192 same `bid_id`, `replayed = true`, `bid_count` unchanged, no new event",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — replay accepted → same `bid_id`, `replayed = true`, `bid_count` unchanged, no new event",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -2970,8 +3005,8 @@
     {
       "tc_reference": "TC-051",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 replay after being outbid \u2192 still original accepted result",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — replay after being outbid → still original accepted result",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3014,8 +3049,8 @@
     {
       "tc_reference": "TC-052",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 replay of rejection \u2192 same code, `replayed = true`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — replay of rejection → same code, `replayed = true`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3058,8 +3093,8 @@
     {
       "tc_reference": "TC-053",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 same key + different amount \u2192 `IDEMPOTENCY_MISMATCH`, request count unchanged",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — same key + different amount → `IDEMPOTENCY_MISMATCH`, request count unchanged",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3102,8 +3137,8 @@
     {
       "tc_reference": "TC-054",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 same key + other auction \u2192 `IDEMPOTENCY_MISMATCH`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — same key + other auction → `IDEMPOTENCY_MISMATCH`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3146,8 +3181,8 @@
     {
       "tc_reference": "TC-055",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 two bidders using the same key \u2192 both processed independently",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — two bidders using the same key → both processed independently",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3190,8 +3225,8 @@
     {
       "tc_reference": "TC-056",
       "ac_reference": "FR-04; INV-07",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-05 \u2014 replay after auction closed \u2192 original result",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-05 — replay after auction closed → original result",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3234,8 +3269,8 @@
     {
       "tc_reference": "TC-057",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 bid at `ends_at \u2212 11 s` \u2192 no extension",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — bid at `ends_at − 11 s` → no extension",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3278,8 +3313,8 @@
     {
       "tc_reference": "TC-058",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 at `ends_at \u2212 10 s` \u2192 `ends_at = now + 30 s`, `extended = true`, extension row n=1, event `auction_extended`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — at `ends_at − 10 s` → `ends_at = now + 30 s`, `extended = true`, extension row n=1, event `auction_extended`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3322,8 +3357,8 @@
     {
       "tc_reference": "TC-059",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 at `ends_at \u2212 1 ms` \u2192 extends",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — at `ends_at − 1 ms` → extends",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3366,8 +3401,8 @@
     {
       "tc_reference": "TC-060",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 custom window 5 / extend 20 honoured",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — custom window 5 / extend 20 honoured",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3410,8 +3445,8 @@
     {
       "tc_reference": "TC-061",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 `snipe_window_s = 0` \u2192 never extends",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — `snipe_window_s = 0` → never extends",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3454,8 +3489,8 @@
     {
       "tc_reference": "TC-062",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 cap: with `max_extensions = 3`, the 4th late bid accepted with `extended = false` and `extension_count = 3`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — cap: with `max_extensions = 3`, the 4th late bid accepted with `extended = false` and `extension_count = 3`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3498,8 +3533,8 @@
     {
       "tc_reference": "TC-063",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 `ends_at` never decreases",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — `ends_at` never decreases",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3542,8 +3577,8 @@
     {
       "tc_reference": "TC-064",
       "ac_reference": "FR-07; INV-08",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-06 \u2014 `ends_at_after` on bid rows matches",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-06 — `ends_at_after` on bid rows matches",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3586,8 +3621,8 @@
     {
       "tc_reference": "TC-065",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 lazy close via `place_bid` (status `closed`, offer rank 1, `closed_at = ends_at`, not the processing time)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — lazy close via `place_bid` (status `closed`, offer rank 1, `closed_at = ends_at`, not the processing time)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3630,8 +3665,8 @@
     {
       "tc_reference": "TC-068",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 `close_due_auctions()` closes 3 due auctions and returns 3, second call returns 0",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — `close_due_auctions()` closes 3 due auctions and returns 3, second call returns 0",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3674,8 +3709,8 @@
     {
       "tc_reference": "TC-069",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 not-yet-due auction untouched",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — not-yet-due auction untouched",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3718,8 +3753,8 @@
     {
       "tc_reference": "TC-070",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 scheduled due \u2192 `live`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — scheduled due → `live`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3762,8 +3797,8 @@
     {
       "tc_reference": "TC-071",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 scheduled with passed `ends_at` \u2192 `unsold` in one call",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — scheduled with passed `ends_at` → `unsold` in one call",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3806,8 +3841,8 @@
     {
       "tc_reference": "TC-072",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 `tick()` returns counts and a public auction id",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — `tick()` returns counts and a public auction id",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3850,8 +3885,8 @@
     {
       "tc_reference": "TC-073",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 D-28: with a test-only `before update` trigger on `bidlock.auctions` (created inside the test transaction) that raises for one chosen auction id, `close_due_auctions()` still closes the other due auctions and the chosen one stays `live`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — D-28: with a test-only `before update` trigger on `bidlock.auctions` (created inside the test transaction) that raises for one chosen auction id, `close_due_auctions()` still closes the other due auctions and the chosen one stays `live`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3894,8 +3929,8 @@
     {
       "tc_reference": "TC-094",
       "ac_reference": "FR-30; FR-31",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-10 \u2014 `ensure_public_auction()` creates one live public auction when none",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-10 — `ensure_public_auction()` creates one live public auction when none",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3938,8 +3973,8 @@
     {
       "tc_reference": "TC-095",
       "ac_reference": "FR-30; FR-31",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-10 \u2014 second call returns the same id",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-10 — second call returns the same id",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -3982,8 +4017,8 @@
     {
       "tc_reference": "TC-096",
       "ac_reference": "FR-30; FR-31",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-10 \u2014 inserting a second open public auction throws 23505",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-10 — inserting a second open public auction throws 23505",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4026,8 +4061,8 @@
     {
       "tc_reference": "TC-097",
       "ac_reference": "FR-30; FR-31",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-10 \u2014 after the public lot closes, the next has `starts_at = closed_at + 15 s` (`scheduled`) and becomes `live` lazily",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-10 — after the public lot closes, the next has `starts_at = closed_at + 15 s` (`scheduled`) and becomes `live` lazily",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4070,8 +4105,8 @@
     {
       "tc_reference": "TC-099",
       "ac_reference": "FR-30; FR-31",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-10 \u2014 public lot defaults (start 1000, 5 minutes, no sandbox)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-10 — public lot defaults (start 1000, 5 minutes, no sandbox)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4113,9 +4148,9 @@
     },
     {
       "tc_reference": "TC-074",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 offer deadline = processing time + `payment_window_s`",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — offer deadline = processing time + `payment_window_s`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4157,9 +4192,9 @@
     },
     {
       "tc_reference": "TC-075",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 winner pays before deadline \u2192 `settled`/`paid`, `settled_at`, event",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — winner pays before deadline → `settled`/`paid`, `settled_at`, event",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4201,9 +4236,9 @@
     },
     {
       "tc_reference": "TC-076",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 second pay \u2192 `replayed = true`",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — second pay → `replayed = true`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4245,9 +4280,9 @@
     },
     {
       "tc_reference": "TC-077",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 non-winner pays \u2192 `NOT_PAYABLE`",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — non-winner pays → `NOT_PAYABLE`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4289,9 +4324,9 @@
     },
     {
       "tc_reference": "TC-078",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 winner pays after deadline \u2192 `OFFER_EXPIRED`, runner-up offer rank 2 at runner-up's highest bid, strike count 1 and strike row",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — winner pays after deadline → `OFFER_EXPIRED`, runner-up offer rank 2 at runner-up's highest bid, strike count 1 and strike row",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4333,9 +4368,9 @@
     },
     {
       "tc_reference": "TC-079",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 runner-up selection with three bidders (A 10, B 11, C 12, B 13, C 14 \u2192 winner C, runner-up B at 13)",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — runner-up selection with three bidders (A 10, B 11, C 12, B 13, C 14 → winner C, runner-up B at 13)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4377,9 +4412,9 @@
     },
     {
       "tc_reference": "TC-080",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 runner-up pays \u2192 `settled` rank 2",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — runner-up pays → `settled` rank 2",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4421,9 +4456,9 @@
     },
     {
       "tc_reference": "TC-081",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 runner-up expires \u2192 `unsold`/`expired`, winner strike still 1, runner-up strike 0",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — runner-up expires → `unsold`/`expired`, winner strike still 1, runner-up strike 0",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4465,9 +4500,9 @@
     },
     {
       "tc_reference": "TC-082",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 single-bidder auction expiry \u2192 `unsold`/`expired`",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — single-bidder auction expiry → `unsold`/`expired`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4509,9 +4544,9 @@
     },
     {
       "tc_reference": "TC-083",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 `expire_due_offers()` idempotent",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — `expire_due_offers()` idempotent",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4553,9 +4588,9 @@
     },
     {
       "tc_reference": "TC-084",
-      "ac_reference": "FR-11\u2013FR-16; INV-10; INV-11; INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-08 \u2014 late processing: window opens at processing time",
+      "ac_reference": "FR-11–FR-16; INV-10; INV-11; INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-08 — late processing: window opens at processing time",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4598,8 +4633,8 @@
     {
       "tc_reference": "TC-119",
       "ac_reference": "INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-14 \u2014 event sequence for a full lifecycle (created, started, bid_accepted \u00d7n, auction_extended, auction_closed, offer_opened, offer_expired, strike_recorded, offer_opened, offer_paid) in order with correct bidder ids",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-14 — event sequence for a full lifecycle (created, started, bid_accepted ×n, auction_extended, auction_closed, offer_opened, offer_expired, strike_recorded, offer_opened, offer_paid) in order with correct bidder ids",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4647,8 +4682,8 @@
     {
       "tc_reference": "TC-085",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 (reset limits to defaults in-transaction) human: hits 1\u20133 in one second \u2192 0, 4th \u2192 retry in (0, 1000]",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — (reset limits to defaults in-transaction) human: hits 1–3 in one second → 0, 4th → retry in (0, 1000]",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4691,8 +4726,8 @@
     {
       "tc_reference": "TC-086",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 next second \u2192 0",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — next second → 0",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4735,8 +4770,8 @@
     {
       "tc_reference": "TC-087",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 61st in a minute \u2192 > 0",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — 61st in a minute → > 0",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4779,8 +4814,8 @@
     {
       "tc_reference": "TC-088",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 bot: 2nd within 2 s \u2192 > 0, after 2 s \u2192 0",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — bot: 2nd within 2 s → > 0, after 2 s → 0",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4823,8 +4858,8 @@
     {
       "tc_reference": "TC-089",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 IP: 201st \u2192 > 0",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — IP: 201st → > 0",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4867,8 +4902,8 @@
     {
       "tc_reference": "TC-090",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 `retry_after_ms` = ms to window end (with fixed `now`)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — `retry_after_ms` = ms to window end (with fixed `now`)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4911,8 +4946,8 @@
     {
       "tc_reference": "TC-091",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 unknown limit \u2192 `BLK20`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — unknown limit → `BLK20`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4955,8 +4990,8 @@
     {
       "tc_reference": "TC-093",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 counters keyed by subject (other bidder unaffected)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — counters keyed by subject (other bidder unaffected)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -4999,8 +5034,8 @@
     {
       "tc_reference": "TC-066",
       "ac_reference": "FR-08; FR-10; INV-06; INV-09",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-07 \u2014 lazy close via `auction_state`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-07 — lazy close via `auction_state`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5043,8 +5078,8 @@
     {
       "tc_reference": "TC-098",
       "ac_reference": "FR-30; FR-31",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-10 \u2014 `auction_state` of the finished lot returns `next_public_auction_id`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-10 — `auction_state` of the finished lot returns `next_public_auction_id`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5087,8 +5122,8 @@
     {
       "tc_reference": "TC-092",
       "ac_reference": "FR-37; D-10; D-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-09 \u2014 `create_bidder` 21st within an hour \u2192 `RATE_LIMITED`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-09 — `create_bidder` 21st within an hour → `RATE_LIMITED`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5131,8 +5166,8 @@
     {
       "tc_reference": "TC-100",
       "ac_reference": "FR-08; FR-20; FR-25; FR-70",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-11 \u2014 `auction_state` key set equals the documented list",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-11 — `auction_state` key set equals the documented list",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5175,8 +5210,8 @@
     {
       "tc_reference": "TC-101",
       "ac_reference": "FR-08; FR-20; FR-25; FR-70",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-11 \u2014 `null` for stranger on sandbox",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-11 — `null` for stranger on sandbox",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5219,8 +5254,8 @@
     {
       "tc_reference": "TC-102",
       "ac_reference": "FR-08; FR-20; FR-25; FR-70",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-11 \u2014 `list_bids` newest page, `cursor`, `after`, `next_cursor` null at the end",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-11 — `list_bids` newest page, `cursor`, `after`, `next_cursor` null at the end",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5263,8 +5298,8 @@
     {
       "tc_reference": "TC-103",
       "ac_reference": "FR-08; FR-20; FR-25; FR-70",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-11 \u2014 `get_me` returns active sandbox and only non-expired open offers",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-11 — `get_me` returns active sandbox and only non-expired open offers",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5307,8 +5342,8 @@
     {
       "tc_reference": "TC-104",
       "ac_reference": "FR-08; FR-20; FR-25; FR-70",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-11 \u2014 `get_me` of a bot \u2192 null",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-11 — `get_me` of a bot → null",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5351,8 +5386,8 @@
     {
       "tc_reference": "TC-105",
       "ac_reference": "FR-08; FR-20; FR-25; FR-70",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-11 \u2014 `stats()` counts",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-11 — `stats()` counts",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5394,9 +5429,9 @@
     },
     {
       "tc_reference": "TC-106",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 create \u2192 accepted, live auction of 2 min at 2000, 3 bots with personas",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — create → accepted, live auction of 2 min at 2000, 3 bots with personas",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5438,9 +5473,9 @@
     },
     {
       "tc_reference": "TC-107",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 second create \u2192 `SANDBOX_EXISTS` with same ids",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — second create → `SANDBOX_EXISTS` with same ids",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5482,9 +5517,9 @@
     },
     {
       "tc_reference": "TC-108",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 after the sandbox auction becomes `settled`, a new create succeeds",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — after the sandbox auction becomes `settled`, a new create succeeds",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5526,9 +5561,9 @@
     },
     {
       "tc_reference": "TC-109",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 `max_active_sandboxes = 2` \u2192 third owner gets `SANDBOX_CAPACITY`",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — `max_active_sandboxes = 2` → third owner gets `SANDBOX_CAPACITY`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5570,9 +5605,9 @@
     },
     {
       "tc_reference": "TC-110",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 IP limit (reset to 5) \u2192 6th \u2192 `RATE_LIMITED`",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — IP limit (reset to 5) → 6th → `RATE_LIMITED`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5614,9 +5649,9 @@
     },
     {
       "tc_reference": "TC-111",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 `sandbox_bots` null for non-owner and after expiry",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — `sandbox_bots` null for non-owner and after expiry",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5658,9 +5693,9 @@
     },
     {
       "tc_reference": "TC-112",
-      "ac_reference": "FR-40\u2013FR-49",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-12 \u2014 `cleanup_expired()` deletes sandboxes that expired before UTC midnight (with all rows), keeps today's, deletes public auctions older than 7 days, deletes idle bidders older than 30 days only when unreferenced",
+      "ac_reference": "FR-40–FR-49",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-12 — `cleanup_expired()` deletes sandboxes that expired before UTC midnight (with all rows), keeps today's, deletes public auctions older than 7 days, deletes idle bidders older than 30 days only when unreferenced",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5703,8 +5738,8 @@
     {
       "tc_reference": "TC-113",
       "ac_reference": "FR-20; D-19",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-13 \u2014 create stub `realtime.send` (schema `realtime`, logs calls into a temp table)",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-13 — create stub `realtime.send` (schema `realtime`, logs calls into a temp table)",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5747,8 +5782,8 @@
     {
       "tc_reference": "TC-114",
       "ac_reference": "FR-20; D-19",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-13 \u2014 `realtime_mode='broadcast'`: one call per accepted bid with topic `auction:<id>`, event `auction_changed`, payload `version` and `bid.bid_no`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-13 — `realtime_mode='broadcast'`: one call per accepted bid with topic `auction:<id>`, event `auction_changed`, payload `version` and `bid.bid_no`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5791,8 +5826,8 @@
     {
       "tc_reference": "TC-115",
       "ac_reference": "FR-20; D-19",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-13 \u2014 one call per lifecycle transition",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-13 — one call per lifecycle transition",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5835,8 +5870,8 @@
     {
       "tc_reference": "TC-116",
       "ac_reference": "FR-20; D-19",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-13 \u2014 no call on a rejected bid without transition",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-13 — no call on a rejected bid without transition",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5879,8 +5914,8 @@
     {
       "tc_reference": "TC-117",
       "ac_reference": "FR-20; D-19",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-13 \u2014 stub that raises \u2192 bid still accepted",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-13 — stub that raises → bid still accepted",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5923,8 +5958,8 @@
     {
       "tc_reference": "TC-118",
       "ac_reference": "FR-20; D-19",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-13 \u2014 `realtime_mode='none'` \u2192 no calls",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-13 — `realtime_mode='none'` → no calls",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -5967,8 +6002,8 @@
     {
       "tc_reference": "TC-120",
       "ac_reference": "FR-52",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-15 \u2014 `create_test_auction` and `set_test_clock` work when env=test",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-15 — `create_test_auction` and `set_test_clock` work when env=test",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -6011,8 +6046,8 @@
     {
       "tc_reference": "TC-121",
       "ac_reference": "FR-52",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "DB-15 \u2014 with env=prod both throw `BLK30`",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "DB-15 — with env=prod both throw `BLK30`",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -6054,9 +6089,9 @@
     },
     {
       "tc_reference": "TC-122",
-      "ac_reference": "FR-91; INV-01\u2013INV-13",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "INT-01 \u2014 500 parallel bids from 200 bidders preserve all eight assertions in TRD \u00a715.3, including at least 20 accepted bids",
+      "ac_reference": "FR-91; INV-01–INV-13",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "INT-01 — 500 parallel bids from 200 bidders preserve all eight assertions in TRD §15.3, including at least 20 accepted bids",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -6124,8 +6159,8 @@
     {
       "tc_reference": "TC-123",
       "ac_reference": "FR-91; FR-04; FR-08; FR-11",
-      "milestone": "M1 \u2014 Schema, functions, pgTAP",
-      "title": "INT-02 \u2014 Each of the eight locking, idempotency, payment, public-room and sandbox races in TRD \u00a715.3 returns its specified result",
+      "milestone": "M1 — Schema, functions, pgTAP",
+      "title": "INT-02 — Each of the eight locking, idempotency, payment, public-room and sandbox races in TRD §15.3 returns its specified result",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
       "attempts": [
@@ -6168,7 +6203,7 @@
     {
       "tc_reference": "TC-127",
       "ac_reference": "NFR-41; NFR-42",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Database function wrappers parse all app-callable results",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6212,7 +6247,7 @@
     {
       "tc_reference": "TC-128",
       "ac_reference": "NFR-41; FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "SQL integer and response boundaries reject unsafe or unexpected values",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6256,7 +6291,7 @@
     {
       "tc_reference": "TC-129",
       "ac_reference": "FR-36; FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Demo gates precede Origin and parsing",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6300,6 +6335,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6310,7 +6350,7 @@
     {
       "tc_reference": "TC-130",
       "ac_reference": "FR-85",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Mutating Origin validation",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6354,6 +6394,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6364,7 +6409,7 @@
     {
       "tc_reference": "TC-131",
       "ac_reference": "FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "JSON media type and body limit",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6408,6 +6453,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6418,7 +6468,7 @@
     {
       "tc_reference": "TC-132",
       "ac_reference": "FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Params and query boundaries",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6462,6 +6512,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6472,7 +6527,7 @@
     {
       "tc_reference": "TC-133",
       "ac_reference": "FR-81",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Request ids and structured request log",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6516,6 +6571,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6526,7 +6586,7 @@
     {
       "tc_reference": "TC-134",
       "ac_reference": "FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Errors map to documented envelope",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6570,6 +6630,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6580,7 +6645,7 @@
     {
       "tc_reference": "TC-168",
       "ac_reference": "FR-20; FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Session route authentication checks signatures and existing bidder identity",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6619,6 +6684,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6629,7 +6699,7 @@
     {
       "tc_reference": "TC-135",
       "ac_reference": "FR-20",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Signed session round trip",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6668,6 +6738,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6678,7 +6753,7 @@
     {
       "tc_reference": "TC-136",
       "ac_reference": "FR-20",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Session rejects tampering and malformed fields",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6717,6 +6792,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6727,7 +6807,7 @@
     {
       "tc_reference": "TC-137",
       "ac_reference": "FR-20; D-35",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Session time bounds",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6766,6 +6846,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6776,7 +6861,7 @@
     {
       "tc_reference": "TC-138",
       "ac_reference": "FR-20",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Session rotation and sliding renewal",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6815,6 +6900,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6825,7 +6915,7 @@
     {
       "tc_reference": "TC-139",
       "ac_reference": "FR-22",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Name normalization",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6864,6 +6954,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6874,7 +6969,7 @@
     {
       "tc_reference": "TC-140",
       "ac_reference": "FR-22",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Name length and character validation",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6913,6 +7008,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6923,7 +7023,7 @@
     {
       "tc_reference": "TC-141",
       "ac_reference": "FR-22",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Human names cannot impersonate bots",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -6962,6 +7062,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6972,7 +7077,7 @@
     {
       "tc_reference": "TC-142",
       "ac_reference": "FR-22",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Profanity normalization",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7011,6 +7116,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7021,7 +7131,7 @@
     {
       "tc_reference": "TC-143",
       "ac_reference": "FR-20; FR-21",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Guest creation and cookie attributes",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7055,7 +7165,7 @@
     {
       "tc_reference": "TC-144",
       "ac_reference": "FR-24",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Deleted guest recovery",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7089,7 +7199,7 @@
     {
       "tc_reference": "TC-145",
       "ac_reference": "FR-22; FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Rename authenticated guest",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7123,7 +7233,7 @@
     {
       "tc_reference": "TC-146",
       "ac_reference": "FR-25",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Guest creation limit maps to HTTP",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7157,7 +7267,7 @@
     {
       "tc_reference": "TC-147",
       "ac_reference": "FR-37",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Proxy trust and XFF selection",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7191,6 +7301,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7201,7 +7316,7 @@
     {
       "tc_reference": "TC-148",
       "ac_reference": "FR-37",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "IPv6 privacy prefix",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7235,6 +7350,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7245,7 +7365,7 @@
     {
       "tc_reference": "TC-149",
       "ac_reference": "FR-37; NFR-30",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Salted IP hash shape",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7279,6 +7399,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7289,7 +7414,7 @@
     {
       "tc_reference": "TC-169",
       "ac_reference": "FR-37; FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Rate-limited HTTP responses round Retry-After up to seconds",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7323,6 +7448,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7333,7 +7463,7 @@
     {
       "tc_reference": "TC-150",
       "ac_reference": "FR-46; FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "State response and conditional ETag",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7367,7 +7497,7 @@
     {
       "tc_reference": "TC-151",
       "ac_reference": "FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "State not-found and sandbox visibility",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7401,7 +7531,7 @@
     {
       "tc_reference": "TC-152",
       "ac_reference": "FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Bid pagination",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7435,7 +7565,7 @@
     {
       "tc_reference": "TC-153",
       "ac_reference": "FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Lobby response",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7469,7 +7599,7 @@
     {
       "tc_reference": "TC-154",
       "ac_reference": "FR-04; FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Accepted bid and replay HTTP mapping",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7503,7 +7633,7 @@
     {
       "tc_reference": "TC-155",
       "ac_reference": "FR-50; FR-51",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Bid rejection details",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7537,7 +7667,7 @@
     {
       "tc_reference": "TC-156",
       "ac_reference": "FR-04",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Idempotency mismatch HTTP mapping",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7571,7 +7701,7 @@
     {
       "tc_reference": "TC-157",
       "ac_reference": "FR-37",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Bid rate-limit HTTP mapping",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7605,7 +7735,7 @@
     {
       "tc_reference": "TC-158",
       "ac_reference": "FR-11",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Payment success and rejection",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7639,7 +7769,7 @@
     {
       "tc_reference": "TC-159",
       "ac_reference": "FR-20; FR-50",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Mutation authentication",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7673,7 +7803,7 @@
     {
       "tc_reference": "TC-160",
       "ac_reference": "FR-52; D-40",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Disabled test routes are indistinguishable from unknown paths",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7712,7 +7842,7 @@
     {
       "tc_reference": "TC-161",
       "ac_reference": "FR-52",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Authorized test support",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7751,7 +7881,7 @@
     {
       "tc_reference": "TC-162",
       "ac_reference": "FR-82",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Health success and failure",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7785,7 +7915,7 @@
     {
       "tc_reference": "TC-163",
       "ac_reference": "FR-52",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Static test-route guard",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7824,6 +7954,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7834,7 +7969,7 @@
     {
       "tc_reference": "TC-164",
       "ac_reference": "FR-86; FR-87",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Nonce CSP construction",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7873,6 +8008,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7883,7 +8023,7 @@
     {
       "tc_reference": "TC-165",
       "ac_reference": "FR-86",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "CSP forwarded on request and response",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7927,6 +8067,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7937,7 +8082,7 @@
     {
       "tc_reference": "TC-166",
       "ac_reference": "FR-36",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Off mode page rewrite",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -7976,6 +8121,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7986,7 +8136,7 @@
     {
       "tc_reference": "TC-167",
       "ac_reference": "FR-86; FR-87",
-      "milestone": "M2 \u2014 API, identity and rate limits",
+      "milestone": "M2 — API, identity and rate limits",
       "title": "Production build nonce application",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8010,7 +8160,7 @@
     {
       "tc_reference": "TC-170",
       "ac_reference": "FR-68; FR-72; FR-73",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Shell identity and navigation",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8074,7 +8224,7 @@
     {
       "tc_reference": "TC-171",
       "ac_reference": "FR-68; FR-22",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Name dialog validation and save",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8203,6 +8353,21 @@
           "result": "pass",
           "actual_result": "T-37 full unit suite passes all 167 tests after environment recovery; full browser suite also passes all 17 tests.",
           "note": "Earlier failures remain in history."
+        },
+        {
+          "result": "pass",
+          "actual_result": "TC-205 focused command: 10 tests passed, including parallel project dependencies. D-58 server-relative countdown correction verified.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8213,7 +8378,7 @@
     {
       "tc_reference": "TC-172",
       "ac_reference": "FR-72; FR-86",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Theme persistence and nonce",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8297,7 +8462,7 @@
     {
       "tc_reference": "TC-209",
       "ac_reference": "FR-73; FR-80; FR-85; D-53",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Browser error reporting contains only a confirmed ID",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8351,7 +8516,7 @@
     {
       "tc_reference": "TC-210",
       "ac_reference": "FR-24; FR-51",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Client transport validates responses and renews missing sessions once",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8395,6 +8560,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8405,7 +8575,7 @@
     {
       "tc_reference": "TC-173",
       "ac_reference": "FR-36; FR-73",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Shell read-only and error states",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8459,7 +8629,7 @@
     {
       "tc_reference": "TC-174",
       "ac_reference": "NFR-20; NFR-22",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Shell visual and keyboard review",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8488,7 +8658,7 @@
     {
       "tc_reference": "TC-175",
       "ac_reference": "NFR-41",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Integer money formatting",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8527,6 +8697,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8537,7 +8712,7 @@
     {
       "tc_reference": "TC-176",
       "ac_reference": "NFR-41; FR-63",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Dollar input acceptance and rejection",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8576,6 +8751,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8586,7 +8766,7 @@
     {
       "tc_reference": "TC-177",
       "ac_reference": "FR-40; FR-41",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Clock samples and countdown",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8625,6 +8805,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8635,7 +8820,7 @@
     {
       "tc_reference": "TC-180",
       "ac_reference": "NFR-21",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Live announcement throttling",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8674,6 +8859,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8684,7 +8874,7 @@
     {
       "tc_reference": "TC-178",
       "ac_reference": "FR-47",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Snapshot and change ordering",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8733,6 +8923,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8743,7 +8938,7 @@
     {
       "tc_reference": "TC-179",
       "ac_reference": "FR-47; FR-07",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Bid reconciliation and extensions",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8777,6 +8972,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8787,7 +8987,7 @@
     {
       "tc_reference": "TC-181",
       "ac_reference": "FR-46; FR-47",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Polling snapshots and ETags",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8836,6 +9036,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8846,7 +9051,7 @@
     {
       "tc_reference": "TC-182",
       "ac_reference": "FR-48",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Polling failure and recovery",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8885,6 +9090,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8895,7 +9105,7 @@
     {
       "tc_reference": "TC-183",
       "ac_reference": "FR-46; FR-48",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Polling visibility and terminal behavior",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8934,6 +9144,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8944,7 +9159,7 @@
     {
       "tc_reference": "TC-184",
       "ac_reference": "FR-61; FR-62",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Lot and price states",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -8988,7 +9203,7 @@
     {
       "tc_reference": "TC-185",
       "ac_reference": "FR-40; FR-64",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Countdown conditions",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9032,7 +9247,7 @@
     {
       "tc_reference": "TC-186",
       "ac_reference": "FR-65",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Extension banner lifecycle",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9076,7 +9291,7 @@
     {
       "tc_reference": "TC-187",
       "ac_reference": "FR-67",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Connection and load states",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9130,7 +9345,7 @@
     {
       "tc_reference": "TC-188",
       "ac_reference": "FR-63; NFR-41",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Quick and custom bidding",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9209,7 +9424,7 @@
     {
       "tc_reference": "TC-190",
       "ac_reference": "FR-63; US-05",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Bid failure copy and retry identity",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9273,7 +9488,7 @@
     {
       "tc_reference": "TC-191",
       "ac_reference": "FR-63; FR-37",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Stale minimum and rate countdown",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9337,7 +9552,7 @@
     {
       "tc_reference": "TC-192",
       "ac_reference": "FR-64; FR-67",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Bid panel state gates",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9406,7 +9621,7 @@
     {
       "tc_reference": "TC-189",
       "ac_reference": "FR-71",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Bid keyboard shortcuts",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9480,7 +9695,7 @@
     {
       "tc_reference": "TC-193",
       "ac_reference": "FR-47",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Bid history paging and labels",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9544,7 +9759,7 @@
     {
       "tc_reference": "TC-194",
       "ac_reference": "FR-45; FR-48",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Broadcast subscription and validation",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9588,6 +9803,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9598,7 +9818,7 @@
     {
       "tc_reference": "TC-195",
       "ac_reference": "FR-48",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Broadcast fallback and safety refresh",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9642,6 +9862,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9652,7 +9877,7 @@
     {
       "tc_reference": "TC-196",
       "ac_reference": "FR-46; D-19",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Lazy broadcast module loading",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9691,6 +9916,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9701,7 +9931,7 @@
     {
       "tc_reference": "TC-197",
       "ac_reference": "FR-60; US-01",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Public room lobby states",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9775,7 +10005,7 @@
     {
       "tc_reference": "TC-198",
       "ac_reference": "FR-60; US-03",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Sandbox card states",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9844,7 +10074,7 @@
     {
       "tc_reference": "TC-199",
       "ac_reference": "FR-60; FR-11",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Offer notices and benchmark content",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9918,7 +10148,7 @@
     {
       "tc_reference": "TC-200",
       "ac_reference": "FR-60; D-30",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Lobby feed handoff",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -9992,7 +10222,7 @@
     {
       "tc_reference": "TC-203",
       "ac_reference": "NFR-20; NFR-22",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Automated accessibility and keyboard",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10041,6 +10271,21 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "TC-205 focused command: 10 tests passed, including parallel project dependencies. D-58 server-relative countdown correction verified.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10051,7 +10296,7 @@
     {
       "tc_reference": "TC-207",
       "ac_reference": "FR-92",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "E2E project isolation and CI",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10110,7 +10355,7 @@
     {
       "tc_reference": "TC-201",
       "ac_reference": "FR-20; FR-51; FR-52; FR-85",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "HTTP browser-context contract",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10149,6 +10394,21 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "TC-205 focused command: 10 tests passed, including parallel project dependencies. D-58 server-relative countdown correction verified.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10159,7 +10419,7 @@
     {
       "tc_reference": "TC-206",
       "ac_reference": "NFR-15",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Production initial script budget",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10203,6 +10463,21 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "TC-205 focused command: 10 tests passed, including parallel project dependencies. D-58 server-relative countdown correction verified.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10213,7 +10488,7 @@
     {
       "tc_reference": "TC-202",
       "ac_reference": "US-02; US-04; FR-63",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Two bidders stay synchronized",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10247,6 +10522,11 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10257,7 +10537,7 @@
     {
       "tc_reference": "TC-204",
       "ac_reference": "NFR-23; FR-46",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Mobile overflow reduced motion and polling transport",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10291,6 +10571,21 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "TC-205 focused command: 10 tests passed, including parallel project dependencies. D-58 server-relative countdown correction verified.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10301,7 +10596,7 @@
     {
       "tc_reference": "TC-205",
       "ac_reference": "FR-37; FR-67",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Rate-limited and scheduled browser states",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10335,6 +10630,26 @@
           "result": "pass",
           "actual_result": "All 15 browser tests pass, including the seeded sandbox flow and unchanged 180 KiB script budget.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final full E2E rerun: scheduled auction displayed Opens in 0:55 with bidding disabled; TRD E2E-08 accepts only 1:00/0:59, so its unchanged 3-second expectation failed. Eight parallel tests passed; ten isolated tests did not run after the dependency failure.",
+          "note": "Owner approval requested to compare countdown with server-reported remaining time within one displayed second. No assertion or spec change made while approval is pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "TC-205 focused command: 10 tests passed, including parallel project dependencies. D-58 server-relative countdown correction verified.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10345,7 +10660,7 @@
     {
       "tc_reference": "TC-208",
       "ac_reference": "FR-40; FR-45; NFR-20",
-      "milestone": "M3 \u2014 UI and real-time",
+      "milestone": "M3 — UI and real-time",
       "title": "Live two-browser countdown and mobile review",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10364,7 +10679,7 @@
     {
       "tc_reference": "TC-211",
       "ac_reference": "FR-33",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot token signing and lifetime",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10393,6 +10708,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10403,7 +10723,7 @@
     {
       "tc_reference": "TC-212",
       "ac_reference": "FR-33; FR-23",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot token scope and integrity",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10432,6 +10752,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10442,7 +10767,7 @@
     {
       "tc_reference": "TC-213",
       "ac_reference": "FR-32; US-09",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Sandbox creation and existing room",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10471,7 +10796,7 @@
     {
       "tc_reference": "TC-214",
       "ac_reference": "FR-35",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Sandbox capacity and IP limit",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10515,7 +10840,7 @@
     {
       "tc_reference": "TC-217",
       "ac_reference": "FR-33; D-16",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot payment authorization",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10544,7 +10869,7 @@
     {
       "tc_reference": "TC-215",
       "ac_reference": "FR-33",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot token issuer ownership",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10578,7 +10903,7 @@
     {
       "tc_reference": "TC-216",
       "ac_reference": "FR-23; FR-33",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot bidding and owner-cookie binding",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10612,7 +10937,7 @@
     {
       "tc_reference": "TC-218",
       "ac_reference": "FR-34",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Deterministic random sequence and budgets",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10646,6 +10971,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10656,7 +10986,7 @@
     {
       "tc_reference": "TC-219",
       "ac_reference": "FR-34",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot pacing and leader protection",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10690,6 +11020,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10700,7 +11035,7 @@
     {
       "tc_reference": "TC-220",
       "ac_reference": "FR-34",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Persona phases and budget dropout",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10734,6 +11069,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10744,7 +11084,7 @@
     {
       "tc_reference": "TC-221",
       "ac_reference": "D-16",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Bot payment choices and delay",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10778,6 +11118,11 @@
           "result": "pass",
           "actual_result": "All 161 unit tests pass.",
           "note": "T-36 full local regression; lint/typecheck/guards and production build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite: 167 tests passed in 31 files; lint and typecheck passed.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10788,7 +11133,7 @@
     {
       "tc_reference": "TC-222",
       "ac_reference": "FR-33",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Runner token startup and shared API",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10832,7 +11177,7 @@
     {
       "tc_reference": "TC-223",
       "ac_reference": "FR-38; FR-33",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Runner pause and terminal cleanup",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10886,7 +11231,7 @@
     {
       "tc_reference": "TC-224",
       "ac_reference": "FR-34",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Runner rejection scheduling",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10940,7 +11285,7 @@
     {
       "tc_reference": "TC-225",
       "ac_reference": "FR-32; US-09",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Sandbox entry and status copy",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -10979,6 +11324,21 @@
           "result": "pass",
           "actual_result": "CI run 39638410035 attempt 2: E2E build and full browser suite pass unchanged; all six CI jobs green.",
           "note": "Initial Turbopack font-processing build failure was transient. No code, test assertions or timeouts changed for this rerun. Native manual evidence remains recorded separately in TC-227."
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-38 full E2E: sandbox case failed before entering the flow; Edit profile button missed the unchanged 3-second expectation. Trace shows GET /api/me returned 200 in 2666ms, not an API rejection.",
+          "note": "18 other E2E tests passed, including both new lifecycle cases. Retest only sandbox before final full run; no test/code changes for timing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused sandbox retest passes unchanged after the full-run profile timing failure.",
+          "note": "No assertion, timeout or product-code changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10989,7 +11349,7 @@
     {
       "tc_reference": "TC-226",
       "ac_reference": "FR-33; FR-34; US-09",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Seeded sandbox bidding flow",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11023,6 +11383,21 @@
           "result": "pass",
           "actual_result": "CI run 39638410035 attempt 2: E2E build and full browser suite pass unchanged; all six CI jobs green.",
           "note": "Initial Turbopack font-processing build failure was transient. No code, test assertions or timeouts changed for this rerun. Native manual evidence remains recorded separately in TC-227."
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-38 full E2E: sandbox case failed before entering the flow; Edit profile button missed the unchanged 3-second expectation. Trace shows GET /api/me returned 200 in 2666ms, not an API rejection.",
+          "note": "18 other E2E tests passed, including both new lifecycle cases. Retest only sandbox before final full run; no test/code changes for timing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused sandbox retest passes unchanged after the full-run profile timing failure.",
+          "note": "No assertion, timeout or product-code changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11033,7 +11408,7 @@
     {
       "tc_reference": "TC-227",
       "ac_reference": "FR-38; NFR-20",
-      "milestone": "M4 \u2014 Sandbox and bots",
+      "milestone": "M4 — Sandbox and bots",
       "title": "Sandbox visual and background states",
       "status": "resolved",
       "environment": "Local production polling build; Chrome and native Brave; PostgreSQL 17.11 on localhost:54329",
@@ -11052,7 +11427,7 @@
     {
       "tc_reference": "TC-230",
       "ac_reference": "FR-66; FR-09; FR-14",
-      "milestone": "M5 \u2014 Settlement",
+      "milestone": "M5 — Settlement",
       "title": "Every closed-state viewer copy",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11096,7 +11471,7 @@
     {
       "tc_reference": "TC-233",
       "ac_reference": "FR-31; FR-66; NFR-21",
-      "milestone": "M5 \u2014 Settlement",
+      "milestone": "M5 — Settlement",
       "title": "Settlement announcement and next public lot",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11140,7 +11515,7 @@
     {
       "tc_reference": "TC-231",
       "ac_reference": "FR-11; FR-66",
-      "milestone": "M5 \u2014 Settlement",
+      "milestone": "M5 — Settlement",
       "title": "Payment pending, errors and retry",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11179,7 +11554,7 @@
     {
       "tc_reference": "TC-232",
       "ac_reference": "FR-12; FR-66; US-07; US-08",
-      "milestone": "M5 \u2014 Settlement",
+      "milestone": "M5 — Settlement",
       "title": "Offer notices and profile refresh",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11198,6 +11573,11 @@
           "result": "pass",
           "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
           "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11208,7 +11588,7 @@
     {
       "tc_reference": "TC-228",
       "ac_reference": "FR-11; FR-15; FR-66; US-07",
-      "milestone": "M5 \u2014 Settlement",
+      "milestone": "M5 — Settlement",
       "title": "Winner payment flow",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11222,6 +11602,11 @@
           "result": "pass",
           "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
           "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11232,7 +11617,7 @@
     {
       "tc_reference": "TC-229",
       "ac_reference": "FR-12; FR-13; FR-66; US-08",
-      "milestone": "M5 \u2014 Settlement",
+      "milestone": "M5 — Settlement",
       "title": "Runner-up offer and winner strike",
       "status": "resolved",
       "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
@@ -11246,6 +11631,152 @@
           "result": "pass",
           "actual_result": "T-37 final gates: 167 unit tests and 17 E2E tests pass; production polling build, typecheck and guards pass.",
           "note": "Vitest used two workers to limit host resource pressure. Playwright retained four parallel workers then one isolated worker; no timeout or assertion changes. Final lint formatting follows ledger update."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-236",
+      "ac_reference": "FR-66; NFR-20; NFR-21",
+      "milestone": "M5 — Settlement",
+      "title": "Settlement layout and closing moment",
+      "status": "manual_required",
+      "environment": "Local production polling build; Chrome desktop and 360x740 viewport; PostgreSQL 17",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Live Chrome review verified winner and runner payment, exact amounts, desktop and 360px mobile layout, history and empty browser error log. The transient Closing frame was not captured.",
+          "note": "Partial manual verification: natural close-to-winner observed twice; screenshot qa/evidence/M5-mobile.jpg. Test clock jumps required reload for a fresh lowest-RTT sample. No product or timeout changes. Remaining visual subcheck recorded for owner; no ClickUp under repository override."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-234",
+      "ac_reference": "FR-07; FR-65; US-06",
+      "milestone": "M5 — Settlement",
+      "title": "Late bid extension flow",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Focused T-38 Playwright run failed during test discovery: Node requires an import attribute for bench/results/latest.json.",
+          "note": "No browser assertion ran. Correct test JSON module syntax; keep benchmark assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E-05/E2E-06 retest: both pass. Exact extension banner, 0:29/0:30 countdown, history tag, public card/benchmark, bid response and successor link verified.",
+          "note": "Added required JSON import attribute. Extension fixture reloads after the synthetic clock jump; original assertions and timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-38 full E2E: both new lifecycle tests pass; 18/19 total browser cases passed.",
+          "note": "Unrelated sandbox profile-load timing failure logged separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-235",
+      "ac_reference": "FR-30; FR-31",
+      "milestone": "M5 — Settlement",
+      "title": "Public room and benchmark entry",
+      "status": "resolved",
+      "environment": "Local PostgreSQL 17.11 / pgTAP; Node 24 / Vitest",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Focused T-38 Playwright run failed during test discovery: Node requires an import attribute for bench/results/latest.json.",
+          "note": "No browser assertion ran. Correct test JSON module syntax; keep benchmark assertions unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E-05/E2E-06 retest: both pass. Exact extension banner, 0:29/0:30 countdown, history tag, public card/benchmark, bid response and successor link verified.",
+          "note": "Added required JSON import attribute. Extension fixture reloads after the synthetic clock jump; original assertions and timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-38 full E2E: both new lifecycle tests pass; 18/19 total browser cases passed.",
+          "note": "Unrelated sandbox profile-load timing failure logged separately."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused extension-banner/public-room specs: 11 tests passed, including parallel project dependencies.",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm e2e: all 19 tests passed (9 parallel with four workers, then 10 isolated with one worker).",
+          "note": "T-38 final verification 2026-11-06; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "—",
+      "ac_reference": "AGENTS.md Definition of done 2",
+      "milestone": "M5 — Settlement",
+      "title": "T-38 final CI verification",
+      "status": "resolved",
+      "environment": "GitHub Actions Ubuntu / Node 24",
+      "description": "Final documentation edits after local lint introduced table formatting differences.",
+      "steps_to_reproduce": "Run pnpm lint on e377b36.",
+      "expected_result": "Prettier accepts all files.",
+      "actual_result": "Prettier rejected docs/PROGRESS.md and qa/M5-review.md.",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "CI 42213543584 static job failed on formatting in docs/PROGRESS.md and qa/M5-review.md.",
+          "note": "Documentation edits followed the earlier passing lint run; no product/test failure."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local pnpm lint passed ESLint but Prettier found 11 unrelated ignored .codex-prompts files.",
+          "note": "Owner files left unchanged; verify tracked files matching clean CI checkout."
+        },
+        {
+          "result": "pass",
+          "actual_result": "ESLint and Prettier check over all tracked files passed after formatting the two documents.",
+          "note": "Ignored owner .codex-prompts artifacts excluded from tracked-file verification, matching clean CI checkout."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI 42213862171 attempt 1: E2E build failed resolving next/font/google assets before browser tests started.",
+          "note": "All other jobs passed; unchanged failed-job retry requested."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI 42213862171 attempt 2: all six jobs passed, including E2E after unchanged build retry.",
+          "note": "2026-11-06; no code, assertion or timeout changes for the font build failure."
         }
       ],
       "regression_of": null,
