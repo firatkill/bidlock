@@ -58,7 +58,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-38  | Extension banner and public room e2e               | done   | 5a6b82a                                  |
 | T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
 | T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
-| T-40  | k6 bid-storm script                                | todo   | —                                        |
+| T-40  | k6 bid-storm script                                | doing  | —                                        |
 | T-41  | Invariant verification                             | todo   | —                                        |
 | T-42  | Bench report and headline data                     | todo   | —                                        |
 | T-43  | Load workflow                                      | todo   | —                                        |
@@ -261,3 +261,11 @@ T-39 build correction approved as D-75 (2026-11-07): command-scoped non-secret t
 T-39 local acceptance complete: D-75 test/on build-only placeholders unblock standalone build; runner grep/config checks contain none of the placeholder secrets. Healthy non-root app (uid1001); dev/test schemas preserved. Small launcher smoke passed through health and failed only at missing T-40 script, as expected. App removed, Rehearse restored, pgdata retained. Final regression checks and PR CI gates recorded in qa/T-39-report.md.
 
 T-39 complete: [PR #40](https://github.com/firatkill/bidlock/pull/40), implementation `fbecd83`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42298376606), including 33 E2E tests, after setup interruptions and an unchanged retry. Final evidence commit must also pass CI before merge. D-73–D-75 and TC-255–TC-259 recorded; no open T-39 questions. T-40 has not started.
+
+## T-40 bid storm
+
+Implementation follows TRD §15.6.2 with formatting only; pinned remote imports and k6 1.8.2 work without vendoring. Rule 5 now checks both load files, with executable positive/negative guard fixtures. TC-260–TC-264 have 14 adapter/guard tests. D-76 records the owner's local acceptance authorization.
+
+Local acceptance passed k6: 1,135 bids, 67 accepted responses, p95 21.3056ms, p99 207.8352ms, zero unexpected errors/replay mismatches. Real summary contains setup_data.auctionId and 50 distinct sessions. Launcher exit1 at the T-41 verifier placeholder is expected; report is not reached. App stopped/removed without volume deletion; Rehearse restarted and Docker health is healthy. Lint, typecheck, 196 unit tests and guards pass. TC-263 full-size CI performance and TC-264 live cap/post-deadline coverage remain planned for T-43; neither is claimed by the short acceptance run. T-41 has not started.
+
+QA ledger structure/status checks pass. The external checker repeats the pre-existing duplicate exploratory `—` lookup collision noted in T-39; independent ordered comparison confirms all 262 previous entries are byte-equivalent as JSON values, with five new entries appended. No history was removed.
