@@ -31,7 +31,7 @@ export function OfferNotices({
             </p>
             <Link
               href={`/a/${offer.auction_id}`}
-              className="mt-2 inline-block text-accent"
+              className="mt-2 inline-flex min-h-11 items-center text-accent"
             >
               {copy.auctionLink}
             </Link>

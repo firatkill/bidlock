@@ -1,4 +1,4 @@
-import { fillCopy, roomCopy as copy } from "@/domain/copy";
+import { bidCountCopy, fillCopy, roomCopy as copy } from "@/domain/copy";
 import { formatCents } from "@/domain/money";
 import type { AuctionState } from "@/domain/schemas";
 export function PriceBlock({
@@ -32,7 +32,7 @@ export function PriceBlock({
       </p>
       <p className="text-sm text-ink-3">
         {fillCopy(copy.meta, {
-          count: auction.bid_count,
+          bids: bidCountCopy(auction.bid_count),
           minimum: formatCents(auction.min_next_bid),
           increment: formatCents(auction.increment),
         })}

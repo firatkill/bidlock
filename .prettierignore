@@ -12,3 +12,6 @@ docs/PRD.md
 docs/TRD.md
 docs/IMPLEMENTATION_PLAN.md
 docs/OWNER-DECISIONS.md
+
+# Local, owner-maintained design references (excluded from Git).
+.codex-prompts/

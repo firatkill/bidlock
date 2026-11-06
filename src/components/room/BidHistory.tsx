@@ -1,4 +1,5 @@
 "use client";
+import { formatLedgerTime, type RejectedBid } from "@/domain/bid-feedback";
 import { useState } from "react";
 import { fetchOlderBids } from "@/client/api";
 import { formatCountdown } from "@/domain/clock";
@@ -11,7 +12,9 @@ export function BidHistory({
   viewerId,
   extendBySeconds,
   onBids,
+  rejected = [],
 }: {
+  rejected?: RejectedBid[];
   auctionId: string;
   bids: BidItem[];
   viewerId: string | null;
@@ -41,17 +44,35 @@ export function BidHistory({
   };
   return (
     <section className="min-w-0 space-y-4" aria-labelledby="history-heading">
-      <h2 id="history-heading" className="text-xl font-medium">
-        {copy.history}
-      </h2>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 id="history-heading" className="text-xl font-medium">
+          {copy.history}
+        </h2>
+        <span className="font-mono text-xs text-ink-3">{copy.timeHeading}</span>
+      </div>
+      {rejected.length > 0 && (
+        <ol className="divide-y divide-rule rounded border border-rule bg-surface">
+          {rejected.map((row) => (
+            <li key={row.key} className="space-y-2 px-4 py-3 text-sm">
+              <div className="flex justify-between gap-3 font-mono">
+                <span>
+                  {copy.you} · <s>{formatCents(row.amount)}</s>
+                </span>
+                <span className="text-warn">{copy.rejected}</span>
+              </div>
+              <p className="text-xs text-ink-2">{row.explanation}</p>
+            </li>
+          ))}
+        </ol>
+      )}
       {rows.length === 0 ? (
         <p className="text-ink-3">{copy.noBids}</p>
       ) : (
-        <ol className="divide-y divide-rule border-y border-rule">
+        <ol className="divide-y divide-rule rounded border border-rule bg-surface">
           {rows.map((bid) => (
             <li
               key={bid.bid_no}
-              className="price-flash grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1 py-4 text-sm"
+              className="price-flash grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1 px-4 py-3 text-sm"
             >
               <span className="font-mono text-ink-3">
                 {fillCopy(copy.bidNumber, { n: bid.bid_no })}
@@ -75,12 +96,7 @@ export function BidHistory({
                 className="col-start-2 font-mono text-xs text-ink-3"
                 suppressHydrationWarning
               >
-                {new Date(bid.placed_at).toLocaleTimeString(undefined, {
-                  hour12: false,
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  second: "2-digit",
-                })}
+                {formatLedgerTime(bid.placed_at)}
               </time>
               {bid.extended && (
                 <span

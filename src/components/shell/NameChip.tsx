@@ -31,7 +31,10 @@ export function NameChip() {
         {editing ? (
           <Suspense
             fallback={
-              <button className="text-accent underline" disabled>
+              <button
+                className="inline-flex min-h-11 min-w-11 items-center justify-center text-accent underline"
+                disabled
+              >
                 {copy.edit}
               </button>
             }
@@ -46,7 +49,7 @@ export function NameChip() {
           </Suspense>
         ) : (
           <button
-            className="text-accent underline"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center text-accent underline"
             onClick={() => {
               setEditing(true);
             }}

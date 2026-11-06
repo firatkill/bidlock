@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fillCopy, lobbyCopy as copy } from "@/domain/copy";
+import { bidCountCopy, fillCopy, lobbyCopy as copy } from "@/domain/copy";
 import { formatCents } from "@/domain/money";
 import { formatCountdown, remainingMs } from "@/domain/clock";
 import type { AuctionState } from "@/domain/schemas";
@@ -40,11 +40,21 @@ export function PublicRoomCard({
       <p className="font-mono text-xs tracking-wide text-ink-3">
         {scheduled ? copy.next : copy.live}
       </p>
-      <div>
-        <p className="font-mono text-sm text-ink-3">
-          {fillCopy(copy.lot, { lot: auction.lot_no })}
-        </p>
-        <h2 className="mt-2 text-2xl font-medium">{auction.title}</h2>
+      <div className="flex items-center gap-4">
+        <div
+          aria-hidden="true"
+          className="flex h-[78px] w-[104px] shrink-0 items-center justify-center rounded border border-rule-strong bg-ground font-mono text-3xl text-ink-2"
+        >
+          {String(auction.lot_no).padStart(4, "0")}
+        </div>
+        <div>
+          <p className="font-mono text-sm text-ink-3">
+            {fillCopy(copy.lot, {
+              lot: String(auction.lot_no).padStart(4, "0"),
+            })}
+          </p>
+          <h2 className="mt-2 text-2xl font-medium">{auction.title}</h2>
+        </div>
       </div>
       <div>
         <p className="text-sm text-ink-2">
@@ -60,12 +70,27 @@ export function PublicRoomCard({
           : fillCopy(
               auction.leader?.id === viewerId ? copy.leading : copy.leader,
               {
-                count: auction.bid_count,
+                bids: bidCountCopy(auction.bid_count),
                 name: auction.leader?.display_name ?? "",
               },
             )}
       </p>
-      <p className="font-mono">
+      <progress
+        aria-hidden="true"
+        max={1}
+        value={Math.min(
+          1,
+          left /
+            Math.max(
+              1,
+              Date.parse(auction.ends_at) - Date.parse(auction.starts_at),
+            ),
+        )}
+        className={`fuse ${left <= 60000 ? "fuse-warn" : ""}`}
+      />
+      <p
+        className={`font-mono ${!scheduled && left <= 60000 ? "text-warn" : ""}`}
+      >
         {left === 0 && !scheduled
           ? copy.closing
           : fillCopy(scheduled ? copy.opens : copy.closes, {

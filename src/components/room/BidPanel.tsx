@@ -20,14 +20,35 @@ export function BidPanel({
   ready = true,
   clock,
   onAccepted,
+  onRejected,
 }: {
   auction: AuctionState;
   isLeader: boolean;
   readonly?: boolean;
   ready?: boolean;
   clock: ClockSync;
+  onRejected?: (attempt: PendingBid, error: ApiError) => void;
   onAccepted: (result: Accepted, t0: number, t1: number) => void;
 }) {
+  const [customOpen, setCustomOpen] = useState(false);
+  const dockRef = useRef<HTMLElement>(null);
+  const customRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const dock = dockRef.current;
+    const main = dock?.closest("main");
+    if (!dock || !main || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => {
+      main.style.setProperty(
+        "--bid-dock-height",
+        `${String(dock.getBoundingClientRect().height)}px`,
+      );
+    });
+    observer.observe(dock);
+    return () => {
+      observer.disconnect();
+      main.style.removeProperty("--bid-dock-height");
+    };
+  }, []);
   const [custom, setCustom] = useState("");
   const [pending, setPending] = useState<string | null>(null);
   const [retry, setRetry] = useState<PendingBid | null>(null);
@@ -107,6 +128,7 @@ export function BidPanel({
         return;
       }
       if (reason.status < 500) setRetry(null);
+      if (reason.status < 500) onRejected?.(attempt, reason);
       const code = reason.envelope.error.code;
       const details = BidRejectionDetails.safeParse(
         reason.envelope.error.details,
@@ -199,13 +221,17 @@ export function BidPanel({
   });
   if (auction.status !== "live" && auction.status !== "scheduled") return null;
   return (
-    <section className="space-y-4">
+    <section
+      ref={dockRef}
+      className="bid-dock space-y-3"
+      aria-label={copy.place}
+    >
       <div className="grid grid-cols-3 gap-2">
         {amounts.map((amount, index) => (
           <button
             key={amount}
             type="button"
-            className="button button-primary flex-col px-2"
+            className={`button quick-bid flex-col px-2 ${index === 2 ? "button-outline" : "button-primary"}`}
             disabled={disabled}
             aria-keyshortcuts={String(index + 1)}
             onClick={() => {
@@ -217,11 +243,37 @@ export function BidPanel({
                 ? copy.pending
                 : fillCopy(copy.bid, { amount: formatCents(amount) })}
             </span>{" "}
-            <span className="text-xs">{copy.steps[index]}</span>
+            <span className="flex items-center gap-2 text-xs">
+              {copy.steps[index]}{" "}
+              <kbd
+                aria-hidden="true"
+                className="hidden rounded border border-current px-1 font-mono md:inline"
+              >
+                {index + 1}
+              </kbd>
+            </span>
           </button>
         ))}
       </div>
-      <form onSubmit={submit} className="space-y-2">
+      <button
+        type="button"
+        className="button mobile-custom-toggle w-full"
+        disabled={disabled}
+        aria-expanded={customOpen}
+        aria-controls="custom-bid-form"
+        onClick={() => {
+          setCustomOpen(!customOpen);
+          if (!customOpen)
+            requestAnimationFrame(() => customRef.current?.focus());
+        }}
+      >
+        {copy.customToggle}
+      </button>
+      <form
+        id="custom-bid-form"
+        onSubmit={submit}
+        className={`${customOpen ? "block" : "hidden"} space-y-2 md:block`}
+      >
         <label htmlFor="custom-bid" className="block text-sm font-medium">
           {copy.custom}
         </label>
@@ -232,6 +284,7 @@ export function BidPanel({
             </span>
             <input
               id="custom-bid"
+              ref={customRef}
               className="field money-field font-mono"
               inputMode="decimal"
               value={custom}

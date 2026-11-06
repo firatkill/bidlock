@@ -30,12 +30,31 @@ export function Countdown({
   if (!scheduled && left === 0)
     return (
       <section>
+        <progress
+          aria-hidden="true"
+          className="fuse fuse-warn mb-3"
+          value={0}
+          max={1}
+        />
         <p className="font-mono text-xl">{copy.closing}</p>
         <p className="mt-2 text-sm text-ink-3">{copy.waiting}</p>
       </section>
     );
   return (
     <section>
+      <progress
+        aria-hidden="true"
+        className={`fuse mb-3 ${left <= 60000 ? "fuse-warn" : ""}`}
+        max={1}
+        value={Math.min(
+          1,
+          left /
+            Math.max(
+              1,
+              Date.parse(auction.ends_at) - Date.parse(auction.starts_at),
+            ),
+        )}
+      />
       <p
         className={`font-mono text-xl ${!scheduled && left <= 60000 ? "text-warn" : "text-ink"}`}
       >

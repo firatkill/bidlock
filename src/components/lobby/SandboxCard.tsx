@@ -58,6 +58,16 @@ export function SandboxCard({
           {state === "creating" ? copy.starting : copy.start}
         </button>
       )}
+      <ul className="mt-2 divide-y divide-rule border-t border-rule">
+        {copy.bots.map((name, index) => (
+          <li key={name} className="py-3">
+            <p className="font-mono text-sm font-medium">{name}</p>
+            <p className="mt-1 text-sm text-ink-2">
+              {copy.personalities[index]}
+            </p>
+          </li>
+        ))}
+      </ul>
       {state === "capacity" && (
         <p role="status" className="text-sm text-ink-2">
           {copy.capacity}

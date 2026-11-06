@@ -1,6 +1,5 @@
 import { cookies } from "next/headers";
-import { BenchResult } from "@/domain/schemas";
-import latest from "../../bench/results/latest.json";
+import { readBenchmark } from "@/server/benchmark";
 import { listAuctions } from "@/server/repo/auctions";
 import { verifySession } from "@/server/session";
 import { env } from "@/server/env";
@@ -19,7 +18,7 @@ export default async function Home() {
     <main className="space-y-10">
       <LobbyIntro />
       <Lobby initial={initial} readonly={env().DEMO_MODE !== "on"} />
-      <BenchmarkHeadline result={BenchResult.parse(latest)} />
+      <BenchmarkHeadline result={readBenchmark()} />
       <LobbyTeaser />
     </main>
   );

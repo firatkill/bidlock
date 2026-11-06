@@ -60,7 +60,7 @@ export function NameDialog({
         }
       }}
     >
-      <Dialog.Trigger className="text-accent underline">
+      <Dialog.Trigger className="inline-flex min-h-11 min-w-11 items-center justify-center text-accent underline">
         {copy.edit}
       </Dialog.Trigger>
       <Dialog.Portal>

@@ -1,6 +1,10 @@
 "use client";
 import Link from "next/link";
-import { lazy, Suspense, useEffect } from "react";
+import { bidErrorCopy, type RejectedBid } from "@/domain/bid-feedback";
+import { ApiError } from "@/client/api";
+import type { PendingBid } from "@/client/idempotency";
+import { Experiments } from "@/components/sandbox/Experiments";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { BotStrip, SandboxHeader } from "./BotStrip";
 const BotRunner = lazy(() =>
   import("@/client/bots/BotRunner").then((module) => ({
@@ -33,6 +37,19 @@ export function AuctionRoom({
   initialBids: BidItem[];
   readonly?: boolean;
 }) {
+  const [rejected, setRejected] = useState<RejectedBid[]>([]);
+  const reject = (attempt: PendingBid, error: ApiError) => {
+    setRejected((rows) =>
+      [
+        {
+          key: attempt.key,
+          amount: attempt.amount,
+          explanation: bidErrorCopy(error.envelope.error),
+        },
+        ...rows.filter((row) => row.key !== attempt.key),
+      ].slice(0, 100),
+    );
+  };
   const room = useAuctionRoom(initial.id, initial, initialBids);
   const auction = room.auction ?? initial;
   useEffect(() => {
@@ -89,12 +106,21 @@ export function AuctionRoom({
   };
 
   return (
-    <main className="space-y-6">
-      <Link href="/" className="text-sm text-ink-2">
+    <main
+      className={`space-y-5 ${auction.status === "live" || auction.status === "scheduled" ? "room-bidding" : ""}`}
+    >
+      <Link
+        href="/"
+        className="inline-flex min-h-11 items-center text-sm text-ink-2"
+      >
         {auction.kind === "sandbox"
           ? copy.sandboxBreadcrumb
           : copy.publicBreadcrumb}
       </Link>
+      <ExtensionBanner
+        extension={room.lastExtension}
+        max={auction.max_extensions}
+      />
       <ConnectionBanner status={room.status} />
       {auction.sandbox && room.me?.id === auction.sandbox.owner_id && (
         <>
@@ -127,21 +153,27 @@ export function AuctionRoom({
       <p className="sr-only" aria-live="polite">
         {polite}
       </p>
-      <div className="grid gap-10 md:grid-cols-2">
-        <div className="min-w-0 space-y-8">
+      <div className="grid items-start gap-8 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+        <div className="min-w-0 space-y-5">
           <LotCard auction={auction} />
-          <PriceBlock auction={auction} isLeader={room.isLeader} />
-          <Countdown auction={auction} clock={room.clock} />
-          <BidPanel
-            auction={auction}
-            isLeader={room.isLeader}
-            readonly={readonly}
-            ready={room.me !== null}
-            clock={room.clock}
-            onAccepted={accepted}
-          />
+          {(auction.status === "live" || auction.status === "scheduled") && (
+            <div className="space-y-5 rounded-md border border-rule bg-surface p-4 md:p-6">
+              <PriceBlock auction={auction} isLeader={room.isLeader} />
+              <Countdown auction={auction} clock={room.clock} />
+              <BidPanel
+                auction={auction}
+                isLeader={room.isLeader}
+                readonly={readonly}
+                ready={room.me !== null}
+                clock={room.clock}
+                onAccepted={accepted}
+                onRejected={reject}
+              />
+            </div>
+          )}
           <ResultPanel
             auction={auction}
+            bids={room.bids}
             viewerId={room.me?.id ?? null}
             clock={room.clock}
             payment={
@@ -153,20 +185,30 @@ export function AuctionRoom({
               />
             }
           />
-          <ExtensionBanner
-            extension={room.lastExtension}
-            max={auction.max_extensions}
+        </div>
+        <div className="min-w-0 space-y-6">
+          {auction.sandbox && room.me?.id === auction.sandbox.owner_id && (
+            <Experiments
+              auction={auction}
+              clock={room.clock}
+              isLeader={room.isLeader}
+              readonly={readonly}
+              onAccepted={accepted}
+              onRejected={reject}
+              onRefresh={room.refresh}
+            />
+          )}
+          <BidHistory
+            auctionId={auction.id}
+            rejected={rejected}
+            bids={room.bids}
+            viewerId={room.me?.id ?? null}
+            extendBySeconds={auction.extend_by_s}
+            onBids={(bids) => {
+              room.apply({ kind: "bids", bids });
+            }}
           />
         </div>
-        <BidHistory
-          auctionId={auction.id}
-          bids={room.bids}
-          viewerId={room.me?.id ?? null}
-          extendBySeconds={auction.extend_by_s}
-          onBids={(bids) => {
-            room.apply({ kind: "bids", bids });
-          }}
-        />
       </div>
     </main>
   );

@@ -69,8 +69,8 @@ export const lobbyCopy = {
   opens: "Opens in {time}",
   closing: "Closing…",
   enter: "Enter the room",
-  leader: "{count} bids · Leader: {name}",
-  leading: "{count} bids · You are leading",
+  leader: "{bids} · Leader: {name}",
+  leading: "{bids} · You are leading",
   error: "Couldn't load the public room. Retrying…",
   winnerNotice: "You won Lot {lot} for {amount}. Pay within {time}.",
   runnerNotice: "Second-chance offer on Lot {lot}: {amount}. Ends in {time}.",
@@ -106,6 +106,11 @@ export const sandboxCopy = {
   error: "Couldn't start a sandbox. Try again.",
   expires: "Your sandbox · expires in {time}",
   bots: ["Cautious bot", "Steady bot", "Sniper bot"],
+  personalities: [
+    "Waits five seconds, bids the minimum, gives up early. Always pays.",
+    "Bids every few seconds, sometimes a step higher. Pays nine times in ten.",
+    "Usually waits until the last 15 seconds, with an occasional opening bid. Pays six times in ten.",
+  ],
   watching: "watching",
   bidding: "bidding",
   out: "out at {amount}",
@@ -127,7 +132,7 @@ export const roomCopy = {
   leading: "You are the highest bidder.",
   bot: "BOT",
   you: "You",
-  meta: "{count} bids · Next minimum {minimum} · Steps of {increment}",
+  meta: "{bids} · Next minimum {minimum} · Steps of {increment}",
   opens: "Opens in {time}",
   closes: "Closes in {time}",
   softClose: "Soft close: a bid now adds time.",
@@ -138,6 +143,11 @@ export const roomCopy = {
   extensionCount: "Extension {n} of {max}",
   bid: "Bid {amount}",
   steps: ["+1 step", "+2 steps", "+5 steps"],
+  customToggle: "Enter a custom amount",
+  rejected: "rejected",
+  rejectedLow:
+    "The price check rejected your bid. The minimum is now {minimum}.",
+  timeHeading: "server time · ms",
   custom: "Your bid",
   minimum: "Minimum {amount}. Keys 1, 2, 3 place quick bids.",
   place: "Place bid",
@@ -182,6 +192,22 @@ export const roomCopy = {
   },
 } as const;
 export const resultCopy = {
+  result: "Result",
+  lot: "Lot",
+  winningBid: "Winning bid",
+  runner: "Runner-up",
+  bids: "Bids",
+  extensions: "Soft-close extensions",
+  extensionValue: "{n} of {max}",
+  lifecycle: "Auction lifecycle",
+  stages: [
+    "Scheduled",
+    "Live",
+    "Closed",
+    "Payment window",
+    "Settled",
+    "Unsold",
+  ],
   noBids: "Closed with no bids. Unsold.",
   won: "You won Lot {lot} for {amount}.",
   payWithin:
@@ -229,9 +255,36 @@ export const howCopy = {
   benchmarkNote:
     "This test runs weekly on GitHub Actions against a production build in Docker Compose. It never runs against this site.",
   allRuns: "All runs",
-  empty: "No benchmark has been run yet.",
+  empty: "Benchmark results will appear here after the first load-test run.",
   statsLine:
     "Bids today: {bids} · Active sandboxes: {sandboxes} · Public lots today: {lots}",
   updated: "Updated {n} s ago.",
   unavailable: "Live stats are unavailable right now.",
+} as const;
+
+export const bidCountCopy = (n: number) =>
+  n === 1 ? "1 bid" : `${String(n)} bids`;
+
+export const experimentCopy = {
+  title: "Try to break it",
+  heading: "Send the requests that break naive auctions.",
+  body: "Each experiment calls the real bid API on this sandbox lot and shows what PostgreSQL decided.",
+  leading: "You're leading. Wait until a bot outbids you.",
+  accepted: "201 accepted · #{n} · {id}",
+  sameId: "Same bid id. No second row.",
+  race: {
+    title: "Race two bids",
+    body: "Two requests for {amount}, sent together",
+    button: "Race",
+  },
+  replay: {
+    title: "Replay a request",
+    body: "Send the same bid twice with one idempotency key",
+    button: "Replay",
+  },
+  late: {
+    title: "Bid after the deadline",
+    body: "Unlocks when the countdown reaches 0:00",
+    button: "Send late",
+  },
 } as const;
