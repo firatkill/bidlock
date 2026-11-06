@@ -55,7 +55,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-35 | Bot scheduler and runner                           | done   | c8794b1                                  |
 | T-36 | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
 | T-37 | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
-| T-38 | Extension banner and public room e2e               | done   | This T-38 commit (CI pending)             |
+| T-38 | Extension banner and public room e2e               | done   | 5a6b82a (CI pending)             |
 | T-39 | App image and full compose                         | todo   | —                                        |
 | T-40 | k6 bid-storm script                                | todo   | —                                        |
 | T-41 | Invariant verification                             | todo   | —                                        |
