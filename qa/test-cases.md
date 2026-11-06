@@ -2432,7 +2432,7 @@ Cases designed from PRD §9, TRD §11/§15 and T-26–T-33 before implementation
 - Automatable: yes
 - Preconditions: Local test environment; own unique auction/bidder data; deterministic fixtures or mocked timers where specified. Restore clock and environment after use.
 - Steps: Exhaust own bidder minute quota with65 rejected bids; click bid; visit missing/scheduled auctions.
-- Expected result: Rate countdown disables controls; exact not-found and scheduled copies.
+- Expected result: Rate countdown disables controls; exact not-found copy; scheduled countdown present, at most 1:00 and within 3 seconds of server remaining time, with disabled controls (D-58).
 
 ## TC-206: Production initial script budget
 

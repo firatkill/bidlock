@@ -1,6 +1,6 @@
 # Progress
 
-Updated: 2026-10-21.
+Updated: 2026-11-06.
 
 ## Repository setup
 
@@ -55,7 +55,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-35 | Bot scheduler and runner                           | done   | c8794b1                                  |
 | T-36 | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
 | T-37 | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
-| T-38 | Extension banner and public room e2e               | todo   | —                                        |
+| T-38 | Extension banner and public room e2e               | done   | This T-38 commit (CI pending)             |
 | T-39 | App image and full compose                         | todo   | —                                        |
 | T-40 | k6 bid-storm script                                | todo   | —                                        |
 | T-41 | Invariant verification                             | todo   | —                                        |
@@ -69,7 +69,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-None. Docker recovered after the owner restart; local database reset and focused settlement E2E pass. M5 verification in progress.
+- TC-236: live winner/runner payments and mobile layout verified; transient Closing… frame was not captured. Manual visual follow-up remains.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -230,3 +230,11 @@ T-37 update (2026-10-23): D-57 approved and recorded; PayButton implements ident
 T-37 verification recovered: local production build, typecheck, guards, 167 unit tests and all 17 E2E tests pass. Winner, runner-up, strike and lobby offer flows verified; PR CI pending. Initial host-load failures retained in the QA ledger.
 
 - T-37 complete: [PR #37](https://github.com/firatkill/bidlock/pull/37), [passing CI](https://github.com/firatkill/bidlock/actions/runs/39929845587), task commit `ac05c7026d8e166368a0cc5778328cd50ffccb9a`.
+
+T-38 in progress: E2E-05 extension and E2E-06 public/benchmark/successor scenarios written. Live settlement review underway; T-37 PR CI passed all six jobs and is merged.
+
+T-38 current gate: focused E2E-05/E2E-06 and 167 unit tests pass; typecheck passes. First full E2E run passed 18/19 (sandbox profile-load timing; focused retest passed unchanged). Second full run passed 8 parallel tests but failed TC-205 because TRD requires 1:00/0:59 despite navigation elapsed time; isolated project did not run. Owner correction approval pending. T-38 not committed or pushed; T-39 not started.
+
+T-38 static/QA checks: lint, typecheck, 167 unit tests and ledger integrity pass. Only the full E2E gate remains blocked on the pending TC-205 specification decision; no task commit or push yet.
+
+T-38 final local verification (2026-11-06): owner-approved D-58 implemented; TC-205 and new lifecycle specs pass, lint/typecheck and 167 unit tests pass, full E2E passes all 19 tests across parallel and isolated projects. QA ledger and M5 report updated. PR CI pending. TC-236 transient Closing frame remains a manual follow-up; T-39 not started.
