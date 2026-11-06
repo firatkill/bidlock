@@ -12,6 +12,7 @@ import { listBids } from "@/server/repo/auctions";
 import { placeBid } from "@/server/repo/bids";
 import { checkBidRate } from "@/server/repo/rate";
 import { getClientIp, ipHash } from "@/server/ip";
+import { measureLoadPhase } from "@/server/loadDiagnostics";
 export const runtime = "nodejs";
 export const GET = route(
   {
@@ -56,12 +57,16 @@ export const POST = route(
       body = ctx.body;
     ctx.fields.auction_id = id;
     const retry = await ctx.db(() =>
-      checkBidRate(bidder, ipHash(getClientIp(ctx.req))),
+      measureLoadPhase("check_bid_rate", () =>
+        checkBidRate(bidder, ipHash(getClientIp(ctx.req))),
+      ),
     );
     if (retry > 0)
       throw new AppError("RATE_LIMITED", { retry_after_ms: retry });
     const result = await ctx.db(() =>
-      placeBid(id, bidder, body.amount, body.idempotency_key),
+      measureLoadPhase("place_bid", () =>
+        placeBid(id, bidder, body.amount, body.idempotency_key),
+      ),
     );
     ctx.fields.replayed = result.replayed;
     if (result.outcome === "rejected")

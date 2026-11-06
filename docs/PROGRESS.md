@@ -70,7 +70,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- T-43: diagnosis authorized (D-82). TRD §15.6.2 timing assumption is false: the earliest twentieth extension is at auction age 73 s and earliest close is 85 s. Approve changing load-only extend_by_s from 12 to 10 (recommended), or revise TC-264 to use separate lifecycle coverage? See qa/T-43-diagnosis.md. Latency attribution needs instrumentation before choosing a pool or application fix.
+- T-43: timing correction and bounded diagnostics approved (D-83/D-84). One diagnostic dispatch and one subsequent fix dispatch authorized; no new owner question currently.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -319,3 +319,9 @@ QA ledger structural/status checks pass; external checker retains its documented
 ## T-43 diagnosis — timing specification checkpoint
 
 D-82 records owner authorization to diagnose without a blind retry. [Diagnosis and proposed options](../qa/T-43-diagnosis.md) establish the soft-close timing contradiction and quantify the available HTTP latency breakdown. App/SQL/pool/CPU attribution is unavailable in the original artifact, not inferred as measured fact. No runtime change, local load, new CI dispatch, fix PR merge or change to bot PR #45. Existing failure evidence preserved; T-43 blocked, T-44 untouched.
+
+## T-43 instrumentation implementation
+
+D-83 corrects the load-only extension to 10 s. D-84 adds opt-in diagnostics and per-run results branches, preserving PR #45. TC-264 updated and TC-276 added. Diagnostic dispatch pending green CI and merge; no runtime rule changes.
+
+Instrumentation local validation: lint/typecheck, 216 unit tests, pgTAP and 49 concurrency/integration tests pass; shell syntax and Compose overlay validate. Existing TC-261 fixture updated to approved extension10; failure/retest retained. TC-276 live evidence awaits the diagnostic dispatch.

@@ -2,6 +2,7 @@ import "server-only";
 import { z } from "zod";
 import { AppError } from "@/domain/errors";
 import { ErrorBody } from "@/domain/schemas";
+import { measureLoadPhase, withLoadDiagnostics } from "./loadDiagnostics";
 import { env } from "./env";
 import { log } from "./log";
 import { readSession } from "./session";
@@ -144,138 +145,148 @@ export function route<P = undefined, Q = undefined, B = undefined>(
   opts: RouteOptions<P, Q, B>,
   handler: (ctx: Ctx<P, Q, B>) => Promise<Response>,
 ) {
-  return async (
-    req: Request,
-    routeCtx: { params: Promise<unknown> } = { params: Promise.resolve({}) },
-  ): Promise<Response> => {
-    const supplied = z.uuid().safeParse(req.headers.get("x-request-id"));
-    const id = supplied.success ? supplied.data : crypto.randomUUID();
-    const start = performance.now();
-    let status = 500;
-    let errorCode: string | undefined;
-    const fields: Ctx<P, Q, B>["fields"] = {};
-    try {
-      if (opts.testOnly) {
-        const hidden = assertTestEnv(req, id);
-        if (hidden) {
-          status = 404;
-          errorCode = "NOT_FOUND";
-          return hidden;
-        }
-      }
-      if (opts.name !== "health" && env().DEMO_MODE === "off")
-        throw new AppError("DEMO_OFF");
-      if (opts.mutating && env().DEMO_MODE === "readonly")
-        throw new AppError("DEMO_READONLY");
-      if (opts.mutating && !opts.testOnly) {
-        const origin = req.headers.get("origin");
-        if (origin === null || !env().APP_ORIGIN.includes(origin))
-          throw new AppError("FORBIDDEN_ORIGIN");
-        if (
-          (req.body !== null || opts.body !== undefined) &&
-          req.headers
-            .get("content-type")
-            ?.split(";", 1)[0]
-            ?.trim()
-            .toLowerCase() !== "application/json"
-        )
-          throw new ValidationStatus(415);
-      }
-      const params = opts.params
-        ? parseInput(opts.params, await routeCtx.params)
-        : undefined;
-      const query = opts.query
-        ? parseInput(
-            opts.query,
-            Object.fromEntries(new URL(req.url).searchParams),
-          )
-        : undefined;
-      const body = opts.body
-        ? parseInput(opts.body, await readJson(req))
-        : undefined;
-      const authorization = req.headers.get("authorization");
-      const botToken =
-        opts.auth === "session-or-bot" && authorization?.startsWith("Bot ")
-          ? authorization.slice(4)
-          : null;
-      let bidderId: string | null = null;
-      let isBot = false;
-      if (opts.auth !== "none") {
-        const session = readSession(req);
-        if (session && (await getMe(session.bidderId)))
-          bidderId = session.bidderId;
-        if (botToken !== null) {
-          const scoped = z.object({ id: z.uuid() }).strict().safeParse(params);
-          const claims = scoped.success
-            ? verifyBotToken(botToken, scoped.data.id, bidderId)
-            : null;
-          if (!claims) throw new AppError("BOT_TOKEN_INVALID");
-          bidderId = claims.sub;
-          isBot = true;
-        }
-        if (
-          bidderId === null &&
-          (opts.auth === "session" || opts.auth === "session-or-bot")
-        )
-          throw new AppError("NO_SESSION");
-      }
-      if (bidderId !== null) {
-        fields.bidder_id = bidderId;
-        fields.is_bot = isBot;
-      }
-      const response = await handler({
-        req,
-        requestId: id,
-        params,
-        query,
-        body,
-        bidderId,
-        isBot,
-        fields,
-        db: async <T>(call: () => Promise<T>) => {
-          const at = performance.now();
-          try {
-            return await call();
-          } finally {
-            fields.db_ms = (fields.db_ms ?? 0) + performance.now() - at;
+  return withLoadDiagnostics(
+    opts.name,
+    async (
+      req: Request,
+      routeCtx: { params: Promise<unknown> } = { params: Promise.resolve({}) },
+    ): Promise<Response> => {
+      const supplied = z.uuid().safeParse(req.headers.get("x-request-id"));
+      const id = supplied.success ? supplied.data : crypto.randomUUID();
+      const start = performance.now();
+      let status = 500;
+      let errorCode: string | undefined;
+      const fields: Ctx<P, Q, B>["fields"] = {};
+      try {
+        if (opts.testOnly) {
+          const hidden = assertTestEnv(req, id);
+          if (hidden) {
+            status = 404;
+            errorCode = "NOT_FOUND";
+            return hidden;
           }
-        },
-      });
-      status = response.status;
-      return headersFor(response, id);
-    } catch (error: unknown) {
-      let mapped: AppError;
-      if (error instanceof AppError) mapped = error;
-      else {
-        mapped = new AppError("INTERNAL");
-        const sqlstate =
-          typeof error === "object" &&
-          error !== null &&
-          "code" in error &&
-          typeof error.code === "string"
-            ? error.code
-            : undefined;
-        log.error("request_error", {
+        }
+        if (opts.name !== "health" && env().DEMO_MODE === "off")
+          throw new AppError("DEMO_OFF");
+        if (opts.mutating && env().DEMO_MODE === "readonly")
+          throw new AppError("DEMO_READONLY");
+        if (opts.mutating && !opts.testOnly) {
+          const origin = req.headers.get("origin");
+          if (origin === null || !env().APP_ORIGIN.includes(origin))
+            throw new AppError("FORBIDDEN_ORIGIN");
+          if (
+            (req.body !== null || opts.body !== undefined) &&
+            req.headers
+              .get("content-type")
+              ?.split(";", 1)[0]
+              ?.trim()
+              .toLowerCase() !== "application/json"
+          )
+            throw new ValidationStatus(415);
+        }
+        const params = opts.params
+          ? parseInput(opts.params, await routeCtx.params)
+          : undefined;
+        const query = opts.query
+          ? parseInput(
+              opts.query,
+              Object.fromEntries(new URL(req.url).searchParams),
+            )
+          : undefined;
+        const body = opts.body
+          ? parseInput(opts.body, await readJson(req))
+          : undefined;
+        const authorization = req.headers.get("authorization");
+        const botToken =
+          opts.auth === "session-or-bot" && authorization?.startsWith("Bot ")
+            ? authorization.slice(4)
+            : null;
+        let bidderId: string | null = null;
+        let isBot = false;
+        if (opts.auth !== "none") {
+          const session = readSession(req);
+          if (
+            session &&
+            (await measureLoadPhase("getMe", () => getMe(session.bidderId)))
+          )
+            bidderId = session.bidderId;
+          if (botToken !== null) {
+            const scoped = z
+              .object({ id: z.uuid() })
+              .strict()
+              .safeParse(params);
+            const claims = scoped.success
+              ? verifyBotToken(botToken, scoped.data.id, bidderId)
+              : null;
+            if (!claims) throw new AppError("BOT_TOKEN_INVALID");
+            bidderId = claims.sub;
+            isBot = true;
+          }
+          if (
+            bidderId === null &&
+            (opts.auth === "session" || opts.auth === "session-or-bot")
+          )
+            throw new AppError("NO_SESSION");
+        }
+        if (bidderId !== null) {
+          fields.bidder_id = bidderId;
+          fields.is_bot = isBot;
+        }
+        const response = await handler({
+          req,
+          requestId: id,
+          params,
+          query,
+          body,
+          bidderId,
+          isBot,
+          fields,
+          db: async <T>(call: () => Promise<T>) => {
+            const at = performance.now();
+            try {
+              return await call();
+            } finally {
+              fields.db_ms = (fields.db_ms ?? 0) + performance.now() - at;
+            }
+          },
+        });
+        status = response.status;
+        return headersFor(response, id);
+      } catch (error: unknown) {
+        let mapped: AppError;
+        if (error instanceof AppError) mapped = error;
+        else {
+          mapped = new AppError("INTERNAL");
+          const sqlstate =
+            typeof error === "object" &&
+            error !== null &&
+            "code" in error &&
+            typeof error.code === "string"
+              ? error.code
+              : undefined;
+          log.error("request_error", {
+            request_id: id,
+            err_name: error instanceof Error ? error.name : "Unknown",
+            err_message:
+              error instanceof Error ? error.message : "Unknown error",
+            stack: error instanceof Error ? error.stack : undefined,
+            sqlstate,
+          });
+        }
+        status = mapped.status;
+        errorCode = mapped.code;
+        return headersFor(errorResponse(mapped, id), id);
+      } finally {
+        log.info("request", {
           request_id: id,
-          err_name: error instanceof Error ? error.name : "Unknown",
-          err_message: error instanceof Error ? error.message : "Unknown error",
-          stack: error instanceof Error ? error.stack : undefined,
-          sqlstate,
+          route: opts.name,
+          method: req.method,
+          status,
+          duration_ms: performance.now() - start,
+          ...fields,
+          ...(errorCode ? { error_code: errorCode } : {}),
         });
       }
-      status = mapped.status;
-      errorCode = mapped.code;
-      return headersFor(errorResponse(mapped, id), id);
-    } finally {
-      log.info("request", {
-        request_id: id,
-        route: opts.name,
-        method: req.method,
-        status,
-        duration_ms: performance.now() - start,
-        ...fields,
-        ...(errorCode ? { error_code: errorCode } : {}),
-      });
-    }
-  };
+    },
+  );
 }

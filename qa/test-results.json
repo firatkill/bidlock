@@ -17572,6 +17572,16 @@
           "result": "pass",
           "actual_result": "Final regression: all 212 unit tests, 49 integration tests and 363 pgTAP assertions pass.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Existing workload test expected extend_by_s=12 after approved D-83 changed it to 10.",
+          "note": "Update stale fixture against the approved specification; no behavioral assertion removed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused workload/instrumentation tests pass with approved 10-second load-only extension.",
+          "note": "D-83; production defaults unchanged."
         }
       ],
       "regression_of": null,
@@ -17888,6 +17898,25 @@
           "result": "pass",
           "actual_result": "A-09 verified: bot PR #45 contains only bench/results/2026-11-06.json, bench/results/latest.json and bench/SUMMARY.md. FullBenchResult parses; all 16 invariant checks zero; failed k6 thresholds preserved as thresholds.passed=false and workflow failure. Bot PR remains unmerged.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-276",
+      "ac_reference": "NFR-31; D-84",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Load-only diagnostics preserve isolation and sensitive data",
+      "status": "open",
+      "environment": "macOS / Node 24 / t-43-load-diagnostics",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Default-off, non-test rejection and allowlisted phase output on failure pass. Lint/typecheck pass; 216 unit tests, pgTAP and 49 concurrency/integration tests pass. Shell syntax and Compose overlay validated.",
+          "note": "Live diagnostic artifact verification pending CI dispatch. Initial test-only lint issues corrected."
         }
       ],
       "regression_of": null,
