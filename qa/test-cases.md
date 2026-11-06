@@ -3177,8 +3177,8 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Priority: High
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
-- Steps: Inspect run state/history after default 45s auction with 12s extensions and cap20.
-- Expected result: Contended run reaches cap, closes logically, post-deadline requests receive AUCTION_CLOSED; observed-closed VUs idle.
+- Steps: Inspect run state/history after default 45s auction with 10s window/10s extensions and cap20 (D-83).
+- Expected result: Measured run reaches exactly 20 extensions, closes logically and records AUCTION_CLOSED responses before workload completion; observed-closed VUs idle. No fixed closing time is promised: it depends on accepted bid arrivals.
 
 ## TC-265: Verifier checks every invariant and persists results
 
@@ -3317,3 +3317,15 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 TC-260–TC-264 are specified above from LOAD-01. `tests/unit/bid-storm.test.ts` executes the workload with an in-memory k6 adapter (no network), covering defaults/overrides, fresh jars and setup ordering, summary serialization, expected rejections, replay exclusions and mismatch detection, exact thresholds, and closed-VU idling. `tests/unit/load-guards.test.ts` exercises the actual guard command against local and forbidden-domain fixtures for both rule-5 paths. The TC-263 percentile notation above matches the strict `<` thresholds in TRD §15.6.2.
 
 The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies module imports in pinned k6 and the real summary's setup_data.auctionId. TC-263 full-size CI performance and TC-264 live cap exhaustion/post-deadline coverage remain scheduled for T-43; the short run need not exhaust all 20 extensions. Unit checks of these contracts do not establish full-size performance or live close behavior.
+
+## TC-276: Load-only diagnostics preserve isolation and sensitive data
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: NFR-31; D-84
+- TRD test reference: §15.6.2; §16.2; LOAD-01
+- Priority: High
+- Automatable: yes
+- Preconditions: Diagnostic overlay enabled only in isolated load CI; normal app defaults unchanged.
+- Steps: Test default-off and non-test rejection, phase timing after failures and output allowlist. Inspect diagnostic run artifact for per-request phases, event-loop aggregates, database waits/blockers and CPU/throttling. Inspect parameter suppression and run-specific PR branch.
+- Expected result: Only test-mode opt-in emits numeric diagnostic measurements; no SQL values, request data or secrets. Pending phase counts are not claimed as native queue length. Samplers are bounded; previous bot PRs unchanged; diagnostic result never merged.

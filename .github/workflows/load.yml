@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  COMPOSE: docker compose -f docker/compose.yml
+  COMPOSE: docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml
   DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:54329/bidlock_load
 
 jobs:
@@ -53,7 +53,15 @@ jobs:
           VUS: ${{ inputs.vus || '500' }}
           DURATION: ${{ inputs.duration || '60s' }}
         # The k6 service's command (compose) is "run /load/bid-storm.js"; the image entrypoint is k6.
-        run: $COMPOSE --profile load run --rm --no-deps k6
+        run: |
+          timeout 180s bash scripts/bench/sample-load.sh > bench/out/pg-activity.jsonl 2>bench/out/pg-sampler-errors.log &
+          pg_sampler=$!
+          timeout 180s docker stats --format '{{json .}}' > bench/out/docker-stats.jsonl 2>bench/out/stats-errors.log &
+          stats_sampler=$!
+          timeout 180s bash scripts/bench/sample-cpu.sh > bench/out/cpu-throttling.log 2>bench/out/cpu-errors.log &
+          cpu_sampler=$!
+          trap 'kill "$pg_sampler" "$stats_sampler" "$cpu_sampler" 2>/dev/null || true; wait || true' EXIT
+          $COMPOSE --profile load run --rm --no-deps k6
       - name: Verify invariants
         id: verify
         run: pnpm bench:verify
@@ -75,7 +83,7 @@ jobs:
         if: steps.verify.outcome == 'success'
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: bench/results
+          branch: bench/results-${{ github.run_id }}
           delete-branch: true
           commit-message: "bench: load test results ${{ github.run_id }}"
           title: "bench: load test results"

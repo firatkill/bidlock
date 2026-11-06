@@ -12,7 +12,7 @@ const AUCTION_S = Number(__ENV.AUCTION_S || 45);
 const AUCTION = {
   duration_s: AUCTION_S,
   snipe_window_s: 10,
-  extend_by_s: 12,
+  extend_by_s: 10,
   max_extensions: 20,
 };
 const ORIGIN = __ENV.APP_ORIGIN || BASE;

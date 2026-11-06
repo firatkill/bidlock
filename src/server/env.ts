@@ -43,6 +43,7 @@ const schema = z
       .transform((value) => value.split(",").map((item) => item.trim()))
       .pipe(z.array(origin).min(1)),
     TRUST_PROXY: z.enum(["none", "vercel"]),
+    LOAD_DIAGNOSTICS: z.enum(["off", "on"]).default("off"),
     LOG_LEVEL: z.enum(["debug", "info", "warn", "error"]).default("info"),
     TEST_API_SECRET: z.string().min(8).optional(),
     BOT_SEED_OVERRIDE: z.coerce.number().int().optional(),
@@ -51,6 +52,12 @@ const schema = z
   })
   .strict()
   .superRefine((value, ctx) => {
+    if (value.LOAD_DIAGNOSTICS === "on" && value.APP_ENV !== "test")
+      ctx.addIssue({
+        code: "custom",
+        path: ["LOAD_DIAGNOSTICS"],
+        message: "Load diagnostics require test mode",
+      });
     if (value.APP_ENV === "production") {
       for (const key of ["TEST_API_SECRET", "BOT_SEED_OVERRIDE"] as const) {
         if (value[key] !== undefined)

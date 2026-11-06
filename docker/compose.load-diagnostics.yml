@@ -1,0 +1,24 @@
+# Opt-in overlay for the isolated load workflow only; normal compose is unchanged.
+services:
+  db:
+    command:
+      - postgres
+      - -c
+      - max_connections=200
+      - -c
+      - shared_buffers=256MB
+      - -c
+      - log_min_duration_statement=10
+      - -c
+      - log_lock_waits=on
+      - -c
+      - deadlock_timeout=20ms
+      - -c
+      - log_parameter_max_length=0
+      - -c
+      - log_parameter_max_length_on_error=0
+      - -c
+      - log_statement=none
+  app:
+    environment:
+      LOAD_DIAGNOSTICS: "on"

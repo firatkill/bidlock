@@ -2777,7 +2777,7 @@ const AUCTION_S = Number(__ENV.AUCTION_S || 45);
 const AUCTION = {
   duration_s: AUCTION_S,
   snipe_window_s: 10,
-  extend_by_s: 12,
+  extend_by_s: 10,
   max_extensions: 20,
 };
 const ORIGIN = __ENV.APP_ORIGIN || BASE;
@@ -2968,7 +2968,9 @@ export function handleSummary(data) {
 }
 ```
 
-Timing with the defaults (`AUCTION_S = 45`, `snipe_window_s: 10`, `extend_by_s: 12`, `max_extensions: 20`), measured from the end of `setup()`: the soft-close window opens at ~35 s. Every accepted bid inside the window moves `ends_at` to `now + 12 s` (FR-07: with `extend_by_s ≥ snipe_window_s` each window bid extends), so at hundreds of bids per second the 20 extensions are used within the first second of the window; the auction then closes at ~35 s + 12 s ≈ 47 s, and the remaining ~13 s exercise lazy close under load and post-close `AUCTION_CLOSED` rejections. VUs that saw `AUCTION_CLOSED` idle, so latency samples come from the live phase plus the first post-close requests. The auction id reaches the verifier through `handleSummary`: the k6 summary JSON contains `setup_data.auctionId`, written to `/out/k6-summary.json` (= `bench/out/k6-summary.json` on the host).
+Timing with the defaults (`AUCTION_S = 45`, `snipe_window_s: 10`, `extend_by_s: 10`, `max_extensions: 20`), measured from auction creation: the soft-close window first opens at 35 s. D-83 sets the load-only extension to equal the window: after an accepted window bid at t sets `ends_at = t + 10 s`, the next window begins at t, so subsequent accepted bids can extend without a mandatory two-second gap. When the twentieth extension occurs at t20, no later bid extends and the deadline is t20 + 10 s. Actual cap/close times depend on accepted bid arrivals; do not promise a fixed close time. The 60-second workload must demonstrate 20 extensions and post-close `AUCTION_CLOSED` responses (TC-264); observed-closed VUs idle. Production extension defaults remain 30 s. The summary carries `setup_data.auctionId` for verification. The prior 12 s configuration required at least 2 s between extensions and could not reach the cap and close within the default run.
+
+D-84: the load workflow opts into `docker/compose.load-diagnostics.yml` only. App `LOAD_DIAGNOSTICS=on` is allowed only in test mode, defaults off elsewhere, and emits numeric per-bid total/getMe/check_bid_rate/place_bid wall times, aggregate event-loop delay/utilization/CPU and per-phase pending calls. Phase times include postgres.js waiting, execution, round trips and result parsing; pending calls are not a native pool queue metric (no stable public queue API). PostgreSQL statement/lock logs suppress parameter values; samplers emit operation labels, wait events and blocker PIDs, never query text. Bounded runner samplers collect activity, Docker CPU and cgroup throttling in bench/out. Each result PR uses `bench/results-${run_id}` so previous unmerged results remain unchanged. The extra diagnostic dispatch is never published; one subsequent fix dispatch is authorized.
 
 #### 15.6.3 Verification (`scripts/bench/verify.ts` + `db/verify/invariants.sql`)
 
@@ -3059,7 +3061,7 @@ Result schema (version 1), validated with Zod `BenchResult` in `src/domain/schem
   "commit": "abc1234",
   "runner": { "os": "Linux", "cpus": 4, "cpu_model": "AMD EPYC 7763 64-Core Processor", "memory_gb": 16 },
   "config": { "vus": 500, "duration_s": 60, "db_pool_max": 20, "postgres": "17.x",
-              "auction": { "duration_s": 45, "snipe_window_s": 10, "extend_by_s": 12, "max_extensions": 20 } },
+              "auction": { "duration_s": 45, "snipe_window_s": 10, "extend_by_s": 10, "max_extensions": 20 } },
   "requests": { "bids": 41230, "replays": 2010, "rps": 680.5 },
   "outcomes": { "accepted": 3120, "BID_TOO_LOW": 31002, "ALREADY_LEADING": 2400, "AUCTION_CLOSED": 4700, "RATE_LIMITED": 8, "OTHER": 0 },
   "unexpected_error_rate": 0,
@@ -3293,7 +3295,7 @@ on:
         description: k6 duration
         default: "60s"
   schedule:
-    - cron: "0 4 * * 1"          # Mondays 04:00 UTC
+    - cron: "0 4 * * 1" # Mondays 04:00 UTC
 
 permissions:
   contents: write
@@ -3304,7 +3306,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  COMPOSE: docker compose -f docker/compose.yml
+  COMPOSE: docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml
   DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:54329/bidlock_load
 
 jobs:
@@ -3319,7 +3321,7 @@ jobs:
           node-version: "24"
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: mkdir -p bench/out && chmod 777 bench/out     # grafana/k6 runs as a non-root user
+      - run: mkdir -p bench/out && chmod 777 bench/out # grafana/k6 runs as a non-root user
       - name: Build images
         run: $COMPOSE build db migrate app
       - name: Start database, migrate, start app
@@ -3336,7 +3338,15 @@ jobs:
           VUS: ${{ inputs.vus || '500' }}
           DURATION: ${{ inputs.duration || '60s' }}
         # The k6 service's command (compose) is "run /load/bid-storm.js"; the image entrypoint is k6.
-        run: $COMPOSE --profile load run --rm --no-deps k6
+        run: |
+          timeout 180s bash scripts/bench/sample-load.sh > bench/out/pg-activity.jsonl 2>bench/out/pg-sampler-errors.log &
+          pg_sampler=$!
+          timeout 180s docker stats --format '{{json .}}' > bench/out/docker-stats.jsonl 2>bench/out/stats-errors.log &
+          stats_sampler=$!
+          timeout 180s bash scripts/bench/sample-cpu.sh > bench/out/cpu-throttling.log 2>bench/out/cpu-errors.log &
+          cpu_sampler=$!
+          trap 'kill "$pg_sampler" "$stats_sampler" "$cpu_sampler" 2>/dev/null || true; wait || true' EXIT
+          $COMPOSE --profile load run --rm --no-deps k6
       - name: Verify invariants
         id: verify
         run: pnpm bench:verify
@@ -3358,7 +3368,7 @@ jobs:
         if: steps.verify.outcome == 'success'
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: bench/results
+          branch: bench/results-${{ github.run_id }}
           delete-branch: true
           commit-message: "bench: load test results ${{ github.run_id }}"
           title: "bench: load test results"
