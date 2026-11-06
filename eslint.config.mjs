@@ -105,6 +105,11 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ["load/bid-storm.js"],
+    // k6's default function follows the executable reference in TRD §15.6.2.
+    rules: { "import/no-anonymous-default-export": "off" },
+  },
   globalIgnores([
     ".next/**",
     "coverage/**",

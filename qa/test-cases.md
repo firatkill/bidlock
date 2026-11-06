@@ -3034,7 +3034,7 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 
 # M6 — Load test, CI and benchmark page
 
-Designed before T-39 implementation. T-40–T-44 cases are planned only, not executed in T-39.
+Designed before T-39 implementation. T-41–T-44 cases are planned only, not executed in T-39.
 
 | TC     | Task | Requirement              | Priority | Automatable | Expected                                                     |
 | ------ | ---- | ------------------------ | -------- | ----------- | ------------------------------------------------------------ |
@@ -3166,7 +3166,7 @@ Designed before T-39 implementation. T-40–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Run full CI workload; inspect bid_latency percentiles and unexpected_errors thresholds.
-- Expected result: p95 <=250ms, p99 <=600ms, unexpected errors <1%; threshold failure gives failing workload outcome; actual measurements only.
+- Expected result: p95 <250ms, p99 <600ms, unexpected errors <1%; threshold failure gives failing workload outcome; actual measurements only.
 
 ## TC-264: Soft close cap and post-deadline exercise
 
@@ -3311,3 +3311,9 @@ Designed before T-39 implementation. T-40–T-44 cases are planned only, not exe
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Inspect mobile/desktop light/dark, keyboard navigation, diagram alternative text and axe.
 - Expected result: No serious/critical axe findings; usable rules/tables/links at mobile widths; visual reference and token rules followed.
+
+### T-40 automation and execution scope
+
+TC-260–TC-264 are specified above from LOAD-01. `tests/unit/bid-storm.test.ts` executes the workload with an in-memory k6 adapter (no network), covering defaults/overrides, fresh jars and setup ordering, summary serialization, expected rejections, replay exclusions and mismatch detection, exact thresholds, and closed-VU idling. `tests/unit/load-guards.test.ts` exercises the actual guard command against local and forbidden-domain fixtures for both rule-5 paths. The TC-263 percentile notation above matches the strict `<` thresholds in TRD §15.6.2.
+
+The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies module imports in pinned k6 and the real summary's setup_data.auctionId. TC-263 full-size CI performance and TC-264 live cap exhaustion/post-deadline coverage remain scheduled for T-43; the short run need not exhaust all 20 extensions. Unit checks of these contracts do not establish full-size performance or live close behavior.

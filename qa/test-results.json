@@ -17365,6 +17365,111 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-260",
+      "ac_reference": "FR-93; NFR-31",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "k6 defaults, overrides and local target guards",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "50 VUs / 15s / 8s honored. Rule 5 positive and negative command tests pass for both load files; workload adapter verifies default 500 VUs/60s. No production traffic.",
+          "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-261",
+      "ac_reference": "FR-93",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Independent bidders and setup summary",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "New adapter test used deep equality to distinguish two empty cookie jar objects, so the assertion failed despite distinct instances.",
+          "note": "Test assertion error; changed to object identity per fresh-jar requirement, no workload change."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Pinned k6 1.8.2 loaded k6-utils 1.4.0 and k6-summary 0.1.0 remotely. Summary has setup_data.auctionId and 50 distinct cookies; fresh jar identity and auction-after-bidders ordering pass. No vendoring needed.",
+          "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "description": "Verify independent sessions, setup order and real summary contract.",
+      "steps_to_reproduce": [
+        "Run pnpm exec vitest run tests/unit/bid-storm.test.ts."
+      ],
+      "expected_result": "Cookie jars have distinct identity and summary retains auction ID."
+    },
+    {
+      "tc_reference": "TC-262",
+      "ac_reference": "FR-93; NFR-11",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Replay and outcome classification under load",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "1135 bids, 67 accepted responses, 1064 BID_TOO_LOW, 4 ALREADY_LEADING; zero replay mismatch and unexpected errors. Adapter tests cover four expected rejections, exclusions for RATE_LIMITED/status0/5xx, replay body reuse and changed-outcome detection.",
+          "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-263",
+      "ac_reference": "FR-93; NFR-10; NFR-11",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Latency and error thresholds",
+      "status": "open",
+      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Small local acceptance passed all k6 thresholds: p95 21.305579399999868ms, p99 207.83524699999998ms; unexpected_errors rate0, replay_mismatch count0. Adapter verifies exact thresholds. Full-size CI performance remains planned for T-43 (D-43/D-76).",
+          "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-264",
+      "ac_reference": "FR-93; FR-07; NFR-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Soft close cap and post-deadline exercise",
+      "status": "open",
+      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Adapter verifies auction window10/extension12/cap20 and closed-VU idle behavior. Short local run did not reach AUCTION_CLOSED; full-size live cap/post-deadline exercise remains planned for T-43. No claim of completed live close validation.",
+          "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

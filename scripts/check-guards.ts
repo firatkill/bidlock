@@ -23,5 +23,25 @@ for (const path of await files("src/app/api/test"))
       );
     }
   }
+// TRD §13.8 rule 5: missing future load workflow is allowed until T-43.
+for (const path of [".github/workflows/load.yml", "load/bid-storm.js"]) {
+  let source: string;
+  try {
+    source = await readFile(path, "utf8");
+  } catch (error) {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT")
+      continue;
+    throw error;
+  }
+  if (source.includes("firatkil.com")) {
+    failed = true;
+    process.stderr.write(
+      `${path}: production domain forbidden in load targets\n`,
+    );
+  }
+}
 if (failed) process.exitCode = 1;
-else process.stdout.write("check:guards: test-only handlers guarded\n");
+else
+  process.stdout.write(
+    "check:guards: test-only handlers guarded; load targets checked\n",
+  );
