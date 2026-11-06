@@ -744,3 +744,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-76 | T-40 permits the local acceptance run with VUS=50, DURATION=15s, AUCTION_S=8 and BENCH_MIN_BIDS=10; temporarily stop Rehearse, restore and verify its health afterward; preserve shared pgdata. | owner task prompt, 2026-11-07 | Narrow exception to D-43 for local acceptance. Measurements remain local QA evidence, not published benchmark claims. Full CI workload remains for T-43. |
 
 | D-77 | T-41 permits the same small local load acceptance as D-76, plus reversible bid_count corruption only in bidlock_load. Restore Rehearse and verify health afterward. | owner task prompt, 2026-11-07 | Extends the narrow local acceptance exception through invariant verification; no published benchmark claims. |
+
+| D-78 | Rehearse restoration is outside T-41 acceptance. Leave Rehearse stopped and port 3000 free for the remaining M6 local load runs; the owner will restore Rehearse afterward. Do not modify its repository or start its container. | owner loop decision, 2026-11-07 | Supersedes the Rehearse restoration condition in D-77; no Bidlock blocker remains. |
