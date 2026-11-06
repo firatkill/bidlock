@@ -56,7 +56,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-36  | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
 | T-37  | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
 | T-38  | Extension banner and public room e2e               | done   | 5a6b82a                                  |
-| T-38a | Catalogue & Ledger design pass (D-59–D-69)         | doing  | —                                        |
+| T-38a | Catalogue & Ledger design pass (D-59–D-69)         | doing  | `1054da8` (PR #39; owner review pending) |
 | T-39  | App image and full compose                         | todo   | —                                        |
 | T-40  | k6 bid-storm script                                | todo   | —                                        |
 | T-41  | Invariant verification                             | todo   | —                                        |
@@ -246,4 +246,4 @@ T-38 complete: [PR #38](https://github.com/firatkill/bidlock/pull/38), [all six 
 
 ## T-38a review delivery
 
-D-59–D-69 recorded; TC-237–TC-248 added. Catalogue room/lobby, mobile controls, experiments, rejected ledger and receipt/lifecycle implemented. Local lint/typecheck, 176 unit tests, database suite and 49 concurrency/integration tests pass. Full E2E: 27/28 passed; legacy TC-202 updated to distinguish accepted bids from approved own rejected requests, then passed focused retest. Focused design/lifecycle run passed 22 tests. CI pending. [Review and deliberate departures](../qa/T-38a-review.md). Owner browser review is required before merge; T-39 has not started.
+D-59–D-69 recorded; TC-237–TC-248 added. Catalogue room/lobby, mobile controls, experiments, rejected ledger and receipt/lifecycle implemented. Local lint/typecheck, 176 unit tests, database suite and 49 concurrency/integration tests pass. Full E2E: 27/28 passed; legacy TC-202 updated to distinguish accepted bids from approved own rejected requests, then passed focused retest. Focused design/lifecycle run passed 22 tests. [PR #39](https://github.com/firatkill/bidlock/pull/39) is open; CI and owner review pending. [Review and deliberate departures](../qa/T-38a-review.md). Owner browser review is required before merge; T-39 has not started.
