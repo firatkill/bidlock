@@ -3106,7 +3106,7 @@ Designed before T-39 implementation. T-40–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Check context excludes dependencies/build output/logs/Git/env/local prompts; build tools image and inspect included paths.
-- Expected result: Excluded data absent; bench/results/latest.json remains in tools and standalone runtime image; no local env credentials copied.
+- Expected result: Excluded data absent; bench/results/latest.json remains in tools and standalone runtime image; no local env credentials copied; D-75 build-only placeholder secrets absent from standalone output and runner environment.
 
 ## TC-259: Small load launcher reaches expected missing-script boundary
 

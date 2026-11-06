@@ -253,3 +253,9 @@ T-38a round-2 review: R1 actual race winner/loser template and R2 ledger mount b
 ## M6 start
 
 T-38a merged as `3783234` (PR #39) after owner review. T-39 starts on `t-39-app-image`. M6 cases are designed before implementation; only T-39 cases are automated now. Owner approved temporarily stopping `rehearse-test-rehearse-1` to free port 3000; restore it after acceptance. Preserve the shared pgdata volume and existing development database.
+
+T-39 interim verification: exact Node/k6 tags verified and k6 image pulled; tools image builds and resets only bidlock_load, preserving dev/test schema OIDs. Build-context tools checks pass. Lint/typecheck, 182 units, 363 pgTAP assertions and 49 integration tests pass. Runner build blocked on the missing build-env specification decision, so app health/non-root and launcher smoke are not yet verified. No T-40 code added.
+
+T-39 build correction approved as D-75 (2026-11-07): command-scoped non-secret test/on placeholders, matching Compose runtime and CI E2E. Retest includes runner filesystem/config checks for placeholder leakage.
+
+T-39 local acceptance complete: D-75 test/on build-only placeholders unblock standalone build; runner grep/config checks contain none of the placeholder secrets. Healthy non-root app (uid1001); dev/test schemas preserved. Small launcher smoke passed through health and failed only at missing T-40 script, as expected. App removed, Rehearse restored, pgdata retained. Final regression checks and PR CI gates recorded in qa/T-39-report.md.

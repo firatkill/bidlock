@@ -26,5 +26,60 @@ services:
       interval: 2s
       timeout: 3s
       retries: 30
+  migrate:
+    build:
+      context: ..
+      target: tools
+    environment:
+      DATABASE_URL_ADMIN: postgres://postgres:postgres@db:5432/bidlock_load
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  app:
+    build:
+      context: ..
+      target: runner
+      args:
+        NEXT_PUBLIC_FEED: polling
+        NEXT_PUBLIC_POLL_INTERVAL_MS: "1000"
+    environment:
+      APP_ENV: test
+      DEMO_MODE: "on"
+      DATABASE_URL: postgres://bidlock_app:bidlock_app@db:5432/bidlock_load
+      DB_POOL_MAX: "20"
+      APP_ORIGIN: http://app:3000
+      TRUST_PROXY: none
+      SESSION_SECRET: load-session-secret-0123456789abcdef0123
+      BOT_TOKEN_SECRET: load-bot-secret-0123456789abcdef01234567
+      IP_HASH_SALT: load-ip-salt-0123456789
+      TEST_API_SECRET: load-test-secret
+      LOG_LEVEL: warn
+    ports: ["3000:3000"]
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  k6:
+    image: grafana/k6:1.8.2
+    profiles: ["load"]
+    command: ["run", "/load/bid-storm.js"] # entrypoint of the image is "k6"
+    environment:
+      BASE_URL: http://app:3000
+      APP_ORIGIN: http://app:3000
+      TEST_API_SECRET: load-test-secret
+      VUS: ${VUS:-500}
+      DURATION: ${DURATION:-60s}
+      AUCTION_S: ${AUCTION_S:-45}
+    volumes:
+      - ../load:/load:ro
+      - ../bench/out:/out
+    depends_on:
+      app:
+        condition: service_healthy
+
 volumes:
   pgdata:

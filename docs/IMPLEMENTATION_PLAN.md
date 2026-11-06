@@ -364,7 +364,7 @@ Conventions for every task:
 
 - Goal: production build in Docker with `migrate`, `app`, `k6` services.
 - Files: `Dockerfile` (TRD §17.1), `docker/compose.yml` (full), `.dockerignore` (`node_modules`, `.next`, `bench/out`, `playwright-report`, `test-results`, `.git`, `.env*`), `scripts/bench/load-local.sh` (TRD §4.1; the k6 step may fail until T-40).
-- Acceptance: `C="docker compose -f docker/compose.yml"; $C build db migrate app && $C up -d db --wait && $C run --rm migrate && $C up -d --no-deps app && for i in $(seq 1 60); do curl -fsS localhost:3000/api/health && break; sleep 2; done` prints a body containing `"db":"ok"`; then `$C down -v`. (No `up --wait` on `app`: the one-shot `migrate` dependency makes `--wait` unreliable.)
+- Acceptance: `C="docker compose -f docker/compose.yml"; $C build db migrate app && $C up -d db --wait && $C run --rm migrate && $C up -d --no-deps app && for i in $(seq 1 60); do curl -fsS localhost:3000/api/health && break; sleep 2; done` prints a body containing `"db":"ok"`; then `$C stop app && $C rm -f app` (owner-approved D-74; preserve shared pgdata). (No `up --wait` on `app`: the one-shot `migrate` dependency makes `--wait` unreliable.)
 - Depends on: T-38. Covers: FR-93 (environment).
 
 ### T-40 k6 bid-storm script
