@@ -56,12 +56,23 @@ export function PublicRoomCard({
           <h2 className="mt-2 text-2xl font-medium">{auction.title}</h2>
         </div>
       </div>
-      <div>
-        <p className="text-sm text-ink-2">
-          {auction.current_price === null ? copy.starting : copy.current}
-        </p>
-        <p className="price mt-1">
-          {formatCents(auction.current_price ?? auction.starting_price)}
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="text-sm text-ink-2">
+            {auction.current_price === null ? copy.starting : copy.current}
+          </p>
+          <p className="price mt-1">
+            {formatCents(auction.current_price ?? auction.starting_price)}
+          </p>
+        </div>
+        <p
+          className={`font-mono ${!scheduled && left <= 60000 ? "text-warn" : ""}`}
+        >
+          {left === 0 && !scheduled
+            ? copy.closing
+            : fillCopy(scheduled ? copy.opens : copy.closes, {
+                time: formatCountdown(left),
+              })}
         </p>
       </div>
       <p className="text-sm text-ink-2">
@@ -88,17 +99,8 @@ export function PublicRoomCard({
         )}
         className={`fuse ${left <= 60000 ? "fuse-warn" : ""}`}
       />
-      <p
-        className={`font-mono ${!scheduled && left <= 60000 ? "text-warn" : ""}`}
-      >
-        {left === 0 && !scheduled
-          ? copy.closing
-          : fillCopy(scheduled ? copy.opens : copy.closes, {
-              time: formatCountdown(left),
-            })}
-      </p>
       <Link
-        className="button button-primary mt-auto self-start"
+        className="button button-primary self-start"
         href={`/a/${auction.id}`}
       >
         {copy.enter}

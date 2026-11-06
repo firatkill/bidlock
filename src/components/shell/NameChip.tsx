@@ -26,8 +26,16 @@ export function NameChip() {
     );
   return (
     <div className="text-sm">
-      <div className="flex flex-wrap items-center gap-3">
-        <span>{copy.profile(me.display_name)}</span>
+      <div className="flex min-w-0 items-center gap-1 md:gap-3">
+        <span className="hidden md:inline">
+          {copy.profile(me.display_name)}
+        </span>
+        <span
+          className="max-w-[130px] truncate md:hidden"
+          title={me.display_name}
+        >
+          {copy.compactProfile(me.display_name)} ·
+        </span>
         {editing ? (
           <Suspense
             fallback={

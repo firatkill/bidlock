@@ -70,8 +70,6 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- TC-236: live winner/runner payments and mobile layout verified; transient Closing… frame was not captured. Manual visual follow-up remains.
-
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
 - T-05 environment dependency correction is approved and complete (D-46).
@@ -247,3 +245,5 @@ T-38 complete: [PR #38](https://github.com/firatkill/bidlock/pull/38), [all six 
 ## T-38a review delivery
 
 D-59–D-69 recorded; TC-237–TC-248 added. Catalogue room/lobby, mobile controls, experiments, rejected ledger and receipt/lifecycle implemented. Local lint/typecheck, 176 unit tests, database suite and 49 concurrency/integration tests pass. Full E2E: 27/28 passed; legacy TC-202 updated to distinguish accepted bids from approved own rejected requests, then passed focused retest. Focused design/lifecycle run passed 22 tests. [PR #39](https://github.com/firatkill/bidlock/pull/39) is open; CI and owner review pending. [Review and deliberate departures](../qa/T-38a-review.md). Owner browser review is required before merge; T-39 has not started.
+
+T-38a browser-review revision: F1–F7 and D1–D4 implemented; D-70–D-72 and TC-249–TC-254 added. TC-236 passed owner browser review on 2026-11-06 and is removed from open questions. Local lint/typecheck and 180 unit tests pass. Targeted layout, experiment and accessibility checks pass; full E2E found only TC-205 visual-whitespace mismatch (bounds unchanged), focused TC-205 retest and all 10 remaining isolated tests passed. CI pending. PR #39 stays open and unmerged.

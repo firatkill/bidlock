@@ -50,66 +50,98 @@ export function BidHistory({
         </h2>
         <span className="font-mono text-xs text-ink-3">{copy.timeHeading}</span>
       </div>
-      {rejected.length > 0 && (
-        <ol className="divide-y divide-rule rounded border border-rule bg-surface">
-          {rejected.map((row) => (
-            <li key={row.key} className="space-y-2 px-4 py-3 text-sm">
-              <div className="flex justify-between gap-3 font-mono">
-                <span>
-                  {copy.you} · <s>{formatCents(row.amount)}</s>
-                </span>
-                <span className="text-warn">{copy.rejected}</span>
-              </div>
-              <p className="text-xs text-ink-2">{row.explanation}</p>
-            </li>
-          ))}
-        </ol>
-      )}
-      {rows.length === 0 ? (
+      {rows.length === 0 && rejected.length === 0 ? (
         <p className="text-ink-3">{copy.noBids}</p>
       ) : (
         <ol className="divide-y divide-rule rounded border border-rule bg-surface">
-          {rows.map((bid) => (
-            <li
-              key={bid.bid_no}
-              className="price-flash grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1 px-4 py-3 text-sm"
-            >
-              <span className="font-mono text-ink-3">
-                {fillCopy(copy.bidNumber, { n: bid.bid_no })}
-              </span>
-              <span className="min-w-0 break-words">
-                {bid.display_name}{" "}
-                {bid.bidder_id === viewerId && (
-                  <span className="text-accent">{copy.you}</span>
-                )}{" "}
-                {bid.is_bot && (
-                  <span className="rounded border border-rule px-1 font-mono text-xs">
-                    {copy.bot}
-                  </span>
-                )}
-              </span>
-              <span className="font-mono tabular-nums">
-                {formatCents(bid.amount)}
-              </span>
-              <time
-                dateTime={bid.placed_at}
-                className="col-start-2 font-mono text-xs text-ink-3"
-                suppressHydrationWarning
-              >
-                {formatLedgerTime(bid.placed_at)}
-              </time>
-              {bid.extended && (
-                <span
-                  className="text-right font-mono text-xs text-ink-3"
-                  title={copy.extendedTitle}
+          {[
+            ...rows.map((bid) => ({
+              kind: "accepted" as const,
+              bid,
+              position: bid.bid_no,
+            })),
+            ...rejected
+              .filter(
+                (row) =>
+                  row.anchor >= (rows.at(-1)?.bid_no ?? 0) ||
+                  rows.length < visible,
+              )
+              .map((row) => ({
+                kind: "rejected" as const,
+                row,
+                position: row.anchor + 0.5,
+              })),
+          ]
+            .sort((a, b) => b.position - a.position)
+            .map((item) => {
+              if (item.kind === "rejected") {
+                const { row } = item;
+                return (
+                  <li
+                    key={row.key}
+                    className="space-y-2 px-4 py-3 text-sm"
+                    data-rejected="true"
+                  >
+                    <div className="flex justify-between gap-3 font-mono">
+                      <span>
+                        {row.origin ?? copy.you} ·{" "}
+                        <s>{formatCents(row.amount)}</s>
+                      </span>
+                      <span className="text-warn">{copy.rejected}</span>
+                    </div>
+                    {row.sameAs !== undefined && (
+                      <p className="font-mono text-xs">
+                        {row.origin} ·{" "}
+                        {fillCopy(copy.sameAmount, { n: row.sameAs })}
+                      </p>
+                    )}
+                    <p className="text-xs text-ink-2">{row.explanation}</p>
+                  </li>
+                );
+              }
+              const { bid } = item;
+              return (
+                <li
+                  key={bid.bid_no}
+                  className="price-flash grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1 px-4 py-3 text-sm"
                 >
-                  {fillCopy(copy.extensionTag, {
-                    time: formatCountdown(extendBySeconds * 1000),
-                  })}
-                </span>
-              )}
-            </li>
-          ))}
+                  <span className="font-mono text-ink-3">
+                    {fillCopy(copy.bidNumber, { n: bid.bid_no })}
+                  </span>
+                  <span className="min-w-0 break-words">
+                    {bid.display_name}{" "}
+                    {bid.bidder_id === viewerId && (
+                      <span className="text-accent">{copy.you}</span>
+                    )}{" "}
+                    {bid.is_bot && (
+                      <span className="rounded border border-rule px-1 font-mono text-xs">
+                        {copy.bot}
+                      </span>
+                    )}
+                  </span>
+                  <span className="font-mono tabular-nums">
+                    {formatCents(bid.amount)}
+                  </span>
+                  <time
+                    dateTime={bid.placed_at}
+                    className="col-start-2 font-mono text-xs text-ink-3"
+                    suppressHydrationWarning
+                  >
+                    {formatLedgerTime(bid.placed_at)}
+                  </time>
+                  {bid.extended && (
+                    <span
+                      className="text-right font-mono text-xs text-ink-3"
+                      title={copy.extendedTitle}
+                    >
+                      {fillCopy(copy.extensionTag, {
+                        time: formatCountdown(extendBySeconds * 1000),
+                      })}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
         </ol>
       )}
       {oldest > 1 &&

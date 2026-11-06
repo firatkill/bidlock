@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { shellCopy as copy } from "@/domain/copy";
 import { NameChip } from "./NameChip";
-import { ThemeToggle } from "./ThemeToggle";
+import { HeaderMenu } from "./HeaderMenu";
 export function Shell({
   children,
   mode,
@@ -12,25 +12,19 @@ export function Shell({
 }) {
   return (
     <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-8">
-      <header className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-b border-rule py-3">
+      <header className="relative flex items-center justify-between gap-2 border-b border-rule py-3">
         <Link
           href="/"
           className="inline-flex min-h-11 items-center text-2xl font-bold tracking-tight"
         >
           {copy.wordmark}
         </Link>
-        <nav className="flex items-center gap-4 text-sm [&>a]:inline-flex [&>a]:min-h-11 [&>a]:items-center">
-          <a href="/how-it-works">{copy.how}</a>
-          <a href="https://github.com/firatkill/bidlock" rel="noopener">
-            {copy.github}
-          </a>
-          <ThemeToggle />
-        </nav>
         {mode !== "off" && (
-          <div className="w-full sm:w-auto">
+          <div className="min-w-0 md:order-3">
             <NameChip />
           </div>
         )}
+        <HeaderMenu />
       </header>
       {mode === "readonly" && (
         <p

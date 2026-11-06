@@ -2,13 +2,33 @@
 import { useEffect, useRef, useState } from "react";
 import { ApiError, localNow, placeBid } from "@/client/api";
 import { newBid, type PendingBid } from "@/client/idempotency";
-import { bidErrorCopy, RetryDetails } from "@/domain/bid-feedback";
+import {
+  bidErrorCopy,
+  formatLedgerTime,
+  RetryDetails,
+  type RejectionContext,
+} from "@/domain/bid-feedback";
 import { type ClockSync, remainingMs } from "@/domain/clock";
 import { experimentCopy as copy, fillCopy, roomCopy } from "@/domain/copy";
 import { formatCents } from "@/domain/money";
 import type { AuctionState } from "@/domain/schemas";
 
 type Accepted = Awaited<ReturnType<typeof placeBid>>;
+type Outcome = {
+  id: string | null;
+  bidNo?: number;
+  text: string;
+  error?: ApiError;
+  attempt: PendingBid;
+  origin: string;
+};
+type Run = {
+  time: string;
+  amount: number;
+  results: Outcome[];
+  sameId: boolean;
+  raceExplanation: boolean;
+};
 type Experiment = "race" | "replay" | "late";
 export function Experiments({
   auction,
@@ -24,14 +44,16 @@ export function Experiments({
   isLeader: boolean;
   readonly: boolean;
   onAccepted: (result: Accepted, t0: number, t1: number) => void;
-  onRejected: (attempt: PendingBid, error: ApiError) => void;
+  onRejected: (
+    attempt: PendingBid,
+    error: ApiError,
+    context?: RejectionContext,
+  ) => void;
   onRefresh: () => void;
 }) {
   const [now, setNow] = useState(localNow);
   const [pending, setPending] = useState<Experiment | null>(null);
-  const [outputs, setOutputs] = useState<Partial<Record<Experiment, string>>>(
-    {},
-  );
+  const [outputs, setOutputs] = useState<Partial<Record<Experiment, Run>>>({});
   const [retryUntil, setRetryUntil] = useState(0);
   const busy = useRef(false);
   useEffect(() => {
@@ -55,51 +77,91 @@ export function Experiments({
     if (busy.current || disabled(kind)) return;
     busy.current = true;
     setPending(kind);
-    const send = async (attempt: PendingBid) => {
+    const runTime = formatLedgerTime(new Date().toISOString()).slice(0, 8);
+    const runAmount = auction.min_next_bid;
+    setOutputs((previous) => {
+      const next = { ...previous };
+      Reflect.deleteProperty(next, kind);
+      return next;
+    });
+    const send = async (
+      attempt: PendingBid,
+      origin: string,
+    ): Promise<Outcome> => {
       const t0 = localNow();
       try {
         const result = await placeBid(attempt);
         onAccepted(result, t0, localNow());
         return {
+          attempt,
+          origin,
+          bidNo: result.bid.bid_no,
           id: result.bid.id,
           text: fillCopy(copy.accepted, {
             n: result.bid.bid_no,
-            id: result.bid.id,
+            id: result.bid.id.slice(0, 8),
           }),
         };
       } catch (reason) {
         if (reason instanceof ApiError) {
-          if (reason.status < 500) onRejected(attempt, reason);
+          if (reason.status < 500) onRejected(attempt, reason, { origin });
           if (reason.envelope.error.code === "RATE_LIMITED") {
             const rate = RetryDetails.safeParse(reason.envelope.error.details);
             if (rate.success)
               setRetryUntil(localNow() + rate.data.retry_after_ms);
           }
           return {
+            attempt,
+            origin,
+            error: reason,
             id: null,
             text: `${reason.envelope.error.code}\n${bidErrorCopy(reason.envelope.error)}`,
           };
         }
-        return { id: null, text: roomCopy.errors.network };
+        return { attempt, origin, id: null, text: roomCopy.errors.network };
       }
     };
     try {
       const first = newBid(auction.id, auction.min_next_bid);
-      let text: string;
+      let results: Outcome[];
       if (kind === "race") {
-        const results = await Promise.all([
-          send(first),
-          send(newBid(auction.id, first.amount)),
+        results = await Promise.all([
+          send(first, copy.origins.raceA),
+          send(newBid(auction.id, first.amount), copy.origins.raceB),
         ]);
-        text = results
-          .map((result, index) => `${index === 0 ? "A" : "B"}  ${result.text}`)
-          .join("\n");
+        const accepted = results.find((result) => result.id !== null);
+        for (const rejected of results) {
+          if (
+            rejected.error &&
+            rejected.error.status < 500 &&
+            accepted?.bidNo !== undefined
+          )
+            onRejected(rejected.attempt, rejected.error, {
+              origin: rejected.origin,
+              sameAs: accepted.bidNo,
+            });
+        }
       } else if (kind === "replay") {
-        const a = await send(first);
-        const b = await send(first);
-        text = `${a.text}\n${b.text}${a.id !== null && a.id === b.id ? `\n${copy.sameId}` : ""}`;
-      } else text = (await send(first)).text;
-      setOutputs((previous) => ({ ...previous, [kind]: text }));
+        results = [
+          await send(first, copy.origins.replay),
+          await send(first, copy.origins.replay),
+        ];
+      } else results = [await send(first, copy.origins.late)];
+      const a = results[0];
+      const b = results[1];
+      setOutputs((previous) => ({
+        ...previous,
+        [kind]: {
+          time: runTime,
+          amount: runAmount,
+          results,
+          sameId: kind === "replay" && a?.id !== null && a?.id === b?.id,
+          raceExplanation:
+            kind === "race" &&
+            a?.id !== null &&
+            b?.error?.envelope.error.code === "ALREADY_LEADING",
+        },
+      }));
       onRefresh();
     } finally {
       busy.current = false;
@@ -119,6 +181,9 @@ export function Experiments({
       </h2>
       <p className="text-xl font-medium">{copy.heading}</p>
       <p className="text-sm text-strip-muted">{copy.body}</p>
+      {!live && auction.status !== "scheduled" && (
+        <p className="text-sm text-strip-muted">{copy.closed}</p>
+      )}
       {(["race", "replay", "late"] as const).map((kind) => (
         <div key={kind} className="space-y-3 border-t border-strip-rule pt-4">
           <div className="flex items-center justify-between gap-3">
@@ -148,7 +213,28 @@ export function Experiments({
             className="block whitespace-pre-wrap break-all font-mono text-xs"
             aria-live="polite"
           >
-            {outputs[kind]}
+            {outputs[kind] && (
+              <>
+                <span className="block">
+                  {outputs[kind].time} · {formatCents(outputs[kind].amount)}
+                </span>
+                {outputs[kind].results.map((result, index) => (
+                  <span
+                    key={index}
+                    className="block"
+                    title={result.id ?? undefined}
+                  >
+                    {result.origin} · {result.text}
+                  </span>
+                ))}
+                {outputs[kind].sameId && (
+                  <span className="block">{copy.sameId}</span>
+                )}
+                {outputs[kind].raceExplanation && (
+                  <span className="block">{copy.raceExplanation}</span>
+                )}
+              </>
+            )}
           </output>
         </div>
       ))}

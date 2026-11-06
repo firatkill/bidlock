@@ -239,3 +239,92 @@ h1 {
     display: none;
   }
 }
+
+.button-ink {
+  background: var(--ink);
+  color: var(--ground);
+  border-color: var(--ink);
+}
+.header-navigation {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-navigation > a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+.menu-toggle {
+  display: none;
+}
+.price-countdown {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 1024px) {
+  .lobby-headline {
+    font-size: 64px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  .price-countdown {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 16px;
+  }
+  .price-countdown .price {
+    font-size: 80px;
+    line-height: 1.1;
+  }
+  .price-countdown .countdown {
+    display: contents;
+  }
+  .price-countdown .countdown-text {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    font-size: 48px;
+    line-height: 1.2;
+  }
+  .countdown-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .price-countdown .fuse {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+  }
+  .price-countdown .countdown > p:not(.countdown-text) {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: inline-flex;
+    min-width: 44px;
+    padding: 8px;
+  }
+  .header-navigation {
+    display: none;
+  }
+  .header-navigation.is-open {
+    position: absolute;
+    inset: 100% 0 auto;
+    z-index: 40;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  .bid-dock {
+    padding-top: 8px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+}

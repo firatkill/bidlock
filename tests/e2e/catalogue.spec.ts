@@ -1,3 +1,4 @@
+import { formatCents } from "../../src/domain/money";
 import { randomUUID } from "node:crypto";
 import AxeBuilder from "@axe-core/playwright";
 import type { Page } from "@playwright/test";
@@ -5,6 +6,7 @@ import { test, expect, headers } from "./fixtures";
 import {
   AuctionState,
   BidAccepted,
+  BotTokens,
   BidsPage,
   SandboxCreated,
   PlaceBidBody,
@@ -66,7 +68,7 @@ test("TC-237 catalogue controls fit the 1280 by 800 viewport", async ({
   await page.goto(`/a/${await createAuction()}`);
   for (const locator of [
     page.locator(".price"),
-    page.getByText(/^Closes in/),
+    page.locator(".countdown-text"),
     ...(await page.locator(".quick-bid").all()),
   ]) {
     await expect(locator).toBeVisible();
@@ -181,7 +183,19 @@ test("TC-240 replay returns the same bid id without another row", async ({
   );
   expect(history.bids).toHaveLength(1);
   const output = await page.locator("output").nth(1).innerText();
-  expect(output.split(history.bids[0]?.id ?? "missing")).toHaveLength(3);
+  await expect(page.locator("output").nth(1).locator("[title]")).toHaveCount(2);
+  for (const item of await page
+    .locator("output")
+    .nth(1)
+    .locator("[title]")
+    .all())
+    await expect(item).toHaveAttribute(
+      "title",
+      history.bids[0]?.id ?? "missing",
+    );
+  expect(
+    output.split(history.bids[0]?.id.slice(0, 8) ?? "missing"),
+  ).toHaveLength(3);
 });
 
 test("TC-241 late experiment uses real deadline and receives AUCTION_CLOSED", async ({
@@ -299,3 +313,129 @@ for (const theme of ["light", "dark"] as const)
       ),
     ).toEqual([]);
   });
+
+test("TC-249 mobile countdown and price clear the compact dock at first load", async ({
+  page,
+  createAuction,
+}) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto(`/a/${await createAuction()}`);
+  await expect(page.locator(".quick-bid").first()).toBeEnabled();
+  const dock = page.locator(".bid-dock");
+  const box = await dock.boundingBox();
+  expect(box?.height).toBeLessThanOrEqual(140);
+  for (const locator of [
+    page.locator(".price"),
+    page.locator(".countdown-text"),
+  ]) {
+    const rect = await locator.boundingBox();
+    expect(rect).not.toBeNull();
+    expect((rect?.y ?? 812) + (rect?.height ?? 1)).toBeLessThanOrEqual(
+      box?.y ?? 0,
+    );
+  }
+  await page.locator(".quick-bid").first().click();
+  await expect(page.getByText(/^Bid placed:/)).toBeVisible();
+  await expect(dock.getByText(/^Bid placed:/)).toHaveCount(0);
+  expect((await dock.boundingBox())?.height).toBeLessThanOrEqual(140);
+});
+
+test("TC-250 newer accepted bids appear above earlier rejected requests", async ({
+  page,
+  createAuction,
+}) => {
+  await page.goto(`/a/${await createAuction()}`);
+  await page.getByLabel("Your bid", { exact: true }).fill("9.00");
+  await page.getByRole("button", { name: "Place bid", exact: true }).click();
+  const history = page.getByRole("region", { name: "Bid history" });
+  await expect(history.locator("[data-rejected]")).toHaveCount(1);
+  await page.locator(".quick-bid").first().click();
+  await expect(history.locator("time")).toHaveCount(1);
+  await expect(history.getByRole("listitem").nth(0)).toContainText("#1");
+  await expect(history.getByRole("listitem").nth(1)).toContainText("rejected");
+});
+
+test("TC-251 run snapshots remain factual when the current price changes", async ({
+  page,
+}) => {
+  const id = await sandbox(page);
+  const state = AuctionState.parse(
+    await (await page.request.get(`/api/auctions/${id}/state`)).json(),
+  );
+  await page.getByRole("button", { name: "Replay", exact: true }).click();
+  const output = page.locator("output").nth(1);
+  await expect(output).toContainText("Same bid id. No second row.");
+  const original = await output.innerText();
+  expect(original).toMatch(/^\d{2}:\d{2}:\d{2} · \$/);
+  const tokens = BotTokens.parse(
+    await (
+      await page.request.post("/api/bot-tokens", {
+        headers,
+        data: { sandbox_id: state.sandbox?.id },
+      })
+    ).json(),
+  );
+  const next = AuctionState.parse(
+    await (await page.request.get(`/api/auctions/${id}/state`)).json(),
+  );
+  expect(
+    (
+      await page.request.post(`/api/auctions/${id}/bids`, {
+        headers: {
+          ...headers,
+          authorization: `Bot ${tokens.bots[0]?.token ?? ""}`,
+        },
+        data: { amount: next.min_next_bid, idempotency_key: randomUUID() },
+      })
+    ).status(),
+  ).toBe(201);
+  await expect(
+    page.getByRole("button", { name: "Replay", exact: true }),
+  ).toBeEnabled();
+  await expect(output).toHaveText(original, { useInnerText: true });
+  await page.getByRole("button", { name: "Replay", exact: true }).click();
+  await expect(output).toContainText("Same bid id. No second row.");
+  expect(await output.innerText()).not.toBe(original);
+  const header = (await output.innerText()).split("\n")[0];
+  const latest = AuctionState.parse(
+    await (await page.request.get(`/api/auctions/${id}/state`)).json(),
+  );
+  expect(header).toContain(formatCents(latest.current_price ?? 0));
+  await expect(output.locator("[title]")).toHaveCount(2);
+});
+
+test("TC-254 mobile header is one row with keyboard-accessible navigation", async ({
+  page,
+  createAuction,
+}) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto(`/a/${await createAuction()}`);
+  const header = page.locator("header").first();
+  const edit = header.getByRole("button", { name: "Edit", exact: true });
+  await expect(edit).toBeVisible();
+  expect((await header.boundingBox())?.height).toBeLessThanOrEqual(80);
+  const menu = header.getByRole("button", { name: "Menu", exact: true });
+  expect((await menu.boundingBox())?.height).toBeGreaterThanOrEqual(44);
+  expect((await menu.boundingBox())?.width).toBeGreaterThanOrEqual(44);
+  await expect(header.getByRole("link", { name: "How it works" })).toBeHidden();
+  await menu.focus();
+  await page.keyboard.press("Enter");
+  await expect(menu).toHaveAttribute("aria-expanded", "true");
+  await page.keyboard.press("Tab");
+  await expect(
+    header.getByRole("link", { name: "How it works" }),
+  ).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(header.getByRole("link", { name: "GitHub" })).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(header.getByRole("button", { name: /Theme/ })).toBeFocused();
+  const axe = await new AxeBuilder({ page }).analyze();
+  expect(
+    axe.violations.filter(
+      (v) => v.impact === "serious" || v.impact === "critical",
+    ),
+  ).toEqual([]);
+  await page.keyboard.press("Escape");
+  await expect(menu).toBeFocused();
+  await expect(menu).toHaveAttribute("aria-expanded", "false");
+});

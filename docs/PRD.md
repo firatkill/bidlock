@@ -483,6 +483,10 @@ Bid panel:
 | Closed / settled / unsold | Bid panel replaced by the result panel (below) |
 | Readonly | Controls disabled; note "Bidding is paused while the demo is read-only." |
 
+Mobile bid dock: three quick buttons and the custom toggle only when collapsed, at most about 140 px high excluding safe-area inset. Status, success and error notes stay in page flow above the dock. At 375×812 on first load both price and countdown are entirely above it.
+
+Desktop ≥1024 px: price about 80–88 px mono, countdown about 48–56 px on the same row right-aligned, fuse below both. Price flash only on a price change after mount, never first render.
+
 Bid errors (inline under the panel, `role="alert"`):
 
 | Code | Copy |
@@ -526,7 +530,7 @@ Bid history (right column, heading "Bid history"):
 | Element | Copy |
 |---|---|
 | Row | "#{bid_no}" (mono), "{name}" with badges "You" / "BOT", "{amount}" (mono, right aligned), "{HH:mm:ss.SSS}"; rows that extended the close carry tag "+0:30" with `title` "This bid extended the close" |
-| Rejected request | Session-local own requests only; struck-through amount, "You", "rejected" and the API-specific explanation. BID_TOO_LOW: "The price check rejected your bid. The minimum is now {min_next_bid}." No measured lock-delay claim, because the API supplies none. Never persisted, removed on reload; no fabricated server timestamp or bid number. |
+| Rejected request | Anchor immediately above the newest accepted bid known when the rejection arrives; later bids prepend above it. Experiment origins: "Race A", "Race B", "Replay", "Late bid". A paired race acceptance adds "same amount as #{n}" (for example "Race B · same amount as #4"). Session-local own requests only; struck-through amount, "You", "rejected" and the API-specific explanation. BID_TOO_LOW: "The price check rejected your bid. The minimum is now {min_next_bid}." No measured lock-delay claim, because the API supplies none. Never persisted, removed on reload; no fabricated server timestamp or bid number. |
 | Time heading | "server time · ms"; accepted times come from `placed_at`. |
 | Empty | "No bids yet." |
 | Pagination | Button "Show earlier bids" (loads 20 older rows); when exhausted or the newest 100 rows are shown the button is removed (D-55) |
@@ -548,7 +552,7 @@ Sandbox-only elements:
 | Element | Copy |
 |---|---|
 | Header line | "Your sandbox · expires in {m:ss}" (to sandbox `expires_at`) |
-| Bot strip | Three chips "Cautious bot", "Steady bot", "Sniper bot", each with status "watching", "bidding", "out at {amount}" (budget reached), "paused" |
+| Bot strip | Each bot includes the same approved one-line personality as the lobby, below its name. Three chips "Cautious bot", "Steady bot", "Sniper bot", each with status "watching", "bidding", "out at {amount}" (budget reached), "paused" |
 | Bot note | "The bots run in this tab. If you close it, they stop bidding." |
 | Hidden tab | "Bots paused while this tab is in the background." |
 | Token error | "Couldn't start the bots. Reload the page to try again." |
@@ -557,7 +561,11 @@ Sandbox-only elements:
 | Race | "Race two bids"; "Two requests for {amount}, sent together"; button "Race". Two public POST /bids calls via Promise.all with different keys. While leading, disabled with "You're leading. Wait until a bot outbids you." |
 | Replay | "Replay a request"; "Send the same bid twice with one idempotency key"; button "Replay". Sequential calls with identical amount/key; show actual returned bid IDs and "Same bid id. No second row." only when they match. |
 | Late | "Bid after the deadline"; "Unlocks when the countdown reaches 0:00"; button "Send late". Enabled only for live status with remaining time zero (including Closing…); no clock skew or test endpoint. |
-| Experiment outcome | Mono output: "201 accepted · #{n} · {id}" and actual response code and accepted bid number/id, or API rejection code and normal bid-error copy. Pending "Placing bid…". RATE_LIMITED uses normal countdown copy and disables experiment controls. No claimed lock timings or expected result presented as actual. |
+| Experiment outcome | Each run replaces its previous output and starts with local run time/amount "HH:mm:ss · {amount}". IDs show their first 8 characters, with the complete ID in `title`. Race A accepted / B rejected adds "B was checked after A committed, so it saw the new state. Two requests, one bid." while retaining the error-code line. Race and Replay disabled when no longer live, with "The auction has closed."; Send late retains its own deadline/live rule. Mono output: "201 accepted · #{n} · {id}" and actual response code and accepted bid number/id, or API rejection code and normal bid-error copy. Pending "Placing bid…". RATE_LIMITED uses normal countdown copy and disables experiment controls. No claimed lock timings or expected result presented as actual. |
+
+Mobile header: one row containing wordmark, compact "{name} · Edit" chip and a ≥44 px "Menu" button (`aria-label="Menu"`, expanded state and controlled navigation). The disclosure contains existing How it works, GitHub and theme controls, usable by keyboard and screen reader.
+
+Lobby visual hierarchy: 56–64 px / weight 800 headline, tight tracking; public price/countdown side by side, card content height and adjacent entry button; sandbox start filled ink; correctness principles numbered 01 / 02 / 03 in accent mono above top-ruled items.
 
 ### 9.4 How it works `/how-it-works`
 
@@ -724,3 +732,6 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-68 | HowItWorks.dc.html and its two-transaction timeline are references for T-44 only; exclude replay, presence, sync indicator and test counts. | owner approved 2026-11-06 | T-38a P5 and exclusions; local Catalogue & Ledger mockups are references, never committed. |
 
 | D-69 | Use factual rejected-bid copy: "The price check rejected your bid. The minimum is now {amount}." Qualify Sniper’s personality to include its occasional opening bid. | owner approved 2026-11-06 | No fabricated lock-wait measurements; personality remains faithful to TRD §12.1. |
+| D-70 | Race output keeps the rejection code and explains an accepted A / rejected B: "B was checked after A committed, so it saw the new state. Two requests, one bid." | owner approved 2026-11-06 | Browser review F3; report observed API outcomes only. |
+| D-71 | Mobile header is one row: wordmark, compact name/Edit chip and a keyboard-accessible Menu disclosure (minimum 44 px) containing How it works, GitHub and theme control. | owner approved 2026-11-06 | Browser review D3; existing navigation remains reachable. |
+| D-72 | Apply browser review F1–F7 and D1–D4: compact mobile dock with feedback in flow; chronologically anchored rejected requests with experiment origin; short IDs and run snapshots; closed-state note; change-only price flash; larger desktop price/countdown and lobby title, aligned cards, numbered principles and bot personalities in strip. | owner approved 2026-11-06 | T-38a review fixes; no API or business-rule changes. |

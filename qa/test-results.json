@@ -85,6 +85,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -179,6 +184,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -232,6 +242,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -292,6 +307,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -351,6 +371,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -404,6 +429,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2259,6 +2289,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6975,6 +7010,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7038,6 +7078,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7103,6 +7148,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7166,6 +7216,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7231,6 +7286,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7295,6 +7355,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7353,6 +7418,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7413,6 +7483,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7471,6 +7546,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7531,6 +7611,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7589,6 +7674,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7649,6 +7739,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7707,6 +7802,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7767,6 +7867,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7825,6 +7930,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8036,6 +8146,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8089,6 +8204,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8144,6 +8264,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8197,6 +8322,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8774,6 +8904,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8832,6 +8967,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8897,6 +9037,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8955,6 +9100,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9048,6 +9198,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9218,6 +9373,16 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9307,6 +9472,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9370,6 +9540,11 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9435,6 +9610,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9493,6 +9673,16 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9582,6 +9772,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9640,6 +9835,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9700,6 +9900,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9758,6 +9963,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9828,6 +10038,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9881,6 +10096,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9951,6 +10171,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10009,6 +10234,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10069,6 +10299,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10117,6 +10352,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10167,6 +10407,21 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused unit run: exact getByText matcher could not span the newly split countdown label/time. Text remained unchanged; 46 other tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused retest passed after matching complete paragraph text; warning/cap/Closing assertions retained.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10215,6 +10470,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10274,6 +10534,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10369,6 +10634,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10438,6 +10708,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10506,6 +10781,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10580,6 +10860,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10660,6 +10945,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10739,6 +11029,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10802,6 +11097,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10867,6 +11167,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10925,6 +11230,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11005,6 +11315,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11078,6 +11393,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11158,6 +11478,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11236,6 +11561,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11320,6 +11650,31 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11454,6 +11809,16 @@
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11533,6 +11898,11 @@
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11591,6 +11961,11 @@
         {
           "result": "pass",
           "actual_result": "Focused isolated TC-202 retest passed: exactly two accepted rows in both browsers, rejected row visible only to its sender.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11660,6 +12035,16 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11735,6 +12120,21 @@
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full E2E: innerText now contains a visual newline between Opens in and time. Normalize whitespace per D-72; retain D-58 bounds and disabled controls.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E retest passed with normalized visual whitespace and original 60s ceiling / 3s tolerance / disabled controls assertions.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11803,6 +12203,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11851,6 +12256,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12101,6 +12511,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12154,6 +12569,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12209,6 +12629,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12263,6 +12688,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12311,6 +12741,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12371,6 +12806,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12429,6 +12869,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12504,6 +12949,16 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12567,6 +13022,11 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12636,6 +13096,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12685,6 +13150,11 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12728,6 +13198,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12778,6 +13253,16 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12816,6 +13301,11 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12856,6 +13346,11 @@
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12868,13 +13363,18 @@
       "ac_reference": "FR-66; NFR-20; NFR-21",
       "milestone": "M5 — Settlement",
       "title": "Settlement layout and closing moment",
-      "status": "manual_required",
+      "status": "resolved",
       "environment": "Local production polling build; Chrome desktop and 360x740 viewport; PostgreSQL 17",
       "attempts": [
         {
           "result": "fail",
           "actual_result": "Live Chrome review verified winner and runner payment, exact amounts, desktop and 360px mobile layout, history and empty browser error log. The transient Closing frame was not captured.",
           "note": "Partial manual verification: natural close-to-winner observed twice; screenshot qa/evidence/M5-mobile.jpg. Test clock jumps required reload for a fresh lowest-RTT sample. No product or timeout changes. Remaining visual subcheck recorded for owner; no ClickUp under repository override."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner browser review 2026-11-06: Closing… observed for about 100 ms at 0:00 before Send late enabled and returned AUCTION_CLOSED.",
+          "note": "Manual pass explicitly confirmed by owner in T-38a browser review; remove open question."
         }
       ],
       "regression_of": null,
@@ -12924,6 +13424,11 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12978,6 +13483,11 @@
         {
           "result": "pass",
           "actual_result": "Targeted public-room E2E passed after making benchmark fixture tolerate a missing file.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Remaining isolated project passed all 10 tests after TC-205 correction; no full-suite repeat locally.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13056,6 +13566,16 @@
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13089,6 +13609,16 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13129,6 +13659,21 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13168,6 +13713,21 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13201,6 +13761,21 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13236,6 +13811,21 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13269,6 +13859,21 @@
         {
           "result": "pass",
           "actual_result": "Full browser run: this case passed; 27/28 total, legacy TC-202 expected only accepted listitems.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13314,6 +13919,21 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13337,6 +13957,11 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13362,6 +13987,16 @@
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13385,6 +14020,16 @@
         {
           "result": "pass",
           "actual_result": "Final full unit suite passed 176 tests; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13410,6 +14055,220 @@
           "result": "pass",
           "actual_result": "Reviewed local Chromium screenshots of lobby, live room, mobile light/dark, sandbox replay and receipt. Desktop toggle corrected; mobile expanded custom field and rejected ledger verified after scrolling, no horizontal overflow. Real replay returned identical bid IDs, real simulated Pay reached Settled; page errors empty.",
           "note": "Owner browser sign-off remains required before merge. Earlier TC-236 transient Closing visual follow-up is unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Local Chromium visual pass: larger desktop price/countdown and lobby, 375×812 public/sandbox dock and header, real race origins and short IDs, bot personalities; zero page errors.",
+          "note": "Standalone Chromium used because in-app plugin runtime references missing module. Owner TC-236 manual pass recorded separately."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-249",
+      "ac_reference": "§9.3, D-70–D-72; owner browser review F1",
+      "milestone": "M5a — Catalogue & Ledger",
+      "title": "Mobile countdown clears the compact bid dock",
+      "status": "resolved",
+      "environment": "Local Chromium / Next production polling build / PostgreSQL 17 / Node 24",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Owner observed 209px dock covering countdown at 375×812.",
+          "note": "Owner browser review 2026-11-06, F1–F7/D3; implementation corrections authorized."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused E2E measured 149px dock, above 140px limit; hidden form spacing corrected to flex gap.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused mobile retest passed: collapsed dock <=140px, countdown and price clear it, success status outside fixed controls.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-250",
+      "ac_reference": "§9.3, D-70–D-72; owner browser review F2",
+      "milestone": "M5a — Catalogue & Ledger",
+      "title": "Rejected rows retain chronology and experiment origin",
+      "status": "resolved",
+      "environment": "Local Chromium / Next production polling build / PostgreSQL 17 / Node 24",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Owner observed rejected race request pinned above later accepted bids with ambiguous origin.",
+          "note": "Owner browser review 2026-11-06, F1–F7/D3; implementation corrections authorized."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused DOM test passed: anchored ordering / terminal-status controls and note / change-only price flash.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-251",
+      "ac_reference": "§9.3, D-70–D-72; owner browser review F3–F5",
+      "milestone": "M5a — Catalogue & Ledger",
+      "title": "Experiment output preserves run snapshot and short IDs",
+      "status": "resolved",
+      "environment": "Local Chromium / Next production polling build / PostgreSQL 17 / Node 24",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Owner observed full UUIDs, stale amount context and unhelpful race explanation.",
+          "note": "Owner browser review 2026-11-06, F1–F7/D3; implementation corrections authorized."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused DOM test passed: accepted A / ALREADY_LEADING B keeps code, approved explanation and shortened ID with full title.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused E2E setup tried human rival in owner-only sandbox and received NOT_FOUND; fixture corrected to authorized sandbox bot-token API.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Retest compared innerText snapshot to textContent matcher; block spans introduced line breaks only. Changed matcher to useInnerText, preserving exact snapshot equality.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused E2E retest passed: bot-token bid changes current amount while prior output remains exact; next replay replaces it and retains full ID titles.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-252",
+      "ac_reference": "§9.3, D-70–D-72; owner browser review F6",
+      "milestone": "M5a — Catalogue & Ledger",
+      "title": "Experiments disable after close",
+      "status": "resolved",
+      "environment": "Local Chromium / Next production polling build / PostgreSQL 17 / Node 24",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Owner reported enabled controls after settlement; closed explanation missing.",
+          "note": "Owner browser review 2026-11-06, F1–F7/D3; implementation corrections authorized."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused DOM test passed: anchored ordering / terminal-status controls and note / change-only price flash.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-253",
+      "ac_reference": "§9.3, D-70–D-72; owner browser review F7",
+      "milestone": "M5a — Catalogue & Ledger",
+      "title": "Price flashes only after a change",
+      "status": "resolved",
+      "environment": "Local Chromium / Next production polling build / PostgreSQL 17 / Node 24",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Owner observed first-render price flash.",
+          "note": "Owner browser review 2026-11-06, F1–F7/D3; implementation corrections authorized."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused DOM test passed: anchored ordering / terminal-status controls and note / change-only price flash.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full unit suite passed: 180 tests after browser-review fixes; lint and typecheck also passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-254",
+      "ac_reference": "§9.3, D-70–D-72; owner browser review D3",
+      "milestone": "M5a — Catalogue & Ledger",
+      "title": "Mobile header disclosure is accessible",
+      "status": "resolved",
+      "environment": "Local Chromium / Next production polling build / PostgreSQL 17 / Node 24",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Owner observed three-row mobile header.",
+          "note": "Owner browser review 2026-11-06, F1–F7/D3; implementation corrections authorized."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused catalogue E2E run: this case passed (light and dark axe included); 11/13 total passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full local E2E attempt: case passed. 21 passed, TC-205 failed on desktop line break; isolated project deferred by dependency.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,

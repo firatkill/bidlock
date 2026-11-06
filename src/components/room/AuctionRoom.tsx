@@ -1,10 +1,14 @@
 "use client";
 import Link from "next/link";
-import { bidErrorCopy, type RejectedBid } from "@/domain/bid-feedback";
+import {
+  bidErrorCopy,
+  type RejectionContext,
+  type RejectedBid,
+} from "@/domain/bid-feedback";
 import { ApiError } from "@/client/api";
 import type { PendingBid } from "@/client/idempotency";
 import { Experiments } from "@/components/sandbox/Experiments";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { BotStrip, SandboxHeader } from "./BotStrip";
 const BotRunner = lazy(() =>
   import("@/client/bots/BotRunner").then((module) => ({
@@ -38,10 +42,18 @@ export function AuctionRoom({
   readonly?: boolean;
 }) {
   const [rejected, setRejected] = useState<RejectedBid[]>([]);
-  const reject = (attempt: PendingBid, error: ApiError) => {
+  const newestBid = useRef(initial.bid_count);
+  const reject = (
+    attempt: PendingBid,
+    error: ApiError,
+    context: RejectionContext = {},
+  ) => {
+    const anchor = newestBid.current;
     setRejected((rows) =>
       [
         {
+          ...context,
+          anchor: rows.find((row) => row.key === attempt.key)?.anchor ?? anchor,
           key: attempt.key,
           amount: attempt.amount,
           explanation: bidErrorCopy(error.envelope.error),
@@ -52,6 +64,9 @@ export function AuctionRoom({
   };
   const room = useAuctionRoom(initial.id, initial, initialBids);
   const auction = room.auction ?? initial;
+  useEffect(() => {
+    newestBid.current = Math.max(newestBid.current, auction.bid_count);
+  }, [auction.bid_count]);
   useEffect(() => {
     if (auction.status !== "live" && auction.status !== "scheduled")
       void refreshMe().catch(() => {});
@@ -71,6 +86,7 @@ export function AuctionRoom({
     t0: number,
     t1: number,
   ) => {
+    newestBid.current = Math.max(newestBid.current, result.bid.bid_no);
     room.clock.addSample(t0, t1, result.server_now);
     if (!room.me) return;
     const bid = {
@@ -122,34 +138,6 @@ export function AuctionRoom({
         max={auction.max_extensions}
       />
       <ConnectionBanner status={room.status} />
-      {auction.sandbox && room.me?.id === auction.sandbox.owner_id && (
-        <>
-          <SandboxHeader
-            expiresAt={auction.sandbox.expires_at}
-            serverNow={auction.server_now}
-            clock={room.clock}
-          />
-          {readonly ? (
-            <BotStrip paused view={{ bots: [], hidden: false, error: false }} />
-          ) : (
-            <Suspense
-              fallback={
-                <BotStrip view={{ bots: [], hidden: false, error: false }} />
-              }
-            >
-              <BotRunner
-                auction={auction}
-                clock={room.clock}
-                onSnapshot={(snapshot) => {
-                  room.apply({ kind: "snapshot", ...snapshot });
-                }}
-              >
-                {(view) => <BotStrip view={view} />}
-              </BotRunner>
-            </Suspense>
-          )}
-        </>
-      )}
       <p className="sr-only" aria-live="polite">
         {polite}
       </p>
@@ -158,8 +146,10 @@ export function AuctionRoom({
           <LotCard auction={auction} />
           {(auction.status === "live" || auction.status === "scheduled") && (
             <div className="space-y-5 rounded-md border border-rule bg-surface p-4 md:p-6">
-              <PriceBlock auction={auction} isLeader={room.isLeader} />
-              <Countdown auction={auction} clock={room.clock} />
+              <div className="price-countdown">
+                <PriceBlock auction={auction} isLeader={room.isLeader} />
+                <Countdown auction={auction} clock={room.clock} />
+              </div>
               <BidPanel
                 auction={auction}
                 isLeader={room.isLeader}
@@ -170,6 +160,39 @@ export function AuctionRoom({
                 onRejected={reject}
               />
             </div>
+          )}
+          {auction.sandbox && room.me?.id === auction.sandbox.owner_id && (
+            <>
+              <SandboxHeader
+                expiresAt={auction.sandbox.expires_at}
+                serverNow={auction.server_now}
+                clock={room.clock}
+              />
+              {readonly ? (
+                <BotStrip
+                  paused
+                  view={{ bots: [], hidden: false, error: false }}
+                />
+              ) : (
+                <Suspense
+                  fallback={
+                    <BotStrip
+                      view={{ bots: [], hidden: false, error: false }}
+                    />
+                  }
+                >
+                  <BotRunner
+                    auction={auction}
+                    clock={room.clock}
+                    onSnapshot={(snapshot) => {
+                      room.apply({ kind: "snapshot", ...snapshot });
+                    }}
+                  >
+                    {(view) => <BotStrip view={view} />}
+                  </BotRunner>
+                </Suspense>
+              )}
+            </>
           )}
           <ResultPanel
             auction={auction}

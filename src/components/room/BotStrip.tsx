@@ -60,7 +60,12 @@ export function BotStrip({
               key={persona}
               className="flex flex-wrap items-center justify-between gap-2 rounded border border-rule bg-surface px-4 py-3 text-sm"
             >
-              <span>{copy.bots[index]}</span>
+              <div>
+                <p>{copy.bots[index]}</p>
+                <p className="mt-1 text-xs text-ink-2">
+                  {copy.personalities[index]}
+                </p>
+              </div>
               <span className="font-mono text-xs text-ink-3">{status}</span>
             </li>
           );

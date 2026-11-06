@@ -12,6 +12,8 @@ export const shellCopy = {
   how: "How it works",
   github: "GitHub",
   edit: "Edit",
+  menu: "Menu",
+  compactProfile: (name: string) => name,
   profile: (name: string) => `You are ${name}`,
   strikes: (n: number) =>
     n === 1 ? "1 missed payment" : `${String(n)} missed payments`,
@@ -145,6 +147,7 @@ export const roomCopy = {
   steps: ["+1 step", "+2 steps", "+5 steps"],
   customToggle: "Enter a custom amount",
   rejected: "rejected",
+  sameAmount: "same amount as #{n}",
   rejectedLow:
     "The price check rejected your bid. The minimum is now {minimum}.",
   timeHeading: "server time · ms",
@@ -271,6 +274,15 @@ export const experimentCopy = {
   body: "Each experiment calls the real bid API on this sandbox lot and shows what PostgreSQL decided.",
   leading: "You're leading. Wait until a bot outbids you.",
   accepted: "201 accepted · #{n} · {id}",
+  closed: "The auction has closed.",
+  raceExplanation:
+    "B was checked after A committed, so it saw the new state. Two requests, one bid.",
+  origins: {
+    raceA: "Race A",
+    raceB: "Race B",
+    replay: "Replay",
+    late: "Late bid",
+  },
   sameId: "Same bid id. No second row.",
   race: {
     title: "Race two bids",

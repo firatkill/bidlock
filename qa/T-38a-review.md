@@ -46,3 +46,15 @@ Local static checks pass: lint, typecheck, 176 unit tests; database suite and 49
 Full local E2E: 27/28 passed. TC-202’s legacy total-row assertion was corrected against D-66: exactly two accepted rows remain, with the rejected row visible only to its sender. Focused TC-202 retest passed. Full CI is the final regression gate; do not merge before owner browser approval.
 
 QA ledger structural checks pass. The external checker reports a historical `—` identifier collision (5→1 attempts) already present at HEAD; an independent ordered comparison confirms every attempt prefix in all 238 prior cases is unchanged, with 12 new cases appended. No history was removed.
+
+## Owner review fixes (2026-11-06)
+
+Owner browser feedback supersedes the original typography/navigation departures above: larger desktop price/countdown and lobby heading, mobile one-row Menu header, content-height public card, filled sandbox action, numbered principles and bot-strip personalities are now required. F1–F7 and D1–D4 are tracked by D-70–D-72 and TC-249–TC-254. TC-236 is now a manual pass confirmed by the owner.
+
+Verification plan: inspect desktop room price/countdown on the same row and quick buttons within 1280×800; inspect 375×812 collapsed dock ≤140px with price/countdown above it; open menu by keyboard and check theme/links; race/replay and observe factual run context and anchored rejection after newer bids. Preserve session-only rejects, server bid timestamps, rate-limit copy and public-room isolation. No API/SQL changes.
+
+Local Chromium review confirmed F1–F7 and D1–D4 surfaces: 1280×800 desktop price/countdown, 375×812 mobile public/sandbox first load, Menu navigation, lobby hierarchy and real race output. No page errors. A real race also returned B accepted / A rejected; origins preserve the actual outcome, and the approved A-accepted/B-rejected explanation is conditional on that API result. In-app browser runtime was unavailable (missing plugin module); this review used standalone local Chromium.
+
+New screenshots: [desktop](evidence/T-38a-review-room.png), [mobile](evidence/T-38a-review-mobile.png), [lobby](evidence/T-38a-review-lobby.png), [sandbox race](evidence/T-38a-review-race.png). Bot details now follow the bidding area so personalities cannot push the mobile countdown behind the dock.
+
+Revision validation: lint/typecheck, 180 unit tests and production build pass. Full local E2E ran once: 21 passed, TC-205 failed only on a visual line break, 10 isolated tests blocked by project dependency. After normalizing whitespace (same time bounds), focused TC-205 passed and all 10 remaining isolated tests passed. Focused catalogue checks and axe light/dark passed. QA ledger retains all 250 previous case histories; external sentinel-ID collision remains unchanged. Final CI pending.

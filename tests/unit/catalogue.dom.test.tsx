@@ -85,3 +85,63 @@ test("TC-247 empty benchmark is absent and all bot personalities are shown", () 
   for (const text of sandboxCopy.personalities)
     expect(screen.getByText(text)).toBeTruthy();
 });
+
+test("TC-253 price flashes only on a price change after mount", () => {
+  const view = render(<PriceBlock auction={auction} />);
+  expect(view.container.querySelector(".price-flash")).toBeNull();
+  view.rerender(<PriceBlock auction={{ ...auction, bid_count: 2 }} />);
+  expect(view.container.querySelector(".price-flash")).toBeNull();
+  view.rerender(<PriceBlock auction={{ ...auction, current_price: 1200 }} />);
+  expect(view.container.querySelector(".price-flash")?.textContent).toBe(
+    "$12.00",
+  );
+});
+
+test("TC-250 rejected rows stay at their arrival anchor below later bids", async () => {
+  const { BidHistory } = await import("@/components/room/BidHistory");
+  const view = render(
+    <BidHistory
+      auctionId={auction.id}
+      bids={[bid(5), bid(4), bid(3)]}
+      viewerId={null}
+      extendBySeconds={30}
+      onBids={() => {}}
+      rejected={[
+        {
+          key: "rejected-b",
+          amount: 1000,
+          anchor: 4,
+          origin: "Race B",
+          sameAs: 4,
+          explanation: "Already leading.",
+        },
+      ]}
+    />,
+  );
+  const rows = screen.getAllByRole("listitem");
+  expect(rows[0]?.textContent).toContain("#5");
+  expect(rows[1]?.textContent).toContain("Race B · same amount as #4");
+  expect(rows[2]?.textContent).toContain("#4");
+  view.rerender(
+    <BidHistory
+      auctionId={auction.id}
+      bids={[bid(6), bid(5), bid(4), bid(3)]}
+      viewerId={null}
+      extendBySeconds={30}
+      onBids={() => {}}
+      rejected={[
+        {
+          key: "rejected-b",
+          amount: 1000,
+          anchor: 4,
+          origin: "Race B",
+          sameAs: 4,
+          explanation: "Already leading.",
+        },
+      ]}
+    />,
+  );
+  expect(screen.getAllByRole("listitem")[2]?.textContent).toContain(
+    "Race B · same amount as #4",
+  );
+});

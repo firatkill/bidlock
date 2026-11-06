@@ -98,11 +98,19 @@ test("TC-185: countdown uses server time, warning, soft-close, cap and Closing s
   const view = render(
     <Countdown auction={{ ...auction, ends_at: end(61) }} clock={sync} />,
   );
-  expect(screen.getByText("Closes in 1:01").className).not.toContain(
-    "text-warn",
-  );
+  expect(
+    screen.getByText(
+      (_, element) =>
+        element?.tagName === "P" && element.textContent === "Closes in 1:01",
+    ).className,
+  ).not.toContain("text-warn");
   await advance(1000);
-  expect(screen.getByText("Closes in 1:00").className).toContain("text-warn");
+  expect(
+    screen.getByText(
+      (_, element) =>
+        element?.tagName === "P" && element.textContent === "Closes in 1:00",
+    ).className,
+  ).toContain("text-warn");
   view.rerender(
     <Countdown auction={{ ...auction, ends_at: end(11) }} clock={sync} />,
   );
@@ -124,7 +132,12 @@ test("TC-185: countdown uses server time, warning, soft-close, cap and Closing s
       clock={sync}
     />,
   );
-  expect(screen.getByText("Opens in 1:00")).toBeTruthy();
+  expect(
+    screen.getByText(
+      (_, element) =>
+        element?.tagName === "P" && element.textContent === "Opens in 1:00",
+    ),
+  ).toBeTruthy();
   view.rerender(
     <Countdown auction={{ ...auction, status: "settled" }} clock={sync} />,
   );

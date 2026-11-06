@@ -72,3 +72,73 @@ test("TC-241 experiments respect readonly and cannot send before deadline", () =
     expect(button.hasAttribute("disabled")).toBe(true);
   expect(placeBid).not.toHaveBeenCalled();
 });
+
+test("TC-252 closed, settled and unsold disable experiments and explain why", () => {
+  const clock = new ClockSync();
+  const props = {
+    clock,
+    isLeader: false,
+    readonly: false,
+    onAccepted: vi.fn(),
+    onRejected: vi.fn(),
+    onRefresh: vi.fn(),
+  };
+  const view = render(
+    <Experiments {...props} auction={{ ...auction, status: "closed" }} />,
+  );
+  for (const status of ["closed", "settled", "unsold"] as const) {
+    view.rerender(<Experiments {...props} auction={{ ...auction, status }} />);
+    expect(screen.getByText("The auction has closed.")).toBeTruthy();
+    for (const button of screen.getAllByRole("button"))
+      expect(button.hasAttribute("disabled")).toBe(true);
+  }
+  expect(placeBid).not.toHaveBeenCalled();
+});
+
+test("TC-251 accepted A and rejected B retain code and factual race explanation", async () => {
+  vi.mocked(placeBid)
+    .mockResolvedValueOnce({
+      bid: {
+        id: auction.id,
+        bid_no: 4,
+        amount: 1000,
+        placed_at: auction.server_now,
+      },
+      auction: {
+        id: auction.id,
+        status: "live",
+        current_price: 1000,
+        leader_bidder_id: auction.id,
+        min_next_bid: 1100,
+        max_bid: 11100,
+        ends_at: auction.ends_at,
+        extended: false,
+        extension_count: 0,
+        version: 2,
+      },
+      replayed: false,
+      server_now: auction.server_now,
+    })
+    .mockRejectedValueOnce(
+      new ApiError(409, {
+        error: { code: "ALREADY_LEADING", message: "leading" },
+        request_id: auction.id,
+      }),
+    );
+  const view = render(panel());
+  fireEvent.click(screen.getByRole("button", { name: "Race" }));
+  await waitFor(() => {
+    expect(
+      screen.getByText(
+        "B was checked after A committed, so it saw the new state. Two requests, one bid.",
+      ),
+    ).toBeTruthy();
+  });
+  const output = view.container.querySelector("output");
+  expect(output?.textContent).toContain("ALREADY_LEADING");
+  expect(output?.textContent).toContain(auction.id.slice(0, 8));
+  expect(output?.textContent).not.toContain(auction.id);
+  expect(output?.querySelector("[title]")?.getAttribute("title")).toBe(
+    auction.id,
+  );
+});

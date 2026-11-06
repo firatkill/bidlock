@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { bidCountCopy, fillCopy, roomCopy as copy } from "@/domain/copy";
 import { formatCents } from "@/domain/money";
 import type { AuctionState } from "@/domain/schemas";
@@ -8,12 +10,25 @@ export function PriceBlock({
   auction: AuctionState;
   isLeader?: boolean;
 }) {
+  const price = auction.current_price ?? auction.starting_price;
+  const [previous, setPrevious] = useState(price);
+  const [changed, setChanged] = useState(false);
+  if (price !== previous) {
+    setPrevious(price);
+    setChanged(true);
+  }
   return (
     <section className="space-y-2">
       <p className="text-sm text-ink-2">
         {auction.current_price === null ? copy.starting : copy.current}
       </p>
-      <p key={auction.current_price} className="price price-flash break-words">
+      <p
+        key={price}
+        onAnimationEnd={() => {
+          setChanged(false);
+        }}
+        className={`price break-words ${changed ? "price-flash" : ""}`}
+      >
         {formatCents(auction.current_price ?? auction.starting_price)}
       </p>
       <p className={isLeader ? "text-accent" : "text-ink-2"}>

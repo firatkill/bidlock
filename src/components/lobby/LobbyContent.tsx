@@ -3,7 +3,7 @@ import type { BenchResult } from "@/domain/schemas";
 export function LobbyIntro() {
   return (
     <header className="max-w-4xl space-y-5 py-4 md:py-6">
-      <h1 className="max-w-3xl">{copy.headline}</h1>
+      <h1 className="lobby-headline max-w-4xl">{copy.headline}</h1>
       <p className="text-ink-2">{copy.intro}</p>
     </header>
   );
@@ -41,8 +41,11 @@ export function LobbyTeaser() {
     <section className="space-y-5 border-t border-rule pt-8">
       <h2 className="text-2xl font-medium">{copy.teaser}</h2>
       <ul className="grid gap-6 text-ink-2 md:grid-cols-3">
-        {copy.principles.map((principle) => (
+        {copy.principles.map((principle, index) => (
           <li key={principle} className="border-t border-rule pt-4">
+            <span className="mb-3 block font-mono text-accent">
+              {String(index + 1).padStart(2, "0")}
+            </span>
             {principle}
           </li>
         ))}

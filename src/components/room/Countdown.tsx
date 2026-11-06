@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { localNow } from "@/client/api";
 import { ClockSync, formatCountdown, remainingMs } from "@/domain/clock";
-import { fillCopy, roomCopy as copy } from "@/domain/copy";
+import { roomCopy as copy } from "@/domain/copy";
 import type { AuctionState } from "@/domain/schemas";
 export function Countdown({
   auction,
@@ -29,19 +29,19 @@ export function Countdown({
   const capped = auction.extension_count >= auction.max_extensions;
   if (!scheduled && left === 0)
     return (
-      <section>
+      <section className="countdown">
         <progress
           aria-hidden="true"
           className="fuse fuse-warn mb-3"
           value={0}
           max={1}
         />
-        <p className="font-mono text-xl">{copy.closing}</p>
+        <p className="countdown-text font-mono text-xl">{copy.closing}</p>
         <p className="mt-2 text-sm text-ink-3">{copy.waiting}</p>
       </section>
     );
   return (
-    <section>
+    <section className="countdown">
       <progress
         aria-hidden="true"
         className={`fuse mb-3 ${left <= 60000 ? "fuse-warn" : ""}`}
@@ -56,11 +56,12 @@ export function Countdown({
         )}
       />
       <p
-        className={`font-mono text-xl ${!scheduled && left <= 60000 ? "text-warn" : "text-ink"}`}
+        className={`countdown-text font-mono text-xl ${!scheduled && left <= 60000 ? "text-warn" : "text-ink"}`}
       >
-        {fillCopy(scheduled ? copy.opens : copy.closes, {
-          time: formatCountdown(left),
-        })}
+        <span className="countdown-label">
+          {(scheduled ? copy.opens : copy.closes).split("{time}")[0]}
+        </span>
+        <span>{formatCountdown(left)}</span>
       </p>
       {!scheduled && capped && (
         <p className="mt-2 text-sm text-ink-3">{copy.cap}</p>

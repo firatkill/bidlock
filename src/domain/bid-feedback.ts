@@ -3,7 +3,13 @@ import { fillCopy, roomCopy } from "./copy";
 import { formatCents } from "./money";
 import { BidRejectionDetails, type ErrorBody } from "./schemas";
 
-export type RejectedBid = { key: string; amount: number; explanation: string };
+export type RejectionContext = { origin?: string; sameAs?: number };
+export type RejectedBid = RejectionContext & {
+  key: string;
+  amount: number;
+  explanation: string;
+  anchor: number;
+};
 export const RetryDetails = z
   .object({ retry_after_ms: z.number().int().nonnegative() })
   .strict();

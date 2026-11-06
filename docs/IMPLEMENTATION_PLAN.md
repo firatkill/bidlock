@@ -348,7 +348,7 @@ Conventions for every task:
 
 ---
 
-### T-38a Catalogue & Ledger design pass (D-59–D-69)
+### T-38a Catalogue & Ledger design pass (D-59–D-72)
 
 - Goal: implement approved S1–S3, S5–S8, P1–P4, P6 against local Catalogue & Ledger mockups.
 - References: PRD §9, §9.5, D-59–D-69; TRD §10 API contracts, §11.2 tokens, §12.1 bot personalities.

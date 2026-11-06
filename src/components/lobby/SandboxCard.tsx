@@ -49,7 +49,7 @@ export function SandboxCard({
         </Link>
       ) : (
         <button
-          className="button mt-auto self-start"
+          className="button button-ink self-start"
           onClick={onStart}
           disabled={
             disabled || !onStart || state === "creating" || state === "readonly"
