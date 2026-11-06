@@ -348,6 +348,16 @@ Conventions for every task:
 
 ---
 
+### T-38a Catalogue & Ledger design pass (D-59–D-69)
+
+- Goal: implement approved S1–S3, S5–S8, P1–P4, P6 against local Catalogue & Ledger mockups.
+- References: PRD §9, §9.5, D-59–D-69; TRD §10 API contracts, §11.2 tokens, §12.1 bot personalities.
+- Acceptance: lint, typecheck, unit; targeted then full E2E (both projects), axe light/dark and mobile ≥44px targets; real browser review. QA ledger updated; CI green. Open PR, do not merge before owner browser review.
+- Scope: lobby, auction/sandbox room, receipt, responsive shell; no SQL business-rule changes, no production scripted traffic.
+- T-44 reference: local `.codex-prompts/design/project/HowItWorks.dc.html`, including two-transaction timeline; do not implement content in T-38a.
+
+---
+
 ## M6 Load test, CI, bench page
 
 ### T-39 App image and full compose

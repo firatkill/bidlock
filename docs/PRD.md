@@ -356,7 +356,7 @@ These must hold for every auction at every committed state, under any concurrenc
 
 ## 9. Pages, states and exact copy
 
-Conventions: text in quotes is exact copy. `{x}` is a variable. Money renders as `$1,234.50` (en-US, always two decimals). Countdown renders `m:ss` under one hour (`0:07`, `3:12`), `h:mm:ss` otherwise. Times in the bid list render `HH:mm:ss` in the visitor's local time zone. Lot numbers render as 4 digits with leading zeros (`Lot 0042`); above 9999 render as is.
+Conventions: text in quotes is exact copy. Bid counts use "1 bid" for one, "{n} bids" otherwise. `{x}` is a variable. Money renders as `$1,234.50` (en-US, always two decimals). Countdown renders `m:ss` under one hour (`0:07`, `3:12`), `h:mm:ss` otherwise. Times in the bid list render `HH:mm:ss.SSS` in the visitor's local time zone. Lot numbers render as 4 digits with leading zeros (`Lot 0042`); above 9999 render as is.
 
 ### 9.1 Global shell (all pages)
 
@@ -401,7 +401,7 @@ Public room card:
 |---|---|
 | Loading | Skeleton with label "PUBLIC ROOM"; sr-only "Loading the public room" |
 | Live, no bids | Label "PUBLIC ROOM · LIVE"; "Lot {lot}" ; title "{title}"; price label "Starting price" value "{starting_price}"; "No bids yet."; "Closes in {m:ss}"; button "Enter the room" |
-| Live, with bids | Price label "Current price" value "{current_price}"; "{bid_count} bids · Leader: {leader_name}" (leader is you: "{bid_count} bids · You are leading"); "Closes in {m:ss}"; button "Enter the room" |
+| Live, with bids | Price label "Current price" value "{current_price}"; "{bid_count} {bid|bids} · Leader: {leader_name}" (leader is you: "{bid_count} {bid|bids} · You are leading"); "Closes in {m:ss}"; button "Enter the room" |
 | Live, at or past zero | "Closing…" in place of the countdown |
 | Scheduled | Label "PUBLIC ROOM · NEXT LOT"; "Opens in {m:ss}"; button "Enter the room" |
 | Error | "Couldn't load the public room. Retrying…" (retries every 3 s with polling) |
@@ -415,6 +415,7 @@ Sandbox card:
 | State | Copy |
 |---|---|
 | Default | Title "Start a sandbox auction". Body "A private 2-minute auction against three bots: Cautious, Steady and Sniper. The bots run in your browser and call the same bid API you do. Your sandbox is deleted after it expires." Button "Start a sandbox" |
+| Bot personalities | Cautious: "Waits five seconds, bids the minimum, gives up early. Always pays." Steady: "Bids every few seconds, sometimes a step higher. Pays nine times in ten." Sniper: "Usually waits until the last 15 seconds, with an occasional opening bid. Pays six times in ten." (TRD §12.1; mockup wording qualified to include its opening-bid chance.) |
 | Creating | Button "Starting…" (disabled) |
 | Active sandbox exists | Title "Your sandbox is running". Body "Lot {lot} · {status_text}" where status_text is "Closes in {m:ss}", "Closing…", "Payment window open" or "Finished". Button "Return to your sandbox" |
 | Global capacity reached (`SANDBOX_CAPACITY`) | "All 50 sandboxes are in use. Try again in a few minutes." Button disabled for 30 s |
@@ -424,7 +425,7 @@ Sandbox card:
 
 Benchmark headline (from `bench/results/latest.json`, read at build time):
 - With data: "Last benchmark: {accepted} accepted bids from {vus} concurrent bidders in {duration_s} s. 1 winner. {violations} invalid bids. p95 {p95_ms} ms." Second line, muted: "Measured {date} on GitHub Actions in Docker Compose, not on this site." Link "See the full results".
-- Without data: "Benchmark results will appear here after the first load-test run."
+- Without data (missing file or `empty: true`): hide the lobby benchmark band entirely. "Benchmark results will appear here after the first load-test run." belongs on /how-it-works.
 
 Teaser, heading "How it stays correct", three items:
 1. "One row lock per auction. Bids on the same lot queue inside PostgreSQL, so each one is checked against the latest price."
@@ -434,13 +435,13 @@ Link: "Read how it works".
 
 ### 9.3 Auction room `/a/[id]`
 
-Layout: desktop two columns (left: lot card, price block, countdown, bid panel; right: bid history). Mobile: lot card, price, countdown, bid panel, history.
+Layout: desktop two columns (left: lot card, price block, countdown, bid panel; right: bid history). Mobile: lot card, price, countdown, history; below 768 px bid controls are fixed to the bottom with safe-area padding and reserved content clearance. At 1280×800 the price, countdown and all three quick bids are visible without scrolling.
 
 Breadcrumb: "Lobby / Public room" or "Lobby / Your sandbox".
 
 Lot card:
 - "Lot {lot}" (mono), title "{title}" (H1).
-- Image placeholder: a 4:3 box with a 1 px rule border, the lot number large in mono and caption "No photo. This is a demo lot." `aria-hidden` on the decorative box, caption is visible text.
+- Catalogue plate: a compact approximately 104×78 px box with a 1 px rule border and the lot number in mono and caption "No photo. This is a demo lot." `aria-hidden` on the decorative box, caption is visible text.
 - "Starting price {starting_price}".
 
 Price block:
@@ -450,9 +451,9 @@ Price block:
 | No bids | Label "Starting price", value "{starting_price}", sub "No bids yet. Be the first." |
 | Bids, someone else leads | Label "Current price", value "{current_price}", sub "Leader: {leader_name}" plus "BOT" badge if the leader is a bot |
 | Bids, you lead | Label "Current price", value "{current_price}", sub "You are the highest bidder." (accent colour) |
-| Meta line | "{bid_count} bids · Next minimum {min_next_bid} · Steps of {increment}" |
+| Meta line | "{bid_count} {bid|bids} · Next minimum {min_next_bid} · Steps of {increment}" |
 
-Countdown:
+Countdown: an `aria-hidden` fuse shows remaining time / total time (`ends_at - starts_at`), clamped to 0–1; accent above 60 seconds, warn at ≤60 seconds. No transition under reduced motion. Text below is unchanged.
 
 | Condition | Copy |
 |---|---|
@@ -465,13 +466,14 @@ Countdown:
 
 Extension banner (shown 5 s after each extension event, newest replaces older; `aria-live="polite"`):
 - "Late bid! Closing moved to {m:ss}" where `{m:ss}` = new `ends_at` − the extending bid's `placed_at` (with default settings always "0:30").
-- Second line: "Extension {n} of {max}".
+- Second line: "Extension {n} of {max}". Dark strip with decorative "+{m:ss}" stamp, using the actual extension duration.
 
 Bid panel:
 
 | Element | Copy |
 |---|---|
-| Quick buttons (3) | "Bid {amount}" with sub-label "+1 step", "+2 steps", "+5 steps"; `aria-keyshortcuts` "1", "2", "3"; amounts = `min_next_bid`, `min_next_bid + increment`, `min_next_bid + 4 × increment` |
+| Quick buttons (3) | "Bid {amount}" with sub-label "+1 step", "+2 steps", "+5 steps"; visible decorative kbd badges "1", "2", "3" and `aria-keyshortcuts` "1", "2", "3"; +5 steps uses the outline style; amounts = `min_next_bid`, `min_next_bid + increment`, `min_next_bid + 4 × increment` |
+| Mobile custom toggle | "Enter a custom amount" reveals and focuses the custom field; desktop field remains visible. |
 | Custom field | Label "Your bid", `$` prefix, placeholder "{min_next_bid without $}", helper "Minimum {min_next_bid}. Keys 1, 2, 3 place quick bids." Button "Place bid" |
 | Pending (after click, until response) | Clicked button text "Placing bid…"; all bid controls disabled |
 | Accepted | Inline status (polite): "Bid placed: {amount}. You are the highest bidder." |
@@ -497,6 +499,8 @@ Bid errors (inline under the panel, `role="alert"`):
 | NOT_FOUND | "This auction no longer exists." |
 | Network failure or 5xx | "Couldn't reach the server. Your bid was not confirmed." Button "Retry" (resends the same idempotency key and amount) |
 
+Receipt labels: "Result", "Lot", "Winning bid", "Runner-up", "Bids", "Soft-close extensions". Only render fields returned by the API; winning bid number/time require the matching accepted bid, runner-up requires a returned rank-2 offer. Do not infer total bidder counts from paginated history. Lifecycle strip: "Scheduled" → "Live" → "Closed" → "Payment window" → "Settled" / "Unsold", derived from status and payment_state, with `aria-current="step"`.
+
 Result panel (replaces the bid panel when status is not live/scheduled):
 
 | Situation | Viewer | Copy |
@@ -521,7 +525,9 @@ Bid history (right column, heading "Bid history"):
 
 | Element | Copy |
 |---|---|
-| Row | "#{bid_no}" (mono), "{name}" with badges "You" / "BOT", "{amount}" (mono, right aligned), "{HH:mm:ss}"; rows that extended the close carry tag "+0:30" with `title` "This bid extended the close" |
+| Row | "#{bid_no}" (mono), "{name}" with badges "You" / "BOT", "{amount}" (mono, right aligned), "{HH:mm:ss.SSS}"; rows that extended the close carry tag "+0:30" with `title` "This bid extended the close" |
+| Rejected request | Session-local own requests only; struck-through amount, "You", "rejected" and the API-specific explanation. BID_TOO_LOW: "The price check rejected your bid. The minimum is now {min_next_bid}." No measured lock-delay claim, because the API supplies none. Never persisted, removed on reload; no fabricated server timestamp or bid number. |
+| Time heading | "server time · ms"; accepted times come from `placed_at`. |
 | Empty | "No bids yet." |
 | Pagination | Button "Show earlier bids" (loads 20 older rows); when exhausted or the newest 100 rows are shown the button is removed (D-55) |
 | Loading older | "Loading…" |
@@ -547,6 +553,11 @@ Sandbox-only elements:
 | Hidden tab | "Bots paused while this tab is in the background." |
 | Token error | "Couldn't start the bots. Reload the page to try again." |
 | Not owner | Same as Not found |
+| Experiment panel | "Try to break it"; "Send the requests that break naive auctions."; "Each experiment calls the real bid API on this sandbox lot and shows what PostgreSQL decided." |
+| Race | "Race two bids"; "Two requests for {amount}, sent together"; button "Race". Two public POST /bids calls via Promise.all with different keys. While leading, disabled with "You're leading. Wait until a bot outbids you." |
+| Replay | "Replay a request"; "Send the same bid twice with one idempotency key"; button "Replay". Sequential calls with identical amount/key; show actual returned bid IDs and "Same bid id. No second row." only when they match. |
+| Late | "Bid after the deadline"; "Unlocks when the countdown reaches 0:00"; button "Send late". Enabled only for live status with remaining time zero (including Closing…); no clock skew or test endpoint. |
+| Experiment outcome | Mono output: "201 accepted · #{n} · {id}" and actual response code and accepted bid number/id, or API rejection code and normal bid-error copy. Pending "Placing bid…". RATE_LIMITED uses normal countdown copy and disables experiment controls. No claimed lock timings or expected result presented as actual. |
 
 ### 9.4 How it works `/how-it-works`
 
@@ -561,7 +572,7 @@ Sections, in order, each with an anchor id:
    - "Retries are safe because each request carries an idempotency key. The key and the original result are stored in the same transaction as the bid, so a retry returns the stored result."
    - "Closing happens in the same function: a bid that arrives after the deadline closes the auction and is rejected. A scheduled job closes auctions nobody touches."
    - A code block with the 15-line core of `place_bid` (lock, clock, idempotency lookup, validate, insert, update).
-4. `#benchmark` H2 "Benchmark". Table rendered from `bench/results/latest.json`: date, commit, runner, VUs, duration, requests, accepted bids, business rejections by code, unexpected errors, p50/p95/p99 latency, throughput (req/s), invariant checks with pass/fail per INV id, extension count reached. Sentence: "This test runs weekly on GitHub Actions against a production build in Docker Compose. It never runs against this site." Link "All runs" to `bench/results/` on GitHub. Without data: "No benchmark has been run yet."
+4. `#benchmark` H2 "Benchmark". Table rendered from `bench/results/latest.json`: date, commit, runner, VUs, duration, requests, accepted bids, business rejections by code, unexpected errors, p50/p95/p99 latency, throughput (req/s), invariant checks with pass/fail per INV id, extension count reached. Sentence: "This test runs weekly on GitHub Actions against a production build in Docker Compose. It never runs against this site." Link "All runs" to `bench/results/` on GitHub. Without data: "Benchmark results will appear here after the first load-test run."
 5. `#stats` H2 "Right now". "Bids today: {n} · Active sandboxes: {n} · Public lots today: {n}" and muted "Updated {n} s ago." On error: "Live stats are unavailable right now."
 6. `#run-it` H2 "Run it yourself". Commands block: `pnpm install`, `pnpm db:up`, `pnpm test:all`, `pnpm load:local`.
 
@@ -691,3 +702,25 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-57 | Payment network/5xx failures show "Couldn't confirm your payment. Please try again." and Retry; rate limits show "Slow down. You can pay again in {n} s." and disable payment during the retry period. | owner approved 2026-10-23 | Completes T-37 transport/error copy using the existing idempotent pay endpoint. |
 
 | D-58 | Scheduled-auction countdown E2E-08 compares the displayed time with server remaining time (`starts_at` minus `server_now`) within 3 seconds to tolerate page loading. The countdown must be present, at most 1:00, and bidding remains disabled. | owner approved 2026-11-06 | Replaces the fixed 1:00/0:59 expectation in TC-205 without changing the 3 s expect or 90 s test timeout. Creation returns an auction ID; timestamps are read from its state response. |
+
+| D-59 | Compact catalogue plate and first-viewport room controls; preserve caption and existing visual tokens. | owner approved 2026-11-06 | T-38a S1; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-60 | Singular 1 bid / plural {n} bids in lobby and room meta. | owner approved 2026-11-06 | T-38a S2; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-61 | Hide lobby benchmark when data is missing or the empty sentinel is present; retain empty copy on /how-it-works. | owner approved 2026-11-06 | T-38a S3; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-62 | Decorative remaining/total fuse with accent/warn threshold at 60 s and reduced-motion support. | owner approved 2026-11-06 | T-38a S5; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-63 | Quick-bid kbd badges, outline +5 style, mobile sticky controls and expandable custom field with safe-area padding. | owner approved 2026-11-06 | T-38a S6–S7; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-64 | Result receipt from existing API fields only; accessible status/payment lifecycle strip. | owner approved 2026-11-06 | T-38a S8, P4; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-65 | Sandbox-only user-triggered race, replay and deadline experiments using the public API; no business rules or synthetic clock in client. | owner approved 2026-11-06 | T-38a P1; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-66 | Session-local own rejected ledger rows and accepted server placed_at times with millisecond precision. | owner approved 2026-11-06 | T-38a P2–P3; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-67 | Bot personality lines on the lobby sandbox card, faithful to TRD §12.1. | owner approved 2026-11-06 | T-38a P6; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-68 | HowItWorks.dc.html and its two-transaction timeline are references for T-44 only; exclude replay, presence, sync indicator and test counts. | owner approved 2026-11-06 | T-38a P5 and exclusions; local Catalogue & Ledger mockups are references, never committed. |
+
+| D-69 | Use factual rejected-bid copy: "The price check rejected your bid. The minimum is now {amount}." Qualify Sniper’s personality to include its occasional opening bid. | owner approved 2026-11-06 | No fabricated lock-wait measurements; personality remains faithful to TRD §12.1. |
