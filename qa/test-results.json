@@ -8064,6 +8064,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "INT-01 passed during pnpm test:concurrency; all 49 integration tests pass after resetting only bidlock_test. Shared invariant SQL is unchanged.",
+          "note": "T-41 resumed acceptance after owner Docker recovery."
         }
       ],
       "regression_of": null,
@@ -17468,6 +17473,77 @@
       ],
       "regression_of": null,
       "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-265",
+      "ac_reference": "FR-94; NFR-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Verifier checks every invariant and persists results",
+      "description": "T-41 unit checks pass; Docker storage prevents required live acceptance.",
+      "steps_to_reproduce": "Run VUS=50 DURATION=15s AUCTION_S=8 BENCH_MIN_BIDS=10 pnpm load:local.",
+      "expected_result": "Fresh local load completes verification; reversible corruption fails INV-12 then restores a clean result.",
+      "actual_result": "Docker build metadata I/O error; restart reports read-only filesystem.",
+      "status": "resolved",
+      "environment": "macOS / Docker Desktop / t-41-verify, 2026-11-07",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Six focused verifier unit tests pass: parsing, environment, output shape, failure decisions, 2-second polling and 120-second deadline.",
+          "note": "Unit portion only; live acceptance remains blocked."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Fresh load build blocked by Docker I/O error with full host disk. Docker storage became read-only; Rehearse restart failed. No fresh verifier/corruption result.",
+          "note": "Environment blocker, not an invariant failure. Owner checkpoint in docs/PROGRESS.md; no destructive cleanup attempted."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Fresh small load and standalone verify exit 0: closed, final_price 19000, bid_count 67, extension_count 7; all 16 checks zero violations.",
+          "note": "Owner recovered disk/Docker. Lint/typecheck/202 unit tests/guards and 49 concurrency tests pass. Rehearse restoration is independently blocked by missing .env, recorded in docs/PROGRESS.md; no volume removed."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "t41-docker-storage",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-266",
+      "ac_reference": "FR-94; NFR-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Verifier fails corrupted or insufficient runs",
+      "description": "T-41 unit checks pass; Docker storage prevents required live acceptance.",
+      "steps_to_reproduce": "Run VUS=50 DURATION=15s AUCTION_S=8 BENCH_MIN_BIDS=10 pnpm load:local.",
+      "expected_result": "Fresh local load completes verification; reversible corruption fails INV-12 then restores a clean result.",
+      "actual_result": "Docker build metadata I/O error; restart reports read-only filesystem.",
+      "status": "resolved",
+      "environment": "macOS / Docker Desktop / t-41-verify, 2026-11-07",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial fake-clock timeout test timed out because imported Node timers escaped fake timers.",
+          "note": "Testability fix uses global timer/performance; no timeout raised."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Six focused verifier unit tests pass: parsing, environment, output shape, failure decisions, 2-second polling and 120-second deadline.",
+          "note": "Unit portion only; live acceptance remains blocked."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Fresh load build blocked by Docker I/O error with full host disk. Docker storage became read-only; Rehearse restart failed. No fresh verifier/corruption result.",
+          "note": "Environment blocker, not an invariant failure. Owner checkpoint in docs/PROGRESS.md; no destructive cleanup attempted."
+        },
+        {
+          "result": "pass",
+          "actual_result": "bidlock_load-only bid_count +1 yields exit 1 and INV-12=1; finally restored with -1, then verify exits 0. Unit failure decisions and 120-second fake-clock coverage pass.",
+          "note": "Owner recovered disk/Docker. Lint/typecheck/202 unit tests/guards and 49 concurrency tests pass. Rehearse restoration is independently blocked by missing .env, recorded in docs/PROGRESS.md; no volume removed."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "t41-docker-storage",
       "clickup_task": null,
       "retraction_reason": null
     }

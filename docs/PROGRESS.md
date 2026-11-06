@@ -59,7 +59,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
 | T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
 | T-40  | k6 bid-storm script                                | done   | `8f30c43`                                |
-| T-41  | Invariant verification                             | todo   | —                                        |
+| T-41  | Invariant verification                             | doing  | —                                        |
 | T-42  | Bench report and headline data                     | todo   | —                                        |
 | T-43  | Load workflow                                      | todo   | —                                        |
 | T-44  | How it works page                                  | todo   | —                                        |
@@ -271,3 +271,19 @@ Local acceptance passed k6: 1,135 bids, 67 accepted responses, p95 21.3056ms, p9
 QA ledger structure/status checks pass. The external checker repeats the pre-existing duplicate exploratory `—` lookup collision noted in T-39; independent ordered comparison confirms all 262 previous entries are byte-equivalent as JSON values, with five new entries appended. No history was removed.
 
 T-40 complete: [PR #41](https://github.com/firatkill/bidlock/pull/41), implementation `4ab96b1`, merge commit `8f30c43`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42301679975) before the merge. D-76 and TC-260–TC-264 recorded. Only the full-size M6 performance/closing checks remain scheduled for T-43; no owner checkpoint is open. T-41 has not started.
+
+## T-41 invariant verification
+
+Verifier and six unit tests implemented; shared invariants.sql unchanged. TC-265/TC-266 extended; D-77 records local acceptance. Initial acceptance was interrupted by full disk and Docker I/O errors. The owner recovered disk space and restarted Docker with named volumes preserved; that checkpoint is resolved. Initial failure evidence remains in the append-only QA ledger.
+
+## T-41 resumed acceptance — passed
+
+Owner disk recovery is complete; the previous disk question is closed. Postgres rebuilt successfully and reused `bidlock_pgdata`; `bidlock`, `bidlock_test`, and `bidlock_load` all exist. Only `bidlock_test` was reset directly; the authorized load launcher reset `bidlock_load`. Development schema OID remained 79932 before/after acceptance; no dev reset and no volume deletion.
+
+Fresh VUS=50/DURATION=15s/AUCTION_S=8/BENCH_MIN_BIDS=10 load run passed k6 and verification, then exited 1 only at the expected T-42 report placeholder. Standalone verify exited 0: auction ea1875b6-b49d-4f46-af7e-17c3f5809393, status closed, final_price 19000 cents, bid_count 67, extension_count 7; all 16 invariant checks have zero violations. Incrementing only this load auction's bid_count produced exit 1 and INV-12=1; decrement restored bid_count 67 and exit 0. Shared invariant SQL remains unchanged. No bench/out artifacts are committed.
+
+Lint, typecheck, all 202 unit tests, guards and `pnpm test:concurrency` (49 tests, including INT-01) passed. The earlier PR revision had all six CI jobs green; evidence revision CI must be checked separately.
+
+Bidlock app and Rehearse remain stopped; port 3000 is free for later M6 local load runs. The attempted Rehearse restore failed because its `.env` was missing. The owner subsequently decided that Rehearse restoration is outside T-41 acceptance and will restore it after the M6 local load runs (D-78). This is not a Bidlock blocker. Do not touch the Rehearse repository or start its container. All named volumes remain preserved. T-42 has not started.
+
+Resumed QA ledger: structure/status checks pass; known duplicate exploratory `—` append-only lookup collision persists. Independent ordered comparison confirms all 269 entries and their prior attempts preserved.
