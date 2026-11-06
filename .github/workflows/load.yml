@@ -1,0 +1,94 @@
+name: load
+
+on:
+  workflow_dispatch:
+    inputs:
+      vus:
+        description: Virtual users
+        default: "500"
+      duration:
+        description: k6 duration
+        default: "60s"
+  schedule:
+    - cron: "0 4 * * 1" # Mondays 04:00 UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: load
+  cancel-in-progress: false
+
+env:
+  COMPOSE: docker compose -f docker/compose.yml
+  DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:54329/bidlock_load
+
+jobs:
+  bid-storm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: mkdir -p bench/out && chmod 777 bench/out # grafana/k6 runs as a non-root user
+      - name: Build images
+        run: $COMPOSE build db migrate app
+      - name: Start database, migrate, start app
+        run: |
+          $COMPOSE up -d db --wait
+          $COMPOSE run --rm migrate
+          $COMPOSE up -d --no-deps app
+          for i in $(seq 1 60); do curl -fsS http://localhost:3000/api/health >/dev/null && break; sleep 2; done
+          curl -fsS http://localhost:3000/api/health
+      - name: Run k6
+        id: k6
+        continue-on-error: true
+        env:
+          VUS: ${{ inputs.vus || '500' }}
+          DURATION: ${{ inputs.duration || '60s' }}
+        # The k6 service's command (compose) is "run /load/bid-storm.js"; the image entrypoint is k6.
+        run: $COMPOSE --profile load run --rm --no-deps k6
+      - name: Verify invariants
+        id: verify
+        run: pnpm bench:verify
+      - name: Write report
+        run: pnpm bench:report --k6-outcome "${{ steps.k6.outcome }}"
+      - name: Collect logs
+        if: always()
+        run: $COMPOSE logs --no-color > bench/out/compose.log 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bench-${{ github.run_id }}
+          path: |
+            bench/out
+            bench/results
+            bench/SUMMARY.md
+          retention-days: 30
+      - name: Open pull request with results
+        if: steps.verify.outcome == 'success'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bench/results
+          delete-branch: true
+          commit-message: "bench: load test results ${{ github.run_id }}"
+          title: "bench: load test results"
+          body: |
+            Automated k6 bid-storm run ${{ github.run_id }}.
+            k6 thresholds: ${{ steps.k6.outcome }}. Invariant verification: passed.
+            See bench/SUMMARY.md and the run artifact.
+          add-paths: |
+            bench/results/*.json
+            bench/SUMMARY.md
+      - name: Fail when thresholds failed
+        if: steps.k6.outcome != 'success'
+        run: exit 1
+      - name: Shut down
+        if: always()
+        run: $COMPOSE --profile load down -v

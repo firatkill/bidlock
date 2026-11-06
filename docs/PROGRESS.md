@@ -60,8 +60,8 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
 | T-40  | k6 bid-storm script                                | done   | `8f30c43`                                |
 | T-41  | Invariant verification                             | done   | `25c2751`                                |
-| T-42  | Bench report and headline data                     | done   | `46fafea` (PR #43)                       |
-| T-43  | Load workflow                                      | todo   | —                                        |
+| T-42  | Bench report and headline data                     | done   | `4c8e096` (PR #43)                       |
+| T-43  | Load workflow                                      | doing  | —                                        |
 | T-44  | How it works page                                  | todo   | —                                        |
 | T-45  | Supabase production setup                          | todo   | —                                        |
 | T-46  | Vercel deploy, DNS, keepalive                      | todo   | —                                        |
@@ -297,3 +297,7 @@ The owner approved extending k6 instrumentation and summary configuration on 202
 T-42 local acceptance passed: 212 unit/DOM tests; 49 integration tests including INT-01/INT-02; 363 pgTAP assertions; lint/typecheck/guards/build; targeted TC-235 with full measured result and with restored empty sentinel; full E2E 33/33 once. One full-size local load run at defaults exited 0: 45,186 bid requests, 2,204 replays, 305 accepted HTTP outcomes (287 unique accepted bids), p95 57.23392675 ms, p99 462.3527715 ms, unexpected error rate 0, all 16 invariant checks zero, thresholds.passed=true. Strict result and local SUMMARY exist only in ignored bench/out. Report date is UTC (2026-11-06), local acceptance date 2026-11-07. bench/results is unchanged.
 
 D-79/D-80 and TC-267–269 updated. Interactive browser discovery returned no browsers; automated full/empty headline checks passed, owner visual review remains required. QA ledger structural/status checks pass; the known duplicate exploratory `—` append-only lookup collision remains. Independent ordered comparison confirms all 269 original entries and their prior attempts preserved, plus three new cases. Bidlock app is stopped, Rehearse untouched, named volumes preserved. All six CI jobs passed on implementation commit `46fafea`: [run 42308943337](https://github.com/firatkill/bidlock/actions/runs/42308943337). [PR #43](https://github.com/firatkill/bidlock/pull/43) stays open for owner browser review; do not merge or start T-43. The final evidence-only revision must also retain green CI.
+
+## T-43 workflow implementation
+
+T-42 owner browser review passed and PR #43 merged as `4c8e096`. Load workflow follows TRD §16.2, with static TC-270/TC-271 contract coverage. D-81 records A-09 approval; read-only repository defaults and enabled PR creation verified without settings changes. Local lint, typecheck, 214 unit tests and guards pass. CI, first default dispatch and benchmark publication remain pending.
