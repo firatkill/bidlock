@@ -51,7 +51,7 @@ test("TC-184: lot and price copy covers empty, other, bot and viewer leaders", (
   );
   expect(screen.getByText(copy.noPhoto)).toBeTruthy();
   expect(lot.container.querySelector('[aria-hidden="true"]')?.textContent).toBe(
-    "1",
+    "0001",
   );
   expect(screen.getByText("Starting price $10.00")).toBeTruthy();
   lot.unmount();
@@ -61,7 +61,11 @@ test("TC-184: lot and price copy covers empty, other, bot and viewer leaders", (
   expect(screen.getByText(copy.firstBid)).toBeTruthy();
   expect(
     screen.getByText(
-      fillCopy(copy.meta, { count: 0, minimum: "$10.00", increment: "$1.00" }),
+      fillCopy(copy.meta, {
+        bids: "0 bids",
+        minimum: "$10.00",
+        increment: "$1.00",
+      }),
     ),
   ).toBeTruthy();
   const led = {

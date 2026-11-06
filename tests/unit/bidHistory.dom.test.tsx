@@ -49,6 +49,7 @@ test("TC-193: empty history, exact row labels, badges, local time and extension 
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
+      fractionalSecondDigits: 3,
     }),
   );
   expect(screen.queryByRole("button")).toBeNull();
