@@ -70,7 +70,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- T-43: timing correction and bounded diagnostics approved (D-83/D-84). One diagnostic dispatch and one subsequent fix dispatch authorized; no new owner question currently.
+- T-43: both D-84 dispatches used. Final pool4 run42314282647 failed (p95=896.46 ms, p99=1529.86 ms). Approve restoring pool20 and focused client/driver/cold-start profiling before another fix/run (recommended), or further investigate pool4? No benchmark published; see qa/T-43-diagnosis.md.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -329,3 +329,9 @@ Instrumentation local validation: lint/typecheck, 216 unit tests, pgTAP and 49 c
 ## T-43 diagnostic complete — pool fix
 
 Instrumentation PR #46 merged as `df22752` with six green CI jobs. Diagnostic run42313175983 reached20 extensions and500 post-close responses, but p99=726.37423376 ms failed (p95=241.3247772 ms); bot PR #47 intentionally unmerged. All16 invariant checks zero. Measured attribution is in qa/T-43-diagnosis.md. D-85 reduces load pool20→4 to limit observed auction lock contention; TC-277 tracks the final gate. No SQL changes. One final dispatch remains after the fix PR passes CI and merges.
+
+## T-43 final authorized validation — failed, owner checkpoint
+
+Fix PR #48 merged as `880d155` with six green CI jobs after a transient E2E font-build failure passed on rerun. Final [run42314282647](https://github.com/firatkill/bidlock/actions/runs/42314282647): 21,788 bids,1,066 replays,124 accepted HTTP outcomes (117 unique bids), p95=896.4585606 ms, p99=1529.85733683 ms, errors0, all16 invariant checks0, thresholds.passed=false. Cap20 and500 post-close responses satisfy TC-264. Pool4 worsened latency relative to the diagnostic pool20 run; exact breakdown recorded in qa/T-43-diagnosis.md.
+
+Artifact uploaded and full schema/file scope validated. Bot PR #49 remains unmerged, as do untouched #45/#47. Both additional dispatches used; no retry, no benchmark publication and no T-44 work. D-83/D-84/D-85 and TC-276/TC-277 retained. Main still has the authorized pool4 setting; proposed restoration to20 needs the next owner decision. Evidence is pushed on t-43-final-evidence. QA ledger prior attempts preserved; known external exploratory-label checker collision remains.

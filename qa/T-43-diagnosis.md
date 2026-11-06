@@ -91,3 +91,30 @@ Docker CPU samples (100%=one core): app mean81.55%, p95 117.91%; db mean96.65%, 
 ## Smallest measured fix (D-85)
 
 Reduce load-only DB_POOL_MAX from20 to4. With a single auction serialization point, twenty backends do not permit twenty concurrent bids to commit; the sample shows many waiting on that lock. Four connections limit simultaneous lock contenders and backend overhead while permitting other statements to progress. The exact value is a conservative tuning hypothesis, not a measured optimum; driver queueing may increase. Only the one authorized final dispatch can establish whether end-to-end p95/p99 improve. No SQL, rate-limit semantics, locks, constraints, indexes, workload pacing, dependencies or production settings change.
+
+## Final authorized run — pool reduction failed
+
+Fix [PR #48](https://github.com/firatkill/bidlock/pull/48) merged as `880d155` after six green [CI jobs](https://github.com/firatkill/bidlock/actions/runs/42313828024). The first E2E job failed during the Next font build before tests (`next/font/google queries have exactly one entry`); the production-build job passed on the same commit. The failed-jobs rerun API returned HTTP500 without starting a run; a targeted job rerun succeeded without source changes. This CI retry did not consume a load dispatch.
+
+[Final run 42314282647](https://github.com/firatkill/bidlock/actions/runs/42314282647) is the second and last dispatch authorized by D-84. It failed both latency thresholds. Artifact `bench-42314282647` uploaded (872,476 bytes); FullBenchResult parses and confirms actual pool4. Bot [PR #49](https://github.com/firatkill/bidlock/pull/49) changes exactly bench/results/2026-11-06.json, bench/results/latest.json and bench/SUMMARY.md. It remains unmerged. No result has been published; #45 and diagnostic #47 remain open, unchanged and unmerged.
+
+| Metric                            | Original pool20 / extension12 | Diagnostic pool20 / extension10 | Final pool4 / extension10 |
+| --------------------------------- | ----------------------------: | ------------------------------: | ------------------------: |
+| Bids                              |                        33,874 |                          33,329 |                    21,788 |
+| Replays                           |                         1,687 |                           1,685 |                     1,066 |
+| Accepted HTTP outcomes            |                           246 |                             263 |                       124 |
+| Unique accepted bids              |                           235 |                             249 |                       117 |
+| p95 ms                            |                        406.83 |                          241.32 |                    896.46 |
+| p99 ms                            |                      1,029.53 |                          726.37 |                  1,529.86 |
+| Unexpected error rate             |                             0 |                               0 |                         0 |
+| Invariant violations (16 checks)  |                             0 |                               0 |                         0 |
+| Extensions / post-close responses |                        12 / 0 |                        20 / 500 |                  20 / 500 |
+| thresholds.passed                 |                         false |                           false |                     false |
+
+Final per-request mean618.411 ms comprises getMe206.747, check_bid_rate200.989, place_bid210.379 and residual0.295 ms. The handler p99 was1,074.883 ms; authoritative HTTP p99 includes work before/after the handler. Every phase became slower, despite reduced backend contention. Only19 place_bid SQL statements crossed10 ms (max22.939 ms); none of the rate/auth statements did. This is strong evidence of waiting outside SQL execution (including driver queue/scheduling), not a reason to change auction locking or rate-limit rules.
+
+Activity snapshots decreased from180 to165: blocked place_bid observations1175→53; total active-backend observations1791→355; hence blocked place_bid was about65.6%→14.9% of active observations. These are sampled states, not complete wait durations. Final active-backend p95=4, matching the new pool limit. Per-phase pending-call maxima rose from65/70/84 to179/214/273. The smaller pool reduced concurrent lock contention but caused much larger awaiting-call backlogs and lowered measured throughput. Four was not a successful tuning choice.
+
+Final Docker CPU means: app94.47%, db91.92%, k630.01%; all sampled throttling counters remained0. Event-loop utilization p95=.913 and largest sampled delay107.28 ms; the20 ms histogram resolution remains part of the mean delay. These samples do not isolate native pool queue time from Node/driver scheduling costs. Instrumentation was retained across both runs; different runner instances and stochastic arrivals also limit causal precision.
+
+**Owner checkpoint:** both permitted dispatches have been used. Recommend restoring load pool20 (the better measured configuration) and authorizing focused client/driver scheduling plus cold-start profiling before another fix/run. Alternatively retain pool4 and investigate it further, accepting that it is currently substantially worse. No threshold, VU, runner, SQL invariant, lock or workload change is proposed. No further modification or dispatch is made without approval. Pool4 remains on main from the authorized fix merge; documentation does not silently revert it. T-43 remains blocked and T-44 untouched.
