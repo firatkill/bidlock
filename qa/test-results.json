@@ -17739,6 +17739,11 @@
           "result": "pass",
           "actual_result": "Full-size pnpm load:local exited 0 at defaults (500 VUs, 60 s): 45186 bids, 2204 replays, 305 accepted responses (287 unique database bids), p95 57.23392675 ms, p99 462.3527715 ms, unexpected error rate 0, all 16 invariant checks zero, thresholds.passed=true. FullBenchResult parses result.json. Pool=20 from Compose; PostgreSQL 17.11 from server_version; Apple M4/10 CPUs/24 GiB from OS.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
         }
       ],
       "regression_of": null,
@@ -17778,6 +17783,11 @@
           "result": "pass",
           "actual_result": "Local launcher produced bench/out/result.json and SUMMARY.md. git status --porcelain bench/results is empty before and after temporary headline preview. Header-only bench/SUMMARY.md unchanged. All UT-12 tests pass.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
         }
       ],
       "regression_of": null,
@@ -17807,6 +17817,11 @@
           "result": "pass",
           "actual_result": "212 unit/DOM tests passed; targeted TC-235 E2E passed with the actual local full result, then again with restored empty sentinel. Full E2E passed 33/33. No browser was connected for interactive visual inspection; owner browser review remains required.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
         }
       ],
       "regression_of": null,
