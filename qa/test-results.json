@@ -17609,18 +17609,27 @@
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Latency and error thresholds",
       "status": "open",
-      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "environment": "GitHub Actions ubuntu-latest / 4 CPUs AMD EPYC 7763 / PostgreSQL 17.11 / commit 99ab16e",
       "attempts": [
         {
           "result": "pass",
           "actual_result": "Small local acceptance passed all k6 thresholds: p95 21.305579399999868ms, p99 207.83524699999998ms; unexpected_errors rate0, replay_mismatch count0. Adapter verifies exact thresholds. Full-size CI performance remains planned for T-43 (D-43/D-76).",
           "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        },
+        {
+          "result": "fail",
+          "actual_result": "p95 406.8271048999999 ms >=250; p99 1029.5332955099943 ms >=600. Unexpected error rate 0; thresholds.passed=false.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
         }
       ],
       "regression_of": null,
       "root_cause_group": null,
       "clickup_task": null,
-      "retraction_reason": null
+      "retraction_reason": null,
+      "description": "First default CI benchmark failed T-43 acceptance.",
+      "steps_to_reproduce": ["Dispatch load.yml on main with default inputs."],
+      "expected_result": "p95 <250 ms, p99 <600 ms; reach 20 extensions and exercise post-deadline AUCTION_CLOSED responses.",
+      "owner_question": "docs/PROGRESS.md — T-43 benchmark checkpoint"
     },
     {
       "tc_reference": "TC-264",
@@ -17628,18 +17637,27 @@
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Soft close cap and post-deadline exercise",
       "status": "open",
-      "environment": "Local Docker Desktop / Linux arm64 / grafana/k6:1.8.2 / 50 VUs / 15s / AUCTION_S=8",
+      "environment": "GitHub Actions ubuntu-latest / 4 CPUs AMD EPYC 7763 / PostgreSQL 17.11 / commit 99ab16e",
       "attempts": [
         {
           "result": "pass",
           "actual_result": "Adapter verifies auction window10/extension12/cap20 and closed-VU idle behavior. Short local run did not reach AUCTION_CLOSED; full-size live cap/post-deadline exercise remains planned for T-43. No claim of completed live close validation.",
           "note": "T-40 local acceptance 2026-11-07; unit adapter assertions pass. Open cases retain their explicitly deferred full CI coverage."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Only 12/20 extensions; AUCTION_CLOSED responses 0. Verifier eventually reports closed with all 16 invariant checks zero; required cap and post-deadline workload coverage not demonstrated.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
         }
       ],
       "regression_of": null,
       "root_cause_group": null,
       "clickup_task": null,
-      "retraction_reason": null
+      "retraction_reason": null,
+      "description": "First default CI benchmark failed T-43 acceptance.",
+      "steps_to_reproduce": ["Dispatch load.yml on main with default inputs."],
+      "expected_result": "p95 <250 ms, p99 <600 ms; reach 20 extensions and exercise post-deadline AUCTION_CLOSED responses.",
+      "owner_question": "docs/PROGRESS.md — T-43 benchmark checkpoint"
     },
     {
       "tc_reference": "TC-265",
@@ -17834,13 +17852,18 @@
       "ac_reference": "FR-95; FR-96; NFR-31",
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Scheduled/manual load workflow and artifacts",
-      "status": "open",
+      "status": "resolved",
       "environment": "macOS / Node 24 / Vitest / t-43-load-workflow, 2026-11-07",
       "attempts": [
         {
           "result": "pass",
           "actual_result": "Static workflow contract and publication/failure gates pass; lint, typecheck, all 214 unit tests and guards pass.",
           "note": "Real dispatched CI run and artifact/result PR evidence pending; static verification only."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Workflow PR #44 merged as 99ab16e after all six CI jobs passed. Default 500 VUs/60 s run built, migrated, ran k6, verified, reported, uploaded bench-42310825613 (37140 bytes), and cleaned up. Final threshold gate correctly failed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
         }
       ],
       "regression_of": null,
@@ -17853,13 +17876,18 @@
       "ac_reference": "FR-95; FR-96",
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Result PR and failed-threshold reporting",
-      "status": "open",
+      "status": "resolved",
       "environment": "macOS / Node 24 / Vitest / t-43-load-workflow, 2026-11-07",
       "attempts": [
         {
           "result": "pass",
           "actual_result": "Static workflow contract and publication/failure gates pass; lint, typecheck, all 214 unit tests and guards pass.",
           "note": "Real dispatched CI run and artifact/result PR evidence pending; static verification only."
+        },
+        {
+          "result": "pass",
+          "actual_result": "A-09 verified: bot PR #45 contains only bench/results/2026-11-06.json, bench/results/latest.json and bench/SUMMARY.md. FullBenchResult parses; all 16 invariant checks zero; failed k6 thresholds preserved as thresholds.passed=false and workflow failure. Bot PR remains unmerged.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
         }
       ],
       "regression_of": null,
