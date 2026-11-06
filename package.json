@@ -28,7 +28,7 @@
     "test:concurrency": "vitest run --config vitest.integration.config.ts",
     "e2e": "playwright test",
     "test:all": "node scripts/not-implemented.mjs",
-    "load:local": "node scripts/not-implemented.mjs",
+    "load:local": "bash scripts/bench/load-local.sh",
     "bench:verify": "node scripts/not-implemented.mjs",
     "bench:report": "node scripts/not-implemented.mjs"
   },

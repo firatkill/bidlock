@@ -1,6 +1,6 @@
 # Progress
 
-Updated: 2026-11-06.
+Updated: 2026-11-07.
 
 ## Repository setup
 
@@ -56,8 +56,8 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-36  | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
 | T-37  | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
 | T-38  | Extension banner and public room e2e               | done   | 5a6b82a                                  |
-| T-38a | Catalogue & Ledger design pass (D-59–D-69)         | doing  | `1054da8` (PR #39; owner review pending) |
-| T-39  | App image and full compose                         | todo   | —                                        |
+| T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
+| T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
 | T-40  | k6 bid-storm script                                | todo   | —                                        |
 | T-41  | Invariant verification                             | todo   | —                                        |
 | T-42  | Bench report and headline data                     | todo   | —                                        |
@@ -79,7 +79,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 ## Verification limits
 
 - M0 has a placeholder application, strict tooling, environment/logger tests, PostgreSQL/pgTAP infrastructure and migration integration tests. M1 now implements and verifies the SQL auction rules; browser flows remain future work.
-- Local k6 execution is excluded by OWNER-DECISIONS; M6 acceptance must use CI runs (D-43).
+- D-43 keeps benchmark claims CI-only. The owner authorized the small T-39 local infrastructure smoke (VUS=5, DURATION=5s, AUCTION_S=8), expected to stop at the missing T-40 script; no benchmark is published.
 - Stop for an owner summary at the end of every milestone.
 
 ## M0 completion
@@ -249,3 +249,15 @@ D-59–D-69 recorded; TC-237–TC-248 added. Catalogue room/lobby, mobile contro
 T-38a browser-review revision: F1–F7 and D1–D4 implemented; D-70–D-72 and TC-249–TC-254 added. TC-236 passed owner browser review on 2026-11-06 and is removed from open questions. Local lint/typecheck and 180 unit tests pass. Targeted layout, experiment and accessibility checks pass; full E2E found only TC-205 visual-whitespace mismatch (bounds unchanged), focused TC-205 retest and all 10 remaining isolated tests passed. CI pending. PR #39 stays open and unmerged.
 
 T-38a round-2 review: R1 actual race winner/loser template and R2 ledger mount baseline implemented; D-70 clarified and TC-251/TC-253 extended. Focused unit tests pass (15). Targeted E2E (2), lint/typecheck, full unit (182), production build and full E2E (33, both projects) pass. QA log updated; CI pending. PR #39 remains open, do not merge.
+
+## M6 start
+
+T-38a merged as `3783234` (PR #39) after owner review. T-39 starts on `t-39-app-image`. M6 cases are designed before implementation; only T-39 cases are automated now. Owner approved temporarily stopping `rehearse-test-rehearse-1` to free port 3000; restore it after acceptance. Preserve the shared pgdata volume and existing development database.
+
+T-39 interim verification: exact Node/k6 tags verified and k6 image pulled; tools image builds and resets only bidlock_load, preserving dev/test schema OIDs. Build-context tools checks pass. Lint/typecheck, 182 units, 363 pgTAP assertions and 49 integration tests pass. Runner build blocked on the missing build-env specification decision, so app health/non-root and launcher smoke are not yet verified. No T-40 code added.
+
+T-39 build correction approved as D-75 (2026-11-07): command-scoped non-secret test/on placeholders, matching Compose runtime and CI E2E. Retest includes runner filesystem/config checks for placeholder leakage.
+
+T-39 local acceptance complete: D-75 test/on build-only placeholders unblock standalone build; runner grep/config checks contain none of the placeholder secrets. Healthy non-root app (uid1001); dev/test schemas preserved. Small launcher smoke passed through health and failed only at missing T-40 script, as expected. App removed, Rehearse restored, pgdata retained. Final regression checks and PR CI gates recorded in qa/T-39-report.md.
+
+T-39 complete: [PR #40](https://github.com/firatkill/bidlock/pull/40), implementation `fbecd83`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42298376606), including 33 E2E tests, after setup interruptions and an unchanged retry. Final evidence commit must also pass CI before merge. D-73–D-75 and TC-255–TC-259 recorded; no open T-39 questions. T-40 has not started.

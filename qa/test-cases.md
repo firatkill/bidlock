@@ -3031,3 +3031,283 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 - Preconditions: Local test environment; own unique auction; no shared clock changes.
 - Steps: At 375px use keyboard to open Menu and reach links/theme; close with Escape.
 - Expected result: One header row, ≥44px toggle with expanded state; navigation reachable; focus returns on Escape; axe zero serious/critical.
+
+# M6 — Load test, CI and benchmark page
+
+Designed before T-39 implementation. T-40–T-44 cases are planned only, not executed in T-39.
+
+| TC     | Task | Requirement              | Priority | Automatable | Expected                                                     |
+| ------ | ---- | ------------------------ | -------- | ----------- | ------------------------------------------------------------ |
+| TC-255 | T-39 | FR-93; US-12             | High     | yes         | Production container build and healthy non-root runner       |
+| TC-256 | T-39 | FR-93; NFR-31            | High     | yes         | Load migration targets only bidlock_load                     |
+| TC-257 | T-39 | FR-90–FR-93; US-12       | High     | yes         | Database-only command and load profile isolation             |
+| TC-258 | T-39 | FR-93; NFR-31            | High     | yes         | Build context excludes local data but retains benchmarks     |
+| TC-259 | T-39 | FR-93; NFR-31            | High     | yes         | Small load launcher reaches expected missing-script boundary |
+| TC-260 | T-40 | FR-93; NFR-31            | High     | yes         | k6 workload defaults and local-only target                   |
+| TC-261 | T-40 | FR-93                    | High     | yes         | Independent bidders and setup summary                        |
+| TC-262 | T-40 | FR-93; NFR-11            | High     | yes         | Replay and outcome classification under load                 |
+| TC-263 | T-40 | FR-93; NFR-10; NFR-11    | High     | yes         | Latency and error thresholds                                 |
+| TC-264 | T-40 | FR-93; FR-07; NFR-12     | High     | yes         | Soft close cap and post-deadline exercise                    |
+| TC-265 | T-41 | FR-94; NFR-12            | High     | yes         | Verifier checks every invariant and persists results         |
+| TC-266 | T-41 | FR-94; NFR-12            | High     | yes         | Verifier fails corrupted or insufficient runs                |
+| TC-267 | T-42 | FR-95; NFR-10–NFR-12     | High     | yes         | Benchmark schema and factual report                          |
+| TC-268 | T-42 | FR-95                    | High     | yes         | Report filenames and local no-commit mode                    |
+| TC-269 | T-42 | FR-95                    | High     | yes         | Lobby reads measured benchmark data                          |
+| TC-270 | T-43 | FR-95; FR-96; NFR-31     | High     | yes         | Scheduled/manual load workflow and artifacts                 |
+| TC-271 | T-43 | FR-95; FR-96             | High     | yes         | Result PR and failed-threshold reporting                     |
+| TC-272 | T-44 | FR-69; US-11             | High     | yes         | How-it-works rules and lifecycle content                     |
+| TC-273 | T-44 | FR-69; FR-95             | High     | yes         | Benchmark table empty and complete states                    |
+| TC-274 | T-44 | FR-70                    | High     | yes         | Stats freshness and failure states                           |
+| TC-275 | T-44 | FR-69; NFR accessibility | High     | yes         | How-it-works responsive accessibility                        |
+
+## TC-255: Production container build and healthy non-root runner
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-39
+- PRD acceptance reference: FR-93; US-12
+- TRD test reference: §17.1–17.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Build db/migrate/app, run migrate once and start app without dependencies; GET localhost:3000/api/health; inspect effective user and image health.
+- Expected result: Health JSON contains db=ok, app runs as app uid 1001, image HEALTHCHECK becomes healthy; standalone static/public assets and traced benchmark available.
+
+## TC-256: Load migration targets only bidlock_load
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-39
+- PRD acceptance reference: FR-93; NFR-31
+- TRD test reference: §17.1–17.2; §6.1
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Record dev/test schema OIDs; run tools CMD with DATABASE_URL_ADMIN pointing to db/bidlock_load; inspect settings and schema; compare other database OIDs.
+- Expected result: Tools accepts --env load --no-pgtap, resets bidlock_load and applies load settings; dev/test schemas remain unchanged.
+
+## TC-257: Database-only command and load profile isolation
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-39
+- PRD acceptance reference: FR-90–FR-93; US-12
+- TRD test reference: §4.1; §17.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Run pnpm db:up; inspect running services and databases; inspect compose load profile, app origins and load environment.
+- Expected result: db:up starts only db; all three databases remain available; k6 requires load profile, targets app:3000 and receives VUS/DURATION/AUCTION_S defaults or overrides.
+
+## TC-258: Build context excludes local data but retains benchmarks
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-39
+- PRD acceptance reference: FR-93; NFR-31
+- TRD test reference: §17.1; T-39
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Check context excludes dependencies/build output/logs/Git/env/local prompts; build tools image and inspect included paths.
+- Expected result: Excluded data absent; bench/results/latest.json remains in tools and standalone runtime image; no local env credentials copied; D-75 build-only placeholder secrets absent from standalone output and runner environment.
+
+## TC-259: Small load launcher reaches expected missing-script boundary
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-39
+- PRD acceptance reference: FR-93; NFR-31
+- TRD test reference: §4.1; §17.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Run VUS=5 DURATION=5s AUCTION_S=8 pnpm load:local once; inspect logs; stop/remove app without deleting volumes.
+- Expected result: Build, migration and health pass; k6 alone fails because T-40 bid-storm.js is absent; no benchmark produced, bench verify/report remain placeholders; pgdata retained.
+
+## TC-260: k6 workload defaults and local-only target
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-40
+- PRD acceptance reference: FR-93; NFR-31
+- TRD test reference: LOAD-01 §15.6.1–15.6.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Inspect and execute the workload in approved environment; exercise defaults and explicit small overrides; run guards.
+- Expected result: 500 VUs/60s/45s defaults, constant-vus workload, app:3000 target, no production URL; small overrides honored.
+
+## TC-261: Independent bidders and setup summary
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-40
+- PRD acceptance reference: FR-93
+- TRD test reference: LOAD-01 §15.6.2; A-11
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Run small workload; verify unique bidder cookies created before auction; inspect summary and module availability.
+- Expected result: Fresh session per VU, auction created after bidders, summary carries setup_data.auctionId; jslib modules reachable or owner-approved vendoring documented.
+
+## TC-262: Replay and outcome classification under load
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-40
+- PRD acceptance reference: FR-93; NFR-11
+- TRD test reference: LOAD-01 §15.6.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Run contended auction; inspect counters and replay comparison; exercise accepted, rule rejection, RATE_LIMITED and failure responses.
+- Expected result: Stored outcomes replay with same key/amount; no mismatch; RATE_LIMITED/network/5xx never stored as last; only four specified business rejections excluded from unexpected rate.
+
+## TC-263: Latency and error thresholds
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-40
+- PRD acceptance reference: FR-93; NFR-10; NFR-11
+- TRD test reference: LOAD-01 §15.6.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Run full CI workload; inspect bid_latency percentiles and unexpected_errors thresholds.
+- Expected result: p95 <=250ms, p99 <=600ms, unexpected errors <1%; threshold failure gives failing workload outcome; actual measurements only.
+
+## TC-264: Soft close cap and post-deadline exercise
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-40
+- PRD acceptance reference: FR-93; FR-07; NFR-12
+- TRD test reference: LOAD-01 §15.6.2
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Inspect run state/history after default 45s auction with 12s extensions and cap20.
+- Expected result: Contended run reaches cap, closes logically, post-deadline requests receive AUCTION_CLOSED; observed-closed VUs idle.
+
+## TC-265: Verifier checks every invariant and persists results
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-41
+- PRD acceptance reference: FR-94; NFR-12
+- TRD test reference: LOAD-01 §15.6.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Read auctionId from summary; poll close_due_auctions; execute shared invariant SQL; inspect verify.json.
+- Expected result: All listed INV checks present with zero violations, closed status, correct final price/count/count extensions; exit0 only when minimum accepted bid count is met.
+
+## TC-266: Verifier fails corrupted or insufficient runs
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-41
+- PRD acceptance reference: FR-94; NFR-12
+- TRD test reference: LOAD-01 §15.6.3
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: In isolated load DB corrupt bid_count once then restore/reset; test insufficient bids and 120s close timeout.
+- Expected result: Any violation, still-live deadline or count below BENCH_MIN_BIDS fails; default100 and override10 honored; failure details retained.
+
+## TC-267: Benchmark schema and factual report
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-42
+- PRD acceptance reference: FR-95; NFR-10–NFR-12
+- TRD test reference: §15.6.4; UT-12
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Generate report from actual summary and verification; parse strict BenchResult and inspect runner/config/outcomes/latency/invariants.
+- Expected result: Actual run metrics and hardware metadata preserved; no invented numbers; thresholds passed only if k6 success and every threshold passed.
+
+## TC-268: Report filenames and local no-commit mode
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-42
+- PRD acceptance reference: FR-95
+- TRD test reference: §15.6.4; UT-12
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Generate two reports same date; run --no-commit and --init with missing/existing result file.
+- Expected result: Dated collision suffixes -2/-3, latest copy and newest-first summary; no-commit writes only bench/out; init creates empty sentinel only when absent.
+
+## TC-269: Lobby reads measured benchmark data
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-42
+- PRD acceptance reference: FR-95
+- TRD test reference: §15.6.4; E2E-06
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Render lobby with full result, empty sentinel and missing file.
+- Expected result: Full result renders actual metrics/date/link; empty or missing benchmark hides band under D-61.
+
+## TC-270: Scheduled/manual load workflow and artifacts
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: FR-95; FR-96; NFR-31
+- TRD test reference: §16.2; LOAD-01
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Inspect workflow and dispatch approved run; inspect inputs, concurrency, dependencies, logs/artifact and cleanup.
+- Expected result: Monday04:00UTC and dispatch;500/60 defaults; no cancellation of active load; build/migrate/health/k6/verify/report order; artifact retained30days and cleanup always runs in ephemeral CI.
+
+## TC-271: Result PR and failed-threshold reporting
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: FR-95; FR-96
+- TRD test reference: §16.2; A-09
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Inspect successful dispatch result PR; exercise failing k6 threshold and failed verifier outcomes.
+- Expected result: PR changes only bench/results/*.json and bench/SUMMARY.md when verifier passes; failed thresholds remain workflow failure; failed verification creates no result PR.
+
+## TC-272: How-it-works rules and lifecycle content
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-44
+- PRD acceptance reference: FR-69; US-11
+- TRD test reference: PRD §9.4; E2E-07
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Render page; inspect ordered anchors, constants-derived increment table, committed SVG, T0–T9 table and exact concurrency prose/core function excerpt.
+- Expected result: All six sections and approved copy present; diagram and transitions match PRD; local HowItWorks design is reference, no unapproved claims.
+
+## TC-273: Benchmark table empty and complete states
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-44
+- PRD acceptance reference: FR-69; FR-95
+- TRD test reference: PRD §9.4; §15.6.4
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Render page with empty sentinel and full actual result fixtures.
+- Expected result: Empty-state sentence remains here; full table includes all specified measurements and per-invariant checks, provenance sentence and All runs link.
+
+## TC-274: Stats freshness and failure states
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-44
+- PRD acceptance reference: FR-70
+- TRD test reference: PRD §9.4; TRD stats contract
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Read stats in page; advance cache age and simulate failure.
+- Expected result: Correct counts, Updated n s ago, 60s cache and approved unavailable copy; zero is not confused with unavailable.
+
+## TC-275: How-it-works responsive accessibility
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-44
+- PRD acceptance reference: FR-69; NFR accessibility
+- TRD test reference: E2E-07; PRD §9.4–9.5
+- Priority: High
+- Automatable: yes
+- Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
+- Steps: Inspect mobile/desktop light/dark, keyboard navigation, diagram alternative text and axe.
+- Expected result: No serious/critical axe findings; usable rules/tables/links at mobile widths; visual reference and token rules followed.

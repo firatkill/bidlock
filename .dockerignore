@@ -1,0 +1,8 @@
+node_modules
+.next
+bench/out
+playwright-report
+test-results
+.git
+.env*
+.codex-prompts

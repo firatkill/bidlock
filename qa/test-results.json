@@ -95,6 +95,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -199,6 +209,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -262,6 +282,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -332,6 +362,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -401,6 +441,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -464,6 +514,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -590,6 +650,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -669,6 +739,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -755,6 +835,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -840,6 +930,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -920,6 +1020,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -998,6 +1108,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -1078,6 +1198,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1156,6 +1286,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -1236,6 +1376,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1314,6 +1464,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -1399,6 +1559,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1469,6 +1639,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1528,6 +1708,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1586,6 +1776,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -1661,6 +1861,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
@@ -1719,6 +1929,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -1794,6 +2014,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1852,6 +2082,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -1917,6 +2157,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -1970,6 +2220,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2025,6 +2285,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2078,6 +2348,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2133,6 +2413,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2187,6 +2477,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2240,6 +2540,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2330,6 +2640,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2389,6 +2709,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2437,6 +2767,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2492,6 +2832,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2540,6 +2890,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2590,6 +2950,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2638,6 +3008,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2688,6 +3068,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2736,6 +3126,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2786,6 +3186,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2834,6 +3244,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2884,6 +3304,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -2932,6 +3362,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -2982,6 +3422,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3030,6 +3480,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3080,6 +3540,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3128,6 +3598,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3178,6 +3658,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3226,6 +3716,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3276,6 +3776,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3324,6 +3834,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3374,6 +3894,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3422,6 +3952,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3472,6 +4012,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3520,6 +4070,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3570,6 +4130,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3618,6 +4188,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3668,6 +4248,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3716,6 +4306,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3766,6 +4366,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3814,6 +4424,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3864,6 +4484,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -3912,6 +4542,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -3962,6 +4602,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4010,6 +4660,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4060,6 +4720,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4108,6 +4778,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4158,6 +4838,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4206,6 +4896,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4256,6 +4956,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4304,6 +5014,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4354,6 +5074,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4402,6 +5132,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4452,6 +5192,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4500,6 +5250,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4550,6 +5310,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4598,6 +5368,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4648,6 +5428,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4696,6 +5486,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4746,6 +5546,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4794,6 +5604,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4844,6 +5664,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4892,6 +5722,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -4942,6 +5782,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -4990,6 +5840,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5040,6 +5900,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5089,6 +5959,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5137,6 +6017,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5192,6 +6082,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5240,6 +6140,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5290,6 +6200,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5338,6 +6258,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5388,6 +6318,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5436,6 +6376,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5486,6 +6436,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5534,6 +6494,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5584,6 +6554,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5632,6 +6612,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5682,6 +6672,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5730,6 +6730,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5780,6 +6790,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5828,6 +6848,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5878,6 +6908,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -5926,6 +6966,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -5976,6 +7026,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6024,6 +7084,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6074,6 +7144,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6122,6 +7202,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6172,6 +7262,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6220,6 +7320,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6270,6 +7380,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6318,6 +7438,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6368,6 +7498,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6416,6 +7556,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6466,6 +7616,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6514,6 +7674,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6564,6 +7734,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6612,6 +7792,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6662,6 +7852,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6711,6 +7911,16 @@
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6759,6 +7969,16 @@
         {
           "result": "pass",
           "actual_result": "Full pgTAP suite passed locally; no SQL rules changed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6834,6 +8054,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6882,6 +8112,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -6932,6 +8172,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -6980,6 +8230,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7055,6 +8315,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7128,6 +8398,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7203,6 +8483,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7276,6 +8566,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7351,6 +8651,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7425,6 +8735,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7493,6 +8813,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7563,6 +8893,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7631,6 +8971,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7701,6 +9051,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7769,6 +9129,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7839,6 +9209,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -7907,6 +9287,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -7977,6 +9367,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8046,6 +9446,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8084,6 +9494,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8124,6 +9544,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8163,6 +9593,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8201,6 +9641,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8266,6 +9716,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8329,6 +9789,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8394,6 +9864,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8458,6 +9938,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8496,6 +9986,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8536,6 +10036,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8574,6 +10084,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8614,6 +10134,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8652,6 +10182,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8692,6 +10232,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8730,6 +10280,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8770,6 +10330,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8809,6 +10379,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8847,6 +10427,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -8892,6 +10482,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8936,6 +10536,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -8974,6 +10584,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9044,6 +10664,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9112,6 +10742,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9187,6 +10827,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9255,6 +10905,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9358,6 +11018,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9548,6 +11218,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9647,6 +11327,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9720,6 +11410,26 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9795,6 +11505,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -9868,6 +11588,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -9967,6 +11697,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10035,6 +11775,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10105,6 +11855,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10173,6 +11933,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10253,6 +12023,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10316,6 +12096,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10396,6 +12186,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10464,6 +12264,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10534,6 +12344,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10592,6 +12412,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10662,6 +12492,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10720,6 +12560,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10789,6 +12639,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -10894,6 +12754,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -10973,6 +12843,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11051,6 +12931,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11135,6 +13025,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11225,6 +13125,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11314,6 +13224,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11387,6 +13307,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11462,6 +13392,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11530,6 +13470,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11620,6 +13570,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11703,6 +13663,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -11793,6 +13763,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -11881,6 +13861,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12593,6 +14583,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12652,6 +14652,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12685,6 +14695,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12735,6 +14755,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12768,6 +14798,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12808,6 +14848,16 @@
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12846,6 +14896,16 @@
         {
           "result": "pass",
           "actual_result": "Full concurrency/integration suite passed 49 tests.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: all 49 integration/concurrency tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -12911,6 +14971,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -12974,6 +15044,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13039,6 +15119,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13103,6 +15193,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13161,6 +15261,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13231,6 +15341,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13299,6 +15419,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13393,6 +15523,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13546,6 +15686,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13605,6 +15755,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -13658,6 +15818,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -13727,6 +15897,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -14184,6 +16364,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14248,6 +16438,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14307,6 +16507,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14365,6 +16575,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -14494,6 +16714,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14527,6 +16757,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -14567,6 +16807,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14605,6 +16855,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -14723,6 +16983,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14792,6 +17062,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14825,6 +17105,16 @@
         {
           "result": "pass",
           "actual_result": "Round-2 final full unit run: 182 passed; lint and typecheck passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
@@ -14880,6 +17170,16 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
+          "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
         }
       ],
       "regression_of": null,
@@ -14914,6 +17214,151 @@
           "result": "pass",
           "actual_result": "Round-2 final full E2E run: all 33 tests passed across parallel and isolated projects, including light/dark axe checks.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-255",
+      "ac_reference": "FR-93; US-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Production container build and healthy non-root runner",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / Node 24.22.2 / PostgreSQL 17.11 / k6 1.8.2",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Docker build compiled but Next route collection failed for /api/bot-tokens: required server environment variables absent in TRD §17.1. Proposed build-command-only non-secret placeholders, matching D-56 CI approach.",
+          "note": "T-39; owner checkpoint 2 approval requested; Node/Corepack/pnpm installation succeeded."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-75 retest passed: db/migrate/app images built; health status=ok, db=ok, demo_mode=on; app user uid1001; Docker HEALTHCHECK healthy; static/public/traced benchmark present. Runtime /api/test/auctions returned auction_id with the Compose test secret.",
+          "note": "T-39 local acceptance 2026-11-07; original missing build-env failure retained; D-75 correction owner-approved."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-256",
+      "ac_reference": "FR-93; NFR-31",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Load migration targets only bidlock_load",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / Node 24.22.2 / PostgreSQL 17.11 / k6 1.8.2",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Tools image reset bidlock_load successfully with --env load --no-pgtap; env=test, realtime_mode=none, bidding_paused=false and load IP limits=1000000. Dev/test schema OIDs unchanged.",
+          "note": "T-39 local Docker acceptance; no volume deletion."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Acceptance script confirmed tools CMD resets only bidlock_load; dev/test schema OIDs unchanged; load env applied.",
+          "note": "T-39 local acceptance 2026-11-07; original missing build-env failure retained; D-75 correction owner-approved."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-257",
+      "ac_reference": "FR-90–FR-93; US-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Database-only command and load profile isolation",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / Node 24.22.2 / PostgreSQL 17.11 / k6 1.8.2",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "pnpm db:up starts only db; three existing databases preserved. Resolved compose config keeps k6 under load profile with app:3000 target and 500/60s/45 defaults; image grafana/k6:1.8.2 pulled successfully.",
+          "note": "T-39 local Docker acceptance; no volume deletion."
+        },
+        {
+          "result": "pass",
+          "actual_result": "db:up remained database-only; k6 profile/target/defaults verified; small launcher override run reached k6 with app and database healthy.",
+          "note": "T-39 local acceptance 2026-11-07; original missing build-env failure retained; D-75 correction owner-approved."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-258",
+      "ac_reference": "FR-93; NFR-31",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Build context excludes local data but retains benchmarks",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / Node 24.22.2 / PostgreSQL 17.11 / k6 1.8.2",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Tools filesystem excludes Git/env/local prompts/output; runner retains benchmark/static/public. Recursive grep of runner /app found no t39-build-only- placeholder secret markers or bidlock_build_unused DB marker; image Config.Env has no placeholder secrets.",
+          "note": "T-39 local acceptance 2026-11-07; original missing build-env failure retained; D-75 correction owner-approved."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-259",
+      "ac_reference": "FR-93; NFR-31",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Small load launcher reaches expected missing-script boundary",
+      "status": "resolved",
+      "environment": "Local Docker Desktop / Linux arm64 / Node 24.22.2 / PostgreSQL 17.11 / k6 1.8.2",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "VUS=5 DURATION=5s AUCTION_S=8 pnpm load:local ran once: build, migrate and health succeeded; exited255 only because /load/bid-storm.js is missing (expected until T-40). No benchmark generated. App stopped/removed; shared pgdata retained; Rehearse restored.",
+          "note": "T-39 local acceptance 2026-11-07; original missing build-env failure retained; D-75 correction owner-approved."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "—",
+      "ac_reference": "AGENTS.md Definition of done §6; T-39 delivery",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "T-39 CI E2E setup interruptions",
+      "description": "E2E setup interrupted before browser tests ran on the unchanged implementation revision. Other five CI jobs passed.",
+      "steps_to_reproduce": [
+        "Run PR #40 CI on fbecd83.",
+        "Retry the E2E job unchanged."
+      ],
+      "expected_result": "Build and browser installation complete, then both Playwright projects run.",
+      "status": "resolved",
+      "environment": "GitHub Actions Ubuntu / PR #40 / fbecd83",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Attempt 1 cancelled after Chromium dependency installation made no progress for over eight minutes; no E2E tests ran.",
+          "note": "Run 42298376606 attempt 1; infrastructure interruption, not a test assertion failure."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Attempt 2 failed at Turbopack Google-font import resolution: next/font/google queries have exactly one entry; browser installation and tests did not run.",
+          "note": "Run 42298376606 attempt 2; same revision built in initial E2E and production jobs; unchanged retry started."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unchanged attempt 3 passed build, browser installation and all 33 E2E tests; all six CI jobs green.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42298376606; no code or test changes between attempts."
         }
       ],
       "regression_of": null,
