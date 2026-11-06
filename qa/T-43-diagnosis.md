@@ -65,3 +65,29 @@ Before selecting a latency fix, collect a bounded diagnostic profile: separate t
 No pool/resource/app change is justified as a proven fix by the current artifact alone. No fix PR or new dispatch was made because AGENTS.md owner checkpoint 2 applies to the false timing assumption. Original workflow PR #44 is merged at 99ab16e; bot PR #45 remains open and unmerged. T-43 remains blocked; T-44 has not started. There are no after measurements.
 
 Documentation validation: pnpm lint, pnpm typecheck, pnpm test:unit (214 passed) and pnpm check:guards passed. Runtime files are unchanged.
+
+## Approved timing correction and diagnostic evidence (D-83/D-84)
+
+[Instrumentation PR #46](https://github.com/firatkill/bidlock/pull/46) merged as `df22752` after all six [CI jobs](https://github.com/firatkill/bidlock/actions/runs/42312876353) passed. [Diagnostic run 42313175983](https://github.com/firatkill/bidlock/actions/runs/42313175983) is the first of the two additionally authorized dispatches. Artifact `bench-42313175983` contains 33,329 per-request samples, 62 event-loop samples, 180 PostgreSQL activity snapshots and container CPU/throttling. Sampler errors are empty (PostgreSQL stderr only a newline). PostgreSQL logs contain zero parameter-detail lines. Diagnostic [PR #47](https://github.com/firatkill/bidlock/pull/47) remains unmerged; #45 head remains `61bb96f21c7592d842d693f45fb4d6e8ea0a1f03`.
+
+The corrected 10-second extension reached 20/20 extensions and 500 AUCTION_CLOSED outcomes. Result: 33,329 bids, 1,685 replays, 263 accepted HTTP outcomes (249 unique bids), p95 241.3247772 ms, p99 726.37423376 ms, unexpected errors0, all16 invariant checks0, thresholds.passed=false (p99). This fixes the timing coverage but does not establish a latency fix.
+
+| Per-request phase           | Mean ms |  p95 ms |  p99 ms |
+| --------------------------- | ------: | ------: | ------: |
+| Handler total               |  84.373 | 237.165 | 604.183 |
+| getMe                       |  25.371 |  88.574 | 176.734 |
+| check_bid_rate              |  21.977 |  75.729 | 134.181 |
+| place_bid                   |  36.855 |  97.811 | 221.269 |
+| Total minus measured phases |   0.170 |   0.239 |   0.372 |
+
+Phase durations include client queueing, driver/network, SQL and result validation. They are not pure SQL durations. Only place_bid produced logged bid-path SQL durations above10 ms (18,118 statements; conditional mean19.95 ms, p99 51.39 ms, max102.11 ms). No get_me/check_bid_rate statement crossed that cutoff, despite much longer phase timings. This supports substantial time outside SQL execution, without assigning an exact native pool-queue duration.
+
+Of sampled blocked backends, 1,175 were place_bid and one check_bid_rate. Auction tuple/transaction waits dominated; active backends reached the pool ceiling20 (snapshot p95=20). Thus the shared-IP limiter was not the measured bottleneck in this run. Per-phase pending-call maxima were65/70/84 for auth/rate/bid; these include queued and active calls and are not direct pool-queue counts.
+
+The first two seconds of handler completions had p99 700.90 ms (1,316 requests), versus243.04 ms in seconds2–10,420.95 ms in seconds10–35, and205.57 ms in seconds35–50. This locates a substantial tail in initial contention; HTTP includes additional time outside the handler and is the authoritative acceptance metric.
+
+Docker CPU samples (100%=one core): app mean81.55%, p95 117.91%; db mean96.65%, p95 128.02%; k6 mean30.29%, p95 50.90%. All sampled cgroup nr_throttled/throttled_usec counters were0 and CPU quotas were unlimited. Event-loop utilization p95=.934; delay histogram mean20.64 ms includes its20 ms sampling resolution, maximum observed delay126.75 ms. Node is busy, but neither global four-core saturation nor quota throttling is established by these samples. Profiling itself adds overhead; final comparison retains it.
+
+## Smallest measured fix (D-85)
+
+Reduce load-only DB_POOL_MAX from20 to4. With a single auction serialization point, twenty backends do not permit twenty concurrent bids to commit; the sample shows many waiting on that lock. Four connections limit simultaneous lock contenders and backend overhead while permitting other statements to progress. The exact value is a conservative tuning hypothesis, not a measured optimum; driver queueing may increase. Only the one authorized final dispatch can establish whether end-to-end p95/p99 improve. No SQL, rate-limit semantics, locks, constraints, indexes, workload pacing, dependencies or production settings change.

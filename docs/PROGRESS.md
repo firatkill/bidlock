@@ -325,3 +325,7 @@ D-82 records owner authorization to diagnose without a blind retry. [Diagnosis a
 D-83 corrects the load-only extension to 10 s. D-84 adds opt-in diagnostics and per-run results branches, preserving PR #45. TC-264 updated and TC-276 added. Diagnostic dispatch pending green CI and merge; no runtime rule changes.
 
 Instrumentation local validation: lint/typecheck, 216 unit tests, pgTAP and 49 concurrency/integration tests pass; shell syntax and Compose overlay validate. Existing TC-261 fixture updated to approved extension10; failure/retest retained. TC-276 live evidence awaits the diagnostic dispatch.
+
+## T-43 diagnostic complete — pool fix
+
+Instrumentation PR #46 merged as `df22752` with six green CI jobs. Diagnostic run42313175983 reached20 extensions and500 post-close responses, but p99=726.37423376 ms failed (p95=241.3247772 ms); bot PR #47 intentionally unmerged. All16 invariant checks zero. Measured attribution is in qa/T-43-diagnosis.md. D-85 reduces load pool20→4 to limit observed auction lock contention; TC-277 tracks the final gate. No SQL changes. One final dispatch remains after the fix PR passes CI and merges.

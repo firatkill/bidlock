@@ -17630,6 +17630,11 @@
           "result": "fail",
           "actual_result": "p95 406.8271048999999 ms >=250; p99 1029.5332955099943 ms >=600. Unexpected error rate 0; thresholds.passed=false.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Diagnostic p95=241.3247772ms passes; p99=726.37423376ms fails; errors0; thresholds false.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42313175983; D-83/D-84 diagnostic only, never published."
         }
       ],
       "regression_of": null,
@@ -17646,7 +17651,7 @@
       "ac_reference": "FR-93; FR-07; NFR-12",
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Soft close cap and post-deadline exercise",
-      "status": "open",
+      "status": "resolved",
       "environment": "GitHub Actions ubuntu-latest / 4 CPUs AMD EPYC 7763 / PostgreSQL 17.11 / commit 99ab16e",
       "attempts": [
         {
@@ -17658,6 +17663,11 @@
           "result": "fail",
           "actual_result": "Only 12/20 extensions; AUCTION_CLOSED responses 0. Verifier eventually reports closed with all 16 invariant checks zero; required cap and post-deadline workload coverage not demonstrated.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected load-only extension10: 20 extensions and 500 AUCTION_CLOSED responses; verifier closed, all16 checks zero.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42313175983; D-83/D-84 diagnostic only, never published."
         }
       ],
       "regression_of": null,
@@ -17910,13 +17920,37 @@
       "ac_reference": "NFR-31; D-84",
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Load-only diagnostics preserve isolation and sensitive data",
-      "status": "open",
+      "status": "resolved",
       "environment": "macOS / Node 24 / t-43-load-diagnostics",
       "attempts": [
         {
           "result": "pass",
           "actual_result": "Default-off, non-test rejection and allowlisted phase output on failure pass. Lint/typecheck pass; 216 unit tests, pgTAP and 49 concurrency/integration tests pass. Shell syntax and Compose overlay validated.",
           "note": "Live diagnostic artifact verification pending CI dispatch. Initial test-only lint issues corrected."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Artifact includes 33329 allowlisted request timings,62 event-loop samples,180 pg activity snapshots, CPU/throttling. No parameter-detail logs; sampler errors empty/newline. PR #45 unchanged, diagnostic PR #47 left unmerged.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42313175983; D-83/D-84 diagnostic only, never published."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-277",
+      "ac_reference": "NFR-10; NFR-11; NFR-12; D-85",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Measured load pool tuning preserves correctness and thresholds",
+      "status": "open",
+      "environment": "GitHub Actions / t-43-load-pool",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Diagnostic evidence supports reducing concurrent auction lock contenders; load Compose pool set4. Final dispatch pending.",
+          "note": "Hypothesis only; not a passed performance claim."
         }
       ],
       "regression_of": null,
