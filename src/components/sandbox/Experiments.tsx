@@ -27,7 +27,7 @@ type Run = {
   amount: number;
   results: Outcome[];
   sameId: boolean;
-  raceExplanation: boolean;
+  raceExplanation: string | null;
 };
 type Experiment = "race" | "replay" | "late";
 export function Experiments({
@@ -149,6 +149,19 @@ export function Experiments({
       } else results = [await send(first, copy.origins.late)];
       const a = results[0];
       const b = results[1];
+      const winner = results.findIndex((result) => result.id !== null);
+      const loser = results.findIndex(
+        (result) =>
+          result.error !== undefined &&
+          result.error.status >= 400 &&
+          result.error.status < 500,
+      );
+      const explainRace =
+        kind === "race" &&
+        results.length === 2 &&
+        winner >= 0 &&
+        loser >= 0 &&
+        winner !== loser;
       setOutputs((previous) => ({
         ...previous,
         [kind]: {
@@ -156,10 +169,12 @@ export function Experiments({
           amount: runAmount,
           results,
           sameId: kind === "replay" && a?.id !== null && a?.id === b?.id,
-          raceExplanation:
-            kind === "race" &&
-            a?.id !== null &&
-            b?.error?.envelope.error.code === "ALREADY_LEADING",
+          raceExplanation: explainRace
+            ? fillCopy(copy.raceExplanation, {
+                winner: winner === 0 ? "A" : "B",
+                loser: loser === 0 ? "A" : "B",
+              })
+            : null,
         },
       }));
       onRefresh();
@@ -231,7 +246,7 @@ export function Experiments({
                   <span className="block">{copy.sameId}</span>
                 )}
                 {outputs[kind].raceExplanation && (
-                  <span className="block">{copy.raceExplanation}</span>
+                  <span className="block">{outputs[kind].raceExplanation}</span>
                 )}
               </>
             )}

@@ -276,7 +276,7 @@ export const experimentCopy = {
   accepted: "201 accepted · #{n} · {id}",
   closed: "The auction has closed.",
   raceExplanation:
-    "B was checked after A committed, so it saw the new state. Two requests, one bid.",
+    "{loser} was checked after {winner} committed, so it saw the new state. Two requests, one bid.",
   origins: {
     raceA: "Race A",
     raceB: "Race B",

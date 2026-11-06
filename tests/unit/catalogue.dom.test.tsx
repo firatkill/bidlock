@@ -145,3 +145,21 @@ test("TC-250 rejected rows stay at their arrival anchor below later bids", async
     "Race B · same amount as #4",
   );
 });
+
+test("TC-253 ledger mount baseline excludes existing and older rows from flash", async () => {
+  const { BidHistory } = await import("@/components/room/BidHistory");
+  const props = {
+    auctionId: auction.id,
+    viewerId: null,
+    extendBySeconds: 30,
+    onBids: () => {},
+  };
+  const view = render(<BidHistory {...props} bids={[bid(3), bid(2)]} />);
+  expect(view.container.querySelectorAll(".price-flash")).toHaveLength(0);
+  view.rerender(
+    <BidHistory {...props} bids={[bid(4), bid(3), bid(2), bid(1)]} />,
+  );
+  const flashes = view.container.querySelectorAll(".price-flash");
+  expect(flashes).toHaveLength(1);
+  expect(flashes[0]?.textContent).toContain("#4");
+});

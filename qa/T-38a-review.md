@@ -58,3 +58,9 @@ Local Chromium review confirmed F1–F7 and D1–D4 surfaces: 1280×800 desktop 
 New screenshots: [desktop](evidence/T-38a-review-room.png), [mobile](evidence/T-38a-review-mobile.png), [lobby](evidence/T-38a-review-lobby.png), [sandbox race](evidence/T-38a-review-race.png). Bot details now follow the bidding area so personalities cannot push the mobile countdown behind the dock.
 
 Revision validation: lint/typecheck, 180 unit tests and production build pass. Full local E2E ran once: 21 passed, TC-205 failed only on a visual line break, 10 isolated tests blocked by project dependency. After normalizing whitespace (same time bounds), focused TC-205 passed and all 10 remaining isolated tests passed. Focused catalogue checks and axe light/dark passed. QA ledger retains all 250 previous case histories; external sentinel-ID collision remains unchanged. Final CI pending.
+
+## Round 2 (2026-11-06)
+
+Owner confirmed previous layout, origin, short-ID, run-snapshot, closed-controls and price-flash fixes. R1 supersedes the one-order explanation: D-70 and §9.3 now use actual winner/loser letters for exactly one acceptance and one 4xx. R2 extends TC-253 to ledger animation: the mount-time highest bid number excludes existing/older rows from flash. Verification checks both race orders, no animation after reload, and only the newly received ledger row animating after a bid. No layout, API or SQL changes.
+
+Round-2 validation: 15 affected unit tests and two targeted E2E tests passed; final lint/typecheck, all 182 unit tests and all 33 E2E tests passed on the first full run. The browser test observes actual CSS animation-start events and running animations after reload; only the new row flashes after the next bid. Production build passes. Historical QA attempts remain intact; the external checker’s pre-existing exploratory sentinel collision is unchanged. CI pending.

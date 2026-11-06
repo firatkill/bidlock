@@ -21,6 +21,9 @@ export function BidHistory({
   extendBySeconds: number;
   onBids: (bids: BidItem[]) => void;
 }) {
+  const [highestAtMount] = useState(() =>
+    Math.max(0, ...bids.map((bid) => bid.bid_no)),
+  );
   const [visible, setVisible] = useState(20);
   const [loading, setLoading] = useState(false);
   const [exhausted, setExhausted] = useState(false);
@@ -103,7 +106,7 @@ export function BidHistory({
               return (
                 <li
                   key={bid.bid_no}
-                  className="price-flash grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1 px-4 py-3 text-sm"
+                  className={`${bid.bid_no > highestAtMount ? "price-flash " : ""}grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1 px-4 py-3 text-sm`}
                 >
                   <span className="font-mono text-ink-3">
                     {fillCopy(copy.bidNumber, { n: bid.bid_no })}

@@ -439,3 +439,78 @@ test("TC-254 mobile header is one row with keyboard-accessible navigation", asyn
   await expect(menu).toBeFocused();
   await expect(menu).toHaveAttribute("aria-expanded", "false");
 });
+
+test("TC-253 F7 reload has no price or ledger flash and only a new bid row animates", async ({
+  page,
+  browser,
+  createAuction,
+}) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  const id = await createAuction();
+  const rival = await browser.newContext({ baseURL: "http://localhost:3100" });
+  try {
+    await rival.request.get("/api/me");
+    expect(
+      (
+        await rival.request.post(`/api/auctions/${id}/bids`, {
+          headers,
+          data: { amount: 1000, idempotency_key: randomUUID() },
+        })
+      ).status(),
+    ).toBe(201);
+    // Observe real CSS animation events, including short animations that finish before an assertion runs.
+    await page.addInitScript(() => {
+      document.addEventListener("animationstart", (event) => {
+        if (
+          event.animationName === "flash" &&
+          event.target instanceof HTMLElement
+        )
+          event.target.dataset.flashObserved = "true";
+      });
+    });
+    await page.goto(`/a/${id}`);
+    await page.reload();
+    const history = page.getByRole("region", { name: "Bid history" });
+    await expect(history.locator("time")).toHaveCount(1);
+    await expect(page.locator(".quick-bid").first()).toBeEnabled();
+    await expect(
+      page.locator(
+        '.price[data-flash-observed], [aria-labelledby="history-heading"] [data-flash-observed]',
+      ),
+    ).toHaveCount(0);
+    expect(
+      await page
+        .locator('.price, [aria-labelledby="history-heading"] li')
+        .evaluateAll(
+          (elements) =>
+            elements.flatMap((element) =>
+              element
+                .getAnimations()
+                .filter(
+                  (animation) =>
+                    animation instanceof CSSAnimation &&
+                    animation.animationName === "flash" &&
+                    animation.playState === "running",
+                ),
+            ).length,
+        ),
+    ).toBe(0);
+    await expect(history.locator(".price-flash")).toHaveCount(0);
+    await page.locator(".quick-bid").first().click();
+    const rows = history.getByRole("listitem");
+    await expect(rows).toHaveCount(2);
+    await expect(rows.nth(0)).toContainText("#2");
+    await expect(rows.nth(0)).toHaveAttribute("data-flash-observed", "true");
+    await expect(rows.nth(1)).not.toHaveAttribute(
+      "data-flash-observed",
+      "true",
+    );
+    await expect(history.locator(".price-flash")).toHaveCount(1);
+    await expect(page.locator(".price")).toHaveAttribute(
+      "data-flash-observed",
+      "true",
+    );
+  } finally {
+    await rival.close();
+  }
+});

@@ -2997,7 +2997,7 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 - Automatable: yes
 - Preconditions: Local test environment; own unique auction; no shared clock changes.
 - Steps: Run a race/replay, advance price, then run again after being outbid.
-- Expected result: Output begins with the original run time/amount; ID is eight characters with full title; new run replaces old; accepted-A/rejected-B explanation retains code.
+- Expected result: Output begins with the original run time/amount; ID is eight characters with full title; new run replaces old; race explanation names actual winner/loser in both A/B orders and retains code when exactly one acceptance and one 4xx are returned.
 
 ## TC-252: Experiments disable after close
 
@@ -3010,7 +3010,7 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 - Steps: Observe live sandbox become closed, settled or unsold.
 - Expected result: Race and Replay disabled and closed note present; Send late only enabled at zero while live.
 
-## TC-253: Price flashes only after a change
+## TC-253: Price and ledger flash only after new activity
 
 - Milestone: M5a — Catalogue & Ledger
 - PRD acceptance reference: §9.3, D-70–D-72; owner browser review F7
@@ -3018,8 +3018,8 @@ Cases designed from PRD §9.2–9.3 and TRD §10/§15 before M5 implementation. 
 - Priority: High
 - Automatable: yes
 - Preconditions: Local test environment; own unique auction; no shared clock changes.
-- Steps: Load room, then update price and unrelated state.
-- Expected result: No initial flash; changed price flashes; unrelated rerender does not restart it; reduced motion disables animation.
+- Steps: Load and reload a room with existing bids, then place a new bid and update unrelated state.
+- Expected result: No running flash on price or ledger after reload; changed price and only the new ledger row flash; rows at/below mount bid_no never flash, including older pagination; reduced motion disables animation.
 
 ## TC-254: Mobile header disclosure is accessible
 
