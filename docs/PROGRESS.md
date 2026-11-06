@@ -70,7 +70,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- T-41 blocked: host disk full; Docker filesystem read-only. Owner disk/Docker recovery required; Rehearse restoration failed and remains outstanding. See T-41 checkpoint below.
+- T-41: Rehearse restoration requires its missing `.env`. Restore the intended file, or authorize an external Compose override using `.env.local` after confirming it is the correct container configuration. No Rehearse repository changes were made; PR #42 remains unmerged.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -283,3 +283,17 @@ Rehearse was stopped for the authorized fresh load run. Immediate restoration (`
 Owner question (AGENTS.md checkpoints 3/4): recover host disk space and Docker Desktop, then resume T-41. Recommended: owner chooses expendable files/build cache, frees space, restarts Docker Desktop and restores Rehearse. Alternative: explicitly authorize a bounded cleanup and Docker restart. Do not prune volumes or reset Docker data.
 
 Static validation passed: lint, typecheck, all 202 unit tests and guards. QA ledger structure/status checks pass; its known duplicate exploratory `—` history lookup repeats the prior false failure. Ordered JSON comparison confirms all 267 prior entries unchanged, with two T-41 entries appended. Live acceptance and CI completion are not claimed.
+
+T-41 resumed after owner recovery: 62 GB free and Docker Desktop restarted; named volumes preserved. Owner authorized rebuilding Bidlock and restoring Rehearse with project name `rehearse-test`. No volume removal or development database reset is authorized or performed.
+
+## T-41 resumed acceptance — passed; Rehearse configuration checkpoint
+
+Owner disk recovery is complete; the previous disk question is closed. Postgres rebuilt successfully and reused `bidlock_pgdata`; `bidlock`, `bidlock_test`, and `bidlock_load` all exist. Only `bidlock_test` was reset directly; the authorized load launcher reset `bidlock_load`. Development schema OID remained 79932 before/after acceptance; no dev reset and no volume deletion.
+
+Fresh VUS=50/DURATION=15s/AUCTION_S=8/BENCH_MIN_BIDS=10 load run passed k6 and verification, then exited 1 only at the expected T-42 report placeholder. Standalone verify exited 0: auction ea1875b6-b49d-4f46-af7e-17c3f5809393, status closed, final_price 19000 cents, bid_count 67, extension_count 7; all 16 invariant checks have zero violations. Incrementing only this load auction's bid_count produced exit 1 and INV-12=1; decrement restored bid_count 67 and exit 0. Shared invariant SQL remains unchanged. No bench/out artifacts are committed.
+
+Lint, typecheck, all 202 unit tests, guards and `pnpm test:concurrency` (49 tests, including INT-01) passed. The earlier PR revision had all six CI jobs green; evidence revision CI must be checked separately.
+
+Bidlock app is stopped, freeing port 3000. The exact owner-authorized Rehearse restore command failed before creating a container because `/Users/firatkil/Documents/GitHub/rehearse/.env` is missing. `.env.local` exists but was not substituted without confirmation of its intended use. No changes were made in the Rehearse repository, and `rehearse-test_rehearse-data` remains preserved. Owner checkpoint: restore the intended `.env` (recommended), or authorize a temporary external Compose override using the confirmed `.env.local`. Rehearse is not restored; keep PR #42 unmerged and do not start T-42.
+
+Resumed QA ledger: structure/status checks pass; known duplicate exploratory `—` append-only lookup collision persists. Independent ordered comparison confirms all 269 entries and their prior attempts preserved.
