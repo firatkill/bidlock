@@ -3189,7 +3189,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Priority: High
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
-- Steps: Read auctionId from summary; poll close_due_auctions; execute shared invariant SQL; inspect verify.json.
+- Steps: Validate summary setup_data UUID, PostgreSQL admin URL, fixed shapes and SQL rows with Zod. Read auctionId from summary; poll close_due_auctions every 2 seconds; execute shared invariant SQL unchanged; inspect verify.json. Unit tests cover summary parsing and exact output shape; run the small local workload and standalone verifier.
 - Expected result: All listed INV checks present with zero violations, closed status, correct final price/count/count extensions; exit0 only when minimum accepted bid count is met.
 
 ## TC-266: Verifier fails corrupted or insufficient runs
@@ -3201,7 +3201,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Priority: High
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
-- Steps: In isolated load DB corrupt bid_count once then restore/reset; test insufficient bids and 120s close timeout.
+- Steps: In bidlock_load increment bid_count once; verify exit 1 and INV-12 > 0; decrement it and verify exit 0. Unit tests exercise any nonzero violation, minimum-count boundary (default 100 and override 10), and fake-clock polling through the 120-second deadline with still-live output.
 - Expected result: Any violation, still-live deadline or count below BENCH_MIN_BIDS fails; default100 and override10 honored; failure details retained.
 
 ## TC-267: Benchmark schema and factual report
