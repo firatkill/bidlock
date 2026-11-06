@@ -59,7 +59,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
 | T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
 | T-40  | k6 bid-storm script                                | done   | `8f30c43`                                |
-| T-41  | Invariant verification                             | doing  | —                                        |
+| T-41  | Invariant verification                             | done   | `25c2751`                                |
 | T-42  | Bench report and headline data                     | todo   | —                                        |
 | T-43  | Load workflow                                      | todo   | —                                        |
 | T-44  | How it works page                                  | todo   | —                                        |
@@ -287,3 +287,5 @@ Lint, typecheck, all 202 unit tests, guards and `pnpm test:concurrency` (49 test
 Bidlock app and Rehearse remain stopped; port 3000 is free for later M6 local load runs. The attempted Rehearse restore failed because its `.env` was missing. The owner subsequently decided that Rehearse restoration is outside T-41 acceptance and will restore it after the M6 local load runs (D-78). This is not a Bidlock blocker. Do not touch the Rehearse repository or start its container. All named volumes remain preserved. T-42 has not started.
 
 Resumed QA ledger: structure/status checks pass; known duplicate exploratory `—` append-only lookup collision persists. Independent ordered comparison confirms all 269 entries and their prior attempts preserved.
+
+T-41 complete: [PR #42](https://github.com/firatkill/bidlock/pull/42), implementation `21871fa`, acceptance evidence `65665fb`, merge commit `25c2751`. All six [CI jobs passed](https://github.com/firatkill/bidlock/actions/runs/42306710169) on the final PR commit `4e3d128` before merge. D-77/D-78 and TC-265/TC-266 recorded. All local acceptance checks pass; no T-41 questions remain. Rehearse remains stopped for owner restoration after M6 local load runs; port 3000 stays free. T-42 has not started.
