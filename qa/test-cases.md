@@ -3439,3 +3439,17 @@ All cases belong to M6 — Load test + CI + bench page, task T-44.
 - TC-290: Preconditions: local page and browser. Steps: inspect375px light/dark; scroll lifecycle, timeline, benchmark and stats; inspect console. Expected: readable text, no clipped content, scrollable wide content, no rendering errors. Owner still reviews UI before merging.
 
 T-44 coverage mapping: the original M6 acceptance cases TC-272–TC-275 remain active. TC-284/285 detail TC-272; TC-286/287 detail TC-273; TC-288 details TC-274; TC-289/290 detail TC-275. Test titles carry both acceptance and detailed IDs.
+
+## M7 — Deployment preparation (T-45 / T-46)
+
+| TC ID  | PRD acceptance reference               | TRD reference                       | Title                           | Priority | Automatable | Expected result                                                                      |
+| ------ | -------------------------------------- | ----------------------------------- | ------------------------------- | -------- | ----------- | ------------------------------------------------------------------------------------ |
+| TC-291 | D-04; NFR-30; NFR-31                   | §6.1; §16.3; §18.3; plan T-45/T-46  | Repository deployment readiness | High     | yes         | Fresh local migrations, guarded environment setup, health version and spec keepalive |
+| TC-292 | FR-45; FR-08; D-04; D-19; D-29; NFR-30 | §8.1–8.3; §18.2–18.3; A-01/02/03/06 | Supabase owner acceptance       | Critical | no          | App role, four cron jobs, browser Broadcast and verified free quotas                 |
+| TC-293 | NFR-13; NFR-14; NFR-30; NFR-31         | §16.3; §18.4; A-04/05/12            | Vercel owner acceptance         | Critical | no          | HTTPS health SHA, offline Preview, green keepalive and two-network Broadcast         |
+
+- TC-291 preconditions: local PostgreSQL 17, no concurrent database test/load run. Steps: create a fresh task database, migrate and inspect status; run existing migration/host-guard integration cases and TC-162 health/version; compare keepalive with TRD §16.3; run lint/typecheck/unit/guards. Expected: all pass; no production connection. No new application behavior is introduced.
+- TC-292 preconditions: owner-created Free Frankfurt Supabase project. Steps: execute checklist steps 2–5 including cron installation twice, current_user, direct and definer-context realtime.send; inspect pricing/dashboard. Expected: all applied, bidlock_app, four active postgres jobs, both browser messages, dated quota evidence. Report failed assumptions before changing fallback behavior.
+- TC-293 preconditions: TC-292 and owner-created Hobby Frankfurt Vercel project. Steps: checklist steps 6–9, including DNS/certificate, deployed SHA, keepalive dispatch, offline Preview and ordinary manual bids from two networks; inspect header contract and hashed IP evidence. After more than seven days inspect Supabase activity. Expected: T-46 acceptance holds; A-05 stays pending until observation. Never scripted production bids.
+
+T-47/T-48 cases will be designed from their referenced specifications before those tasks begin; this preparation covers only T-45/T-46.

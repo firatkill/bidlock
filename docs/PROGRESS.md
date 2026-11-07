@@ -63,12 +63,14 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-42  | Bench report and headline data                     | done   | `4c8e096` (PR #43)                                                 |
 | T-43  | Load workflow                                      | done   | 40c95ef767a3c6ca6f6ce3cdf70e3a5f1d4ce88e (PR #54)                  |
 | T-44  | How it works page                                  | done   | `924aeb4` ([PR #57](https://github.com/firatkill/bidlock/pull/57)) |
-| T-45  | Supabase production setup                          | todo   | —                                                                  |
+| T-45  | Supabase production setup                          | doing  | —                                                                  |
 | T-46  | Vercel deploy, DNS, keepalive                      | todo   | —                                                                  |
 | T-47  | Polish pass                                        | todo   | —                                                                  |
 | T-48  | README, demo GIF, release                          | todo   | —                                                                  |
 
 ## Open questions for the owner
+
+- T-45/T-46: complete the owner steps in [DEPLOY-CHECKLIST.md](DEPLOY-CHECKLIST.md), then reply when done. Production assumptions and acceptance remain unverified until setup.
 
 - NFR-10: known, accepted gap for later revisit (D-92). Published [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) p95=269.233384 ms exceeds250 ms; p99=329.68857432 ms passes600. Single-auction serialization/pool waiting is documented by D-91. Threshold and auction lock unchanged; thresholds.passed=false. T-43 is complete by explicit owner acceptance; no further tuning or dispatches authorized.
 
@@ -377,3 +379,11 @@ TC-284–TC-290 added. Lint/typecheck,238 unit tests,guards,build,pgTAP,52 concu
 [M6 report](../qa/M6-report.md) and [M6 review](../qa/M6-review.md) retain D-92’s accepted p95 gap. External QA checker still collides on historical exploratory `—` entries; independent identity-keyed comparison confirms all282 prior cases/attempt prefixes preserved. Implementation CI [42355483795](https://github.com/firatkill/bidlock/actions/runs/42355483795) passed all six jobs on353c86a. [PR #57](https://github.com/firatkill/bidlock/pull/57) stays open for owner browser review and merge. A final read-only check found a Rehearse container on3000; this task never started, stopped or modified it. Local review uses3100; task-owned server stopped after checks.
 
 T-44 final test review pins the D-92 result to `tests/fixtures/benchmark-failing.json`; future weekly latest.json publications can change measured values without invalidating this historical-copy regression. Runtime still reads latest.json. Assertions and result values unchanged.
+
+## T-45/T-46 preparation
+
+Owner checklist added; T-45 doing, T-46 deployment still todo. Missing keepalive workflow added exactly per TRD §16.3. It requires no secrets and becomes scheduled on merge; no dispatch during preparation. D-95 documents the offline Preview URL placeholder required by existing validation. DNS target must be copied from the new Vercel project's domain screen, not guessed.
+
+Fresh local bidlock_t45_prep: all14 migrations apply and status reports all applied. Existing migration integration9/9 and health/version TC-162 pass. Lint,typecheck,238 unit tests and guards pass. Local scratch database retained; existing dev/test/load databases and Rehearse untouched. No production migrations or service setup. TC-291 passed; TC-292/293 require owner setup. No fallback chosen; A-01–A-06/A-12 production evidence remains pending, with A-05 requiring more than seven days.
+
+QA ledger structural/status checks pass after marking owner cases non-automatable. The existing external-checker collision on historical exploratory `—` labels remains; independent ordered identity/attempt-prefix comparison confirms all294 prior cases and attempts preserved.
