@@ -70,7 +70,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- T-43: D-90 measurement [42319246136](https://github.com/firatkill/bidlock/actions/runs/42319246136) regressed p95 to336.62 ms versus241.32 ms pool20 three-call baseline; p99 improved415.75 vs726.37 ms. Scored dispatch not used; result PR #53 unmerged. Approve bounded profiling of Node/pool scheduling and diagnostic overhead (recommended), explicitly authorize diagnostics-off scored run despite the gate, or pause? See qa/T-43-diagnosis.md.
+- T-43: final scored [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) failed p95=269.233384 ms (limit250); p99=329.68857432 ms, errors0, all invariants0, cap20 and500 post-close responses. Both authorized dispatches consumed. Approve one bounded Node CPU/pool-wait profiling run (recommended) or pause; no retry or result merge. See qa/T-43-diagnosis.md.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -351,3 +351,9 @@ Combined SQL-await mean429.050 ms dominates429.332 ms handler mean. Database wai
 D-89/D-90 approved: distinct synthetic load client IPs and short identity/rate transaction before bidding. Two new dispatches authorized, gated by measurement versus pool20 three-call baseline; T-44 untouched.
 
 T-43 D-89/D-90 evidence: PR #52 merged8b957bc after six green CI jobs. Measurement42319246136 failed p95;27674 bids/1376 replays/215 accepted,p95=336.6236303,p99=415.7450225,error0,invariants0,extensions20,closed500. Artificial IP-rate blockers removed;936 sampled place_bid blockers remain. One of two dispatches used; scored gate stops work. #45/#47/#49/#51/#53 remain open and unchanged; no benchmark published; T-44 untouched. Evidence branch t-43-ip-rate-evidence.
+
+## T-43 reviewer decision under D-89/D-90
+
+2026-11-07: reviewer authorizes the remaining scored dispatch under the existing two-dispatch approval. The reviewer states the baseline-regression stop gate was an added review restriction, not an owner requirement, and removes it: p99 improved and shared-IP blocking disappeared, while the measurement included diagnostic overhead. No new D-xx, code or settings change. Dispatch load.yml on main8b957bc once with default inputs and diagnostics=false. This is the second and last authorized dispatch. Publish only if every threshold passes, all invariants are zero and TC-264 reaches20/20 with post-close AUCTION_CLOSED; otherwise stop for bounded Node/pool profiling approval. Scored run: https://github.com/firatkill/bidlock/actions/runs/42319897777.
+
+Scored outcome: run42319897777 on8b957bc failed p95 with diagnostics off; artifact uploaded and full result schema validated. 28,925 bids;1,496 replays;245 accepted HTTP outcomes (229 unique);p95=269.233384 ms,p99=329.68857432 ms,error0,all16 invariant checks0,thresholds.passed=false;20/20 extensions and500 AUCTION_CLOSED. Bot #54 changes only the expected three result files and remains unmerged. #45/#47/#49/#51/#53 remain open because no passing result supersedes them. Both D-89/D-90 dispatches are now used; no further run. T-43 blocked, T-44 untouched. Reviewer decision and evidence pushed on t-43-ip-rate-evidence; no new D-xx.

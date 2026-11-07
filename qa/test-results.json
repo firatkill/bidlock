@@ -17655,6 +17655,11 @@
           "result": "fail",
           "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -17703,6 +17708,11 @@
           "result": "pass",
           "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -17929,6 +17939,11 @@
           "result": "pass",
           "actual_result": "Final run built/migrated, ran k6, verified, reported, uploaded artifact bench-42314282647 (872476 bytes), opened scoped PR #49 and failed threshold gate; cleanup completed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -17958,6 +17973,11 @@
           "result": "pass",
           "actual_result": "FullBenchResult parses; PR #49 only dated JSON/latest JSON/SUMMARY; threshold failure correctly prevents publication. #45/#47 remain unchanged and unmerged.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -17987,6 +18007,11 @@
           "result": "pass",
           "actual_result": "Final artifact contains21788 request timing rows,62 event-loop samples,165 pg snapshots and CPU/throttling. Native queue remains unmeasured; no claim of native queue length.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -18142,6 +18167,11 @@
           "result": "fail",
           "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -18170,6 +18200,11 @@
           "result": "pass",
           "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
@@ -18209,6 +18244,11 @@
           "result": "pass",
           "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
         }
       ],
       "regression_of": null,
