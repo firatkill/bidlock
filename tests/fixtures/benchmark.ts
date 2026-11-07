@@ -9,6 +9,7 @@ export const benchmark: FullBenchResult = {
     vus: 500,
     duration_s: 60,
     ramp_up_s: 10,
+    ip_model: "per-vu-forwarded",
     db_pool_max: 20,
     postgres: "17.11",
     auction: {
@@ -64,6 +65,7 @@ export function summaryFixture() {
       vus: 500,
       duration_s: 60,
       ramp_up_s: 10,
+      ip_model: "per-vu-forwarded",
       auction: benchmark.config.auction,
     },
     metrics: {

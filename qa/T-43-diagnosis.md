@@ -118,3 +118,45 @@ Activity snapshots decreased from180 to165: blocked place_bid observations1175�
 Final Docker CPU means: app94.47%, db91.92%, k630.01%; all sampled throttling counters remained0. Event-loop utilization p95=.913 and largest sampled delay107.28 ms; the20 ms histogram resolution remains part of the mean delay. These samples do not isolate native pool queue time from Node/driver scheduling costs. Instrumentation was retained across both runs; different runner instances and stochastic arrivals also limit causal precision.
 
 **Owner checkpoint:** both permitted dispatches have been used. Recommend restoring load pool20 (the better measured configuration) and authorizing focused client/driver scheduling plus cold-start profiling before another fix/run. Alternatively retain pool4 and investigate it further, accepting that it is currently substantially worse. No threshold, VU, runner, SQL invariant, lock or workload change is proposed. No further modification or dispatch is made without approval. Pool4 remains on main from the authorized fix merge; documentation does not silently revert it. T-43 remains blocked and T-44 untouched.
+
+## D-86–D-88 single-call/ramp measurement — stop before scored run
+
+[PR #50](https://github.com/firatkill/bidlock/pull/50) merged as `d3bc583` after six green [CI jobs](https://github.com/firatkill/bidlock/actions/runs/42316110169). Initial E2E stopped in the recurring Next font build error before tests; targeted CI rerun passed without source changes. Local validation passed221 unit tests,437 pgTAP assertions (74 in the new parity file),51 concurrency/integration tests including INT-01/INT-02, production build and33 E2E tests. These tests establish contract parity/correctness, not performance.
+
+D-86 restored pool20; D-87 composed get_me/check_bid_rate/place_bid into one SQL transaction used by production and load; D-88 added10 s ramp and diagnostics opt-in. [Measurement run42316538127](https://github.com/firatkill/bidlock/actions/runs/42316538127) used diagnostics=true. It is the first of the latest two authorized dispatches. It failed both thresholds and is worse than the earlier pool20 diagnostic baseline, although better than the failed pool4 experiment. Under the measurement gate, **the scored dispatch was not started**.
+
+| Metric                                | Three calls, pool20, constant500 | Three calls, failed pool4 | Single call, pool20, ramp10s |
+| ------------------------------------- | -------------------------------: | ------------------------: | ---------------------------: |
+| Bids                                  |                           33,329 |                    21,788 |                       22,755 |
+| Replays                               |                            1,685 |                     1,066 |                        1,167 |
+| Accepted HTTP / unique bids           |                        263 / 249 |                 124 / 117 |                    150 / 145 |
+| p95 ms                                |                           241.32 |                    896.46 |                       641.86 |
+| p99 ms                                |                           726.37 |                  1,529.86 |                       753.51 |
+| Unexpected errors                     |                                0 |                         0 |                            0 |
+| Invariant violations                  |                                0 |                         0 |                            0 |
+| Extensions / AUCTION_CLOSED responses |                         20 / 500 |                  20 / 500 |                     20 / 500 |
+| thresholds.passed                     |                            false |                     false |                        false |
+
+The original pre-timing-correction run remains in the earlier table (p95=406.83/p99=1029.53, cap12 and no post-close responses). The new measurement is also worse on p95 than that original, while better on p99. The most relevant prior comparison is pool20 with the corrected10 s extension and diagnostics enabled:641.861405 vs241.3247772 ms p95, and753.5082123 vs726.37423376 ms p99. This is not an isolated A/B experiment: workload ramp and SQL transaction structure both changed, and runners differ; the observed regression is sufficient to stop, not to attribute an exact causal percentage.
+
+### Measured breakdown
+
+- 22,755 handler samples: mean429.332 ms, p95 634.021, p99 745.185. The combined submit_bid phase mean429.050 ms, p95 633.747, p99 744.879; residual application work mean0.282 ms. Phase duration includes driver waiting, network, SQL and result parsing, not just server execution.
+- 14,461 SQL statements above the10 ms logging cutoff: conditional mean52.476 ms, p95 139.005, p99 206.195, max475.404. This truncated sample cannot be subtracted from the full handler mean to calculate exact pool queue time.
+- 147 database snapshots:1,065 active transaction-ID lock observations,486 LockManager lightweight-lock observations, and3 tuple-lock observations.1,028 sampled sessions had blockers; active backend p95=20. Pending submit_bid calls reached288 (p95=256); this is awaiting calls, not the driver's native queue length.
+- All54 emitted PL/pgSQL wait-context occurrences identify rate_hit → check_bid_rate → submit_bid. The composed transaction retains rate-counter locks while doing bid work. Since each VU has a separate bidder and one in-flight request, the shared-IP counter is the likely common rate-lock hotspot. The samples identify submit_bid as a whole and do not prove that every wait was on that counter.
+- Docker mean CPU: app77.74%, PostgreSQL122.94%, k634.17% (100%=one core). All sampled throttling counters are0. Event-loop utilization p95=.886, largest sampled delay81.527 ms. No quota throttling was observed.
+
+The single-call change removed round trips but lengthened the rate-counter critical section: those locks now last through place_bid and commit. The evidence supports increased rate/lock-manager contention plus client awaiting backlogs. No SQL rule, threshold or lock was changed to make the run pass.
+
+Artifact `bench-42316538127` uploaded (695,758 bytes); FullBenchResult validates vus500,duration60,ramp_up_s10,pool20,extension10,all16 invariant checks0. Logs have zero parameter-detail lines. Bot [PR #51](https://github.com/firatkill/bidlock/pull/51) changes only bench/results/2026-11-07.json, bench/results/latest.json and bench/SUMMARY.md and remains unmerged. #45/#47/#49 remain unchanged and open. No benchmark is published and no scored numbers exist.
+
+**Owner options:** authorize revisiting the single-transaction composition so rate-counter locks can be released before auction work (recommended for design investigation), or retain the composed transaction and authorize deeper lock/driver profiling before another change. Either path needs an explicit decision before more work/runs. Main currently retains the approved pool20, single-call path and10 s ramp. The unused scored dispatch has not been spent; the measurement stop condition prevents using it automatically. T-43 blocked; T-44 untouched.
+
+## D-89/D-90: remove artificial IP contention and release rate locks
+
+Owner approved both changes on 2026-11-07. D-87 run42316538127 p95=641.861405/p99=753.5082123 ms regressed against pool20 three-call baseline241.3247772/726.37423376 ms. Handler mean429.332 ms versus submit_bid429.050 ms (other0.282 ms). All54 logged lock contexts traverse rate_hit/check_bid_rate/submit_bid. The load app's TRUST_PROXY=none maps every request to local, serializing the shared IP counter; the combined transaction holds it through auction processing.
+
+D-89 sets only the load Compose app to TRUST_PROXY=vercel and gives each k6 VU a stable distinct private address, including guest creation. The result records per-vu-forwarded. D-90 replaces the route call with prepare_bid (existing get_me/check_bid_rate), committed before separate unchanged place_bid. Production uses this transaction boundary too. No rate-rule logic, auction lock, clock, limits, thresholds or pacing changes. Migration0014 is additive;0013 is unchanged.
+
+New TC-281 covers all500 identities and load-only settings; TC-282 covers every prior SQL outcome/rate counter plus replay, grants, ordered route calls and independent rate-lock availability. Diagnostic sampler labels prepare_bid separately. Pool20, ramp10, extension10 remain. At most two new dispatches: measurement never published; scored only after comparison to the pool20 three-call baseline.

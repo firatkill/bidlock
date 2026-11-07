@@ -58,7 +58,7 @@ Key properties:
 
 - The browser never talks to Postgres. The only Supabase client in the browser is the Realtime subscription.
 - All writes go through `SECURITY DEFINER` functions in schema `bidlock`. The runtime role cannot write tables.
-- Each HTTP request uses at most three short single-statement database transactions (`POST /bids`: one `submit_bid` statement under D-87; first `GET /api/me`: `get_me`, `create_bidder`, `get_me`). No transaction spans network calls.
+- Each HTTP request uses at most three short single-statement database transactions (`POST /bids`: two statements under D-90: `prepare_bid`, then `place_bid`; first `GET /api/me`: `get_me`, `create_bidder`, `get_me`). No transaction spans network calls.
 
 ## 3. Stack
 
@@ -778,7 +778,8 @@ Code blocks in §7 show function bodies and the `grant` lines; as stated in §6.
 | `generate_lot_title(seed)` | 0007 | no | titles |
 | `tick()` | 0007 | no | cron entry point |
 | `rate_hit(limit, subject, now)` | 0008 | no | fixed-window counter |
-| `submit_bid(session_bidder, bot, auction, amount, key, ip_hash)` | 0013 | yes | compose session lookup, rate check and bidding (D-87) |
+| `submit_bid(session_bidder, bot, auction, amount, key, ip_hash)` | 0013 | yes | historical D-87 entry; HTTP superseded by D-90 |
+| `prepare_bid(session_bidder, bot, ip_hash)` | 0014 | yes | session lookup and rate check; commits before separate place_bid (D-90) |
 | `check_bid_rate(bidder, ip_hash)` | 0008 | yes | bid limits |
 | `create_bidder(ip_hash)`, `rename_bidder(bidder, name)` | 0009 | yes | identity |
 | `auction_state(auction, viewer)` | 0009 | yes | state read with lazy transitions |
@@ -794,7 +795,9 @@ Code blocks in §7 show function bodies and the `grant` lines; as stated in §6.
 
 ---
 
-### 6.7 Single-call bid entry point (0013_submit_bid.sql; D-87)
+### 6.7 Historical single-call entry point (0013_submit_bid.sql; D-87, superseded by D-90)
+
+Retained migration/function for compatibility; the HTTP path uses §6.8. This hypothesis regressed (p95 641.861405/p99 753.5082123 ms) by retaining the shared rate-counter lock through bidding.
 
 `submit_bid(session_bidder_id, verified_bot_id, auction_id, amount, key, ip_hash)` is one volatile SECURITY DEFINER statement with `set search_path = bidlock, pg_temp`. It calls `get_me(session_bidder_id)` to resolve the signed session (human only), then `check_bid_rate(coalesce(verified_bot_id,session_bidder_id),ip_hash)`, then `place_bid`. The server verifies the bot token before passing its subject; SQL rechecks the session's existence before using it. Missing session returns NO_SESSION, or BOT_TOKEN_INVALID for a verified bot whose owner session no longer resolves. Rate-limited requests return RATE_LIMITED/retry_after_ms without calling place_bid. Normal rejected bids and replays still count rate hits. Existing functions, rule order, constraints, SELECT FOR UPDATE and time read after acquisition are unchanged. The new migration grants only submit_bid to bidlock_app and revokes all PUBLIC execute; prior grants are retained for existing consumers/tests.
 
@@ -828,6 +831,39 @@ begin
 end $$;
 revoke execute on all functions in schema bidlock from public;
 grant execute on function bidlock.submit_bid(uuid, uuid, uuid, bigint, uuid, text) to bidlock_app;
+```
+
+### 6.8 Two-call bid path (0014_prepare_bid.sql; D-90)
+
+After verifying the signed cookie and optional scoped bot token, call prepare_bid(session_bidder, verified_bot_or_null, ip_hash). It composes unchanged get_me and check_bid_rate. Its strict JSON result is either {kind:"error",error_code:"NO_SESSION"|"BOT_TOKEN_INVALID"|"RATE_LIMITED",retry_after_ms:number|null} or {kind:"ready",bidder_id:uuid}. Await that statement's autocommit before calling place_bid in a separate statement, with no enclosing transaction. Rate hits survive normal bid rejections, replays and unexpected later SQL errors; rate-counter locks cannot span the auction lock. Missing session/bot-owner and rate errors stop before place_bid. Existing SQL rules, auction row lock and post-lock time read are unchanged.
+
+The new SECURITY DEFINER function fixes search_path, revokes PUBLIC execution and grants only the new entry point explicitly to bidlock_app; existing grants are retained. Production and load use the same route.
+
+```sql
+-- Commit identity and rate checking before the separate place_bid statement (D-90).
+-- p_bot_id is supplied only after the server verifies the scoped bot token.
+create or replace function bidlock.prepare_bid(
+  p_session_bidder_id uuid, p_bot_id uuid, p_ip_hash text
+) returns jsonb
+language plpgsql volatile security definer set search_path = bidlock, pg_temp as $$
+declare
+  v_retry integer;
+  v_bidder uuid;
+begin
+  if bidlock.get_me(p_session_bidder_id) is null then
+    return jsonb_build_object('kind', 'error', 'error_code',
+      case when p_bot_id is null then 'NO_SESSION' else 'BOT_TOKEN_INVALID' end,
+      'retry_after_ms', null);
+  end if;
+  v_bidder := coalesce(p_bot_id, p_session_bidder_id);
+  v_retry := bidlock.check_bid_rate(v_bidder, p_ip_hash);
+  if v_retry > 0 then
+    return jsonb_build_object('kind', 'error', 'error_code', 'RATE_LIMITED', 'retry_after_ms', v_retry);
+  end if;
+  return jsonb_build_object('kind', 'ready', 'bidder_id', v_bidder);
+end $$;
+revoke execute on all functions in schema bidlock from public;
+grant execute on function bidlock.prepare_bid(uuid, uuid, text) to bidlock_app;
 ```
 
 ## 7. SQL functions
@@ -1211,7 +1247,7 @@ Call from TypeScript: `select * from bidlock.place_bid(${auctionId}, ${bidderId}
 - The clock is read after the lock, so queueing time counts against the bidder (no bid is accepted after `ends_at` because it waited).
 - Every write that depends on the auction's state (bid row, auction update, extension, offers) happens while holding the lock, so commit order equals lock order and `bid_no` order (INV-03).
 - `SERIALIZABLE` would also be correct but would turn every contended bid into a serialization failure that must be retried by the client, adding latency and code. A lock queue gives the same guarantee with no retries.
-- Deadlocks cannot involve two `place_bid` calls: each locks exactly one auction row, then inserts rows keyed by new UUIDs plus exactly one `(bidder, key)` entry in `idempotency_unique`. The only other wait is that unique-index wait: a call on auction B whose key is being inserted by an uncommitted call on auction A waits for A to finish; A never waits on B (it needs no second auction and no second key), so no cycle forms. FK checks on `bids.bidder_id` take `FOR KEY SHARE` on the bidder row, which does not conflict with the `FOR NO KEY UPDATE` taken by strike updates and `create_sandbox`. The rate limiter runs in a separate earlier transaction (D-10), so its counter rows are never held while waiting for the auction lock.
+- Deadlocks cannot involve two `place_bid` calls: each locks exactly one auction row, then inserts rows keyed by new UUIDs plus exactly one `(bidder, key)` entry in `idempotency_unique`. The only other wait is that unique-index wait: a call on auction B whose key is being inserted by an uncommitted call on auction A waits for A to finish; A never waits on B (it needs no second auction and no second key), so no cycle forms. FK checks on `bids.bidder_id` take `FOR KEY SHARE` on the bidder row, which does not conflict with the `FOR NO KEY UPDATE` taken by strike updates and `create_sandbox`. D-90 releases rate-counter locks when prepare_bid commits, before the separate place_bid statement takes its auction lock. Concurrency tests cover shared-IP requests, replay and rate-counter availability while an auction is locked.
 - Concurrent duplicates: two identical requests (same bidder, key, auction, amount) queue on the auction lock; the second one's idempotency lookup is a new statement, sees the first one's committed row and returns `replayed = true`. Same key on two different auctions: both pass the lookup, the second `INSERT … ON CONFLICT DO NOTHING` waits for the first commit, inserts nothing, and `_idempotency_conflict` re-selects and returns `IDEMPOTENCY_MISMATCH` (INT-02).
 
 #### 7.2.2 The version column
@@ -1531,7 +1567,7 @@ begin
   return greatest(1, ceil(extract(epoch from (v_start + make_interval(secs => v_window) - p_now)) * 1000))::integer;
 end $$;
 
--- D-87: called inside submit_bid before place_bid; former separate-statement sequence superseded.
+-- D-90: called inside prepare_bid, committed before the separate place_bid statement.
 create or replace function bidlock.check_bid_rate(p_bidder_id uuid, p_ip_hash text)
 returns integer
 language plpgsql volatile security definer set search_path = bidlock, pg_temp as $$
@@ -1561,7 +1597,7 @@ grant execute on function bidlock.check_bid_rate(uuid, text) to bidlock_app;
 Notes:
 - Fixed windows allow up to 2× the limit across a window boundary (e.g. 3 bids at 0.99 s and 3 at 1.01 s). This is accepted for a demo.
 - Race safety: `INSERT … ON CONFLICT DO UPDATE … RETURNING` is atomic per counter row. Concurrent first hits on a new bucket serialize on the unique index (one inserts, the others wait and take the update branch), so no hit is lost and no unique violation escapes. The counter row lock is held until the statement's implicit transaction commits; `check_bid_rate` always locks its rows in the same order (bidder buckets, then the IP bucket), so two callers cannot deadlock.
-- Not atomic with the bid: the rate check and `place_bid` are separate statements (D-10), so the limit is approximate by at most the requests in flight between the two statements. This is accepted.
+- D-90 restores a commit boundary before place_bid. prepare_bid counts all eligible calls, including later rule rejections and replay; rate-limited outcomes stop before bidding. Unexpected place_bid errors cannot roll back already committed rate hits.
 - Every limit is evaluated (no short-circuit), so a hammering client keeps incrementing all counters and stays limited.
 - Counter rows older than 2 hours are deleted by cron every 10 minutes and by `cleanup_expired()`.
 - `p_ip_hash` is computed in TypeScript (§13.6); SQL never sees a raw IP.
@@ -2136,7 +2172,7 @@ Auth: session-or-bot. Mutating. Body:
 export const PlaceBidBody = z.object({ amount: Cents, idempotency_key: z.uuid() }).strict();
 ```
 
-Steps (D-87): validate request and signed cookie/scoped bot token in TypeScript, retaining the session bidder separately from a verified bot subject. For this route only, defer the getMe database lookup to `submit_bid(session_bidder, verified_bot_or_null, auction, amount, key, ip_hash)`. Make exactly one database call for a valid bid request; map its identity/rate error envelope or unchanged bid_result. No additional getMe/check_bid_rate/place_bid call is made from the route. RATE_LIMITED retains its retry_after_ms and Retry-After header; replay/status/error contracts below are unchanged. Other routes retain their existing authentication flow.
+Steps (D-90): validate request and signed cookie/scoped bot token in TypeScript, retaining the session bidder separately from a verified bot subject. Call prepare_bid(session_bidder, verified_bot_or_null, ip_hash) and await its autocommit. On ready, call place_bid(auction, resolved_bidder, amount, key) in a separate autocommitted statement. Eligible requests make exactly two database calls; identity/rate denial makes one; invalid signatures stop before SQL. No additional getMe call or encompassing transaction. Map the identity/rate error envelope or unchanged bid_result; RATE_LIMITED retains retry_after_ms and Retry-After. Production uses the same path; other routes retain their authentication flow.
 
 Success: 201 (first time) or 200 (replay, header `Idempotent-Replayed: true`):
 
@@ -2801,6 +2837,8 @@ D-88: use ramping-vus, startVUs=0, ramp to VUS over min(10, configured duration_
 
 #### 15.6.2 `load/bid-storm.js`
 
+D-89: each VU has a distinct stable private IPv4 X-Forwarded-For header; its setup guest request uses the same address. Only the load Compose app trusts this header (TRUST_PROXY=vercel); ip.ts hashes it before counters/storage. Never log raw addresses. Record ip_model="per-vu-forwarded" in full result config. Raised load max_hits remain unchanged.
+
 ```js
 import http from "k6/http";
 import { check, sleep } from "k6";
@@ -2870,7 +2908,10 @@ export function setup() {
   // Bidders first: creating 500 guests takes seconds, and the auction clock must not run meanwhile.
   const cookies = [];
   for (let i = 0; i < VUS; i++) {
-    const r = http.get(`${BASE}/api/me`, { jar: new http.CookieJar() }); // fresh jar => new bidder each time
+    const r = http.get(`${BASE}/api/me`, {
+      jar: new http.CookieJar(),
+      headers: { "x-forwarded-for": clientIp(i + 1) },
+    }); // fresh jar => new bidder each time
     const c = r.cookies.bl_sid && r.cookies.bl_sid[0];
     if (!c) throw new Error(`no cookie for bidder ${i}: ${r.status}`);
     cookies.push(`bl_sid=${c.value}`);
@@ -2882,7 +2923,11 @@ export function setup() {
       starting_price: 1000,
     }),
     {
-      headers: { "content-type": "application/json", "x-test-secret": SECRET },
+      headers: {
+        "content-type": "application/json",
+        "x-test-secret": SECRET,
+        "x-forwarded-for": clientIp(1),
+      },
     },
   );
   if (a.status !== 201)
@@ -2902,6 +2947,7 @@ export default function (data) {
     "content-type": "application/json",
     origin: ORIGIN,
     cookie: data.cookies[__VU - 1],
+    "x-forwarded-for": clientIp(__VU),
   };
   const replay = state.last && Math.random() < 0.05;
   const body = replay
@@ -3005,6 +3051,7 @@ export function handleSummary(data) {
       vus: VUS,
       duration_s: DURATION_S,
       ramp_up_s: RAMP_UP_S,
+      ip_model: "per-vu-forwarded",
       auction: AUCTION,
     },
   };
@@ -3013,11 +3060,16 @@ export function handleSummary(data) {
     stdout: textSummary(data),
   };
 }
+
+// Stable private addresses used only as request headers; never emitted in metrics.
+function clientIp(vu) {
+  return `10.${Math.floor(vu / 65536) % 256}.${Math.floor(vu / 256) % 256}.${vu % 256}`;
+}
 ```
 
 Timing with the defaults (`AUCTION_S = 45`, `snipe_window_s: 10`, `extend_by_s: 10`, `max_extensions: 20`), measured from auction creation: the soft-close window first opens at 35 s. D-83 sets the load-only extension to equal the window: after an accepted window bid at t sets `ends_at = t + 10 s`, the next window begins at t, so subsequent accepted bids can extend without a mandatory two-second gap. When the twentieth extension occurs at t20, no later bid extends and the deadline is t20 + 10 s. Actual cap/close times depend on accepted bid arrivals; do not promise a fixed close time. The 60-second workload must demonstrate 20 extensions and post-close `AUCTION_CLOSED` responses (TC-264); observed-closed VUs idle. Production extension defaults remain 30 s. The summary carries `setup_data.auctionId` for verification. The prior 12 s configuration required at least 2 s between extensions and could not reach the cap and close within the default run.
 
-D-88 supersedes unconditional D-84 diagnostics: the load workflow defaults diagnostics off and only with workflow_dispatch input diagnostics=true opts into `docker/compose.load-diagnostics.yml` only. App `LOAD_DIAGNOSTICS=on` is allowed only in test mode, defaults off elsewhere, and emits numeric per-bid total/getMe/check_bid_rate/place_bid wall times, aggregate event-loop delay/utilization/CPU and per-phase pending calls. The single-call route measures submit_bid rather than attributing internal SQL phases to separate network calls. Phase times include postgres.js waiting, execution, round trips and result parsing; pending calls are not a native pool queue metric (no stable public queue API). PostgreSQL statement/lock logs suppress parameter values; samplers emit operation labels, wait events and blocker PIDs, never query text. Bounded runner samplers collect activity, Docker CPU and cgroup throttling in bench/out. Each result PR uses `bench/results-${run_id}` so previous unmerged results remain unchanged. The D-88 measurement dispatch is never published; one subsequent scored dispatch is authorized with diagnostics=false. No sampler or diagnostic overlay runs in scored mode.
+D-88 supersedes unconditional D-84 diagnostics: the load workflow defaults diagnostics off and only with workflow_dispatch input diagnostics=true opts into `docker/compose.load-diagnostics.yml` only. App `LOAD_DIAGNOSTICS=on` is allowed only in test mode, defaults off elsewhere, and emits numeric per-bid total/getMe/check_bid_rate/place_bid wall times, aggregate event-loop delay/utilization/CPU and per-phase pending calls. The two-call route measures prepare_bid (session plus rate) and place_bid separately. Phase times include postgres.js waiting, execution, round trips and result parsing; pending calls are not a native pool queue metric (no stable public queue API). PostgreSQL statement/lock logs suppress parameter values; samplers emit operation labels, wait events and blocker PIDs, never query text. Bounded runner samplers collect activity, Docker CPU and cgroup throttling in bench/out. Each result PR uses `bench/results-${run_id}` so previous unmerged results remain unchanged. The D-88 measurement dispatch is never published; one subsequent scored dispatch is authorized with diagnostics=false. No sampler or diagnostic overlay runs in scored mode.
 
 #### 15.6.3 Verification (`scripts/bench/verify.ts` + `db/verify/invariants.sql`)
 
@@ -3107,7 +3159,8 @@ Result schema (version 1), validated with Zod `BenchResult` in `src/domain/schem
   "date": "2026-10-18",
   "commit": "abc1234",
   "runner": { "os": "Linux", "cpus": 4, "cpu_model": "AMD EPYC 7763 64-Core Processor", "memory_gb": 16 },
-  "config": { "vus": 500, "duration_s": 60, "ramp_up_s": 10, "db_pool_max": 20, "postgres": "17.x",
+  "config": { "vus": 500, "duration_s": 60, "ramp_up_s": 10,
+    "ip_model": "per-vu-forwarded", "db_pool_max": 20, "postgres": "17.x",
               "auction": { "duration_s": 45, "snipe_window_s": 10, "extend_by_s": 10, "max_extensions": 20 } },
   "requests": { "bids": 41230, "replays": 2010, "rps": 680.5 },
   "outcomes": { "accepted": 3120, "BID_TOO_LOW": 31002, "ALREADY_LEADING": 2400, "AUCTION_CLOSED": 4700, "RATE_LIMITED": 8, "OTHER": 0 },
@@ -3572,7 +3625,7 @@ services:
       DATABASE_URL: postgres://bidlock_app:bidlock_app@db:5432/bidlock_load
       DB_POOL_MAX: "20"
       APP_ORIGIN: http://app:3000
-      TRUST_PROXY: none
+      TRUST_PROXY: vercel
       SESSION_SECRET: load-session-secret-0123456789abcdef0123
       BOT_TOKEN_SECRET: load-bot-secret-0123456789abcdef01234567
       IP_HASH_SALT: load-ip-salt-0123456789

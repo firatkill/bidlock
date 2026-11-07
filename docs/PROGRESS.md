@@ -70,8 +70,6 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
-- T-43: owner approved D-86/D-87/D-88: restore20, compose bid SQL, ramp workload. Two new dispatches authorized (measurement on, scored off); no current owner question.
-
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
 - T-05 environment dependency correction is approved and complete (D-46).
@@ -341,3 +339,11 @@ Artifact uploaded and full schema/file scope validated. Bot PR #49 remains unmer
 D-86 restores pool20 and records D-85 as failed. D-87 adds migration0013 submit_bid and one-call production/load route with parity tests. D-88 adds10 s ramp metadata and opt-in diagnostic dispatch. New TC-278–280; regression validation underway. No new load dispatch yet.
 
 Single-call/ramp local acceptance: lint/typecheck/guards,221 unit tests,437 pgTAP assertions,51 concurrency/integration tests including INT-01/INT-02, production build and33 E2E tests pass. New SQL parity file has74 assertions. TC-278 fixture failures/retests retained; D-86 retires TC-277 pool4 target without deleting history. CI and the two authorized dispatches remain pending.
+
+## T-43 single-call measurement checkpoint
+
+PR #50 merged as `d3bc583` with six green CI jobs. D-88 diagnostic [run42316538127](https://github.com/firatkill/bidlock/actions/runs/42316538127) failed:22,755 bids,1,167 replays,150 accepted HTTP outcomes (145 unique),p95=641.861405 ms,p99=753.5082123 ms,unexpected errors0,all16 invariant checks0,thresholds.passed=false. Cap20 and500 post-close responses pass TC-264. Compared with prior pool20 diagnostic, both percentiles are worse; scored run not started.
+
+Combined SQL-await mean429.050 ms dominates429.332 ms handler mean. Database wait contexts now identify rate_hit/check_bid_rate/submit_bid; the single transaction retains shared rate locks through bid processing. Exact breakdown and qualification are in qa/T-43-diagnosis.md. Artifact/schema/file scope verified; bot PR #51 and older #45/#47/#49 remain open and unchanged. No benchmark published. One of the latest two dispatches used; the measurement gate stops further work pending owner decision. Evidence on t-43-single-call-evidence; T-44 untouched.
+
+D-89/D-90 approved: distinct synthetic load client IPs and short identity/rate transaction before bidding. Two new dispatches authorized, gated by measurement versus pool20 three-call baseline; T-44 untouched.
