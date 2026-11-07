@@ -2835,6 +2835,8 @@ D-88: use ramping-vus, startVUs=0, ramp to VUS over min(10, configured duration_
 - Environment: `docker/compose.yml` (§17.2) with `db` (postgres:17, `max_connections=200`), `migrate` (applies migrations + `db/env/load.sql`), `app` (production standalone build, `APP_ENV=test`, `DB_POOL_MAX=20`, `NEXT_PUBLIC_FEED=polling`), `k6` (profile `load`).
 - The live site is never a target: `BASE_URL` defaults to `http://app:3000` and `check:guards` rejects `firatkil.com` in load files.
 
+D-91 adds workflow input profiling=false. Opt-in selects docker/compose.load-profile.yml instead of the verbose diagnostic overlay. A test-only NODE_OPTIONS preload samples process CPU, ELU and event-loop delay once/second for at most180 s; existing bounded Docker CPU/activity samplers run. No per-request or verbose SQL logs. Pinned postgres.js3.4.9 lazy-query handle to connection.execute state assignment measures enqueue-to-dispatch including connection setup and scheduling, not a pure native queue. Completion measures dispatch-to-result including server/transport/parsing. Counts and sums only, no SQL/parameters/request identifiers. The preload is mounted only in load Compose and leaves production source/settings unchanged; scored mode omits it.
+
 #### 15.6.2 `load/bid-storm.js`
 
 D-89: each VU has a distinct stable private IPv4 X-Forwarded-For header; its setup guest request uses the same address. Only the load Compose app trusts this header (TRUST_PROXY=vercel); ip.ts hashes it before counters/storage. Never log raw addresses. Record ip_model="per-vu-forwarded" in full result config. Raised load max_hits remain unchanged.
@@ -3394,6 +3396,10 @@ on:
       duration:
         description: k6 duration
         default: "60s"
+      profiling:
+        description: Enable bounded load-only profiling (never publish this run)
+        type: boolean
+        default: false
       diagnostics:
         description: Enable load-only diagnostic collection (never publish this run)
         type: boolean
@@ -3410,8 +3416,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  COMPOSE: ${{ inputs.diagnostics && 'docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml' || 'docker compose -f docker/compose.yml' }}
-  LOAD_DIAGNOSTICS: ${{ inputs.diagnostics && 'on' || 'off' }}
+  COMPOSE: ${{ inputs.profiling && 'docker compose -f docker/compose.yml -f docker/compose.load-profile.yml' || inputs.diagnostics && 'docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml' || 'docker compose -f docker/compose.yml' }}
+  LOAD_DIAGNOSTICS: ${{ (inputs.diagnostics || inputs.profiling) && 'on' || 'off' }}
   DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:54329/bidlock_load
 
 jobs:

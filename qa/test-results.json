@@ -18255,6 +18255,25 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-283",
+      "ac_reference": "D-91; NFR-10; NFR-40",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Bounded load-only Node and pool profiling",
+      "status": "resolved",
+      "environment": "Local macOS; Node24; postgres.js3.4.9; isolated bidlock_test",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "227 unit tests, lint/typecheck/guards pass. Real read-only pool1 smoke measured100.84 ms enqueue delay under100 ms reservation; result unchanged. Compose overlay resolves and preload syntax valid.",
+          "note": "Profiling dispatch pending; no local benchmark. CPU/ELU once per second, hard180 s bound; production code untouched."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

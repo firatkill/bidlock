@@ -1,0 +1,8 @@
+# Bounded profiling only: no verbose per-request or SQL logging.
+services:
+  app:
+    environment:
+      LOAD_PROFILE: "on"
+      NODE_OPTIONS: "--import=/load-profile.mjs"
+    volumes:
+      - ./load-profile.mjs:/load-profile.mjs:ro
