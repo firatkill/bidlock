@@ -2,7 +2,7 @@
 
 A live auction engine that stays correct under load.
 
-Implementation is in progress; no benchmark claims have been measured yet.
+Implementation is in progress. The [first published benchmark](bench/SUMMARY.md) records p95 269.23 ms against the 250 ms target, p99 329.69 ms against 600 ms, zero unexpected errors and zero invariant violations. NFR-10 p95 remains an owner-accepted gap (D-92); thresholds are unchanged and `thresholds.passed=false`.
 
 ## Stack
 

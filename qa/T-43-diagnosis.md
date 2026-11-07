@@ -217,3 +217,52 @@ The scored run used an AMD EPYC7763 runner while the immediately preceding diagn
 ### Proposed bounded Node/pool profile — not authorized or run
 
 Recommend one separately authorized60 s/500-VU diagnostic on the same unchanged load shape: capture a Node V8 CPU profile (no heap/request/parameter data), aggregate event-loop utilization and fixed-label operation durations, and instrument numeric timestamps at query enqueue, connection dispatch and completion to distinguish pool waiting from execution/return scheduling. First verify a supported postgres.js hook can expose dispatch timing; otherwise explicitly retain it as an estimate, never claim a native queue measurement. Use low-frequency pg_stat_activity wait samples and container CPU/throttle counters; keep verbose per-request and low-threshold SQL/lock logging off to reduce observer cost. Never emit query text, parameters, cookies or raw IPs. Preserve every fixed threshold, constraint and auction lock. Choose any subsequent fix only from this profile. Alternative: pause T-43. No extra dispatch is implied by this proposal.
+
+## D-91 bounded profile: pool and auction-lock waiting; stop before replicas
+
+Owner approved one profiling dispatch and a second replica/scored run only with Node CPU bottleneck evidence and PostgreSQL headroom. [Profiler PR #55](https://github.com/firatkill/bidlock/pull/55) merged05796570de1e068033c36f801fec8ae22b983a30 after all six [CI jobs](https://github.com/firatkill/bidlock/actions/runs/42352796865) passed. Production build initially hit the previously observed next/font/google import-map error; rerunning that job passed with no code change. Local lint/typecheck/227 unit/guards and read-only real pool1 smoke passed.
+
+[Profile42353076174](https://github.com/firatkill/bidlock/actions/runs/42353076174) failed both latency thresholds. Artifact bench-42353076174 uploaded (81,389 bytes); FullBenchResult parses, all16 invariant counts0, cap20 and500 AUCTION_CLOSED. [Bot #56](https://github.com/firatkill/bidlock/pull/56) head206b250bfc212a7f4e8619952d86f1526a4c84e5 contains only the expected dated result/latest/SUMMARY paths and remains unmerged. Config remains500 VUs/60 s/ramp10/pool20/extension10/per-VU IP. No verbose diagnostic records or SQL parameter-detail lines. No sampled CPU throttling; sampler stderr empty except PostgreSQL newline.
+
+### Measurement and decision
+
+Exactly60 once-per-second load samples have pool_hooked=true. The steady window is elapsed10–40 s after setup completed, covering30 samples after the ramp and before logical close. Weighted operation times are sums divided by dispatch/completion counts; they include all tagged SQL operations in that interval, not only place_bid.
+
+| Metric                             |           Full60 s |       Steady10–40 s |
+| ---------------------------------- | -----------------: | ------------------: |
+| Node CPU mean /p95 (% of one core) |      63.43 /102.44 |       81.67 /105.09 |
+| ELU mean /p95                      |         .565 /.854 |          .732 /.884 |
+| Enqueue-to-dispatch mean ms        |            104.191 |             109.245 |
+| Dispatch-to-result mean ms         |             17.399 |              17.540 |
+| Queued samples mean /p95 /max      | 83.63 /299.35 /374 | 111.60 /339.70 /374 |
+| Running samples mean /max          |          14.82 /20 |           19.60 /20 |
+
+Steady enqueue time is about86% of the measured query lifecycle, with the pool almost continuously occupied. Enqueue includes connection setup and event-loop scheduling; dispatch-to-result includes server execution, transport and result parsing. It is not a pure native pool-queue metric, but the reserved-connection smoke verified the lifecycle hook.
+
+Node reaches the owner's CPU/ELU thresholds in some intervals, but the worst backlog occurs while Node is underutilized: at34.3 s, CPU39.0%,ELU.347,queued374,running20,interval mean enqueue319.9 ms/service48.4 ms. At28.3–29.3 s,CPU43–47%,ELU.413–.436,enqueue339.8–473.4 ms. The33–35 s database samples contain87 blocked tuple-lock and4 blocked transaction-ID observations in place_bid, out of100 connection observations across5 snapshots. Across the steady window there are1,086 blocked place_bid observations and no preparation blockers.
+
+Container CPU full collection means: app64.38%,Postgres83.39%,k626.89% (p95 app107.29%,db133.91%,k651.25%). Unused aggregate CPU does not establish headroom for a single serialized auction row. The evidence identifies pool/auction-lock waiting as the tail bottleneck; a second process with20 additional connections would add contenders without demonstrating that it removes this bottleneck. Therefore D-91's alternative stop path applies: no replica, no further tuning, and no scored dispatch.
+
+Proposed next fix for owner approval: a bounded per-auction admission gate before place_bid, keeping short prepare_bid work able to obtain a connection and retaining the20-connection ceiling and unchanged SQL validity/idempotency checks and auction lock. This is a new hypothesis requiring explicit scope approval and parity/concurrency tests; it has not been implemented. Alternative: pause T-43. One of D-91's two dispatches used; the scored dispatch is unused and conditional authorization is not satisfied.
+
+### Every T-43 dispatch
+
+| Run         | Purpose                               |  Bids | Replays | Accepted HTTP |      p95 ms |        p99 ms | thresholds.passed |
+| ----------- | ------------------------------------- | ----: | ------: | ------------: | ----------: | ------------: | ----------------- |
+| 42310825613 | Original                              | 33874 |    1687 |           246 | 406.8271049 | 1029.53329551 | false             |
+| 42313175983 | Pool20 diagnostic / timing correction | 33329 |    1685 |           263 | 241.3247772 |  726.37423376 | false             |
+| 42314282647 | Pool4 hypothesis                      | 21788 |    1066 |           124 | 896.4585606 | 1529.85733683 | false             |
+| 42316538127 | Single-call / ramp diagnostic         | 22755 |    1167 |           150 |  641.861405 |   753.5082123 | false             |
+| 42319246136 | Two-call / per-VU diagnostic          | 27674 |    1376 |           215 | 336.6236303 |   415.7450225 | false             |
+| 42319897777 | Two-call scored, diagnostics off      | 28925 |    1496 |           245 |  269.233384 |  329.68857432 | false             |
+| 42353076174 | Bounded Node/pool profile             | 24666 |    1234 |           213 | 713.9914585 | 1060.55664795 | false             |
+
+All runs have unexpected error rate0 and invariant violations0. The original reached12 extensions/no post-close responses; every later run reached20 extensions and500 post-close responses. Latest213 accepted HTTP responses represent201 unique bids. No result has been published, and #45/#47/#49/#51/#53/#54/#56 remain open and unchanged. T-43 blocked; T-44 untouched. Runner CPU models differ across runs; this table is observed history, not a controlled causal estimate of each change.
+
+## D-92: publish the honest scored result; T-43 complete
+
+Owner approved publishing [diagnostics-off run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) unchanged, retaining the failed p95 threshold. PR #54 merged as 40c95ef767a3c6ca6f6ce3cdf70e3a5f1d4ce88e; its JSON SHA256 cf7267df0cf75cacbb619e95033ee9be94d979ee93937a9fbe10143e2b3be09b matches the original artifact. Scope: dated JSON,latest.json,SUMMARY.md only. All16 invariant counts zero; cap20/post-close500. Published28925 bids,1496 replays,245 accepted HTTP responses (229 unique),p95=269.233384 ms,p99=329.68857432 ms,errors0,thresholds.passed=false.
+
+D-92 accepts NFR-10 p95 as a known gap for later revisit. Every bid targets one auction; its row lock serializes bids and pool connections queue while waiting. This correctness lock and thresholds remain unchanged. No more dispatches or tuning. Earlier proposals are historical, not active work.
+
+Lobby/copy.ts numeric copy makes no latency-pass claim. README's outdated no-measurement sentence was replaced by the factual published result and explicit accepted gap; product copy unchanged. Superseded PRs #45/#47/#49/#51/#53/#56 closed with links to the published run; branches retained. T-43 done, T-44 todo. TC-263 remains an open accepted performance gap; TC-264 passes. This publication is owner acceptance of an honest failure, not evidence that NFR-10 passed.
