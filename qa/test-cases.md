@@ -3396,3 +3396,5 @@ The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies modu
 - Automatable: yes
 - Steps: Compare prepare_bid then place_bid against legacy sequencing for every error code, accepted/rejected replay, bot visibility and all rate counters. Verify definer privileges. Hold an auction lock while preparing/bidding and acquire its rate-counter row NOWAIT. Count and order route SQL calls in test and production. Exercise shared-IP concurrent bids/replays and INT-01/INT-02.
 - Expected result: Identical outcomes/counters; ready requests await preparation then make a separate place_bid call; rate denial stops after preparation; invalid signatures make no call. Rate lock released before auction wait; no duplicate bid; all constraints and locks preserved.
+
+T-43 CI evidence for TC-263/TC-264 (D-89/D-90): [measurement42319246136](https://github.com/firatkill/bidlock/actions/runs/42319246136) p95=336.6236303 ms fails250 ms and regresses versus241.3247772 baseline; p99=415.7450225 ms passes600 ms. TC-264 reaches20/20 extensions with500 AUCTION_CLOSED outcomes; all16 invariant checks zero. TC-263 remains open; no scored dispatch or publication.

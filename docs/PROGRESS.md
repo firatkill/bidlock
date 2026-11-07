@@ -16,59 +16,61 @@ Updated: 2026-11-07.
 
 A finishing commit is recorded only when acceptance checks, including required CI, pass.
 
-| Task  | Goal                                               | Status | Finishing commit                         |
-| ----- | -------------------------------------------------- | ------ | ---------------------------------------- |
-| T-01  | Repository, tooling and CI skeleton                | done   | b90ffd4                                  |
-| T-02  | Env module, logger, server-only boundaries         | done   | cd4606f                                  |
-| T-03  | Postgres image and compose database                | done   | 03ee16b                                  |
-| T-04  | Migration runner, reset and env SQL                | done   | b2b1c27                                  |
-| T-05  | Foundation migration and pgTAP harness             | done   | cd1bd5d                                  |
-| T-06  | Core tables, constraints, indexes                  | done   | 8cb98cc                                  |
-| T-07  | Increment ladder                                   | done   | 1426320                                  |
-| T-08  | Lifecycle internals                                | done   | 6fe5866                                  |
-| T-09  | place_bid                                          | done   | 12f3921                                  |
-| T-10  | pgTAP: bid rules and idempotency                   | done   | 80c7c44                                  |
-| T-11  | pgTAP: soft close                                  | done   | ea6438c                                  |
-| T-12  | Scheduler path and closing tests                   | done   | 4c28431                                  |
-| T-13  | Settlement                                         | done   | c413084                                  |
-| T-14  | Rate limiter                                       | done   | 6f06b1c                                  |
-| T-15  | Read and identity functions                        | done   | 0e0e221                                  |
-| T-16  | Sandboxes, cleanup, test support, realtime trigger | done   | ae025e2                                  |
-| T-17  | Concurrency integration tests                      | done   | 81e558f                                  |
-| T-18  | DB client and repo layer                           | done   | fff4b79                                  |
-| T-19  | HTTP wrapper, Origin check, demo mode gate         | done   | cc8d215                                  |
-| T-20  | Session cookie, names, /api/me                     | done   | a744db1                                  |
-| T-21  | IP hashing and rate-limit integration              | done   | 7a46266                                  |
-| T-22  | Read endpoints                                     | done   | 75c82d1                                  |
-| T-23  | Mutating endpoints: bids and pay                   | done   | 7320006                                  |
-| T-24  | Test-only endpoints and health                     | done   | 497f330                                  |
-| T-25  | Security headers and CSP                           | done   | 6bd67c0                                  |
-| T-26  | Design tokens, shell and name dialog               | done   | 404178a                                  |
-| T-27  | Client domain utilities                            | done   | 5cbd6cc                                  |
-| T-28  | AuctionFeed interface and PollingFeed              | done   | 91a11bf                                  |
-| T-29  | Auction room: read-only parts                      | done   | 0a7de99                                  |
-| T-30  | Bid panel and bid history                          | done   | 04e78fe                                  |
-| T-31  | SupabaseBroadcastFeed                              | done   | c95b3b9                                  |
-| T-32  | Lobby                                              | done   | ca01aa3                                  |
-| T-33  | Playwright harness, two-bidder e2e, CI e2e job     | done   | effabbb                                  |
-| T-34  | Sandbox and bot-token endpoints                    | done   | bdcaa75                                  |
-| T-35  | Bot scheduler and runner                           | done   | c8794b1                                  |
-| T-36  | Sandbox UI and e2e                                 | done   | 266eab9a53ecde586b98506d1618843783ad5bfa |
-| T-37  | Result panel, payment and runner-up UI             | done   | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
-| T-38  | Extension banner and public room e2e               | done   | 5a6b82a                                  |
-| T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done   | `3783234` (PR #39)                       |
-| T-39  | App image and full compose                         | done   | `fbecd83` (PR #40)                       |
-| T-40  | k6 bid-storm script                                | done   | `8f30c43`                                |
-| T-41  | Invariant verification                             | done   | `25c2751`                                |
-| T-42  | Bench report and headline data                     | done   | `4c8e096` (PR #43)                       |
-| T-43  | Load workflow                                      | doing  | —                                        |
-| T-44  | How it works page                                  | todo   | —                                        |
-| T-45  | Supabase production setup                          | todo   | —                                        |
-| T-46  | Vercel deploy, DNS, keepalive                      | todo   | —                                        |
-| T-47  | Polish pass                                        | todo   | —                                        |
-| T-48  | README, demo GIF, release                          | todo   | —                                        |
+| Task  | Goal                                               | Status  | Finishing commit                         |
+| ----- | -------------------------------------------------- | ------- | ---------------------------------------- |
+| T-01  | Repository, tooling and CI skeleton                | done    | b90ffd4                                  |
+| T-02  | Env module, logger, server-only boundaries         | done    | cd4606f                                  |
+| T-03  | Postgres image and compose database                | done    | 03ee16b                                  |
+| T-04  | Migration runner, reset and env SQL                | done    | b2b1c27                                  |
+| T-05  | Foundation migration and pgTAP harness             | done    | cd1bd5d                                  |
+| T-06  | Core tables, constraints, indexes                  | done    | 8cb98cc                                  |
+| T-07  | Increment ladder                                   | done    | 1426320                                  |
+| T-08  | Lifecycle internals                                | done    | 6fe5866                                  |
+| T-09  | place_bid                                          | done    | 12f3921                                  |
+| T-10  | pgTAP: bid rules and idempotency                   | done    | 80c7c44                                  |
+| T-11  | pgTAP: soft close                                  | done    | ea6438c                                  |
+| T-12  | Scheduler path and closing tests                   | done    | 4c28431                                  |
+| T-13  | Settlement                                         | done    | c413084                                  |
+| T-14  | Rate limiter                                       | done    | 6f06b1c                                  |
+| T-15  | Read and identity functions                        | done    | 0e0e221                                  |
+| T-16  | Sandboxes, cleanup, test support, realtime trigger | done    | ae025e2                                  |
+| T-17  | Concurrency integration tests                      | done    | 81e558f                                  |
+| T-18  | DB client and repo layer                           | done    | fff4b79                                  |
+| T-19  | HTTP wrapper, Origin check, demo mode gate         | done    | cc8d215                                  |
+| T-20  | Session cookie, names, /api/me                     | done    | a744db1                                  |
+| T-21  | IP hashing and rate-limit integration              | done    | 7a46266                                  |
+| T-22  | Read endpoints                                     | done    | 75c82d1                                  |
+| T-23  | Mutating endpoints: bids and pay                   | done    | 7320006                                  |
+| T-24  | Test-only endpoints and health                     | done    | 497f330                                  |
+| T-25  | Security headers and CSP                           | done    | 6bd67c0                                  |
+| T-26  | Design tokens, shell and name dialog               | done    | 404178a                                  |
+| T-27  | Client domain utilities                            | done    | 5cbd6cc                                  |
+| T-28  | AuctionFeed interface and PollingFeed              | done    | 91a11bf                                  |
+| T-29  | Auction room: read-only parts                      | done    | 0a7de99                                  |
+| T-30  | Bid panel and bid history                          | done    | 04e78fe                                  |
+| T-31  | SupabaseBroadcastFeed                              | done    | c95b3b9                                  |
+| T-32  | Lobby                                              | done    | ca01aa3                                  |
+| T-33  | Playwright harness, two-bidder e2e, CI e2e job     | done    | effabbb                                  |
+| T-34  | Sandbox and bot-token endpoints                    | done    | bdcaa75                                  |
+| T-35  | Bot scheduler and runner                           | done    | c8794b1                                  |
+| T-36  | Sandbox UI and e2e                                 | done    | 266eab9a53ecde586b98506d1618843783ad5bfa |
+| T-37  | Result panel, payment and runner-up UI             | done    | ac05c7026d8e166368a0cc5778328cd50ffccb9a |
+| T-38  | Extension banner and public room e2e               | done    | 5a6b82a                                  |
+| T-38a | Catalogue & Ledger design pass (D-59–D-72)         | done    | `3783234` (PR #39)                       |
+| T-39  | App image and full compose                         | done    | `fbecd83` (PR #40)                       |
+| T-40  | k6 bid-storm script                                | done    | `8f30c43`                                |
+| T-41  | Invariant verification                             | done    | `25c2751`                                |
+| T-42  | Bench report and headline data                     | done    | `4c8e096` (PR #43)                       |
+| T-43  | Load workflow                                      | blocked | —                                        |
+| T-44  | How it works page                                  | todo    | —                                        |
+| T-45  | Supabase production setup                          | todo    | —                                        |
+| T-46  | Vercel deploy, DNS, keepalive                      | todo    | —                                        |
+| T-47  | Polish pass                                        | todo    | —                                        |
+| T-48  | README, demo GIF, release                          | todo    | —                                        |
 
 ## Open questions for the owner
+
+- T-43: D-90 measurement [42319246136](https://github.com/firatkill/bidlock/actions/runs/42319246136) regressed p95 to336.62 ms versus241.32 ms pool20 three-call baseline; p99 improved415.75 vs726.37 ms. Scored dispatch not used; result PR #53 unmerged. Approve bounded profiling of Node/pool scheduling and diagnostic overhead (recommended), explicitly authorize diagnostics-off scored run despite the gate, or pause? See qa/T-43-diagnosis.md.
 
 - Constraint correction (D-47) and single-invocation SQL calls (D-48) approved.
 
@@ -347,3 +349,5 @@ PR #50 merged as `d3bc583` with six green CI jobs. D-88 diagnostic [run423165381
 Combined SQL-await mean429.050 ms dominates429.332 ms handler mean. Database wait contexts now identify rate_hit/check_bid_rate/submit_bid; the single transaction retains shared rate locks through bid processing. Exact breakdown and qualification are in qa/T-43-diagnosis.md. Artifact/schema/file scope verified; bot PR #51 and older #45/#47/#49 remain open and unchanged. No benchmark published. One of the latest two dispatches used; the measurement gate stops further work pending owner decision. Evidence on t-43-single-call-evidence; T-44 untouched.
 
 D-89/D-90 approved: distinct synthetic load client IPs and short identity/rate transaction before bidding. Two new dispatches authorized, gated by measurement versus pool20 three-call baseline; T-44 untouched.
+
+T-43 D-89/D-90 evidence: PR #52 merged8b957bc after six green CI jobs. Measurement42319246136 failed p95;27674 bids/1376 replays/215 accepted,p95=336.6236303,p99=415.7450225,error0,invariants0,extensions20,closed500. Artificial IP-rate blockers removed;936 sampled place_bid blockers remain. One of two dispatches used; scored gate stops work. #45/#47/#49/#51/#53 remain open and unchanged; no benchmark published; T-44 untouched. Evidence branch t-43-ip-rate-evidence.
