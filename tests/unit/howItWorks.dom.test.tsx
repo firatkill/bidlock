@@ -6,7 +6,8 @@ import { ConcurrencyTimeline } from "@/components/how/ConcurrencyTimeline";
 import { StateMachine } from "@/components/how/StateMachine";
 import { BenchResult } from "@/domain/schemas";
 import { benchmark } from "../fixtures/benchmark";
-import latest from "../../bench/results/latest.json";
+// Snapshot of the published D-92 run; future weekly latest.json updates remain independent.
+import publishedFailure from "../fixtures/benchmark-failing.json";
 import { readFileSync } from "node:fs";
 afterEach(cleanup);
 test("TC-273 TC-286 empty benchmark has exact empty copy and anchor, no table", () => {
@@ -45,7 +46,7 @@ test("TC-273 TC-287 full passing fixture renders all required data", () => {
   ).toContain("/bench/results");
 });
 test("TC-273 TC-287 published D-92 result is honest about p95", () => {
-  render(<BenchmarkTable result={BenchResult.parse(latest)} />);
+  render(<BenchmarkTable result={BenchResult.parse(publishedFailure)} />);
   expect(screen.getByText("Thresholds not met")).toBeTruthy();
   expect(screen.queryByText("Thresholds passed")).toBeNull();
   expect(
@@ -53,7 +54,9 @@ test("TC-273 TC-287 published D-92 result is honest about p95", () => {
       "The p95 latency target was not met: 269.23 ms against a 250 ms target. p99 was 329.69 ms against a 600 ms target. Unexpected errors: 0. Invariant violations: 0.",
     ),
   ).toBeTruthy();
-  expect(screen.getAllByText("Pass")).toHaveLength(latest.invariants.length);
+  expect(screen.getAllByText("Pass")).toHaveLength(
+    publishedFailure.invariants.length,
+  );
 });
 test.each([
   [
