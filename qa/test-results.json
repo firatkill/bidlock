@@ -18349,6 +18349,414 @@
       "root_cause_group": null,
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-284",
+      "ac_reference": "FR-69; US-11; G-3; PRD §7.1/§9.4",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Rules lifecycle and exact concurrency copy",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First pnpm diagram could not locate Puppeteer bundled chrome-headless-shell.",
+          "note": "Environment prerequisite; regeneration passed using installed Chrome through PUPPETEER_EXECUTABLE_PATH. No dependency changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
+          "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-285",
+      "ac_reference": "FR-69; D-68 P5",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Static P5 two-transaction timeline",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
+          "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-286",
+      "ac_reference": "FR-69; PRD §9.4",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Empty benchmark state",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-287",
+      "ac_reference": "FR-69; D-92; D-93",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Honest full benchmark and threshold variants",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Historical D-92 result pinned to an unchanged fixture; all10 How it works DOM tests pass after switching the import. Lint and typecheck also pass.",
+          "note": "No assertion or runtime result source changed; avoids blocking future weekly latest.json updates."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-288",
+      "ac_reference": "FR-70; PRD §9.4; TRD §14",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Stats cache and unavailable state",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Browser review observed an expired94-second snapshot from background revalidation.",
+          "note": "Use bounded process cache; await refresh at60s rather than stale-while-revalidate."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Fake-clock test verifies shared concurrent reads, cache hit at59999ms, refresh at60000ms, schema failure, query failure and successful retry. DOM unavailable/zero tests pass; final browser stats snapshot starts0s."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-289",
+      "ac_reference": "FR-69; NFR-20; E2E-07",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Accessible responsive How it works",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Light/dark axe passed. At360px and375px document scrollWidth was633px; focused run26 passed,2 failed,1 dependency-blocked.",
+          "note": "Fixed grid min-content expansion with minmax(0,1fr); wide content remains locally scrollable."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused retest:5 parallel plus1 isolated T-44 tests passed. Light/dark axe clean;360px/375px no document overflow; lobby anchor reaches benchmark table."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
+          "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "T44-grid-intrinsic-width",
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-290",
+      "ac_reference": "FR-69; D-68; PRD §9.5",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "375px visual review",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial Chromium screenshots showed clipped SVG labels after applying app fonts.",
+          "note": "Reduced diagram label size and allowed foreignObject overflow, preserving Mermaid geometry."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Inspected corrected diagram and desktop/mobile P5 screenshots;375px light/dark benchmark readable, document width375, internal diagram scroll343/760, both benchmark anchors work, console/page errors empty.",
+          "note": "Browser connector returned no browser; local Chromium fallback. Screenshots qa/evidence/T-44-*.png. Owner UI approval remains required before merge."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "—",
+      "ac_reference": "T-44 acceptance; AGENTS.md definition of done",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "T-44 acceptance gates",
+      "description": "Local static, unit, database, integration and build verification.",
+      "steps_to_reproduce": [
+        "Run T-44 acceptance commands and required database/integration gates."
+      ],
+      "expected_result": "All gates pass without changing thresholds or production.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; pnpm10.34.7; local PostgreSQL17.11",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial lint found strict template types, server-render timestamp purity and permitted-SVG danger rule."
+        },
+        {
+          "result": "fail",
+          "actual_result": "New cache test used an unsafe matcher assignment; replaced with typed field assertions."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Formatting check flagged PROGRESS and test-case tables; applied repository formatter."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Lint,typecheck,238 unit tests,guards,production build,pgTAP and52 concurrency/integration tests passed.",
+          "note": "No SQL or bidding rule changes; database suites required because the stats repository changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "After cache/SVG fixes: lint,typecheck,238 unit tests,guards and production build passed. Ledger formatting reapplied before acceptance."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
+          "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-272",
+      "ac_reference": "FR-69; US-11; G-3; PRD §7.1/§9.4",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "How-it-works rules and lifecycle content",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-284 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
+          "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-273",
+      "ac_reference": "FR-69; D-92; D-93",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Benchmark table empty and complete states",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-287 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
+          "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Historical D-92 result pinned to an unchanged fixture; all10 How it works DOM tests pass after switching the import. Lint and typecheck also pass.",
+          "note": "No assertion or runtime result source changed; avoids blocking future weekly latest.json updates."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-274",
+      "ac_reference": "FR-70; PRD §9.4; TRD §14",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Stats freshness and failure states",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-288 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
+          "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-275",
+      "ac_reference": "FR-69; NFR-20; E2E-07",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "How-it-works responsive accessibility",
+      "description": "T-44 How it works page; see qa/test-cases.md for the spec-derived case.",
+      "steps_to_reproduce": [
+        "Run the T-44 case steps in qa/test-cases.md against a local production build."
+      ],
+      "expected_result": "Match the referenced PRD/TRD requirements and D-93 honest benchmark wording.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-289 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
+          "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "T44-grid-intrinsic-width",
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

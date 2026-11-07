@@ -1,0 +1,18 @@
+stateDiagram-v2
+    [*] --> scheduled: create (starts_at > now)
+    [*] --> live: create (starts_at <= now)
+    scheduled --> live: T1 now >= starts_at
+    live --> live: T2 accepted bid (may extend ends_at)
+    live --> unsold: T3 now >= ends_at, no bids
+    live --> closed_awaiting: T4 now >= ends_at, has bids
+    state closed {
+        closed_awaiting: awaiting_payment
+        closed_runner: offered_to_runner_up
+    }
+    closed_awaiting --> settled: T5 winner pays
+    closed_awaiting --> closed_runner: T6 window expires, runner-up exists (strike to winner)
+    closed_awaiting --> unsold: T7 window expires, no runner-up (strike to winner)
+    closed_runner --> settled: T8 runner-up pays
+    closed_runner --> unsold: T9 runner-up window expires
+    settled --> [*]
+    unsold --> [*]
