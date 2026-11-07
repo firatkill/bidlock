@@ -18376,6 +18376,11 @@
           "result": "pass",
           "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
           "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18404,6 +18409,11 @@
           "result": "pass",
           "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
           "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18427,6 +18437,11 @@
         {
           "result": "pass",
           "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18450,6 +18465,11 @@
         {
           "result": "pass",
           "actual_result": "T-44 DOM/unit checks passed within 238 passing unit tests. Full published result and synthetic pass/p99-only/both/equality/non-latency failures verified. Stats cache registration60s and validated snapshot/error paths passed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18482,6 +18502,11 @@
         {
           "result": "pass",
           "actual_result": "Fake-clock test verifies shared concurrent reads, cache hit at59999ms, refresh at60000ms, schema failure, query failure and successful retry. DOM unavailable/zero tests pass; final browser stats snapshot starts0s."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18515,6 +18540,11 @@
           "result": "pass",
           "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
           "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18590,6 +18620,11 @@
           "result": "pass",
           "actual_result": "Final full pnpm e2e:39/39 passed across parallel then isolated projects; no retries. All T-44 targeted checks included.",
           "note": "No production traffic, k6 runs, test timeout changes or Rehearse changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18614,6 +18649,11 @@
           "result": "pass",
           "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-284 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
           "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18638,6 +18678,11 @@
           "result": "pass",
           "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-287 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
           "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18662,6 +18707,11 @@
           "result": "pass",
           "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-288 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
           "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,
@@ -18686,6 +18736,11 @@
           "result": "pass",
           "actual_result": "Original M6 acceptance case verified by T-44 tests and review; detailed evidence retained under TC-289 and adjacent T-44 cases. Final238 unit/39 E2E checks pass.",
           "note": "Acceptance and detailed IDs now both appear in test names; no assertion changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
         }
       ],
       "regression_of": null,

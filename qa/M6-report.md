@@ -4,7 +4,7 @@
 
 ## Results
 
-T-44: lint, typecheck,238 unit tests, guards, production build, pgTAP and52 concurrency/integration tests pass. Six focused browser tests pass after fixing mobile grid overflow. Final full E2E suite passes39/39. Local Chromium screenshots inspected at375px in light/dark and1440px; no browser console/page errors. PR CI will be recorded after completion.
+T-44: lint, typecheck,238 unit tests, guards, production build, pgTAP and52 concurrency/integration tests pass. Six focused browser tests pass after fixing mobile grid overflow. Final full E2E suite passes39/39. Local Chromium screenshots inspected at375px in light/dark and1440px; no browser console/page errors. [Implementation CI42355483795](https://github.com/firatkill/bidlock/actions/runs/42355483795) passed all six jobs on353c86a; [PR #57](https://github.com/firatkill/bidlock/pull/57) remains open for owner review.
 
 The published benchmark remains unchanged: p95=269.233384 ms fails250; p99=329.68857432 ms passes600; unexpected errors0; invariant violations0; thresholds.passed=false. D-92 accepts the NFR-10 gap and permits publication, not a passing latency claim. No new load run was performed for T-44.
 
@@ -78,3 +78,5 @@ External checker passes required fields/status/resolution/manual checks but fail
 Published scored run [42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777), PR#54 merge40c95ef, and [T-43 diagnosis](T-43-diagnosis.md) retain the accepted closure evidence. FR-95/FR-96 workflow/artifact/schema/result publication is covered by TC-260–271; D-83 cap20 and500 post-close responses by TC-264; D-89/D-90 per-VU identity and short rate transaction by TC-281/282; D-91 bounded profile stop path by TC-283. Historical root cause `t41-docker-storage` (TC-265/266) is resolved.
 
 Original M6 acceptance cases TC-272–275 are now verified and logged, with detailed T-44 cases TC-284–290. Test titles carry both sets of IDs. No designed case is omitted.
+
+The external checker also passes all non-history checks on a temporary uniquely keyed exploratory-entry view. That view has no Git history; the independent exact-prefix comparison above supplies the append-only verification. The real ledger and installed checker are unchanged.
