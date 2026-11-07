@@ -62,13 +62,15 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-41  | Invariant verification                             | done   | `25c2751`                                         |
 | T-42  | Bench report and headline data                     | done   | `4c8e096` (PR #43)                                |
 | T-43  | Load workflow                                      | done   | 40c95ef767a3c6ca6f6ce3cdf70e3a5f1d4ce88e (PR #54) |
-| T-44  | How it works page                                  | todo   | —                                                 |
+| T-44  | How it works page                                  | blocked | — (benchmark failure copy needs owner approval)   |
 | T-45  | Supabase production setup                          | todo   | —                                                 |
 | T-46  | Vercel deploy, DNS, keepalive                      | todo   | —                                                 |
 | T-47  | Polish pass                                        | todo   | —                                                 |
 | T-48  | README, demo GIF, release                          | todo   | —                                                 |
 
 ## Open questions for the owner
+
+- T-44: PRD §9.4 specifies benchmark fields and empty-state copy but no failing-threshold copy. The task explicitly requires stopping in this case. Recommended addition to §9.4: show “Thresholds passed” when `thresholds.passed=true` and “Thresholds not met” when false. For the published D-92 result, show “The p95 latency target was not met: 269.23 ms against a 250 ms target. p99 was 329.69 ms against a 600 ms target. Unexpected errors: 0. Invariant violations: 0.” Option A (recommended): approve these labels and wording, with measured values populated from the result. Option B: provide alternative wording before implementation. This is a proposal, not approved product copy; no new D-xx assigned.
 
 - NFR-10: known, accepted gap for later revisit (D-92). Published [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) p95=269.233384 ms exceeds250 ms; p99=329.68857432 ms passes600. Single-auction serialization/pool waiting is documented by D-91. Threshold and auction lock unchanged; thresholds.passed=false. T-43 is complete by explicit owner acceptance; no further tuning or dispatches authorized.
 
@@ -80,6 +82,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Verification limits
 
+- T-44 started from updated main on `t-44-how-it-works`, then stopped at the benchmark-copy checkpoint before implementation or test authoring. Only this progress record changed; no acceptance tests, browser checks, load runs or diagram generation performed. Rehearse untouched. No PR opened for the blocked implementation; branch pushed for owner review.
 - M0 has a placeholder application, strict tooling, environment/logger tests, PostgreSQL/pgTAP infrastructure and migration integration tests. M1 now implements and verifies the SQL auction rules; browser flows remain future work.
 - D-43 keeps benchmark claims CI-only. The owner authorized the small T-39 local infrastructure smoke (VUS=5, DURATION=5s, AUCTION_S=8), expected to stop at the missing T-40 script; no benchmark is published.
 - Stop for an owner summary at the end of every milestone.
