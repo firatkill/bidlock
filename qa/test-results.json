@@ -660,6 +660,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
+          "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
         }
       ],
       "regression_of": null,
@@ -750,6 +755,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
+          "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
         }
       ],
       "regression_of": null,
@@ -845,6 +855,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
+          "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
         }
       ],
       "regression_of": null,
@@ -940,6 +955,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
+          "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
         }
       ],
       "regression_of": null,
@@ -1030,6 +1050,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
+          "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
         }
       ],
       "regression_of": null,
@@ -10600,6 +10625,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
+          "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
         }
       ],
       "regression_of": null,
@@ -18757,6 +18787,80 @@
       "root_cause_group": "T44-grid-intrinsic-width",
       "clickup_task": null,
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-291",
+      "ac_reference": "D-04; NFR-30; NFR-31",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Repository deployment readiness",
+      "description": "Repository deployment readiness for T-45/T-46 preparation.",
+      "steps_to_reproduce": [
+        "Follow matching case in qa/test-cases.md and docs/DEPLOY-CHECKLIST.md."
+      ],
+      "expected_result": "Documented acceptance verified without sharing secrets or running scripted production bids.",
+      "status": "resolved",
+      "environment": "macOS; local PostgreSQL 17; t-45-prep. Production not provisioned by this task.",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "14 migrations applied to fresh local bidlock_t45_prep; status all applied. Migration integration 9/9, health/version 1/1, lint, typecheck, 238 unit tests and guards pass. keepalive matches TRD §16.3; no secrets required. No UI/server/SQL changes.",
+          "note": "2026-11-07 preparation only; T-45 doing, T-46 todo."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-292",
+      "ac_reference": "FR-45; FR-08; D-04; D-19; D-29; NFR-30",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Supabase owner acceptance",
+      "description": "Supabase owner acceptance for T-45/T-46 preparation.",
+      "steps_to_reproduce": [
+        "Follow matching case in qa/test-cases.md and docs/DEPLOY-CHECKLIST.md."
+      ],
+      "expected_result": "Documented acceptance verified without sharing secrets or running scripted production bids.",
+      "status": "manual_required",
+      "environment": "macOS; local PostgreSQL 17; t-45-prep. Production not provisioned by this task.",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "Not run: owner must create Free Frankfurt project and complete DEPLOY-CHECKLIST steps 2–5. A-01/02/03/06 remain unverified. Escalation: docs/PROGRESS.md Open questions for the owner; repository has no ClickUp.",
+          "note": "2026-11-07 preparation only; T-45 doing, T-46 todo."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-293",
+      "ac_reference": "NFR-13; NFR-14; NFR-30; NFR-31",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Vercel owner acceptance",
+      "description": "Vercel owner acceptance for T-45/T-46 preparation.",
+      "steps_to_reproduce": [
+        "Follow matching case in qa/test-cases.md and docs/DEPLOY-CHECKLIST.md."
+      ],
+      "expected_result": "Documented acceptance verified without sharing secrets or running scripted production bids.",
+      "status": "manual_required",
+      "environment": "macOS; local PostgreSQL 17; t-45-prep. Production not provisioned by this task.",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "Not run: owner must complete DEPLOY-CHECKLIST steps 6–9. A-04/05/12 and deployed acceptance remain unverified; A-05 requires more than seven days. Escalation: docs/PROGRESS.md Open questions for the owner; no external setup performed.",
+          "note": "2026-11-07 preparation only; T-45 doing, T-46 todo."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
     }
   ]
 }
