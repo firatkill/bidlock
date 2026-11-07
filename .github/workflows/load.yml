@@ -17,8 +17,6 @@ on:
         description: Enable load-only diagnostic collection (never publish this run)
         type: boolean
         default: false
-  schedule:
-    - cron: "0 4 * * 1" # Mondays 04:00 UTC
 
 permissions:
   contents: write

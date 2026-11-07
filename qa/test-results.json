@@ -17956,7 +17956,7 @@
       "tc_reference": "TC-270",
       "ac_reference": "FR-95; FR-96; NFR-31",
       "milestone": "M6 — Load test + CI + bench page",
-      "title": "Scheduled/manual load workflow and artifacts",
+      "title": "Manual load workflow and artifacts",
       "status": "resolved",
       "environment": "macOS / Node 24 / Vitest / t-43-load-workflow, 2026-11-07",
       "attempts": [
@@ -17984,6 +17984,11 @@
           "result": "pass",
           "actual_result": "D-92 publication: scored42319897777 merged unchanged via PR54/40c95ef.28925 bids,1496 replays,245 accepted;p95=269.233384 misses250,p99=329.68857432 passes600,error0,all16 invariants0,cap20,closed500,thresholds.passed=false. Artifact hash and allowed file scope verified. Neutral lobby copy; README explicitly reports accepted p95 gap.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; owner accepts NFR-10 gap and T-43 closure, not a latency pass. TC-263 stays open; other publication/isolation/correctness requirements fulfilled under D-92. No dispatch/tuning."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,
@@ -18381,6 +18386,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,
@@ -18475,6 +18485,11 @@
           "result": "pass",
           "actual_result": "Historical D-92 result pinned to an unchanged fixture; all10 How it works DOM tests pass after switching the import. Lint and typecheck also pass.",
           "note": "No assertion or runtime result source changed; avoids blocking future weekly latest.json updates."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,
@@ -18550,6 +18565,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,
@@ -18630,6 +18650,15 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Initial D-95 lint run flagged formatting in ignored local .claude/launch.json.",
+          "note": "Whitespace-only local formatting; file remains ignored and uncommitted."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95: lint,typecheck,238 unit tests,guards,13 focused unit tests,production build and six targeted How it works E2E tests passed."
         }
       ],
       "regression_of": null,
@@ -18659,6 +18688,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,
@@ -18693,6 +18727,11 @@
           "result": "pass",
           "actual_result": "Historical D-92 result pinned to an unchanged fixture; all10 How it works DOM tests pass after switching the import. Lint and typecheck also pass.",
           "note": "No assertion or runtime result source changed; avoids blocking future weekly latest.json updates."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,
@@ -18751,6 +18790,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-95 reviewer correction: exact new benchmark provenance sentence asserted in DOM and E2E; workflow contract asserts workflow_dispatch and no schedule/cron. Lint,typecheck,238 unit tests,guards,13 focused unit tests,build and six How it works E2E checks pass.",
+          "note": "Manual-only owner decision supersedes earlier scheduled-load wording. Historical attempts preserved; keepalive unchanged; no load dispatch."
         }
       ],
       "regression_of": null,

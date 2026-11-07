@@ -41,7 +41,7 @@ Bidlock is a small, open-source auction engine that makes the difference visible
 
 - A visitor can bid live against other visitors or against three bots in under 30 seconds.
 - A reviewer can read one SQL function (`place_bid`) and one page (`/how-it-works`) and understand why the engine cannot produce two winners.
-- A load test with 500 concurrent bidders runs weekly in free CI and publishes its numbers, including zero invariant violations. The live site never takes that load.
+- A load test with 500 concurrent bidders runs on manual dispatch in free CI and publishes its numbers, including zero invariant violations. The live site never takes that load.
 
 ## 2. Goals
 
@@ -580,7 +580,7 @@ Sections, in order, each with an anchor id:
    - "Retries are safe because each request carries an idempotency key. The key and the original result are stored in the same transaction as the bid, so a retry returns the stored result."
    - "Closing happens in the same function: a bid that arrives after the deadline closes the auction and is rejected. A scheduled job closes auctions nobody touches."
    - A code block with the 15-line core of `place_bid` (lock, clock, idempotency lookup, validate, insert, update).
-4. `#benchmark` H2 "Benchmark". Table rendered from `bench/results/latest.json`: date, commit, runner, VUs, duration, requests, accepted bids, business rejections by code, unexpected errors, p50/p95/p99 latency, throughput (req/s), invariant checks with pass/fail per INV id, extension count reached. Sentence: "This test runs weekly on GitHub Actions against a production build in Docker Compose. It never runs against this site." Link "All runs" to `bench/results/` on GitHub. Without data: "Benchmark results will appear here after the first load-test run."
+4. `#benchmark` H2 "Benchmark". Table rendered from `bench/results/latest.json`: date, commit, runner, VUs, duration, requests, accepted bids, business rejections by code, unexpected errors, p50/p95/p99 latency, throughput (req/s), invariant checks with pass/fail per INV id, extension count reached. Sentence: "This test runs on GitHub Actions against a production build in Docker Compose. It never runs against this site." Link "All runs" to `bench/results/` on GitHub. Without data: "Benchmark results will appear here after the first load-test run."
    - Status labels: "Thresholds passed" and "Thresholds not met", selected only from `thresholds.passed`.
    - When p95 fails: "The p95 latency target was not met: {p95} ms against a {p95Target} ms target. p99 was {p99} ms against a {p99Target} ms target. Unexpected errors: {errors}. Invariant violations: {violations}."
    - When only p99 fails: "The p99 latency target was not met: {p99} ms against a {p99Target} ms target. p95 was {p95} ms against a {p95Target} ms target. Unexpected errors: {errors}. Invariant violations: {violations}."
@@ -684,7 +684,7 @@ Proxy bidding; reserve prices; buy-now; seller UI; image uploads; accounts; emai
 | R-02 | `realtime.send` signature differs from docs, or database broadcasts to public channels are not delivered on the free plan | Medium | No push updates | Assumption A-01 verification step; fallback chain D-29: private channel with RLS (TRD §8.1), Postgres Changes (TRD §8.2), then polling at 2 s |
 | R-03 | Abuse (scripted bidding on the public room) | Medium | Noise, DB growth | Postgres rate limits, IP hash limits, kill switch, SQL emergency stop, nightly cleanup |
 | R-04 | Vercel Hobby limits (function invocations, duration) | Low | Throttled | Broadcast instead of polling in production; polling fallback at 2 s; state endpoint ETag; A-04 verification |
-| R-05 | GitHub disables scheduled workflows after 60 days without repository activity | Medium | Keepalive and weekly bench stop | Weekly bench PR keeps activity when merged; release checklist item to merge bench PRs; runbook note |
+| R-05 | GitHub disables scheduled workflows after 60 days without repository activity | Medium | Keepalive stops; benchmark runs remain manual | Check repository activity and re-enable keepalive when needed; merge manually dispatched benchmark PRs after review; runbook note |
 | R-06 | Benchmark numbers vary between runner hardware | High | Noisy p95 | Record runner CPU count and model in results; threshold has headroom (250 ms) |
 | R-07 | Single hot row limits throughput | Certain by design | Max bids/s per auction bounded by lock hold time | Documented as a trade-off on `/how-it-works`; lock hold time kept short (one function, no network calls inside) |
 | R-08 | Bots in a background tab are throttled by the browser | High | Bots stall | Bots pause on hidden tab and say so (FR-38) |
@@ -831,3 +831,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-93 | Approve T-44 benchmark status labels and parameterized failing-result sentence in §9.4. | owner approved Option A in chat 2026-11-07 | p99-only swaps the metric clauses; both-failed repeats the failed-target clause; non-latency failure uses neutral measured clauses. These conservative variants use the same template words, preserve thresholds.passed, and never claim an unmet target passed. All values come from the result; reuse the existing en-US benchmark formatter. |
 
 | D-94 | T-44 display-only details: §9.4.1 records labels, FR-derived rule templates, D-68 timeline labels and the explicitly abridged 15-line SQL core before implementation. | implementation detail 2026-11-07 | No rule or scope change. Display constants mirror documented defaults; transition text comes from §7.2. Stats cache is server-side for60 s with acquisition timestamp; failures render the specified unavailable state. |
+
+| D-95 | Benchmark runs are manual `workflow_dispatch`; no weekly schedule. Benchmark copy no longer claims a weekly run. | owner approved in chat 2026-11-07 after PR #57 browser review | Correct §9.4, goal, R-05, TRD cost estimate and README. Remove the existing Monday load trigger found on the branch and its TRD mirror; assert manual-only triggering. Keepalive schedule unchanged; no benchmark dispatch authorized. |

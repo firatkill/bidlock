@@ -3053,7 +3053,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 | TC-267 | T-42 | FR-95; NFR-10–NFR-12     | High     | yes         | Benchmark schema and factual report                          |
 | TC-268 | T-42 | FR-95                    | High     | yes         | Report filenames and local no-commit mode                    |
 | TC-269 | T-42 | FR-95                    | High     | yes         | Lobby reads measured benchmark data                          |
-| TC-270 | T-43 | FR-95; FR-96; NFR-31     | High     | yes         | Scheduled/manual load workflow and artifacts                 |
+| TC-270 | T-43 | FR-95; FR-96; NFR-31     | High     | yes         | Manual load workflow and artifacts                           |
 | TC-271 | T-43 | FR-95; FR-96             | High     | yes         | Result PR and failed-threshold reporting                     |
 | TC-272 | T-44 | FR-69; US-11             | High     | yes         | How-it-works rules and lifecycle content                     |
 | TC-273 | T-44 | FR-69; FR-95             | High     | yes         | Benchmark table empty and complete states                    |
@@ -3240,7 +3240,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Steps: Render lobby with full result, empty sentinel and missing file.
 - Expected result: Full result renders actual metrics/date/link with en-US number formatting (up to two decimal places for latency); exact PRD copy is unchanged. Empty or missing benchmark hides band under D-61. Test fixtures stay outside bench/results; D-80 local acceptance results are not published.
 
-## TC-270: Scheduled/manual load workflow and artifacts
+## TC-270: Manual load workflow and artifacts
 
 - Milestone: M6 — Load test + CI + bench page
 - Task: T-43
@@ -3250,7 +3250,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Run the static workflow contract tests and rule 5 guard; dispatch load.yml on main with default inputs; inspect run steps, uploaded artifact and cleanup.
-- Expected result: Monday04:00UTC and dispatch;500/60 defaults; no cancellation of active load; build/migrate/health/k6/verify/report order; artifact retained30days and cleanup always runs in ephemeral CI.
+- Expected result: Manual workflow_dispatch only, no schedule or cron (D-95);500/60 defaults; no cancellation of active load; build/migrate/health/k6/verify/report order; artifact retained30days and cleanup always runs in ephemeral CI.
 
 ## TC-271: Result PR and failed-threshold reporting
 
@@ -3439,3 +3439,5 @@ All cases belong to M6 — Load test + CI + bench page, task T-44.
 - TC-290: Preconditions: local page and browser. Steps: inspect375px light/dark; scroll lifecycle, timeline, benchmark and stats; inspect console. Expected: readable text, no clipped content, scrollable wide content, no rendering errors. Owner still reviews UI before merging.
 
 T-44 coverage mapping: the original M6 acceptance cases TC-272–TC-275 remain active. TC-284/285 detail TC-272; TC-286/287 detail TC-273; TC-288 details TC-274; TC-289/290 detail TC-275. Test titles carry both acceptance and detailed IDs.
+
+T-44 reviewer correction (D-95): TC-270 asserts workflow_dispatch and absence of schedule/cron. TC-273/TC-287 and TC-272/TC-284 assert exactly: "This test runs on GitHub Actions against a production build in Docker Compose. It never runs against this site." Prior ledger attempts retain their historical wording; D-95 supersedes scheduled-load expectations. No load dispatch is needed for this correction.

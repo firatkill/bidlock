@@ -13,6 +13,9 @@ test("TC-270: load workflow matches the specified isolated CI pipeline", () => {
   const normalize = (text: string) => text.replace(/\s+/g, " ").trim();
   expect(spec).toBeDefined();
   expect(normalize(workflow)).toBe(normalize(spec ?? ""));
+  expect(workflow).toMatch(/^  workflow_dispatch:/m);
+  expect(workflow).not.toMatch(/^  schedule:/m);
+  expect(workflow).not.toContain("cron:");
   expect(workflow).not.toContain("firatkil.com");
   expect(workflow).not.toContain("--no-commit");
 });

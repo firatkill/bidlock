@@ -413,7 +413,7 @@ export const howCopy = {
     "Closing happens in the same function: a bid that arrives after the deadline closes the auction and is rejected. A scheduled job closes auctions nobody touches.",
   ],
   benchmarkNote:
-    "This test runs weekly on GitHub Actions against a production build in Docker Compose. It never runs against this site.",
+    "This test runs on GitHub Actions against a production build in Docker Compose. It never runs against this site.",
   allRuns: "All runs",
   empty: "Benchmark results will appear here after the first load-test run.",
   statsLine:

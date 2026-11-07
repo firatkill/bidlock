@@ -4,6 +4,8 @@ A live auction engine that stays correct under load.
 
 Implementation is in progress. The [first published benchmark](bench/SUMMARY.md) records p95 269.23 ms against the 250 ms target, p99 329.69 ms against 600 ms, zero unexpected errors and zero invariant violations. NFR-10 p95 remains an owner-accepted gap (D-92); thresholds are unchanged and `thresholds.passed=false`.
 
+Benchmark runs are started manually with GitHub Actions `workflow_dispatch`; there is no weekly benchmark schedule. They run against a production build in Docker Compose, never against the live site.
+
 ## Stack
 
 Resolved 2026-10-21 from the package registry, using the specified major lines where the TRD constrains them.
