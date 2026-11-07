@@ -9,6 +9,10 @@ on:
       duration:
         description: k6 duration
         default: "60s"
+      diagnostics:
+        description: Enable load-only diagnostic collection (never publish this run)
+        type: boolean
+        default: false
   schedule:
     - cron: "0 4 * * 1" # Mondays 04:00 UTC
 
@@ -21,7 +25,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  COMPOSE: docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml
+  COMPOSE: ${{ inputs.diagnostics && 'docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml' || 'docker compose -f docker/compose.yml' }}
+  LOAD_DIAGNOSTICS: ${{ inputs.diagnostics && 'on' || 'off' }}
   DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:54329/bidlock_load
 
 jobs:
@@ -54,13 +59,16 @@ jobs:
           DURATION: ${{ inputs.duration || '60s' }}
         # The k6 service's command (compose) is "run /load/bid-storm.js"; the image entrypoint is k6.
         run: |
-          timeout 180s bash scripts/bench/sample-load.sh > bench/out/pg-activity.jsonl 2>bench/out/pg-sampler-errors.log &
-          pg_sampler=$!
-          timeout 180s docker stats --format '{{json .}}' > bench/out/docker-stats.jsonl 2>bench/out/stats-errors.log &
-          stats_sampler=$!
-          timeout 180s bash scripts/bench/sample-cpu.sh > bench/out/cpu-throttling.log 2>bench/out/cpu-errors.log &
-          cpu_sampler=$!
-          trap 'kill "$pg_sampler" "$stats_sampler" "$cpu_sampler" 2>/dev/null || true; wait || true' EXIT
+          samplers=()
+          if [ "$LOAD_DIAGNOSTICS" = "on" ]; then
+            timeout 180s bash scripts/bench/sample-load.sh > bench/out/pg-activity.jsonl 2>bench/out/pg-sampler-errors.log &
+            samplers+=("$!")
+            timeout 180s docker stats --format '{{json .}}' > bench/out/docker-stats.jsonl 2>bench/out/stats-errors.log &
+            samplers+=("$!")
+            timeout 180s bash scripts/bench/sample-cpu.sh > bench/out/cpu-throttling.log 2>bench/out/cpu-errors.log &
+            samplers+=("$!")
+          fi
+          trap 'kill "${samplers[@]}" 2>/dev/null || true; wait || true' EXIT
           $COMPOSE --profile load run --rm --no-deps k6
       - name: Verify invariants
         id: verify

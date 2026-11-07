@@ -58,7 +58,7 @@ Key properties:
 
 - The browser never talks to Postgres. The only Supabase client in the browser is the Realtime subscription.
 - All writes go through `SECURITY DEFINER` functions in schema `bidlock`. The runtime role cannot write tables.
-- Each HTTP request uses at most three short single-statement database transactions (`POST /bids`: rate check, then `place_bid`; first `GET /api/me`: `get_me`, `create_bidder`, `get_me`). No transaction spans network calls.
+- Each HTTP request uses at most three short single-statement database transactions (`POST /bids`: one `submit_bid` statement under D-87; first `GET /api/me`: `get_me`, `create_bidder`, `get_me`). No transaction spans network calls.
 
 ## 3. Stack
 
@@ -778,6 +778,7 @@ Code blocks in §7 show function bodies and the `grant` lines; as stated in §6.
 | `generate_lot_title(seed)` | 0007 | no | titles |
 | `tick()` | 0007 | no | cron entry point |
 | `rate_hit(limit, subject, now)` | 0008 | no | fixed-window counter |
+| `submit_bid(session_bidder, bot, auction, amount, key, ip_hash)` | 0013 | yes | compose session lookup, rate check and bidding (D-87) |
 | `check_bid_rate(bidder, ip_hash)` | 0008 | yes | bid limits |
 | `create_bidder(ip_hash)`, `rename_bidder(bidder, name)` | 0009 | yes | identity |
 | `auction_state(auction, viewer)` | 0009 | yes | state read with lazy transitions |
@@ -792,6 +793,42 @@ Code blocks in §7 show function bodies and the `grant` lines; as stated in §6.
 | `create_test_auction(...)`, `set_test_clock(ms)` | 0012 | yes, but raise unless `env = 'test'` | test support |
 
 ---
+
+### 6.7 Single-call bid entry point (0013_submit_bid.sql; D-87)
+
+`submit_bid(session_bidder_id, verified_bot_id, auction_id, amount, key, ip_hash)` is one volatile SECURITY DEFINER statement with `set search_path = bidlock, pg_temp`. It calls `get_me(session_bidder_id)` to resolve the signed session (human only), then `check_bid_rate(coalesce(verified_bot_id,session_bidder_id),ip_hash)`, then `place_bid`. The server verifies the bot token before passing its subject; SQL rechecks the session's existence before using it. Missing session returns NO_SESSION, or BOT_TOKEN_INVALID for a verified bot whose owner session no longer resolves. Rate-limited requests return RATE_LIMITED/retry_after_ms without calling place_bid. Normal rejected bids and replays still count rate hits. Existing functions, rule order, constraints, SELECT FOR UPDATE and time read after acquisition are unchanged. The new migration grants only submit_bid to bidlock_app and revokes all PUBLIC execute; prior grants are retained for existing consumers/tests.
+
+The strict internal JSON union is `{kind:"error",error_code:"NO_SESSION"|"BOT_TOKEN_INVALID"|"RATE_LIMITED",retry_after_ms:number|null}` or `{kind:"bid",result:bid_result}`. HTTP status/body/header mapping remains §10.6. Expected error results commit in the single transaction; unexpected SQL errors still abort the transaction and map to INTERNAL through the route wrapper. No function logic is duplicated in this entry point.
+
+```sql
+-- One API statement composes existing identity, rate and bid functions (D-87).
+-- p_bot_id is supplied only after the server verifies the scoped bot token.
+create or replace function bidlock.submit_bid(
+  p_session_bidder_id uuid, p_bot_id uuid, p_auction_id uuid,
+  p_amount bigint, p_key uuid, p_ip_hash text
+) returns jsonb
+language plpgsql volatile security definer set search_path = bidlock, pg_temp as $$
+declare
+  v_retry integer;
+  v_bidder uuid;
+  v_result bidlock.bid_result;
+begin
+  if bidlock.get_me(p_session_bidder_id) is null then
+    return jsonb_build_object('kind', 'error', 'error_code',
+      case when p_bot_id is null then 'NO_SESSION' else 'BOT_TOKEN_INVALID' end,
+      'retry_after_ms', null);
+  end if;
+  v_bidder := coalesce(p_bot_id, p_session_bidder_id);
+  v_retry := bidlock.check_bid_rate(v_bidder, p_ip_hash);
+  if v_retry > 0 then
+    return jsonb_build_object('kind', 'error', 'error_code', 'RATE_LIMITED', 'retry_after_ms', v_retry);
+  end if;
+  select * into v_result from bidlock.place_bid(p_auction_id, v_bidder, p_amount, p_key);
+  return jsonb_build_object('kind', 'bid', 'result', to_jsonb(v_result));
+end $$;
+revoke execute on all functions in schema bidlock from public;
+grant execute on function bidlock.submit_bid(uuid, uuid, uuid, bigint, uuid, text) to bidlock_app;
+```
 
 ## 7. SQL functions
 
@@ -1494,7 +1531,7 @@ begin
   return greatest(1, ceil(extract(epoch from (v_start + make_interval(secs => v_window) - p_now)) * 1000))::integer;
 end $$;
 
--- Called by POST /bids in its own statement BEFORE place_bid (D-10).
+-- D-87: called inside submit_bid before place_bid; former separate-statement sequence superseded.
 create or replace function bidlock.check_bid_rate(p_bidder_id uuid, p_ip_hash text)
 returns integer
 language plpgsql volatile security definer set search_path = bidlock, pg_temp as $$
@@ -2099,7 +2136,7 @@ Auth: session-or-bot. Mutating. Body:
 export const PlaceBidBody = z.object({ amount: Cents, idempotency_key: z.uuid() }).strict();
 ```
 
-Steps: `retry = check_bid_rate(bidder, ip_hash)`; `retry > 0` → 429 `RATE_LIMITED`, header `Retry-After: ceil(retry/1000)`, `details.retry_after_ms`. Else `place_bid(...)` and map (§10.12).
+Steps (D-87): validate request and signed cookie/scoped bot token in TypeScript, retaining the session bidder separately from a verified bot subject. For this route only, defer the getMe database lookup to `submit_bid(session_bidder, verified_bot_or_null, auction, amount, key, ip_hash)`. Make exactly one database call for a valid bid request; map its identity/rate error envelope or unchanged bid_result. No additional getMe/check_bid_rate/place_bid call is made from the route. RATE_LIMITED retains its retry_after_ms and Retry-After header; replay/status/error contracts below are unchanged. Other routes retain their existing authentication flow.
 
 Success: 201 (first time) or 200 (replay, header `Idempotent-Replayed: true`):
 
@@ -2756,8 +2793,10 @@ Component tests use Testing Library (`@testing-library/react`, `@testing-library
 
 #### 15.6.1 Setup
 
+D-88: use ramping-vus, startVUs=0, ramp to VUS over min(10, configured duration_s), then hold until the configured total duration. Defaults are10 s ramp plus50 s hold at500 VUs. Record ramp_up_s explicitly in every new full result; the empty sentinel remains valid. No earlier unmerged artifact is rewritten.
+
 - Run parameters (env, passed into the k6 container by compose, §17.2): `VUS` (default 500), `DURATION` (default `60s`), `AUCTION_S` (auction `duration_s`, default 45). Small local runs use e.g. `VUS=50 DURATION=15s AUCTION_S=8`.
-- Environment: `docker/compose.yml` (§17.2) with `db` (postgres:17, `max_connections=200`), `migrate` (applies migrations + `db/env/load.sql`), `app` (production standalone build, `APP_ENV=test`, `DB_POOL_MAX=4`, `NEXT_PUBLIC_FEED=polling`), `k6` (profile `load`).
+- Environment: `docker/compose.yml` (§17.2) with `db` (postgres:17, `max_connections=200`), `migrate` (applies migrations + `db/env/load.sql`), `app` (production standalone build, `APP_ENV=test`, `DB_POOL_MAX=20`, `NEXT_PUBLIC_FEED=polling`), `k6` (profile `load`).
 - The live site is never a target: `BASE_URL` defaults to `http://app:3000` and `check:guards` rejects `firatkil.com` in load files.
 
 #### 15.6.2 `load/bid-storm.js`
@@ -2773,6 +2812,8 @@ const BASE = __ENV.BASE_URL || "http://app:3000";
 const SECRET = __ENV.TEST_API_SECRET;
 const VUS = Number(__ENV.VUS || 500);
 const DURATION = __ENV.DURATION || "60s";
+const DURATION_S = durationSeconds(DURATION);
+const RAMP_UP_S = Math.min(10, DURATION_S);
 const AUCTION_S = Number(__ENV.AUCTION_S || 45);
 const AUCTION = {
   duration_s: AUCTION_S,
@@ -2806,9 +2847,14 @@ export const options = {
   setupTimeout: "180s",
   scenarios: {
     storm: {
-      executor: "constant-vus",
-      vus: VUS,
-      duration: DURATION,
+      executor: "ramping-vus",
+      startVUs: 0,
+      stages: [
+        { duration: `${RAMP_UP_S}s`, target: VUS },
+        ...(DURATION_S > RAMP_UP_S
+          ? [{ duration: `${DURATION_S - RAMP_UP_S}s`, target: VUS }]
+          : []),
+      ],
       gracefulStop: "10s",
     },
   },
@@ -2957,7 +3003,8 @@ export function handleSummary(data) {
     ...data,
     bench_config: {
       vus: VUS,
-      duration_s: durationSeconds(DURATION),
+      duration_s: DURATION_S,
+      ramp_up_s: RAMP_UP_S,
       auction: AUCTION,
     },
   };
@@ -2970,7 +3017,7 @@ export function handleSummary(data) {
 
 Timing with the defaults (`AUCTION_S = 45`, `snipe_window_s: 10`, `extend_by_s: 10`, `max_extensions: 20`), measured from auction creation: the soft-close window first opens at 35 s. D-83 sets the load-only extension to equal the window: after an accepted window bid at t sets `ends_at = t + 10 s`, the next window begins at t, so subsequent accepted bids can extend without a mandatory two-second gap. When the twentieth extension occurs at t20, no later bid extends and the deadline is t20 + 10 s. Actual cap/close times depend on accepted bid arrivals; do not promise a fixed close time. The 60-second workload must demonstrate 20 extensions and post-close `AUCTION_CLOSED` responses (TC-264); observed-closed VUs idle. Production extension defaults remain 30 s. The summary carries `setup_data.auctionId` for verification. The prior 12 s configuration required at least 2 s between extensions and could not reach the cap and close within the default run.
 
-D-84: the load workflow opts into `docker/compose.load-diagnostics.yml` only. App `LOAD_DIAGNOSTICS=on` is allowed only in test mode, defaults off elsewhere, and emits numeric per-bid total/getMe/check_bid_rate/place_bid wall times, aggregate event-loop delay/utilization/CPU and per-phase pending calls. Phase times include postgres.js waiting, execution, round trips and result parsing; pending calls are not a native pool queue metric (no stable public queue API). PostgreSQL statement/lock logs suppress parameter values; samplers emit operation labels, wait events and blocker PIDs, never query text. Bounded runner samplers collect activity, Docker CPU and cgroup throttling in bench/out. Each result PR uses `bench/results-${run_id}` so previous unmerged results remain unchanged. The extra diagnostic dispatch is never published; one subsequent fix dispatch is authorized.
+D-88 supersedes unconditional D-84 diagnostics: the load workflow defaults diagnostics off and only with workflow_dispatch input diagnostics=true opts into `docker/compose.load-diagnostics.yml` only. App `LOAD_DIAGNOSTICS=on` is allowed only in test mode, defaults off elsewhere, and emits numeric per-bid total/getMe/check_bid_rate/place_bid wall times, aggregate event-loop delay/utilization/CPU and per-phase pending calls. The single-call route measures submit_bid rather than attributing internal SQL phases to separate network calls. Phase times include postgres.js waiting, execution, round trips and result parsing; pending calls are not a native pool queue metric (no stable public queue API). PostgreSQL statement/lock logs suppress parameter values; samplers emit operation labels, wait events and blocker PIDs, never query text. Bounded runner samplers collect activity, Docker CPU and cgroup throttling in bench/out. Each result PR uses `bench/results-${run_id}` so previous unmerged results remain unchanged. The D-88 measurement dispatch is never published; one subsequent scored dispatch is authorized with diagnostics=false. No sampler or diagnostic overlay runs in scored mode.
 
 #### 15.6.3 Verification (`scripts/bench/verify.ts` + `db/verify/invariants.sql`)
 
@@ -3046,7 +3093,7 @@ order by 1;
 
 Inputs: `bench/out/k6-summary.json`, `bench/out/verify.json`, env `GITHUB_SHA`, `RUNNER_OS`, `/proc/cpuinfo` model name and `os.cpus().length`, `os.totalmem()`. Output `bench/results/<YYYY-MM-DD>.json` (suffix `-2`, `-3` when the date exists), copy to `bench/results/latest.json`, regenerate `bench/SUMMARY.md` from all result files (newest first). `--no-commit` (local runs) writes `bench/out/result.json` and `bench/out/SUMMARY.md` instead and leaves `bench/results/` untouched. `--k6-outcome <success|failure>` records the k6 step outcome; `thresholds.passed` is true only when it is `success` and every threshold in the k6 summary passed. `--init` writes the empty-state `bench/results/latest.json` (below) if the file is missing.
 
-D-79: `handleSummary` adds `bench_config: { vus, duration_s, auction: { duration_s, snipe_window_s, extend_by_s, max_extensions } }`, using the actual scenario env/default values and the same auction timing object sent during setup. `duration_s` is configured duration converted from k6 units, not elapsed time including graceful stop. `bid_requests` counts every sent bid request, `replay_requests` counts every sent request that reuses a key regardless of result; `replay_mismatch` and its zero threshold remain unchanged. Report `requests.bids` and `requests.rps` use `bid_requests` count/rate, and `requests.replays` uses `replay_requests` count. Outcome counters count HTTP outcomes, including replays; they are not unique database bid counts. k6 omits unsampled outcome counters, which represent zero. Required request counters must exist.
+D-79: `handleSummary` adds `bench_config: { vus, duration_s, ramp_up_s, auction: { duration_s, snipe_window_s, extend_by_s, max_extensions } }`, using the actual scenario env/default values and the same auction timing object sent during setup. `duration_s` is configured duration converted from k6 units, not elapsed time including graceful stop. `bid_requests` counts every sent bid request, `replay_requests` counts every sent request that reuses a key regardless of result; `replay_mismatch` and its zero threshold remain unchanged. Report `requests.bids` and `requests.rps` use `bid_requests` count/rate, and `requests.replays` uses `replay_requests` count. Outcome counters count HTTP outcomes, including replays; they are not unique database bid counts. k6 omits unsampled outcome counters, which represent zero. Required request counters must exist.
 
 `report.ts` validates summary/config/consumed metrics, verifier output, Compose JSON and existing result files with Zod. The k6-owned outer envelope and Compose-owned unrelated fields remain extensible; owned objects are strict. It checks matching auction IDs. Pool size is the validated explicit `DB_POOL_MAX` env value when provided (must match the app), otherwise the resolved `docker compose -f docker/compose.yml config --format json` app environment. PostgreSQL version is queried with `show server_version` through `DATABASE_URL_ADMIN` on the local/CI database. No pool/version estimate or hard-coded fallback. Local metadata falls back from `GITHUB_SHA`/`RUNNER_OS` to Git HEAD/`os.platform()`; CPU model falls back from `/proc/cpuinfo` to `os.cpus()` on non-Linux hosts.
 
@@ -3060,7 +3107,7 @@ Result schema (version 1), validated with Zod `BenchResult` in `src/domain/schem
   "date": "2026-10-18",
   "commit": "abc1234",
   "runner": { "os": "Linux", "cpus": 4, "cpu_model": "AMD EPYC 7763 64-Core Processor", "memory_gb": 16 },
-  "config": { "vus": 500, "duration_s": 60, "db_pool_max": 4, "postgres": "17.x",
+  "config": { "vus": 500, "duration_s": 60, "ramp_up_s": 10, "db_pool_max": 20, "postgres": "17.x",
               "auction": { "duration_s": 45, "snipe_window_s": 10, "extend_by_s": 10, "max_extensions": 20 } },
   "requests": { "bids": 41230, "replays": 2010, "rps": 680.5 },
   "outcomes": { "accepted": 3120, "BID_TOO_LOW": 31002, "ALREADY_LEADING": 2400, "AUCTION_CLOSED": 4700, "RATE_LIMITED": 8, "OTHER": 0 },
@@ -3294,6 +3341,10 @@ on:
       duration:
         description: k6 duration
         default: "60s"
+      diagnostics:
+        description: Enable load-only diagnostic collection (never publish this run)
+        type: boolean
+        default: false
   schedule:
     - cron: "0 4 * * 1" # Mondays 04:00 UTC
 
@@ -3306,7 +3357,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  COMPOSE: docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml
+  COMPOSE: ${{ inputs.diagnostics && 'docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml' || 'docker compose -f docker/compose.yml' }}
+  LOAD_DIAGNOSTICS: ${{ inputs.diagnostics && 'on' || 'off' }}
   DATABASE_URL_ADMIN: postgres://postgres:postgres@localhost:54329/bidlock_load
 
 jobs:
@@ -3339,13 +3391,16 @@ jobs:
           DURATION: ${{ inputs.duration || '60s' }}
         # The k6 service's command (compose) is "run /load/bid-storm.js"; the image entrypoint is k6.
         run: |
-          timeout 180s bash scripts/bench/sample-load.sh > bench/out/pg-activity.jsonl 2>bench/out/pg-sampler-errors.log &
-          pg_sampler=$!
-          timeout 180s docker stats --format '{{json .}}' > bench/out/docker-stats.jsonl 2>bench/out/stats-errors.log &
-          stats_sampler=$!
-          timeout 180s bash scripts/bench/sample-cpu.sh > bench/out/cpu-throttling.log 2>bench/out/cpu-errors.log &
-          cpu_sampler=$!
-          trap 'kill "$pg_sampler" "$stats_sampler" "$cpu_sampler" 2>/dev/null || true; wait || true' EXIT
+          samplers=()
+          if [ "$LOAD_DIAGNOSTICS" = "on" ]; then
+            timeout 180s bash scripts/bench/sample-load.sh > bench/out/pg-activity.jsonl 2>bench/out/pg-sampler-errors.log &
+            samplers+=("$!")
+            timeout 180s docker stats --format '{{json .}}' > bench/out/docker-stats.jsonl 2>bench/out/stats-errors.log &
+            samplers+=("$!")
+            timeout 180s bash scripts/bench/sample-cpu.sh > bench/out/cpu-throttling.log 2>bench/out/cpu-errors.log &
+            samplers+=("$!")
+          fi
+          trap 'kill "${samplers[@]}" 2>/dev/null || true; wait || true' EXIT
           $COMPOSE --profile load run --rm --no-deps k6
       - name: Verify invariants
         id: verify
@@ -3515,7 +3570,7 @@ services:
       APP_ENV: test
       DEMO_MODE: "on"
       DATABASE_URL: postgres://bidlock_app:bidlock_app@db:5432/bidlock_load
-      DB_POOL_MAX: "4"
+      DB_POOL_MAX: "20"
       APP_ORIGIN: http://app:3000
       TRUST_PROXY: none
       SESSION_SECRET: load-session-secret-0123456789abcdef0123
@@ -3681,7 +3736,7 @@ Load on production is limited by design: no k6 against production (NFR-31), rate
 
 - Throughput per auction is bounded by lock hold time. `place_bid` holds the lock for one function execution (several index lookups and 3–5 inserts/updates, typically well under 2 ms on the CI runner), so one auction can serialize several hundred bids per second. Different auctions never contend.
 - The per-IP rate counter is a second hot row during the load test (all VUs share one IP). It is held only for the `check_bid_rate` statement.
-- The app pool (`DB_POOL_MAX=4` in compose) bounds concurrent transactions; excess requests queue in postgres.js, which is visible as latency rather than errors.
+- The app pool (`DB_POOL_MAX=20` in compose) bounds concurrent transactions; excess requests queue in postgres.js, which is visible as latency rather than errors.
 - In production, `realtime.send` runs inside the bid transaction (while the lock is held). The benchmark runs with `realtime_mode = 'none'`, so it does not measure Broadcast fan-out; `/how-it-works` states this.
 - Read paths never take the auction lock unless a transition is due, and then with `SKIP LOCKED`.
 

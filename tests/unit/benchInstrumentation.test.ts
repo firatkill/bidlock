@@ -76,6 +76,7 @@ test("TC-267 D-79: summary metadata uses actual defaults and env configuration",
       {
         vus: 500,
         duration_s: 60,
+        ramp_up_s: 10,
         auction: {
           duration_s: 45,
           snipe_window_s: 10,
@@ -89,6 +90,7 @@ test("TC-267 D-79: summary metadata uses actual defaults and env configuration",
       {
         vus: 73,
         duration_s: 90,
+        ramp_up_s: 10,
         auction: {
           duration_s: 32,
           snipe_window_s: 10,

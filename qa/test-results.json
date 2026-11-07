@@ -17533,6 +17533,11 @@
           "result": "pass",
           "actual_result": "Rule 5 guard unchanged and passes; production-domain rejection unit tests pass.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-88 ramping-vus uses0→500 over10s plus50s hold; ramp_up_s preserved by strict report schema. Thresholds, pacing and replay checks pass in221-test unit suite.",
+          "note": "T-43 single-call/ramp revision; no measured performance claim."
         }
       ],
       "regression_of": null,
@@ -17635,6 +17640,11 @@
           "result": "fail",
           "actual_result": "Diagnostic p95=241.3247772ms passes; p99=726.37423376ms fails; errors0; thresholds false.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42313175983; D-83/D-84 diagnostic only, never published."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final pool4 run: p95 896.4585606ms, p99 1529.85733683ms exceed250/600; unexpected rate0, thresholds false.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
         }
       ],
       "regression_of": null,
@@ -17668,6 +17678,11 @@
           "result": "pass",
           "actual_result": "Corrected load-only extension10: 20 extensions and 500 AUCTION_CLOSED responses; verifier closed, all16 checks zero.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42313175983; D-83/D-84 diagnostic only, never published."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final run has20 extensions,500 AUCTION_CLOSED responses, closed verifier state and all16 invariant checks zero.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
         }
       ],
       "regression_of": null,
@@ -17782,6 +17797,11 @@
           "result": "pass",
           "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-88 ramping-vus uses0→500 over10s plus50s hold; ramp_up_s preserved by strict report schema. Thresholds, pacing and replay checks pass in221-test unit suite.",
+          "note": "T-43 single-call/ramp revision; no measured performance claim."
         }
       ],
       "regression_of": null,
@@ -17884,6 +17904,11 @@
           "result": "pass",
           "actual_result": "Workflow PR #44 merged as 99ab16e after all six CI jobs passed. Default 500 VUs/60 s run built, migrated, ran k6, verified, reported, uploaded bench-42310825613 (37140 bytes), and cleaned up. Final threshold gate correctly failed.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final run built/migrated, ran k6, verified, reported, uploaded artifact bench-42314282647 (872476 bytes), opened scoped PR #49 and failed threshold gate; cleanup completed.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
         }
       ],
       "regression_of": null,
@@ -17908,6 +17933,11 @@
           "result": "pass",
           "actual_result": "A-09 verified: bot PR #45 contains only bench/results/2026-11-06.json, bench/results/latest.json and bench/SUMMARY.md. FullBenchResult parses; all 16 invariant checks zero; failed k6 thresholds preserved as thresholds.passed=false and workflow failure. Bot PR remains unmerged.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42310825613; no retry; owner decision required before further benchmark work."
+        },
+        {
+          "result": "pass",
+          "actual_result": "FullBenchResult parses; PR #49 only dated JSON/latest JSON/SUMMARY; threshold failure correctly prevents publication. #45/#47 remain unchanged and unmerged.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
         }
       ],
       "regression_of": null,
@@ -17932,6 +17962,11 @@
           "result": "pass",
           "actual_result": "Artifact includes 33329 allowlisted request timings,62 event-loop samples,180 pg activity snapshots, CPU/throttling. No parameter-detail logs; sampler errors empty/newline. PR #45 unchanged, diagnostic PR #47 left unmerged.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42313175983; D-83/D-84 diagnostic only, never published."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final artifact contains21788 request timing rows,62 event-loop samples,165 pg snapshots and CPU/throttling. Native queue remains unmeasured; no claim of native queue length.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
         }
       ],
       "regression_of": null,
@@ -17944,13 +17979,119 @@
       "ac_reference": "NFR-10; NFR-11; NFR-12; D-85",
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Measured load pool tuning preserves correctness and thresholds",
-      "status": "open",
-      "environment": "GitHub Actions / t-43-load-pool",
+      "status": "n/a",
+      "environment": "ubuntu-latest /4-vCPU AMD EPYC /Node24 /PostgreSQL17.11 /commit880d155",
       "attempts": [
         {
           "result": "pass",
           "actual_result": "Diagnostic evidence supports reducing concurrent auction lock contenders; load Compose pool set4. Final dispatch pending.",
           "note": "Hypothesis only; not a passed performance claim."
+        },
+        {
+          "result": "fail",
+          "actual_result": "PR #48 initial E2E job failed before tests in Next font build: next/font/google queries have exactly one entry.",
+          "note": "Other five CI jobs passed; failed-jobs rerun request HTTP500 started nothing."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted rerun succeeded without code changes; all six CI jobs green on fix PR #48.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42313828024; merged880d155."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Pool4 is a failed tuning hypothesis: handler mean618.411ms (auth206.747/rate200.989/bid210.379/residual0.295), versus84.373ms with20. Blocked bid samples fall1175→53 while per-phase pending maxima rise65/70/84→179/214/273. End-to-end p95/p99 fail; no result merged.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42314282647; second/final D-84 dispatch. Owner checkpoint; no further run."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": "D-86 explicitly abandons the pool4 hypothesis after its failed measurements; all failure evidence retained. It is no longer the target configuration.",
+      "description": "Reducing load pool20→4 made end-to-end latency worse.",
+      "steps_to_reproduce": ["Dispatch default load.yml on main at880d155."],
+      "expected_result": "All thresholds pass with invariant violations0, cap20 and post-close outcomes.",
+      "owner_question": "docs/PROGRESS.md — T-43 final authorized validation"
+    },
+    {
+      "tc_reference": "TC-278",
+      "ac_reference": "D-87; FR-01–FR-09; FR-90; FR-91",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Composed SQL bid entry point preserves outcomes and rate counters",
+      "status": "resolved",
+      "environment": "macOS / Node24 / local PostgreSQL17.11 / t-43-single-call-ramp",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Test helper called pgTAP assertion inside restricted search_path; pgTAP internal ok was not found.",
+          "note": "Fixed test helper to return comparison data and assert outside; application privileges unchanged."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Sandbox bot test assumed starting price1000 and got BID_TOO_LOW.",
+          "note": "Use actual sandbox starting price from specified generated fixture."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Initial parity file passed62 assertions.",
+          "note": "Accepted/replay/errors and privilege coverage."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Expanded IP-limit test seeded200 hits but test environment limit is10000.",
+          "note": "Fixture now seeds configured max_hits."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full database run reproduced the same stale IP-limit fixture failure.",
+          "note": "No implementation behavior changed; fixture corrected to configured limit."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Lint/typecheck/guards pass;221 unit tests,437 pgTAP assertions,51 concurrency/integration tests (INT-01/INT-02 green), production build and33 E2E tests pass. New SQL parity file74 assertions; base Compose pool20 and diagnostics absent/off, opt-in overlay on.",
+          "note": "No new dispatch yet; TC-280 measurement/scored evidence pending."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "description": "SQL parity tests compare existing function sequence with composed entry point.",
+      "steps_to_reproduce": [
+        "Run pg_prove for db/tests/015_submit_bid.test.sql."
+      ],
+      "expected_result": "Equivalent outcomes/counters and restricted privileges; all assertions pass."
+    },
+    {
+      "tc_reference": "TC-279",
+      "ac_reference": "D-87; FR-01; FR-03; FR-04",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Bid HTTP path makes one database call",
+      "status": "resolved",
+      "environment": "macOS / Node24 / local PostgreSQL17.11 / t-43-single-call-ramp",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Lint/typecheck/guards pass;221 unit tests,437 pgTAP assertions,51 concurrency/integration tests (INT-01/INT-02 green), production build and33 E2E tests pass. New SQL parity file74 assertions; base Compose pool20 and diagnostics absent/off, opt-in overlay on.",
+          "note": "No new dispatch yet; TC-280 measurement/scored evidence pending."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-280",
+      "ac_reference": "D-86; D-88; NFR-10; NFR-11; NFR-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Ramped workload and scored diagnostic isolation",
+      "status": "open",
+      "environment": "macOS / Node24 / local PostgreSQL17.11 / t-43-single-call-ramp",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Lint/typecheck/guards pass;221 unit tests,437 pgTAP assertions,51 concurrency/integration tests (INT-01/INT-02 green), production build and33 E2E tests pass. New SQL parity file74 assertions; base Compose pool20 and diagnostics absent/off, opt-in overlay on.",
+          "note": "No new dispatch yet; TC-280 measurement/scored evidence pending."
         }
       ],
       "regression_of": null,

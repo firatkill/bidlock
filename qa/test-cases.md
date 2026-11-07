@@ -3130,7 +3130,7 @@ Designed before T-39 implementation. T-41–T-44 cases are planned only, not exe
 - Automatable: yes
 - Preconditions: Local/ephemeral CI only; no other load or test runner uses the same database; preserve owner dev data.
 - Steps: Inspect and execute the workload in approved environment; exercise defaults and explicit small overrides; run guards.
-- Expected result: 500 VUs/60s/45s defaults, constant-vus workload, app:3000 target, no production URL; small overrides honored.
+- Expected result: 500 peak VUs/60s total/10s ramp/45s auction defaults, 10 s ramp to500 then50 s hold workload, app:3000 target, no production URL; small overrides honored.
 
 ## TC-261: Independent bidders and setup summary
 
@@ -3341,3 +3341,36 @@ The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies modu
 - Preconditions: D-84 diagnostic complete; only one final fix dispatch permitted.
 - Steps: Resolve Compose app pool=4; pass regression CI; dispatch default workflow once. Parse full result and compare phase/lock measurements with diagnostic run; inspect result PR scope before publication.
 - Expected result: Actual config pool=4; unchanged 500 VUs, 60 s and runner; all thresholds pass, every invariant zero, cap20 and post-close responses present. Publish only if all gates pass; otherwise stop for owner.
+
+## TC-278: Composed SQL bid entry point preserves outcomes and rate counters
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: D-87; FR-01–FR-09; FR-90; FR-91
+- TRD test reference: §6.7; §10.6; DB-04/DB-05/DB-09; INT-01/INT-02
+- Priority: Critical
+- Automatable: yes
+- Steps: Compare legacy get_me/check_bid_rate/place_bid sequencing against submit_bid from identical transaction state for every entry-point/SQL bid error code, accepted and replay results; compare all rate counters. Check bot/visibility cases and privileges. Exercise shared-IP and identical-key concurrency.
+- Expected result: Equivalent results except generated bid UUID, identical counters, no duplicate replay bids, explicit restricted grant, fixed definer search_path; existing invariants and INT-01/INT-02 remain green.
+
+## TC-279: Bid HTTP path makes one database call
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: D-87; FR-01; FR-03; FR-04
+- TRD test reference: §10.6; API write integration
+- Priority: Critical
+- Automatable: yes
+- Steps: Count SQL invocations for valid signed-session requests and verified bot requests; test deleted/stale session resolution, rate/replay responses and invalid bot signature rejection.
+- Expected result: Exactly one submit_bid SQL invocation for a valid bid request; token-only invalid requests stop before SQL. Identity/rate/error/status/replay contracts unchanged in production and load.
+
+## TC-280: Ramped workload and scored diagnostic isolation
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: D-86; D-88; NFR-10; NFR-11; NFR-12
+- TRD test reference: §15.6; §16.2; LOAD-01
+- Priority: High
+- Automatable: yes
+- Steps: Assert ramping-vus starts0, reaches500 after10 s, holds50 s; check pacing/replay/thresholds unchanged and ramp_up_s recorded by report. Validate workflow diagnostics defaultfalse and explicit true; dispatch authorized measurement then scored run only if measurements support proceeding.
+- Expected result: Pool20 restored. Measurement artifact includes diagnostics and remains unpublished; scored artifact has no diagnostic records/samplers. Both total60 s; scored publication additionally requires thresholds true, all invariants0, cap20 and post-close responses.

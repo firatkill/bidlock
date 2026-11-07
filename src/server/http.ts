@@ -10,7 +10,12 @@ import { getMe } from "./repo/me";
 import { assertTestEnv } from "./testGuard";
 import { verifyBotToken } from "./botTokens";
 
-type Auth = "none" | "optional-session" | "session" | "session-or-bot";
+type Auth =
+  | "none"
+  | "optional-session"
+  | "session"
+  | "session-or-bot"
+  | "bid-session-or-bot";
 interface RouteOptions<P, Q, B> {
   name: string;
   auth: Auth;
@@ -28,6 +33,7 @@ export interface Ctx<P, Q, B> {
   body: B | undefined;
   bidderId: string | null;
   isBot: boolean;
+  sessionBidderId: string | null;
   fields: {
     auction_id?: string;
     bidder_id?: string;
@@ -198,18 +204,23 @@ export function route<P = undefined, Q = undefined, B = undefined>(
           : undefined;
         const authorization = req.headers.get("authorization");
         const botToken =
-          opts.auth === "session-or-bot" && authorization?.startsWith("Bot ")
+          (opts.auth === "session-or-bot" ||
+            opts.auth === "bid-session-or-bot") &&
+          authorization?.startsWith("Bot ")
             ? authorization.slice(4)
             : null;
         let bidderId: string | null = null;
         let isBot = false;
+        let sessionBidderId: string | null = null;
         if (opts.auth !== "none") {
           const session = readSession(req);
           if (
             session &&
-            (await measureLoadPhase("getMe", () => getMe(session.bidderId)))
+            (opts.auth === "bid-session-or-bot" ||
+              (await measureLoadPhase("getMe", () => getMe(session.bidderId))))
           )
             bidderId = session.bidderId;
+          sessionBidderId = bidderId;
           if (botToken !== null) {
             const scoped = z
               .object({ id: z.uuid() })
@@ -224,7 +235,9 @@ export function route<P = undefined, Q = undefined, B = undefined>(
           }
           if (
             bidderId === null &&
-            (opts.auth === "session" || opts.auth === "session-or-bot")
+            (opts.auth === "session" ||
+              opts.auth === "session-or-bot" ||
+              opts.auth === "bid-session-or-bot")
           )
             throw new AppError("NO_SESSION");
         }
@@ -240,6 +253,7 @@ export function route<P = undefined, Q = undefined, B = undefined>(
           body,
           bidderId,
           isBot,
+          sessionBidderId,
           fields,
           db: async <T>(call: () => Promise<T>) => {
             const at = performance.now();

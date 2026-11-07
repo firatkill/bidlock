@@ -3,12 +3,13 @@ import { AsyncLocalStorage } from "node:async_hooks";
 import { monitorEventLoopDelay, performance } from "node:perf_hooks";
 import { env } from "./env";
 
-type Phase = "getMe" | "check_bid_rate" | "place_bid";
+type Phase = "getMe" | "check_bid_rate" | "place_bid" | "submit_bid";
 const context = new AsyncLocalStorage<Partial<Record<Phase, number>>>();
 const pending: Record<Phase, number> = {
   getMe: 0,
   check_bid_rate: 0,
   place_bid: 0,
+  submit_bid: 0,
 };
 let started = false;
 const enabled = () =>

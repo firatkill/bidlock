@@ -17,7 +17,13 @@ interface Workload {
   setup: () => Setup;
   iteration: (data: Setup) => void;
   options: {
-    scenarios: { storm: { vus: number; duration: string; executor: string } };
+    scenarios: {
+      storm: {
+        startVUs: number;
+        stages: { duration: string; target: number }[];
+        executor: string;
+      };
+    };
     thresholds: Record<string, string[]>;
   };
   state: {
@@ -55,7 +61,7 @@ function harness(env: Record<string, string> = {}) {
       textSummary: () => "summary",
       __ENV: env,
       __VU: 1,
-      Math: { random, floor: Math.floor },
+      Math: { random, floor: Math.floor, min: Math.min },
     },
   ) as Workload;
   return { ...workload, http, sleep, random, samples };
@@ -79,9 +85,12 @@ function response(status: number, code?: string) {
 test("TC-260 / TC-263: specified defaults, overrides and thresholds", () => {
   const h = harness();
   expect(h.options.scenarios.storm).toMatchObject({
-    executor: "constant-vus",
-    vus: 500,
-    duration: "60s",
+    executor: "ramping-vus",
+    startVUs: 0,
+    stages: [
+      { duration: "10s", target: 500 },
+      { duration: "50s", target: 500 },
+    ],
   });
   expect(h.options.thresholds).toEqual({
     bid_latency: ["p(95)<250", "p(99)<600"],
@@ -90,7 +99,12 @@ test("TC-260 / TC-263: specified defaults, overrides and thresholds", () => {
   });
   expect(
     harness({ VUS: "50", DURATION: "15s" }).options.scenarios.storm,
-  ).toMatchObject({ vus: 50, duration: "15s" });
+  ).toMatchObject({
+    stages: [
+      { duration: "10s", target: 50 },
+      { duration: "5s", target: 50 },
+    ],
+  });
 });
 
 test("TC-261: fresh cookie jar per bidder before creating auction; summary retains setup data", () => {
