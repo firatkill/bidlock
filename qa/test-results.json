@@ -17650,6 +17650,11 @@
           "result": "fail",
           "actual_result": "D-88 measurement p95=641.861405ms/p99=753.5082123ms fails both thresholds; worse than prior pool20 diagnostic241.32/726.37. Errors0.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42316538127; D-88 measurement gate stops scored dispatch."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
         }
       ],
       "regression_of": null,
@@ -17693,6 +17698,11 @@
           "result": "pass",
           "actual_result": "Ramped single-call workload reaches20 extensions and500 AUCTION_CLOSED responses; all16 invariant checks0.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42316538127; D-88 measurement gate stops scored dispatch."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
         }
       ],
       "regression_of": null,
@@ -18127,6 +18137,11 @@
           "result": "fail",
           "actual_result": "Actual config vus500,total60,ramp10,pool20 confirmed; diagnostic emitted22755 request rows. Latency regressed versus prior pool20, so scored diagnostics-off dispatch deliberately not started. PR #51 unpublished.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42316538127; D-88 measurement gate stops scored dispatch."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
         }
       ],
       "regression_of": null,
@@ -18150,6 +18165,11 @@
           "result": "pass",
           "actual_result": "Adapter validates all500 distinct stable private addresses matching guest setup and repeated bids; metadata records per-vu-forwarded; only load Compose forwarding changes.",
           "note": "D-89/D-90 owner-approved replacement; CI measurement and scored gates remain pending."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
         }
       ],
       "regression_of": null,
@@ -18184,6 +18204,11 @@
           "result": "pass",
           "actual_result": "Applied Prettier to final QA evidence and verified formatting.",
           "note": "CI rerun required before merge."
+        },
+        {
+          "result": "pass",
+          "actual_result": "CI measurement42319246136:27674 bids,1376 replays,215 accepted; p95=336.6236303 (baseline241.3247772),p99=415.7450225,error0,invariants0,extensions20,AUCTION_CLOSED500. Per-VU config valid; no prepare_bid blockers,936 place_bid blocked observations.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42319246136; artifact schema/scope verified, bot #53 unmerged. Owner gate stops scored dispatch because p95 regressed. CI42318978463 all six jobs passed."
         }
       ],
       "regression_of": null,
