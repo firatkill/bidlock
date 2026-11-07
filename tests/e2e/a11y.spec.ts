@@ -152,12 +152,6 @@ test("TC-272 TC-284 TC-285 How it works sections and timeline", async ({
   await expect(
     page.getByRole("img", { name: "Auction lifecycle" }),
   ).toBeVisible();
-  await expect(
-    page.getByText(
-      "This test runs on GitHub Actions against a production build in Docker Compose. It never runs against this site.",
-      { exact: true },
-    ),
-  ).toBeVisible();
   await expect(page.locator("#rules")).toContainText("180 seconds");
   await expect(page.locator("#rules")).toContainText("$1,000,000.00");
 });

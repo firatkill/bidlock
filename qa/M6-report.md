@@ -27,7 +27,7 @@ The published benchmark remains unchanged: p95=269.233384 ms fails250; p99=329.6
 | TC-267 | Benchmark schema and factual report                               | Last recorded attempt passed; full history in ledger. |
 | TC-268 | Report filenames and local no-commit mode                         | Last recorded attempt passed; full history in ledger. |
 | TC-269 | Lobby reads measured benchmark data                               | Last recorded attempt passed; full history in ledger. |
-| TC-270 | Manual load workflow and artifacts                                | Last recorded attempt passed; full history in ledger. |
+| TC-270 | Scheduled/manual load workflow and artifacts                      | Last recorded attempt passed; full history in ledger. |
 | TC-271 | Result PR and failed-threshold reporting                          | Last recorded attempt passed; full history in ledger. |
 | TC-276 | Load-only diagnostics preserve isolation and sensitive data       | Last recorded attempt passed; full history in ledger. |
 | TC-278 | Composed SQL bid entry point preserves outcomes and rate counters | Last recorded attempt passed; full history in ledger. |
@@ -80,5 +80,3 @@ Published scored run [42319897777](https://github.com/firatkill/bidlock/actions/
 Original M6 acceptance cases TC-272–275 are now verified and logged, with detailed T-44 cases TC-284–290. Test titles carry both sets of IDs. No designed case is omitted.
 
 The external checker also passes all non-history checks on a temporary uniquely keyed exploratory-entry view. That view has no Git history; the independent exact-prefix comparison above supplies the append-only verification. The real ledger and installed checker are unchanged.
-
-D-95 reviewer correction: benchmark provenance now uses the exact owner-approved sentence without a weekly claim. Manual workflow_dispatch only is asserted; the existing Monday load trigger and TRD mirror were removed, with keepalive unchanged. Local238-unit suite,13 focused unit tests and six How it works E2E tests pass, along with lint/typecheck/guards/build. Historical ledger attempts describe their original runs and are superseded by D-95 for trigger expectations.

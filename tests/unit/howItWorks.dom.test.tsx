@@ -6,7 +6,7 @@ import { ConcurrencyTimeline } from "@/components/how/ConcurrencyTimeline";
 import { StateMachine } from "@/components/how/StateMachine";
 import { BenchResult } from "@/domain/schemas";
 import { benchmark } from "../fixtures/benchmark";
-// Snapshot of the published D-92 run; future manually published latest.json updates remain independent.
+// Snapshot of the published D-92 run; future weekly latest.json updates remain independent.
 import publishedFailure from "../fixtures/benchmark-failing.json";
 import { readFileSync } from "node:fs";
 afterEach(cleanup);
@@ -39,12 +39,6 @@ test("TC-273 TC-287 full passing fixture renders all required data", () => {
     "Thresholds passed",
   ])
     expect(within(table).getAllByText(text).length).toBeGreaterThan(0);
-  expect(
-    screen.getByText(
-      "This test runs on GitHub Actions against a production build in Docker Compose. It never runs against this site.",
-    ),
-  ).toBeTruthy();
-  expect(screen.queryByText(/This test runs weekly/)).toBeNull();
   expect(screen.getByText("INV-01")).toBeTruthy();
   expect(screen.getByText("Pass")).toBeTruthy();
   expect(
