@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit",
     "test:unit": "vitest run",
     "check:guards": "tsx scripts/check-guards.ts",
-    "diagram": "mmdc -i src/components/how/state-machine.mmd -o src/components/how/state-machine.svg -b transparent",
+    "diagram": "mmdc -i src/components/how/state-machine.mmd -o src/components/how/state-machine.svg -b transparent && node scripts/diagram/tokens.mjs",
     "db:up": "docker compose -f docker/compose.yml up -d db --wait",
     "db:down": "docker compose -f docker/compose.yml down",
     "db:psql": "docker compose -f docker/compose.yml exec db psql -U postgres bidlock",

@@ -1,3 +1,4 @@
+import { benchmarkNumber } from "@/domain/numbers";
 import { fillCopy, lobbyCopy as copy } from "@/domain/copy";
 import type { BenchResult } from "@/domain/schemas";
 export function LobbyIntro() {
@@ -8,9 +9,6 @@ export function LobbyIntro() {
     </header>
   );
 }
-const benchmarkNumber = new Intl.NumberFormat("en-US", {
-  maximumFractionDigits: 2,
-});
 export function BenchmarkHeadline({ result }: { result: BenchResult }) {
   if ("empty" in result) return null;
   return (

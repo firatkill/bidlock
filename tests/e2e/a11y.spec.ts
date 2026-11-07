@@ -98,3 +98,70 @@ test("TC-171 deferred name dialog opens saves and returns keyboard focus", async
     page.getByRole("button", { name: "Edit", exact: true }),
   ).toBeFocused();
 });
+
+for (const colorScheme of ["light", "dark"] as const) {
+  test(`TC-275 TC-289 E2E-07 how-it-works axe ${colorScheme}`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ colorScheme });
+    await page.goto("/how-it-works");
+    await expect(
+      page.getByRole("heading", { name: "How it works", exact: true }),
+    ).toBeVisible();
+    const results = await new AxeBuilder({ page }).analyze();
+    expect(
+      results.violations.filter(
+        (v) => v.impact === "serious" || v.impact === "critical",
+      ),
+    ).toEqual([]);
+  });
+}
+for (const width of [360, 375]) {
+  test(`TC-275 TC-289 E2E-07 how-it-works mobile ${String(width)}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 812 });
+    await page.goto("/how-it-works#benchmark");
+    await expect(
+      page.getByRole("table", { name: "Benchmark", exact: true }),
+    ).toBeVisible();
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+    ).toBeLessThanOrEqual(width);
+  });
+}
+test("TC-272 TC-284 TC-285 How it works sections and timeline", async ({
+  page,
+}) => {
+  await page.goto("/how-it-works");
+  expect(
+    await page
+      .locator("main section")
+      .evaluateAll((nodes) => nodes.map((node) => node.id)),
+  ).toEqual([
+    "rules",
+    "state-machine",
+    "concurrency",
+    "benchmark",
+    "stats",
+    "run-it",
+  ]);
+  await expect(
+    page.getByRole("figure", { name: "Two bids, one auction row" }),
+  ).toContainText("BID_TOO_LOW");
+  await expect(
+    page.getByRole("img", { name: "Auction lifecycle" }),
+  ).toBeVisible();
+  await expect(page.locator("#rules")).toContainText("180 seconds");
+  await expect(page.locator("#rules")).toContainText("$1,000,000.00");
+});
+test("TC-275 TC-289 lobby benchmark link resolves to the table @isolated", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "See the full results" }).click();
+  await expect(page).toHaveURL(/\/how-it-works#benchmark$/);
+  await expect(
+    page.getByRole("table", { name: "Benchmark", exact: true }),
+  ).toBeVisible();
+});

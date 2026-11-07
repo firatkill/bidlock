@@ -62,15 +62,13 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-41  | Invariant verification                             | done   | `25c2751`                                         |
 | T-42  | Bench report and headline data                     | done   | `4c8e096` (PR #43)                                |
 | T-43  | Load workflow                                      | done   | 40c95ef767a3c6ca6f6ce3cdf70e3a5f1d4ce88e (PR #54) |
-| T-44  | How it works page                                  | blocked | — (benchmark failure copy needs owner approval)   |
+| T-44  | How it works page                                  | doing  | — (implementation verified; awaiting UI review)   |
 | T-45  | Supabase production setup                          | todo   | —                                                 |
 | T-46  | Vercel deploy, DNS, keepalive                      | todo   | —                                                 |
 | T-47  | Polish pass                                        | todo   | —                                                 |
 | T-48  | README, demo GIF, release                          | todo   | —                                                 |
 
 ## Open questions for the owner
-
-- T-44: PRD §9.4 specifies benchmark fields and empty-state copy but no failing-threshold copy. The task explicitly requires stopping in this case. Recommended addition to §9.4: show “Thresholds passed” when `thresholds.passed=true` and “Thresholds not met” when false. For the published D-92 result, show “The p95 latency target was not met: 269.23 ms against a 250 ms target. p99 was 329.69 ms against a 600 ms target. Unexpected errors: 0. Invariant violations: 0.” Option A (recommended): approve these labels and wording, with measured values populated from the result. Option B: provide alternative wording before implementation. This is a proposal, not approved product copy; no new D-xx assigned.
 
 - NFR-10: known, accepted gap for later revisit (D-92). Published [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) p95=269.233384 ms exceeds250 ms; p99=329.68857432 ms passes600. Single-auction serialization/pool waiting is documented by D-91. Threshold and auction lock unchanged; thresholds.passed=false. T-43 is complete by explicit owner acceptance; no further tuning or dispatches authorized.
 
@@ -82,7 +80,6 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Verification limits
 
-- T-44 started from updated main on `t-44-how-it-works`, then stopped at the benchmark-copy checkpoint before implementation or test authoring. Only this progress record changed; no acceptance tests, browser checks, load runs or diagram generation performed. Rehearse untouched. No PR opened for the blocked implementation; branch pushed for owner review.
 - M0 has a placeholder application, strict tooling, environment/logger tests, PostgreSQL/pgTAP infrastructure and migration integration tests. M1 now implements and verifies the SQL auction rules; browser flows remain future work.
 - D-43 keeps benchmark claims CI-only. The owner authorized the small T-39 local infrastructure smoke (VUS=5, DURATION=5s, AUCTION_S=8), expected to stop at the missing T-40 script; no benchmark is published.
 - Stop for an owner summary at the end of every milestone.
@@ -370,3 +367,11 @@ D-91 profiling evidence: PR #55 merged0579657 after six green CI jobs (font buil
 Owner approved publishing the diagnostics-off scored result as-is on2026-11-07. PR #54 merged as 40c95ef767a3c6ca6f6ce3cdf70e3a5f1d4ce88e. The three result files matched the original artifact byte-for-byte; FullBenchResult parsed, all16 invariant counts0, TC-264 cap20/post-close500. Published28925 bids/1496 replays/245 accepted responses (229 unique),p95=269.233384 ms,p99=329.68857432 ms,unexpected errors0,thresholds.passed=false. NFR-10 remains an accepted gap above, not a passing test.
 
 Copy check: lobby headline and copy.ts use neutral measured numbers without a latency-pass claim; README had no such claim and its stale no-measurement sentence now states the published failure honestly. No product copy changed. #45/#47/#49/#51/#53/#56 closed with comments linking the published run; their branches retained. D-91 evidence retained. No new dispatch, replica, SQL or tuning change. T-44 remains todo.
+
+## T-44 implementation and M6 review
+
+D-93 records approved benchmark failure copy and truthful p99/both/non-latency variants. D-94 records display templates/defaults and the abridged core. How it works now includes rules/ladder, committed token-styled Mermaid SVG, all lifecycle transitions, exact concurrency prose, static P5 timeline, honest result table at#benchmark and60s stats cache. No runtime dependency, SQL rule or benchmark artifact change.
+
+TC-284–TC-290 added. Lint/typecheck,238 unit tests,guards,build,pgTAP,52 concurrency/integration tests and six focused E2E tests pass; final full E2E39/39 passes.375px light/dark and1440px desktop Chromium review passes after fixing overflow, SVG clipping and stale stats. Rehearse untouched; port3000 unused. T-45 not started.
+
+[M6 report](../qa/M6-report.md) and [M6 review](../qa/M6-review.md) retain D-92’s accepted p95 gap. External QA checker still collides on historical exploratory `—` entries; independent identity-keyed comparison confirms all282 prior cases/attempt prefixes preserved. Implementation awaits open PR CI and owner browser review; do not merge automatically.

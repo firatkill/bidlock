@@ -328,3 +328,101 @@ h1 {
     padding-bottom: calc(8px + env(safe-area-inset-bottom));
   }
 }
+
+/* How it works: editorial sections, with wide technical content scrolling locally. */
+.how-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+.how-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-content: start;
+}
+.how-nav a {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+}
+.how-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  scroll-margin-top: 24px;
+  min-width: 0;
+}
+.how-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.how-table {
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+.how-table th,
+.how-table td {
+  border-bottom: 1px solid var(--rule);
+  padding: 12px;
+  vertical-align: top;
+}
+.how-table th {
+  font-weight: 500;
+}
+.how-table thead {
+  background: var(--surface);
+}
+.how-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.how-timeline {
+  display: grid;
+  grid-template-columns: minmax(70px, 1fr) repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+.how-wait {
+  grid-column: span 3;
+}
+.how-diagram {
+  min-width: 760px;
+}
+.how-diagram svg {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 1024px) {
+  .how-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 40px;
+  }
+  .how-nav {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .how-timeline {
+    grid-template-columns: 1fr;
+  }
+  .how-timeline > span {
+    display: none;
+  }
+  .how-wait {
+    grid-column: auto;
+  }
+  .how-table th,
+  .how-table td {
+    padding: 10px 8px;
+  }
+}

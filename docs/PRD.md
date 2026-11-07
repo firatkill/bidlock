@@ -581,8 +581,61 @@ Sections, in order, each with an anchor id:
    - "Closing happens in the same function: a bid that arrives after the deadline closes the auction and is rejected. A scheduled job closes auctions nobody touches."
    - A code block with the 15-line core of `place_bid` (lock, clock, idempotency lookup, validate, insert, update).
 4. `#benchmark` H2 "Benchmark". Table rendered from `bench/results/latest.json`: date, commit, runner, VUs, duration, requests, accepted bids, business rejections by code, unexpected errors, p50/p95/p99 latency, throughput (req/s), invariant checks with pass/fail per INV id, extension count reached. Sentence: "This test runs weekly on GitHub Actions against a production build in Docker Compose. It never runs against this site." Link "All runs" to `bench/results/` on GitHub. Without data: "Benchmark results will appear here after the first load-test run."
+   - Status labels: "Thresholds passed" and "Thresholds not met", selected only from `thresholds.passed`.
+   - When p95 fails: "The p95 latency target was not met: {p95} ms against a {p95Target} ms target. p99 was {p99} ms against a {p99Target} ms target. Unexpected errors: {errors}. Invariant violations: {violations}."
+   - When only p99 fails: "The p99 latency target was not met: {p99} ms against a {p99Target} ms target. p95 was {p95} ms against a {p95Target} ms target. Unexpected errors: {errors}. Invariant violations: {violations}."
+   - When both fail: "The p95 latency target was not met: {p95} ms against a {p95Target} ms target. The p99 latency target was not met: {p99} ms against a {p99Target} ms target. Unexpected errors: {errors}. Invariant violations: {violations}."
+   - When the result fails without either latency target failing: "p95 was {p95} ms against a {p95Target} ms target. p99 was {p99} ms against a {p99Target} ms target. Unexpected errors: {errors}. Invariant violations: {violations}."
+   - All numbers come from the result through the shared benchmark number formatter: `latency_ms`, `thresholds`, `outcomes.OTHER` (unexpected error count), and the sum of `invariants[].violations`. Latency thresholds use the load test's strict less-than comparison; equality fails. Display the unexpected error rate and target as well, without inferring an overall pass from individual metrics.
+
 5. `#stats` H2 "Right now". "Bids today: {n} · Active sandboxes: {n} · Public lots today: {n}" and muted "Updated {n} s ago." On error: "Live stats are unavailable right now."
 6. `#run-it` H2 "Run it yourself". Commands block: `pnpm install`, `pnpm db:up`, `pnpm test:all`, `pnpm load:local`.
+
+#### 9.4.1 Display labels and rule templates
+
+The rule bullets below interpolate the defaults in FR-02/FR-07/FR-11. The timeline uses D-68’s static example; no measured timing is implied. Transition rows reproduce §7.2. The SQL block is explicitly abridged, with omissions marked.
+
+- `title`: "How it works"
+- `navigation`: "On this page"
+- `ruleItems`: ["Bids are accepted only while the auction is live and server time is before ends_at. The current leader cannot bid again.", "Amounts are integer cents. The first bid must meet the starting price; later bids must meet the current price plus its increment.", "The maximum bid is the minimum next bid plus {steps} increments, capped at {cap}.", "Soft close: a bid in the last {window} seconds moves the close to {extension} seconds from now, up to {max} times. After the cap, bids are still accepted before the deadline but do not extend it.", "The winner has {payment} seconds to pay. Payment is simulated; no money moves. A missed payment records one strike but never blocks bidding.", "If the winner does not pay, the runner-up gets an offer at their own highest bid and a fresh {payment}-second window. Without a runner-up, the lot is unsold. If the runner-up does not pay, the lot is unsold with no strike."]
+- `priceFrom`: "Current price from (inclusive)"
+- `increment`: "Minimum increment"
+- `transitionHeaders`: ["ID", "From (status / payment_state)", "To", "Trigger", "Who/what applies it", "Side effects"]
+- `timeline`: "Two bids, one auction row"
+- `bidA`: "Bid A {amount}"
+- `bidB`: "Bid B {amount}"
+- `timelineSteps`: ["lock row", "check price", "insert bid", "commit"]
+- `wait`: "waits…"
+- `lockPrice`: "lock · price is {amount}"
+- `tooLow`: "BID_TOO_LOW"
+- `coreLabel`: "place_bid · abridged core"
+- `fields`: {"date": "Date", "commit": "Commit", "runner": "Runner", "cpus": "CPUs", "memory": "Memory (GB)", "vus": "VUs", "duration": "Duration (s)", "requests": "Requests", "accepted": "Accepted bids", "rejections": "Business rejections by code", "errors": "Unexpected errors", "errorRate": "Unexpected error rate", "errorTarget": "Unexpected error rate target", "p50": "p50 latency (ms)", "p95": "p95 latency (ms)", "p99": "p99 latency (ms)", "p95Target": "p95 target (ms)", "p99Target": "p99 target (ms)", "throughput": "Throughput (req/s)", "extensions": "Extension count reached", "maxExtensions": "Extension cap", "thresholds": "Threshold outcome"}
+- `invariantHeaders`: ["Invariant", "Check", "Violations", "Result"]
+- `pass`: "Pass"
+- `fail`: "Fail"
+- `passed`: "Thresholds passed"
+- `failed`: "Thresholds not met"
+- `commands`: "pnpm install\npnpm db:up\npnpm test:all\npnpm load:local"
+
+Abridged core:
+
+```sql
+select * into v_auction from bidlock.auctions
+ where id = p_auction_id for update;
+v_now := bidlock.bidlock_now();
+select * into v_prev from bidlock.bid_requests r
+ where r.bidder_id = p_bidder_id and r.idempotency_key = p_idempotency_key;
+-- Existing key: return stored result, or IDEMPOTENCY_MISMATCH.
+v_auction := bidlock.advance_auction_locked(v_auction, v_now);
+v_min := bidlock.min_next_bid(v_auction.starting_price, v_auction.current_price);
+v_max := bidlock.max_bid(v_auction.starting_price, v_auction.current_price);
+-- Validate status, deadline, leader, minimum and maximum; store rejections.
+-- Apply soft close and store the accepted request/result in this transaction.
+insert into bidlock.bids (...) values (...);
+update bidlock.auctions set current_price = p_amount,
+ leader_bidder_id = p_bidder_id, version = version + 1, ...
+ where id = p_auction_id and version = v_auction.version;
+```
 
 ### 9.5 Visual direction
 
@@ -774,3 +827,7 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-91 | Authorize one bounded load-only profiling dispatch, then a second app replica and one scored dispatch only if app CPU is near one core or ELU≥0.85 while PostgreSQL has headroom. | owner approved in chat 2026-11-07 | At most two new load.yml dispatches. Preserve thresholds,500 VUs,60 s,runner,scenario shape,SQL,locks,invariants,verify.ts,D-83/D-86–D-90. No new runtime dependencies, load-balancer image or production changes. Profile once/second behind default-off flag; stop if pool/Postgres bottleneck instead. |
 
 | D-92 | Publish diagnostics-off scored run42319897777 unchanged through PR #54 and close T-43. NFR-10 p95 is not met on the CI runner (269.23 ms against250); p99 and NFR-11/NFR-12 are met. | owner approved in chat 2026-11-07 | D-91 profiling identifies the single-auction row lock serializing bids and requests queuing for pool connections while they wait. The lock guarantees exactly one winner and stays. Thresholds remain unchanged; publish honestly with thresholds.passed=false. Keep NFR-10 under PROGRESS Open questions as a known accepted gap for later revisit. No further dispatches or tuning; supersedes prior publication gates for this result only. |
+
+| D-93 | Approve T-44 benchmark status labels and parameterized failing-result sentence in §9.4. | owner approved Option A in chat 2026-11-07 | p99-only swaps the metric clauses; both-failed repeats the failed-target clause; non-latency failure uses neutral measured clauses. These conservative variants use the same template words, preserve thresholds.passed, and never claim an unmet target passed. All values come from the result; reuse the existing en-US benchmark formatter. |
+
+| D-94 | T-44 display-only details: §9.4.1 records labels, FR-derived rule templates, D-68 timeline labels and the explicitly abridged 15-line SQL core before implementation. | implementation detail 2026-11-07 | No rule or scope change. Display constants mirror documented defaults; transition text comes from §7.2. Stats cache is server-side for60 s with acquisition timestamp; failures render the specified unavailable state. |
