@@ -160,3 +160,60 @@ Owner approved both changes on 2026-11-07. D-87 run42316538127 p95=641.861405/p9
 D-89 sets only the load Compose app to TRUST_PROXY=vercel and gives each k6 VU a stable distinct private address, including guest creation. The result records per-vu-forwarded. D-90 replaces the route call with prepare_bid (existing get_me/check_bid_rate), committed before separate unchanged place_bid. Production uses this transaction boundary too. No rate-rule logic, auction lock, clock, limits, thresholds or pacing changes. Migration0014 is additive;0013 is unchanged.
 
 New TC-281 covers all500 identities and load-only settings; TC-282 covers every prior SQL outcome/rate counter plus replay, grants, ordered route calls and independent rate-lock availability. Diagnostic sampler labels prepare_bid separately. Pool20, ramp10, extension10 remain. At most two new dispatches: measurement never published; scored only after comparison to the pool20 three-call baseline.
+
+## D-89/D-90 measurement: stop before scored dispatch
+
+[Fix PR #52](https://github.com/firatkill/bidlock/pull/52) merged as 8b957bce45d85cca6bfdd04b774657092f04b87d after all six [CI jobs](https://github.com/firatkill/bidlock/actions/runs/42318978463) passed. Initial CI rejected formatting in appended QA evidence; corrected in d7465cf before the green run. Local validation: lint/typecheck/225 unit/guards,511 pgTAP,52 integration (INT-01/INT-02), build and33 E2E passed.
+
+[Measurement run42319246136](https://github.com/firatkill/bidlock/actions/runs/42319246136) used default500 VUs,60 s, ramp10, pool20, extension10 and per-vu-forwarded, with diagnostics on. The run failed p95. Artifact bench-42319246136 uploaded (1,340,238 bytes), full schema parsed, all16 invariant counts zero. [Bot PR #53](https://github.com/firatkill/bidlock/pull/53) head1544a76f50d28e186a3ee2d5d36a58f38a182ff4 changes only bench/results/2026-11-07.json, latest.json and bench/SUMMARY.md; remains unmerged.
+
+| Measurement                       | Pool20 three-call baseline42313175983 | D-87 single call42316538127 | D-90 two calls, per-VU IP42319246136 |
+| --------------------------------- | ------------------------------------: | --------------------------: | -----------------------------------: |
+| Bids                              |                                33,329 |                      22,755 |                               27,674 |
+| Replays                           |                                 1,685 |                       1,167 |                                1,376 |
+| Accepted HTTP / unique bids       |                              263 /249 |                    150 /145 |                             215 /203 |
+| p95 ms                            |                           241.3247772 |                  641.861405 |                          336.6236303 |
+| p99 ms                            |                          726.37423376 |                 753.5082123 |                          415.7450225 |
+| Unexpected error rate             |                                     0 |                           0 |                                    0 |
+| Invariant violations              |                                     0 |                           0 |                                    0 |
+| Extensions / post-close responses |                               20 /500 |                     20 /500 |                              20 /500 |
+| thresholds.passed                 |                                 false |                       false |                                false |
+
+p95 increased39.49% versus the required three-call baseline; p99 decreased42.77%. Baseline used constant500 VUs; current run uses the owner-approved10 s ramp. These are real separate CI runs, not a controlled causal comparison. The explicit owner gate nevertheless requires stopping on this p95 regression. No scored dispatch was made, and none of the five result PRs #45/#47/#49/#51/#53 was merged or edited. No benchmark published; T-43 remains blocked.
+
+### Where the time went
+
+All27,674 request records were captured. Handler mean171.109 ms splits into prepare_bid79.317 ms, place_bid91.524 ms and other0.268 ms. Phase p95 values are166.682 and184.455 ms, respectively (not additive percentiles). PostgreSQL samples:169 snapshots,936 blocked place_bid observations, zero blocked prepare_bid observations;895 tuple-lock and72 transaction-ID wait observations in place_bid. No rate_hit/check_bid_rate lock-log contexts remain;9857 place_bid contexts do. The artificial rate-counter hotspot is removed.
+
+The >10 ms PostgreSQL log captures15,211 place_bid statements, conditional mean21.409 ms/p9535.988/max112.872, versus only9 prepare_bid statements over10 ms (mean13.834/max18.779). These are threshold-selected, unpaired server durations: they cannot be subtracted from full request averages to claim an exact pool wait. The much larger app phase durations include pool waiting, event-loop scheduling, round trips and parsing.
+
+Pending phase counts (not a native pool queue): prepare maximum104/p9597.25; place maximum134/p95114.40. Event-loop utilization p95=.9886, max=.9915; interval maximum delay p9537.19 ms, absolute max61.80 ms. Mean container CPU: app84.61%, database91.88%, k632.04%; no nonzero throttling among172 sampled counters. CPU percentages use Docker's one-core=100% convention and are not total-runner utilization. Diagnostic lock logging itself produces substantial output; scored-mode performance cannot be inferred without authorization to cross the failed gate. Parameter-detail log lines0; sampler stderr empty except one PostgreSQL newline.
+
+### Owner checkpoint
+
+Options: (A) authorize a bounded profile separating Node CPU/pool scheduling from diagnostic lock-log overhead before choosing another fix (recommended); (B) explicitly waive this measurement p95 gate and authorize the remaining diagnostics-off scored dispatch, retaining every fixed threshold/runner/load/SQL constraint; (C) pause T-43. No claim that either option will pass. The existing measurements establish auction-row contention plus client-side waiting/scheduling, but do not identify a justified next code change. The remaining scored dispatch is unused and must not run without the owner's new decision.
+
+## Final scored dispatch under reviewer continuation
+
+The reviewer removed the added baseline-regression gate and authorized the second and final D-89/D-90 dispatch, recorded in PROGRESS; no new owner decision ID, code or setting change. [Scored run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) ran main8b957bce45d85cca6bfdd04b774657092f04b87d with default inputs and diagnostics off. It failed only p95:269.233384 ms exceeds250 by19.233384 ms (7.69%). p99=329.68857432 ms passes600. Unexpected error and replay-mismatch thresholds pass.
+
+| Metric                      | Three-call pool20 diagnostic | Two-call per-VU diagnostic | Two-call per-VU scored |
+| --------------------------- | ---------------------------: | -------------------------: | ---------------------: |
+| Run                         |                  42313175983 |                42319246136 |            42319897777 |
+| Bids                        |                       33,329 |                     27,674 |                 28,925 |
+| Replays                     |                        1,685 |                      1,376 |                  1,496 |
+| Accepted HTTP / unique bids |                     263 /249 |                   215 /203 |               245 /229 |
+| p95 ms                      |                  241.3247772 |                336.6236303 |             269.233384 |
+| p99 ms                      |                 726.37423376 |                415.7450225 |           329.68857432 |
+| Unexpected error rate       |                            0 |                          0 |                      0 |
+| Invariant violations        |                            0 |                          0 |                      0 |
+| Extensions / AUCTION_CLOSED |                      20 /500 |                    20 /500 |                20 /500 |
+| thresholds.passed           |                        false |                      false |                  false |
+
+Artifact bench-42319897777 uploaded (37,108 bytes), parsed with FullBenchResult. All16 invariant checks show0. Config confirms500 VUs/60 s/ramp10/pool20/extension10/per-vu-forwarded. Zero diagnostic records and no sampler files (out contains only k6-summary.json, verify.json, compose.log). [Bot PR #54](https://github.com/firatkill/bidlock/pull/54), headc13ef110285dc7379daf0752996c496586475ecf, changes only bench/results/2026-11-07.json, bench/results/latest.json and bench/SUMMARY.md. It remains unmerged. No numbers edited; no result published. Both authorized dispatches used. Prior failed/diagnostic PRs #45/#47/#49/#51/#53 remain open; no success exists to supersede them.
+
+The scored run used an AMD EPYC7763 runner while the immediately preceding diagnostic used an Intel Xeon8573C, both ubuntu-latest with4 CPUs. Lower scored percentiles are consistent with reduced diagnostic overhead, but this comparison cannot isolate that overhead from runner variability. Scored mode deliberately has no per-phase/CPU samples; the last measured breakdown remains handler171.109 ms, prepare79.317 ms, place91.524 ms, other0.268 ms, with place_bid blockers and near-saturated event-loop intervals.
+
+### Proposed bounded Node/pool profile — not authorized or run
+
+Recommend one separately authorized60 s/500-VU diagnostic on the same unchanged load shape: capture a Node V8 CPU profile (no heap/request/parameter data), aggregate event-loop utilization and fixed-label operation durations, and instrument numeric timestamps at query enqueue, connection dispatch and completion to distinguish pool waiting from execution/return scheduling. First verify a supported postgres.js hook can expose dispatch timing; otherwise explicitly retain it as an estimate, never claim a native queue measurement. Use low-frequency pg_stat_activity wait samples and container CPU/throttle counters; keep verbose per-request and low-threshold SQL/lock logging off to reduce observer cost. Never emit query text, parameters, cookies or raw IPs. Preserve every fixed threshold, constraint and auction lock. Choose any subsequent fix only from this profile. Alternative: pause T-43. No extra dispatch is implied by this proposal.

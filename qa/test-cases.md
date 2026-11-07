@@ -3396,3 +3396,18 @@ The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies modu
 - Automatable: yes
 - Steps: Compare prepare_bid then place_bid against legacy sequencing for every error code, accepted/rejected replay, bot visibility and all rate counters. Verify definer privileges. Hold an auction lock while preparing/bidding and acquire its rate-counter row NOWAIT. Count and order route SQL calls in test and production. Exercise shared-IP concurrent bids/replays and INT-01/INT-02.
 - Expected result: Identical outcomes/counters; ready requests await preparation then make a separate place_bid call; rate denial stops after preparation; invalid signatures make no call. Rate lock released before auction wait; no duplicate bid; all constraints and locks preserved.
+
+T-43 CI evidence for TC-263/TC-264 (D-89/D-90): [measurement42319246136](https://github.com/firatkill/bidlock/actions/runs/42319246136) p95=336.6236303 ms fails250 ms and regresses versus241.3247772 baseline; p99=415.7450225 ms passes600 ms. TC-264 reaches20/20 extensions with500 AUCTION_CLOSED outcomes; all16 invariant checks zero. TC-263 remains open; no scored dispatch or publication.
+
+Final scored evidence: [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777), diagnostics off. TC-263 fails p95=269.233384 ms; p99=329.68857432 ms and error0 pass. TC-264 passes20/20 extensions and500 AUCTION_CLOSED; all16 invariant counts0. TC-280 diagnostic isolation verified, but publication gate remains open. Both dispatches consumed; bot #54 unmerged.
+
+## TC-283: Bounded load-only Node and pool profiling
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: D-91; NFR-10; NFR-40
+- TRD test reference: §15.6; §16.2; LOAD-01
+- Priority: High
+- Automatable: yes
+- Steps: Verify default-off and test-only preload; exercise lazy query enqueue, dispatch and completion; validate numeric-only output and180 s bound. Check real postgres.js3.4.9 with a reserved one-connection pool and read-only query. Inspect profile artifact and compare CPU/ELU, enqueue/service times and PostgreSQL activity.
+- Expected result: No production source change; one aggregate/second; no SQL/request values; query semantics preserved. Profiling overlay omits verbose diagnostics. Add a replica only with Node bottleneck evidence and PostgreSQL headroom.
