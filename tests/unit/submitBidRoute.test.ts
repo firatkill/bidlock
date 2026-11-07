@@ -37,7 +37,7 @@ function request(token?: string) {
   });
 }
 test.each(["test", "production"])(
-  "TC-279: %s bid makes exactly one SQL call and maps rate details",
+  "TC-282: %s rate-limited bid makes only the preparation call and maps rate details",
   async (mode) => {
     vi.stubEnv("APP_ENV", mode);
     if (mode === "production") vi.stubEnv("TEST_API_SECRET", undefined);
@@ -57,11 +57,11 @@ test.each(["test", "production"])(
     expect(r.status).toBe(429);
     expect(r.headers.get("retry-after")).toBe("2");
     expect(query).toHaveBeenCalledTimes(1);
-    expect(String(query.mock.calls[0]?.[0])).toContain("bidlock.submit_bid");
-    expect(query.mock.calls[0]?.slice(1, 4)).toEqual([owner, null, auction]);
+    expect(String(query.mock.calls[0]?.[0])).toContain("bidlock.prepare_bid");
+    expect(query.mock.calls[0]?.slice(1, 3)).toEqual([owner, null]);
   },
 );
-test("TC-279: signed bot keeps owner identity for SQL existence validation", async () => {
+test("TC-282: signed bot keeps owner identity for SQL existence validation", async () => {
   const token = signBotToken(
     { sub: bot, aid: auction, sid: crypto.randomUUID(), own: owner },
     new Date(Date.now() + 600000).toISOString(),
@@ -80,12 +80,42 @@ test("TC-279: signed bot keeps owner identity for SQL existence validation", asy
   });
   expect(ErrorBody.parse(await r.json()).error.code).toBe("BOT_TOKEN_INVALID");
   expect(query).toHaveBeenCalledTimes(1);
-  expect(query.mock.calls[0]?.slice(1, 4)).toEqual([owner, bot, auction]);
+  expect(query.mock.calls[0]?.slice(1, 3)).toEqual([owner, bot]);
 });
-test("TC-279: invalid bot signature makes no database call", async () => {
+test("TC-282: invalid bot signature makes no database call", async () => {
   const r = await POST(request("invalid"), {
     params: Promise.resolve({ id: auction }),
   });
   expect(ErrorBody.parse(await r.json()).error.code).toBe("BOT_TOKEN_INVALID");
   expect(query).not.toHaveBeenCalled();
 });
+
+test.each(["test", "production"])(
+  "TC-282: eligible %s bid awaits preparation before a separate place statement",
+  async (mode) => {
+    vi.stubEnv("APP_ENV", mode);
+    if (mode === "production") vi.stubEnv("TEST_API_SECRET", undefined);
+    resetEnvCacheForTests();
+    let release: ((value: unknown) => void) | undefined;
+    query.mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          release = resolve;
+        }),
+    );
+    // A transport error on the second statement still proves statement ordering.
+    query.mockRejectedValueOnce(new Error("fixture transport failure"));
+    const pending = POST(request(), {
+      params: Promise.resolve({ id: auction }),
+    });
+    await vi.waitFor(() => {
+      expect(query).toHaveBeenCalledTimes(1);
+    });
+    expect(String(query.mock.calls[0]?.[0])).toContain("bidlock.prepare_bid");
+    release?.([{ result: { kind: "ready", bidder_id: owner } }]);
+    await pending;
+    expect(query).toHaveBeenCalledTimes(2);
+    expect(String(query.mock.calls[1]?.[0])).toContain("bidlock.place_bid");
+    expect(query.mock.calls[1]?.slice(1, 3)).toEqual([auction, owner]);
+  },
+);

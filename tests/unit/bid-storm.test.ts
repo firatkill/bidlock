@@ -32,7 +32,7 @@ interface Workload {
   };
   handleSummary: (data: unknown) => Record<string, string>;
 }
-function harness(env: Record<string, string> = {}) {
+function harness(env: Record<string, string> = {}, vu = 1) {
   const samples: Record<string, unknown[]> = {};
   class Metric {
     constructor(private name: string) {
@@ -44,7 +44,12 @@ function harness(env: Record<string, string> = {}) {
   }
   const http = {
     CookieJar: Object,
-    get: vi.fn<(url: string, options: { jar: object }) => unknown>(),
+    get: vi.fn<
+      (
+        url: string,
+        options: { jar: object; headers: Record<string, string> },
+      ) => unknown
+    >(),
     post: vi.fn<(url: string, body: string, options: unknown) => unknown>(),
   };
   const sleep = vi.fn();
@@ -60,7 +65,7 @@ function harness(env: Record<string, string> = {}) {
       uuidv4: () => "test-idempotency-key",
       textSummary: () => "summary",
       __ENV: env,
-      __VU: 1,
+      __VU: vu,
       Math: { random, floor: Math.floor, min: Math.min },
     },
   ) as Workload;
@@ -140,6 +145,7 @@ test("TC-261: fresh cookie jar per bidder before creating auction; summary retai
       headers: {
         "content-type": "application/json",
         "x-test-secret": "fixture-secret",
+        "x-forwarded-for": "10.0.0.1",
       },
     },
   );
@@ -199,4 +205,38 @@ test("TC-264: closed VU idles without another bid", () => {
   h.iteration(data);
   expect(h.http.post).toHaveBeenCalledTimes(1);
   expect(h.sleep).toHaveBeenLastCalledWith(1);
+});
+
+test("TC-281: all 500 VUs have stable distinct private IPs matching guest setup", () => {
+  const setup = harness();
+  setup.http.get.mockReturnValue({
+    cookies: { bl_sid: [{ value: "fixture" }] },
+  });
+  setup.http.post.mockReturnValue({ status: 201, json: () => "auction" });
+  const sessionData = setup.setup();
+  const addresses = new Set<string>();
+  for (let vu = 1; vu <= 500; vu++) {
+    const h = harness({}, vu);
+    h.http.post.mockReturnValue(response(409, "BID_TOO_LOW"));
+    h.iteration(sessionData);
+    h.iteration(sessionData);
+    const ip =
+      setup.http.get.mock.calls[vu - 1]?.[1].headers["x-forwarded-for"];
+    expect(ip).toMatch(/^10\.\d+\.\d+\.\d+$/);
+    if (!ip) throw new Error("Missing client IP");
+    addresses.add(ip);
+    for (const call of h.http.post.mock.calls)
+      expect(call[2]).toMatchObject({ headers: { "x-forwarded-for": ip } });
+  }
+  expect(addresses.size).toBe(500);
+});
+
+test("TC-281: forwarding trust is confined to the load Compose app", () => {
+  const compose = readFileSync("docker/compose.yml", "utf8");
+  expect(compose).toContain("TRUST_PROXY: vercel");
+  expect(readFileSync(".env.example", "utf8")).toContain("TRUST_PROXY=none");
+  expect(readFileSync(".github/workflows/ci.yml", "utf8")).not.toContain(
+    "TRUST_PROXY: vercel",
+  );
+  expect(readFileSync("db/env/load.sql", "utf8")).toContain("1000000");
 });

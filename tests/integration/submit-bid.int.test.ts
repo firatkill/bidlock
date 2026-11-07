@@ -1,7 +1,13 @@
 import { afterAll, expect, test } from "vitest";
 import { z } from "zod";
-import { SubmitBidResult } from "@/domain/schemas";
-import { adminSql, createSql, makeAuction, makeBidders } from "../fixtures/db";
+import { PrepareBidResult } from "@/domain/schemas";
+import {
+  adminSql,
+  createSql,
+  makeAuction,
+  makeBidders,
+  BidResultRow,
+} from "../fixtures/db";
 const admin = adminSql();
 const app = createSql(
   process.env.DATABASE_URL ??
@@ -11,15 +17,22 @@ const app = createSql(
 afterAll(async () => {
   await Promise.all([app.end(), admin.end()]);
 });
-const rows = z.array(z.object({ result: SubmitBidResult }).strict()).length(1);
+const rows = z.array(z.object({ result: PrepareBidResult }).strict()).length(1);
 async function submit(a: string, b: string, key: string, ip: string) {
   const r = rows.parse(
-    await app`select bidlock.submit_bid(${b},null,${a},1000,${key},${ip}) as result`,
+    await app`select bidlock.prepare_bid(${b},null,${ip}) as result`,
   )[0];
-  if (!r || r.result.kind !== "bid") throw new Error("Expected bid result");
-  return r.result.result;
+  if (!r || r.result.kind !== "ready") throw new Error("Expected bid result");
+  const result = z
+    .array(BidResultRow)
+    .length(1)
+    .parse(
+      await app`select * from bidlock.place_bid(${a},${r.result.bidder_id},1000,${key})`,
+    )[0];
+  if (!result) throw new Error("Missing bid result");
+  return result;
 }
-test("TC-278: composed bid transactions serialize a shared-IP auction", async () => {
+test("TC-282: two-call bid transactions serialize a shared-IP auction", async () => {
   const bidders = await makeBidders(20);
   const auction = await makeAuction({ duration_s: 600, snipe_window_s: 0 });
   const ip = crypto.randomUUID();
@@ -31,7 +44,7 @@ test("TC-278: composed bid transactions serialize a shared-IP auction", async ()
     19,
   );
 });
-test("TC-278: composed concurrent replay writes one bid and retains all rate hits", async () => {
+test("TC-282: two-call concurrent replay writes one bid and retains all rate hits", async () => {
   const [bidder] = await makeBidders(1);
   if (!bidder) throw new Error("Missing bidder");
   const auction = await makeAuction({ duration_s: 600, snipe_window_s: 0 });
@@ -49,4 +62,31 @@ test("TC-278: composed concurrent replay writes one bid and retains all rate hit
       await admin`select sum(hits)::integer hits from bidlock.rate_counters where bucket=${"bid_bidder_60s:" + bidder}`,
     );
   expect(counts[0]?.hits).toBe(3);
+});
+
+test("TC-282: rate counter is unlocked while the bid waits for its auction", async () => {
+  const [bidder] = await makeBidders(1);
+  if (!bidder) throw new Error("Missing bidder");
+  const auction = await makeAuction({ duration_s: 600, snipe_window_s: 0 });
+  const ip = crypto.randomUUID();
+  let bid: Promise<unknown> | undefined;
+  try {
+    await admin.begin(async (tx) => {
+      await tx`select id from bidlock.auctions where id=${auction} for update`;
+      const prepared = rows.parse(
+        await app`select bidlock.prepare_bid(${bidder},null,${ip}) as result`,
+      )[0];
+      expect(prepared?.result.kind).toBe("ready");
+      bid =
+        app`select * from bidlock.place_bid(${auction},${bidder},1000,${crypto.randomUUID()})`.then(
+          (r) => r,
+        );
+      // NOWAIT fails immediately if preparation retained the rate-counter lock.
+      const counter =
+        await tx`select hits from bidlock.rate_counters where bucket=${"bid_ip_60s:" + ip} for update nowait`;
+      expect(counter).toHaveLength(1);
+    });
+  } finally {
+    await bid;
+  }
 });

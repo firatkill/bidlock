@@ -9,7 +9,7 @@ import {
 import { AppError } from "@/domain/errors";
 import { json, route } from "@/server/http";
 import { listBids } from "@/server/repo/auctions";
-import { submitBid } from "@/server/repo/bids";
+import { prepareBid, placeBid } from "@/server/repo/bids";
 import { getClientIp, ipHash } from "@/server/ip";
 import { measureLoadPhase } from "@/server/loadDiagnostics";
 export const runtime = "nodejs";
@@ -57,13 +57,10 @@ export const POST = route(
     ctx.fields.auction_id = id;
     const sessionBidderId = ctx.sessionBidderId;
     const submitted = await ctx.db(() =>
-      measureLoadPhase("submit_bid", () =>
-        submitBid(
+      measureLoadPhase("prepare_bid", () =>
+        prepareBid(
           sessionBidderId,
           ctx.isBot ? bidder : null,
-          id,
-          body.amount,
-          body.idempotency_key,
           ipHash(getClientIp(ctx.req)),
         ),
       ),
@@ -75,7 +72,12 @@ export const POST = route(
           ? { retry_after_ms: submitted.retry_after_ms }
           : undefined,
       );
-    const result = submitted.result;
+    // Each awaited statement autocommits: no rate lock survives into bidding.
+    const result = await ctx.db(() =>
+      measureLoadPhase("place_bid", () =>
+        placeBid(id, submitted.bidder_id, body.amount, body.idempotency_key),
+      ),
+    );
     ctx.fields.replayed = result.replayed;
     if (result.outcome === "rejected")
       throw new AppError(

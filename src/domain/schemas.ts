@@ -282,6 +282,16 @@ export const SubmitBidResult = z.discriminatedUnion("kind", [
     .strict(),
   z.object({ kind: z.literal("bid"), result: BidResultRow }).strict(),
 ]);
+export const PrepareBidResult = z.discriminatedUnion("kind", [
+  z
+    .object({
+      kind: z.literal("error"),
+      error_code: z.enum(["NO_SESSION", "BOT_TOKEN_INVALID", "RATE_LIMITED"]),
+      retry_after_ms: z.number().int().positive().nullable(),
+    })
+    .strict(),
+  z.object({ kind: z.literal("ready"), bidder_id: Id }).strict(),
+]);
 export const PayResultRow = z
   .object({
     outcome: Outcome,
@@ -398,6 +408,7 @@ export const FullBenchResult = z
         vus: Count,
         duration_s: Count,
         ramp_up_s: Count,
+        ip_model: z.literal("per-vu-forwarded"),
         db_pool_max: Count,
         postgres: z.string(),
         auction: z

@@ -3353,7 +3353,7 @@ The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies modu
 - Steps: Compare legacy get_me/check_bid_rate/place_bid sequencing against submit_bid from identical transaction state for every entry-point/SQL bid error code, accepted and replay results; compare all rate counters. Check bot/visibility cases and privileges. Exercise shared-IP and identical-key concurrency.
 - Expected result: Equivalent results except generated bid UUID, identical counters, no duplicate replay bids, explicit restricted grant, fixed definer search_path; existing invariants and INT-01/INT-02 remain green.
 
-## TC-279: Bid HTTP path makes one database call
+## TC-279: Historical single-call bid HTTP path (superseded by TC-282 / D-90)
 
 - Milestone: M6 — Load test + CI + bench page
 - Task: T-43
@@ -3374,3 +3374,25 @@ The owner-authorized T-40 local run uses 50 VUs / 15s / 8s (D-76), verifies modu
 - Automatable: yes
 - Steps: Assert ramping-vus starts0, reaches500 after10 s, holds50 s; check pacing/replay/thresholds unchanged and ramp_up_s recorded by report. Validate workflow diagnostics defaultfalse and explicit true; dispatch authorized measurement then scored run only if measurements support proceeding.
 - Expected result: Pool20 restored. Measurement artifact includes diagnostics and remains unpublished; scored artifact has no diagnostic records/samplers. Both total60 s; scored publication additionally requires thresholds true, all invariants0, cap20 and post-close responses.
+
+## TC-281: Stable distinct synthetic load client addresses
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: D-89; NFR-10; NFR-40
+- TRD test reference: §15.6.2; §17.2; LOAD-01
+- Priority: High
+- Automatable: yes
+- Steps: Execute the workload adapter for all 500 VUs. Compare guest setup and repeated bid headers; inspect Compose and report metadata.
+- Expected result: 500 distinct stable private addresses, each guest matching its VU; only load app trusts forwarding. Full config records per-vu-forwarded. No raw address logging/storage, raised load limits retained, guard rule5 passes.
+
+## TC-282: Rate transaction commits before auction locking
+
+- Milestone: M6 — Load test + CI + bench page
+- Task: T-43
+- PRD acceptance reference: D-90; FR-01–FR-09; FR-90; FR-91
+- TRD test reference: §6.8; §10.6; DB-04/DB-05/DB-09; INT-01/INT-02
+- Priority: Critical
+- Automatable: yes
+- Steps: Compare prepare_bid then place_bid against legacy sequencing for every error code, accepted/rejected replay, bot visibility and all rate counters. Verify definer privileges. Hold an auction lock while preparing/bidding and acquire its rate-counter row NOWAIT. Count and order route SQL calls in test and production. Exercise shared-IP concurrent bids/replays and INT-01/INT-02.
+- Expected result: Identical outcomes/counters; ready requests await preparation then make a separate place_bid call; rate denial stops after preparation; invalid signatures make no call. Rate lock released before auction wait; no duplicate bid; all constraints and locks preserved.

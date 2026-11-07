@@ -152,3 +152,12 @@ The single-call change removed round trips but lengthened the rate-counter criti
 Artifact `bench-42316538127` uploaded (695,758 bytes); FullBenchResult validates vus500,duration60,ramp_up_s10,pool20,extension10,all16 invariant checks0. Logs have zero parameter-detail lines. Bot [PR #51](https://github.com/firatkill/bidlock/pull/51) changes only bench/results/2026-11-07.json, bench/results/latest.json and bench/SUMMARY.md and remains unmerged. #45/#47/#49 remain unchanged and open. No benchmark is published and no scored numbers exist.
 
 **Owner options:** authorize revisiting the single-transaction composition so rate-counter locks can be released before auction work (recommended for design investigation), or retain the composed transaction and authorize deeper lock/driver profiling before another change. Either path needs an explicit decision before more work/runs. Main currently retains the approved pool20, single-call path and10 s ramp. The unused scored dispatch has not been spent; the measurement stop condition prevents using it automatically. T-43 blocked; T-44 untouched.
+
+
+## D-89/D-90: remove artificial IP contention and release rate locks
+
+Owner approved both changes on 2026-11-07. D-87 run42316538127 p95=641.861405/p99=753.5082123 ms regressed against pool20 three-call baseline241.3247772/726.37423376 ms. Handler mean429.332 ms versus submit_bid429.050 ms (other0.282 ms). All54 logged lock contexts traverse rate_hit/check_bid_rate/submit_bid. The load app's TRUST_PROXY=none maps every request to local, serializing the shared IP counter; the combined transaction holds it through auction processing.
+
+D-89 sets only the load Compose app to TRUST_PROXY=vercel and gives each k6 VU a stable distinct private address, including guest creation. The result records per-vu-forwarded. D-90 replaces the route call with prepare_bid (existing get_me/check_bid_rate), committed before separate unchanged place_bid. Production uses this transaction boundary too. No rate-rule logic, auction lock, clock, limits, thresholds or pacing changes. Migration0014 is additive;0013 is unchanged.
+
+New TC-281 covers all500 identities and load-only settings; TC-282 covers every prior SQL outcome/rate counter plus replay, grants, ordered route calls and independent rate-lock availability. Diagnostic sampler labels prepare_bid separately. Pool20, ramp10, extension10 remain. At most two new dispatches: measurement never published; scored only after comparison to the pool20 three-call baseline.

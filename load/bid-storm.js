@@ -66,7 +66,10 @@ export function setup() {
   // Bidders first: creating 500 guests takes seconds, and the auction clock must not run meanwhile.
   const cookies = [];
   for (let i = 0; i < VUS; i++) {
-    const r = http.get(`${BASE}/api/me`, { jar: new http.CookieJar() }); // fresh jar => new bidder each time
+    const r = http.get(`${BASE}/api/me`, {
+      jar: new http.CookieJar(),
+      headers: { "x-forwarded-for": clientIp(i + 1) },
+    }); // fresh jar => new bidder each time
     const c = r.cookies.bl_sid && r.cookies.bl_sid[0];
     if (!c) throw new Error(`no cookie for bidder ${i}: ${r.status}`);
     cookies.push(`bl_sid=${c.value}`);
@@ -78,7 +81,11 @@ export function setup() {
       starting_price: 1000,
     }),
     {
-      headers: { "content-type": "application/json", "x-test-secret": SECRET },
+      headers: {
+        "content-type": "application/json",
+        "x-test-secret": SECRET,
+        "x-forwarded-for": clientIp(1),
+      },
     },
   );
   if (a.status !== 201)
@@ -98,6 +105,7 @@ export default function (data) {
     "content-type": "application/json",
     origin: ORIGIN,
     cookie: data.cookies[__VU - 1],
+    "x-forwarded-for": clientIp(__VU),
   };
   const replay = state.last && Math.random() < 0.05;
   const body = replay
@@ -201,6 +209,7 @@ export function handleSummary(data) {
       vus: VUS,
       duration_s: DURATION_S,
       ramp_up_s: RAMP_UP_S,
+      ip_model: "per-vu-forwarded",
       auction: AUCTION,
     },
   };
@@ -208,4 +217,9 @@ export function handleSummary(data) {
     "/out/k6-summary.json": JSON.stringify(summary, null, 2),
     stdout: textSummary(data),
   };
+}
+
+// Stable private addresses used only as request headers; never emitted in metrics.
+function clientIp(vu) {
+  return `10.${Math.floor(vu / 65536) % 256}.${Math.floor(vu / 256) % 256}.${vu % 256}`;
 }
