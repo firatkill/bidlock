@@ -153,7 +153,6 @@ Artifact `bench-42316538127` uploaded (695,758 bytes); FullBenchResult validates
 
 **Owner options:** authorize revisiting the single-transaction composition so rate-counter locks can be released before auction work (recommended for design investigation), or retain the composed transaction and authorize deeper lock/driver profiling before another change. Either path needs an explicit decision before more work/runs. Main currently retains the approved pool20, single-call path and10 s ramp. The unused scored dispatch has not been spent; the measurement stop condition prevents using it automatically. T-43 blocked; T-44 untouched.
 
-
 ## D-89/D-90: remove artificial IP contention and release rate locks
 
 Owner approved both changes on 2026-11-07. D-87 run42316538127 p95=641.861405/p99=753.5082123 ms regressed against pool20 three-call baseline241.3247772/726.37423376 ms. Handler mean429.332 ms versus submit_bid429.050 ms (other0.282 ms). All54 logged lock contexts traverse rate_hit/check_bid_rate/submit_bid. The load app's TRUST_PROXY=none maps every request to local, serializing the shared IP counter; the combined transaction holds it through auction processing.
