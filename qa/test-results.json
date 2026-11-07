@@ -17660,6 +17660,11 @@
           "result": "fail",
           "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Profile42353076174:24666 bids,1234 replays,213 accepted;p95=713.9914585,p99=1060.55664795,error0,invariants0,cap20,closed500.60 profile samples hooked; steady enqueue109.25 ms/service17.54 ms; worst queue374 while CPU39%/ELU.347 and20 connections occupied.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42353076174; pool/auction-lock evidence stops conditional replica/scored work. Bot56 unmerged; no benchmark published."
         }
       ],
       "regression_of": null,
@@ -17713,6 +17718,11 @@
           "result": "pass",
           "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Profile42353076174:24666 bids,1234 replays,213 accepted;p95=713.9914585,p99=1060.55664795,error0,invariants0,cap20,closed500.60 profile samples hooked; steady enqueue109.25 ms/service17.54 ms; worst queue374 while CPU39%/ELU.347 and20 connections occupied.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42353076174; pool/auction-lock evidence stops conditional replica/scored work. Bot56 unmerged; no benchmark published."
         }
       ],
       "regression_of": null,
@@ -18172,6 +18182,11 @@
           "result": "fail",
           "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Profile42353076174:24666 bids,1234 replays,213 accepted;p95=713.9914585,p99=1060.55664795,error0,invariants0,cap20,closed500.60 profile samples hooked; steady enqueue109.25 ms/service17.54 ms; worst queue374 while CPU39%/ELU.347 and20 connections occupied.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42353076174; pool/auction-lock evidence stops conditional replica/scored work. Bot56 unmerged; no benchmark published."
         }
       ],
       "regression_of": null,
@@ -18268,6 +18283,21 @@
           "result": "pass",
           "actual_result": "227 unit tests, lint/typecheck/guards pass. Real read-only pool1 smoke measured100.84 ms enqueue delay under100 ms reservation; result unchanged. Compose overlay resolves and preload syntax valid.",
           "note": "Profiling dispatch pending; no local benchmark. CPU/ELU once per second, hard180 s bound; production code untouched."
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI42352796865 production build hit next/font/google import-map failure; other5 jobs passed.",
+          "note": "No production code changed; targeted build retry."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted build retry passed; all6 CI jobs green; PR55 merged0579657.",
+          "note": "No test weakened or source workaround."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Profile42353076174:24666 bids,1234 replays,213 accepted;p95=713.9914585,p99=1060.55664795,error0,invariants0,cap20,closed500.60 profile samples hooked; steady enqueue109.25 ms/service17.54 ms; worst queue374 while CPU39%/ELU.347 and20 connections occupied.",
+          "note": "https://github.com/firatkill/bidlock/actions/runs/42353076174; pool/auction-lock evidence stops conditional replica/scored work. Bot56 unmerged; no benchmark published."
         }
       ],
       "regression_of": null,

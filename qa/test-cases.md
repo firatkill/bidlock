@@ -3411,3 +3411,5 @@ Final scored evidence: [run42319897777](https://github.com/firatkill/bidlock/act
 - Automatable: yes
 - Steps: Verify default-off and test-only preload; exercise lazy query enqueue, dispatch and completion; validate numeric-only output and180 s bound. Check real postgres.js3.4.9 with a reserved one-connection pool and read-only query. Inspect profile artifact and compare CPU/ELU, enqueue/service times and PostgreSQL activity.
 - Expected result: No production source change; one aggregate/second; no SQL/request values; query semantics preserved. Profiling overlay omits verbose diagnostics. Add a replica only with Node bottleneck evidence and PostgreSQL headroom.
+
+D-91 evidence: [profile42353076174](https://github.com/firatkill/bidlock/actions/runs/42353076174) validates TC-283 numeric bounded collection and query hook, but TC-263 latency still fails (p95=713.9914585,p99=1060.55664795). TC-264 passes cap20/post-close500/invariants0. Pool/auction-lock waiting takes the stop path; replica/scored conditional branch not executed.
