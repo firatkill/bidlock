@@ -164,6 +164,7 @@ const result = {
   config: {
     vus: 500,
     duration_s: 60,
+    ramp_up_s: 10,
     db_pool_max: 20,
     postgres: "17",
     auction: {

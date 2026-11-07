@@ -8,6 +8,7 @@ export const benchmark: FullBenchResult = {
   config: {
     vus: 500,
     duration_s: 60,
+    ramp_up_s: 10,
     db_pool_max: 20,
     postgres: "17.11",
     auction: {
@@ -62,6 +63,7 @@ export function summaryFixture() {
     bench_config: {
       vus: 500,
       duration_s: 60,
+      ramp_up_s: 10,
       auction: benchmark.config.auction,
     },
     metrics: {

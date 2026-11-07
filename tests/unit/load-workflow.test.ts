@@ -31,3 +31,13 @@ test("TC-271: result publication is scoped and threshold failures fail the run",
     /name: Fail when thresholds failed\s+if: steps.k6.outcome != 'success'\s+run: exit 1/,
   );
 });
+
+test("TC-280: diagnostics require an explicit opt-in and scored runs omit samplers", () => {
+  expect(workflow).toMatch(
+    /diagnostics:\n[\s\S]*?type: boolean\n\s+default: false/,
+  );
+  expect(workflow).toContain(
+    "inputs.diagnostics && 'docker compose -f docker/compose.yml -f docker/compose.load-diagnostics.yml' || 'docker compose -f docker/compose.yml'",
+  );
+  expect(workflow).toContain('if [ "$LOAD_DIAGNOSTICS" = "on" ]; then');
+});

@@ -48,7 +48,7 @@ services:
       APP_ENV: test
       DEMO_MODE: "on"
       DATABASE_URL: postgres://bidlock_app:bidlock_app@db:5432/bidlock_load
-      DB_POOL_MAX: "4"
+      DB_POOL_MAX: "20"
       APP_ORIGIN: http://app:3000
       TRUST_PROXY: none
       SESSION_SECRET: load-session-secret-0123456789abcdef0123

@@ -8,6 +8,8 @@ const BASE = __ENV.BASE_URL || "http://app:3000";
 const SECRET = __ENV.TEST_API_SECRET;
 const VUS = Number(__ENV.VUS || 500);
 const DURATION = __ENV.DURATION || "60s";
+const DURATION_S = durationSeconds(DURATION);
+const RAMP_UP_S = Math.min(10, DURATION_S);
 const AUCTION_S = Number(__ENV.AUCTION_S || 45);
 const AUCTION = {
   duration_s: AUCTION_S,
@@ -41,9 +43,14 @@ export const options = {
   setupTimeout: "180s",
   scenarios: {
     storm: {
-      executor: "constant-vus",
-      vus: VUS,
-      duration: DURATION,
+      executor: "ramping-vus",
+      startVUs: 0,
+      stages: [
+        { duration: `${RAMP_UP_S}s`, target: VUS },
+        ...(DURATION_S > RAMP_UP_S
+          ? [{ duration: `${DURATION_S - RAMP_UP_S}s`, target: VUS }]
+          : []),
+      ],
       gracefulStop: "10s",
     },
   },
@@ -192,7 +199,8 @@ export function handleSummary(data) {
     ...data,
     bench_config: {
       vus: VUS,
-      duration_s: durationSeconds(DURATION),
+      duration_s: DURATION_S,
+      ramp_up_s: RAMP_UP_S,
       auction: AUCTION,
     },
   };

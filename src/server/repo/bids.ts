@@ -1,7 +1,7 @@
 import "server-only";
 import { sql } from "../db";
-import { row } from "./result";
-import { BidResultRow, PayResultRow } from "@/domain/schemas";
+import { row, jsonResult } from "./result";
+import { BidResultRow, PayResultRow, SubmitBidResult } from "@/domain/schemas";
 export async function placeBid(
   auctionId: string,
   bidderId: string,
@@ -17,5 +17,19 @@ export async function payOffer(auctionId: string, bidderId: string) {
   return row(
     PayResultRow,
     await sql`select * from bidlock.pay_offer(${auctionId},${bidderId})`,
+  );
+}
+
+export async function submitBid(
+  sessionBidderId: string,
+  botId: string | null,
+  auctionId: string,
+  amount: number,
+  key: string,
+  ipHash: string,
+) {
+  return jsonResult(
+    SubmitBidResult,
+    await sql`select bidlock.submit_bid(${sessionBidderId},${botId},${auctionId},${amount},${key},${ipHash}) as result`,
   );
 }

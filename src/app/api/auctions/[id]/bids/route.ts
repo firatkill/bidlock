@@ -9,8 +9,7 @@ import {
 import { AppError } from "@/domain/errors";
 import { json, route } from "@/server/http";
 import { listBids } from "@/server/repo/auctions";
-import { placeBid } from "@/server/repo/bids";
-import { checkBidRate } from "@/server/repo/rate";
+import { submitBid } from "@/server/repo/bids";
 import { getClientIp, ipHash } from "@/server/ip";
 import { measureLoadPhase } from "@/server/loadDiagnostics";
 export const runtime = "nodejs";
@@ -44,30 +43,39 @@ export const GET = route(
 export const POST = route(
   {
     name: "bids.create",
-    auth: "session-or-bot",
+    auth: "bid-session-or-bot",
     mutating: true,
     params: IdParams,
     body: PlaceBidBody,
   },
   async (ctx) => {
-    if (!ctx.params || !ctx.body || !ctx.bidderId)
+    if (!ctx.params || !ctx.body || !ctx.bidderId || !ctx.sessionBidderId)
       throw new AppError("INTERNAL");
     const id = ctx.params.id,
       bidder = ctx.bidderId,
       body = ctx.body;
     ctx.fields.auction_id = id;
-    const retry = await ctx.db(() =>
-      measureLoadPhase("check_bid_rate", () =>
-        checkBidRate(bidder, ipHash(getClientIp(ctx.req))),
+    const sessionBidderId = ctx.sessionBidderId;
+    const submitted = await ctx.db(() =>
+      measureLoadPhase("submit_bid", () =>
+        submitBid(
+          sessionBidderId,
+          ctx.isBot ? bidder : null,
+          id,
+          body.amount,
+          body.idempotency_key,
+          ipHash(getClientIp(ctx.req)),
+        ),
       ),
     );
-    if (retry > 0)
-      throw new AppError("RATE_LIMITED", { retry_after_ms: retry });
-    const result = await ctx.db(() =>
-      measureLoadPhase("place_bid", () =>
-        placeBid(id, bidder, body.amount, body.idempotency_key),
-      ),
-    );
+    if (submitted.kind === "error")
+      throw new AppError(
+        submitted.error_code,
+        submitted.error_code === "RATE_LIMITED"
+          ? { retry_after_ms: submitted.retry_after_ms }
+          : undefined,
+      );
+    const result = submitted.result;
     ctx.fields.replayed = result.replayed;
     if (result.outcome === "rejected")
       throw new AppError(

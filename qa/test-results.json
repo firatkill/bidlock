@@ -17533,6 +17533,11 @@
           "result": "pass",
           "actual_result": "Rule 5 guard unchanged and passes; production-domain rejection unit tests pass.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-88 ramping-vus uses0→500 over10s plus50s hold; ramp_up_s preserved by strict report schema. Thresholds, pacing and replay checks pass in221-test unit suite.",
+          "note": "T-43 single-call/ramp revision; no measured performance claim."
         }
       ],
       "regression_of": null,
@@ -17792,6 +17797,11 @@
           "result": "pass",
           "actual_result": "All six CI jobs passed on implementation commit 46fafea: static/coverage/guards, production build, database tooling, pgTAP, concurrency integration and E2E.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42308943337; PR #43 remains open for owner browser review."
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-88 ramping-vus uses0→500 over10s plus50s hold; ramp_up_s preserved by strict report schema. Thresholds, pacing and replay checks pass in221-test unit suite.",
+          "note": "T-43 single-call/ramp revision; no measured performance claim."
         }
       ],
       "regression_of": null,
@@ -17969,7 +17979,7 @@
       "ac_reference": "NFR-10; NFR-11; NFR-12; D-85",
       "milestone": "M6 — Load test + CI + bench page",
       "title": "Measured load pool tuning preserves correctness and thresholds",
-      "status": "open",
+      "status": "n/a",
       "environment": "ubuntu-latest /4-vCPU AMD EPYC /Node24 /PostgreSQL17.11 /commit880d155",
       "attempts": [
         {
@@ -17996,11 +18006,98 @@
       "regression_of": null,
       "root_cause_group": null,
       "clickup_task": null,
-      "retraction_reason": null,
+      "retraction_reason": "D-86 explicitly abandons the pool4 hypothesis after its failed measurements; all failure evidence retained. It is no longer the target configuration.",
       "description": "Reducing load pool20→4 made end-to-end latency worse.",
       "steps_to_reproduce": ["Dispatch default load.yml on main at880d155."],
       "expected_result": "All thresholds pass with invariant violations0, cap20 and post-close outcomes.",
       "owner_question": "docs/PROGRESS.md — T-43 final authorized validation"
+    },
+    {
+      "tc_reference": "TC-278",
+      "ac_reference": "D-87; FR-01–FR-09; FR-90; FR-91",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Composed SQL bid entry point preserves outcomes and rate counters",
+      "status": "resolved",
+      "environment": "macOS / Node24 / local PostgreSQL17.11 / t-43-single-call-ramp",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Test helper called pgTAP assertion inside restricted search_path; pgTAP internal ok was not found.",
+          "note": "Fixed test helper to return comparison data and assert outside; application privileges unchanged."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Sandbox bot test assumed starting price1000 and got BID_TOO_LOW.",
+          "note": "Use actual sandbox starting price from specified generated fixture."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Initial parity file passed62 assertions.",
+          "note": "Accepted/replay/errors and privilege coverage."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Expanded IP-limit test seeded200 hits but test environment limit is10000.",
+          "note": "Fixture now seeds configured max_hits."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full database run reproduced the same stale IP-limit fixture failure.",
+          "note": "No implementation behavior changed; fixture corrected to configured limit."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Lint/typecheck/guards pass;221 unit tests,437 pgTAP assertions,51 concurrency/integration tests (INT-01/INT-02 green), production build and33 E2E tests pass. New SQL parity file74 assertions; base Compose pool20 and diagnostics absent/off, opt-in overlay on.",
+          "note": "No new dispatch yet; TC-280 measurement/scored evidence pending."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "description": "SQL parity tests compare existing function sequence with composed entry point.",
+      "steps_to_reproduce": [
+        "Run pg_prove for db/tests/015_submit_bid.test.sql."
+      ],
+      "expected_result": "Equivalent outcomes/counters and restricted privileges; all assertions pass."
+    },
+    {
+      "tc_reference": "TC-279",
+      "ac_reference": "D-87; FR-01; FR-03; FR-04",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Bid HTTP path makes one database call",
+      "status": "resolved",
+      "environment": "macOS / Node24 / local PostgreSQL17.11 / t-43-single-call-ramp",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Lint/typecheck/guards pass;221 unit tests,437 pgTAP assertions,51 concurrency/integration tests (INT-01/INT-02 green), production build and33 E2E tests pass. New SQL parity file74 assertions; base Compose pool20 and diagnostics absent/off, opt-in overlay on.",
+          "note": "No new dispatch yet; TC-280 measurement/scored evidence pending."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-280",
+      "ac_reference": "D-86; D-88; NFR-10; NFR-11; NFR-12",
+      "milestone": "M6 — Load test + CI + bench page",
+      "title": "Ramped workload and scored diagnostic isolation",
+      "status": "open",
+      "environment": "macOS / Node24 / local PostgreSQL17.11 / t-43-single-call-ramp",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Lint/typecheck/guards pass;221 unit tests,437 pgTAP assertions,51 concurrency/integration tests (INT-01/INT-02 green), production build and33 E2E tests pass. New SQL parity file74 assertions; base Compose pool20 and diagnostics absent/off, opt-in overlay on.",
+          "note": "No new dispatch yet; TC-280 measurement/scored evidence pending."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }
