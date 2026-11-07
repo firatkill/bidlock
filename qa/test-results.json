@@ -18470,6 +18470,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Historical D-92 result pinned to an unchanged fixture; all10 How it works DOM tests pass after switching the import. Lint and typecheck also pass.",
+          "note": "No assertion or runtime result source changed; avoids blocking future weekly latest.json updates."
         }
       ],
       "regression_of": null,
@@ -18683,6 +18688,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Historical D-92 result pinned to an unchanged fixture; all10 How it works DOM tests pass after switching the import. Lint and typecheck also pass.",
+          "note": "No assertion or runtime result source changed; avoids blocking future weekly latest.json updates."
         }
       ],
       "regression_of": null,
