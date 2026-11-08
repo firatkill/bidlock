@@ -15,3 +15,7 @@ docs/OWNER-DECISIONS.md
 
 # Local, owner-maintained design references (excluded from Git).
 .codex-prompts/
+
+# Preserve the reviewer's generated production Lighthouse evidence verbatim.
+qa/lighthouse/t47-production-after.report.html
+qa/lighthouse/t47-production-after.report.json

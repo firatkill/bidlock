@@ -3495,3 +3495,12 @@ All cases use a local production build and isolated test data except the explici
 - TC-304: Emulate reduce; update price and extension banner; assert no running animations and updated content.
 - TC-305: Run check-bundle; if manifest absent run E2E-09 on a fresh production-build context and measure transferred scripts.
 - TC-306: Inspect all listed pages at360px in light/dark using local browser; check readability, clipping and developer controls. Reviewer browser approval remains required before merge.
+
+## M7 — T-48 release preparation
+
+| TC ID  | PRD reference         | TRD / plan reference     | Steps and expected result                                                                                                                                                                  | Priority | Automatable |
+| ------ | --------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ----------- |
+| TC-307 | G-2; G-3; US-12; D-92 | T-48; TRD §2             | Compare all eight README table columns to latest.json, verify five SQL line anchors and architecture source, check local Markdown paths. Exact values and false threshold status retained. | High     | yes         |
+| TC-308 | G-3; US-13; D-99      | T-48; E2E-01/04/05       | On local production build/dev DB with two contexts, record lobby, bid, outbid, late extension, win and simulated pay. Inspect composed GIF;20–30s,≤8MB, no URL chrome; reset clock.        | High     | yes         |
+| TC-309 | G-5; NFR-30; D-96     | T-48; TRD §18.7; A-05    | Preserve dated deployment facts, add paused-database option b, inspect checklist evidence and pending gates; do not tag, release or merge.                                                 | High     | yes         |
+| TC-310 | G-3; US-12; US-13     | T-48 reviewer checkpoint | Reviewer opens rendered README on PR branch and watches GIF; readable complete flow and working links before merge.                                                                        | High     | no          |

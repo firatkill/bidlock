@@ -66,7 +66,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-45  | Supabase production setup                          | done   | `67e035c` (T-45/T-46 evidence)                                     |
 | T-46  | Vercel deploy, DNS, keepalive                      | done   | `67e035c`; A-05 open until after 2026-11-15                        |
 | T-47  | Polish pass                                        | done   | `da57813` (PR #61)                                                 |
-| T-48  | README, demo GIF, release                          | todo   | —                                                                  |
+| T-48  | README, demo GIF, release                          | doing  | —                                                                  |
 
 ## Open questions for the owner
 
@@ -423,3 +423,13 @@ Final asset review: exact `/icon.svg` bypasses the off-mode page rewrite alongsi
 ### T-47 production Lighthouse after deploy — 2026-11-08
 
 Reviewer ran one mobile Lighthouse 13.6.0 pass on https://bidlock.firatkil.com/ after PR #61 deployed (health `version` `da57813`): Performance 100, Accessibility 100, Best Practices 100. Reports: `qa/lighthouse/t47-production-after.report.{json,html}`.
+
+### T-48 release preparation — 2026-11-08
+
+README rewritten in plan order with exact benchmark values, five verified SQL anchors and TRD architecture. D-99 records the authorized local production-build GIF (two contexts, dev database, port3108, existing test clock; FFmpeg8.0, no runtime dependency). Deployment facts preserved, paused-database option b added. CHANGELOG and docs/releases/v1.0.0.md prepare publication; nothing tagged or released.
+
+Validation: build, lint, typecheck,241 unit tests and guards pass; README local paths, SQL anchors and Mermaid verified. No dedicated Markdown/link check exists. Main b3afb29 CI failed formatting only for generated Lighthouse reports; exact .prettierignore entries preserve those reports verbatim. No SQL/server/UI behavior changed; full E2E remains CI validation. QA ledger results TC-307–310.
+
+Open questions for the owner (T-48): review rendered README/GIF on the PR branch before merge; approve v1.0.0 tagging/publication after merge. T-48 stays doing until review/publication. Release checklist retains unverified production exercises, billing/usage evidence, clean-clone Node22/24 test:all (placeholder), accepted D-92 threshold failure, release-commit main CI and A-05 after2026-11-15. M7/project closure reports await completion of those gates rather than claiming final sign-off.
+
+QA ledger gate retains its pre-existing duplicate sentinel `—` collision; an exact comparison keyed by `(tc_reference,title)` confirms all prior cases and attempt prefixes are intact. Final GIF is25s and3,102,717 bytes; frame composition visually inspected. Reviewer TC-310 remains manual_required.

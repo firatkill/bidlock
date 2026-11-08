@@ -476,29 +476,31 @@ Conventions for every task:
 ## Release checklist (v1.0.0)
 
 Code and tests:
-- [ ] `pnpm test:all` passes on a clean clone (fresh Docker volume) on macOS or Linux with Node 22 and with Node 24.
-- [ ] CI `ci` workflow green on `main` for the release commit.
-- [ ] Latest `load` run green; its bench PR merged; `bench/results/latest.json` ≤ 7 days old with 0 invariant violations and thresholds passed.
-- [ ] `pnpm check:guards` passes; `grep -rn "any" --include=*.ts src | grep -v "// allow-any"` reviewed (no `any` types).
-- [ ] No `console.log` in `src/` (ESLint `no-console: error` except in `log.ts`).
+- [ ] `pnpm test:all` passes on a clean clone (fresh Docker volume) on macOS or Linux with Node 22 and with Node 24. — Not verified: test:all remains a placeholder; no clean-clone Node22/24 fresh-volume run. No existing volume was deleted.
+- [ ] CI `ci` workflow green on `main` for the release commit. — Pending release commit on main. Baseline b3afb29 failed only generated Lighthouse report formatting; T-48 preserves those artifacts with exact Prettier exclusions. PR CI is tracked separately.
+- [ ] Latest `load` run green; its bench PR merged; `bench/results/latest.json` ≤ 7 days old with 0 invariant violations and thresholds passed. — D-92 accepted scored run42319897777 via merged PR #54, dated2026-11-07, with zero invariant violations but thresholds.passed=false (p95 gap). Original gate is not satisfied.
+- [x] `pnpm check:guards` passes; `grep -rn "any" --include=*.ts src | grep -v "// allow-any"` reviewed (no `any` types). — Verified T-48 locally; source search found no any types.
+- [x] No `console.log` in `src/` (ESLint `no-console: error` except in `log.ts`). — Verified T-48 source search.
 
 Production:
-- [ ] `/api/health?db=1` → `db: "ok"`, `demo_mode: "on"`, `version` = release SHA.
-- [ ] Two browsers on different networks: bid, outbid, extension banner, close, pay, all with Broadcast (Network tab shows a websocket, no 1 s polling).
-- [ ] Sandbox: three bots bid; closing the tab stops them; a second sandbox is refused while the first is active.
-- [ ] `DEMO_MODE=readonly` redeploy shows the banner and blocks bids; switch back to `on`.
-- [ ] `update bidlock.settings set bidding_paused = true` blocks bids within one request; revert.
-- [ ] `/api/test/clock` returns 404 in production (with and without a guessed secret).
-- [ ] Response headers on `/` include CSP with nonce, HSTS, `X-Content-Type-Options`.
-- [ ] Cookie `bl_sid` is `HttpOnly; Secure; SameSite=Lax`.
-- [ ] `select jobname, active from cron.job` shows 4 active jobs; `cron.job_run_details` has recent `succeeded` rows for `bidlock-tick`.
-- [ ] Database size (Dashboard → Usage) < 50 MB.
-- [ ] Keepalive workflow enabled; last run green.
-- [ ] Vercel and Supabase billing pages show $0 and no paid add-ons.
+- [ ] `/api/health?db=1` → `db: "ok"`, `demo_mode: "on"`, `version` = release SHA. — No release SHA exists yet; dated deployment health evidence is preserved in README.
+- [ ] Two browsers on different networks: bid, outbid, extension banner, close, pay, all with Broadcast (Network tab shows a websocket, no 1 s polling). — Owner confirmed two-network bid delivery in T-46; full production extension/close/pay sequence is not evidenced. Local GIF uses polling.
+- [ ] Sandbox: three bots bid; closing the tab stops them; a second sandbox is refused while the first is active. — Local E2E evidence exists; production manual sequence not recorded.
+- [ ] `DEMO_MODE=readonly` redeploy shows the banner and blocks bids; switch back to `on`. — Production redeploy exercise not authorized or recorded for T-48.
+- [ ] `update bidlock.settings set bidding_paused = true` blocks bids within one request; revert. — Production mutation exercise not authorized or recorded for T-48.
+- [ ] `/api/test/clock` returns 404 in production (with and without a guessed secret). — No production probe recorded for both requested variants.
+- [ ] Response headers on `/` include CSP with nonce, HSTS, `X-Content-Type-Options`. — Complete production header evidence for this gate not recorded.
+- [ ] Cookie `bl_sid` is `HttpOnly; Secure; SameSite=Lax`. — Production cookie inspection not recorded.
+- [x] `select jobname, active from cron.job` shows 4 active jobs; `cron.job_run_details` has recent `succeeded` rows for `bidlock-tick`. — Owner/reviewer verified four active jobs and succeeded runs on2026-11-08; README Deployment notes.
+- [ ] Database size (Dashboard → Usage) < 50 MB. — A-06 actual dashboard usage remains unrecorded.
+- [x] Keepalive workflow enabled; last run green. — Enabled and dispatch42482100743 green on2026-11-08. This does not close A-05.
+- [ ] Vercel and Supabase billing pages show $0 and no paid add-ons. — Free plan facts recorded; billing dashboards and paid-add-on inventory not recorded.
 
 Docs and presentation:
-- [ ] README benchmark table matches `latest.json`; GIF plays; all links work.
-- [ ] `/how-it-works` shows the diagram, concurrency text, benchmark table and stats.
-- [ ] Lighthouse scores recorded in the release notes.
-- [ ] PRD §14 decisions log updated with every fallback taken during implementation.
-- [ ] Tag `v1.0.0` and GitHub release published.
+- [ ] README benchmark table matches `latest.json`; GIF plays; all links work. — Exact table and local GIF verified; rendered PR README and external-link review remain with reviewer before merge.
+- [x] `/how-it-works` shows the diagram, concurrency text, benchmark table and stats. — T-44 and T-47 local QA cover diagram, concurrency text, benchmark and stats; see qa/test-results.json.
+- [x] Lighthouse scores recorded in the release notes. — CHANGELOG v1.0.0 preparation records reviewer production100/100/100 after da57813 on2026-11-08; GitHub release not published.
+- [x] PRD §14 decisions log updated with every fallback taken during implementation. — D-73–D-99 reviewed; D-95 superseded by D-96, D-92 gap retained, D-99 records local GIF.
+- [ ] Tag `v1.0.0` and GitHub release published. — Owner checkpoint3; expressly deferred until approval after PR merge.
+
+- [ ] A-05: after **2026-11-15**, verify more than seven days of keepalive-only activity; restart observation if manual traffic intervenes. Initial health/cron success does not prove pause prevention.
