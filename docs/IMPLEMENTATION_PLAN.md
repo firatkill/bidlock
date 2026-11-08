@@ -420,8 +420,9 @@ Conventions for every task:
 
 - Goal: https://bidlock.firatkil.com live.
 - Files: `.github/workflows/keepalive.yml` (TRD §16.3).
-- Steps: TRD §18.4; verify A-04, A-05, A-12 and record the numbers in README; preview scope `DEMO_MODE=off`.
+- Steps: TRD §18.4; verify A-04, A-05, A-12 and record the numbers in README; no Preview environment; main-only builds and Production-only secrets (D-96).
 - Acceptance: `curl -fsS https://bidlock.firatkil.com/api/health?db=1` shows `"db":"ok"` and `version` = deployed SHA; keepalive dispatched once and green; two browsers on different networks see each other's bids within 1 s (Broadcast).
+- Acceptance note (2026-11-08, D-96): owner/reviewer evidence recorded in README; no Preview deployment is required. A-05 remains open until after 2026-11-15, A-06 usage and A-12 runtime distinctness remain follow-ups. Reverse-direction delivery was confirmed manually but not separately timed.
 - Depends on: T-45. Covers: NFR-13, NFR-14, NFR-30, NFR-31, R-01.
 
 ### T-47 Polish pass
