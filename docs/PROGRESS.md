@@ -1,6 +1,6 @@
 # Progress
 
-Updated: 2026-11-07.
+Updated: 2026-11-08.
 
 ## Repository setup
 
@@ -63,14 +63,14 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-42  | Bench report and headline data                     | done   | `4c8e096` (PR #43)                                                 |
 | T-43  | Load workflow                                      | done   | 40c95ef767a3c6ca6f6ce3cdf70e3a5f1d4ce88e (PR #54)                  |
 | T-44  | How it works page                                  | done   | `924aeb4` ([PR #57](https://github.com/firatkill/bidlock/pull/57)) |
-| T-45  | Supabase production setup                          | doing  | —                                                                  |
-| T-46  | Vercel deploy, DNS, keepalive                      | todo   | —                                                                  |
+| T-45  | Supabase production setup                          | done   | records commit on `t-46-record` (T-45/T-46 evidence)               |
+| T-46  | Vercel deploy, DNS, keepalive                      | done   | records commit on `t-46-record`; A-05 open until after 2026-11-15  |
 | T-47  | Polish pass                                        | todo   | —                                                                  |
 | T-48  | README, demo GIF, release                          | todo   | —                                                                  |
 
 ## Open questions for the owner
 
-- T-45/T-46: complete the owner steps in [DEPLOY-CHECKLIST.md](DEPLOY-CHECKLIST.md), then reply when done. Production assumptions and acceptance remain unverified until setup.
+- T-45/T-46 completed from owner/reviewer evidence on 2026-11-08; see README Deployment notes. A-05 remains open until after 2026-11-15 (more than seven days with only keepalive traffic). A-04 dashboard usage, A-06 actual usage and A-12 distinct salted runtime keys remain owner follow-ups. D-96 disables Preview. T-47 has not started.
 
 - NFR-10: known, accepted gap for later revisit (D-92). Published [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) p95=269.233384 ms exceeds250 ms; p99=329.68857432 ms passes600. Single-auction serialization/pool waiting is documented by D-91. Threshold and auction lock unchanged; thresholds.passed=false. T-43 is complete by explicit owner acceptance; no further tuning or dispatches authorized.
 
@@ -387,3 +387,7 @@ Owner checklist added; T-45 doing, T-46 deployment still todo. Missing keepalive
 Fresh local bidlock_t45_prep: all14 migrations apply and status reports all applied. Existing migration integration9/9 and health/version TC-162 pass. Lint,typecheck,238 unit tests and guards pass. Local scratch database retained; existing dev/test/load databases and Rehearse untouched. No production migrations or service setup. TC-291 passed; TC-292/293 require owner setup. No fallback chosen; A-01–A-06/A-12 production evidence remains pending, with A-05 requiring more than seven days.
 
 QA ledger structural/status checks pass after marking owner cases non-automatable. The existing external-checker collision on historical exploratory `—` labels remains; independent ordered identity/attempt-prefix comparison confirms all294 prior cases and attempts preserved.
+
+## T-45/T-46 evidence recorded (2026-11-08)
+
+Owner/reviewer production evidence and public dated quotas are recorded in README. Local lint/typecheck,238 unit tests and guards pass. External ledger checker hits the previously documented sentinel `—` collision (M6-review); exact append-only comparison keyed by `(tc_reference,title)` passes. No production reruns. A-05, usage and A-12 runtime follow-ups remain open; T-47 not started.

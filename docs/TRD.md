@@ -3692,7 +3692,7 @@ Log level `warn` in the load app container keeps request logs from becoming the 
 | Load (CI, local) | compose `app` | compose `db` | polling 1 s | test | test |
 | Production | Vercel Hobby | Supabase Free | broadcast (fallback polling 2 s) | production | prod |
 
-No Vercel preview environment talks to the production database: preview deployments get `DEMO_MODE=off` (env var scoped to Preview), so they render the offline page.
+No Preview environment is deployed (D-96); only main builds, and production credentials are scoped to Production only.
 
 ### 18.2 Supabase setup (one time)
 
@@ -3719,7 +3719,7 @@ pnpm db:cron
 ### 18.4 Vercel setup
 
 1. Import `firatkill/bidlock`, framework Next.js, Node.js 24.x, root directory `/`, install `pnpm install --frozen-lockfile`, build `pnpm build`.
-2. Function region: Settings → Functions → region matching Supabase (`iad1`).
+2. Function region: Settings → Functions → region matching Supabase (`fra1`, Frankfurt; D-42).
 3. Env vars (Production scope):
 
 | Variable | Value |
@@ -3737,7 +3737,7 @@ pnpm db:cron
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | publishable/anon key |
 | `NEXT_PUBLIC_REPO_URL` | `https://github.com/firatkill/bidlock` |
 
-Preview scope: `DEMO_MODE=off`, `APP_ENV=production`, dummy secrets, no `DATABASE_URL` needed (offline page and health only; health reports `db: error` there, which is expected).
+No Preview environment (D-96, owner 2026-11-08). Set Ignored Build Step to `[ "$VERCEL_GIT_COMMIT_REF" != "main" ]` so only main builds. Scope `DATABASE_URL`, `SESSION_SECRET`, `BOT_TOKEN_SECRET` and `IP_HASH_SALT` to Production only; no Preview placeholders or disposable secrets are needed.
 
 4. Domain: Settings → Domains → add `bidlock.firatkil.com`. At the DNS provider of `firatkil.com` create `CNAME bidlock → <target shown by Vercel>` (typically `cname.vercel-dns.com`; newer projects may show a project-specific target; use the value Vercel displays). Wait for the certificate to issue.
 5. Smoke test: `curl -s https://bidlock.firatkil.com/api/health` → `db: "ok"`; open `/` in two browsers and bid.

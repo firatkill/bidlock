@@ -1,6 +1,6 @@
 # T-45 / T-46 owner deployment checklist
 
-T-45 remains **doing**; this preparation does not certify production. Follow the steps in order. Owner actions create external resources; agent follow-up verifies non-secret evidence and records acceptance. Never paste passwords, connection URLs containing passwords, signing secrets or salts into chat. Keep them in your password manager and enter them directly into your terminal or Vercel. No production credentials go into GitHub, tracked files, CI or an agent session.
+T-45/T-46 are complete from owner/reviewer evidence dated 2026-11-08, recorded in README Deployment notes; delayed/usage/runtime follow-ups remain open. Follow the steps in order. Owner actions create external resources; agent follow-up verifies non-secret evidence and records acceptance. Never paste passwords, connection URLs containing passwords, signing secrets or salts into chat. Keep them in your password manager and enter them directly into your terminal or Vercel. No production credentials go into GitHub, tracked files, CI or an agent session.
 
 Sources: OWNER-DECISIONS.md, plan T-45/T-46, TRD §5, §8.1–8.3, §16.3, §18.2–18.4 and §20 assumptions, PRD D-04/D-19/D-29. Frankfurt (`eu-central-1` / `fra1`) overrides the old US-region examples in TRD §18 (D-42). Production migrations below are **owner-only**, never agent or CI commands.
 
@@ -122,32 +122,32 @@ Import **firatkill/bidlock** into a **Hobby** project, framework Next.js, root `
 
 Enter each variable separately with the specified scope. These are sources/instructions, not secret values. Production secrets must never be selected for Preview. Generate each independent secret with `openssl rand -hex 32` locally; store it directly in Vercel/password manager. Redeploy after changing build-time `NEXT_PUBLIC_*` variables.
 
-| Variable                                         | Production source/configuration                                        | Preview source/configuration                                                             |
-| ------------------------------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `APP_ENV`                                        | `production`                                                           | `production`                                                                             |
-| `DEMO_MODE`                                      | `on`                                                                   | `off`                                                                                    |
-| `DATABASE_URL`                                   | Step 4 runtime transaction-pooler URI                                  | Unreachable local placeholder URI, as explained below; never Supabase                    |
-| `DB_POOL_MAX`                                    | `3`                                                                    | `1`                                                                                      |
-| `SESSION_SECRET`                                 | Independently generated secret                                         | Separate disposable generated value, at least 32 characters                              |
-| `BOT_TOKEN_SECRET`                               | Independently generated secret                                         | Separate disposable generated value, at least 32 characters                              |
-| `IP_HASH_SALT`                                   | Independently generated secret                                         | Separate disposable generated value, at least 16 characters                              |
-| `SESSION_SECRET_PREVIOUS`                        | Unset initially; previous session key only during an approved rotation | Unset                                                                                    |
-| `APP_ORIGIN`                                     | `https://bidlock.firatkil.com`                                         | Exact HTTPS preview origin from Vercel, no path; comma-separated exact origins if needed |
-| `TRUST_PROXY`                                    | `vercel`                                                               | `vercel`                                                                                 |
-| `LOG_LEVEL`                                      | `info`                                                                 | `info`                                                                                   |
-| `LOAD_DIAGNOSTICS`                               | `off`                                                                  | `off`                                                                                    |
-| `NEXT_PUBLIC_FEED`                               | `broadcast`                                                            | `polling`                                                                                |
-| `NEXT_PUBLIC_POLL_INTERVAL_MS`                   | `2000`                                                                 | `2000`                                                                                   |
-| `NEXT_PUBLIC_SUPABASE_URL`                       | Project URL from Supabase Connect / API settings                       | Unset                                                                                    |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY`                  | Public anon/publishable key from API Keys                              | Unset                                                                                    |
-| `NEXT_PUBLIC_REPO_URL`                           | `https://github.com/firatkill/bidlock`                                 | Same repository URL                                                                      |
-| `NEXT_TELEMETRY_DISABLED`                        | `1`                                                                    | `1`                                                                                      |
-| `VERCEL_GIT_COMMIT_SHA`                          | Vercel system variable; do not invent a SHA                            | Vercel system variable                                                                   |
-| `GIT_SHA`                                        | Unset; only a non-Vercel version fallback                              | Unset                                                                                    |
-| `DATABASE_URL_ADMIN`, `BIDLOCK_SQL_APP_PASSWORD` | Never set on Vercel                                                    | Never set                                                                                |
-| `TEST_API_SECRET`, `BOT_SEED_OVERRIDE`           | Unset, not empty strings                                               | Unset, not empty strings                                                                 |
+| Variable                                         | Production source/configuration                                        |
+| ------------------------------------------------ | ---------------------------------------------------------------------- |
+| `APP_ENV`                                        | `production`                                                           |
+| `DEMO_MODE`                                      | `on`                                                                   |
+| `DATABASE_URL`                                   | Step 4 runtime transaction-pooler URI                                  |
+| `DB_POOL_MAX`                                    | `3`                                                                    |
+| `SESSION_SECRET`                                 | Independently generated secret                                         |
+| `BOT_TOKEN_SECRET`                               | Independently generated secret                                         |
+| `IP_HASH_SALT`                                   | Independently generated secret                                         |
+| `SESSION_SECRET_PREVIOUS`                        | Unset initially; previous session key only during an approved rotation |
+| `APP_ORIGIN`                                     | `https://bidlock.firatkil.com`                                         |
+| `TRUST_PROXY`                                    | `vercel`                                                               |
+| `LOG_LEVEL`                                      | `info`                                                                 |
+| `LOAD_DIAGNOSTICS`                               | `off`                                                                  |
+| `NEXT_PUBLIC_FEED`                               | `broadcast`                                                            |
+| `NEXT_PUBLIC_POLL_INTERVAL_MS`                   | `2000`                                                                 |
+| `NEXT_PUBLIC_SUPABASE_URL`                       | Project URL from Supabase Connect / API settings                       |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY`                  | Public anon/publishable key from API Keys                              |
+| `NEXT_PUBLIC_REPO_URL`                           | `https://github.com/firatkill/bidlock`                                 |
+| `NEXT_TELEMETRY_DISABLED`                        | `1`                                                                    |
+| `VERCEL_GIT_COMMIT_SHA`                          | Vercel system variable; do not invent a SHA                            |
+| `GIT_SHA`                                        | Unset; only a non-Vercel version fallback                              |
+| `DATABASE_URL_ADMIN`, `BIDLOCK_SQL_APP_PASSWORD` | Never set on Vercel                                                    |
+| `TEST_API_SECRET`, `BOT_SEED_OVERRIDE`           | Unset, not empty strings                                               |
 
-Preview clarification: TRD says no database is needed, but `src/server/env.ts` still requires a syntactically valid URL even with `DEMO_MODE=off`. Supply a non-secret placeholder using scheme `postgres`, dummy username/password `unused`, host `127.0.0.1`, port `1`, database `bidlock_preview_unused`. It points nowhere reachable on Vercel. This preserves the offline-page contract and prevents production access; `/api/health?db=1` returns HTTP 503 with `db:error`. Do not copy the production URL to make Preview health green. Before a preview domain exists, use the production origin as a syntactically valid placeholder for `APP_ORIGIN`; offline mode rejects mutations. Replace with the exact preview origin once assigned.
+No Preview environment (D-96). Set Ignored Build Step to `[ "$VERCEL_GIT_COMMIT_REF" != "main" ]`; only main builds. The four database/signing/salt secrets above are Production-only. No Preview placeholders are needed.
 
 ## 7. Owner — add domain and DNS
 
@@ -190,7 +190,7 @@ dig +short CNAME bidlock.firatkil.com
 git rev-parse origin/main
 ```
 
-Expect `db:ok`, a non-`dev` `version` equal to the **deployed Git SHA** shown by Vercel (normally current main), valid HTTPS and the configured CNAME. Confirm the keepalive dispatch is green. Open Preview: offline page, no Supabase connections, expected degraded health.
+Expect `db:ok`, a non-`dev` `version` equal to the **deployed Git SHA** shown by Vercel (normally current main), valid HTTPS and the configured CNAME. Confirm the keepalive dispatch is green. Confirm main-only builds and Production-only secrets (D-96); no Preview check applies.
 
 Owner manually opens production in two browsers on different networks, creates distinct bidder names and places ordinary bids. Each browser must see the other's bid within **1 second** through Broadcast; check Realtime subscription state and absence of publishing warnings. This is manual acceptance, never a scripted bid test or load run.
 

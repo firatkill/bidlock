@@ -18805,6 +18805,16 @@
           "result": "pass",
           "actual_result": "14 migrations applied to fresh local bidlock_t45_prep; status all applied. Migration integration 9/9, health/version 1/1, lint, typecheck, 238 unit tests and guards pass. keepalive matches TRD §16.3; no secrets required. No UI/server/SQL changes.",
           "note": "2026-11-07 preparation only; T-45 doing, T-46 todo."
+        },
+        {
+          "result": "fail",
+          "actual_result": "2026-11-08 records lint: Prettier flagged four edited documentation/ledger files.",
+          "note": "Formatting only; corrected with Prettier."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 records: pnpm lint, pnpm typecheck, pnpm test:unit (238/238), pnpm check:guards all pass.",
+          "note": "No UI/server/SQL changes; no production checks rerun."
         }
       ],
       "regression_of": null,
@@ -18822,13 +18832,18 @@
         "Follow matching case in qa/test-cases.md and docs/DEPLOY-CHECKLIST.md."
       ],
       "expected_result": "Documented acceptance verified without sharing secrets or running scripted production bids.",
-      "status": "manual_required",
-      "environment": "macOS; local PostgreSQL 17; t-45-prep. Production not provisioned by this task.",
+      "status": "resolved",
+      "environment": "Production; owner/reviewer observations supplied 2026-11-08; recording agent did not rerun production checks",
       "attempts": [
         {
           "result": "not_run",
           "actual_result": "Not run: owner must create Free Frankfurt project and complete DEPLOY-CHECKLIST steps 2–5. A-01/02/03/06 remain unverified. Escalation: docs/PROGRESS.md Open questions for the owner; repository has no ClickUp.",
           "note": "2026-11-07 preparation only; T-45 doing, T-46 todo."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner/reviewer 2026-11-08: PostgreSQL17.11 Free Frankfurt; migrations0001–0014 via session pooler, prod/broadcast/0; A-01 direct and definer public Broadcast received at12:35:49Z/12:36:17Z, A-02 bidlock_app on transaction pooler, A-03 four active successful cron jobs after install twice. Public A-06 quotas recorded in README; actual usage tracked by TC-295.",
+          "note": "Evidence recorded, not independently rerun. See README Deployment notes."
         }
       ],
       "regression_of": null,
@@ -18847,13 +18862,93 @@
         "Follow matching case in qa/test-cases.md and docs/DEPLOY-CHECKLIST.md."
       ],
       "expected_result": "Documented acceptance verified without sharing secrets or running scripted production bids.",
-      "status": "manual_required",
-      "environment": "macOS; local PostgreSQL 17; t-45-prep. Production not provisioned by this task.",
+      "status": "resolved",
+      "environment": "Production; owner/reviewer observations supplied 2026-11-08; recording agent did not rerun production checks",
       "attempts": [
         {
           "result": "not_run",
           "actual_result": "Not run: owner must complete DEPLOY-CHECKLIST steps 6–9. A-04/05/12 and deployed acceptance remain unverified; A-05 requires more than seven days. Escalation: docs/PROGRESS.md Open questions for the owner; no external setup performed.",
           "note": "2026-11-07 preparation only; T-45 doing, T-46 todo."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner/reviewer 2026-11-08: valid HTTPS/CNAME, corrected fra1::fra1 function region, Node24, health SHA84c53ed matches deployed main, keepalive42482100743 green. Manual two-network Broadcast161 ms phone-to-desktop; reverse delivery confirmed without separate timing; no idle requests for10 s. D-96 main-only builds/Production-only secrets replaces Preview. Published A-04 limits and A-12 header contract recorded; follow-ups TC-294–296.",
+          "note": "Evidence recorded, not independently rerun. See README Deployment notes."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-294",
+      "ac_reference": "NFR-30; NFR-31",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Keepalive prevents pause",
+      "description": "Keepalive prevents pause",
+      "steps_to_reproduce": [
+        "Follow the matching README Deployment notes procedure."
+      ],
+      "expected_result": "Meet matching qa/test-cases.md acceptance.",
+      "status": "manual_required",
+      "environment": "Production follow-up; not run",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "A-05 open until after2026-11-15 and more than seven days with only keepalive traffic.",
+          "note": "Owner follow-up: docs/PROGRESS.md Open questions; no ClickUp per repository rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-295",
+      "ac_reference": "NFR-30",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Actual free-tier usage",
+      "description": "Actual free-tier usage",
+      "steps_to_reproduce": [
+        "Follow the matching README Deployment notes procedure."
+      ],
+      "expected_result": "Meet matching qa/test-cases.md acceptance.",
+      "status": "manual_required",
+      "environment": "Production follow-up; not run",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "A-04/A-06 public limits recorded2026-11-08; actual dashboard usage not supplied; no login performed.",
+          "note": "Owner follow-up: docs/PROGRESS.md Open questions; no ClickUp per repository rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-296",
+      "ac_reference": "NFR-13; NFR-14",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Distinct network rate keys",
+      "description": "Distinct network rate keys",
+      "steps_to_reproduce": [
+        "Follow the matching README Deployment notes procedure."
+      ],
+      "expected_result": "Meet matching qa/test-cases.md acceptance.",
+      "status": "manual_required",
+      "environment": "Production follow-up; not run",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "A-12 documentation supports overwrite contract;60 s counters expired before inspection. README has bounded manual procedure.",
+          "note": "Owner follow-up: docs/PROGRESS.md Open questions; no ClickUp per repository rules."
         }
       ],
       "regression_of": null,
