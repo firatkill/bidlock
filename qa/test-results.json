@@ -11273,6 +11273,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-171 deferred name dialog opens saves and returns keyboard focus",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-171 deferred name dialog opens saves and returns keyboard focus",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -14071,6 +14076,31 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-203 E2E-07 room axe light; TC-203 E2E-07 room axe dark; TC-203 E2E-07 keyboard-only bid; TC-203 E2E-07 lobby axe light @isolated; TC-203 E2E-07 lobby axe dark @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-203 E2E-07 room axe light",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-203 E2E-07 room axe dark",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-203 E2E-07 keyboard-only bid",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-203 E2E-07 lobby axe light @isolated",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-203 E2E-07 lobby axe dark @isolated",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -14234,6 +14264,16 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-201 E2E-01 cookie Origin validation idempotency and ETag; TC-201 E2E-01 signed owner-bound bot token cannot bid on another auction",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-201 E2E-01 cookie Origin validation idempotency and ETag",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-201 E2E-01 signed owner-bound bot token cannot bid on another auction",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -14333,6 +14373,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-206 E2E-09 initial auction scripts fit 180 KiB gzip",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-206 E2E-09 initial auction scripts fit 180 KiB gzip",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -14511,6 +14556,16 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-204 E2E-07 mobile reduced motion and polling has no sockets; TC-204 E2E-07 mobile lobby has no overflow @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-204 E2E-07 mobile reduced motion and polling has no sockets",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-204 E2E-07 mobile lobby has no overflow @isolated",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -14620,6 +14675,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-205 E2E-08 missing auction and scheduled controls; TC-205 E2E-08 minute limit shows countdown and disables bidding @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-205 E2E-08 missing auction and scheduled controls",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16441,6 +16501,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-237 catalogue controls fit the 1280 by 800 viewport",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-237 catalogue controls fit the 1280 by 800 viewport",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16500,6 +16565,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-238 mobile sticky bar and expandable custom amount",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-238 mobile sticky bar and expandable custom amount",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16589,6 +16659,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-239 race sends distinct keys and reports one acceptance",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-239 race sends distinct keys and reports one acceptance",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16673,6 +16748,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-240 replay returns the same bid id without another row",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-240 replay returns the same bid id without another row",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16757,6 +16837,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix unit suite239/239 passed, including existing local-time, history, formatter and receipt-related coverage.",
           "note": "D-97; no UI copy changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-242 own rejected bid is local to the current page session",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16841,6 +16926,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix unit suite239/239 passed, including existing local-time, history, formatter and receipt-related coverage.",
           "note": "D-97; no UI copy changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-243 ledger shows server placed_at to milliseconds",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16910,6 +17000,16 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-246 catalogue axe and touch targets light; TC-246 catalogue axe and touch targets dark",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-246 catalogue axe and touch targets light",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-246 catalogue axe and touch targets dark",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -16999,6 +17099,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-241 late experiment uses real deadline and receives AUCTION_CLOSED",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-241 late experiment uses real deadline and receives AUCTION_CLOSED",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -17224,6 +17329,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-249 mobile countdown and price clear the compact dock at first load",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-249 mobile countdown and price clear the compact dock at first load",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -17293,6 +17403,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-250 newer accepted bids appear above earlier rejected requests",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-250 newer accepted bids appear above earlier rejected requests",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -17382,6 +17497,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-251 run snapshots remain factual when the current price changes",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-251 run snapshots remain factual when the current price changes",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -17500,6 +17620,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-253 F7 reload has no price or ledger flash and only a new bid row animates",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-253 F7 reload has no price or ledger flash and only a new bid row animates",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -17544,6 +17669,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-254 mobile header is one row with keyboard-accessible navigation",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-254 mobile header is one row with keyboard-accessible navigation",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -18571,6 +18701,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-272 TC-284 TC-285 How it works sections and timeline",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-272 TC-284 TC-285 How it works sections and timeline",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -18609,6 +18744,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-272 TC-284 TC-285 How it works sections and timeline",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-272 TC-284 TC-285 How it works sections and timeline",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -18750,6 +18890,31 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-275 TC-289 E2E-07 how-it-works axe light; TC-275 TC-289 E2E-07 how-it-works axe dark; TC-275 TC-289 E2E-07 how-it-works mobile 360; TC-275 TC-289 E2E-07 how-it-works mobile 375; TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works axe light",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works axe dark",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works mobile 360",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works mobile 375",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -18864,6 +19029,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-272 TC-284 TC-285 How it works sections and timeline",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-272 TC-284 TC-285 How it works sections and timeline",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -18961,6 +19131,31 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-275 TC-289 E2E-07 how-it-works axe light; TC-275 TC-289 E2E-07 how-it-works axe dark; TC-275 TC-289 E2E-07 how-it-works mobile 360; TC-275 TC-289 E2E-07 how-it-works mobile 375; TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works axe light",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works axe dark",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works mobile 360",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 E2E-07 how-it-works mobile 375",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 local production-build baseline: TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
+          "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
         }
       ],
       "regression_of": null,
@@ -19192,6 +19387,35 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": false
+    },
+    {
+      "tc_reference": "TC-299",
+      "ac_reference": "NFR-16; T-47 acceptance",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Mobile Lighthouse baseline misses Best Practices target",
+      "description": "Missing favicon404 and CSP eval probe; favicon appearance is unspecified.",
+      "steps_to_reproduce": [
+        "Run mobile Lighthouse on / using the saved configuration."
+      ],
+      "expected_result": "Performance≥90, Accessibility≥95, Best Practices≥95.",
+      "status": "pending_decision",
+      "environment": "macOS; Chrome headless; Lighthouse13.6.0; main9021279",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Production99/100/92; one Lighthouse invocation.",
+          "note": "qa/lighthouse/t47-production-before.report.json"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local production build100/100/92; favicon404 and Zod eval probe reproduced.",
+          "note": "qa/lighthouse/t47-local-before.json; preceding local Lighthouse attempt encountered stopped test webServer and returned an interstitial, not an application score. Lint, typecheck,239 unit tests, guards and build pass; bundle script delegates to passing E2E-09. External ledger checker has the existing sentinel — collision; exact append-only check keyed by (tc_reference,title) passes. Full E2E not run at owner checkpoint."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner",
+      "retraction_reason": null
     }
   ]
 }

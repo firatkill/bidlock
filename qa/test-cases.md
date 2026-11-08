@@ -3471,3 +3471,27 @@ Acceptance recorded 2026-11-08 from owner/reviewer observations (README Deployme
 TC-297 steps: run formatter in separate processes with both TZ settings, asserting identical UTC and Istanbul outputs including midnight and milliseconds. In E2E-02 use UTC and Istanbul browser contexts; bid once, reload Istanbul to get an initial server row, bid again live, compare every displayed time to its placed_at in the visitor zone and assert no hydration/page errors. Preserve amounts, badges, rejection behavior and heading copy. Local browser QA: inspect history before/after reload and a new manual bid; verify timestamps agree and no console errors.
 
 TC-298 — Manual reviewer check (PRD §9.3, D-97; TRD §11.1/E2E-02): in a non-UTC browser inspect initial, reloaded and live bid times and the winning receipt. Expected: local HH:mm:ss.SSS, unchanged heading and no hydration errors. Priority High; automatable no (reviewer visual sign-off). UI PR remains unmerged.
+
+## M7 — T-47 polish
+
+All cases use a local production build and isolated test data except the explicitly bounded production Lighthouse baseline. Priority High.
+
+| TC ID  | PRD acceptance reference | TRD reference            | Title                    | Automatable | Expected result                                                                              |
+| ------ | ------------------------ | ------------------------ | ------------------------ | ----------- | -------------------------------------------------------------------------------------------- |
+| TC-299 | NFR-16                   | T-47 acceptance          | Mobile Lighthouse        | yes         | Performance ≥90, Accessibility ≥95, Best Practices ≥95                                       |
+| TC-300 | NFR-20; NFR-24           | §11.2; E2E-07            | Light/dark contrast      | yes         | Zero serious/critical axe violations; AA text and focus contrast                             |
+| TC-301 | NFR-22                   | §11.2; E2E-07            | Keyboard order and focus | yes         | Logical keyboard access and visible 2px accent ring                                          |
+| TC-302 | NFR-21                   | §11.3; UT-11; E2E-07     | Live announcements       | yes         | One polite price region; latest value at most every3s; assertive events once                 |
+| TC-303 | §9.5; NFR-24             | E2E-07                   | 360px layouts            | yes         | Lobby, room, result, sandbox, how-it-works and offline/error pages have no document overflow |
+| TC-304 | NFR-23                   | §11.2; E2E-07            | Reduced motion           | yes         | Price/banner/countdown motion disabled while content updates                                 |
+| TC-305 | NFR-15; D-33             | E2E-09                   | Room bundle budget       | yes         | First-load scripts ≤180KiB gzip                                                              |
+| TC-306 | §9.5; NFR-20; NFR-22     | E2E-07 visual complement | Mobile visual review     | no          | Readable unclipped360px pages in both themes; no dev-only state switches                     |
+
+- TC-299: Run one mobile Lighthouse navigation on production / and save report; after fixes run locally. Compare all three scores to acceptance thresholds. Production budget: at most3 lobby and1 how-it-works runs; no other production checks.
+- TC-300: Visit lobby, own room and how-it-works in light/dark; run axe and inspect focus contrast against tokens.
+- TC-301: Tab through header and room controls, submit a local bid with Enter, open/close name dialog and verify restored focus and focus ring.
+- TC-302: Deliver successive local price updates within3s; inspect polite region count and latest-value timing; exercise outbid/won/offer event deduplication.
+- TC-303: Set360×740, visit each listed page/state using local test data/mocks; assert document scrollWidth≤360 and controls remain available.
+- TC-304: Emulate reduce; update price and extension banner; assert no running animations and updated content.
+- TC-305: Run check-bundle; if manifest absent run E2E-09 on a fresh production-build context and measure transferred scripts.
+- TC-306: Inspect all listed pages at360px in light/dark using local browser; check readability, clipping and developer controls. Reviewer browser approval remains required before merge.
