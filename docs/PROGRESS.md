@@ -65,7 +65,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-44  | How it works page                                  | done   | `924aeb4` ([PR #57](https://github.com/firatkill/bidlock/pull/57)) |
 | T-45  | Supabase production setup                          | done   | `67e035c` (T-45/T-46 evidence)                                     |
 | T-46  | Vercel deploy, DNS, keepalive                      | done   | `67e035c`; A-05 open until after 2026-11-15                        |
-| T-47  | Polish pass                                        | doing  | —                                                                  |
+| T-47  | Polish pass                                        | done   | `63e2fcf` (PR #61; reviewer merge pending)                         |
 | T-48  | README, demo GIF, release                          | todo   | —                                                                  |
 
 ## Open questions for the owner
