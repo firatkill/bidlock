@@ -27,7 +27,7 @@
     "test:db": "bash scripts/db/test-db.sh",
     "test:concurrency": "vitest run --config vitest.integration.config.ts",
     "e2e": "playwright test",
-    "test:all": "node scripts/not-implemented.mjs",
+    "test:all": "pnpm lint && pnpm typecheck && pnpm test:unit && pnpm db:reset && pnpm test:db && pnpm test:concurrency && pnpm build && pnpm exec playwright install chromium && pnpm e2e",
     "load:local": "bash scripts/bench/load-local.sh",
     "bench:verify": "tsx scripts/bench/verify.ts",
     "bench:report": "tsx scripts/bench/report.ts"

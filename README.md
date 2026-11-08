@@ -10,11 +10,11 @@ Recorded locally with two independent browser contexts and the existing test clo
 
 ## The claim
 
-Thousands of concurrent bid requests, exactly one winner, zero invalid bids. The published CI run used 500 virtual users over 60 seconds (10-second ramp); the table below is generated from [latest.json](bench/results/latest.json), with its numbers unchanged.
+Thousands of concurrent bid requests, exactly one winner, zero invalid bids. The published CI run used 500 virtual users over 60 seconds (10-second ramp); the table below is generated from [latest.json](bench/results/latest.json), with grouped counts and latency rounded to two decimals. Raw measurements remain unchanged in the JSON.
 
-| Date       | VUs | Bid requests | Accepted | p95           | p99                   | Unexpected errors | Invariant violations |
-| ---------- | --- | ------------ | -------- | ------------- | --------------------- | ----------------- | -------------------- |
-| 2026-11-07 | 500 | 28925        | 245      | 269.233384 ms | 329.68857431999925 ms | 0 (0 rate)        | 0                    |
+| Date       | VUs | Bid requests | Accepted | p95       | p99       | Unexpected errors | Invariant violations |
+| ---------- | --- | ------------ | -------- | --------- | --------- | ----------------- | -------------------- |
+| 2026-11-07 | 500 | 28,925       | 245      | 269.23 ms | 329.69 ms | 0 (0%)            | 0                    |
 
 **`thresholds.passed=false`.** p95 was 269.23 ms against the 250 ms target; p99 was 329.69 ms against 600 ms. Unexpected errors and invariant violations were zero. [D-92](docs/PRD.md) accepts the p95 gap for this published result. Profiling identified requests waiting for the single-auction row lock and pool connections; the lock preserves correctness. Thresholds remain unchanged. These are CI measurements, not a production capacity claim.
 
@@ -47,7 +47,7 @@ pnpm test:all
 pnpm load:local
 ```
 
-`test:all` is currently an explicit not-implemented placeholder, so it does not yet provide the clean-clone release gate. Available checks are `pnpm lint`, `pnpm typecheck`, `pnpm test:unit`, `pnpm check:guards`, `pnpm test:db`, `pnpm test:concurrency`, and `pnpm e2e` (after a test-mode build and reset test database; see [CI](.github/workflows/ci.yml)).
+`test:all` runs lint, typecheck, unit tests, a local test-database reset, pgTAP, concurrency integration, production build, Chromium installation and Playwright E2E in sequence. It resets `bidlock_test`; E2E uses port 3100. Export the local test-mode build environment shown in the [CI E2E job](.github/workflows/ci.yml), using local port 54329 for both database URLs, before running it. `pnpm check:guards` is a separate static check.
 
 `load:local` starts the isolated Compose load stack and resets its local load database. It targets `http://app:3000` only. Never run load tests or scripted bids against the live demo. Published benchmark results come from the [CI load workflow](.github/workflows/load.yml).
 

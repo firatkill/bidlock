@@ -435,3 +435,9 @@ Open questions for the owner (T-48): review rendered README/GIF on the PR branch
 QA ledger gate retains its pre-existing duplicate sentinel `—` collision; an exact comparison keyed by `(tc_reference,title)` confirms all prior cases and attempt prefixes are intact. Final GIF is25s and3,102,717 bytes; frame composition visually inspected. Reviewer TC-310 remains manual_required.
 
 Preparation commit `0f49737`; PR [#63](https://github.com/firatkill/bidlock/pull/63) is open for reviewer sign-off. No merge, tag or release. Vercel reports a failed deployment check on the PR; D-96 forbids Preview, and no deployment settings were changed. GitHub CI is tracked on the PR.
+
+### T-48 reviewer revisions — 2026-11-08
+
+Merged origin/main (PR #62) as `095233e`, preserving neutral specs and formatted Lighthouse reports; removed the now-obsolete report formatter exclusions. README and release-note tables use28,925 bids,245 accepted,269.23ms p95,329.69ms p99 and0 (0%); raw latest.json unchanged. Repository prose wording check is clean. Reviewer approved the existing GIF; it was not modified.
+
+Implemented the exact TRD aggregate test command and removed its unused stub. Ran pnpm test:all once on macOS/Node24.10.0 against local bidlock_test: lint/typecheck,241 unit tests, database reset,511 pgTAP assertions,52 concurrency/integration tests, production build, Chromium install and50 E2E tests all pass. No competing Playwright/k6 run was present; E2E used3100, and port3000/Rehearse were untouched. Release checklist records the local gate and GIF approval; the clean-clone/fresh-volume Node22/24 matrix remains unverified. Supersedes the earlier placeholder and report-exclusion notes above. PR #63 stays open; no merge/tag/release.

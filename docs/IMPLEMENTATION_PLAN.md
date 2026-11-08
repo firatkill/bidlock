@@ -476,8 +476,9 @@ Conventions for every task:
 ## Release checklist (v1.0.0)
 
 Code and tests:
-- [ ] `pnpm test:all` passes on a clean clone (fresh Docker volume) on macOS or Linux with Node 22 and with Node 24. — Not verified: test:all remains a placeholder; no clean-clone Node22/24 fresh-volume run. No existing volume was deleted.
-- [ ] CI `ci` workflow green on `main` for the release commit. — Pending release commit on main. Baseline b3afb29 failed only generated Lighthouse report formatting; T-48 preserves those artifacts with exact Prettier exclusions. PR CI is tracked separately.
+- [x] T-48 reviewer follow-up: exact TRD aggregate `pnpm test:all` chain passes once locally — macOS, Node24.10.0;241 unit,511 pgTAP,52 integration and50 E2E tests. This does not replace the clean-clone matrix below.
+- [ ] `pnpm test:all` passes on a clean clone (fresh Docker volume) on macOS or Linux with Node 22 and with Node 24. — Aggregate command implemented and passed once locally on macOS/Node24.10.0 with existing Docker volume; clean-clone/fresh-volume Node22 and Node24 matrix remains unverified. No existing volume was deleted.
+- [ ] CI `ci` workflow green on `main` for the release commit. — Pending release commit on main. Main PR #62 provides formatted Lighthouse reports; obsolete Prettier exclusions removed. PR CI is tracked separately.
 - [ ] Latest `load` run green; its bench PR merged; `bench/results/latest.json` ≤ 7 days old with 0 invariant violations and thresholds passed. — D-92 accepted scored run42319897777 via merged PR #54, dated2026-11-07, with zero invariant violations but thresholds.passed=false (p95 gap). Original gate is not satisfied.
 - [x] `pnpm check:guards` passes; `grep -rn "any" --include=*.ts src | grep -v "// allow-any"` reviewed (no `any` types). — Verified T-48 locally; source search found no any types.
 - [x] No `console.log` in `src/` (ESLint `no-console: error` except in `log.ts`). — Verified T-48 source search.
@@ -497,7 +498,8 @@ Production:
 - [ ] Vercel and Supabase billing pages show $0 and no paid add-ons. — Free plan facts recorded; billing dashboards and paid-add-on inventory not recorded.
 
 Docs and presentation:
-- [ ] README benchmark table matches `latest.json`; GIF plays; all links work. — Exact table and local GIF verified; rendered PR README and external-link review remain with reviewer before merge.
+- [x] T-48 reviewer GIF approval — full flow with two windows and no localhost text, confirmed in PR #63 review.
+- [ ] README benchmark table matches `latest.json`; GIF plays; all links work. — Table uses reviewer-requested display precision with raw JSON unchanged. Reviewer approved the full two-window GIF and absence of localhost text. External-link review remains unverified.
 - [x] `/how-it-works` shows the diagram, concurrency text, benchmark table and stats. — T-44 and T-47 local QA cover diagram, concurrency text, benchmark and stats; see qa/test-results.json.
 - [x] Lighthouse scores recorded in the release notes. — CHANGELOG v1.0.0 preparation records reviewer production100/100/100 after da57813 on2026-11-08; GitHub release not published.
 - [x] PRD §14 decisions log updated with every fallback taken during implementation. — D-73–D-99 reviewed; D-95 superseded by D-96, D-92 gap retained, D-99 records local GIF.
