@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { expect, test } from "vitest";
 import { bidErrorCopy, formatLedgerTime } from "@/domain/bid-feedback";
 import { bidCountCopy } from "@/domain/copy";
@@ -42,4 +43,33 @@ test("TC-243 ledger milliseconds are padded, TC-245 bid pluralization", () => {
   expect(bidCountCopy(0)).toBe("0 bids");
   expect(bidCountCopy(1)).toBe("1 bid");
   expect(bidCountCopy(2)).toBe("2 bids");
+});
+
+test("TC-297: explicit zones format identically under UTC and Istanbul host TZ", () => {
+  const script = `
+    import { formatLedgerTime } from './src/domain/bid-feedback.ts';
+    console.log(JSON.stringify([
+      formatLedgerTime('2026-11-08T12:58:05.975Z', 'UTC'),
+      formatLedgerTime('2026-11-08T12:58:05.975Z', 'Europe/Istanbul'),
+      formatLedgerTime('2026-11-08T21:04:02.007Z', 'Europe/Istanbul'),
+      formatLedgerTime('2026-11-08T00:00:00.000Z', 'UTC'),
+    ]));
+  `;
+  const outputs = ["UTC", "Europe/Istanbul"].map((TZ) =>
+    execFileSync(
+      process.execPath,
+      ["--import", "tsx", "--input-type=module", "-e", script],
+      {
+        env: { ...process.env, TZ },
+        encoding: "utf8",
+      },
+    ).trim(),
+  );
+  expect(outputs[0]).toBe(outputs[1]);
+  expect(JSON.parse(outputs[0] ?? "null")).toEqual([
+    "12:58:05.975",
+    "15:58:05.975",
+    "00:04:02.007",
+    "00:00:00.000",
+  ]);
 });

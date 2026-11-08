@@ -52,8 +52,11 @@ export const test = base.extend<Fixtures>({
   },
 });
 export { expect };
-export async function newBidder(browser: Browser) {
-  const context = await browser.newContext({ baseURL: origin });
+export async function newBidder(browser: Browser, timezoneId?: string) {
+  const context = await browser.newContext({
+    baseURL: origin,
+    ...(timezoneId ? { timezoneId } : {}),
+  });
   const page = await context.newPage();
   await page.goto("/");
   await expect(

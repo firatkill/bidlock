@@ -2292,6 +2292,8 @@ Auth: none; mutating route with the existing Origin, JSON size/type and demo-mod
 - `/how-it-works` reads `bench/results/latest.json` with a static `import` (bundled at build time) and stats through a cached server function (`unstable_cache` or the Next 16 `"use cache"` directive with `cacheLife({ revalidate: 60 })`, whichever the installed major supports).
 - Client islands: `NameChip`, `NameDialog`, `ThemeToggle`, `PublicRoomCard`, `SandboxCard`, `OfferNotices`, `AuctionRoom`, `BotRunner`. `BenchmarkTable` and `StatsStrip` are server components.
 
+Bid timestamp rendering (D-97): PRD §9 requires visitor-local `HH:mm:ss.SSS`. `formatLedgerTime` accepts an explicit IANA zone. The shared client zone hook returns UTC for server rendering and the first hydration snapshot, then the browser-resolved zone; every initial, paged, live and winning-bid timestamp rerenders consistently. Do not suppress hydration warnings for these timestamps.
+
 ### 11.2 Design tokens
 
 Defined in `src/app/globals.css` (Tailwind 4 `@theme` maps them to utilities). Values copied from firatkil.com.

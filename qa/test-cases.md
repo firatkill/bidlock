@@ -3461,3 +3461,13 @@ Acceptance recorded 2026-11-08 from owner/reviewer observations (README Deployme
 | TC-294 | NFR-30; NFR-31           | A-05; §18.7   | Keepalive prevents pause   | High     | no          | After 2026-11-15, more than seven days with only keepalive traffic, project remains active        |
 | TC-295 | NFR-30                   | A-04; A-06    | Actual free-tier usage     | High     | no          | Owner records dated dashboard usage alongside published quotas                                    |
 | TC-296 | NFR-13; NFR-14           | A-12; §11     | Distinct network rate keys | High     | no          | Following README manual procedure, two timed manual bids produce distinct salted keys within 60 s |
+
+## Bid-history time-zone fix (T-30 follow-up; D-97)
+
+| TC ID  | PRD acceptance reference               | TRD reference | Title                                                       | Priority | Automatable | Expected result                                                                                                                                                                |
+| ------ | -------------------------------------- | ------------- | ----------------------------------------------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TC-297 | §9 conventions; §9.3 bid history; D-97 | §11.1; E2E-02 | Explicit-zone timestamps survive hydration and live updates | High     | yes         | Same instant/explicit zone yields identical HH:mm:ss.SSS under TZ=UTC and TZ=Europe/Istanbul; UTC SSR hydrates without errors and all initial/live rows use visitor-local time |
+
+TC-297 steps: run formatter in separate processes with both TZ settings, asserting identical UTC and Istanbul outputs including midnight and milliseconds. In E2E-02 use UTC and Istanbul browser contexts; bid once, reload Istanbul to get an initial server row, bid again live, compare every displayed time to its placed_at in the visitor zone and assert no hydration/page errors. Preserve amounts, badges, rejection behavior and heading copy. Local browser QA: inspect history before/after reload and a new manual bid; verify timestamps agree and no console errors.
+
+TC-298 — Manual reviewer check (PRD §9.3, D-97; TRD §11.1/E2E-02): in a non-UTC browser inspect initial, reloaded and live bid times and the winning receipt. Expected: local HH:mm:ss.SSS, unchanged heading and no hydration errors. Priority High; automatable no (reviewer visual sign-off). UI PR remains unmerged.
