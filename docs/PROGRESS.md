@@ -65,7 +65,7 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-44  | How it works page                                  | done   | `924aeb4` ([PR #57](https://github.com/firatkill/bidlock/pull/57)) |
 | T-45  | Supabase production setup                          | done   | `67e035c` (T-45/T-46 evidence)                                     |
 | T-46  | Vercel deploy, DNS, keepalive                      | done   | `67e035c`; A-05 open until after 2026-11-15                        |
-| T-47  | Polish pass                                        | done   | `77a539f` (PR #61; reviewer merge pending)                         |
+| T-47  | Polish pass                                        | done   | `da57813` (PR #61)                                                 |
 | T-48  | README, demo GIF, release                          | todo   | —                                                                  |
 
 ## Open questions for the owner
@@ -419,3 +419,7 @@ TC-299–306 cover CSP/favicon, contrast, focus order, live announcement timing,
 QA ledger retains all attempts. Initial result test raced its own bid by advancing the clock before acceptance; corrected to await specified leading state. Error-component test setup imported next/link outside Next; removed that unsupported harness import, retaining actual ErrorView plus separate load-error verification. Initial exploratory load-error copy assertion was corrected against existing copy. No timeouts or assertions were weakened. External ledger checker still has its pre-existing sentinel collision; independent exact append-only comparison by (tc_reference,title) passes.
 
 Final asset review: exact `/icon.svg` bypasses the off-mode page rewrite alongside the ICO (D-98); other page paths still match. Actual local off-mode process serves both image assets200 and rewrites auction pages to offline. After this proxy change, lint/typecheck,241 unit tests, guards/build,511 pgTAP assertions,52 concurrency/integration tests and final full50/50 E2E pass. Earlier full run was repeated because of this final server-side asset fix.
+
+### T-47 production Lighthouse after deploy — 2026-11-08
+
+Reviewer ran one mobile Lighthouse 13.6.0 pass on https://bidlock.firatkil.com/ after PR #61 deployed (health `version` `da57813`): Performance 100, Accessibility 100, Best Practices 100. Reports: `qa/lighthouse/t47-production-after.report.{json,html}`.
