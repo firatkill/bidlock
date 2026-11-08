@@ -11278,6 +11278,16 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-171 deferred name dialog opens saves and returns keyboard focus",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -14101,6 +14111,21 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-203 E2E-07 lobby axe dark @isolated",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "3/3 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused-isolated1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "5/5 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -14274,6 +14299,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-201 E2E-01 signed owner-bound bot token cannot bid on another auction",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -14378,6 +14408,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-206 E2E-09 initial auction scripts fit 180 KiB gzip",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -14457,6 +14492,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-202 TC-297 E2E-02 two bidders synchronize and stale bids are rejected @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -14566,6 +14606,21 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-204 E2E-07 mobile lobby has no overflow @isolated",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused-isolated1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -14680,6 +14735,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-205 E2E-08 missing auction and scheduled controls",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -15719,6 +15779,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-225 TC-226 E2E-03 seeded sandbox bots and human bid @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -15803,6 +15868,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-225 TC-226 E2E-03 seeded sandbox bots and human bid @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16113,6 +16183,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-229 TC-232 E2E-04 settlement runner-up and strike @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16172,6 +16247,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-228 E2E-04 settlement winner pays @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16231,6 +16311,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-229 TC-232 E2E-04 settlement runner-up and strike @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16325,6 +16410,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-234 E2E-05 late bid extends close and marks history @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16399,6 +16489,11 @@
           "result": "pass",
           "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-235 E2E-06 public entry, benchmark and successor @isolated",
           "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16506,6 +16601,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-237 catalogue controls fit the 1280 by 800 viewport",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16570,6 +16670,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-238 mobile sticky bar and expandable custom amount",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16664,6 +16769,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-239 race sends distinct keys and reports one acceptance",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16753,6 +16863,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-240 replay returns the same bid id without another row",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16842,6 +16957,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-242 own rejected bid is local to the current page session",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -16931,6 +17051,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-243 ledger shows server placed_at to milliseconds",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17010,6 +17135,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-246 catalogue axe and touch targets dark",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17104,6 +17234,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-241 late experiment uses real deadline and receives AUCTION_CLOSED",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17334,6 +17469,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-249 mobile countdown and price clear the compact dock at first load",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17408,6 +17548,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-250 newer accepted bids appear above earlier rejected requests",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17502,6 +17647,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-251 run snapshots remain factual when the current price changes",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17625,6 +17775,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-253 F7 reload has no price or ledger flash and only a new bid row animates",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -17674,6 +17829,11 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-254 mobile header is one row with keyboard-accessible navigation",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -18706,6 +18866,16 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-272 TC-284 TC-285 How it works sections and timeline",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -18749,6 +18919,16 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-272 TC-284 TC-285 How it works sections and timeline",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -18915,6 +19095,21 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "4/4 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused-isolated1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "5/5 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -19034,6 +19229,16 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-272 TC-284 TC-285 How it works sections and timeline",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -19156,6 +19361,21 @@
           "result": "pass",
           "actual_result": "T-47 local production-build baseline: TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
           "note": "2026-11-08; Chromium on localhost:3100; focused run32/32; no implementation changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "4/4 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused-isolated1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "5/5 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -19357,6 +19577,11 @@
           "result": "pass",
           "actual_result": "Focused TC-202/297 E2E retest1/1 passed; full E2E39/39 passed with server TZ=UTC and UTC/Istanbul browser contexts.",
           "note": "No production traffic. Initial server row reload and new live row both match placed_at converted to visitor zone."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
         }
       ],
       "regression_of": null,
@@ -19398,7 +19623,7 @@
         "Run mobile Lighthouse on / using the saved configuration."
       ],
       "expected_result": "Performance≥90, Accessibility≥95, Best Practices≥95.",
-      "status": "pending_decision",
+      "status": "resolved",
       "environment": "macOS; Chrome headless; Lighthouse13.6.0; main9021279",
       "attempts": [
         {
@@ -19410,12 +19635,273 @@
           "result": "fail",
           "actual_result": "Local production build100/100/92; favicon404 and Zod eval probe reproduced.",
           "note": "qa/lighthouse/t47-local-before.json; preceding local Lighthouse attempt encountered stopped test webServer and returned an interstitial, not an application score. Lint, typecheck,239 unit tests, guards and build pass; bundle script delegates to passing E2E-09. External ledger checker has the existing sentinel — collision; exact append-only check keyed by (tc_reference,title) passes. Full E2E not run at owner checkpoint."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Local mobile Lighthouse100/100/100; both favicon endpoints200; no CSP violations during load and bid.",
+          "note": "qa/lighthouse/t47-local-after.report.json. Initial after-run returned NO_NAVSTART trace recording error (no scores); rerun succeeded. CSP unchanged; D-98 approved2026-11-08.241 unit tests and50 E2E pass; lint/typecheck/guards/build pass."
         }
       ],
       "regression_of": null,
       "root_cause_group": null,
       "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner",
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-300",
+      "ac_reference": "NFR-20; NFR-24",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Light/dark contrast",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Light-theme accent focus ring on fixed dark experiment panel measured2.4877:1, below3:1.",
+          "note": "Use existing strip-accent token; no palette change."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "fail",
+          "actual_result": "1/2 mapped tests passed. TC-300 TC-303 360px sandbox and result light @isolated",
+          "note": "2026-11-08 t47-focused-isolated1.json. Initial result test advanced clock before accepted response; corrected by waiting for the specified leading state, no timeout changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused3.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-isolated-retest.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "6/6 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-301",
+      "ac_reference": "NFR-22",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Keyboard order and focus",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Desktop CSS order put name chip after navigation visually but before navigation in keyboard order.",
+          "note": "Remove CSS reordering; DOM/visual sequence now agrees at all breakpoints."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-302",
+      "ac_reference": "NFR-21",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Live announcements",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Source inspection: immediate price update after3s did not cancel an overdue pending timeout.",
+          "note": "Cancel old timer before publishing latest price; deterministic suspended-tab UT-11 added."
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused3.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "UT-11 three tests pass: latest-value throttle, once-per-event ID, cleanup and overdue-timer cancellation.",
+          "note": "Full unit suite241/241."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-303",
+      "ac_reference": "PRD §9.5; NFR-24",
+      "milestone": "M7 — Polish + deploy",
+      "title": "360px layouts",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused1.json"
+        },
+        {
+          "result": "fail",
+          "actual_result": "1/2 mapped tests passed. TC-300 TC-303 360px sandbox and result light @isolated",
+          "note": "2026-11-08 t47-focused-isolated1.json. Initial result test advanced clock before accepted response; corrected by waiting for the specified leading state, no timeout changes."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused3.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2/2 mapped tests passed. ",
+          "note": "2026-11-08 t47-isolated-retest.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "6/6 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Actual room-load error at360px in light/dark renders specified retry copy with no horizontal overflow against localhost:3101 production process with unreachable local DB.",
+          "note": "Initial exploratory assertion mistakenly said Could not instead of specified Couldn’t; corrected to the existing copy. Error-component E2E setup initially imported next/link through AuctionLoadState, unsupported by Node ESM; kept ErrorView component layout test and moved actual load-error verification to isolated local process. No app behavior or test timeout changed."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-304",
+      "ac_reference": "NFR-23",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Reduced motion",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-focused-isolated1.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-isolated-retest.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "1/1 mapped tests passed. ",
+          "note": "2026-11-08 t47-full-e2e.json"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-305",
+      "ac_reference": "NFR-15; D-33",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Room bundle budget",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "E2E-09:183364 transferred script bytes (179.07KiB)≤184320. check-bundle emits manifest-not-found fallback under D-33.",
+          "note": "Full50/50 E2E passed, zero flaky/skipped tests."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-306",
+      "ac_reference": "PRD §9.5; NFR-20; NFR-22",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Mobile visual review",
+      "description": "T-47 polish acceptance; see qa/test-cases.md.",
+      "steps_to_reproduce": ["Follow the matching qa/test-cases.md steps."],
+      "expected_result": "The documented T-47 requirement is met.",
+      "status": "manual_required",
+      "environment": "macOS arm64; Node24; local Next production build; Chromium; PostgreSQL17",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Local Chromium screenshot inspection: readable360px lobby, room, result, sandbox and load-error states, both themes; no pageerrors during capture. No dev-only state switches found by source audit.",
+          "note": "Interactive browser unavailable (inventory empty). Screenshot review supplements50/50 automated flows; reviewer still performs live browser sign-off before merge. Screenshots in qa/screenshots/t47."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner",
+      "retraction_reason": null,
+      "automatable": false
     }
   ]
 }

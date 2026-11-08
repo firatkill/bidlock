@@ -3487,11 +3487,11 @@ All cases use a local production build and isolated test data except the explici
 | TC-305 | NFR-15; D-33             | E2E-09                   | Room bundle budget       | yes         | First-load scripts ≤180KiB gzip                                                              |
 | TC-306 | §9.5; NFR-20; NFR-22     | E2E-07 visual complement | Mobile visual review     | no          | Readable unclipped360px pages in both themes; no dev-only state switches                     |
 
-- TC-299: Run one mobile Lighthouse navigation on production / and save report; after fixes run locally. Compare all three scores to acceptance thresholds. Production budget: at most3 lobby and1 how-it-works runs; no other production checks.
+- TC-299 (also D-98; FR-86): verify both generated favicon endpoints return images, colours equal globals.css tokens, and page load plus bidding emits no securitypolicyviolation without unsafe-eval. Run one mobile Lighthouse navigation on production / and save report; after fixes run locally. Compare all three scores to acceptance thresholds. Production budget: at most3 lobby and1 how-it-works runs; no other production checks.
 - TC-300: Visit lobby, own room and how-it-works in light/dark; run axe and inspect focus contrast against tokens.
-- TC-301: Tab through header and room controls, submit a local bid with Enter, open/close name dialog and verify restored focus and focus ring.
-- TC-302: Deliver successive local price updates within3s; inspect polite region count and latest-value timing; exercise outbid/won/offer event deduplication.
-- TC-303: Set360×740, visit each listed page/state using local test data/mocks; assert document scrollWidth≤360 and controls remain available.
+- TC-301: Check desktop focus follows visual order and sandbox dark-strip rings have at least3:1 contrast in either theme. Tab through header and room controls, submit a local bid with Enter, open/close name dialog and verify restored focus and focus ring.
+- TC-302: Include a suspended-tab case where a new price arrives before an overdue timer; the old timer must be cancelled. Deliver successive local price updates within3s; inspect polite region count and latest-value timing; exercise outbid/won/offer event deduplication.
+- TC-303: ErrorView is rendered into the production shell/CSS for non-destructive component layout checks; actual room-load error is checked against a second local production process with an unreachable local database. Set360×740, visit each listed page/state using local test data/mocks; assert document scrollWidth≤360 and controls remain available.
 - TC-304: Emulate reduce; update price and extension banner; assert no running animations and updated content.
 - TC-305: Run check-bundle; if manifest absent run E2E-09 on a fresh production-build context and measure transferred scripts.
 - TC-306: Inspect all listed pages at360px in light/dark using local browser; check readability, clipping and developer controls. Reviewer browser approval remains required before merge.
