@@ -20837,6 +20837,136 @@
       "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner",
       "retraction_reason": null,
       "automatable": false
+    },
+    {
+      "tc_reference": "TC-307",
+      "ac_reference": "G-2; G-3; US-12; D-92",
+      "milestone": "M7 — Polish + deploy",
+      "title": "T-48 README benchmark, architecture and source anchors",
+      "description": "T-48 README benchmark, architecture and source anchors",
+      "steps_to_reproduce": ["Follow T-48 cases in qa/test-cases.md."],
+      "expected_result": "T-48 README benchmark, architecture and source anchors meets documented acceptance.",
+      "status": "resolved",
+      "environment": "macOS; Node24; local Next production build; Playwright Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Eight table columns retain exact JSON values; thresholds.passed=false and D-92 explanation retained. Five source line anchors verified; local Markdown paths and architecture Mermaid checked. No dedicated Markdown/link checker exists; external links await reviewer.",
+          "note": "T-48 release preparation,2026-11-08."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Reviewer formatting verified against latest.json:28,925 bids;245 accepted;269.23ms p95;329.69ms p99;0 (0%). Raw JSON unchanged. Merged neutral specs from main; wording check clean.",
+          "note": "T-48 reviewer follow-up,2026-11-08; partial GIF approval only for TC-310."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-308",
+      "ac_reference": "G-3; US-13; D-99",
+      "milestone": "M7 — Polish + deploy",
+      "title": "T-48 local demo GIF",
+      "description": "T-48 local demo GIF",
+      "steps_to_reproduce": ["Follow T-48 cases in qa/test-cases.md."],
+      "expected_result": "T-48 local demo GIF meets documented acceptance.",
+      "status": "resolved",
+      "environment": "macOS; Node24; local Next production build; Playwright Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Local production build on3108/dev bidlock with existing test endpoints. Two independent Chromium contexts: lobby,10-dollar bid,11-dollar outbid,12-dollar late extension,win,pay. FFmpeg8.0;25-second GIF below8MB, viewport only. Inspected composed frames; clock reset to zero. Initial video closing order caused panel offset; closed contexts concurrently, normalized each video presentation timestamp origin and re-encoded. Final GIF3,102,717 bytes.",
+          "note": "T-48 release preparation,2026-11-08."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-309",
+      "ac_reference": "G-5; NFR-30; D-96",
+      "milestone": "M7 — Polish + deploy",
+      "title": "T-48 release preparation and validation",
+      "description": "T-48 release preparation and validation",
+      "steps_to_reproduce": ["Follow T-48 cases in qa/test-cases.md."],
+      "expected_result": "T-48 release preparation and validation meets documented acceptance.",
+      "status": "resolved",
+      "environment": "macOS; Node24; local Next production build; Playwright Chromium",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "lint,typecheck,241 unit tests,guards and local production build pass. Dated deployment facts preserved; option b added; A-05 stays open after2026-11-15. Checklist distinguishes evidence from unverified gates. Main baseline CI failed generated report formatting; exact exclusions preserve reviewer artifacts. No release/tag/merge performed.",
+          "note": "T-48 release preparation,2026-11-08."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Exact TRD test:all command implemented; unused stub removed. Local full aggregate passed once. Formatted Lighthouse reports merged from PR #62; obsolete exclusions removed. Updated checklist without claiming the unrun clean-clone Node22/24 matrix.",
+          "note": "T-48 reviewer follow-up,2026-11-08; partial GIF approval only for TC-310."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-310",
+      "ac_reference": "G-3; US-12; US-13",
+      "milestone": "M7 — Polish + deploy",
+      "title": "T-48 rendered README reviewer sign-off",
+      "description": "T-48 rendered README reviewer sign-off",
+      "steps_to_reproduce": ["Follow T-48 cases in qa/test-cases.md."],
+      "expected_result": "T-48 rendered README reviewer sign-off meets documented acceptance.",
+      "status": "manual_required",
+      "environment": "macOS; Node24; local Next production build; Playwright Chromium",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "Owner must review rendered README and GIF on PR branch before merge. See docs/PROGRESS.md; no ClickUp/Slack per repository override.",
+          "note": "T-48 release preparation,2026-11-08."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Reviewer confirmed GIF shows full flow with two windows and no localhost text. GIF accepted; updated README table and external links remain subject to final review.",
+          "note": "T-48 reviewer follow-up,2026-11-08; partial GIF approval only for TC-310."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-311",
+      "ac_reference": "FR-90..FR-96; T-48 reviewer follow-up",
+      "milestone": "M7 — Polish + deploy",
+      "title": "T-48 aggregate test gate",
+      "description": "Exact TRD aggregate test command executes all nine stages.",
+      "steps_to_reproduce": [
+        "Confirm no competing Playwright/k6 process and port3100 free.",
+        "Export local test-mode build configuration for bidlock_test on54329.",
+        "Run pnpm test:all once."
+      ],
+      "expected_result": "All stages pass; port3000 and Rehearse untouched.",
+      "status": "resolved",
+      "environment": "macOS; Node24.10.0; local PostgreSQL17.11; Chromium; E2E port3100",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "One full run exits0: lint,typecheck,241 unit tests,reset,511 pgTAP assertions,52 integration tests,build,Chromium install,50 E2E tests (46.4s).",
+          "note": "Existing Docker volume; not a clean-clone Node22/24 matrix."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null
     }
   ]
 }

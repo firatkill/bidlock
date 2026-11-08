@@ -1,8 +1,93 @@
 # Bidlock
 
-A live auction engine that stays correct under load.
+A live auction engine that keeps bidding, closing and settlement correct under concurrent load.
 
-Implementation is in progress. The [first published benchmark](bench/SUMMARY.md) records p95 269.23 ms against the 250 ms target, p99 329.69 ms against 600 ms, zero unexpected errors and zero invariant violations. NFR-10 p95 remains an owner-accepted gap (D-92); thresholds are unchanged and `thresholds.passed=false`.
+[Try the live demo](https://bidlock.firatkil.com).
+
+![Two bidders move from the lobby through an outbid, late-bid extension, win and simulated payment](docs/media/demo.gif)
+
+Recorded locally with two independent browser contexts and the existing test clock; production never receives scripted bids. Payment is simulated.
+
+## The claim
+
+Thousands of concurrent bid requests, exactly one winner, zero invalid bids. The published CI run used 500 virtual users over 60 seconds (10-second ramp); the table below is generated from [latest.json](bench/results/latest.json), with grouped counts and latency rounded to two decimals. Raw measurements remain unchanged in the JSON.
+
+| Date       | VUs | Bid requests | Accepted | p95       | p99       | Unexpected errors | Invariant violations |
+| ---------- | --- | ------------ | -------- | --------- | --------- | ----------------- | -------------------- |
+| 2026-11-07 | 500 | 28,925       | 245      | 269.23 ms | 329.69 ms | 0 (0%)            | 0                    |
+
+**`thresholds.passed=false`.** p95 was 269.23 ms against the 250 ms target; p99 was 329.69 ms against 600 ms. Unexpected errors and invariant violations were zero. [D-92](docs/PRD.md) accepts the p95 gap for this published result. Profiling identified requests waiting for the single-auction row lock and pool connections; the lock preserves correctness. Thresholds remain unchanged. These are CI measurements, not a production capacity claim.
+
+[Load workflow](.github/workflows/load.yml) · [Run and methodology](bench/SUMMARY.md)
+
+## How it stays correct
+
+- [Serialize bids with an auction row lock](https://github.com/firatkill/bidlock/blob/main/db/migrations/0005_place_bid.sql#L68): each bid reads the latest committed auction state after acquiring it.
+- [Read server time after the lock](https://github.com/firatkill/bidlock/blob/main/db/migrations/0005_place_bid.sql#L75): waiting in a queue cannot make a late bid valid.
+- [Replay the stored idempotent result](https://github.com/firatkill/bidlock/blob/main/db/migrations/0005_place_bid.sql#L77): the same key and payload return the original outcome; changed payloads are rejected.
+- [Enforce bid rules in SQL](https://github.com/firatkill/bidlock/blob/main/db/migrations/0005_place_bid.sql#L93): closing time, leader, minimum increment and maximum amount are checked together.
+- [Extend late bidding within a cap](https://github.com/firatkill/bidlock/blob/main/db/migrations/0005_place_bid.sql#L124): accepted late bids can move the close forward, with the result and auction update committed atomically.
+
+## Run it yourself
+
+Use Node 24 (minimum 22), pnpm 10.34.7 and Docker. Run these commands from the repository root:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm db:up
+cp .env.example .env.local
+pnpm db:reset --db bidlock
+pnpm dev
+```
+
+The reset command deletes data in the selected local database. The app runs at `http://localhost:3000`; PostgreSQL uses port 54329. Database scripts read process environment variables, never `.env.local`; their admin URL defaults to local `bidlock_test`. Set `DATABASE_URL_ADMIN` explicitly when migrating another local database. See [the environment template](.env.example) and [database setup](docs/TRD.md#6-database).
+
+```sh
+pnpm test:all
+pnpm load:local
+```
+
+`test:all` runs lint, typecheck, unit tests, a local test-database reset, pgTAP, concurrency integration, production build, Chromium installation and Playwright E2E in sequence. It resets `bidlock_test`; E2E uses port 3100. Export the local test-mode build environment shown in the [CI E2E job](.github/workflows/ci.yml), using local port 54329 for both database URLs, before running it. `pnpm check:guards` is a separate static check.
+
+`load:local` starts the isolated Compose load stack and resets its local load database. It targets `http://app:3000` only. Never run load tests or scripted bids against the live demo. Published benchmark results come from the [CI load workflow](.github/workflows/load.yml).
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Browser
+        UI[Next.js client components]
+        Bots[Bot scheduler<br/>sandbox owner tab only]
+        Feed[AuctionFeed<br/>Broadcast or Polling]
+    end
+    subgraph Vercel["Vercel Hobby (Node runtime)"]
+        Pages[App Router pages<br/>RSC]
+        API[Route handlers /api/*]
+        Proxy[proxy.ts<br/>CSP nonce, request id]
+    end
+    subgraph Supabase["Supabase Free"]
+        Pooler[Supavisor<br/>transaction mode :6543]
+        PG[(PostgreSQL 17<br/>schema bidlock)]
+        Cron[pg_cron<br/>tick every minute]
+        RT[Realtime<br/>Broadcast]
+    end
+    UI -- fetch JSON --> API
+    Bots -- same bid API, Bot token --> API
+    Pages -- server-only SQL --> Pooler
+    API -- postgres.js prepare:false --> Pooler --> PG
+    Cron -- bidlock.tick() --> PG
+    PG -- trigger realtime.send --> RT
+    RT -- topic auction:id --> Feed
+    Feed -- reconcile: GET /state --> API
+```
+
+Local, CI and load-test topology replaces Supabase with `postgres:17` (plus pgTAP), has no pg_cron (lazy transitions and an optional `pnpm db:ticker` loop cover it) and uses `PollingFeed`.
+
+```mermaid
+flowchart LR
+    k6[k6 container<br/>500 VUs] --> App[app container<br/>next start standalone] --> DB[(postgres:17)]
+    Verify[scripts/bench/verify.ts] --> DB
+```
 
 ## Stack
 
@@ -22,6 +107,7 @@ Resolved 2026-10-21 from the package registry, using the specified major lines w
 | @radix-ui/react-dialog      | 1.3.1   |
 | class-variance-authority    | 0.7.1   |
 | clsx                        | 2.1.1   |
+| cn                          | 0.5.0   |
 | tailwind-merge              | 3.7.0   |
 | lucide-react                | 1.61.0  |
 | typescript                  | 5.9.3   |
@@ -42,37 +128,12 @@ Resolved 2026-10-21 from the package registry, using the specified major lines w
 | tsx                         | 4.23.15 |
 | shadcn                      | 3.8.5   |
 | @playwright/test            | 1.64.1  |
+| playwright-core             | 1.64.1  |
 | @axe-core/playwright        | 4.14.0  |
 | @mermaid-js/mermaid-cli     | 11.17.0 |
 | pnpm@10                     | 10.34.7 |
 
 Node: 24 (minimum 22). Next 16 uses `src/proxy.ts` rather than `middleware.ts` (A-10); CSP and standalone serving are verified in T-25/T-33. See [Next upgrade guide](https://nextjs.org/docs/app/guides/upgrading/version-16).
-
-## Development
-
-`pnpm install --frozen-lockfile`, then `pnpm dev`. Run `pnpm db:up` and `pnpm db:reset --db bidlock` first; copy `.env.example` to `.env.local` for the dev server.
-
-## Verification
-
-`pnpm lint && pnpm typecheck && pnpm test:unit && pnpm check:guards && pnpm build`. Other scripts fail explicitly until implemented.
-
-## Decisions
-
-Frankfurt deployment; no analytics; load tests execute in CI only. See [owner decisions](docs/OWNER-DECISIONS.md), [plan](docs/IMPLEMENTATION_PLAN.md) and [progress](docs/PROGRESS.md).
-
-MIT — Fırat Kıl.
-
-## Local PostgreSQL
-
-`pnpm db:up` starts the project database on port 54329. `pnpm db:down` stops it without deleting its volume. The image is pinned to `postgres:17.11`, the current 17.x minor on 2026-10-21 ([PostgreSQL versioning](https://www.postgresql.org/support/versioning/)). It creates `bidlock`, `bidlock_test`, and `bidlock_load`; migration and reset tooling is available. Auction schema migrations begin in M1.
-
-A-07 verified locally on 2026-10-21: the official image installs `postgresql-17-pgtap` (1.3.4) and provides `/usr/bin/pg_prove`. The database-tooling CI job repeats the availability checks.
-
-## Database scripts
-
-Scripts read `process.env` only, never `.env.local`. `DATABASE_URL_ADMIN` defaults to the local `bidlock_test` database. Use `pnpm db:migrate --status` or `--dry-run` to inspect migration state. `pnpm db:reset` resets test data; `pnpm db:reset --db bidlock` targets the dev database. Reset refuses non-local hosts. `pnpm test:concurrency` currently runs the eight migration-tooling cases against a disposable `bidlock_migrate_test`; auction concurrency tests arrive in M1.
-
-At M0 there are no auction migrations: reset warns and skips environment SQL until `bidlock.settings` exists. The committed production environment and cron SQL are not executed locally. The ticker needs the later `bidlock.tick()` function. pgTAP rule tests, e2e and load scripts remain unavailable until their owning tasks.
 
 ## Deployment notes
 
@@ -101,3 +162,21 @@ Public documentation checked **2026-11-08**, without login:
 **Open follow-ups:** A-05 stays open until after **2026-11-15**: verify more than seven days of activity with only keepalive traffic (restart the observation window if manual traffic intervenes). Supabase publishes pausing after one inactive week; a successful initial query or cron is not proof that keepalive prevents pausing. A-04 actual dashboard usage and A-06 actual usage remain unrecorded; no capacity claim is made.
 
 For **A-12**, next time the owner and reviewer each place one ordinary manual bid from mobile data/home broadband, inspect `bidlock.rate_counters` entries for `bid_ip_60s` immediately, within the 60-second window. Correlate each counter update with bid timing and confirm two distinct salted keys; record only time, count and distinctness, never raw IPs, secrets or full hashes. The previous counters expired before inspection. No scripted production bidding or spoofing test is authorized.
+
+**Paused database (TRD §18.7, option b):** The demo database may be paused; it restores on request. The owner restores the project from the Supabase dashboard, checks the tick and cron jobs, verifies health, and reviews keepalive history. This is the documented free-tier default, not an automatic restoration guarantee. See the [paused-database runbook](docs/TRD.md#187-runbook-paused-database).
+
+Production mobile Lighthouse after PR #61 deployed (`da57813`), recorded by the reviewer on **2026-11-08**: Performance **100**, Accessibility **100**, Best Practices **100**. [Report](qa/lighthouse/t47-production-after.report.html).
+
+## Docs
+
+- [Product requirements and decisions](docs/PRD.md)
+- [Technical design and runbooks](docs/TRD.md)
+- [Owner decisions](docs/OWNER-DECISIONS.md)
+- [Implementation plan and release checklist](docs/IMPLEMENTATION_PLAN.md#release-checklist-v100)
+- [Progress and open questions](docs/PROGRESS.md)
+- [Benchmark methodology](bench/SUMMARY.md)
+- [Changelog](CHANGELOG.md)
+
+## License
+
+[MIT](LICENSE) — Fırat Kıl.
