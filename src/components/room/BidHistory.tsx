@@ -1,4 +1,5 @@
 "use client";
+import { useTimeZone } from "@/client/hooks/useTimeZone";
 import { formatLedgerTime, type RejectedBid } from "@/domain/bid-feedback";
 import { useState } from "react";
 import { fetchOlderBids } from "@/client/api";
@@ -21,6 +22,7 @@ export function BidHistory({
   extendBySeconds: number;
   onBids: (bids: BidItem[]) => void;
 }) {
+  const timeZone = useTimeZone();
   const [highestAtMount] = useState(() =>
     Math.max(0, ...bids.map((bid) => bid.bid_no)),
   );
@@ -128,9 +130,8 @@ export function BidHistory({
                   <time
                     dateTime={bid.placed_at}
                     className="col-start-2 font-mono text-xs text-ink-3"
-                    suppressHydrationWarning
                   >
-                    {formatLedgerTime(bid.placed_at)}
+                    {formatLedgerTime(bid.placed_at, timeZone)}
                   </time>
                   {bid.extended && (
                     <span

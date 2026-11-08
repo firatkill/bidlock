@@ -11268,6 +11268,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-171 deferred name dialog opens saves and returns keyboard focus",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -13274,6 +13279,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix unit suite239/239 passed, including existing local-time, history, formatter and receipt-related coverage.",
+          "note": "D-97; no UI copy changed."
         }
       ],
       "regression_of": null,
@@ -14056,6 +14066,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-203 E2E-07 room axe light; TC-203 E2E-07 room axe dark; TC-203 E2E-07 keyboard-only bid; TC-203 E2E-07 lobby axe light @isolated; TC-203 E2E-07 lobby axe dark @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -14214,6 +14229,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-201 E2E-01 cookie Origin validation idempotency and ETag; TC-201 E2E-01 signed owner-bound bot token cannot bid on another auction",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -14308,6 +14328,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-206 E2E-09 initial auction scripts fit 180 KiB gzip",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -14382,6 +14407,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-202 TC-297 E2E-02 two bidders synchronize and stale bids are rejected @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -14476,6 +14506,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-204 E2E-07 mobile reduced motion and polling has no sockets; TC-204 E2E-07 mobile lobby has no overflow @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -14580,6 +14615,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-205 E2E-08 missing auction and scheduled controls; TC-205 E2E-08 minute limit shows countdown and disables bidding @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -15614,6 +15654,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-225 TC-226 E2E-03 seeded sandbox bots and human bid @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -15693,6 +15738,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-225 TC-226 E2E-03 seeded sandbox bots and human bid @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -15998,6 +16048,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-229 TC-232 E2E-04 settlement runner-up and strike @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16052,6 +16107,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-228 E2E-04 settlement winner pays @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16106,6 +16166,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-229 TC-232 E2E-04 settlement runner-up and strike @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16195,6 +16260,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-234 E2E-05 late bid extends close and marks history @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16264,6 +16334,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-235 E2E-06 public entry, benchmark and successor @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16361,6 +16436,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-237 catalogue controls fit the 1280 by 800 viewport",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16415,6 +16495,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-238 mobile sticky bar and expandable custom amount",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16499,6 +16584,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-239 race sends distinct keys and reports one acceptance",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16578,6 +16668,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-240 replay returns the same bid id without another row",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16652,6 +16747,16 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-242 own rejected bid is local to the current page session",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix unit suite239/239 passed, including existing local-time, history, formatter and receipt-related coverage.",
+          "note": "D-97; no UI copy changed."
         }
       ],
       "regression_of": null,
@@ -16726,6 +16831,16 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-243 ledger shows server placed_at to milliseconds",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix unit suite239/239 passed, including existing local-time, history, formatter and receipt-related coverage.",
+          "note": "D-97; no UI copy changed."
         }
       ],
       "regression_of": null,
@@ -16790,6 +16905,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-246 catalogue axe and touch targets light; TC-246 catalogue axe and touch targets dark",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16874,6 +16994,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-241 late experiment uses real deadline and receives AUCTION_CLOSED",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -16967,6 +17092,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix unit suite239/239 passed, including existing local-time, history, formatter and receipt-related coverage.",
+          "note": "D-97; no UI copy changed."
         }
       ],
       "regression_of": null,
@@ -17089,6 +17219,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-249 mobile countdown and price clear the compact dock at first load",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -17153,6 +17288,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-250 newer accepted bids appear above earlier rejected requests",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -17237,6 +17377,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-251 run snapshots remain factual when the current price changes",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -17350,6 +17495,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-253 F7 reload has no price or ledger flash and only a new bid row animates",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -17389,6 +17539,11 @@
           "result": "pass",
           "actual_result": "T-42 final full E2E run: all 33 tests passed, parallel project with four workers followed by isolated project with one worker. Original timeouts retained.",
           "note": "T-42 local acceptance 2026-11-07; D-79/D-80. Local metrics are not published benchmark claims."
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-254 mobile header is one row with keyboard-accessible navigation",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -18411,6 +18566,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-272 TC-284 TC-285 How it works sections and timeline",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -18444,6 +18604,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-272 TC-284 TC-285 How it works sections and timeline",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -18580,6 +18745,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-275 TC-289 E2E-07 how-it-works axe light; TC-275 TC-289 E2E-07 how-it-works axe dark; TC-275 TC-289 E2E-07 how-it-works mobile 360; TC-275 TC-289 E2E-07 how-it-works mobile 375; TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -18689,6 +18859,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-272 TC-284 TC-285 How it works sections and timeline",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -18781,6 +18956,11 @@
           "result": "pass",
           "actual_result": "PR57 implementation CI42355483795: all six jobs passed on353c86a (static, production build, local DB tooling, pgTAP, concurrency integration, polling E2E).",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42355483795"
+        },
+        {
+          "result": "pass",
+          "actual_result": "2026-11-08 time-zone fix full local Chromium E2E: TC-275 TC-289 E2E-07 how-it-works axe light; TC-275 TC-289 E2E-07 how-it-works axe dark; TC-275 TC-289 E2E-07 how-it-works mobile 360; TC-275 TC-289 E2E-07 how-it-works mobile 375; TC-275 TC-289 lobby benchmark link resolves to the table @isolated",
+          "note": "39/39 suite passed; server TZ=UTC; TC-202/297 contexts UTC and Europe/Istanbul."
         }
       ],
       "regression_of": null,
@@ -18949,6 +19129,62 @@
           "result": "not_run",
           "actual_result": "A-12 documentation supports overwrite contract;60 s counters expired before inspection. README has bounded manual procedure.",
           "note": "Owner follow-up: docs/PROGRESS.md Open questions; no ClickUp per repository rules."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": false
+    },
+    {
+      "tc_reference": "TC-297",
+      "ac_reference": "PRD §9 conventions; §9.3; D-97; TRD §11.1; E2E-02",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Explicit-zone timestamps survive hydration and live updates",
+      "description": "T-30 bid-history time-zone correction; not T-47.",
+      "steps_to_reproduce": ["Follow matching qa/test-cases.md case."],
+      "expected_result": "Initial and live timestamps use visitor-local HH:mm:ss.SSS without hydration mismatch.",
+      "status": "resolved",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium; server TZ=UTC, browsers UTC/Europe/Istanbul",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "239 unit tests passed, including separate TZ=UTC/TZ=Europe/Istanbul processes with identical explicit-zone output and midnight/millisecond assertions.",
+          "note": "2026-11-08; lint/typecheck/guards/build passed."
+        },
+        {
+          "result": "fail",
+          "actual_result": "Focused E2E timestamp assertions passed; console check incorrectly rejected the stale-bid scenario's expected HTTP409 resource message.",
+          "note": "Test corrected against specified stale-bid response, permitting only the exact409 resource message; all hydration/page errors still fail."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Focused TC-202/297 E2E retest1/1 passed; full E2E39/39 passed with server TZ=UTC and UTC/Istanbul browser contexts.",
+          "note": "No production traffic. Initial server row reload and new live row both match placed_at converted to visitor zone."
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true
+    },
+    {
+      "tc_reference": "TC-298",
+      "ac_reference": "PRD §9 conventions; §9.3; D-97; TRD §11.1; E2E-02",
+      "milestone": "M7 — Polish + deploy",
+      "title": "Reviewer browser sign-off for bid-history zone fix",
+      "description": "T-30 bid-history time-zone correction; not T-47.",
+      "steps_to_reproduce": ["Follow matching qa/test-cases.md case."],
+      "expected_result": "Initial and live timestamps use visitor-local HH:mm:ss.SSS without hydration mismatch.",
+      "status": "manual_required",
+      "environment": "macOS arm64; Node24; local PostgreSQL17.11; Chromium; server TZ=UTC, browsers UTC/Europe/Istanbul",
+      "attempts": [
+        {
+          "result": "not_run",
+          "actual_result": "Browser runtime reported no browser available; troubleshooting inventory returned []. Interactive visual check not performed.",
+          "note": "Reviewer must check initial/live/reloaded rows and winning receipt before merging UI PR; see docs/PROGRESS.md Open questions. Automated Chromium39/39 passed."
         }
       ],
       "regression_of": null,

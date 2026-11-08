@@ -45,7 +45,16 @@ export function bidErrorCopy(error: z.infer<typeof ErrorBody>["error"]) {
       : undefined;
   return text && !text.includes("{") ? text : roomCopy.errors.network;
 }
-export function formatLedgerTime(iso: string) {
-  const date = new Date(iso);
-  return `${[date.getHours(), date.getMinutes(), date.getSeconds()].map((n) => String(n).padStart(2, "0")).join(":")}.${String(date.getMilliseconds()).padStart(3, "0")}`;
+export function formatLedgerTime(
+  iso: string,
+  timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone,
+) {
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone,
+    hourCycle: "h23",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    fractionalSecondDigits: 3,
+  }).format(new Date(iso));
 }

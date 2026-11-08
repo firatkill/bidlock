@@ -1,4 +1,5 @@
 "use client";
+import { useTimeZone } from "@/client/hooks/useTimeZone";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { localNow } from "@/client/api";
@@ -22,6 +23,7 @@ export function ResultPanel({
   payment?: React.ReactNode;
   bids?: BidItem[];
 }) {
+  const timeZone = useTimeZone();
   const [now, setNow] = useState(() => Date.parse(auction.server_now));
   const { assertive, announceEvent } = useLiveAnnouncer();
   const offer = auction.offer;
@@ -139,8 +141,8 @@ export function ResultPanel({
             <dt>{copy.winningBid}</dt>
             <dd>
               #{winner.bid_no} · {formatCents(winner.amount)} ·{" "}
-              <time dateTime={winner.placed_at} suppressHydrationWarning>
-                {formatLedgerTime(winner.placed_at)}
+              <time dateTime={winner.placed_at}>
+                {formatLedgerTime(winner.placed_at, timeZone)}
               </time>
             </dd>
           </div>

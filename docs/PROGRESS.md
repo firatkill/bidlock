@@ -70,6 +70,8 @@ A finishing commit is recorded only when acceptance checks, including required C
 
 ## Open questions for the owner
 
+- Bid-history time-zone fix (D-97): UI PR must remain unmerged until reviewer browser approval. No interactive browser was connected during local verification; automated Chromium covers UTC SSR and Istanbul hydration/live rows.
+
 - T-45/T-46 completed from owner/reviewer evidence on 2026-11-08; see README Deployment notes. A-05 remains open until after 2026-11-15 (more than seven days with only keepalive traffic). A-04 dashboard usage, A-06 actual usage and A-12 distinct salted runtime keys remain owner follow-ups. D-96 disables Preview. T-47 has not started.
 
 - NFR-10: known, accepted gap for later revisit (D-92). Published [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) p95=269.233384 ms exceeds250 ms; p99=329.68857432 ms passes600. Single-auction serialization/pool waiting is documented by D-91. Threshold and auction lock unchanged; thresholds.passed=false. T-43 is complete by explicit owner acceptance; no further tuning or dispatches authorized.
@@ -391,3 +393,9 @@ QA ledger structural/status checks pass after marking owner cases non-automatabl
 ## T-45/T-46 evidence recorded (2026-11-08)
 
 Owner/reviewer production evidence and public dated quotas are recorded in README. Local lint/typecheck,238 unit tests and guards pass. External ledger checker hits the previously documented sentinel `—` collision (M6-review); exact append-only comparison keyed by `(tc_reference,title)` passes. No production reruns. A-05, usage and A-12 runtime follow-ups remain open; T-47 not started.
+
+## Bid-history time-zone fix (T-30 follow-up)
+
+D-97 preserves PRD §9 visitor-local HH:mm:ss.SSS and the existing heading. Explicit-zone formatter and shared hydration snapshot update initial/live/paged history and winning receipt together. Unit TZ subprocess checks pass; focused E2E passes after correcting the test to allow its specified stale-bid409 response. Reviewer browser check remains required; T-47 not started.
+
+Final local validation: lint/typecheck/guards/build,239 unit tests and39 E2E tests pass. QA ledger has the same known sentinel collision; exact attempt-prefix comparison by `(tc_reference,title)` passes. Records PR [#59](https://github.com/firatkill/bidlock/pull/59) merged as `6dd9a9d88461b0a2831ab40c49323cac1b2b73ea` after all six GitHub CI jobs passed (run42483140145). Vercel separately reported deployment Error with no preview URL; dashboard was not inspected, so the cause is unverified.
