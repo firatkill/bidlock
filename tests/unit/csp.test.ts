@@ -102,11 +102,12 @@ test("TC-166: UT-14 off mode rewrites pages while excluding API and assets", () 
     "/_next/static/chunk.js",
     "/_next/image",
     "/favicon.ico",
+    "/icon.svg",
   ])
     expect(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url })).toBe(
       false,
     );
-  for (const url of ["/", "/a/example", "/offline"])
+  for (const url of ["/", "/a/example", "/offline", "/icon.svg/other"])
     expect(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url })).toBe(
       true,
     );

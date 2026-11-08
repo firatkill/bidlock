@@ -2557,7 +2557,7 @@ In `APP_ENV=test` the server returns `bot_seed = BOT_SEED_OVERRIDE` (42), so the
 
 ### 13.4 Headers and CSP
 
-`src/proxy.ts` (matcher: all paths except `/api/*`, `/_next/static`, `/_next/image`, `favicon.ico`; API responses get their headers from `route()`) generates a 16-byte base64 nonce per request and sets the CSP below on both the forwarded request headers (`NextResponse.next({ request: { headers } })` with `content-security-policy` and `x-nonce`) and the response. Next.js reads the nonce from the request's `content-security-policy` header and adds it to its own framework and hydration scripts; `x-nonce` is what `layout.tsx` reads for the theme script. Without the request header the framework scripts are blocked by `'strict-dynamic'`. Headers:
+`src/proxy.ts` (matcher: all paths except `/api/*`, `/_next/static`, `/_next/image`, `favicon.ico` and the exact `/icon.svg` asset (D-98); API responses get their headers from `route()`) generates a 16-byte base64 nonce per request and sets the CSP below on both the forwarded request headers (`NextResponse.next({ request: { headers } })` with `content-security-policy` and `x-nonce`) and the response. Next.js reads the nonce from the request's `content-security-policy` header and adds it to its own framework and hydration scripts; `x-nonce` is what `layout.tsx` reads for the theme script. Without the request header the framework scripts are blocked by `'strict-dynamic'`. Headers:
 
 ```
 Content-Security-Policy:

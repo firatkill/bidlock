@@ -665,6 +665,11 @@
           "result": "pass",
           "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
           "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -760,6 +765,11 @@
           "result": "pass",
           "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
           "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -860,6 +870,11 @@
           "result": "pass",
           "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
           "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -960,6 +975,11 @@
           "result": "pass",
           "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
           "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -1055,6 +1075,11 @@
           "result": "pass",
           "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
           "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -1144,6 +1169,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1233,6 +1263,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1322,6 +1357,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1411,6 +1451,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1500,6 +1545,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1594,6 +1644,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -1674,6 +1729,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1743,6 +1803,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1812,6 +1877,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -1896,6 +1966,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": "TC-022: previously passing T-06 schema fixture on a clean database",
@@ -1965,6 +2040,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2049,6 +2129,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2118,6 +2203,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2192,6 +2282,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -2256,6 +2351,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2320,6 +2420,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2384,6 +2489,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2448,6 +2558,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2512,6 +2627,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2576,6 +2696,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2744,6 +2869,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2803,6 +2933,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2867,6 +3002,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2926,6 +3066,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -2985,6 +3130,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3044,6 +3194,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3103,6 +3258,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3162,6 +3322,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3221,6 +3386,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3280,6 +3450,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3339,6 +3514,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3398,6 +3578,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3457,6 +3642,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3516,6 +3706,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3575,6 +3770,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3634,6 +3834,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3693,6 +3898,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3752,6 +3962,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3811,6 +4026,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3870,6 +4090,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3929,6 +4154,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -3988,6 +4218,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4047,6 +4282,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4106,6 +4346,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4165,6 +4410,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4224,6 +4474,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4283,6 +4538,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4342,6 +4602,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4401,6 +4666,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4460,6 +4730,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4519,6 +4794,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4578,6 +4858,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4637,6 +4922,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4696,6 +4986,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4755,6 +5050,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4814,6 +5114,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4873,6 +5178,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4932,6 +5242,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -4991,6 +5306,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5050,6 +5370,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5109,6 +5434,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5168,6 +5498,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5227,6 +5562,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5286,6 +5626,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5345,6 +5690,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5404,6 +5754,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5463,6 +5818,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5522,6 +5882,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5581,6 +5946,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5640,6 +6010,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5699,6 +6074,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5758,6 +6138,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5817,6 +6202,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5876,6 +6266,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5935,6 +6330,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -5994,6 +6394,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6053,6 +6458,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6117,6 +6527,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6176,6 +6591,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6235,6 +6655,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6294,6 +6719,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6353,6 +6783,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6412,6 +6847,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6471,6 +6911,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6530,6 +6975,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6589,6 +7039,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6648,6 +7103,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6707,6 +7167,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6766,6 +7231,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6825,6 +7295,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6884,6 +7359,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -6943,6 +7423,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7002,6 +7487,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7061,6 +7551,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7120,6 +7615,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7179,6 +7679,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7238,6 +7743,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7297,6 +7807,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7356,6 +7871,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7415,6 +7935,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7474,6 +7999,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7533,6 +8063,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7592,6 +8127,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7651,6 +8191,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7710,6 +8255,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7769,6 +8319,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7828,6 +8383,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7887,6 +8447,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -7946,6 +8511,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -8005,6 +8575,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 363 pgTAP assertions passed after pnpm db:up && pnpm db:reset.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -8094,6 +8669,11 @@
           "result": "pass",
           "actual_result": "INT-01 passed during pnpm test:concurrency; all 49 integration tests pass after resetting only bidlock_test. Shared invariant SQL is unchanged.",
           "note": "T-41 resumed acceptance after owner Docker recovery."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -8153,6 +8733,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -8212,6 +8797,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -8271,6 +8861,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -9535,6 +10130,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -9584,6 +10184,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -9633,6 +10238,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -9682,6 +10292,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10027,6 +10642,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10076,6 +10696,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10125,6 +10750,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10174,6 +10804,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10223,6 +10858,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10272,6 +10912,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10321,6 +10966,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10370,6 +11020,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10419,6 +11074,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10468,6 +11128,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10522,6 +11187,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10576,6 +11246,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10630,6 +11305,11 @@
           "result": "pass",
           "actual_result": "T-45 preparation: existing migration integration suite 9/9 and targeted TC-162 health/version 1/1 pass against local PostgreSQL only.",
           "note": "No production access; full fresh migration chain also verified on bidlock_t45_prep."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -10872,6 +11552,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "DEMO_MODE=off actual local production process: /icon.svg and /favicon.ico return200 image types; auction page still renders offline. Exact matcher tests pass, including /icon.svg/other remaining a page.",
+          "note": "D-98 asset exception only; CSP unchanged. Initial exploratory off-mode process omitted required TEST_API_SECRET and returned500 for pages; corrected fixture environment, then passed."
         }
       ],
       "regression_of": null,
@@ -10951,6 +11636,11 @@
           "result": "pass",
           "actual_result": "T-39 post-D-75 regression: lint/typecheck and all 182 unit tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "DEMO_MODE=off actual local production process: /icon.svg and /favicon.ico return200 image types; auction page still renders offline. Exact matcher tests pass, including /icon.svg/other remaining a page.",
+          "note": "D-98 asset exception only; CSP unchanged. Initial exploratory off-mode process omitted required TEST_API_SECRET and returned500 for pages; corrected fixture environment, then passed."
         }
       ],
       "regression_of": null,
@@ -11288,6 +11978,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -11491,6 +12186,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -14126,6 +14826,11 @@
           "result": "pass",
           "actual_result": "5/5 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -14304,6 +15009,11 @@
           "result": "pass",
           "actual_result": "2/2 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -14413,6 +15123,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -14497,6 +15212,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -14621,6 +15341,11 @@
           "result": "pass",
           "actual_result": "2/2 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -14740,6 +15465,11 @@
           "result": "pass",
           "actual_result": "2/2 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -14941,6 +15671,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -15000,6 +15735,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -15044,6 +15784,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -15093,6 +15838,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -15142,6 +15892,11 @@
           "result": "pass",
           "actual_result": "T-39 final regression after app acceptance/cleanup: 49 integration/concurrency tests passed.",
           "note": "T-38a Catalogue & Ledger; local test environment; original timeouts retained."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -15784,6 +16539,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -15873,6 +16633,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16188,6 +16953,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16252,6 +17022,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16316,6 +17091,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16415,6 +17195,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16494,6 +17279,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16606,6 +17396,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16675,6 +17470,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16774,6 +17574,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16868,6 +17673,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -16962,6 +17772,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17056,6 +17871,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17140,6 +17960,11 @@
           "result": "pass",
           "actual_result": "2/2 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17239,6 +18064,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17474,6 +18304,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17553,6 +18388,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17652,6 +18492,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17780,6 +18625,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -17834,6 +18684,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -18619,6 +19474,11 @@
           "result": "pass",
           "actual_result": "Local74 SQL parity assertions and full437 pgTAP/51 concurrency tests pass; six PR #50 CI jobs green including INT-01/INT-02. Measurement retains all16 invariant checks0.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42316538127; D-88 measurement gate stops scored dispatch."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
         }
       ],
       "regression_of": null,
@@ -18779,6 +19639,16 @@
           "result": "pass",
           "actual_result": "Final scored run42319897777:28925 bids,1496 replays,245 accepted responses/229 unique bids;p95=269.233384 ms fails250,p99=329.68857432 ms passes600,error0,replay mismatch0,all16 invariants0,extensions20,AUCTION_CLOSED500. Artifact schema/config/scope verified; diagnostics records0 and no sampler files.",
           "note": "https://github.com/firatkill/bidlock/actions/runs/42319897777; reviewer authorized final dispatch under D-89/D-90, recorded in PROGRESS without new D-xx. Bot #54 unmerged. Both dispatches used; bounded Node/pool profile requires new approval."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final pgTAP suite17 files/511 assertions passed.",
+          "note": "2026-11-08; local test database only; rerun for proxy change."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-47 final integration suite11 files/52 tests passed, including INT-01 and INT-02.",
+          "note": "2026-11-08; pnpm test:concurrency; local test database only."
         }
       ],
       "regression_of": null,
@@ -18876,6 +19746,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -18929,6 +19804,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19110,6 +19990,11 @@
           "result": "pass",
           "actual_result": "5/5 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19239,6 +20124,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19376,6 +20266,11 @@
           "result": "pass",
           "actual_result": "5/5 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19582,6 +20477,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19650,6 +20550,16 @@
           "result": "pass",
           "actual_result": "Local mobile Lighthouse100/100/100; both favicon endpoints200; no CSP violations during load and bid.",
           "note": "qa/lighthouse/t47-local-after.report.json. Initial after-run returned NO_NAVSTART trace recording error (no scores); rerun succeeded. CSP unchanged; D-98 approved2026-11-08.241 unit tests and50 E2E pass; lint/typecheck/guards/build pass."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
+        },
+        {
+          "result": "pass",
+          "actual_result": "DEMO_MODE=off actual local production process: /icon.svg and /favicon.ico return200 image types; auction page still renders offline. Exact matcher tests pass, including /icon.svg/other remaining a page.",
+          "note": "D-98 asset exception only; CSP unchanged. Initial exploratory off-mode process omitted required TEST_API_SECRET and returned500 for pages; corrected fixture environment, then passed."
         }
       ],
       "regression_of": null,
@@ -19697,6 +20607,11 @@
           "result": "pass",
           "actual_result": "6/6 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19730,6 +20645,11 @@
           "result": "pass",
           "actual_result": "2/2 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19768,6 +20688,11 @@
           "result": "pass",
           "actual_result": "UT-11 three tests pass: latest-value throttle, once-per-event ID, cleanup and overdue-timer cancellation.",
           "note": "Full unit suite241/241."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19816,6 +20741,11 @@
           "result": "pass",
           "actual_result": "Actual room-load error at360px in light/dark renders specified retry copy with no horizontal overflow against localhost:3101 production process with unreachable local DB.",
           "note": "Initial exploratory assertion mistakenly said Could not instead of specified Couldn’t; corrected to the existing copy. Error-component E2E setup initially imported next/link through AuctionLoadState, unsupported by Node ESM; kept ErrorView component layout test and moved actual load-error verification to isolated local process. No app behavior or test timeout changed."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
@@ -19849,6 +20779,11 @@
           "result": "pass",
           "actual_result": "1/1 mapped tests passed. ",
           "note": "2026-11-08 t47-full-e2e.json"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final full E2E50/50 passed after exact icon.svg maintenance-mode exemption.",
+          "note": "2026-11-08; /tmp/t47-final-e2e.json; zero skips/flaky tests."
         }
       ],
       "regression_of": null,
