@@ -1,6 +1,6 @@
 # Owner decisions
 
-Decided by the owner, Fırat Kıl, on 2026-10-21. These hold for all five portfolio projects (Sourced, Bidlock, Rehearse, Outbox, efatura). They are settled: do not ask about them again, and do not change them without the owner's approval (AGENTS.md, checkpoint 2). Where the PRD or TRD says something different, this file wins; tell the owner about the conflict and record it in the PRD decisions log.
+Decided by the owner, Fırat Kıl, on 2026-10-21. These hold for all five projects (Sourced, Bidlock, Rehearse, Outbox, efatura). They are settled: do not ask about them again, and do not change them without the owner's approval (AGENTS.md, checkpoint 2). Where the PRD or TRD says something different, this file wins; tell the owner about the conflict and record it in the PRD decisions log.
 
 ## Shared standards
 

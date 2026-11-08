@@ -33,9 +33,9 @@ ID scheme used across all docs:
 
 ## 1. Problem
 
-Fırat built the backend of a live liquidation-auction marketplace at work. Its bidding rules run inside PostgreSQL functions so they stay correct under concurrency: idempotent bids, anti-sniping soft close, automatic closing and second-chance offers. That code is private, so recruiters and reviewers cannot see it.
+Fırat built the backend of a live liquidation-auction marketplace at work. Its bidding rules run inside PostgreSQL functions so they stay correct under concurrency: idempotent bids, anti-sniping soft close, automatic closing and second-chance offers. That code is private, so the approach cannot be shown or reviewed in public.
 
-Most public auction demos are a React counter and a `POST /bid` that reads the price, compares in JavaScript and writes. They break the first time two bids arrive in the same millisecond. A reviewer cannot tell from a resume line whether a candidate knows the difference.
+Most public auction demos are a React counter and a `POST /bid` that reads the price, compares in JavaScript and writes. They break the first time two bids arrive in the same millisecond. From the outside it is hard to tell whether an implementation handles that case.
 
 Bidlock is a small, open-source auction engine that makes the difference visible and checkable:
 
@@ -48,7 +48,7 @@ Bidlock is a small, open-source auction engine that makes the difference visible
 | ID | Goal | Measured by |
 |---|---|---|
 | G-1 | Prove correctness under concurrency in public | INT-01 and LOAD-01 pass in CI on every run; results committed in `bench/results/` |
-| G-2 | Give a recruiter a working, understandable demo in 30 seconds | Lobby shows a live auction, a one-click bid path and the benchmark headline above the fold at 1280x800 and 360x740 |
+| G-2 | Give a first-time visitor a working, understandable demo in 30 seconds | Lobby shows a live auction, a one-click bid path and the benchmark headline above the fold at 1280x800 and 360x740 |
 | G-3 | Give a backend reviewer a 10-minute deep read | `/how-it-works` plus `db/migrations/*place_bid*` explain the lock, idempotency, soft close, closing and settlement with no gaps |
 | G-4 | Keep hosting cost near zero | Monthly bill $0 excluding the domain (NFR-30) |
 | G-5 | Be reproducible by anyone | `pnpm install && pnpm db:up && pnpm test:all` passes on a clean machine with Docker and Node 22+ (`test:all` installs the Playwright Chromium build itself; on Linux the first run may need `pnpm exec playwright install-deps chromium`) |
@@ -69,7 +69,7 @@ Bidlock is a small, open-source auction engine that makes the difference visible
 
 | Persona | Time budget | What they do | What must be true |
 |---|---|---|---|
-| P1 Recruiter | 30 s | Opens the link from a CV, sees motion, maybe clicks one bid | The page is live, bidding works with one click, the headline number is visible, nothing asks them to sign up |
+| P1 Casual visitor | 30 s | Opens the link, sees motion, maybe clicks one bid | The page is live, bidding works with one click, the headline number is visible, nothing asks them to sign up |
 | P2 Backend engineer reviewer | 10 min | Reads `/how-it-works`, opens the repo, reads `place_bid`, the tests and the CI run | Rules are in SQL with comments, the state machine is drawn, tests cover every rule, CI is green, the benchmark is reproducible |
 | P3 Casual visitor | 2–5 min | Competes in the public room, starts a sandbox | Real-time updates, clear outbid and win states, fair countdown |
 | P4 Owner (Fırat) | rare | Keeps the demo alive and cheap; stops abuse | One env var or one SQL statement disables bidding; database pausing has a documented fix |
@@ -78,8 +78,8 @@ Bidlock is a small, open-source auction engine that makes the difference visible
 
 | ID | As a | I want to | So that | FRs |
 |---|---|---|---|---|
-| US-01 | recruiter | open the site and see a live auction with a price and countdown immediately | I know the project works without reading anything | FR-40, FR-41, FR-60 |
-| US-02 | recruiter | place a bid with one click without signing up | I can try it in seconds | FR-20, FR-21, FR-63 |
+| US-01 | casual visitor | open the site and see a live auction with a price and countdown immediately | I know the project works without reading anything | FR-40, FR-41, FR-60 |
+| US-02 | casual visitor | place a bid with one click without signing up | I can try it in seconds | FR-20, FR-21, FR-63 |
 | US-03 | visitor | compete with other people in one shared public room | the auction feels real | FR-30, FR-31, FR-45 |
 | US-04 | visitor | see the price, leader and bid list update without refreshing | I can react to other bidders | FR-45, FR-46, FR-47 |
 | US-05 | visitor | know immediately when I am outbid and re-bid from the keyboard | I can compete fast | FR-63, FR-64, FR-71 |

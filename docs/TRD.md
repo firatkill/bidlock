@@ -3784,7 +3784,7 @@ The $0 figures are the plan prices at writing, not guarantees; every limit below
 
 | Item | Plan | Monthly cost (at writing; verify) | Usage expectation | Limit to watch (verify A-04, A-05, A-06) |
 |---|---|---|---|---|
-| App hosting | Vercel Hobby | $0 | < 50k function invocations; broadcast avoids polling. Worst case on the polling fallback: one open room ≈ 1,800 state requests per hour at 2 s, so the fallback is what to watch | function invocations, active CPU, fast origin transfer, bandwidth; Hobby is limited to non-commercial use (verify the terms cover a personal portfolio demo) |
+| App hosting | Vercel Hobby | $0 | < 50k function invocations; broadcast avoids polling. Worst case on the polling fallback: one open room ≈ 1,800 state requests per hour at 2 s, so the fallback is what to watch | function invocations, active CPU, fast origin transfer, bandwidth; Hobby is limited to non-commercial use (verify the terms cover a non-commercial open-source demo) |
 | Database, Realtime, cron | Supabase Free | $0 | < 50 MB data with nightly cleanup; < 100k realtime messages | database size (500 MB at writing), egress, Realtime concurrent connections and messages per month, number of free projects per account, pause after inactivity (A-05) |
 | CI, load test, keepalive | GitHub Actions, public repo | $0 | ~10 CI runs/week × ~10 min, 1 load run/week × ~10 min | standard GitHub-hosted runners are free for public repositories at writing (verify); scheduled workflows are disabled after 60 days without repository activity |
 | DNS | existing `firatkil.com` zone | $0 (domain already owned) | 1 CNAME | |
