@@ -433,3 +433,5 @@ Validation: build, lint, typecheck,241 unit tests and guards pass; README local 
 Open questions for the owner (T-48): review rendered README/GIF on the PR branch before merge; approve v1.0.0 tagging/publication after merge. T-48 stays doing until review/publication. Release checklist retains unverified production exercises, billing/usage evidence, clean-clone Node22/24 test:all (placeholder), accepted D-92 threshold failure, release-commit main CI and A-05 after2026-11-15. M7/project closure reports await completion of those gates rather than claiming final sign-off.
 
 QA ledger gate retains its pre-existing duplicate sentinel `—` collision; an exact comparison keyed by `(tc_reference,title)` confirms all prior cases and attempt prefixes are intact. Final GIF is25s and3,102,717 bytes; frame composition visually inspected. Reviewer TC-310 remains manual_required.
+
+Preparation commit `0f49737`; PR [#63](https://github.com/firatkill/bidlock/pull/63) is open for reviewer sign-off. No merge, tag or release. Vercel reports a failed deployment check on the PR; D-96 forbids Preview, and no deployment settings were changed. GitHub CI is tracked on the PR.

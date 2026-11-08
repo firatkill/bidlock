@@ -107,6 +107,7 @@ Resolved 2026-10-21 from the package registry, using the specified major lines w
 | @radix-ui/react-dialog      | 1.3.1   |
 | class-variance-authority    | 0.7.1   |
 | clsx                        | 2.1.1   |
+| cn                          | 0.5.0   |
 | tailwind-merge              | 3.7.0   |
 | lucide-react                | 1.61.0  |
 | typescript                  | 5.9.3   |
@@ -127,6 +128,7 @@ Resolved 2026-10-21 from the package registry, using the specified major lines w
 | tsx                         | 4.23.15 |
 | shadcn                      | 3.8.5   |
 | @playwright/test            | 1.64.1  |
+| playwright-core             | 1.64.1  |
 | @axe-core/playwright        | 4.14.0  |
 | @mermaid-js/mermaid-cli     | 11.17.0 |
 | pnpm@10                     | 10.34.7 |
