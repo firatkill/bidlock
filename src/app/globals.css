@@ -426,3 +426,8 @@ h1 {
     padding: 10px 8px;
   }
 }
+
+/* Fixed dark experiment surfaces need the matching accent for AA focus contrast. */
+.bg-strip-ground :focus-visible {
+  outline-color: var(--strip-accent);
+}

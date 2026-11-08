@@ -65,14 +65,16 @@ A finishing commit is recorded only when acceptance checks, including required C
 | T-44  | How it works page                                  | done   | `924aeb4` ([PR #57](https://github.com/firatkill/bidlock/pull/57)) |
 | T-45  | Supabase production setup                          | done   | `67e035c` (T-45/T-46 evidence)                                     |
 | T-46  | Vercel deploy, DNS, keepalive                      | done   | `67e035c`; A-05 open until after 2026-11-15                        |
-| T-47  | Polish pass                                        | todo   | —                                                                  |
+| T-47  | Polish pass                                        | done   | `77a539f` (PR #61; reviewer merge pending)                         |
 | T-48  | README, demo GIF, release                          | todo   | —                                                                  |
 
 ## Open questions for the owner
 
+- T-47: D-98 approved and implemented. PR #61 requires reviewer live browser sign-off (TC-306) and post-merge production Lighthouse; no merge by this task. Interactive browser unavailable; local Chromium screenshot inspection and all automated checks pass.
+
 - Bid-history time-zone fix (D-97): UI PR must remain unmerged until reviewer browser approval. No interactive browser was connected during local verification; automated Chromium covers UTC SSR and Istanbul hydration/live rows.
 
-- T-45/T-46 completed from owner/reviewer evidence on 2026-11-08; see README Deployment notes. A-05 remains open until after 2026-11-15 (more than seven days with only keepalive traffic). A-04 dashboard usage, A-06 actual usage and A-12 distinct salted runtime keys remain owner follow-ups. D-96 disables Preview. T-47 has not started.
+- T-45/T-46 completed from owner/reviewer evidence on 2026-11-08; see README Deployment notes. A-05 remains open until after 2026-11-15 (more than seven days with only keepalive traffic). A-04 dashboard usage, A-06 actual usage and A-12 distinct salted runtime keys remain owner follow-ups. D-96 disables Preview. T-47 continues in PR #61.
 
 - NFR-10: known, accepted gap for later revisit (D-92). Published [run42319897777](https://github.com/firatkill/bidlock/actions/runs/42319897777) p95=269.233384 ms exceeds250 ms; p99=329.68857432 ms passes600. Single-auction serialization/pool waiting is documented by D-91. Threshold and auction lock unchanged; thresholds.passed=false. T-43 is complete by explicit owner acceptance; no further tuning or dispatches authorized.
 
@@ -399,3 +401,21 @@ Owner/reviewer production evidence and public dated quotas are recorded in READM
 D-97 preserves PRD §9 visitor-local HH:mm:ss.SSS and the existing heading. Explicit-zone formatter and shared hydration snapshot update initial/live/paged history and winning receipt together. Unit TZ subprocess checks pass; focused E2E passes after correcting the test to allow its specified stale-bid409 response. Reviewer browser check remains required; T-47 not started.
 
 Final local validation: lint/typecheck/guards/build,239 unit tests and39 E2E tests pass. QA ledger has the same known sentinel collision; exact attempt-prefix comparison by `(tc_reference,title)` passes. Records PR [#59](https://github.com/firatkill/bidlock/pull/59) merged as `6dd9a9d88461b0a2831ab40c49323cac1b2b73ea` after all six GitHub CI jobs passed (run42483140145). Vercel separately reported deployment Error with no preview URL; dashboard was not inspected, so the cause is unverified.
+
+### T-47 baseline and owner checkpoint — 2026-11-08
+
+Started from9021279 on t-47-polish. One production Lighthouse invocation on /; no other production checks or interactions. Scores Performance99, Accessibility100, Best Practices92. Local production build on3100:100/100/92 (baseline, not after fixes). Missing favicon404 and Zod CSP eval probe reproduced locally. Existing focused E2E run32/32 passed, including E2E-09; Playwright isolated project dependency also selected other parallel tests. T-47 stopped before UI edits at favicon design checkpoint. No new D decision until owner answers. T-48 untouched.
+
+Baseline validation: lint/typecheck,239 unit tests, guards and build pass. Bundle script delegates to passing E2E-09. Full E2E and remaining T-47 checks not run at checkpoint. External ledger gate reports the known duplicate sentinel `—` collision; independent exact append-only check using `(tc_reference,title)` passes.
+
+### T-47 polish implementation — 2026-11-08
+
+D-98 records owner-approved repository-generated Schibsted Grotesk bold B SVG/ICO, with colours read from globals.css and no new dependency or guard weakening. Client instrumentation enables Zod jitless before application modules, leaving CSP and server parsing unchanged. Header DOM and visual order agree; dark experiment focus uses strip-accent (old light accent measured2.49:1); overdue price timers are cancelled before publishing a new value.
+
+Acceptance: lint/typecheck/guards/build pass;241 unit tests and full50/50 E2E pass with zero skipped/flaky tests. Focused checks passed before the full run. D-33 bundle fallback passes via E2E-09:183364 bytes (179.07KiB), below184320; limited headroom remains. No SQL/server logic changed. Production before99/100/92; local production after100/100/100, reports in qa/lighthouse. One production invocation total, no production rerun after changes. A local Lighthouse trace failed with NO_NAVSTART before the successful report; no score was inferred from it.
+
+TC-299–306 cover CSP/favicon, contrast, focus order, live announcement timing,360px page/error layouts, reduced motion, budget and visual review. ErrorView layout uses actual component markup inside production CSS; room-load failure was additionally captured against a second local production process on3101 with an unreachable local database. Local Chromium screenshots at360px light/dark are in qa/screenshots/t47; inspected lobby, room, result, sandbox, how-it-works, offline and missing/load-error states. Interactive browser inventory was empty, so reviewer live sign-off remains explicit. Source audit found no dev-only state switches to remove. T-48 untouched.
+
+QA ledger retains all attempts. Initial result test raced its own bid by advancing the clock before acceptance; corrected to await specified leading state. Error-component test setup imported next/link outside Next; removed that unsupported harness import, retaining actual ErrorView plus separate load-error verification. Initial exploratory load-error copy assertion was corrected against existing copy. No timeouts or assertions were weakened. External ledger checker still has its pre-existing sentinel collision; independent exact append-only comparison by (tc_reference,title) passes.
+
+Final asset review: exact `/icon.svg` bypasses the off-mode page rewrite alongside the ICO (D-98); other page paths still match. Actual local off-mode process serves both image assets200 and rewrites auction pages to offline. After this proxy change, lint/typecheck,241 unit tests, guards/build,511 pgTAP assertions,52 concurrency/integration tests and final full50/50 E2E pass. Earlier full run was repeated because of this final server-side asset fix.

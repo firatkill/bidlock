@@ -10,6 +10,7 @@ export function useLiveAnnouncer() {
   useEffect(
     () => () => {
       if (timer.current !== null) clearTimeout(timer.current);
+      timer.current = null;
     },
     [],
   );
@@ -17,6 +18,9 @@ export function useLiveAnnouncer() {
     pending.current = text;
     const elapsed = performance.now() - last.current;
     if (elapsed >= 3000) {
+      // A throttled background tab may deliver a new update before its overdue timer.
+      if (timer.current !== null) clearTimeout(timer.current);
+      timer.current = null;
       last.current = performance.now();
       setPolite(text);
       return;

@@ -20,7 +20,7 @@ export function Shell({
           {copy.wordmark}
         </Link>
         {mode !== "off" && (
-          <div className="min-w-0 md:order-3">
+          <div className="min-w-0">
             <NameChip />
           </div>
         )}

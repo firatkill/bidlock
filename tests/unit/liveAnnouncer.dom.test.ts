@@ -47,3 +47,39 @@ test("TC-180: UT-11 assertive event ids are announced once and cleanup cancels t
   unmount();
   expect(vi.getTimerCount()).toBe(0);
 });
+
+test("TC-302: UT-11 an overdue timer cannot announce again after a newer price", () => {
+  vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+  const now = vi.spyOn(performance, "now").mockReturnValue(0);
+  const { result } = renderHook(() => useLiveAnnouncer());
+  try {
+    act(() => {
+      result.current.announcePrice("Price 10");
+    });
+    now.mockReturnValue(1000);
+    act(() => {
+      result.current.announcePrice("Price 11");
+    });
+    // Model a suspended tab: monotonic time advances before the queued timeout runs.
+    now.mockReturnValue(4000);
+    act(() => {
+      result.current.announcePrice("Price 12");
+    });
+    expect(result.current.polite).toBe("Price 12");
+    expect(vi.getTimerCount()).toBe(0);
+    now.mockReturnValue(4500);
+    act(() => {
+      result.current.announcePrice("Price 13");
+    });
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+    expect(result.current.polite).toBe("Price 12");
+    act(() => {
+      vi.advanceTimersByTime(500);
+    });
+    expect(result.current.polite).toBe("Price 13");
+  } finally {
+    now.mockRestore();
+  }
+});
