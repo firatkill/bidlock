@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "date": "2026-11-07",
-  "commit": "8b957bce45d85cca6bfdd04b774657092f04b87d",
+  "date": "2026-11-09",
+  "commit": "d687b46e92ebc63577305914fe20161ec18ebc0d",
   "runner": {
     "os": "Linux",
     "cpus": 4,
-    "cpu_model": "AMD EPYC 7763 64-Core Processor",
-    "memory_gb": 15.608444213867188
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "memory_gb": 15.608440399169922
   },
   "config": {
     "vus": 500,
@@ -23,29 +23,29 @@
     }
   },
   "requests": {
-    "bids": 28925,
-    "replays": 1496,
-    "rps": 463.75149604759605
+    "bids": 26250,
+    "replays": 1277,
+    "rps": 418.3487224241093
   },
   "outcomes": {
-    "accepted": 245,
-    "BID_TOO_LOW": 28180,
-    "ALREADY_LEADING": 0,
+    "accepted": 215,
+    "BID_TOO_LOW": 25533,
+    "ALREADY_LEADING": 2,
     "AUCTION_CLOSED": 500,
     "RATE_LIMITED": 0,
     "OTHER": 0
   },
   "unexpected_error_rate": 0,
   "latency_ms": {
-    "p50": 124.513512,
-    "p90": 223.3463542,
-    "p95": 269.233384,
-    "p99": 329.68857431999925,
-    "max": 368.681675
+    "p50": 119.288994,
+    "p90": 597.4859230000002,
+    "p95": 705.3605527499999,
+    "p99": 949.85737906,
+    "max": 1323.002576
   },
   "auction": {
-    "final_price": 2450000,
-    "bid_count": 229,
+    "final_price": 1775000,
+    "bid_count": 205,
     "extension_count": 20,
     "status": "closed"
   },
