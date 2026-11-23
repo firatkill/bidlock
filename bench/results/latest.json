@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "date": "2026-11-07",
-  "commit": "8b957bce45d85cca6bfdd04b774657092f04b87d",
+  "date": "2026-11-23",
+  "commit": "d687b46e92ebc63577305914fe20161ec18ebc0d",
   "runner": {
     "os": "Linux",
     "cpus": 4,
     "cpu_model": "AMD EPYC 7763 64-Core Processor",
-    "memory_gb": 15.608444213867188
+    "memory_gb": 15.608436584472656
   },
   "config": {
     "vus": 500,
@@ -14,7 +14,7 @@
     "ramp_up_s": 10,
     "ip_model": "per-vu-forwarded",
     "db_pool_max": 20,
-    "postgres": "17.11 (Debian 17.11-1.pgdg13+2)",
+    "postgres": "17.12 (Debian 17.12-1.pgdg13+1)",
     "auction": {
       "duration_s": 45,
       "snipe_window_s": 10,
@@ -23,29 +23,29 @@
     }
   },
   "requests": {
-    "bids": 28925,
-    "replays": 1496,
-    "rps": 463.75149604759605
+    "bids": 28757,
+    "replays": 1368,
+    "rps": 460.7953196906219
   },
   "outcomes": {
-    "accepted": 245,
-    "BID_TOO_LOW": 28180,
+    "accepted": 235,
+    "BID_TOO_LOW": 26789,
     "ALREADY_LEADING": 0,
-    "AUCTION_CLOSED": 500,
-    "RATE_LIMITED": 0,
+    "AUCTION_CLOSED": 459,
+    "RATE_LIMITED": 1274,
     "OTHER": 0
   },
   "unexpected_error_rate": 0,
   "latency_ms": {
-    "p50": 124.513512,
-    "p90": 223.3463542,
-    "p95": 269.233384,
-    "p99": 329.68857431999925,
-    "max": 368.681675
+    "p50": 153.770375,
+    "p90": 261.2684604,
+    "p95": 289.7678001999999,
+    "p99": 360.5655430799991,
+    "max": 446.432631
   },
   "auction": {
-    "final_price": 2450000,
-    "bid_count": 229,
+    "final_price": 2025000,
+    "bid_count": 224,
     "extension_count": 20,
     "status": "closed"
   },
